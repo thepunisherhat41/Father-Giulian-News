@@ -4,8 +4,9 @@ import { useMemo, useState } from 'react';
 import { categories } from '@/lib/categories';
 import { getPregnancyStatus } from '@/lib/pregnancy';
 import { dailyContent, edition, todayDrops, type DailyIntel } from '@/lib/daily-content';
+import { upcomingWords, wordOfDay } from '@/lib/word-of-day';
 
-function buildWhatsAppText(label: string, emoji: string, content: DailyIntel) {
+function buildWhatsAppText(slug: string, label: string, emoji: string, content: DailyIntel) {
   const highlights = content.sections
     .flatMap((section) => section.bullets ?? [])
     .slice(0, 5);
@@ -21,6 +22,17 @@ function buildWhatsAppText(label: string, emoji: string, content: DailyIntel) {
 
   if (highlights.length) {
     lines.push('', '*Pontos principais*', ...highlights.map((item) => `• ${item}`));
+  }
+
+  if (slug === 'curiosidades') {
+    lines.push(
+      '',
+      `*📚 PALAVRA DO DIA — ${wordOfDay.word.toUpperCase()}*`,
+      wordOfDay.meaning,
+      '',
+      `*Exemplo:* ${wordOfDay.naturalUse}`,
+      `*Sinônimos:* ${wordOfDay.synonyms.join(', ')}`,
+    );
   }
 
   if (primarySource) {
@@ -50,7 +62,7 @@ export default function HomePage() {
   };
 
   const copy = async () => {
-    const text = buildWhatsAppText(category.label, category.emoji, content);
+    const text = buildWhatsAppText(active, category.label, category.emoji, content);
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
@@ -61,7 +73,7 @@ export default function HomePage() {
   };
 
   const shareWhatsApp = () => {
-    const text = buildWhatsAppText(category.label, category.emoji, content);
+    const text = buildWhatsAppText(active, category.label, category.emoji, content);
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -177,6 +189,55 @@ export default function HomePage() {
                   </section>
                 ))}
               </div>
+
+              {active === 'curiosidades' && (
+                <section className="wordPanel">
+                  <div className="wordPanelHeader">
+                    <div>
+                      <span>VOCABULARY DROP</span>
+                      <small>PALAVRA DO DIA</small>
+                    </div>
+                    <b>+10 XP</b>
+                  </div>
+
+                  <div className="wordHero">
+                    <div>
+                      <span className="wordPronunciation">{wordOfDay.pronunciation}</span>
+                      <h3>{wordOfDay.word}</h3>
+                    </div>
+                    <span className="wordClass">ADVÉRBIO</span>
+                  </div>
+
+                  <p className="wordMeaning">{wordOfDay.meaning}</p>
+
+                  <div className="wordExample">
+                    <small>COMO USAR NATURALMENTE</small>
+                    <blockquote>{wordOfDay.naturalUse}</blockquote>
+                  </div>
+
+                  <div className="wordInfoGrid">
+                    <div>
+                      <small>SINÔNIMOS</small>
+                      <p>{wordOfDay.synonyms.join(' · ')}</p>
+                    </div>
+                    <div>
+                      <small>TOM DE USO</small>
+                      <p>{wordOfDay.tone}</p>
+                    </div>
+                  </div>
+
+                  {wordOfDay.note && <div className="wordNote">⌁ {wordOfDay.note}</div>}
+
+                  <div className="nextWords">
+                    <small>PRÓXIMOS DROPS</small>
+                    <div>
+                      {upcomingWords.map((item) => (
+                        <span key={item.word} title={item.hint}>{item.word}</span>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
 
               {category.subcategories && (
                 <div className="chips">
