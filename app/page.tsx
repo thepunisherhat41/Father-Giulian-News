@@ -22,7 +22,8 @@ const today: Record<string,{title:string;body:string;source?:string}> = {
  viagens:{title:'Viagem curta também merece planejamento',body:'Para destinos próximos de São Paulo, compare tempo de estrada, pedágios, estacionamento, hospedagem, clima e lotação. O melhor destino depende mais do perfil do passeio que da distância.'},
  financas:{title:'Dica financeira: transforme gastos anuais em mensais',body:'IPVA, seguro, manutenção, presentes e viagens parecem “surpresas” porque chegam de uma vez. Divida o valor anual por 12 e reserve mensalmente: despesas previsíveis deixam de virar emergência.'},
  tecnologia:{title:'IA exige cada vez mais infraestrutura',body:'O mercado acompanha grandes iniciativas de financiamento para data centers e infraestrutura de IA. A disputa deixou de ser apenas por modelos: energia, chips, rede e capital viraram parte central da corrida.',source:'Reuters · 11/08/2026'},
- seguranca:{title:'Security Mission: pense em cadeias, não só findings',body:'Um finding moderado pode desbloquear outro e formar um caminho até um ativo crítico. Priorize exploração ativa, exposição, reachability, identidade e blast radius — não apenas CVSS.',source:'CISA / prática AppSec'},
+ seguranca:{title:'Cyber Mission: identidade virou perímetro',body:'Ataques modernos frequentemente exploram credenciais, sessões, MFA, engenharia social e privilégios legítimos. Detectar comportamento anômalo e proteger recuperação de identidade é tão importante quanto bloquear malware.',source:'CISA / práticas de defesa'},
+ 'appsec-ssdlc':{title:'AppSec Mission: transforme findings em decisões de engenharia',body:'Um SSDLC maduro combina SAST, SCA, DAST, secrets, IaC, containers, SBOM e threat modeling com contexto de exploração. O objetivo não é apenas achar vulnerabilidades: é impedir que risco relevante chegue ao deploy. Hoje, revise seus gates por exploração ativa, reachability, exposição, criticidade e blast radius.',source:'OWASP / CISA / prática AppSec'},
 };
 
 function shareText(label:string, item:{title:string;body:string;source?:string}){
@@ -55,7 +56,7 @@ export default function HomePage(){
     {item.source&&<p className="source">Fonte: {item.source}</p>}
     <div className="articleActions"><button onClick={()=>navigator.clipboard?.writeText(shareText(category.label,item))}>⧉ COPIAR</button><button className="share" onClick={share}>↗ COMPARTILHAR NO WHATSAPP</button></div>
    </section>
-   <section className="missions"><div><span>DAILY STREAK</span><b>🔥 01 DIA</b></div><div><span>CONTEÚDOS</span><b>18 ÁREAS</b></div><div><span>STATUS</span><b>● ONLINE</b></div></section>
+   <section className="missions"><div><span>DAILY STREAK</span><b>🔥 01 DIA</b></div><div><span>CONTEÚDOS</span><b>{categories.length} ÁREAS</b></div><div><span>STATUS</span><b>● ONLINE</b></div></section>
   </main>
  </div>;
 }
