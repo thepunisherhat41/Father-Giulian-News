@@ -2,6 +2,7 @@ import './globals.css';
 import './vocabulary.css';
 import './expansion.css';
 import './share-improvements.css';
+import './dossier.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
