@@ -24,5 +24,6 @@ export const categories: Category[] = [
   { slug: 'viagens', label: 'Viagens', emoji: '✈️', description: 'Perto de SP, Brasil, exterior, lugares históricos, vistos, custos e cuidados.' },
   { slug: 'financas', label: 'Finanças', emoji: '💰', description: 'Mercado, educação financeira, orçamento, crédito, investimentos e decisões práticas.' },
   { slug: 'tecnologia', label: 'Tecnologia', emoji: '💻', description: 'IA, computação, robótica, espaço, ciência, energia e produtos.' },
-  { slug: 'seguranca', label: 'Segurança', emoji: '🛡️', description: 'Cyber e AppSec, separados de tecnologia geral.', subcategories: ['Cyber', 'AppSec'] },
+  { slug: 'seguranca', label: 'Cyber Security', emoji: '🛡️', description: 'Ataques, identidade, cloud, malware, phishing, ransomware, threat intelligence e defesa.' },
+  { slug: 'appsec-ssdlc', label: 'AppSec / SSDLC', emoji: '🧬', description: 'Segurança de aplicações e ciclo seguro de desenvolvimento, do código ao deploy.', subcategories: ['SAST', 'SCA', 'DAST', 'Secrets', 'SBOM', 'Supply Chain', 'CI/CD', 'Threat Modeling', 'APIs', 'Containers', 'Kubernetes', 'Security Gates'] },
 ];
