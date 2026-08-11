@@ -16,14 +16,40 @@ import {
 } from '@/lib/politics-2026';
 import { upcomingWords, wordOfDay } from '@/lib/word-of-day';
 
-function buildWhatsAppText(slug: string, label: string, emoji: string, content: DailyIntel) {
+function sourceText(content: DailyIntel) {
+  const source = content.sources?.[0];
+  if (!source) return [] as string[];
+  return ['', `Fonte: ${source.label}`, source.url];
+}
+
+function buildTodayShareText(mode: 'short' | 'full') {
+  const drops = mode === 'short' ? todayDrops.slice(0, 6) : todayDrops;
+  const lines: string[] = [
+    `*RESUMO DO DIA - ${edition.date}*`,
+    '',
+    mode === 'short'
+      ? 'Separei alguns assuntos interessantes de hoje:'
+      : 'Aqui vai o briefing completo de hoje, separado por assunto:',
+    '',
+  ];
+
+  drops.forEach((drop) => {
+    lines.push(`*${drop.label}*`, drop.title, drop.detail, '');
+  });
+
+  lines.push('_Se algum tema te interessar, vale abrir a matéria completa e conferir as fontes._');
+  return lines.join('\n').trim();
+}
+
+function buildShortShareText(slug: string, label: string, content: DailyIntel) {
+  if (slug === 'hoje') return buildTodayShareText('short');
+
   const highlights = content.sections
     .flatMap((section) => section.bullets ?? [])
-    .slice(0, 5);
+    .slice(0, 3);
 
-  const primarySource = content.sources?.[0]?.label;
-  const lines = [
-    `*${emoji} ${label.toUpperCase()}*`,
+  const lines: string[] = [
+    `*${label.toUpperCase()} - ${edition.date}*`,
     '',
     `*${content.title}*`,
     '',
@@ -31,59 +57,76 @@ function buildWhatsAppText(slug: string, label: string, emoji: string, content: 
   ];
 
   if (highlights.length) {
-    lines.push('', '*Pontos principais*', ...highlights.map((item) => `• ${item}`));
+    lines.push('', ...highlights.map((item) => `- ${item}`));
   }
 
   if (slug === 'curiosidades') {
     lines.push(
       '',
-      `*📚 PALAVRA DO DIA — ${wordOfDay.word.toUpperCase()}*`,
+      `*Palavra do dia: ${wordOfDay.word}*`,
       wordOfDay.meaning,
-      '',
-      `*Exemplo:* ${wordOfDay.naturalUse}`,
-      `*Sinônimos:* ${wordOfDay.synonyms.join(', ')}`,
+      `Exemplo: ${wordOfDay.naturalUse}`,
     );
   }
 
   if (slug === 'politica') {
     lines.push(
       '',
-      '*🗳️ TRACKER ELEITORAL 2026*',
-      'A página acompanha Presidência, Governo de SP e Senado por SP, sempre separando convenção, pedido de registro e candidatura confirmada pela Justiça Eleitoral.',
-      '',
-      `_Atualizado em ${politicsTracker.updatedAt}. O prazo de registro termina em ${politicsTracker.registrationDeadline}._`,
+      `Tracker eleitoral atualizado em ${politicsTracker.updatedAt}.`,
+      `Prazo de registro: ${politicsTracker.registrationDeadline}.`,
     );
   }
 
-  if (primarySource) {
-    lines.push('', `_Fonte principal: ${primarySource}_`);
-  }
-
-  lines.push('', `☀️ *Father Giulian News · ${edition.date}*`);
-  return lines.join('\n');
+  lines.push(...sourceText(content));
+  return lines.join('\n').trim();
 }
 
-function buildShortShareText(slug: string, label: string, emoji: string, content: DailyIntel) {
-  const source = content.sources?.[0]?.label;
-  const lines = [
-    `*${emoji} ${label.toUpperCase()} — RESUMO DO DIA*`,
+function buildFullShareText(slug: string, label: string, content: DailyIntel) {
+  if (slug === 'hoje') return buildTodayShareText('full');
+
+  const lines: string[] = [
+    `*${label.toUpperCase()} - ${edition.date}*`,
     '',
     `*${content.title}*`,
     '',
-    content.shareSummary ?? content.summary,
+    content.summary,
   ];
 
+  content.sections.forEach((section) => {
+    lines.push('', `*${section.title}*`);
+    section.paragraphs?.slice(0, 2).forEach((paragraph) => lines.push(paragraph));
+    section.bullets?.slice(0, 5).forEach((bullet) => lines.push(`- ${bullet}`));
+  });
+
   if (slug === 'curiosidades') {
-    lines.push('', `📚 *Palavra do dia:* ${wordOfDay.word} — ${wordOfDay.meaning}`);
+    lines.push(
+      '',
+      `*Palavra do dia: ${wordOfDay.word}*`,
+      wordOfDay.meaning,
+      `Exemplo: ${wordOfDay.naturalUse}`,
+      `Sinônimos: ${wordOfDay.synonyms.join(', ')}`,
+    );
   }
 
   if (slug === 'politica') {
-    lines.push('', `🗳️ _Tracker eleitoral atualizado em ${politicsTracker.updatedAt}; registros seguem abertos até ${politicsTracker.registrationDeadline}._`);
+    lines.push(
+      '',
+      '*Tracker Eleitoral 2026*',
+      'A página acompanha Presidência, Governo de SP e Senado por SP e separa convenção partidária, pedido de registro e situação na Justiça Eleitoral.',
+      `Atualizado em ${politicsTracker.updatedAt}. Prazo de registro: ${politicsTracker.registrationDeadline}.`,
+    );
   }
 
-  if (source) lines.push('', `_Fonte: ${source}_`);
-  lines.push('', `☀️ *Father Giulian News · ${edition.date}*`);
-  return lines.join('\n');
+  if (content.disclaimer) lines.push('', `Observação: ${content.disclaimer}`);
+  lines.push(...sourceText(content));
+  return lines.join('\n').trim();
+}
+
+function openWhatsApp(text: string) {
+  // O texto compartilhado evita emojis no cabeçalho para prevenir caracteres de substituição
+  // em combinações específicas de navegador/WhatsApp. O conteúdo continua em UTF-8.
+  const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 function CandidateGroup({ title, subtitle, profiles }: { title: string; subtitle: string; profiles: PoliticalProfile[] }) {
@@ -132,6 +175,10 @@ export default function HomePage() {
 
   const content = dailyContent[active] ?? dailyContent.hoje;
   const deepDive = deepDives[active];
+  const shortSharePreview = useMemo(
+    () => buildShortShareText(active, category.label, content),
+    [active, category.label, content],
+  );
 
   const openMission = (slug: string) => {
     setActive(slug);
@@ -141,8 +188,8 @@ export default function HomePage() {
 
   const copyText = async (mode: 'full' | 'short') => {
     const text = mode === 'full'
-      ? buildWhatsAppText(active, category.label, category.emoji, content)
-      : buildShortShareText(active, category.label, category.emoji, content);
+      ? buildFullShareText(active, category.label, content)
+      : buildShortShareText(active, category.label, content);
     try {
       await navigator.clipboard.writeText(text);
       setCopied(mode);
@@ -154,9 +201,15 @@ export default function HomePage() {
 
   const shareWhatsApp = (mode: 'full' | 'short') => {
     const text = mode === 'full'
-      ? buildWhatsAppText(active, category.label, category.emoji, content)
-      : buildShortShareText(active, category.label, category.emoji, content);
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+      ? buildFullShareText(active, category.label, content)
+      : buildShortShareText(active, category.label, content);
+    openWhatsApp(text);
+  };
+
+  const shareDrop = (slug: string, label: string) => {
+    const dropContent = dailyContent[slug];
+    if (!dropContent) return;
+    openWhatsApp(buildShortShareText(slug, label, dropContent));
   };
 
   return (
@@ -221,7 +274,7 @@ export default function HomePage() {
           {active === 'hoje' ? (
             <div className="todayGrid">
               {todayDrops.map((drop, index) => (
-                <button className="dropCard" key={drop.slug} onClick={() => openMission(drop.slug)}>
+                <article className="dropCard" key={drop.slug}>
                   <span className="dropIndex">{String(index + 1).padStart(2, '0')}</span>
                   <span className="dropEmoji">{drop.emoji}</span>
                   <span className="dropCopy">
@@ -229,8 +282,11 @@ export default function HomePage() {
                     <strong>{drop.title}</strong>
                     <p>{drop.detail}</p>
                   </span>
-                  <span className="dropAction">ABRIR MISSÃO ↗</span>
-                </button>
+                  <div className="dropActions">
+                    <button onClick={() => openMission(drop.slug)}>ABRIR ↗</button>
+                    <button className="dropShare" onClick={() => shareDrop(drop.slug, drop.label)}>WHATSAPP</button>
+                  </div>
+                </article>
               ))}
             </div>
           ) : (
@@ -297,17 +353,17 @@ export default function HomePage() {
 
                   <CandidateGroup
                     title="Presidência da República"
-                    subtitle="Nomes já oficializados em convenção e acompanhados nesta edição. A situação jurídica final será consolidada após os pedidos de registro no TSE."
+                    subtitle="Nomes oficializados em convenção e acompanhados nesta edição. A situação jurídica final será consolidada após os pedidos de registro no TSE."
                     profiles={presidentialProfiles}
                   />
                   <CandidateGroup
                     title="Governo de São Paulo"
-                    subtitle="Principais chapas estaduais já formalizadas nas fontes acompanhadas. O tracker será atualizado com o registro eleitoral."
+                    subtitle="Chapas estaduais acompanhadas nas fontes desta edição. O tracker será atualizado conforme os registros eleitorais."
                     profiles={spGovernorProfiles}
                   />
                   <CandidateGroup
                     title="Senado por São Paulo"
-                    subtitle="São duas vagas em disputa. A lista abaixo reúne candidaturas oficializadas e nomes anunciados com status explicitado em cada perfil."
+                    subtitle="São duas vagas em disputa. Cada perfil informa explicitamente o status disponível nesta edição."
                     profiles={spSenateProfiles}
                   />
 
@@ -421,15 +477,13 @@ export default function HomePage() {
             <div className="sharePackHeader">
               <div>
                 <span>SHARE PACK</span>
-                <h3>Pronto para mandar no WhatsApp</h3>
+                <h3>{active === 'hoje' ? 'Resumo útil do dia' : 'Pronto para mandar no WhatsApp'}</h3>
               </div>
               <b>WA://READY</b>
             </div>
-            <div className="sharePreview">
-              <small>{category.emoji} {category.label.toUpperCase()} · {edition.date}</small>
-              <strong>{content.title}</strong>
-              <p>{content.shareSummary ?? content.summary}</p>
-              {content.sources?.[0] && <em>Fonte: {content.sources[0].label}</em>}
+            <div className="sharePreview exactPreview">
+              <small>PRÉVIA EXATA DO TEXTO</small>
+              <pre>{shortSharePreview}</pre>
             </div>
             <div className="shareButtons">
               <button onClick={() => copyText('short')}>
