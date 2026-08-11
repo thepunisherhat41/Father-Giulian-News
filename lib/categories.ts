@@ -14,7 +14,7 @@ export const categories: Category[] = [
   { slug: 'planeta', label: 'Planeta', emoji: '🌎', description: 'Oceanos, geologia, atmosfera, fenômenos naturais, rios, lagos e a Terra.' },
   { slug: 'animais', label: 'Mundo Animal', emoji: '🐾', description: 'Comportamento, evolução, inteligência, espécies e ecossistemas.' },
   { slug: 'tempo', label: 'Tempo e Clima', emoji: '🌦️', description: 'Meteorologia, clima, tempestades e fenômenos extremos.' },
-  { slug: 'curiosidades', label: 'Curiosidades', emoji: '🧠', description: 'Ciência, história, psicologia, cultura, corpo humano e conexões inesperadas.' },
+  { slug: 'curiosidades', label: 'Curiosidades', emoji: '🧠', description: 'Ciência, história, psicologia, linguagem, vocabulário e conexões inesperadas.', subcategories: ['Palavra do dia', 'Ciência', 'História', 'Psicologia', 'Linguagem', 'Cultura'] },
   { slug: 'gravidez', label: 'Gravidez', emoji: '🤰', description: 'Acompanhamento semanal até a DPP, com foco em informação segura e baseada em fontes confiáveis.' },
   { slug: 'pai', label: 'Ser Pai', emoji: '👨‍👧', description: 'Presença, vínculo, segurança, apoio à mãe e desenvolvimento infantil sem fórmulas mágicas.', subcategories: ['Vínculo', 'Apoio à mãe', 'Segurança', 'Desenvolvimento', 'Rotina', 'Autocuidado'] },
   { slug: 'carros', label: 'Carros', emoji: '🚗', description: 'Novos, usados e clássicos, com preço, ano, km, manutenção e custo-benefício.' },
