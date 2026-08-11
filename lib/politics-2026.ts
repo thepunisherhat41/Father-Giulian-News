@@ -38,14 +38,14 @@ export const presidentialProfiles: PoliticalProfile[] = [
     party: 'PT',
     office: 'Presidência',
     ticket: 'Vice: Geraldo Alckmin (PSB)',
-    status: 'Chapa anunciada para a reeleição; registro eleitoral em fase de formalização',
+    status: 'Chapa em campanha pela reeleição; situação jurídica deve ser consolidada após o prazo de registro',
     trajectory: [
       'Metalúrgico e dirigente sindical antes de entrar na política partidária.',
       'Presidente da República de 2003 a 2010 e novamente desde 2023.',
       'Disputou eleições presidenciais desde a redemocratização e venceu em 2002, 2006 e 2022.',
     ],
-    sourceLabel: 'PT · Convenção nacional 2026 / chapa Lula-Alckmin',
-    sourceUrl: 'https://pt.org.br/credenciamento-de-imprensa-para-a-convencao-nacional-do-pt-2-de-agosto/',
+    sourceLabel: 'Reuters · corrida presidencial em 11/08/2026',
+    sourceUrl: 'https://www.reuters.com/world/americas/lulas-lead-over-flavio-bolsonaro-narrows-brazil-election-second-round-cntmda-2026-08-11/',
   },
   {
     name: 'Flávio Bolsonaro',
@@ -123,11 +123,11 @@ export const spGovernorProfiles: PoliticalProfile[] = [
     name: 'Tarcísio de Freitas',
     party: 'Republicanos',
     office: 'Governo de São Paulo',
-    status: 'Busca a reeleição; apoiado por alianças estaduais já formalizadas em convenções',
+    status: 'Busca a reeleição; alianças estaduais já formalizaram apoio em convenções',
     trajectory: [
       'Engenheiro e servidor público federal.',
       'Foi ministro da Infraestrutura no governo Jair Bolsonaro.',
-      'Foi eleito governador de São Paulo em 2022 e permanece no cargo durante a campanha de reeleição.',
+      'Foi eleito governador de São Paulo em 2022 e permanece no cargo durante a disputa pela reeleição.',
     ],
     sourceLabel: 'TSE · trajetória e eleição de Tarcísio em 2022',
     sourceUrl: 'https://www.tse.jus.br/comunicacao/noticias/2022/Outubro/tarcisio-de-freitas-republicanos-vence-disputa-pelo-governo-de-sao-paulo',
@@ -145,6 +145,19 @@ export const spGovernorProfiles: PoliticalProfile[] = [
     ],
     sourceLabel: 'Convenção estadual · candidatura Haddad / Márcio França',
     sourceUrl: 'https://noticias.uol.com.br/eleicoes/2026/07/25/pt-lanca-haddad-com-criticas-a-privatizacoes-e-alta-de-feminicidios-em-sp.ghtm',
+  },
+  {
+    name: 'Vivian Mendes',
+    party: 'UP',
+    office: 'Governo de São Paulo',
+    status: 'Nome lançado pela Unidade Popular na convenção nacional da legenda',
+    trajectory: [
+      'É fundadora do Movimento de Mulheres Olga Benário.',
+      'Integra a direção estadual da Unidade Popular em São Paulo.',
+      'Foi escolhida pelo partido para disputar o Palácio dos Bandeirantes em 2026.',
+    ],
+    sourceLabel: 'Agência Estado/UOL · UP lança Vivian Mendes em SP',
+    sourceUrl: 'https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/07/26/unidade-popular-oficializa-candidatura-de-samara-martins-a-presidencia-da-republica.htm',
   },
 ];
 
@@ -205,14 +218,14 @@ export const spSenateProfiles: PoliticalProfile[] = [
     name: 'Ricardo Salles',
     party: 'NOVO',
     office: 'Senado por São Paulo',
-    status: 'Nome em disputa pelo NOVO; confirmação final deve ser conferida no registro eleitoral',
+    status: 'Candidatura oficializada em convenção estadual do NOVO',
     trajectory: [
       'Advogado e deputado federal por São Paulo no mandato 2023–2027.',
       'Foi secretário estadual do Meio Ambiente de São Paulo.',
       'Foi ministro do Meio Ambiente entre janeiro de 2019 e junho de 2021.',
     ],
-    sourceLabel: 'Câmara dos Deputados · biografia parlamentar',
-    sourceUrl: 'https://www.camara.leg.br/deputados/220633/biografia',
+    sourceLabel: 'Convenção do NOVO em SP · candidatura ao Senado',
+    sourceUrl: 'https://diarioesp.com.br/sao-paulo/2026/07/20/partido-novo-oficializa-ricardo-salles-ao-senado-e-166-candidatos-em-sp.html',
   },
 ];
 
@@ -234,7 +247,7 @@ export const civicFacts: CivicFact[] = [
   {
     eyebrow: 'ITAQUERA / ESCALA',
     title: 'A Subprefeitura de Itaquera reúne quatro distritos',
-    text: 'Itaquera, Parque do Carmo, José Bonifácio e Cidade Líder formam a região administrada pela Subprefeitura. Dados do Censo 2022 usados pela Prefeitura apontam mais de meio milhão de moradores nessa área.',
+    text: 'Itaquera, Parque do Carmo, José Bonifácio e Cidade Líder formam a região administrada pela Subprefeitura. A Prefeitura informa uma área de aproximadamente 54,3 km² e mais de 530 mil moradores.',
     sourceLabel: 'Prefeitura de São Paulo · Subprefeitura Itaquera',
     sourceUrl: 'https://prefeitura.sp.gov.br/web/itaquera/w/subprefeitura-itaquera-hist%C3%B3ria-desenvolvimento-e-compromisso-com-a-zona-leste',
   },
@@ -244,5 +257,12 @@ export const civicFacts: CivicFact[] = [
     text: 'Em São Paulo, candidaturas a deputado federal e estadual disputam votos no estado inteiro. Portanto, não existe uma “vaga de deputado de Itaquera”. O bairro pode ser uma base política de candidatos, mas o mandato representa a circunscrição estadual correspondente.',
     sourceLabel: 'TSE · Registro de candidaturas',
     sourceUrl: 'https://www.tse.jus.br/eleicoes/historia/processo-eleitoral-brasileiro/candidaturas/registro-de-candidatos',
+  },
+  {
+    eyebrow: 'DEPUTADOS / PRÓXIMO PASSO',
+    title: 'Depois de 15 de agosto, vale usar o DivulgaCand como fonte principal',
+    text: 'O sistema do TSE reúne as pessoas que pediram registro à Justiça Eleitoral e dados de contas de campanha. Para deputado federal e estadual, isso permite pesquisar nomes e partidos sem tentar manter uma lista manual de centenas de candidaturas no hub.',
+    sourceLabel: 'TSE · DivulgaCandContas',
+    sourceUrl: 'https://www.tse.jus.br/administracao/painel/divulgacao-de-candidaturas-e-contas-eleitorais',
   },
 ];
