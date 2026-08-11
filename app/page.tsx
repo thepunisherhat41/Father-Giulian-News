@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { categories } from '@/lib/categories';
 import { getPregnancyStatus } from '@/lib/pregnancy';
 import { dailyContent, edition, todayDrops, type DailyIntel } from '@/lib/daily-content';
-import { deepDives } from '@/lib/deep-dives';
+import { editorialDossiers } from '@/lib/editorial-dossiers';
 import {
   civicFacts,
   officesInSP2026,
@@ -84,6 +84,7 @@ function buildShortShareText(slug: string, label: string, content: DailyIntel) {
 function buildFullShareText(slug: string, label: string, content: DailyIntel) {
   if (slug === 'hoje') return buildTodayShareText('full');
 
+  const dossier = editorialDossiers[slug];
   const lines: string[] = [
     `*${label.toUpperCase()} - ${edition.date}*`,
     '',
@@ -97,6 +98,11 @@ function buildFullShareText(slug: string, label: string, content: DailyIntel) {
     section.paragraphs?.slice(0, 2).forEach((paragraph) => lines.push(paragraph));
     section.bullets?.slice(0, 5).forEach((bullet) => lines.push(`- ${bullet}`));
   });
+
+  if (dossier) {
+    lines.push('', '*Para aprofundar*', dossier.deck);
+    dossier.takeaways.forEach((item) => lines.push(`- ${item}`));
+  }
 
   if (slug === 'curiosidades') {
     lines.push(
@@ -123,8 +129,6 @@ function buildFullShareText(slug: string, label: string, content: DailyIntel) {
 }
 
 function openWhatsApp(text: string) {
-  // O texto compartilhado evita emojis no cabeçalho para prevenir caracteres de substituição
-  // em combinações específicas de navegador/WhatsApp. O conteúdo continua em UTF-8.
   const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
   window.open(url, '_blank', 'noopener,noreferrer');
 }
@@ -174,7 +178,7 @@ export default function HomePage() {
   );
 
   const content = dailyContent[active] ?? dailyContent.hoje;
-  const deepDive = deepDives[active];
+  const dossier = editorialDossiers[active];
   const shortSharePreview = useMemo(
     () => buildShortShareText(active, category.label, content),
     [active, category.label, content],
@@ -437,14 +441,70 @@ export default function HomePage() {
                 </section>
               )}
 
-              {deepDive && (
-                <section className="deepDivePanel">
-                  <div className="sectionEyebrow">DEEP DIVE / +25 XP</div>
-                  <h3>{deepDive.title}</h3>
-                  <p>{deepDive.intro}</p>
-                  <ul>
-                    {deepDive.bullets.map((item) => <li key={item}>{item}</li>)}
-                  </ul>
+              {dossier && (
+                <section className="dossierPanel">
+                  <div className="dossierTopline">
+                    <div>
+                      <span>DOSSIÊ / LEITURA PROFUNDA</span>
+                      <small>{dossier.readingTime}</small>
+                    </div>
+                    <b>+50 XP</b>
+                  </div>
+
+                  <div className="dossierHero">
+                    <p>PARA ENTENDER DE VERDADE</p>
+                    <h3>{dossier.title}</h3>
+                    <div className="dossierDeck">{dossier.deck}</div>
+                  </div>
+
+                  <div className="dossierOpening">
+                    {dossier.opening.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  </div>
+
+                  <div className="dossierSections">
+                    {dossier.sections.map((section, index) => (
+                      <section className="dossierSection" key={`${section.title}-${index}`}>
+                        <div className="dossierSectionIndex">{String(index + 1).padStart(2, '0')}</div>
+                        <div className="dossierSectionBody">
+                          {section.kicker && <small>{section.kicker}</small>}
+                          <h4>{section.title}</h4>
+                          {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                          {section.bullets && (
+                            <ul>
+                              {section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
+                            </ul>
+                          )}
+                        </div>
+                      </section>
+                    ))}
+                  </div>
+
+                  {dossier.callout && (
+                    <aside className="dossierCallout">
+                      <small>{dossier.callout.label}</small>
+                      <strong>{dossier.callout.title}</strong>
+                      <p>{dossier.callout.text}</p>
+                    </aside>
+                  )}
+
+                  <div className="dossierTakeaways">
+                    <div className="sectionEyebrow">PARA GUARDAR</div>
+                    <h4>Se você lembrar de três coisas, lembre destas</h4>
+                    <ol>
+                      {dossier.takeaways.map((item) => <li key={item}>{item}</li>)}
+                    </ol>
+                  </div>
+
+                  {dossier.sources && dossier.sources.length > 0 && (
+                    <div className="dossierSources">
+                      <small>FONTES DO DOSSIÊ</small>
+                      {dossier.sources.map((source) => (
+                        <a href={source.url} target="_blank" rel="noreferrer" key={source.url}>{source.label} ↗</a>
+                      ))}
+                    </div>
+                  )}
+
+                  {dossier.disclaimer && <div className="dossierDisclaimer">{dossier.disclaimer}</div>}
                 </section>
               )}
 
