@@ -3,6 +3,7 @@ import './vocabulary.css';
 import './expansion.css';
 import './share-improvements.css';
 import './dossier.css';
+import './curiosity-library.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
