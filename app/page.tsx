@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import CuriosityLibrary from '@/components/CuriosityLibrary';
 import { categories } from '@/lib/categories';
 import { getPregnancyStatus } from '@/lib/pregnancy';
 import { dailyContent, edition, todayDrops, type DailyIntel } from '@/lib/daily-content';
@@ -393,52 +394,55 @@ export default function HomePage() {
               )}
 
               {active === 'curiosidades' && (
-                <section className="wordPanel">
-                  <div className="wordPanelHeader">
-                    <div>
-                      <span>VOCABULARY DROP</span>
-                      <small>PALAVRA DO DIA</small>
+                <>
+                  <CuriosityLibrary />
+                  <section className="wordPanel">
+                    <div className="wordPanelHeader">
+                      <div>
+                        <span>VOCABULARY DROP</span>
+                        <small>PALAVRA DO DIA</small>
+                      </div>
+                      <b>+10 XP</b>
                     </div>
-                    <b>+10 XP</b>
-                  </div>
 
-                  <div className="wordHero">
-                    <div>
-                      <span className="wordPronunciation">{wordOfDay.pronunciation}</span>
-                      <h3>{wordOfDay.word}</h3>
+                    <div className="wordHero">
+                      <div>
+                        <span className="wordPronunciation">{wordOfDay.pronunciation}</span>
+                        <h3>{wordOfDay.word}</h3>
+                      </div>
+                      <span className="wordClass">ADVÉRBIO</span>
                     </div>
-                    <span className="wordClass">ADVÉRBIO</span>
-                  </div>
 
-                  <p className="wordMeaning">{wordOfDay.meaning}</p>
+                    <p className="wordMeaning">{wordOfDay.meaning}</p>
 
-                  <div className="wordExample">
-                    <small>COMO USAR NATURALMENTE</small>
-                    <blockquote>{wordOfDay.naturalUse}</blockquote>
-                  </div>
-
-                  <div className="wordInfoGrid">
-                    <div>
-                      <small>SINÔNIMOS</small>
-                      <p>{wordOfDay.synonyms.join(' · ')}</p>
+                    <div className="wordExample">
+                      <small>COMO USAR NATURALMENTE</small>
+                      <blockquote>{wordOfDay.naturalUse}</blockquote>
                     </div>
-                    <div>
-                      <small>TOM DE USO</small>
-                      <p>{wordOfDay.tone}</p>
-                    </div>
-                  </div>
 
-                  {wordOfDay.note && <div className="wordNote">⌁ {wordOfDay.note}</div>}
-
-                  <div className="nextWords">
-                    <small>PRÓXIMOS DROPS</small>
-                    <div>
-                      {upcomingWords.map((item) => (
-                        <span key={item.word} title={item.hint}>{item.word}</span>
-                      ))}
+                    <div className="wordInfoGrid">
+                      <div>
+                        <small>SINÔNIMOS</small>
+                        <p>{wordOfDay.synonyms.join(' · ')}</p>
+                      </div>
+                      <div>
+                        <small>TOM DE USO</small>
+                        <p>{wordOfDay.tone}</p>
+                      </div>
                     </div>
-                  </div>
-                </section>
+
+                    {wordOfDay.note && <div className="wordNote">⌁ {wordOfDay.note}</div>}
+
+                    <div className="nextWords">
+                      <small>PRÓXIMOS DROPS</small>
+                      <div>
+                        {upcomingWords.map((item) => (
+                          <span key={item.word} title={item.hint}>{item.word}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                </>
               )}
 
               {dossier && (
