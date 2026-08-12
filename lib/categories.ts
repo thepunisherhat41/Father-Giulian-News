@@ -1,3 +1,5 @@
+import './daily-overrides';
+
 export type Category = {
   slug: string;
   label: string;
