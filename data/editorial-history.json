@@ -1,0 +1,88 @@
+{
+  "updatedAt": "2026-08-12",
+  "rule": "Do not reuse the same primary topic, title, example or takeaway on consecutive editions. Prefer a different subject; if a broader subject returns because of major news, use a materially different angle and state what changed.",
+  "history": {
+    "brasil": [
+      "Orçamento federal: desbloqueio e despesas bloqueadas",
+      "IPCA e desaceleração da inflação",
+      "Segurança prática do Pix: limites, aparelhos e blast radius"
+    ],
+    "politica": [
+      "Calendário eleitoral: registro de candidaturas e início da propaganda",
+      "Tracker de candidatos à Presidência, Governo de SP e Senado por SP",
+      "Voto em trânsito: prazo, cargos e regras por estado"
+    ],
+    "mundo": [
+      "Estreito de Hormuz, petróleo e inflação",
+      "Inflação dos EUA e impacto global",
+      "Chokepoints marítimos: Mar Vermelho, Coreia/Taiwan e cadeias globais"
+    ],
+    "planeta": [
+      "Forma da Terra: elipsoide e geoide",
+      "Água subterrânea antiga e idade dos aquíferos"
+    ],
+    "animais": [
+      "Sono uni-hemisférico de baleias e golfinhos",
+      "Elefantes e chamadas individualmente específicas semelhantes a nomes"
+    ],
+    "tempo": [
+      "El Niño 2026/2027",
+      "Rios atmosféricos e transporte de vapor"
+    ],
+    "curiosidades": [
+      "Piscar, filme lacrimal e visão",
+      "Metal e madeira na mesma temperatura: condutividade e sensação térmica"
+    ],
+    "gravidez": [
+      "Semana 5: formação inicial de cérebro, coluna e tecido cardíaco",
+      "Semana 5+3: tubo neural, folato e ácido fólico"
+    ],
+    "pai": [
+      "Presença prática e redução de carga mental",
+      "Caderno compartilhado do pré-natal e memória familiar"
+    ],
+    "carros": [
+      "Honda Fit 2014 na faixa de usados",
+      "Toyota Etios Sedan X 1.5 manual 2017: FIPE, km contextual e custo de entrada"
+    ],
+    "motos": [
+      "Yamaha FZ25 2019",
+      "Honda XRE 300 2017: inspeção específica de trail usada"
+    ],
+    "mecanica": [
+      "P0300, scanner e diagnóstico por hipóteses",
+      "Sistema de arrefecimento e função da válvula termostática"
+    ],
+    "nautica": [
+      "Custos de marina e guarda de embarcação",
+      "Planejamento de navegação: carta, maré, meteorologia, VHF e salvatagem"
+    ],
+    "viagens": [
+      "Chile: documentos, seguro e cuidados",
+      "Schengen e requisitos de entrada",
+      "Paranapiacaba: Expresso Turístico, patrimônio ferroviário e Mata Atlântica"
+    ],
+    "financas": [
+      "Selic/IPCA, reserva e provisões anuais",
+      "CET, parcela e custo total do crédito"
+    ],
+    "tecnologia": [
+      "Infraestrutura de IA, data centers e CoreWeave",
+      "Seven Major SEED da Coreia do Sul: Lua, quantum, energia, BCI e minerais críticos"
+    ],
+    "seguranca": [
+      "Vishing + SSO / AiTM",
+      "Funções serverless expostas e tokens de metadata",
+      "Golden SAML e chaves de assinatura ADFS via Machine DPAPI"
+    ],
+    "appsec-ssdlc": [
+      "Supply chain de IA, packages e GitHub Actions",
+      "CVE-2026-20262: CVSS 6.5, exploração limitada e priorização contextual"
+    ],
+    "palavras": [
+      "Quiçá",
+      "Enfadonho",
+      "Amiúde"
+    ]
+  }
+}
