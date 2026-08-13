@@ -1,12 +1,13 @@
 {
-  "updatedAt": "2026-08-13",
+  "updatedAt": "2026-08-13T10:00:00-03:00",
   "rule": "Do not reuse the same primary topic, title, example or takeaway on consecutive editions. Prefer a different subject; if a broader subject returns because of major news, use a materially different angle and state what changed.",
   "history": {
     "brasil": [
       "Orçamento federal: desbloqueio e despesas bloqueadas",
       "IPCA e desaceleração da inflação",
       "Segurança prática do Pix: limites, aparelhos e blast radius",
-      "Celular Seguro: cadastro prévio, BNCR, Modo Recuperação e Bloqueio Total"
+      "Celular Seguro: cadastro prévio, BNCR, Modo Recuperação e Bloqueio Total",
+      "Congresso aprova mecanismos para conter crescimento de despesas obrigatórias"
     ],
     "politica": [
       "Calendário eleitoral: registro de candidaturas e início da propaganda",
@@ -79,23 +80,27 @@
     "financas": [
       "Selic/IPCA, reserva e provisões anuais",
       "CET, parcela e custo total do crédito",
-      "Mercado precifica probabilidades do Fed antes da decisão oficial"
+      "Mercado precifica probabilidades do Fed antes da decisão oficial",
+      "PPI dos EUA de julho: 0,0% no mês, 4,7% em 12 meses e jobless claims em 209 mil"
     ],
     "tecnologia": [
       "Infraestrutura de IA, data centers e CoreWeave",
       "Seven Major SEED da Coreia do Sul: Lua, quantum, energia, BCI e minerais críticos",
-      "Data center Together AI/L&T de até US$ 1,57 bi: IA como infraestrutura física"
+      "Data center Together AI/L&T de até US$ 1,57 bi: IA como infraestrutura física",
+      "Cisco: rede para IA, US$ 9,3 bi em pedidos FY26 e US$ 7,5 bi de receita projetada FY27"
     ],
     "seguranca": [
       "Vishing + SSO / AiTM",
       "Funções serverless expostas e tokens de metadata",
       "Golden SAML e chaves de assinatura ADFS via Machine DPAPI",
-      "UNC3753/Luna Moth: vishing, RMM legítimo e extorsão sem criptografia"
+      "UNC3753/Luna Moth: vishing, RMM legítimo e extorsão sem criptografia",
+      "GTIG AI Threat Tracker: IA acelerando pesquisa, reconhecimento e operações ofensivas"
     ],
     "appsec-ssdlc": [
       "Supply chain de IA, packages e GitHub Actions",
       "CVE-2026-20262: CVSS 6.5, exploração limitada e priorização contextual",
-      "CVE-2026-35273 PeopleSoft: RCE pré-auth, PSEMHUB e exploração como zero-day"
+      "CVE-2026-35273 PeopleSoft: RCE pré-auth, PSEMHUB e exploração como zero-day",
+      "Mandiant AI-assisted vulnerability management: mean time-to-exploit de -7 dias e resposta pre-patch"
     ],
     "palavras": [
       "Quiçá",
