@@ -1,88 +1,107 @@
 {
-  "updatedAt": "2026-08-12",
+  "updatedAt": "2026-08-13",
   "rule": "Do not reuse the same primary topic, title, example or takeaway on consecutive editions. Prefer a different subject; if a broader subject returns because of major news, use a materially different angle and state what changed.",
   "history": {
     "brasil": [
       "Orçamento federal: desbloqueio e despesas bloqueadas",
       "IPCA e desaceleração da inflação",
-      "Segurança prática do Pix: limites, aparelhos e blast radius"
+      "Segurança prática do Pix: limites, aparelhos e blast radius",
+      "Celular Seguro: cadastro prévio, BNCR, Modo Recuperação e Bloqueio Total"
     ],
     "politica": [
       "Calendário eleitoral: registro de candidaturas e início da propaganda",
       "Tracker de candidatos à Presidência, Governo de SP e Senado por SP",
-      "Voto em trânsito: prazo, cargos e regras por estado"
+      "Voto em trânsito: prazo, cargos e regras por estado",
+      "Prazo final de registro, diferença entre convenção/registro e uso do DivulgaCandContas"
     ],
     "mundo": [
       "Estreito de Hormuz, petróleo e inflação",
       "Inflação dos EUA e impacto global",
-      "Chokepoints marítimos: Mar Vermelho, Coreia/Taiwan e cadeias globais"
+      "Chokepoints marítimos: Mar Vermelho, Coreia/Taiwan e cadeias globais",
+      "Petróleo recua com estoques dos EUA enquanto Hormuz permanece limitado"
     ],
     "planeta": [
       "Forma da Terra: elipsoide e geoide",
-      "Água subterrânea antiga e idade dos aquíferos"
+      "Água subterrânea antiga e idade dos aquíferos",
+      "Produção de oxigênio pelos oceanos e fitoplâncton"
     ],
     "animais": [
       "Sono uni-hemisférico de baleias e golfinhos",
-      "Elefantes e chamadas individualmente específicas semelhantes a nomes"
+      "Elefantes e chamadas individualmente específicas semelhantes a nomes",
+      "Tartarugas-cabeçudas: mapa magnético aprendido e bússola magnética"
     ],
     "tempo": [
       "El Niño 2026/2027",
-      "Rios atmosféricos e transporte de vapor"
+      "Rios atmosféricos e transporte de vapor",
+      "Inverno seco em SP, inversão térmica e dispersão de poluentes"
     ],
     "curiosidades": [
       "Piscar, filme lacrimal e visão",
-      "Metal e madeira na mesma temperatura: condutividade e sensação térmica"
+      "Metal e madeira na mesma temperatura: condutividade e sensação térmica",
+      "Diffraction spikes: cruzes nas estrelas geradas pela óptica do telescópio"
     ],
     "gravidez": [
       "Semana 5: formação inicial de cérebro, coluna e tecido cardíaco",
-      "Semana 5+3: tubo neural, folato e ácido fólico"
+      "Semana 5+3: tubo neural, folato e ácido fólico",
+      "Semana 5+4: preparação para a primeira consulta e Caderneta da Gestante"
     ],
     "pai": [
       "Presença prática e redução de carga mental",
-      "Caderno compartilhado do pré-natal e memória familiar"
+      "Caderno compartilhado do pré-natal e memória familiar",
+      "Participação ativa no pré-natal com ownership de informações e logística"
     ],
     "carros": [
       "Honda Fit 2014 na faixa de usados",
-      "Toyota Etios Sedan X 1.5 manual 2017: FIPE, km contextual e custo de entrada"
+      "Toyota Etios Sedan X 1.5 manual 2017: FIPE, km contextual e custo de entrada",
+      "Renault Duster 2.0 2015: versões 4x2/4x4, FIPE e inspeção de SUV usado"
     ],
     "motos": [
       "Yamaha FZ25 2019",
-      "Honda XRE 300 2017: inspeção específica de trail usada"
+      "Honda XRE 300 2017: inspeção específica de trail usada",
+      "Yamaha MT-03 2018: FIPE, sinais de queda e consumíveis"
     ],
     "mecanica": [
       "P0300, scanner e diagnóstico por hipóteses",
-      "Sistema de arrefecimento e função da válvula termostática"
+      "Sistema de arrefecimento e função da válvula termostática",
+      "Pressão de pneus, temperatura, medição a frio e referência do veículo"
     ],
     "nautica": [
       "Custos de marina e guarda de embarcação",
-      "Planejamento de navegação: carta, maré, meteorologia, VHF e salvatagem"
+      "Planejamento de navegação: carta, maré, meteorologia, VHF e salvatagem",
+      "Regra de um terço de combustível e prevenção de pane seca"
     ],
     "viagens": [
       "Chile: documentos, seguro e cuidados",
       "Schengen e requisitos de entrada",
-      "Paranapiacaba: Expresso Turístico, patrimônio ferroviário e Mata Atlântica"
+      "Paranapiacaba: Expresso Turístico, patrimônio ferroviário e Mata Atlântica",
+      "Santos histórico: Museu do Café, Valongo e exposição Brasil-China"
     ],
     "financas": [
       "Selic/IPCA, reserva e provisões anuais",
-      "CET, parcela e custo total do crédito"
+      "CET, parcela e custo total do crédito",
+      "Mercado precifica probabilidades do Fed antes da decisão oficial"
     ],
     "tecnologia": [
       "Infraestrutura de IA, data centers e CoreWeave",
-      "Seven Major SEED da Coreia do Sul: Lua, quantum, energia, BCI e minerais críticos"
+      "Seven Major SEED da Coreia do Sul: Lua, quantum, energia, BCI e minerais críticos",
+      "Data center Together AI/L&T de até US$ 1,57 bi: IA como infraestrutura física"
     ],
     "seguranca": [
       "Vishing + SSO / AiTM",
       "Funções serverless expostas e tokens de metadata",
-      "Golden SAML e chaves de assinatura ADFS via Machine DPAPI"
+      "Golden SAML e chaves de assinatura ADFS via Machine DPAPI",
+      "UNC3753/Luna Moth: vishing, RMM legítimo e extorsão sem criptografia"
     ],
     "appsec-ssdlc": [
       "Supply chain de IA, packages e GitHub Actions",
-      "CVE-2026-20262: CVSS 6.5, exploração limitada e priorização contextual"
+      "CVE-2026-20262: CVSS 6.5, exploração limitada e priorização contextual",
+      "CVE-2026-35273 PeopleSoft: RCE pré-auth, PSEMHUB e exploração como zero-day"
     ],
     "palavras": [
       "Quiçá",
       "Enfadonho",
-      "Amiúde"
+      "Amiúde",
+      "Alhures"
     ]
   }
 }
