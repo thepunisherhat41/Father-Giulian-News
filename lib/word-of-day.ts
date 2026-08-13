@@ -9,17 +9,16 @@ export type DailyWord = {
 };
 
 export const wordOfDay: DailyWord = {
-  word: 'Amiúde',
-  pronunciation: 'a-mi-Ú-de',
-  meaning: 'Com frequência; muitas vezes; repetidamente.',
-  naturalUse: '“Esse tipo de erro aparece amiúde quando a gente olha só para a parcela e esquece o custo total.”',
-  synonyms: ['frequentemente', 'muitas vezes', 'repetidamente', 'com frequência'],
-  tone: 'É uma palavra mais elegante e um pouco mais formal. Funciona muito bem na escrita e pode entrar naturalmente em uma conversa mais cuidadosa, desde que usada com parcimônia.',
-  note: 'A sílaba tônica é “ú”: a-mi-Ú-de. É uma boa alternativa quando “frequentemente” ficaria repetitivo.',
+  word: 'Alhures',
+  pronunciation: 'a-LHU-res',
+  meaning: 'Em outro lugar; em outra parte.',
+  naturalUse: '“Não encontrei esse documento aqui; talvez ele tenha sido arquivado alhures.”',
+  synonyms: ['em outro lugar', 'em outra parte', 'noutro lugar'],
+  tone: 'É uma palavra culta e pouco frequente na conversa cotidiana. Funciona bem em texto, humor sutil ou numa frase em que o tom um pouco mais elegante seja intencional.',
+  note: 'O interessante é o contraste com “algures” (em algum lugar) e “nenhures” (em lugar nenhum). Use com parcimônia para não soar artificial.',
 };
 
 export const upcomingWords = [
-  { word: 'Alhures', hint: 'Em outro lugar; em outra parte.' },
   { word: 'Parcimônia', hint: 'Moderação, comedimento ou economia no uso de algo.' },
   { word: 'Ínterim', hint: 'Intervalo de tempo entre dois acontecimentos.' },
   { word: 'Intempestivo', hint: 'Que acontece em momento inadequado ou inoportuno.' },
@@ -27,4 +26,5 @@ export const upcomingWords = [
   { word: 'Diligente', hint: 'Cuidadoso, aplicado e atento ao que precisa ser feito.' },
   { word: 'Ponderado', hint: 'Que age ou se expressa com equilíbrio e reflexão.' },
   { word: 'Idôneo', hint: 'Adequado, confiável ou moralmente íntegro, conforme o contexto.' },
+  { word: 'Algures', hint: 'Em algum lugar; em alguma parte.' },
 ];
