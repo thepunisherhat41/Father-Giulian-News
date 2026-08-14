@@ -3,6 +3,7 @@ import './daily-overrides-2026-08-13-10h';
 import './daily-overrides-2026-08-13-17h';
 import './daily-overrides-2026-08-14';
 import './daily-overrides-2026-08-14-10h';
+import './music-overrides';
 
 export type Category = {
   slug: string;
@@ -20,7 +21,8 @@ export const categories: Category[] = [
   { slug: 'planeta', label: 'Planeta', emoji: '🌎', description: 'Oceanos, geologia, atmosfera, fenômenos naturais, rios, lagos e a Terra.' },
   { slug: 'animais', label: 'Mundo Animal', emoji: '🐾', description: 'Comportamento, evolução, inteligência, espécies e ecossistemas.' },
   { slug: 'tempo', label: 'Tempo e Clima', emoji: '🌦️', description: 'Meteorologia, clima, tempestades e fenômenos extremos.' },
-  { slug: 'curiosidades', label: 'Curiosidades', emoji: '🧠', description: 'Ciência, história, psicologia, linguagem, vocabulário e conexões inesperadas.', subcategories: ['Palavra do dia', 'Ciência', 'História', 'Psicologia', 'Linguagem', 'Cultura'] },
+  { slug: 'curiosidades', label: 'Curiosidades', emoji: '🧠', description: 'Ciência, história, psicologia, linguagem, vocabulário e conexões inesperadas.', subcategories: ['Palavra do dia', 'Mineirês', 'Português de Portugal', 'Ciência', 'História', 'Psicologia', 'Linguagem', 'Cultura'] },
+  { slug: 'musica', label: 'Música', emoji: '🎵', description: 'Rock e música caipira de época, com contexto, histórias, artistas e uma faixa para ouvir com atenção.', subcategories: ['Rock', 'Sertanejo de Época', 'Moda de Viola', 'Música Caipira', 'História da Música'] },
   { slug: 'gravidez', label: 'Gravidez', emoji: '🤰', description: 'Acompanhamento semanal até a DPP, com foco em informação segura e baseada em fontes confiáveis.' },
   { slug: 'pai', label: 'Ser Pai', emoji: '👨‍👧', description: 'Presença, vínculo, segurança, apoio à mãe e desenvolvimento infantil sem fórmulas mágicas.', subcategories: ['Vínculo', 'Apoio à mãe', 'Segurança', 'Desenvolvimento', 'Rotina', 'Autocuidado'] },
   { slug: 'carros', label: 'Carros', emoji: '🚗', description: 'Novos, usados e clássicos, com preço, ano, km, manutenção e custo-benefício.' },
