@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { curiosityCollections, type CuriosityStory } from '@/lib/curiosity-collections';
+import { regionalWords, type RegionalWord } from '@/lib/regional-vocabulary';
 
 function shareStory(collectionTitle: string, story: CuriosityStory) {
   const lines = [
@@ -17,6 +18,29 @@ function shareStory(collectionTitle: string, story: CuriosityStory) {
   if (story.sourceLabel && story.sourceUrl) {
     lines.push('', `Fonte: ${story.sourceLabel}`, story.sourceUrl);
   }
+
+  window.open(
+    `https://api.whatsapp.com/send?text=${encodeURIComponent(lines.join('\n'))}`,
+    '_blank',
+    'noopener,noreferrer',
+  );
+}
+
+function shareRegionalWord(item: RegionalWord) {
+  const lines = [
+    `*${item.label} · ${item.region}*`,
+    '',
+    `*${item.word}*${item.pronunciation ? ` (${item.pronunciation})` : ''}`,
+    '',
+    item.meaning,
+    '',
+    `*Exemplo:* ${item.naturalUse}`,
+    `*Equivalente:* ${item.equivalent}`,
+    '',
+    item.nuance,
+  ];
+
+  if (item.note) lines.push('', `_Nota: ${item.note}_`);
 
   window.open(
     `https://api.whatsapp.com/send?text=${encodeURIComponent(lines.join('\n'))}`,
@@ -142,6 +166,68 @@ export default function CuriosityLibrary() {
           </div>
         </article>
       </div>
+
+      <section className="regionalLexicon">
+        <div className="regionalLexiconHeader">
+          <div>
+            <span>LANGUAGE MAP / +20 XP</span>
+            <h3>O português muda de lugar para lugar</h3>
+            <p>
+              Além da palavra do dia, dois drops mostram como a mesma língua ganha sabores diferentes em Minas Gerais
+              e em Portugal — com contexto real, equivalente e sem tratar regionalismo como erro.
+            </p>
+          </div>
+          <b>PT://VARIANTS</b>
+        </div>
+
+        <div className="regionalLexiconGrid">
+          {regionalWords.map((item) => (
+            <article className={`regionalWordCard ${item.id}`} key={item.id}>
+              <div className="regionalWordTop">
+                <div>
+                  <span>{item.emoji} {item.label}</span>
+                  <small>{item.region}</small>
+                </div>
+                <em>DAILY DROP</em>
+              </div>
+
+              <div className="regionalWordHero">
+                {item.pronunciation && <small>{item.pronunciation}</small>}
+                <h4>{item.word}</h4>
+              </div>
+
+              <p className="regionalWordMeaning">{item.meaning}</p>
+
+              <div className="regionalWordExample">
+                <small>COMO SOA NUMA CONVERSA</small>
+                <blockquote>{item.naturalUse}</blockquote>
+              </div>
+
+              <div className="regionalWordDetails">
+                <div>
+                  <small>EQUIVALENTE</small>
+                  <p>{item.equivalent}</p>
+                </div>
+                <div>
+                  <small>CONTEXTO</small>
+                  <p>{item.nuance}</p>
+                </div>
+              </div>
+
+              {item.note && <div className="regionalWordNote">⌁ {item.note}</div>}
+
+              <div className="regionalNextWords">
+                <small>PRÓXIMOS TERMOS</small>
+                <div>{item.upcoming.map((word) => <span key={word}>{word}</span>)}</div>
+              </div>
+
+              <button className="regionalShare" type="button" onClick={() => shareRegionalWord(item)}>
+                ↗ WHATSAPP · {item.word.toUpperCase()}
+              </button>
+            </article>
+          ))}
+        </div>
+      </section>
     </section>
   );
 }
