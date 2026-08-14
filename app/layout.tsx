@@ -5,8 +5,10 @@ import './share-improvements.css';
 import './dossier.css';
 import './curiosity-library.css';
 import './pregnancy-maternal.css';
+import './music.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
+import MusicHubPortal from '@/components/MusicHubPortal';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -19,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <PregnancyMaternalChanges />
+        <MusicHubPortal />
       </body>
     </html>
   );
