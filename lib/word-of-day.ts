@@ -9,17 +9,16 @@ export type DailyWord = {
 };
 
 export const wordOfDay: DailyWord = {
-  word: 'Alhures',
-  pronunciation: 'a-LHU-res',
-  meaning: 'Em outro lugar; em outra parte.',
-  naturalUse: '“Não encontrei esse documento aqui; talvez ele tenha sido arquivado alhures.”',
-  synonyms: ['em outro lugar', 'em outra parte', 'noutro lugar'],
-  tone: 'É uma palavra culta e pouco frequente na conversa cotidiana. Funciona bem em texto, humor sutil ou numa frase em que o tom um pouco mais elegante seja intencional.',
-  note: 'O interessante é o contraste com “algures” (em algum lugar) e “nenhures” (em lugar nenhum). Use com parcimônia para não soar artificial.',
+  word: 'Parcimônia',
+  pronunciation: 'par-ci-MÔ-nia',
+  meaning: 'Moderação, comedimento ou economia no uso de algo; agir sem excesso.',
+  naturalUse: '“Vou usar o cartão com parcimônia este mês para não transformar conveniência em dívida.”',
+  synonyms: ['moderação', 'comedimento', 'economia', 'sobriedade'],
+  tone: 'É uma palavra culta, mas bastante natural em textos, reuniões e conversas em que a ideia é destacar uso cuidadoso ou moderado de algum recurso.',
+  note: 'Também aparece na expressão “com parcimônia”. Não significa simplesmente gastar pouco: pode significar falar, agir ou usar qualquer recurso sem excesso.',
 };
 
 export const upcomingWords = [
-  { word: 'Parcimônia', hint: 'Moderação, comedimento ou economia no uso de algo.' },
   { word: 'Ínterim', hint: 'Intervalo de tempo entre dois acontecimentos.' },
   { word: 'Intempestivo', hint: 'Que acontece em momento inadequado ou inoportuno.' },
   { word: 'Prosaico', hint: 'Comum, banal ou sem grande elevação.' },
@@ -27,4 +26,5 @@ export const upcomingWords = [
   { word: 'Ponderado', hint: 'Que age ou se expressa com equilíbrio e reflexão.' },
   { word: 'Idôneo', hint: 'Adequado, confiável ou moralmente íntegro, conforme o contexto.' },
   { word: 'Algures', hint: 'Em algum lugar; em alguma parte.' },
+  { word: 'Nenhures', hint: 'Em lugar nenhum.' },
 ];
