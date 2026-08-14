@@ -4,7 +4,9 @@ import './expansion.css';
 import './share-improvements.css';
 import './dossier.css';
 import './curiosity-library.css';
+import './pregnancy-maternal.css';
 import type { Metadata } from 'next';
+import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -14,7 +16,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        {children}
+        <PregnancyMaternalChanges />
+      </body>
     </html>
   );
 }
