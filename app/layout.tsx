@@ -6,6 +6,7 @@ import './dossier.css';
 import './curiosity-library.css';
 import './pregnancy-maternal.css';
 import './music.css';
+import './caipira-top5.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import MusicHubPortal from '@/components/MusicHubPortal';
