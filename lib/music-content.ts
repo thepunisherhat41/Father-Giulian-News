@@ -9,11 +9,18 @@ export type MusicTrack = {
   searchHint: string;
 };
 
+export type FeaturedSong = {
+  title: string;
+  note: string;
+};
+
 export type MusicArtist = {
   name: string;
   era: string;
   description: string;
   startWith: string[];
+  history?: string;
+  featuredSongs?: FeaturedSong[];
 };
 
 export const rockTracks: MusicTrack[] = [
@@ -111,8 +118,8 @@ export const caipiraTracks: MusicTrack[] = [
     title: 'Cuitelinho',
     artist: 'Pena Branca & Xavantinho',
     style: 'Música caipira / folclore',
-    whyListen: 'É uma ponte linda entre tradição oral, viola e uma interpretação mais contemplativa da música rural brasileira.',
-    context: 'Pena Branca & Xavantinho, mineiros de Uberlândia, ajudaram a levar a música caipira para públicos urbanos sem retirar dela a identidade do interior.',
+    whyListen: 'É uma ponte entre tradição oral, viola e uma interpretação mais contemplativa da música rural brasileira.',
+    context: 'Pena Branca & Xavantinho ajudaram a levar a música caipira a públicos urbanos sem retirar dela a identidade do interior.',
     mood: ['Minas', 'viola', 'contemplativa'],
     searchHint: 'Pena Branca Xavantinho Cuitelinho',
   },
@@ -126,11 +133,61 @@ export const rockArtists: MusicArtist[] = [
 ];
 
 export const caipiraArtists: MusicArtist[] = [
-  { name: 'Tonico & Tinoco', era: 'décadas de 1940–1990', description: 'Uma das duplas fundamentais da música caipira brasileira, com repertório de roça, boiadeiro, religiosidade, saudade e narrativa.', startWith: ['Chico Mineiro', 'Meu Rancho no Pé da Serra', 'Tristeza do Jeca', 'Boiadeiro Saudoso'] },
-  { name: 'Tião Carreiro & Pardinho', era: 'décadas de 1950–1990', description: 'Referência absoluta da viola e do pagode caipira, com levadas que mudaram o instrumento dentro do sertanejo raiz.', startWith: ['Rei do Gado', 'Pagode em Brasília', 'Amargurado'] },
-  { name: 'Liu & Léu', era: 'décadas de 1950–2010', description: 'Dupla ligada à tradição das modas de viola, causos e repertório rural.', startWith: ['O Ipê e o Prisioneiro', 'Rei dos Canoeiros'] },
-  { name: 'Pena Branca & Xavantinho', era: 'décadas de 1960–1990', description: 'Mineiros, levaram a tradição caipira a novos públicos com interpretações de enorme delicadeza.', startWith: ['Cuitelinho', 'Calix Bento', 'O Cio da Terra'] },
-  { name: 'Cascatinha & Inhana', era: 'décadas de 1940–1980', description: 'Duo histórico que ampliou a linguagem do sertanejo antigo com guarânias e canções de grande força vocal.', startWith: ['Índia', 'Meu Primeiro Amor'] },
+  {
+    name: 'Tonico & Tinoco',
+    era: 'dos anos 1930 aos anos 1990',
+    description: 'Uma das duplas fundamentais da música caipira brasileira, com modas narrativas, roça, boiadeiro, religiosidade e saudade.',
+    history: 'Os irmãos João Salvador Perez e José Salvador Perez cresceram em ambiente rural no interior paulista e começaram a se apresentar ainda nos anos 1930. Depois da mudança para São Paulo, ganharam espaço no rádio e chegaram ao disco em meados dos anos 1940. “Chico Mineiro”, gravada em 1946, projetou a dupla nacionalmente. A longa carreira passou por rádio, cinema e milhares de apresentações sem abandonar a identidade caipira.',
+    startWith: ['Chico Mineiro', 'Meu Rancho no Pé da Serra'],
+    featuredSongs: [
+      { title: 'Chico Mineiro', note: 'Moda de viola narrativa; uma das gravações que consolidaram a dupla nacionalmente.' },
+      { title: 'Meu Rancho no Pé da Serra', note: 'Vida rural em primeiro plano: rancho, café, criação, trabalho e memória do campo.' },
+    ],
+  },
+  {
+    name: 'Tião Carreiro & Pardinho',
+    era: 'dos anos 1950 aos anos 1990',
+    description: 'Referência absoluta da viola e do pagode caipira, com uma linguagem rítmica que influenciou gerações de violeiros.',
+    history: 'A dupla ganhou forma na segunda metade dos anos 1950. Tião Carreiro desenvolveu um ponteado e uma batida próprios de viola; em 1959 essa linguagem foi batizada de “pagode” e chegou ao disco em 1960 com “Pagode em Brasília”. Ao lado de Pardinho, construiu uma sonoridade imediatamente reconhecível, em que a viola deixa de ser simples acompanhamento e passa a comandar o ritmo.',
+    startWith: ['Pagode em Brasília', 'Rei do Gado'],
+    featuredSongs: [
+      { title: 'Pagode em Brasília', note: 'Faixa essencial para ouvir o nascimento do pagode de viola como linguagem própria.' },
+      { title: 'Rei do Gado', note: 'Narrativa sertaneja com a viola e a identidade rítmica da dupla em evidência.' },
+    ],
+  },
+  {
+    name: 'Liu & Léu',
+    era: 'do fim dos anos 1950 aos anos 2000',
+    description: 'Dupla ligada às modas de viola, causos, boiadeiros e ao repertório rural que atravessou rádio, discos e televisão.',
+    history: 'Liu & Léu aparecem em disco no fim dos anos 1950 e se consolidaram no circuito sertanejo de rádio e gravações nas décadas seguintes. O repertório percorreu boiadeiros, lavoura, saudade, família e narrativas dramáticas. Em 1978 criaram o selo Tocantins e continuaram registrando música de raiz; já no século XXI, o álbum “Jeitão de Caboclo” recebeu indicação ao Grammy Latino na categoria regional.',
+    startWith: ['Boiadeiro Errante', 'O Ipê e o Prisioneiro'],
+    featuredSongs: [
+      { title: 'Boiadeiro Errante', note: 'Gravação do começo da carreira que carrega o imaginário de estrada, boiada e sertão.' },
+      { title: 'O Ipê e o Prisioneiro', note: 'Uma narrativa dramática, quase um conto cantado — característica forte da moda sertaneja antiga.' },
+    ],
+  },
+  {
+    name: 'Pena Branca & Xavantinho',
+    era: 'dos anos 1950 aos anos 1990',
+    description: 'A tradição caipira encontrando a MPB sem perder a viola, a voz do interior e a ligação com a cultura rural.',
+    history: 'Os irmãos cresceram na zona rural da região de Uberlândia e começaram a cantar em rádios locais no fim dos anos 1950. Mudaram-se para São Paulo em 1968 e, na década seguinte, adotaram o nome definitivo. A partir dos anos 1980 alcançaram projeção maior e fizeram uma ponte rara entre música caipira, tradição oral e repertório da MPB, mantendo a viola como centro da identidade sonora.',
+    startWith: ['Cuitelinho', 'O Cio da Terra'],
+    featuredSongs: [
+      { title: 'Cuitelinho', note: 'Tradição oral e interpretação delicada; ótima porta de entrada para o lado contemplativo da música caipira.' },
+      { title: 'O Cio da Terra', note: 'Exemplo de como a dupla aproximou o universo rural da MPB sem descaracterizar a sonoridade caipira.' },
+    ],
+  },
+  {
+    name: 'Cascatinha & Inhana',
+    era: 'dos anos 1940 aos anos 1980',
+    description: 'Casal histórico que misturou sertanejo antigo, canção romântica e forte influência de guarânias e música paraguaia.',
+    history: 'Francisco dos Santos e Ana Eufrosina da Silva formaram uma parceria artística e também eram casados. Entraram no circuito do rádio e dos discos no começo dos anos 1950. A gravação de “Índia” e “Meu Primeiro Amor” levou a dupla a enorme popularidade e ajudou a incorporar guarânias e repertório paraguaio ao imaginário sertanejo brasileiro. A força vocal de Inhana se tornou uma das marcas mais lembradas da dupla.',
+    startWith: ['Índia', 'Meu Primeiro Amor'],
+    featuredSongs: [
+      { title: 'Índia', note: 'Guarânia que se tornou um dos maiores símbolos da dupla e da influência paraguaia no sertanejo antigo.' },
+      { title: 'Meu Primeiro Amor', note: 'Canção romântica que mostra a harmonia vocal e a faceta mais sentimental do repertório da dupla.' },
+    ],
+  },
 ];
 
 export const musicDaily = {
