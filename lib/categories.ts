@@ -7,6 +7,7 @@ import './daily-overrides-2026-08-14-17h';
 import './music-overrides';
 import './daily-overrides-2026-08-15';
 import './daily-overrides-2026-08-15-fixes';
+import './vehicle-overrides';
 
 export type Category = {
   slug: string;
