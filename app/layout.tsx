@@ -7,6 +7,7 @@ import './curiosity-library.css';
 import './pregnancy-maternal.css';
 import './music.css';
 import './caipira-top5.css';
+import './music-player.css';
 import './political-analysis.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
