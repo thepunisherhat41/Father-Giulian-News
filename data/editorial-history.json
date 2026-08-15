@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T05:00:00-03:00",
+  "updatedAt": "2026-08-15T10:00:00-03:00",
   "rule": "Do not reuse the same primary topic, title, example or takeaway on consecutive editions. Prefer a different subject; if a broader subject returns because of major news, use a materially different angle and state what changed.",
   "history": {
     "brasil": [
@@ -14,7 +14,8 @@
       "Prazo final de registro, diferença entre convenção/registro e uso do DivulgaCandContas",
       "Últimas 24 horas antes do prazo de registro: etapas e fontes oficiais",
       "Reta final do registro: protocolo versus deferimento",
-      "15/08: fechamento às 19h dos pedidos de registro e início da propaganda em 16/08"
+      "15/08: fechamento às 19h dos pedidos de registro e início da propaganda em 16/08",
+      "10h de 15/08: últimas nove horas do prazo; protocolo não equivale a deferimento"
     ],
     "mundo": [
       "Petróleo recua com estoques dos EUA enquanto Hormuz permanece limitado",
@@ -39,7 +40,8 @@
       "Rios atmosféricos e transporte de vapor",
       "Inverno seco em SP, inversão térmica e dispersão de poluentes",
       "Umidade relativa versus ponto de orvalho e conforto atmosférico",
-      "Frente fria em SP em 15/08 e transição para veranico/ar seco"
+      "Frente fria em SP em 15/08 e transição para veranico/ar seco",
+      "10h de 15/08: alerta severo de chuva forte em São Paulo com raios, vento e possibilidade de granizo"
     ],
     "curiosidades": [
       "Metal e madeira na mesma temperatura: condutividade e sensação térmica",
