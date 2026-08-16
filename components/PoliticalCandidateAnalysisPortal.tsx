@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { candidatePoliticalAnalysis, type CandidatePoliticalAnalysis } from '@/lib/political-candidate-analysis';
+import { candidateMandateContext } from '@/lib/political-mandate-details';
 
 type AnalysisHost = {
   name: string;
@@ -10,25 +11,88 @@ type AnalysisHost = {
 };
 
 function CandidateAnalysisBlock({ name, analysis }: { name: string; analysis: CandidatePoliticalAnalysis }) {
+  const mandate = candidateMandateContext[name];
+
   return (
     <section className="candidateAnalysisBlock" aria-label={`Análise eleitoral de ${name}`}>
-      <div className="candidateAnalysisSection proposals">
-        <small>PROPOSTAS / BANDEIRAS DECLARADAS</small>
-        <ul>
-          {analysis.proposals.map((item) => <li key={item}>{item}</li>)}
-        </ul>
-      </div>
+      {mandate && (
+        <>
+          <div className="candidateMandateHeader">
+            <div>
+              <small>CICLO ELEITORAL 2026</small>
+              <strong>MANDATO PRETENDIDO {mandate.mandate}</strong>
+            </div>
+            <span>{mandate.officeLens}</span>
+          </div>
+
+          <div className="candidateProposalBasis">
+            <small>DE ONDE VÊM AS PROPOSTAS DESTE CARD</small>
+            <strong>{mandate.basis}</strong>
+            <p>{mandate.basisNote}</p>
+          </div>
+
+          <div className="candidateProposalDeepDive">
+            <div className="candidateProposalDeepDiveTitle">
+              <small>PROPOSTAS PARA O NOVO MANDATO · LEITURA DETALHADA</small>
+              <p>O texto declarado pela candidatura aparece primeiro. Logo abaixo, o site separa significado prático, caminho institucional, lacunas de detalhamento e como a promessa pode ser cobrada depois.</p>
+            </div>
+
+            {analysis.proposals.map((proposal, index) => {
+              const detail = mandate.proposalDetails[index];
+              return (
+                <article className="candidateProposalCard" key={`${name}-${index}`}>
+                  <div className="candidateProposalCardTop">
+                    <span>PROPOSTA {String(index + 1).padStart(2, '0')}</span>
+                    {detail && <b>{detail.origin}</b>}
+                  </div>
+                  <h5>{proposal}</h5>
+
+                  {detail && (
+                    <div className="candidateProposalDetailGrid">
+                      <div>
+                        <small>O QUE ISSO SIGNIFICA NA PRÁTICA</small>
+                        <p>{detail.explanation}</p>
+                      </div>
+                      <div>
+                        <small>COMO PODERIA VIRAR POLÍTICA / LEI</small>
+                        <p>{detail.institutionalPath}</p>
+                      </div>
+                      <div>
+                        <small>O QUE AINDA PRECISA SER DETALHADO</small>
+                        <p>{detail.openQuestions}</p>
+                      </div>
+                      <div>
+                        <small>COMO ACOMPANHAR SE FOR ELEITO</small>
+                        <p>{detail.accountability}</p>
+                      </div>
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </>
+      )}
+
+      {!mandate && (
+        <div className="candidateAnalysisSection proposals">
+          <small>PROPOSTAS / BANDEIRAS DECLARADAS</small>
+          <ul>
+            {analysis.proposals.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </div>
+      )}
 
       <div className="candidateTradeoffGrid">
         <section className="candidateAnalysisSection positives">
-          <small>PONTOS POSITIVOS / ARGUMENTOS FAVORÁVEIS</small>
+          <small>ARGUMENTOS FAVORÁVEIS / VANTAGENS POTENCIAIS</small>
           <ul>
             {analysis.positives.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </section>
 
         <section className="candidateAnalysisSection negatives">
-          <small>PONTOS NEGATIVOS / CRÍTICAS & RISCOS</small>
+          <small>CRÍTICAS / LIMITAÇÕES / PONTOS DE ATENÇÃO</small>
           <ul>
             {analysis.negatives.map((item) => <li key={item}>{item}</li>)}
           </ul>
@@ -36,7 +100,7 @@ function CandidateAnalysisBlock({ name, analysis }: { name: string; analysis: Ca
       </div>
 
       <div className="candidateAnalysisSources">
-        <small>FONTES PARA CONFERIR</small>
+        <small>FONTES PARA CONFERIR O CONTEÚDO</small>
         <div>
           {analysis.sources.map((source) => (
             <a key={source.url} href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a>
@@ -49,16 +113,22 @@ function CandidateAnalysisBlock({ name, analysis }: { name: string; analysis: Ca
 
 function MethodologyNote() {
   return (
-    <aside className="candidateMethodology">
+    <aside className="candidateMethodology candidateMethodologyExpanded">
       <div>
         <span>COMPARADOR ELEITORAL / METODOLOGIA</span>
-        <h3>“Positivo” e “negativo” não são nota nem recomendação de voto.</h3>
+        <h3>Agora o site separa proposta para o próximo mandato de histórico e de bandeira genérica.</h3>
       </div>
-      <p>
-        Os cards separam experiência, propostas declaradas, vantagens potenciais e críticas ou riscos documentados.
-        Uma mesma proposta pode ser vista como benefício por um grupo e como custo por outro. O objetivo é mostrar o
-        trade-off e levar você até a fonte original. Proposta de campanha também não equivale a medida aprovada nem a resultado garantido.
-      </p>
+      <div className="candidateMethodologyCopy">
+        <p>
+          Para Presidência e Governo de São Paulo, o período mostrado é 2027–2030 e a prioridade é usar propostas e programas do ciclo eleitoral de 2026, preferindo o documento registrado na Justiça Eleitoral quando disponível. Uma proposta de campanha não equivale a medida aprovada, orçamento garantido ou resultado futuro.
+        </p>
+        <p>
+          Para o Senado por São Paulo, o período é 2027–2034. Senador não executa um plano de governo: legisla, fiscaliza, participa do orçamento e de competências exclusivas do Senado. Por isso, os cards chamam esses itens de pautas legislativas ou compromissos de atuação.
+        </p>
+        <p>
+          “Argumento favorável” e “crítica” não são nota nem recomendação de voto. A mesma proposta pode produzir benefícios e custos diferentes. A página explicita dependências institucionais e pontos ainda não detalhados para você poder conferir a promessa na fonte e acompanhar sua execução.
+        </p>
+      </div>
     </aside>
   );
 }
