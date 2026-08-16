@@ -94,15 +94,15 @@ export default function VehicleComparisonHub({ type }: { type: 'carros' | 'motos
     <section className={`vehicleComparisonHub ${type}`}>
       <div className="vehicleComparisonHeader">
         <div>
-          <span>{type === 'carros' ? 'GARAGE RADAR / 4 OPÇÕES' : 'MOTO RADAR / 4 OPÇÕES'}</span>
-          <h3>{type === 'carros' ? 'Não escolha um usado olhando um carro só' : 'Quatro motos, quatro propostas diferentes'}</h3>
+          <span>{type === 'carros' ? 'GARAGE RADAR / 4 OPÇÕES / SEM 1.0' : 'MOTO RADAR / 4 OPÇÕES'}</span>
+          <h3>{type === 'carros' ? 'Até R$ 70 mil, motor acima de 1.0 e quatro alternativas reais' : 'Quatro motos, quatro propostas diferentes'}</h3>
           <p>
             {type === 'carros'
-              ? 'Compare preço, perfil de uso, manutenção, histórico e risco do exemplar. O modelo é só o começo da decisão.'
+              ? 'A curadoria ignora carros 1.0 e mantém FIPE e média nacional até R$ 70 mil. Compare preço, motor, perfil de uso, manutenção, histórico e risco do exemplar — o modelo é só o começo da decisão.'
               : 'Cidade, trail, esportiva ou viagem: preço parecido pode esconder custos e usos completamente diferentes.'}
           </p>
         </div>
-        <b>04 PICKS</b>
+        <b>{type === 'carros' ? '>1.0 · ≤70K' : '04 PICKS'}</b>
       </div>
 
       <div className="vehicleOptionGrid">
