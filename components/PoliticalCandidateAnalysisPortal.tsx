@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { candidatePoliticalAnalysis, type CandidatePoliticalAnalysis } from '@/lib/political-candidate-analysis';
 import { candidateMandateContext } from '@/lib/political-mandate-details';
+import { candidatePopulationImpact } from '@/lib/political-population-impact';
 
 type AnalysisHost = {
   name: string;
@@ -12,6 +13,7 @@ type AnalysisHost = {
 
 function CandidateAnalysisBlock({ name, analysis }: { name: string; analysis: CandidatePoliticalAnalysis }) {
   const mandate = candidateMandateContext[name];
+  const populationImpacts = candidatePopulationImpact[name] ?? [];
 
   return (
     <section className="candidateAnalysisBlock" aria-label={`Análise eleitoral de ${name}`}>
@@ -34,11 +36,12 @@ function CandidateAnalysisBlock({ name, analysis }: { name: string; analysis: Ca
           <div className="candidateProposalDeepDive">
             <div className="candidateProposalDeepDiveTitle">
               <small>PROPOSTAS PARA O NOVO MANDATO · LEITURA DETALHADA</small>
-              <p>O texto declarado pela candidatura aparece primeiro. Logo abaixo, o site separa significado prático, caminho institucional, lacunas de detalhamento e como a promessa pode ser cobrada depois.</p>
+              <p>O texto declarado pela candidatura aparece primeiro. Logo abaixo, o site separa significado prático, impacto para a população, caminho institucional, lacunas de detalhamento e como a promessa pode ser cobrada depois.</p>
             </div>
 
             {analysis.proposals.map((proposal, index) => {
               const detail = mandate.proposalDetails[index];
+              const impact = populationImpacts[index];
               return (
                 <article className="candidateProposalCard" key={`${name}-${index}`}>
                   <div className="candidateProposalCardTop">
@@ -46,6 +49,36 @@ function CandidateAnalysisBlock({ name, analysis }: { name: string; analysis: Ca
                     {detail && <b>{detail.origin}</b>}
                   </div>
                   <h5>{proposal}</h5>
+
+                  {impact && (
+                    <aside className="candidatePopulationImpact">
+                      <div className="candidatePopulationImpactTop">
+                        <div>
+                          <small>IMPACTO NA VIDA REAL</small>
+                          <strong>O que pode mudar para a população</strong>
+                        </div>
+                        <span>FOCO: CIDADÃO</span>
+                      </div>
+
+                      <div className="candidateImpactGroups">
+                        <small>QUEM PODE SENTIR PRIMEIRO</small>
+                        <div>{impact.groups.map((group) => <span key={group}>{group}</span>)}</div>
+                      </div>
+
+                      <p className="candidateImpactEveryday">{impact.everyday}</p>
+
+                      <div className="candidateImpactTradeoffs">
+                        <div className="possibleUpside">
+                          <small>POTENCIAL BENEFÍCIO PARA A POPULAÇÃO</small>
+                          <p>{impact.potentialUpside}</p>
+                        </div>
+                        <div className="impactWatch">
+                          <small>O QUE O CIDADÃO PRECISA OBSERVAR</small>
+                          <p>{impact.pointsToWatch}</p>
+                        </div>
+                      </div>
+                    </aside>
+                  )}
 
                   {detail && (
                     <div className="candidateProposalDetailGrid">
@@ -116,7 +149,7 @@ function MethodologyNote() {
     <aside className="candidateMethodology candidateMethodologyExpanded">
       <div>
         <span>COMPARADOR ELEITORAL / METODOLOGIA</span>
-        <h3>Agora o site separa proposta para o próximo mandato de histórico e de bandeira genérica.</h3>
+        <h3>Proposta, poder do cargo e efeito na vida real são coisas diferentes — agora a página separa as três.</h3>
       </div>
       <div className="candidateMethodologyCopy">
         <p>
@@ -126,7 +159,10 @@ function MethodologyNote() {
           Para o Senado por São Paulo, o período é 2027–2034. Senador não executa um plano de governo: legisla, fiscaliza, participa do orçamento e de competências exclusivas do Senado. Por isso, os cards chamam esses itens de pautas legislativas ou compromissos de atuação.
         </p>
         <p>
-          “Argumento favorável” e “crítica” não são nota nem recomendação de voto. A mesma proposta pode produzir benefícios e custos diferentes. A página explicita dependências institucionais e pontos ainda não detalhados para você poder conferir a promessa na fonte e acompanhar sua execução.
+          O bloco “Impacto na vida real” prioriza trabalhador, família, aposentado, estudante, usuário do SUS, consumidor, morador e contribuinte. Ele descreve efeitos possíveis se a proposta for aprovada e implementada naquele desenho; não afirma benefício ou prejuízo como certeza antes de existir texto final, orçamento e execução.
+        </p>
+        <p>
+          “Argumento favorável” e “crítica” não são nota nem recomendação de voto. A mesma proposta pode produzir benefícios e custos diferentes para grupos diferentes. A página explicita dependências institucionais e pontos ainda não detalhados para você poder conferir a promessa na fonte e acompanhar sua execução.
         </p>
       </div>
     </aside>
