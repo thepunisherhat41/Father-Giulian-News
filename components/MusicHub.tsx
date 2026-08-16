@@ -30,6 +30,16 @@ function spotifyTrack(trackId: string) {
   return `https://open.spotify.com/track/${trackId}`;
 }
 
+function uniqueTracks(source: MusicTrack[]) {
+  const seen = new Set<string>();
+  return source.filter((track) => {
+    const key = `${track.artist.trim().toLowerCase()}::${track.title.trim().toLowerCase()}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 function SpotifyPlayer({ trackId, title, artist, compact = false }: { trackId: string; title: string; artist: string; compact?: boolean }) {
   return (
     <div className={`spotifyPlayer ${compact ? 'compact' : ''}`}>
@@ -56,21 +66,26 @@ function SpotifyPlayer({ trackId, title, artist, compact = false }: { trackId: s
 
 export default function MusicHub() {
   const [lane, setLane] = useState<'rock' | 'caipira'>('rock');
-  const tracks = lane === 'rock' ? rockTracks : caipiraTracks;
-  const artists = lane === 'rock' ? rockArtists : caipiraArtists;
-  const [trackIndex, setTrackIndex] = useState(0);
+  const [selectedByLane, setSelectedByLane] = useState({ rock: 0, caipira: 0 });
   const [topPlayingKey, setTopPlayingKey] = useState<string | null>(null);
-  const selected = useMemo(() => tracks[Math.min(trackIndex, tracks.length - 1)], [tracks, trackIndex]);
-  const selectedTrackId = getSpotifyTrackId(selected.artist, selected.title);
+
+  const rockLaneTracks = useMemo(() => uniqueTracks(rockTracks), []);
+  const caipiraLaneTracks = useMemo(() => uniqueTracks(caipiraTracks), []);
+  const tracks = lane === 'rock' ? rockLaneTracks : caipiraLaneTracks;
+  const artists = lane === 'rock' ? rockArtists : caipiraArtists;
+  const trackIndex = Math.min(selectedByLane[lane], Math.max(0, tracks.length - 1));
+  const selected = tracks[trackIndex];
+  const selectedTrackId = selected ? getSpotifyTrackId(selected.artist, selected.title) : undefined;
 
   const switchLane = (next: 'rock' | 'caipira') => {
+    if (next === lane) return;
     setLane(next);
-    setTrackIndex(0);
     setTopPlayingKey(null);
   };
 
   const selectTrack = (index: number) => {
-    setTrackIndex(index);
+    setSelectedByLane((current) => ({ ...current, [lane]: index }));
+    setTopPlayingKey(null);
     window.setTimeout(() => {
       document.getElementById('daily-music-player')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 80);
@@ -78,13 +93,15 @@ export default function MusicHub() {
 
   const topSongsFor = (artistName: string): PlayableSong[] => caipiraTop5Playback[artistName] ?? [];
 
+  if (!selected) return null;
+
   return (
     <section className="musicHub">
       <div className="musicIntro">
         <div>
           <span>MUSIC ARCHIVE / TWO WORLDS</span>
           <h3>Música para ouvir com contexto</h3>
-          <p>Não é só uma lista de faixas: cada seleção explica o que escutar, de onde veio aquele som e por que ele merece alguns minutos de atenção.</p>
+          <p>Rock e música caipira vivem em arquivos separados. Cada trilha guarda sua própria seleção, seu player e sua fila — sem misturar repertórios.</p>
         </div>
         <b>+100 XP</b>
       </div>
@@ -92,6 +109,14 @@ export default function MusicHub() {
       <div className="musicLaneSwitch">
         <button className={lane === 'rock' ? 'active' : ''} onClick={() => switchLane('rock')}>🎸 ROCK</button>
         <button className={lane === 'caipira' ? 'active' : ''} onClick={() => switchLane('caipira')}>🪕 SERTANEJO DE ÉPOCA</button>
+      </div>
+
+      <div className={`musicLaneIdentity ${lane}`}>
+        <div>
+          <small>{lane === 'rock' ? 'ARQUIVO 01 / ROCK' : 'ARQUIVO 02 / RAÍZES'}</small>
+          <strong>{lane === 'rock' ? 'Rock · arquivo independente' : 'Sertanejo de época · arquivo independente'}</strong>
+        </div>
+        <span>{tracks.length} FAIXAS NA FILA</span>
       </div>
 
       <div className={`musicHero ${lane}`}>
@@ -119,12 +144,16 @@ export default function MusicHub() {
         )}
       </div>
 
-      <div className="musicTrackList">
+      <div className={`musicTrackList ${lane}`}>
         {tracks.map((track, index) => (
-          <button key={`${track.artist}-${track.title}`} className={index === trackIndex ? 'active' : ''} onClick={() => selectTrack(index)}>
+          <button
+            key={`${lane}-${index}-${track.artist}-${track.title}`}
+            className={index === trackIndex ? 'active' : ''}
+            onClick={() => selectTrack(index)}
+          >
             <span>{String(index + 1).padStart(2, '0')}</span>
             <div><strong>{track.title}</strong><small>{track.artist} · {track.style}</small></div>
-            <em>{index === trackIndex ? 'NO PLAYER ↑' : 'TOCAR ▶'}</em>
+            <em>{index === trackIndex ? 'TOCANDO ↑' : 'TOCAR ▶'}</em>
           </button>
         ))}
       </div>
