@@ -11,6 +11,7 @@ import './vehicle-overrides';
 import './daily-overrides-2026-08-15-10h';
 import './daily-overrides-2026-08-15-17h';
 import './daily-overrides-2026-08-16';
+import './daily-overrides-2026-08-16-weather-fix';
 
 export type Category = {
   slug: string;
