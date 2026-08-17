@@ -18,6 +18,7 @@ import './daily-overrides-2026-08-16-10h';
 import './daily-overrides-2026-08-16-17h';
 import './daily-overrides-2026-08-17';
 import './daily-overrides-2026-08-17-security-fix';
+import './daily-overrides-2026-08-17-10h';
 
 export type Category = {
   slug: string;
