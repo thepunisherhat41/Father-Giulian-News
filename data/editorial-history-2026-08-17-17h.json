@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-08-17T17:00:00-03:00",
+  "rule": "Do not reuse these primary angles in the next edition unless there is a materially new development.",
+  "updated": {
+    "politica": "18/08 como data de referência do TSE para levantamento nacional de candidaturas usado na aferição dos percentuais mínimos do FEFC; não confundir com deferimento coletivo",
+    "mundo": "Fechamento global de 17/08: S&P -0,26%, Dow -0,35%, Nasdaq +0,17%, dólar mais fraco e Treasury de 30 anos em 5,30%",
+    "financas": "Curva de juros: expectativa de Fed no curto prazo versus prêmio de prazo no Treasury de 30 anos; aplicação prática em CET, prazo e indexador",
+    "tecnologia": "Risco de correção em ações ligadas à IA apesar de potencial produtivo real; separar tecnologia de valuation e acompanhar fluxo de caixa/capex"
+  },
+  "keptFromBase": [
+    "Brasil: IBC-Br e desaceleração",
+    "Planeta: aquíferos",
+    "Animais: urubus e abutres",
+    "Tempo: SP quente e seco",
+    "Curiosidades: gelo flutua",
+    "Música: Led Zeppelin / Pena Branca & Xavantinho",
+    "Gravidez: 6s+1d e náusea/hidratação",
+    "Ser Pai: redução de gatilhos de enjoo",
+    "Carros: Punto 1.4, Sandero 1.6, Fox 1.6, Focus 2.0",
+    "Motos: NMax, XRE 300, MT-07, Versys 650",
+    "Mecânica: fuel trim",
+    "Náutica: bomba de porão",
+    "Viagens: São Luiz do Paraitinga",
+    "Cyber: roubo de sessão/AiTM",
+    "AppSec: BOLA/IDOR"
+  ]
+}
