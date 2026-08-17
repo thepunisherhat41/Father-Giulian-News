@@ -17,6 +17,7 @@ import './daily-overrides-2026-08-16-car-engine-filter';
 import './daily-overrides-2026-08-16-10h';
 import './daily-overrides-2026-08-16-17h';
 import './daily-overrides-2026-08-17';
+import './daily-overrides-2026-08-17-security-fix';
 
 export type Category = {
   slug: string;
