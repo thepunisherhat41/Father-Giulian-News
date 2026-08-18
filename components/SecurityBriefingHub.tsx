@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { securityBriefingPillars, securityBriefingStories, type SecurityBriefingStory } from '@/lib/security-briefing-content';
+import { securityBriefingMedia } from '@/lib/security-briefing-media';
 
 function whatsapp(text: string) {
   window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
@@ -12,36 +13,20 @@ async function copy(text: string) {
 }
 
 function StoryVisual({ story }: { story: SecurityBriefingStory }) {
+  const media = securityBriefingMedia[story.id];
+  if (!media) return null;
+
   return (
-    <div className="briefingVisual" role="img" aria-label={`Visual editorial: ${story.title}`}>
-      <svg viewBox="0 0 900 420" aria-hidden="true">
-        <defs>
-          <linearGradient id={`bg-${story.id}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#081612" />
-            <stop offset="1" stopColor="#101a28" />
-          </linearGradient>
-          <radialGradient id={`pulse-${story.id}`} cx="76%" cy="28%" r="56%">
-            <stop offset="0" stopColor="#27ff9a" stopOpacity=".23" />
-            <stop offset="1" stopColor="#27ff9a" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <rect width="900" height="420" fill={`url(#bg-${story.id})`} />
-        <rect width="900" height="420" fill={`url(#pulse-${story.id})`} />
-        {Array.from({ length: 9 }).map((_, index) => (
-          <line key={index} x1="0" x2="900" y1={45 + index * 42} y2={45 + index * 42} stroke="#8cb6aa" strokeOpacity=".07" />
-        ))}
-        <circle cx="720" cy="142" r="82" fill="none" stroke="#27ff9a" strokeOpacity=".28" strokeWidth="2" />
-        <circle cx="720" cy="142" r="54" fill="none" stroke="#27ff9a" strokeOpacity=".12" strokeWidth="12" />
-        <path d="M90 322 C190 248, 286 350, 390 264 S590 330, 790 235" fill="none" stroke="#27ff9a" strokeOpacity=".72" strokeWidth="4" />
-        <circle cx="390" cy="264" r="8" fill="#27ff9a" />
-      </svg>
-      <div className="briefingVisualCopy">
-        <span>{story.visual.icon}</span>
-        <small>{story.visual.signal}</small>
-        <strong>{story.visual.metric}</strong>
+    <a className="briefingVisual real" href={media.sourceUrl} target="_blank" rel="noreferrer" aria-label={`Abrir fonte da imagem: ${story.title}`}>
+      <img src={media.url} alt={media.alt} loading="lazy" referrerPolicy="no-referrer" />
+      <div className="briefingVisualShade" />
+      <div className="briefingVisualCredit">
+        <small>REAL SOURCE MEDIA</small>
+        <strong>{media.caption}</strong>
+        <span>{media.credit}</span>
       </div>
       <div className={`briefingPriority priority-${story.priority.toLowerCase()}`}>{story.priority}</div>
-    </div>
+    </a>
   );
 }
 
@@ -115,28 +100,31 @@ export default function SecurityBriefingHub() {
       </section>
 
       <div className="briefingGrid">
-        {stories.map((story) => (
-          <article className="briefingStory" key={story.id}>
-            <StoryVisual story={story} />
-            <div className="briefingStoryBody">
-              <div className="briefingStoryMeta"><span>{story.pillar}</span><b>{story.freshness}</b></div>
-              <h4>{story.title}</h4>
-              <p className="briefingDeck">{story.deck}</p>
-              <div className="briefingImpactGrid">
-                <section><small>IMPACTO TÉCNICO</small><p>{story.technicalImpact}</p></section>
-                <section><small>IMPACTO PARA NEGÓCIO</small><p>{story.businessImpact}</p></section>
+        {stories.map((story) => {
+          const hasMedia = Boolean(securityBriefingMedia[story.id]);
+          return (
+            <article className={`briefingStory ${hasMedia ? 'withVisual' : 'textOnly'}`} key={story.id}>
+              <StoryVisual story={story} />
+              <div className="briefingStoryBody">
+                <div className="briefingStoryMeta"><span>{story.pillar}</span><b>{story.freshness}</b></div>
+                <h4>{story.title}</h4>
+                <p className="briefingDeck">{story.deck}</p>
+                <div className="briefingImpactGrid">
+                  <section><small>IMPACTO TÉCNICO</small><p>{story.technicalImpact}</p></section>
+                  <section><small>IMPACTO PARA NEGÓCIO</small><p>{story.businessImpact}</p></section>
+                </div>
+                <div className="briefingAction"><small>O QUE FAZER AGORA</small><ul>{story.actionNow.map((item) => <li key={item}>{item}</li>)}</ul></div>
+                <div className="briefingFrameworks">{story.frameworks.map((item) => <span key={item}>{item}</span>)}</div>
+                <div className="briefingAudience"><small>PARA QUEM</small><span>{story.audience.join(' · ')}</span></div>
+                <div className="briefingActions">
+                  <button onClick={() => copyStory(story)}>{copiedId === story.id ? '✓ COPIADO' : mode === 'executive' ? '⧉ COPIAR PARA TEAMS' : '⧉ COPIAR TÉCNICO'}</button>
+                  <button className="wa" onClick={() => whatsapp(storyText(story, mode))}>↗ WHATSAPP</button>
+                  <a href={story.source.url} target="_blank" rel="noreferrer">FONTE ↗</a>
+                </div>
               </div>
-              <div className="briefingAction"><small>O QUE FAZER AGORA</small><ul>{story.actionNow.map((item) => <li key={item}>{item}</li>)}</ul></div>
-              <div className="briefingFrameworks">{story.frameworks.map((item) => <span key={item}>{item}</span>)}</div>
-              <div className="briefingAudience"><small>PARA QUEM</small><span>{story.audience.join(' · ')}</span></div>
-              <div className="briefingActions">
-                <button onClick={() => copyStory(story)}>{copiedId === story.id ? '✓ COPIADO' : mode === 'executive' ? '⧉ COPIAR PARA TEAMS' : '⧉ COPIAR TÉCNICO'}</button>
-                <button className="wa" onClick={() => whatsapp(storyText(story, mode))}>↗ WHATSAPP</button>
-                <a href={story.source.url} target="_blank" rel="noreferrer">FONTE ↗</a>
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
     </section>
   );
