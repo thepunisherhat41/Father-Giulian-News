@@ -18,6 +18,7 @@ import './appsec-feed.css';
 import './rich-media.css';
 import './real-source-media.css';
 import './local-security.css';
+import './daily-game.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
@@ -30,6 +31,7 @@ import SecurityBriefingPortal from '@/components/SecurityBriefingPortal';
 import AppSecFeedPortal from '@/components/AppSecFeedPortal';
 import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
+import DailyQuestHUDPortal from '@/components/DailyQuestHUD';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppSecFeedPortal />
         <LocalSecurityPortal />
         <RichMediaPortal />
+        <DailyQuestHUDPortal />
       </body>
     </html>
   );
