@@ -1,5 +1,6 @@
 {
-  "lastUpdated": "2026-08-18T18:00:00-03:00",
+  "lastUpdated": "2026-08-18T18:07:00-03:00",
+  "todayStatus": "Nenhuma nova ocorrência da Zona Leste suficientemente confirmada nas fontes monitoradas até 18h07; feed mantém última confirmação válida em vez de reciclar notícia antiga.",
   "recentLeads": [
     "Justiça decretou prisão de policial civil investigado por sequestro ocorrido em Artur Alvim em 10/08/2026",
     "29º DP Vila Prudente teve alta de 19,5% nos roubos de celular no primeiro semestre de 2026 versus 2025",
@@ -11,7 +12,8 @@
     "todayAndYesterdayFirst": true,
     "recentPublishedDataSecond": true,
     "historicalContextBelowRecent": true,
-    "showEmptyInsteadOfRecyclingOldNews": true
+    "showEmptyInsteadOfRecyclingOldNews": true,
+    "mobileFeedFirst": true
   },
   "rules": {
     "noVictimPII": true,
