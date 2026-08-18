@@ -48,33 +48,18 @@ function StoryVisual({ story }: { story: SecurityBriefingStory }) {
 function storyText(story: SecurityBriefingStory, mode: 'executive' | 'technical') {
   if (mode === 'executive') {
     return [
-      `*SECURITY BRIEFING · ${story.pillar}*`,
-      '',
-      `*${story.title}*`,
-      '',
-      story.executiveShare,
-      '',
+      `*SECURITY BRIEFING · ${story.pillar}*`, '', `*${story.title}*`, '', story.executiveShare, '',
       `Público: ${story.audience.join(' · ')}`,
-      `Referências: ${story.frameworks.join(' · ')}`,
-      '',
-      `Fonte: ${story.source.label}`,
-      story.source.url,
+      `Referências: ${story.frameworks.join(' · ')}`, '',
+      `Fonte: ${story.source.label}`, story.source.url,
     ].join('\n');
   }
 
   return [
-    `*TECHNICAL SECURITY BRIEF · ${story.pillar}*`,
-    '',
-    `*${story.title}*`,
-    '',
-    story.technicalShare,
-    '',
-    '*Ações sugeridas*',
-    ...story.actionNow.map((item) => `- ${item}`),
-    '',
+    `*TECHNICAL SECURITY BRIEF · ${story.pillar}*`, '', `*${story.title}*`, '', story.technicalShare, '',
+    '*Ações sugeridas*', ...story.actionNow.map((item) => `- ${item}`), '',
     `Frameworks: ${story.frameworks.join(' · ')}`,
-    `Fonte: ${story.source.label}`,
-    story.source.url,
+    `Fonte: ${story.source.label}`, story.source.url,
   ].join('\n');
 }
 
@@ -106,11 +91,7 @@ export default function SecurityBriefingHub() {
           <h3>Security Briefing</h3>
           <p>Segurança, tecnologia e negócio traduzidos em decisões. O objetivo é você conseguir ler, entender e compartilhar com o time sem mandar uma parede de links.</p>
         </div>
-        <div className="briefingScore">
-          <small>TODAY&apos;S SIGNALS</small>
-          <strong>{securityBriefingStories.length}</strong>
-          <span>CURATED</span>
-        </div>
+        <div className="briefingScore"><small>TODAY&apos;S SIGNALS</small><strong>{securityBriefingStories.length}</strong><span>CURATED</span></div>
       </header>
 
       <div className="briefingModeSwitch" aria-label="Modo de leitura">
@@ -119,10 +100,19 @@ export default function SecurityBriefingHub() {
       </div>
 
       <div className="briefingFilters">
-        {securityBriefingPillars.map((item) => (
-          <button key={item} className={pillar === item ? 'active' : ''} onClick={() => setPillar(item)}>{item}</button>
-        ))}
+        {securityBriefingPillars.map((item) => <button key={item} className={pillar === item ? 'active' : ''} onClick={() => setPillar(item)}>{item}</button>)}
       </div>
+
+      <section className="briefingVideoIntel">
+        <div>
+          <span>VIDEO INTEL / ADVERSARIAL AI</span>
+          <h4>Use vídeo como complemento, não como fonte única</h4>
+          <p>Discussão da Unit 42/Palo Alto Networks sobre adversarial AI. O feed mantém OWASP, CISA, NIST e demais referências primárias como base das decisões.</p>
+        </div>
+        <div className="briefingVideoFrame">
+          <iframe title="Adversarial AI · Unit 42" src="https://www.youtube-nocookie.com/embed/tfiUSSnVq9o?rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+        </div>
+      </section>
 
       <div className="briefingGrid">
         {stories.map((story) => (
@@ -132,29 +122,13 @@ export default function SecurityBriefingHub() {
               <div className="briefingStoryMeta"><span>{story.pillar}</span><b>{story.freshness}</b></div>
               <h4>{story.title}</h4>
               <p className="briefingDeck">{story.deck}</p>
-
               <div className="briefingImpactGrid">
-                <section>
-                  <small>IMPACTO TÉCNICO</small>
-                  <p>{story.technicalImpact}</p>
-                </section>
-                <section>
-                  <small>IMPACTO PARA NEGÓCIO</small>
-                  <p>{story.businessImpact}</p>
-                </section>
+                <section><small>IMPACTO TÉCNICO</small><p>{story.technicalImpact}</p></section>
+                <section><small>IMPACTO PARA NEGÓCIO</small><p>{story.businessImpact}</p></section>
               </div>
-
-              <div className="briefingAction">
-                <small>O QUE FAZER AGORA</small>
-                <ul>{story.actionNow.map((item) => <li key={item}>{item}</li>)}</ul>
-              </div>
-
-              <div className="briefingFrameworks">
-                {story.frameworks.map((item) => <span key={item}>{item}</span>)}
-              </div>
-
+              <div className="briefingAction"><small>O QUE FAZER AGORA</small><ul>{story.actionNow.map((item) => <li key={item}>{item}</li>)}</ul></div>
+              <div className="briefingFrameworks">{story.frameworks.map((item) => <span key={item}>{item}</span>)}</div>
               <div className="briefingAudience"><small>PARA QUEM</small><span>{story.audience.join(' · ')}</span></div>
-
               <div className="briefingActions">
                 <button onClick={() => copyStory(story)}>{copiedId === story.id ? '✓ COPIADO' : mode === 'executive' ? '⧉ COPIAR PARA TEAMS' : '⧉ COPIAR TÉCNICO'}</button>
                 <button className="wa" onClick={() => whatsapp(storyText(story, mode))}>↗ WHATSAPP</button>
