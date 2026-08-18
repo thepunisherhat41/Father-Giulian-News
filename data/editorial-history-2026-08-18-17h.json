@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-08-18T17:00:00-03:00",
+  "window": "17h",
+  "rule": "Do not reuse these leads or conclusions on the next edition without a material new fact.",
+  "updated": {
+    "mundo": "Hormuz risk transmitted into long yields and a technology-led equity selloff; Nasdaq >1% lower and SOX >5% lower intraday.",
+    "financas": "Equity duration / discount-rate lesson: long yields affect growth valuations and capital-intensive AI funding.",
+    "tecnologia": "AI economics moved from project-finance announcement to cost-of-capital sensitivity; semiconductor index >5% lower intraday.",
+    "seguranca": "OpenAI/Hugging Face evaluation containment: package proxy zero-day, egress path, stronger sandboxes, monitoring and paused sensitive workloads.",
+    "appsec-ssdlc": "AI pentest lab threat model: untrusted code -> package proxy -> privilege -> egress -> third party; require fail-closed boundaries."
+  },
+  "preserved": [
+    "Brasil: BC PROTEGE+",
+    "Política: 18/08 FEFC RRC/RRCI snapshot through 23h59; not collective deferment",
+    "Planeta: magnetic versus true north",
+    "Mundo Animal: pigeon magnetoreception study",
+    "Tempo: São Paulo heating / dry-air trend",
+    "Curiosidades: mirror front-back inversion; Escorreito; Pelejar; Peúgas",
+    "Música: Audioslave Like a Stone / Tonico & Tinoco Tristeza do Jeca",
+    "Games: Marvel's Wolverine PS5 15/09/2026",
+    "Gravidez: 6s+2d",
+    "Ser Pai: fixed-task ownership",
+    "Carros: Cruze / Sentra / 2008 / Fiesta >1.0 <=70k",
+    "Motos: Twister / Himalayan / G 310 R / NC 750X",
+    "Mecânica: wheel bearing versus cupped tire",
+    "Náutica: sacrificial anodes",
+    "Viagens: Expoflora 2026"
+  ]
+}
