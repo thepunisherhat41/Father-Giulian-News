@@ -1,14 +1,16 @@
 {
-  "updatedAt": "2026-08-18T11:20:00-03:00",
+  "updatedAt": "2026-08-18T17:00:00-03:00",
   "rule": "Do not reuse the same lead story or the same angle on consecutive editions unless there is a material update. Preserve cross-pillar diversity and source claims from primary or authoritative sources.",
   "stories": [
-    "Agentic AI red teaming as lifecycle-wide validation",
-    "Agentic AI governance, identity and accountability",
-    "CISA KEV as exploitation-aware prioritization signal",
-    "GenAI data boundary across prompts, RAG, memory and logs",
-    "Phishing-resistant MFA for privileged access",
-    "SBOM plus provenance for software supply chain",
-    "NIST SSDF outcomes over scanner count",
-    "Secure by Design as product and business resilience"
+    "OpenAI/Hugging Face AI evaluation containment: sandbox, package proxy, egress, independent monitoring and pause controls",
+    "Storm-2949 identity-to-cloud compromise",
+    "CVE-2026-20245 Cisco Catalyst SD-WAN Manager zero-day chain",
+    "Mastra npm maintainer takeover and 140+ poisoned packages",
+    "Exposed serverless functions and workload identity blast radius",
+    "AI-assisted vulnerability management with policy and human approval",
+    "GTIG AI-augmented vulnerability exploitation trend",
+    "Open source supply chain: actions, builders, cooldown, OIDC and provenance",
+    "Agentic CI/CD prompt injection and untrusted GitHub content",
+    "The Gentlemen ransomware lateral propagation"
   ]
 }
