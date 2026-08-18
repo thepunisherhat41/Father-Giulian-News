@@ -4,13 +4,21 @@ export type LocalSecuritySignal = {
   area: string;
   date: string;
   freshness: 'RECENTE' | 'CONTEXTO';
+  ageLabel?: string;
   title: string;
   summary: string;
   whyItMatters: string;
   source: { label: string; url: string };
 };
 
-export const localSecurityUpdatedAt = '18 AGO 2026 · 18H';
+export const localSecurityUpdatedAt = '18 AGO 2026 · 18H07';
+
+export const localSecurityTodayStatus = {
+  date: '18 AGO 2026',
+  status: 'SEM NOVA OCORRÊNCIA CONFIRMADA',
+  note: 'Até esta atualização, o radar não encontrou publicação nova e suficientemente confirmada de hoje sobre crime/roubo/furto na Zona Leste nas fontes monitoradas. Em vez de preencher com notícia velha ou de outra região, o feed mantém a última confirmação válida e continua monitorando.',
+  nextCheck: 'próxima varredura editorial · 05H / 10H / 17H',
+};
 
 export const localSecurityRegions = [
   'Aricanduva / Formosa',
@@ -33,6 +41,7 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     area: 'Artur Alvim · Zona Leste',
     date: '14 AGO 2026',
     freshness: 'RECENTE',
+    ageLabel: '4D',
     title: 'Justiça decretou prisão de policial civil investigado por sequestro em Artur Alvim',
     summary: 'A Folha informou em 14 de agosto que a Justiça decretou a prisão de um policial civil investigado por participação na agressão e sequestro de um jovem ocorrido em Artur Alvim na noite de 10 de agosto. A Corregedoria e o Decap investigam o caso, que tramita sob sigilo.',
     whyItMatters: 'É uma ocorrência grave e recente na Zona Leste. O radar trata o caso como investigação em andamento e não extrapola uma ocorrência isolada para uma tendência do bairro.',
@@ -42,12 +51,13 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     id: 'roubo-celular-vila-prudente-1s2026',
     type: 'DADO',
     area: 'Vila Prudente · 29º DP',
-    date: '1º SEM 2026',
-    freshness: 'RECENTE',
-    title: 'Vila Prudente aparece entre DPs com alta de roubos de celular no 1º semestre',
+    date: '1º SEM 2026 · PUBLICADO 10 AGO',
+    freshness: 'CONTEXTO',
+    ageLabel: '8D',
+    title: 'Vila Prudente apareceu entre DPs com alta de roubos de celular no 1º semestre',
     summary: 'Levantamento publicado em 10 de agosto com base em dados da SSP-SP apontou alta de 19,5% nos roubos de celular na área do 29º DP (Vila Prudente) no primeiro semestre de 2026 versus o mesmo período de 2025. Na capital como um todo, o indicador caiu 14,8%.',
-    whyItMatters: 'O dado mostra por que a média da cidade não pode ser aplicada automaticamente a cada região. É um recorte por DP e deve ser lido junto com fluxo de pessoas, características locais e metodologia de registro.',
-    source: { label: 'Levantamento publicado em 10/08/2026 com dados SSP-SP', url: 'https://yaconews.com/veja-quais-bairros-de-sp-tiveram-aumento-nos-roubos-de-celular-em-2026/' },
+    whyItMatters: 'O dado mostra por que a média da cidade não pode ser aplicada automaticamente a cada região. Como a publicação já passou da janela de 7 dias, fica na camada de contexto, não no feed recente.',
+    source: { label: 'Levantamento de 10/08/2026 com dados SSP-SP', url: 'https://yaconews.com/veja-quais-bairros-de-sp-tiveram-aumento-nos-roubos-de-celular-em-2026/' },
   },
   {
     id: 'capital-junho-2026',
@@ -69,7 +79,7 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     title: 'SmartCop foi usado em operação na Zona Leste com apoio aéreo e georreferenciamento',
     summary: 'A Prefeitura informou que o SmartCop auxiliou a GCM em uma ocorrência no Belém usando câmeras térmicas, visão infravermelha, georreferenciamento e transmissão em tempo real.',
     whyItMatters: 'Mostra como a cidade está combinando monitoramento terrestre e aéreo. É uma ocorrência específica, não uma medida de risco do bairro.',
-    source: { label: 'Prefeitura de São Paulo · SmartCop · 08/07/2026', url: 'https://prefeitura.sp.gov.br/web/prefeitura-de-sao-paulo/w/smartcop-d%C3%A1-localiza%C3%A7%C3%A3o-em-tempo-real-e-impede-fuga-de-traficantes-na-zona-leste' },
+    source: { label: 'Prefeitura de São Paulo · SmartCop · 08/07/2026', url: 'https://prefeitura.sp.gov.br/w/smartcop-d%C3%A1-localiza%C3%A7%C3%A3o-em-tempo-real-e-impede-fuga-de-traficantes-na-zona-leste' },
   },
   {
     id: 'cop-leste-2026',
