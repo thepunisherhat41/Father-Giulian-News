@@ -12,6 +12,7 @@ import './music-player.css';
 import './political-analysis.css';
 import './vehicle-comparison.css';
 import './games.css';
+import './switch2-radar.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
@@ -19,6 +20,7 @@ import MusicHubPortal from '@/components/MusicHubPortal';
 import PoliticalCandidateAnalysisPortal from '@/components/PoliticalCandidateAnalysisPortal';
 import VehicleComparisonPortal from '@/components/VehicleComparisonPortal';
 import GameHubPortal from '@/components/GameHubPortal';
+import { Switch2RadarPortal } from '@/components/Switch2Radar';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -36,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PoliticalCandidateAnalysisPortal />
         <VehicleComparisonPortal />
         <GameHubPortal />
+        <Switch2RadarPortal />
       </body>
     </html>
   );
