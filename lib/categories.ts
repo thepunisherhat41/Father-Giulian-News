@@ -24,6 +24,7 @@ import './daily-overrides-2026-08-17-games';
 import './daily-overrides-2026-08-18';
 import './daily-overrides-2026-08-18-10h';
 import './music-top10-overrides';
+import './security-briefing-overrides';
 
 export type Category = {
   slug: string;
@@ -53,6 +54,7 @@ export const categories: Category[] = [
   { slug: 'viagens', label: 'Viagens', emoji: '✈️', description: 'Perto de SP, Brasil, exterior, lugares históricos, vistos, custos e cuidados.' },
   { slug: 'financas', label: 'Finanças', emoji: '💰', description: 'Mercado, educação financeira, orçamento, crédito, investimentos e decisões práticas.' },
   { slug: 'tecnologia', label: 'Tecnologia', emoji: '💻', description: 'IA, computação, robótica, espaço, ciência, energia e produtos.' },
+  { slug: 'security-briefing', label: 'Security Briefing', emoji: '📰', description: 'Notícias e sinais de segurança, tecnologia e negócio prontos para compartilhar com o time.', subcategories: ['Executive View', 'Technical View', 'AI Security', 'IAM', 'Cloud', 'Threat Intel', 'Supply Chain', 'Data / Privacy', 'GRC', 'Business Impact'] },
   { slug: 'seguranca', label: 'Cyber Security', emoji: '🛡️', description: 'Ataques, identidade, cloud, malware, phishing, ransomware, threat intelligence e defesa.' },
-  { slug: 'appsec-ssdlc', label: 'AppSec / SSDLC', emoji: '🧬', description: 'Segurança de aplicações e ciclo seguro de desenvolvimento, do código ao deploy.', subcategories: ['SAST', 'SCA', 'DAST', 'Secrets', 'SBOM', 'Supply Chain', 'CI/CD', 'Threat Modeling', 'APIs', 'Containers', 'Kubernetes', 'Security Gates'] },
+  { slug: 'appsec-ssdlc', label: 'AppSec / SSDLC', emoji: '🧬', description: 'Segurança de aplicações e ciclo seguro de desenvolvimento, do código ao deploy.', subcategories: ['AppSec Feed', 'AI Pentest', 'AI Red Teaming', 'Agentic Security', 'AI no SSDLC', 'SAST', 'SCA', 'DAST', 'Secrets', 'SBOM', 'Supply Chain', 'CI/CD', 'Threat Modeling', 'APIs', 'Containers', 'Kubernetes', 'Security Gates'] },
 ];
