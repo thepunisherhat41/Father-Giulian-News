@@ -9,13 +9,81 @@ export type GameFact = {
   note: string;
 };
 
+export type GameMedia = {
+  type: 'image' | 'video';
+  label: string;
+  title: string;
+  url: string;
+  poster?: string;
+};
+
+export type Ps5RadarItem = {
+  label: string;
+  value: string;
+  status: 'confirmed' | 'watch' | 'unknown';
+  note: string;
+};
+
 export const stageTourFacts: GameFact[] = [
   { label: 'LANÇAMENTO', value: 'HOLIDAY 2026', note: 'Janela oficial; ainda sem dia exato publicado.' },
   { label: 'PLATAFORMAS', value: 'PC · PS5 · XBOX · SWITCH 2', note: 'PC, PlayStation 5, Xbox Series X|S e Nintendo Switch 2.' },
-  { label: 'BANDA', value: 'ATÉ 4 JOGADORES', note: 'Solo, cooperativo e competitivo com combinações de instrumentos.' },
+  { label: 'BANDA', value: 'ATÉ 4 JOGADORES', note: 'Solo e multiplayer com combinações de instrumentos.' },
   { label: 'FUNÇÕES', value: 'LEAD · GROOVE · DRUMS · VOCALS', note: 'Lead e Groove expandem a lógica clássica de guitarra e baixo.' },
-  { label: 'OFFLINE', value: 'SIM', note: 'Multiplayer online e leaderboards continuam exigindo conexão.' },
+  { label: 'OFFLINE', value: 'SIM', note: 'Recursos como multiplayer online e leaderboards continuam exigindo conexão.' },
   { label: 'SETLIST', value: '25 CONFIRMADAS', note: 'Contagem oficial após o Reveal #7, publicado em 12/08/2026.' },
+];
+
+export const stageTourMedia: GameMedia[] = [
+  {
+    type: 'image',
+    label: 'KEY ART OFICIAL',
+    title: 'Stage Tour · Hero Art',
+    url: 'https://cdn.shopify.com/s/files/1/0978/3083/0451/files/STAGE_TOUR_Hero-11_2-11.png?v=1771869573',
+  },
+  {
+    type: 'image',
+    label: 'SCREENSHOT OFICIAL',
+    title: 'Gameplay / palco',
+    url: 'https://cdn.shopify.com/s/files/1/0978/3083/0451/files/StageTour_Screenshot_01.png?v=1772053972',
+  },
+  {
+    type: 'image',
+    label: 'SCREENSHOT OFICIAL',
+    title: 'Banda / apresentação',
+    url: 'https://cdn.shopify.com/s/files/1/0978/3083/0451/files/StageTour_Screenshot_04.png?v=1772052677',
+  },
+];
+
+export const stageTourVideos = [
+  {
+    label: 'ANNOUNCEMENT TRAILER',
+    title: 'O anúncio que apresentou a nova era da RedOctane',
+    youtubeId: 'cUrkAf3uTE4',
+  },
+  {
+    label: 'DEVELOPER SPOTLIGHT',
+    title: 'Gameplay, hardware e bastidores do projeto',
+    youtubeId: 'kckXRmcp_Uk',
+  },
+];
+
+export const stageTourPs5Radar: Ps5RadarItem[] = [
+  { label: 'VERSÃO PS5', value: 'CONFIRMADA', status: 'confirmed', note: 'A FAQ oficial lista PlayStation 5 entre as plataformas de lançamento.' },
+  { label: 'JOGO OFFLINE', value: 'SIM', status: 'confirmed', note: 'O jogo pode ser executado offline; recursos online específicos continuam dependendo de conexão.' },
+  { label: 'CONTROLE COMUM', value: 'SUPORTE PREVISTO', status: 'confirmed', note: 'Existe um tipo de instrumento pensado para controle tradicional; detalhes de layout ainda serão aprofundados.' },
+  { label: 'GUITARRA DEDICADA', value: 'KRAMER', status: 'confirmed', note: 'A RedOctane confirmou opção de bundle com nova guitarra Kramer e venda separada.' },
+  { label: 'DUALSENSE', value: 'DETALHES PENDENTES', status: 'unknown', note: 'Recursos específicos como gatilhos adaptáveis e feedback háptico não foram detalhados na FAQ consultada.' },
+  { label: 'PREÇO / PREORDER PS5', value: 'AINDA NÃO', status: 'watch', note: 'A RedOctane informa que wishlists e preorders de console serão divulgados mais adiante.' },
+  { label: 'PERIFÉRICOS ANTIGOS', value: 'META DE SUPORTE', status: 'watch', note: 'O estúdio pretende suportar o máximo possível; compatibilidade dependerá da plataforma e pode exigir adaptadores.' },
+  { label: 'DAY ONE?', value: 'ESPERAR HARDWARE', status: 'watch', note: 'Antes de comprar, vale observar preço dos instrumentos, latência, compatibilidade e qualidade dos charts.' },
+];
+
+export const stageTourTimeline = [
+  { date: '26 FEV', state: 'DONE', title: 'Anúncio público', detail: 'Stage Tour é revelado como novo IP da RedOctane Games.' },
+  { date: '07 JUN', state: 'DONE', title: 'Developer Spotlight', detail: 'Gameplay, campanha, hardware e primeira leva de músicas ganham mais detalhes.' },
+  { date: '12 AGO', state: 'DONE', title: '25 faixas confirmadas', detail: 'Reveal #7 adiciona Rolling Stones, Smash Mouth e Muse.' },
+  { date: 'AGORA', state: 'LIVE', title: 'Closed Alpha / desenvolvimento', detail: 'O projeto continua em testes e divulgação gradual de conteúdo e compatibilidade.' },
+  { date: 'HOLIDAY', state: 'LOCKED', title: 'Janela de lançamento', detail: 'PC, PS5, Xbox Series X|S e Switch 2; data exata ainda precisa ser anunciada.' },
 ];
 
 export const stageTourSetlist: GameTrack[] = [
@@ -60,6 +128,7 @@ export const gameEditorialLanes = [
 export const stageTourSources = [
   { label: 'Stage Tour · FAQ oficial', url: 'https://stagetour.com/' },
   { label: 'Stage Tour · anúncio oficial', url: 'https://stagetour.com/blogs/newsroom/redoctane-games-announces-stage-tour' },
+  { label: 'Stage Tour · Developer Spotlight', url: 'https://stagetour.com/blogs/newsroom/stage-tour-biggest-update-at-ign-live' },
   { label: 'Stage Tour · Setlist Reveal #7', url: 'https://stagetour.com/blogs/newsroom/stage-tour-setlist-reveal-7' },
   { label: 'Steam · Stage Tour', url: 'https://store.steampowered.com/app/4452700/STAGE_TOUR/' },
 ];
