@@ -1,0 +1,16 @@
+{
+  "lastUpdated": "2026-08-18T17:00:00-03:00",
+  "recentLeads": [
+    "Roubos de veículos caíram 32,08% na capital em junho de 2026 versus junho de 2025",
+    "São Mateus, Cidade Tiradentes e Guaianases tiveram redução conjunta de 42,2% nos roubos em janeiro de 2026",
+    "Seccional de Itaquera teve queda superior a 48% nos roubos de veículos em janeiro de 2026",
+    "COP Leste integrada ao Smart Sampa passou a operar em junho de 2026"
+  ],
+  "rules": {
+    "noVictimPII": true,
+    "noResidentialPrecision": true,
+    "noRumorOnly": true,
+    "noPatrolGapPrediction": true,
+    "periodAndSourceRequired": true
+  }
+}
