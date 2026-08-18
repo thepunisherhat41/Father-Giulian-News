@@ -15,6 +15,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
+      "@/lib/security-briefing-content": ["./lib/security-briefing-current.ts"],
       "@/*": ["./*"]
     },
     "plugins": [{ "name": "next" }]
