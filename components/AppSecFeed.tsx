@@ -2,37 +2,22 @@
 
 import { useMemo, useRef, useState } from 'react';
 import { aiPentestSsdlc, appSecFeedPosts, appSecFrameworkLibrary } from '@/lib/appsec-feed-content';
+import { appSecPostMedia } from '@/lib/appsec-feed-media';
 
-function FeedVisual({ icon, signal, index }: { icon: string; signal: string; index: number }) {
+function FeedVisual({ postId, title }: { postId: string; title: string }) {
+  const media = appSecPostMedia[postId];
+  if (!media) return null;
+
   return (
-    <div className="appSecFeedVisual" role="img" aria-label={`Visual técnico ${index + 1}: ${signal}`}>
-      <svg viewBox="0 0 1000 600" aria-hidden="true">
-        <defs>
-          <linearGradient id={`feed-bg-${index}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#050a09" />
-            <stop offset=".58" stopColor="#071a15" />
-            <stop offset="1" stopColor="#141325" />
-          </linearGradient>
-          <radialGradient id={`feed-glow-${index}`} cx="72%" cy="36%" r="55%">
-            <stop offset="0" stopColor="#27ff9a" stopOpacity=".28" />
-            <stop offset="1" stopColor="#27ff9a" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <rect width="1000" height="600" fill={`url(#feed-bg-${index})`} />
-        <rect width="1000" height="600" fill={`url(#feed-glow-${index})`} />
-        {Array.from({ length: 10 }).map((_, row) => <line key={row} x1="0" y1={50 + row * 52} x2="1000" y2={50 + row * 52} stroke="#cffff0" strokeOpacity=".05" />)}
-        {Array.from({ length: 8 }).map((_, col) => <line key={col} x1={100 + col * 120} y1="0" x2={100 + col * 120} y2="600" stroke="#cffff0" strokeOpacity=".035" />)}
-        <circle cx="760" cy="200" r="120" fill="none" stroke="#27ff9a" strokeOpacity=".24" strokeWidth="2" />
-        <circle cx="760" cy="200" r="72" fill="none" stroke="#27ff9a" strokeOpacity=".16" strokeWidth="10" />
-        <path d="M110 445 L260 380 L395 420 L545 318 L700 348 L870 252" fill="none" stroke="#27ff9a" strokeWidth="5" strokeOpacity=".84" />
-        <path d="M110 470 L260 455 L395 476 L545 420 L700 432 L870 390" fill="none" stroke="#9d7cff" strokeWidth="3" strokeOpacity=".5" />
-      </svg>
-      <div className="appSecFeedVisualCopy">
-        <span>{icon}</span>
-        <small>SECURITY SIGNAL</small>
-        <strong>{signal}</strong>
+    <a className="appSecFeedVisual real" href={media.sourceUrl} target="_blank" rel="noreferrer" aria-label={`Abrir fonte da imagem: ${title}`}>
+      <img src={media.url} alt={media.alt} loading="lazy" referrerPolicy="no-referrer" />
+      <div className="appSecFeedVisualShade" />
+      <div className="appSecFeedVisualCredit">
+        <small>REAL SOURCE MEDIA</small>
+        <strong>{media.caption}</strong>
+        <span>{media.credit}</span>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -81,29 +66,32 @@ export default function AppSecFeed() {
       </div>
 
       <div className="appSecFeedViewport" ref={feedRef} onScroll={syncActive}>
-        {posts.map((post, index) => (
-          <article className="appSecStoryCard" key={post.id}>
-            <FeedVisual icon={post.imageIcon} signal={post.signal} index={index} />
-            <div className="appSecStoryBody">
-              <div className="appSecStoryTop"><span>{post.tag}</span><b>{String(index + 1).padStart(2, '0')} / {String(posts.length).padStart(2, '0')}</b></div>
-              <h4>{post.title}</h4>
-              <p className="appSecStorySubtitle">{post.subtitle}</p>
-              <p className="appSecStoryText">{post.body}</p>
+        {posts.map((post, index) => {
+          const hasMedia = Boolean(appSecPostMedia[post.id]);
+          return (
+            <article className={`appSecStoryCard ${hasMedia ? 'withVisual' : 'textOnly'}`} key={post.id}>
+              <FeedVisual postId={post.id} title={post.title} />
+              <div className="appSecStoryBody">
+                <div className="appSecStoryTop"><span>{post.tag}</span><b>{String(index + 1).padStart(2, '0')} / {String(posts.length).padStart(2, '0')}</b></div>
+                <h4>{post.title}</h4>
+                <p className="appSecStorySubtitle">{post.subtitle}</p>
+                <p className="appSecStoryText">{post.body}</p>
 
-              <div className="appSecFrameworkChips">{post.frameworks.map((item) => <span key={item}>{item}</span>)}</div>
+                <div className="appSecFrameworkChips">{post.frameworks.map((item) => <span key={item}>{item}</span>)}</div>
 
-              <div className="appSecChecklist">
-                <small>APLICAÇÃO PRÁTICA</small>
-                <ul>{post.checklist.map((item) => <li key={item}>{item}</li>)}</ul>
+                <div className="appSecChecklist">
+                  <small>APLICAÇÃO PRÁTICA</small>
+                  <ul>{post.checklist.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+
+                <div className="appSecStoryActions">
+                  <a href={post.source.url} target="_blank" rel="noreferrer">REFERÊNCIA ↗</a>
+                  <button type="button" onClick={() => jumpTo(Math.min(index + 1, posts.length - 1))}>{index === posts.length - 1 ? 'FIM DO FEED ✓' : 'PRÓXIMO POST ↓'}</button>
+                </div>
               </div>
-
-              <div className="appSecStoryActions">
-                <a href={post.source.url} target="_blank" rel="noreferrer">REFERÊNCIA ↗</a>
-                <button type="button" onClick={() => jumpTo(Math.min(index + 1, posts.length - 1))}>{index === posts.length - 1 ? 'FIM DO FEED ✓' : 'PRÓXIMO POST ↓'}</button>
-              </div>
-            </div>
-          </article>
-        ))}
+            </article>
+          );
+        })}
       </div>
 
       <section className="aiPentestLab">
