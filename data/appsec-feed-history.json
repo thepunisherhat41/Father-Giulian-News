@@ -1,0 +1,16 @@
+{
+  "updatedAt": "2026-08-18T11:20:00-03:00",
+  "rule": "Keep the vertical AppSec feed diverse. Do not repeat the same lead post on consecutive editions. Preserve AI Pentest and SSDLC program structure while rotating daily stories, frameworks and examples.",
+  "posts": [
+    "AI pentest lifecycle",
+    "AI-assisted pentest with human validation",
+    "Agent authorization outside the model",
+    "RAG authorization before retrieval",
+    "Context-aware security gates",
+    "SBOM plus provenance",
+    "Object-level API authorization",
+    "Resource budgets and abuse resilience",
+    "CI/CD trust boundaries",
+    "Continuous revalidation after meaningful changes"
+  ]
+}
