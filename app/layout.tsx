@@ -10,11 +10,13 @@ import './caipira-top5.css';
 import './music-player.css';
 import './political-analysis.css';
 import './vehicle-comparison.css';
+import './games.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import MusicHubPortal from '@/components/MusicHubPortal';
 import PoliticalCandidateAnalysisPortal from '@/components/PoliticalCandidateAnalysisPortal';
 import VehicleComparisonPortal from '@/components/VehicleComparisonPortal';
+import GameHubPortal from '@/components/GameHubPortal';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -30,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MusicHubPortal />
         <PoliticalCandidateAnalysisPortal />
         <VehicleComparisonPortal />
+        <GameHubPortal />
       </body>
     </html>
   );
