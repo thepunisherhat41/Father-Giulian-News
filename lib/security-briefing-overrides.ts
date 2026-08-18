@@ -27,6 +27,7 @@ Object.assign(dailyContent, {
       { label: 'Google Threat Intelligence / Mandiant', url: 'https://cloud.google.com/blog/topics/threat-intelligence' },
       { label: 'CISA · Cybersecurity', url: 'https://www.cisa.gov/topics/cybersecurity-best-practices' },
       { label: 'NIST · Computer Security Resource Center', url: 'https://csrc.nist.gov/' },
+      { label: 'OpenAI · Security', url: 'https://openai.com/news/security/' },
     ],
   },
 });
@@ -44,7 +45,11 @@ if (existingSecurityDrop) Object.assign(existingSecurityDrop, securityDrop);
 else todayDrops.push(securityDrop);
 
 if (dailyContent.hoje) {
-  dailyContent.hoje.readTime = '21 MISSÕES';
+  if (/ATUALIZADAS/i.test(dailyContent.hoje.readTime)) {
+    dailyContent.hoje.readTime = dailyContent.hoje.readTime.replace(/^\d+\s+MISSÕES/i, '21 MISSÕES');
+  } else {
+    dailyContent.hoje.readTime = '21 MISSÕES';
+  }
   if (/^\d+\s+missões/i.test(dailyContent.hoje.title)) {
     dailyContent.hoje.title = dailyContent.hoje.title.replace(/^\d+\s+missões/i, '21 missões');
   }
