@@ -13,6 +13,7 @@ import { editorialDaily20260817SecurityFix } from './editorial-daily-2026-08-17-
 import { editorialDaily20260817_10h } from './editorial-daily-2026-08-17-10h';
 import { editorialDaily20260817_17h } from './editorial-daily-2026-08-17-17h';
 import { editorialDaily20260818 } from './editorial-daily-2026-08-18';
+import { editorialDaily20260818_10h } from './editorial-daily-2026-08-18-10h';
 import type { EditorialDossier } from './editorial-dossier-types';
 
 export const editorialDossiers: Record<string, EditorialDossier> = {
@@ -31,4 +32,5 @@ export const editorialDossiers: Record<string, EditorialDossier> = {
   ...editorialDaily20260817_10h,
   ...editorialDaily20260817_17h,
   ...editorialDaily20260818,
+  ...editorialDaily20260818_10h,
 };
