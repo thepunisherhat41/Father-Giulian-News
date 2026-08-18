@@ -28,6 +28,7 @@ import './appsec-feed-overrides-2026-08-18-17h';
 import './security-briefing-2026-08-18-17h';
 import './music-top10-overrides';
 import './security-briefing-overrides';
+import './local-security-overrides';
 
 export type Category = {
   slug: string;
@@ -40,6 +41,7 @@ export type Category = {
 export const categories: Category[] = [
   { slug: 'hoje', label: 'Hoje', emoji: '☀️', description: 'Seleção diária dos melhores conteúdos.' },
   { slug: 'brasil', label: 'Brasil', emoji: '🇧🇷', description: 'Política, economia, sociedade, infraestrutura e decisões que afetam a vida real.' },
+  { slug: 'seguranca-zl', label: 'Segurança ZL', emoji: '🚨', description: 'Crime, roubos, furtos, tendências e segurança pública na Zona Leste de São Paulo, com dados oficiais e contexto.', subcategories: ['Roubos', 'Furtos', 'Celulares', 'Veículos', 'Dados SSP', 'Ações policiais', 'Smart Sampa', 'Serviços'] },
   { slug: 'politica', label: 'Política', emoji: '🏛️', description: 'Fatos, contexto, posições e impacto, com separação entre informação e interpretação.' },
   { slug: 'mundo', label: 'Mundo', emoji: '🌍', description: 'Geopolítica, ciência, conflitos, energia, sociedade e acontecimentos internacionais.' },
   { slug: 'planeta', label: 'Planeta', emoji: '🌎', description: 'Oceanos, geologia, atmosfera, fenômenos naturais, rios, lagos e a Terra.' },
