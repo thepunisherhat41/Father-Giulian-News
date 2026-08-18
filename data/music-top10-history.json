@@ -1,0 +1,33 @@
+{
+  "updatedAt": "2026-08-18T10:36:00-03:00",
+  "rule": "Each daily Music Top 10 must contain 10 unique artist+title pairs per lane. The next edition must not repeat tracks from the immediately previous Top 10 unless explicitly pinned by the user or justified by material new context.",
+  "editions": [
+    {
+      "date": "2026-08-18",
+      "rock": [
+        "Audioslave — Like a Stone",
+        "Led Zeppelin — Since I’ve Been Loving You",
+        "Aerosmith — Dream On",
+        "Pearl Jam — Black",
+        "Foo Fighters — Everlong",
+        "Soundgarden — Fell On Black Days",
+        "Chris Cornell — Seasons",
+        "Alice In Chains — Nutshell",
+        "Stone Temple Pilots — Interstate Love Song",
+        "Avenged Sevenfold — So Far Away"
+      ],
+      "caipira": [
+        "Tonico & Tinoco — Tristeza do Jeca",
+        "Tonico & Tinoco — Chico Mineiro",
+        "Tião Carreiro & Pardinho — Pagode em Brasília",
+        "Tião Carreiro & Pardinho — Rei do Gado",
+        "Liu & Léu — Boiadeiro Errante",
+        "Liu & Léu — O Ipê e o Prisioneiro",
+        "Pena Branca & Xavantinho — Cuitelinho",
+        "Pena Branca & Xavantinho — O Cio da Terra",
+        "Cascatinha & Inhana — Índia",
+        "Cascatinha & Inhana — Meu Primeiro Amor"
+      ]
+    }
+  ]
+}
