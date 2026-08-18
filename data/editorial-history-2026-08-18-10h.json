@@ -1,0 +1,12 @@
+{
+  "updatedAt": "2026-08-18T10:00:00-03:00",
+  "edition": "18/08/2026 · 10h",
+  "inherits": "data/editorial-history.json",
+  "updatedAreas": {
+    "politica": "10h 18/08: FEFC 2026 de R$ 4.961.519.777, fotografia RRC/RRCI até 23h59 e separação entre financiamento e status jurídico",
+    "mundo": "10h 18/08: Hormuz como choque cruzado em petróleo, bonds e bolsas; Brent >US$91 e Treasury 30Y ~5,32%",
+    "financas": "10h 18/08: menor probabilidade implícita de alta do Fed versus Treasury 30Y em máxima de quase duas décadas; prêmio de prazo",
+    "tecnologia": "10h 18/08: Nvidia oferece até US$105 bi em garantias ligadas ao lease da OpenAI no data center da SB Energy em Ohio; project finance de IA"
+  },
+  "rule": "Não reutilizar estes quatro ângulos como tema principal na próxima edição sem novidade material."
+}
