@@ -3,54 +3,46 @@ import { dailyContent, todayDrops } from './daily-content';
 const slug = 'seguranca-zl';
 
 dailyContent[slug] = {
-  title: 'Segurança ZL agora abre com notícias recentes dos últimos dias',
-  summary: 'O radar local prioriza fatos confirmados dos últimos 7 dias na Zona Leste e deixa estatísticas mensais e ações antigas em uma camada separada de contexto. Nesta edição, Artur Alvim e o recorte recente de roubos de celular em Vila Prudente entram antes dos indicadores consolidados da capital.',
-  shareSummary: 'Segurança ZL: notícias recentes primeiro. Destaques atuais incluem a investigação do sequestro em Artur Alvim e um recorte de roubos de celular no 29º DP/Vila Prudente; dados mensais antigos ficam separados como contexto.',
-  readTime: '8 MIN READ',
-  badge: 'ZONA LESTE / RECENT NEWS',
+  title: 'Segurança ZL virou feed diário: hoje sem ocorrência nova confirmada, últimas confirmações abaixo',
+  summary: 'A aba agora funciona como um feed mobile-first. O topo informa o status de hoje e não inventa notícia: até a atualização das 18h07, nenhuma nova ocorrência da Zona Leste foi encontrada com confirmação suficiente nas fontes monitoradas. A última confirmação relevante continua sendo o avanço da investigação do caso de Artur Alvim, de 14 de agosto.',
+  shareSummary: 'Segurança ZL agora é um feed diário: hoje não houve nova ocorrência confirmada nas fontes monitoradas até 18h07; a aba mostra isso claramente e mantém abaixo as últimas confirmações recentes, dados e serviços oficiais.',
+  readTime: 'DAILY FEED',
+  badge: 'ZONA LESTE / NEWS FEED',
   stats: [
-    { label: 'JANELA PRINCIPAL', value: '7 DIAS', note: 'notícias confirmadas primeiro' },
-    { label: 'ATUALIZAÇÃO', value: '05 · 10 · 17H', note: 'pesquisa recorrente' },
-    { label: 'REGRA', value: 'SEM RECICLAR', note: 'notícia velha não vira alerta atual' },
+    { label: 'HOJE', value: 'MONITORANDO', note: 'sem novo fato confirmado até 18h07' },
+    { label: 'JANELA RECENTE', value: '7 DIAS', note: 'depois vira contexto' },
+    { label: 'ATUALIZAÇÃO', value: '05 · 10 · 17H', note: 'varredura recorrente' },
   ],
   sections: [
     {
-      title: 'O que é recente nesta edição',
-      paragraphs: ['A camada principal agora começa pelos fatos mais novos encontrados e confirmados para a Zona Leste. Em 14 de agosto, a Justiça decretou a prisão de policial civil investigado por envolvimento em sequestro ocorrido em Artur Alvim. Em levantamento publicado em 10 de agosto com base em dados da SSP-SP, a área do 29º DP/Vila Prudente apareceu com alta de 19,5% nos roubos de celular no primeiro semestre, enquanto a capital teve queda no agregado.'],
-      bullets: ['Ocorrência recente é rotulada como ocorrência — não como tendência do bairro.', 'Recorte estatístico mostra período e unidade policial.', 'Notícias antigas ficam em Dados e Contexto, abaixo do feed recente.'],
+      title: 'Como funciona o feed',
+      paragraphs: ['O primeiro bloco é o status de hoje. Se houver ocorrência, operação, investigação ou dado local novo e confirmado, ele entra no topo. Se não houver, a aba diz isso explicitamente e preserva a última notícia válida em vez de reciclar conteúdo antigo.'],
+      bullets: ['Hoje e ontem têm prioridade máxima.', 'Depois entram fatos publicados ou materialmente atualizados nos últimos 7 dias.', 'Passou de 7 dias: sai do feed e vai para Dados/Ações/Serviços.', 'Ocorrência isolada nunca vira ranking de bairro.'],
     },
     {
-      title: 'Regra editorial a partir de agora',
-      bullets: ['Prioridade 1: hoje, ontem e últimos 7 dias.', 'Prioridade 2: dados novos publicados recentemente, mesmo que o período estatístico seja anterior.', 'Contexto mensal/histórico nunca ocupa o lugar de notícia recente.', 'Se não houver notícia nova confirmada, a aba mostra que não encontrou novidade em vez de reciclar conteúdo antigo.'],
+      title: 'Última confirmação relevante',
+      paragraphs: ['Em 14 de agosto, a Justiça decretou a prisão de policial civil investigado por envolvimento no sequestro ocorrido em Artur Alvim no dia 10. A Corregedoria e o Decap seguem responsáveis pela investigação, que tramita sob sigilo.'],
     },
     {
-      title: 'O que continua proibido',
-      bullets: ['Nome/endereço de vítimas particulares.', 'Boato de grupo de bairro sem confirmação.', 'Mapa de ruas “sem polícia” ou previsão de onde haverá crime.', 'Transformar um caso isolado em rótulo de bairro perigoso.'],
+      title: 'Mobile primeiro',
+      bullets: ['FEED para notícias recentes.', 'DADOS para estatísticas e recortes.', 'AÇÕES para operações e capacidade pública.', 'SERVIÇOS para orientação e Delegacia Eletrônica.'],
     },
   ],
   sources: [
     { label: 'Folha de S.Paulo · Artur Alvim · 14/08/2026', url: 'https://www1.folha.uol.com.br/cotidiano/2026/08/justica-decreta-prisao-de-policial-civil-envolvido-em-sequestro-em-sao-paulo.shtml' },
     { label: 'SSP-SP · Estatísticas criminais', url: 'https://www.ssp.sp.gov.br/estatistica/consultas' },
   ],
-  disclaimer: 'O radar não é monitoramento policial em tempo real. Notícias e dados podem ser atualizados conforme investigações, boletins e bases oficiais avancem.',
+  disclaimer: 'O feed não é monitoramento policial em tempo real. A ausência de notícia nova publicada não significa ausência de ocorrências na região.',
 };
 
 const existing = todayDrops.find((drop) => drop.slug === slug);
-if (existing) {
-  Object.assign(existing, {
-    label: 'Segurança ZL',
-    emoji: '🚨',
-    title: 'Segurança ZL: Artur Alvim e roubos de celular em Vila Prudente entram no radar recente',
-    detail: 'A aba agora prioriza fatos dos últimos 7 dias; estatísticas mensais e ações antigas ficam separadas como contexto.',
-  });
-} else {
-  todayDrops.push({
-    slug,
-    label: 'Segurança ZL',
-    emoji: '🚨',
-    title: 'Segurança ZL: Artur Alvim e roubos de celular em Vila Prudente entram no radar recente',
-    detail: 'A aba agora prioriza fatos dos últimos 7 dias; estatísticas mensais e ações antigas ficam separadas como contexto.',
-  });
-}
+const drop = {
+  label: 'Segurança ZL',
+  emoji: '🚨',
+  title: 'Feed Segurança ZL: hoje sem nova ocorrência confirmada até 18h07',
+  detail: 'O radar não preenche espaço com notícia velha: mostra o status do dia e, abaixo, as últimas confirmações, dados e serviços oficiais.',
+};
+if (existing) Object.assign(existing, drop);
+else todayDrops.push({ slug, ...drop });
 
 if (dailyContent.hoje) dailyContent.hoje.readTime = `${todayDrops.length} MISSÕES`;
