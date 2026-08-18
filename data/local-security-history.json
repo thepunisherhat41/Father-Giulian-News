@@ -1,11 +1,18 @@
 {
-  "lastUpdated": "2026-08-18T17:00:00-03:00",
+  "lastUpdated": "2026-08-18T18:00:00-03:00",
   "recentLeads": [
-    "Roubos de veículos caíram 32,08% na capital em junho de 2026 versus junho de 2025",
-    "São Mateus, Cidade Tiradentes e Guaianases tiveram redução conjunta de 42,2% nos roubos em janeiro de 2026",
-    "Seccional de Itaquera teve queda superior a 48% nos roubos de veículos em janeiro de 2026",
-    "COP Leste integrada ao Smart Sampa passou a operar em junho de 2026"
+    "Justiça decretou prisão de policial civil investigado por sequestro ocorrido em Artur Alvim em 10/08/2026",
+    "29º DP Vila Prudente teve alta de 19,5% nos roubos de celular no primeiro semestre de 2026 versus 2025",
+    "Capital teve queda de 14,8% nos roubos de celular no primeiro semestre de 2026",
+    "Roubos de veículos caíram 32,08% na capital em junho de 2026 versus junho de 2025"
   ],
+  "editorialPriority": {
+    "primaryWindowDays": 7,
+    "todayAndYesterdayFirst": true,
+    "recentPublishedDataSecond": true,
+    "historicalContextBelowRecent": true,
+    "showEmptyInsteadOfRecyclingOldNews": true
+  },
   "rules": {
     "noVictimPII": true,
     "noResidentialPrecision": true,
