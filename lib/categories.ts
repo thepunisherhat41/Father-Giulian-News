@@ -21,6 +21,7 @@ import './daily-overrides-2026-08-17-security-fix';
 import './daily-overrides-2026-08-17-10h';
 import './daily-overrides-2026-08-17-17h';
 import './daily-overrides-2026-08-17-games';
+import './daily-overrides-2026-08-18';
 
 export type Category = {
   slug: string;
