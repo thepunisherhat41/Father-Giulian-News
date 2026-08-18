@@ -5,6 +5,7 @@ import './share-improvements.css';
 import './dossier.css';
 import './curiosity-library.css';
 import './pregnancy-maternal.css';
+import './baby-discovery.css';
 import './music.css';
 import './caipira-top5.css';
 import './music-player.css';
@@ -13,6 +14,7 @@ import './vehicle-comparison.css';
 import './games.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
+import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
 import MusicHubPortal from '@/components/MusicHubPortal';
 import PoliticalCandidateAnalysisPortal from '@/components/PoliticalCandidateAnalysisPortal';
 import VehicleComparisonPortal from '@/components/VehicleComparisonPortal';
@@ -29,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <PregnancyMaternalChanges />
+        <BabyDiscoveryLabPortal />
         <MusicHubPortal />
         <PoliticalCandidateAnalysisPortal />
         <VehicleComparisonPortal />
