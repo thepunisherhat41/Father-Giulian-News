@@ -1,0 +1,14 @@
+{
+  "updatedAt": "2026-08-18T11:20:00-03:00",
+  "rule": "Do not reuse the same lead story or the same angle on consecutive editions unless there is a material update. Preserve cross-pillar diversity and source claims from primary or authoritative sources.",
+  "stories": [
+    "Agentic AI red teaming as lifecycle-wide validation",
+    "Agentic AI governance, identity and accountability",
+    "CISA KEV as exploitation-aware prioritization signal",
+    "GenAI data boundary across prompts, RAG, memory and logs",
+    "Phishing-resistant MFA for privileged access",
+    "SBOM plus provenance for software supply chain",
+    "NIST SSDF outcomes over scanner count",
+    "Secure by Design as product and business resilience"
+  ]
+}
