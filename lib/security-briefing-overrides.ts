@@ -1,39 +1,47 @@
 import { dailyContent, todayDrops } from './daily-content';
+import { securityBriefingStories } from './security-briefing-content';
+
+const signalCount = securityBriefingStories.length;
+const p0Count = securityBriefingStories.filter((story) => story.priority === 'P0').length;
+const actNowCount = securityBriefingStories.filter((story) => story.status === 'ACT NOW').length;
 
 Object.assign(dailyContent, {
   'security-briefing': {
-    title: 'Security Briefing: o que vale levar para o time hoje',
-    summary: 'Uma seleção compartilhável que cruza segurança, tecnologia e negócio: AI Security, AppSec, identidade, vulnerabilidades, supply chain, dados, governança e produto seguro.',
-    shareSummary: 'Security Briefing: sinais técnicos traduzidos em impacto para negócio e ações práticas, com fontes e frameworks para compartilhar com o time.',
-    readTime: '8 SINAIS',
-    badge: 'TEAM SECURITY / SHARE READY',
+    title: 'Security Intelligence: o que merece decisão do time agora',
+    summary: 'Um Command Center compartilhável que cruza threat intelligence, vulnerabilidades, IAM, Cloud, AppSec, supply chain, IA e impacto de negócio. Cada sinal deixa claro por que importa, qual decisão discutir, quais evidências sustentam a leitura e como verificar a exposição do ambiente.',
+    shareSummary: `Security Briefing: ${signalCount} sinais source-first organizados por prioridade, impacto e decisão, com Executive View, Technical View e uma fila das conversas mais importantes para o time.`,
+    readTime: `${signalCount} SINAIS`,
+    badge: 'SECURITY INTELLIGENCE / COMMAND CENTER',
     stats: [
-      { label: 'SINAIS', value: '08', note: 'curadoria inicial' },
-      { label: 'MODOS', value: 'EXEC + TECH', note: 'dois níveis de share' },
-      { label: 'FOCO', value: 'TECH + BUSINESS' },
+      { label: 'INTEL SET', value: String(signalCount).padStart(2, '0'), note: 'sinais curados' },
+      { label: 'P0', value: String(p0Count).padStart(2, '0'), note: 'prioridade imediata' },
+      { label: 'ACT NOW', value: String(actNowCount).padStart(2, '0'), note: 'decisões sugeridas' },
     ],
     sections: [
-      { title: 'Como usar esta aba', bullets: ['Executive View: resumo curto para gestão, produto e stakeholders.', 'Technical View: contexto, ação sugerida e frameworks para o time técnico.', 'Cada card tem fonte verificável, público-alvo e botão para copiar/compartilhar.'] },
-      { title: 'O que entra no radar', bullets: ['AI Security e Agentic AI.', 'AppSec, SSDLC, APIs e CI/CD.', 'IAM, Cloud, Vulnerability Management e Threat Intel.', 'Supply Chain, Data/Privacy, GRC e impactos de negócio.'] },
-      { title: 'Regra editorial', paragraphs: ['Notícia só entra quando existe relevância prática. Hype de fornecedor, rumor e afirmação sem fonte não viram recomendação. Quando um item é orientação de framework ou conteúdo de referência, ele é rotulado como tal em vez de fingir que é breaking news.'] },
+      { title: 'Comece pela Decision Queue', bullets: ['A abertura mostra as três conversas que merecem chegar primeiro ao time.', 'P0/P1 são prioridades editoriais; a decisão real deve considerar exposição, criticidade, privilégio e blast radius.', 'Use “Copiar decisões do dia” para levar o briefing inteiro para Teams ou WhatsApp sem montar resumo manualmente.'] },
+      { title: 'Executive View × Technical View', bullets: ['Executive View traduz risco operacional, financeiro, reputacional e a decisão sugerida.', 'Technical View preserva evidência, perguntas de exposição, controles e ações para o time técnico.', 'Filtros por prioridade e pilar permitem chegar rapidamente ao recorte de IAM, Cloud, AppSec, supply chain, IA, vulnerabilidades ou threat intel.'] },
+      { title: 'Regra editorial', paragraphs: ['O briefing é source-first e no-clickbait. Incidente observado, vulnerabilidade, tendência, guidance e estratégia são rotulados separadamente. Quando existe pesquisa ou advisory primário, ele prevalece sobre agregadores; mídia visual só entra quando pertence de fato à pesquisa ou ao assunto.'] },
     ],
     sources: [
-      { label: 'OWASP GenAI Security Project', url: 'https://genai.owasp.org/' },
+      { label: 'Microsoft Security / Threat Intelligence', url: 'https://www.microsoft.com/en-us/security/blog/' },
+      { label: 'Google Threat Intelligence / Mandiant', url: 'https://cloud.google.com/blog/topics/threat-intelligence' },
       { label: 'CISA · Cybersecurity', url: 'https://www.cisa.gov/topics/cybersecurity-best-practices' },
       { label: 'NIST · Computer Security Resource Center', url: 'https://csrc.nist.gov/' },
     ],
   },
 });
 
-if (!todayDrops.some((drop) => drop.slug === 'security-briefing')) {
-  todayDrops.push({
-    slug: 'security-briefing',
-    label: 'Security Briefing',
-    emoji: '📰',
-    title: '8 sinais de segurança, tecnologia e negócio prontos para compartilhar',
-    detail: 'Executive View, Technical View, fontes, frameworks e ações práticas para o time.',
-  });
-}
+const securityDrop = {
+  slug: 'security-briefing',
+  label: 'Security Briefing',
+  emoji: '📰',
+  title: `Security Command Center: ${signalCount} sinais, P0/P1 e uma Decision Queue para o time`,
+  detail: 'Threat intel, AppSec, IAM, Cloud, supply chain, IA e negócio traduzidos em decisões, evidências e perguntas de exposição — prontos para compartilhar.',
+};
+
+const existingSecurityDrop = todayDrops.find((drop) => drop.slug === 'security-briefing');
+if (existingSecurityDrop) Object.assign(existingSecurityDrop, securityDrop);
+else todayDrops.push(securityDrop);
 
 if (dailyContent.hoje) {
   dailyContent.hoje.readTime = '21 MISSÕES';
