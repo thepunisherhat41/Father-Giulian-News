@@ -7,6 +7,20 @@ export type SecurityBriefingMedia = {
 };
 
 export const securityBriefingMedia: Record<string, SecurityBriefingMedia> = {
+  'storm-2949-cloud-identity': {
+    url: 'https://www.microsoft.com/en-us/security/blog/wp-content/uploads/2026/05/image-79.webp',
+    alt: 'Diagrama oficial da Microsoft mostrando a cadeia de ataque Storm-2949 de SSPR até exfiltração em Azure',
+    caption: 'Cadeia real documentada pela Microsoft: identidade/SSPR, Entra ID, Microsoft 365, Azure control plane, Key Vault, VMs e exfiltração.',
+    credit: 'Microsoft Defender Security Research Team · 18 Mai 2026',
+    sourceUrl: 'https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/',
+  },
+  'mastra-npm-supply-chain': {
+    url: 'https://www.microsoft.com/en-us/security/blog/wp-content/uploads/2026/06/image-30.webp',
+    alt: 'Diagrama oficial da Microsoft da cadeia de comprometimento Mastra npm',
+    caption: 'Attack chain oficial: takeover de conta npm, typosquat, injeção massiva de dependência, postinstall e implantação de segundo estágio.',
+    credit: 'Microsoft Threat Intelligence · 17 Jun 2026',
+    sourceUrl: 'https://www.microsoft.com/en-us/security/blog/2026/06/17/postinstall-payload-inside-mastra-npm-supply-chain-compromise/',
+  },
   'ai-assisted-vulnerability-management': {
     url: 'https://storage.googleapis.com/gweb-cloudblog-publish/images/Demystifying_AI_image5.max-1300x1300.png',
     alt: 'Diagrama oficial da Mandiant sobre integração de risk-based vulnerability management',
