@@ -26,7 +26,7 @@ export const richMediaByLabel: Record<string, RichMediaEntry> = {
   Viagens: { label:'Viagens',icon:'✈️',tag:'TRAVEL MAP',title:'Destino bom é destino bem planejado',caption:'Tempo, custo, deslocamento, entrada, segurança e experiência aparecem na mesma leitura.',videoLabel:'Ministério do Turismo',videoHref:'https://www.gov.br/turismo/' },
   Finanças: { label:'Finanças',icon:'💰',tag:'MONEY FLOW',title:'Mercado só importa quando chega à decisão pessoal',caption:'Juros, inflação, crédito, câmbio e orçamento são conectados visualmente ao cotidiano.',videoLabel:'Banco Central do Brasil',videoHref:'https://www.youtube.com/@BancoCentraldoBrasil' },
   Tecnologia: { label:'Tecnologia',icon:'💻',tag:'TECH RADAR',title:'Produto, infraestrutura e negócio na mesma pilha',caption:'O visual conecta tecnologia emergente ao custo, capacidade, dependências e uso real.',videoLabel:'IEEE Spectrum / vídeo',videoHref:'https://www.youtube.com/@IEEESpectrum' },
-  'Cyber Security': { label:'Cyber Security',icon:'🛡️',tag:'THREAT VISUAL',title:'Ataque, identidade, exposição e impacto',caption:'A imagem organiza o caminho entre sinal técnico, risco operacional e resposta defensiva.',videoLabel:'CISA / Cybersecurity',videoHref:'https://www.youtube.com/@CISAgov',youtubeId:'tfiUSSnVq9o' },
+  'Cyber Security': { label:'Cyber Security',icon:'🛡️',tag:'THREAT VISUAL',title:'Ataque, identidade, exposição e impacto',caption:'A imagem organiza o caminho entre sinal técnico, risco operacional e resposta defensiva.',videoLabel:'CISA / Cybersecurity',videoHref:'https://www.youtube.com/@CISAgov' },
 };
 
 export const genericMediaFallback: RichMediaEntry = {
