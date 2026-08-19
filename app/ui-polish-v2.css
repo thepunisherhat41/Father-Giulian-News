@@ -1,0 +1,523 @@
+/* Father Giulian News · visual polish v2 */
+
+:root {
+  --fg-panel: rgba(9, 14, 24, .82);
+  --fg-panel-strong: rgba(7, 11, 19, .94);
+  --fg-border: rgba(255, 255, 255, .09);
+  --fg-border-strong: rgba(255, 255, 255, .16);
+  --fg-text-soft: rgba(232, 239, 248, .72);
+  --fg-accent: #70f5c8;
+  --fg-wa: #25d366;
+  --fg-radius-xl: 28px;
+  --fg-radius-lg: 22px;
+  --fg-shadow: 0 24px 70px rgba(0, 0, 0, .28);
+}
+
+body {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(70, 122, 255, .10), transparent 30%),
+    radial-gradient(circle at 48% 46%, rgba(40, 211, 154, .055), transparent 34%),
+    #05080f;
+}
+
+.content {
+  min-width: 0;
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-xl);
+  background:
+    linear-gradient(135deg, rgba(12, 21, 36, .96), rgba(6, 10, 18, .90)),
+    radial-gradient(circle at 88% 14%, rgba(112, 245, 200, .12), transparent 27%);
+  box-shadow: var(--fg-shadow);
+}
+
+.stage::before,
+.stage::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.stage::before {
+  width: 380px;
+  height: 380px;
+  right: -110px;
+  top: -170px;
+  border-radius: 50%;
+  border: 1px solid rgba(112, 245, 200, .16);
+  box-shadow: 0 0 0 34px rgba(112, 245, 200, .025), 0 0 0 82px rgba(112, 245, 200, .018);
+}
+
+.stage::after {
+  inset: 0;
+  opacity: .24;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, #000, transparent 92%);
+}
+
+.heroIcon {
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 18px;
+  border-radius: 26px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 18px 36px rgba(0,0,0,.20);
+  backdrop-filter: blur(16px);
+  font-size: 44px;
+}
+
+.stage h1 {
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.stage .lead {
+  max-width: 840px;
+  color: var(--fg-text-soft);
+  line-height: 1.65;
+}
+
+.articlePanel {
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-radius-xl);
+  background: linear-gradient(180deg, rgba(11, 16, 27, .94), rgba(7, 11, 19, .94));
+  box-shadow: var(--fg-shadow);
+}
+
+.articlePanel > h2 {
+  max-width: 1020px;
+  text-wrap: balance;
+  letter-spacing: -.035em;
+}
+
+.articleSummary {
+  max-width: 980px;
+  color: var(--fg-text-soft);
+  line-height: 1.72;
+}
+
+.intelSection,
+.dossierSection,
+.candidateCard,
+.civicGrid article,
+.wordPanel,
+.maternalChangesGrid article {
+  border-color: var(--fg-border) !important;
+  background: linear-gradient(155deg, rgba(255,255,255,.045), rgba(255,255,255,.018)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.intelSection:hover,
+.candidateCard:hover,
+.civicGrid article:hover,
+.maternalChangesGrid article:hover {
+  border-color: var(--fg-border-strong) !important;
+  transform: translateY(-1px);
+}
+
+.intelSection,
+.candidateCard,
+.civicGrid article,
+.maternalChangesGrid article {
+  transition: border-color .18s ease, transform .18s ease, background .18s ease;
+}
+
+/* Per-topic sharing */
+.hasTopicShare {
+  position: relative !important;
+}
+
+.topicShareButton {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 34px;
+  padding: 8px 11px;
+  border: 1px solid rgba(37, 211, 102, .34);
+  border-radius: 999px;
+  background: rgba(37, 211, 102, .09);
+  color: #b9ffd2;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+
+.topicShareButton:hover {
+  transform: translateY(-1px);
+  background: rgba(37, 211, 102, .16);
+  border-color: rgba(37, 211, 102, .58);
+}
+
+.intelSection.hasTopicShare .intelHeader,
+.dossierSection.hasTopicShare .dossierSectionBody,
+.candidateCard.hasTopicShare,
+.civicGrid article.hasTopicShare,
+.maternalChangesGrid article.hasTopicShare,
+.wordPanel.hasTopicShare {
+  padding-top: 54px;
+}
+
+/* Real media: larger, cleaner, more editorial */
+.dailyRichMedia {
+  overflow: hidden;
+  border: 1px solid var(--fg-border-strong);
+  border-radius: var(--fg-radius-xl);
+  background: linear-gradient(160deg, rgba(14, 21, 34, .98), rgba(6, 10, 17, .98));
+  box-shadow: 0 28px 72px rgba(0,0,0,.30);
+}
+
+.dailyMediaStage,
+.briefingVisual {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #03060b;
+}
+
+.dailyMediaImageLink {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  aspect-ratio: 16 / 8.2;
+}
+
+.dailyMediaImageLink img,
+.briefingVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.002);
+  filter: saturate(.96) contrast(1.04);
+  transition: transform .45s ease, filter .35s ease;
+}
+
+.dailyMediaImageLink:hover img,
+.briefingVisual:hover img {
+  transform: scale(1.025);
+  filter: saturate(1.03) contrast(1.05);
+}
+
+.dailyMediaImageShade,
+.briefingVisualShade {
+  background: linear-gradient(to top, rgba(2,5,10,.92), rgba(2,5,10,.08) 60%, rgba(2,5,10,.02));
+}
+
+.dailyMediaCaption {
+  gap: 18px;
+  align-items: center;
+}
+
+.dailyMediaGallery {
+  gap: 10px;
+}
+
+.dailyMediaGallery button {
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--fg-border);
+  background: rgba(255,255,255,.025);
+}
+
+.dailyMediaGallery button.active {
+  border-color: rgba(112,245,200,.65);
+  box-shadow: 0 0 0 2px rgba(112,245,200,.10);
+}
+
+.dailyMediaGallery img {
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Security Briefing: more readable long-form cards */
+.securityBriefingHub {
+  margin-top: 24px;
+}
+
+.briefingCommandCenter,
+.briefingControls,
+.briefingStory,
+.briefingMethodNote {
+  border-color: var(--fg-border) !important;
+}
+
+.briefingCommandCenter {
+  overflow: hidden;
+  border-radius: var(--fg-radius-xl);
+  box-shadow: 0 28px 80px rgba(0,0,0,.30);
+}
+
+.briefingHero {
+  background:
+    radial-gradient(circle at 86% 12%, rgba(112,245,200,.13), transparent 28%),
+    linear-gradient(135deg, rgba(12,20,34,.98), rgba(7,11,19,.98));
+}
+
+.briefingHeroCopy h3 {
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.briefingGrid {
+  gap: 24px;
+}
+
+.briefingStory {
+  overflow: hidden;
+  border-radius: 26px !important;
+  background: linear-gradient(160deg, rgba(12,18,29,.98), rgba(7,11,18,.98)) !important;
+  box-shadow: 0 18px 56px rgba(0,0,0,.22);
+}
+
+.briefingStory.withVisual .briefingVisual {
+  min-height: 300px;
+}
+
+.briefingStoryBody {
+  min-width: 0;
+}
+
+.briefingStoryTitleRow h4 {
+  max-width: 920px;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.briefingDeck,
+.briefingWhyNow p,
+.briefingImpactGrid p,
+.briefingOperationalGrid li,
+.briefingDeepDive li {
+  line-height: 1.68;
+}
+
+.briefingDecision {
+  border-left: 3px solid var(--fg-accent);
+  background: rgba(112,245,200,.055);
+}
+
+.briefingEvidenceGrid > div {
+  min-height: 86px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.027);
+}
+
+.briefingDeepDive {
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(60,116,255,.055), rgba(112,245,200,.035));
+}
+
+/* Analyst layer: new information, not a repeat of the news card */
+.briefingAnalystLayer {
+  margin-top: 18px;
+  padding: 20px;
+  border: 1px solid rgba(112,245,200,.16);
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(112,245,200,.052), rgba(71,111,255,.035)),
+    rgba(255,255,255,.015);
+}
+
+.briefingAnalystHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.briefingAnalystHeader span,
+.briefingAnalystGrid small,
+.briefingDecisionGate small {
+  display: block;
+  color: rgba(112,245,200,.92);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.briefingAnalystHeader h5 {
+  margin: 5px 0 0;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.25;
+}
+
+.briefingAnalystHeader button {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 10px 14px;
+  border: 1px solid rgba(37,211,102,.42);
+  border-radius: 12px;
+  background: rgba(37,211,102,.12);
+  color: #c7ffd9;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  cursor: pointer;
+}
+
+.briefingAnalystHeader button:hover {
+  background: rgba(37,211,102,.20);
+  border-color: rgba(37,211,102,.66);
+}
+
+.briefingAnalystGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.briefingAnalystGrid section {
+  padding: 16px;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  background: rgba(255,255,255,.022);
+}
+
+.briefingAnalystGrid section.escalation {
+  border-color: rgba(255,125,104,.15);
+  background: rgba(255,92,70,.035);
+}
+
+.briefingAnalystGrid ul {
+  margin: 11px 0 0;
+  padding-left: 19px;
+}
+
+.briefingAnalystGrid li {
+  margin: 7px 0;
+  color: rgba(235,241,249,.80);
+  line-height: 1.58;
+}
+
+.briefingDecisionGate {
+  margin-top: 12px;
+  padding: 15px 16px;
+  border-radius: 16px;
+  background: rgba(5,9,15,.58);
+}
+
+.briefingDecisionGate p {
+  margin: 7px 0 0;
+  color: rgba(246,249,253,.88);
+  line-height: 1.62;
+}
+
+.briefingActions {
+  gap: 9px !important;
+}
+
+.briefingActions .wa.full {
+  order: -2;
+  flex: 1 1 100%;
+  min-height: 44px;
+  border-color: rgba(37,211,102,.55) !important;
+  background: rgba(37,211,102,.15) !important;
+  color: #d2ffe1 !important;
+}
+
+/* Share pack: visually quieter than the actual article */
+.sharePack {
+  border: 1px solid rgba(37,211,102,.16) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, rgba(37,211,102,.045), rgba(255,255,255,.018)) !important;
+}
+
+.sharePreview pre {
+  max-height: 320px;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.shareButtons .share,
+.dropShare {
+  border-color: rgba(37,211,102,.42) !important;
+  background: rgba(37,211,102,.11) !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .stage,
+  .articlePanel,
+  .briefingCommandCenter,
+  .dailyRichMedia {
+    border-radius: 20px;
+  }
+
+  .heroIcon {
+    width: 74px;
+    height: 74px;
+    border-radius: 21px;
+    font-size: 35px;
+  }
+
+  .dailyMediaImageLink {
+    min-height: 250px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .briefingStory.withVisual .briefingVisual {
+    min-height: 230px;
+  }
+
+  .briefingAnalystHeader {
+    flex-direction: column;
+  }
+
+  .briefingAnalystHeader button {
+    width: 100%;
+  }
+
+  .briefingAnalystGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .topicShareButton {
+    position: static;
+    width: fit-content;
+    margin: 0 0 12px auto;
+  }
+
+  .intelSection.hasTopicShare .intelHeader,
+  .dossierSection.hasTopicShare .dossierSectionBody,
+  .candidateCard.hasTopicShare,
+  .civicGrid article.hasTopicShare,
+  .maternalChangesGrid article.hasTopicShare,
+  .wordPanel.hasTopicShare {
+    padding-top: inherit;
+  }
+
+  .dailyMediaImageLink {
+    min-height: 210px;
+  }
+
+  .briefingAnalystLayer {
+    padding: 15px;
+    border-radius: 18px;
+  }
+}
