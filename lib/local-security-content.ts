@@ -11,12 +11,12 @@ export type LocalSecuritySignal = {
   source: { label: string; url: string };
 };
 
-export const localSecurityUpdatedAt = '19 AGO 2026 · 05H';
+export const localSecurityUpdatedAt = '19 AGO 2026 · 10H';
 
 export const localSecurityTodayStatus = {
   date: '19 AGO 2026',
   status: 'SEM NOVA OCORRÊNCIA CONFIRMADA',
-  note: 'Até o fechamento das 05h, o radar não encontrou publicação nova e suficientemente confirmada de hoje ou da madrugada sobre crime, roubo, furto ou operação na Zona Leste nas fontes monitoradas. Em vez de preencher com notícia velha ou de outra região, o feed mantém a última confirmação válida e separa o restante como contexto.',
+  note: 'Na nova varredura das 10h, o radar pesquisou Itaquera, Artur Alvim, Penha, Vila Matilde, Vila Prudente, Sapopemba, São Mateus, Cidade Tiradentes, Guaianases, Itaim Paulista, São Miguel, Ermelino Matarazzo e Aricanduva/Vila Formosa e não encontrou publicação criminal nova, suficientemente confirmada e diretamente atribuível à Zona Leste nesta manhã. O feed não recicla notícia antiga como recente.',
   nextCheck: 'nova varredura editorial na próxima janela',
 };
 
