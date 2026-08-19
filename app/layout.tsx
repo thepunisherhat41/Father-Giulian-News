@@ -22,6 +22,7 @@ import './real-source-media.css';
 import './local-security.css';
 import './daily-game.css';
 import './editorial-dedupe.css';
+import './ui-polish-v2.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
@@ -31,11 +32,13 @@ import VehicleComparisonPortal from '@/components/VehicleComparisonPortal';
 import GameHubPortal from '@/components/GameHubPortal';
 import { Switch2RadarPortal } from '@/components/Switch2Radar';
 import SecurityBriefingPortal from '@/components/SecurityBriefingPortal';
+import SecurityBriefingAnalystLayer from '@/components/SecurityBriefingAnalystLayer';
 import AppSecFeedPortal from '@/components/AppSecFeedPortal';
 import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
 import DailyQuestHUDPortal from '@/components/DailyQuestHUD';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
+import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -55,11 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <GameHubPortal />
         <Switch2RadarPortal />
         <SecurityBriefingPortal />
+        <SecurityBriefingAnalystLayer />
         <AppSecFeedPortal />
         <LocalSecurityPortal />
         <RichMediaPortal />
         <DailyQuestHUDPortal />
         <EditorialPresentationGuard />
+        <TopicShareEnhancer />
       </body>
     </html>
   );
