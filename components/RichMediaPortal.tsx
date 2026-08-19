@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { findRichMediaForStory, type RichMediaEntry } from '@/lib/rich-media';
+import type { RichMediaEntry } from '@/lib/rich-media';
+import { findCurrentRichMedia } from '@/lib/current-rich-media';
 
 function VisualPanel({ media }: { media: RichMediaEntry }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -98,7 +99,7 @@ export default function RichMediaPortal() {
         return;
       }
 
-      const nextMedia = findRichMediaForStory(label, storyTitle);
+      const nextMedia = findCurrentRichMedia(label, storyTitle);
       if (!nextMedia) {
         old?.remove();
         setHost(null);
