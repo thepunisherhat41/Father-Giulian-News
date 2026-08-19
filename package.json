@@ -7,7 +7,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "quality": "node scripts/editorial-quality-check.mjs",
+    "build": "npm run quality && next build",
     "start": "next start",
     "lint": "next lint"
   },
