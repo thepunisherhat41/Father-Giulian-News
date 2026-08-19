@@ -19,17 +19,17 @@ export function Switch2Radar() {
     <section className="switch2Radar" id="switch2-radar">
       <div className="switch2Header">
         <div>
-          <span>NINTENDO SWITCH 2 / MISSION BOARD</span>
-          <h4>Switch 2 Radar</h4>
-          <p>Jogos para descobrir, acompanhar e separar em três grupos: já dá para jogar, está chegando ou ainda precisa de mais informação antes do hype.</p>
+          <span>NINTENDO SWITCH 2 · JOGOS E LANÇAMENTOS</span>
+          <h4>Nintendo Switch 2: o que vale acompanhar</h4>
+          <p>Jogos para descobrir e acompanhar, separados em três grupos: já disponíveis, próximos lançamentos e títulos que ainda precisam de mais informação antes de gerar expectativa.</p>
         </div>
-        <b>08 GAMES</b>
+        <b>08 JOGOS</b>
       </div>
 
       <div className="switch2Filters" role="tablist" aria-label="Filtro Nintendo Switch 2">
         <button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>TODOS</button>
         <button className={filter === 'available' ? 'active' : ''} onClick={() => setFilter('available')}>✓ DISPONÍVEIS</button>
-        <button className={filter === 'upcoming' ? 'active' : ''} onClick={() => setFilter('upcoming')}>◌ NO RADAR</button>
+        <button className={filter === 'upcoming' ? 'active' : ''} onClick={() => setFilter('upcoming')}>◌ A CAMINHO</button>
       </div>
 
       <div className="switch2Grid">
@@ -50,9 +50,9 @@ export function Switch2Radar() {
       </div>
 
       <aside className="switch2BottomLine">
-        <small>COMO LER O RADAR</small>
+        <small>COMO LER ESTA SEÇÃO</small>
         <strong>Switch 2 entra como ecossistema próprio, não como “substituto do PS5”.</strong>
-        <p>O radar vai priorizar exclusivos, experiências portáteis, co-op local, jogos Nintendo e títulos multiplataforma que tenham uma razão concreta para serem interessantes no formato híbrido.</p>
+        <p>A seção prioriza exclusivos, experiências portáteis, co-op local, jogos Nintendo e títulos multiplataforma que tenham uma razão concreta para serem interessantes no formato híbrido.</p>
       </aside>
     </section>
   );
