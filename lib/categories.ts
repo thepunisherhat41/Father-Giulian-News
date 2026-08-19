@@ -24,6 +24,8 @@ import './daily-overrides-2026-08-17-games';
 import './daily-overrides-2026-08-18';
 import './daily-overrides-2026-08-18-10h';
 import './daily-overrides-2026-08-18-17h';
+import './daily-overrides-2026-08-19';
+import './vehicle-options-2026-08-19';
 import './appsec-feed-overrides-2026-08-18-17h';
 import './security-briefing-2026-08-18-17h';
 import './music-top10-overrides';
