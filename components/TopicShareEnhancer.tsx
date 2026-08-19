@@ -28,6 +28,17 @@ function topicTitle(element: HTMLElement) {
   );
 }
 
+function sourceForTopic(element: HTMLElement) {
+  const local = element.querySelector<HTMLAnchorElement>('a[href]');
+  if (local?.href) return local;
+
+  const parentPanel = element.closest<HTMLElement>('.maternalChangesPanel, .politicsTracker, .dossierPanel, .articlePanel');
+  const contextual = parentPanel?.querySelector<HTMLAnchorElement>(
+    '.candidateSource, .candidateAnalysisSources a, .maternalSources a, .dossierSources a, .sourceBlock a',
+  );
+  return contextual ?? null;
+}
+
 function topicPayload(element: HTMLElement) {
   const pageLabel = normalize(document.querySelector('.stage h1')?.textContent ?? 'Father Giulian News');
   const title = topicTitle(element);
@@ -42,7 +53,7 @@ function topicPayload(element: HTMLElement) {
     .filter(Boolean)
     .slice(0, 6);
 
-  const source = document.querySelector<HTMLAnchorElement>('.sourceBlock a, .dossierSources a, .maternalSources a');
+  const source = sourceForTopic(element);
   const lines = [
     `*${pageLabel.toUpperCase()} · TÓPICO*`,
     '',
@@ -58,7 +69,7 @@ function topicPayload(element: HTMLElement) {
 
 function attachButton(element: HTMLElement) {
   if (element.dataset.topicShareReady === 'true') return;
-  if (element.closest('.briefingStory, .appsecFeed, .localSecurityHub, .musicHub, .gameHub')) return;
+  if (element.closest('.briefingV2Story, .briefingStory, .appsecFeed, .localSecurityHub, .musicHub, .gameHub')) return;
 
   const style = window.getComputedStyle(element);
   if (style.display === 'none' || style.visibility === 'hidden') return;
