@@ -51,7 +51,7 @@ for (const content of Object.values(dailyContent)) {
     existing.bullets = uniqueStrings([...(existing.bullets ?? []), ...(section.bullets ?? [])]);
   }
 
-  content.sections = [...sectionsByTitle.values()]
+  content.sections = Array.from(sectionsByTitle.values())
     .map((section) => {
       const paragraphKeys = new Set((section.paragraphs ?? []).map(norm));
       return {
