@@ -1,0 +1,196 @@
+/* Platform-wide quality layer: clarity, legibility, focus and mobile polish. */
+
+.stage h1,
+.articlePanel h2,
+.articlePanel h3,
+.articlePanel h4,
+.articlePanel h5,
+.musicHub h3,
+.musicHub h4,
+.gameHub h3,
+.gameHub h4,
+.babyDiscoveryLab h3,
+.babyDiscoveryLab h4,
+.securityBriefingV2 h3,
+.securityBriefingV2 h4,
+.appSecExperience h3,
+.appSecExperience h4,
+.localSecurityHub h3,
+.localSecurityHub h4,
+.vehicleComparisonHub h3,
+.vehicleComparisonHub h4 {
+  text-wrap: balance;
+}
+
+.articleSummary,
+.intelSection p,
+.intelSection li,
+.candidateCard p,
+.candidateCard li,
+.vehicleComparisonHub p,
+.vehicleComparisonHub li,
+.musicHub p,
+.gameHub p,
+.gameHub li,
+.babyDiscoveryLab p,
+.securityBriefingV2 p,
+.securityBriefingV2 li,
+.appSecExperience p,
+.appSecExperience li,
+.localSecurityHub p,
+.localSecurityHub li {
+  text-wrap: pretty;
+}
+
+.articleSummary,
+.intelSection p,
+.intelSection li {
+  max-width: 78ch;
+}
+
+button,
+a,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible,
+[tabindex='0']:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* Rótulos de interface devem parecer editoriais, não códigos internos. */
+.hud span,
+.kicker,
+.vehicleComparisonHeader > div > span,
+.musicIntro > div > span,
+.gameHubHeader > div:first-child > span,
+.babyDiscoveryHeader > div > span,
+.zlHeroCopy > span,
+.appSecFeedHeader > div > span,
+.briefingV2Hero > div:first-child > span {
+  letter-spacing: .11em;
+}
+
+.hud span:last-child {
+  opacity: .7;
+}
+
+/* Reduz ruído gamificado onde ele não acrescenta informação. */
+.musicIntro > b,
+.babyDiscoveryHeader > b {
+  border-color: rgba(101, 217, 255, .24) !important;
+  color: #8ab4aa !important;
+  box-shadow: none !important;
+}
+
+/* Segurança ZL: o antigo ZE/RADAR vira um indicador explícito da Zona Leste. */
+.zlRadarOrb > span {
+  font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
+  letter-spacing: .08em !important;
+}
+
+.zlRadarOrb > b {
+  font-size: .5rem !important;
+  letter-spacing: .12em !important;
+}
+
+/* Comparadores: regra de curadoria precisa caber e ser legível no celular. */
+.vehicleComparisonHeader > b {
+  max-width: 250px;
+  white-space: normal !important;
+  line-height: 1.45 !important;
+  text-align: right;
+}
+
+.vehicleOptionCard > em {
+  letter-spacing: .06em !important;
+}
+
+/* Progressive disclosure deve ter affordance clara. */
+details > summary {
+  transition: border-color .16s ease, background .16s ease, color .16s ease;
+}
+
+details > summary:hover {
+  color: #effff8;
+}
+
+/* Fontes e créditos ficam visíveis, mas não competem com o conteúdo principal. */
+.realSourceCredit,
+.richMediaCredit,
+.briefingV2Media figcaption,
+.appSecFeedVisualCredit,
+.zlSourceLine,
+.candidateAnalysisSources,
+.vehicleSource {
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+/* Cards densos ganham um pouco mais de respiro. */
+.intelSection,
+.candidateCard,
+.vehicleOptionCard,
+.vehicleDetailPanel,
+.zlSignal,
+.appSecStoryCard,
+.briefingV2Story {
+  scroll-margin-top: 76px;
+}
+
+@media (max-width: 760px) {
+  .hud span:last-child {
+    display: none;
+  }
+
+  .stage {
+    min-height: 245px;
+  }
+
+  .stage h1 {
+    font-size: clamp(2.45rem, 16vw, 4.4rem);
+  }
+
+  .articlePanel {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .articleSummary,
+  .intelSection p,
+  .intelSection li {
+    font-size: .94rem;
+    line-height: 1.68;
+  }
+
+  .vehicleComparisonHeader > b {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .gameHubHeader,
+  .babyDiscoveryHeader,
+  .musicIntro,
+  .briefingV2Hero,
+  .appSecFeedHeader,
+  .zlCommandHero {
+    gap: 14px !important;
+  }
+
+  .gameQuickActions,
+  .briefingV2TopShare,
+  .briefingV2HeroActions {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .gameQuickActions::-webkit-scrollbar,
+  .briefingV2TopShare::-webkit-scrollbar,
+  .briefingV2HeroActions::-webkit-scrollbar {
+    display: none;
+  }
+}
