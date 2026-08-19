@@ -15,6 +15,7 @@ import './games.css';
 import './switch2-radar.css';
 import './security-briefing.css';
 import './security-briefing-deep-dive.css';
+import './security-briefing-v2.css';
 import './appsec-feed.css';
 import './rich-media.css';
 import './real-source-media.css';
