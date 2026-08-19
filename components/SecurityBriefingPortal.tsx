@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import SecurityBriefingHub from './SecurityBriefingHub';
+import SecurityBriefingHubV2 from './SecurityBriefingHubV2';
 
 export default function SecurityBriefingPortal() {
   const [host, setHost] = useState<HTMLElement | null>(null);
@@ -36,5 +36,5 @@ export default function SecurityBriefingPortal() {
     };
   }, []);
 
-  return host ? createPortal(<SecurityBriefingHub />, host) : null;
+  return host ? createPortal(<SecurityBriefingHubV2 />, host) : null;
 }
