@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { securityBriefingStories, type SecurityBriefingStory } from '@/lib/security-briefing-content';
-import { securityBriefingDeepDive } from '@/lib/security-briefing-deep-dive';
 import { securityBriefingAnalystNotes } from '@/lib/security-briefing-analyst-notes';
 
 type AnalystHost = {
@@ -15,70 +14,23 @@ function openWhatsApp(text: string) {
   window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 }
 
-function buildAnalystShare(story: SecurityBriefingStory) {
-  const deepDive = securityBriefingDeepDive[story.id];
+function buildEvidencePlanShare(story: SecurityBriefingStory) {
   const analyst = securityBriefingAnalystNotes[story.id];
-
+  if (!analyst) return '';
   return [
-    `*SECURITY ANALYST BRIEF · ${story.priority} · ${story.pillar}*`,
-    `Status: ${story.status} · ${story.signalType} · Confiança: ${story.confidence}`,
-    `Publicado: ${story.publishedAt} · ${story.freshness}`,
-    '',
+    `*SECURITY EVIDENCE PLAN · ${story.priority} · ${story.pillar}*`,
     `*${story.title}*`,
-    story.deck,
     '',
-    `*POR QUE IMPORTA AGORA*\n${story.whyNow}`,
+    '*EVIDÊNCIA A COLETAR*',
+    ...analyst.evidenceToCollect.map((item) => `- ${item}`),
     '',
-    `*DECISÃO SUGERIDA*\n${story.decision}`,
+    '*ESCALAR SE*',
+    ...analyst.escalationTriggers.map((item) => `- ${item}`),
     '',
-    `*IMPACTO TÉCNICO*\n${story.technicalImpact}`,
+    `*DECISION GATE*\n${analyst.decisionGate}`,
     '',
-    `*IMPACTO PARA O NEGÓCIO*\n${story.businessImpact}`,
-    '',
-    '*EVIDÊNCIAS DA FONTE*',
-    ...story.evidence.map((item) => `- ${item.label}: ${item.value}`),
-    '',
-    ...(deepDive ? [
-      '*ATTACK / EXPOSURE PATH*',
-      ...deepDive.attackPath.map((item, index) => `${index + 1}. ${item}`),
-      '',
-      '*CONTROLES A VALIDAR*',
-      ...deepDive.controlsToValidate.map((item) => `- ${item}`),
-      '',
-      '*TELEMETRIA PARA CHECAR*',
-      ...deepDive.telemetryToCheck.map((item) => `- ${item}`),
-      '',
-    ] : []),
-    ...(analyst ? [
-      '*EVIDÊNCIA QUE PRECISAMOS COLETAR*',
-      ...analyst.evidenceToCollect.map((item) => `- ${item}`),
-      '',
-      '*ESCALAR SE*',
-      ...analyst.escalationTriggers.map((item) => `- ${item}`),
-      '',
-      `*DECISION GATE*\n${analyst.decisionGate}`,
-      '',
-    ] : []),
-    '*PERGUNTAS DE EXPOSIÇÃO*',
-    ...story.exposureQuestions.map((item) => `- ${item}`),
-    '',
-    '*AÇÕES AGORA*',
-    ...story.actionNow.map((item) => `- ${item}`),
-    '',
-    ...(deepDive ? [
-      `*OWNER* ${deepDive.decisionOwner}`,
-      `*HORIZONTE* ${deepDive.horizon}`,
-      `*CRITÉRIO DE SUCESSO* ${deepDive.successCriteria}`,
-      `*PERGUNTA PARA O TIME* ${deepDive.discussionPrompt}`,
-      '',
-    ] : []),
-    `*Frameworks:* ${story.frameworks.join(' · ')}`,
-    `*Público:* ${story.audience.join(' · ')}`,
-    '',
-    `*Fonte primária:* ${story.source.label}`,
+    `Fonte primária: ${story.source.label}`,
     story.source.url,
-    '',
-    '_A prioridade editorial precisa ser validada contra exposição, criticidade e controles reais do ambiente._',
   ].join('\n');
 }
 
@@ -87,14 +39,14 @@ function AnalystPanel({ story }: { story: SecurityBriefingStory }) {
   if (!note) return null;
 
   return (
-    <section className="briefingAnalystLayer" aria-label={`Camada de análise operacional de ${story.title}`}>
+    <section className="briefingAnalystLayer" aria-label={`Plano de evidência de ${story.title}`}>
       <div className="briefingAnalystHeader">
         <div>
-          <span>ANALYST LAYER / DECISION QUALITY</span>
+          <span>ANALYST LAYER / EVIDENCE PLAN</span>
           <h5>O que precisamos provar antes de encerrar este tópico</h5>
         </div>
-        <button type="button" onClick={() => openWhatsApp(buildAnalystShare(story))}>
-          ↗ WHATSAPP · ANALYST BRIEF
+        <button type="button" onClick={() => openWhatsApp(buildEvidencePlanShare(story))}>
+          ↗ WHATSAPP · EVIDENCE PLAN
         </button>
       </div>
 
@@ -130,10 +82,10 @@ export default function SecurityBriefingAnalystLayer() {
       }
 
       const next: AnalystHost[] = [];
-      const cards = Array.from(document.querySelectorAll<HTMLElement>('.briefingStory'));
+      const cards = Array.from(document.querySelectorAll<HTMLElement>('.briefingV2Story'));
 
       cards.forEach((card) => {
-        const title = card.querySelector('.briefingStoryTitleRow h4')?.textContent?.trim();
+        const title = card.querySelector('.briefingV2TitleLine h4')?.textContent?.trim();
         const story = securityBriefingStories.find((item) => item.title === title);
         if (!story || !securityBriefingAnalystNotes[story.id]) return;
 
@@ -141,10 +93,10 @@ export default function SecurityBriefingAnalystLayer() {
         if (!host) {
           host = document.createElement('div');
           host.dataset.analystLayerHost = story.id;
-          const body = card.querySelector<HTMLElement>('.briefingStoryBody');
-          const actions = body?.querySelector<HTMLElement>('.briefingActions');
-          if (body && actions) body.insertBefore(host, actions);
-          else body?.appendChild(host);
+          const detailsBody = card.querySelector<HTMLElement>('.briefingV2DetailsBody');
+          const operational = detailsBody?.querySelector<HTMLElement>('.briefingV2Operational');
+          if (detailsBody && operational) detailsBody.insertBefore(host, operational);
+          else detailsBody?.appendChild(host);
         }
 
         if (host) next.push({ story, element: host });
