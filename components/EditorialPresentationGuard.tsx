@@ -10,6 +10,8 @@ const dedicatedHubTitles: Record<string, string> = {
   'Carros': 'carros',
   'Motos': 'motos',
   'Segurança ZL': 'seguranca-zl',
+  'Gravidez': 'gravidez',
+  'Política': 'politica',
 };
 
 export default function EditorialPresentationGuard() {
