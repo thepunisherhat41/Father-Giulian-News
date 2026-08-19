@@ -28,6 +28,7 @@ import './home-media.css';
 import './editorial-quality.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
+import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
 import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
 import MusicHubPortal from '@/components/MusicHubPortal';
 import PoliticalCandidateAnalysisPortal from '@/components/PoliticalCandidateAnalysisPortal';
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <PregnancyMaternalChanges />
         <BabyDiscoveryLabPortal />
+        <PregnancyVomitingCare />
         <MusicHubPortal />
         <PoliticalCandidateAnalysisPortal />
         <VehicleComparisonPortal />
