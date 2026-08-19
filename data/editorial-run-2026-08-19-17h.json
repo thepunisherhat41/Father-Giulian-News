@@ -1,0 +1,54 @@
+{
+  "updatedAt": "2026-08-19T17:00:00-03:00",
+  "edition": "17H INTELLIGENCE UPDATE",
+  "changed": {
+    "mundo": "Brent fecha em US$ 91,62 e crise de Hormuz ganha nova camada diplomática Emirados–Irã",
+    "financas": "Yields longos aliviam após reforço de liquidez do Tesouro; minutos do Fed mantêm risco de aperto condicionado à inflação",
+    "tecnologia": "Marvell/Google: custom silicon e ASICs próprios como infraestrutura de IA"
+  },
+  "reviewedNoMaterialChange": [
+    "Brasil",
+    "Política",
+    "Planeta",
+    "Mundo Animal",
+    "Tempo e Clima",
+    "Curiosidades",
+    "Música",
+    "Games",
+    "Gravidez",
+    "Ser Pai",
+    "Carros",
+    "Motos",
+    "Mecânica",
+    "Náutica",
+    "Viagens",
+    "Security Briefing",
+    "Cyber Security",
+    "AppSec/SSDLC"
+  ],
+  "securityZL": {
+    "status": "SEM NOVA OCORRÊNCIA CONFIRMADA",
+    "note": "Nova busca às 17h sem publicação criminal nova, suficientemente confirmada e diretamente atribuível à Zona Leste; conteúdo antigo permaneceu como contexto."
+  },
+  "securityBriefingV2": {
+    "preserved": true,
+    "materialNewSignalFound": false,
+    "note": "Fontes primárias de segurança revisadas; nenhum novo sinal forte o suficiente para substituir artificialmente os tópicos atuais nesta janela."
+  },
+  "dedupe": {
+    "internalReviewed": true,
+    "crossTabReviewed": true,
+    "notes": "Mundo trata risco geopolítico/logístico; Finanças trata liquidez, curva e política monetária; Tecnologia trata arquitetura de custom silicon. Os ângulos são distintos."
+  },
+  "media": {
+    "mundo": "MEDIA_OK: matcher de Hormuz preservado",
+    "financas": "MEDIA_OK: gráfico FRED de Treasury 30Y continua semanticamente correto",
+    "tecnologia": "MEDIA_OK: novo matcher e imagem oficial da página de Custom ASICs da Marvell",
+    "securityZL": "HUB_MEDIA_OK",
+    "securityBriefing": "HUB_MEDIA_OK"
+  },
+  "clarity": {
+    "status": "CLEAR_OK",
+    "notes": "Títulos autoexplicativos, distinção fato/allegação/possibilidade explícita e sem novos labels internos ambíguos."
+  }
+}
