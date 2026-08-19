@@ -10,6 +10,7 @@ import './music.css';
 import './caipira-top5.css';
 import './music-player.css';
 import './political-analysis.css';
+import './politics-compact.css';
 import './vehicle-comparison.css';
 import './games.css';
 import './switch2-radar.css';
