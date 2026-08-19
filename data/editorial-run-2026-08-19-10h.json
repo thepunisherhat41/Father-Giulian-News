@@ -1,0 +1,39 @@
+{
+  "updatedAt": "2026-08-19T10:00:00-03:00",
+  "edition": "10H INTELLIGENCE UPDATE",
+  "changed": {
+    "mundo": "Hormuz: Brent a US$ 91,56, máxima de três semanas, com shipping abaixo do normal",
+    "financas": "Selloff global de bonds: Alemanha/França em máximas de muitos anos; inflação, dívida e term premium",
+    "tecnologia": "Unitree: estreia em bolsa e valuation de robótica humanoide/IA"
+  },
+  "reviewedNoMaterialChange": [
+    "Brasil",
+    "Segurança ZL",
+    "Política",
+    "Planeta",
+    "Mundo Animal",
+    "Tempo e Clima",
+    "Curiosidades",
+    "Música",
+    "Games",
+    "Gravidez",
+    "Ser Pai",
+    "Carros",
+    "Motos",
+    "Mecânica",
+    "Náutica",
+    "Viagens",
+    "Security Briefing",
+    "Cyber Security",
+    "AppSec/SSDLC"
+  ],
+  "securityZL": {
+    "status": "SEM NOVA OCORRÊNCIA CONFIRMADA",
+    "note": "Nova busca às 10h sem publicação criminal nova, confirmada e diretamente atribuível à Zona Leste; conteúdo antigo não foi promovido como recente."
+  },
+  "dedupe": {
+    "internalReviewed": true,
+    "crossTabReviewed": true,
+    "notes": "Mundo ficou com risco físico/logístico de Hormuz; Finanças com yields, dívida e term premium; Tecnologia com robótica/valuation. Os ângulos são materialmente distintos. Security Briefing V2 preservado como consolidado profissional."
+  }
+}
