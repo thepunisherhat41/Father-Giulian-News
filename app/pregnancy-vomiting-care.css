@@ -1,0 +1,11 @@
+.vomitingCare{margin:28px 0;padding:20px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:rgba(255,255,255,.035)}
+.vomitingCareHeader h3{margin:.35rem 0 .5rem;font-size:1.6rem}
+.vomitingCareHeader span,.vomitingCareWatch small,.vomitingCareUrgent small,.vomitingCareSources small{font-size:.75rem;letter-spacing:.08em;opacity:.75}
+.vomitingCareSteps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.vomitingCareSteps article,.vomitingCareWatch,.vomitingCareUrgent{padding:15px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:rgba(255,255,255,.025)}
+.vomitingCareSteps h4{margin:0 0 .4rem}
+.vomitingCareSteps p,.vomitingCareWatch p,.vomitingCareNote{line-height:1.6}
+.vomitingCareWatch,.vomitingCareUrgent,.vomitingCareNote,.vomitingCareSources{margin-top:14px}
+.vomitingCareUrgent ul{padding-left:1.2rem;line-height:1.6}
+.vomitingCareSources{display:flex;flex-wrap:wrap;gap:10px 14px}.vomitingCareSources small{width:100%}
+@media(max-width:720px){.vomitingCareSteps{grid-template-columns:1fr}.vomitingCare{padding:15px}}
