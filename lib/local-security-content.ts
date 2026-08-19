@@ -11,13 +11,13 @@ export type LocalSecuritySignal = {
   source: { label: string; url: string };
 };
 
-export const localSecurityUpdatedAt = '18 AGO 2026 · 18H07';
+export const localSecurityUpdatedAt = '19 AGO 2026 · 05H';
 
 export const localSecurityTodayStatus = {
-  date: '18 AGO 2026',
+  date: '19 AGO 2026',
   status: 'SEM NOVA OCORRÊNCIA CONFIRMADA',
-  note: 'Até esta atualização, o radar não encontrou publicação nova e suficientemente confirmada de hoje sobre crime/roubo/furto na Zona Leste nas fontes monitoradas. Em vez de preencher com notícia velha ou de outra região, o feed mantém a última confirmação válida e continua monitorando.',
-  nextCheck: 'próxima varredura editorial · 05H / 10H / 17H',
+  note: 'Até o fechamento das 05h, o radar não encontrou publicação nova e suficientemente confirmada de hoje ou da madrugada sobre crime, roubo, furto ou operação na Zona Leste nas fontes monitoradas. Em vez de preencher com notícia velha ou de outra região, o feed mantém a última confirmação válida e separa o restante como contexto.',
+  nextCheck: 'nova varredura editorial na próxima janela',
 };
 
 export const localSecurityRegions = [
@@ -41,10 +41,10 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     area: 'Artur Alvim · Zona Leste',
     date: '14 AGO 2026',
     freshness: 'RECENTE',
-    ageLabel: '4D',
+    ageLabel: '5D',
     title: 'Justiça decretou prisão de policial civil investigado por sequestro em Artur Alvim',
     summary: 'A Folha informou em 14 de agosto que a Justiça decretou a prisão de um policial civil investigado por participação na agressão e sequestro de um jovem ocorrido em Artur Alvim na noite de 10 de agosto. A Corregedoria e o Decap investigam o caso, que tramita sob sigilo.',
-    whyItMatters: 'É uma ocorrência grave e recente na Zona Leste. O radar trata o caso como investigação em andamento e não extrapola uma ocorrência isolada para uma tendência do bairro.',
+    whyItMatters: 'É uma ocorrência grave ainda dentro da janela recente de 7 dias. O radar trata o caso como investigação em andamento e não extrapola uma ocorrência isolada para uma tendência do bairro.',
     source: { label: 'Folha de S.Paulo · 14/08/2026', url: 'https://www1.folha.uol.com.br/cotidiano/2026/08/justica-decreta-prisao-de-policial-civil-envolvido-em-sequestro-em-sao-paulo.shtml' },
   },
   {
@@ -53,7 +53,7 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     area: 'Vila Prudente · 29º DP',
     date: '1º SEM 2026 · PUBLICADO 10 AGO',
     freshness: 'CONTEXTO',
-    ageLabel: '8D',
+    ageLabel: '9D',
     title: 'Vila Prudente apareceu entre DPs com alta de roubos de celular no 1º semestre',
     summary: 'Levantamento publicado em 10 de agosto com base em dados da SSP-SP apontou alta de 19,5% nos roubos de celular na área do 29º DP (Vila Prudente) no primeiro semestre de 2026 versus o mesmo período de 2025. Na capital como um todo, o indicador caiu 14,8%.',
     whyItMatters: 'O dado mostra por que a média da cidade não pode ser aplicada automaticamente a cada região. Como a publicação já passou da janela de 7 dias, fica na camada de contexto, não no feed recente.',
