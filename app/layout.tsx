@@ -27,6 +27,7 @@ import './editorial-dedupe.css';
 import './ui-polish-v2.css';
 import './home-media.css';
 import './editorial-quality.css';
+import './site-redesign-v3.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
@@ -41,7 +42,6 @@ import SecurityBriefingAnalystLayer from '@/components/SecurityBriefingAnalystLa
 import AppSecFeedPortal from '@/components/AppSecFeedPortal';
 import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
-import DailyQuestHUDPortal from '@/components/DailyQuestHUD';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import HomeMediaEnhancer from '@/components/HomeMediaEnhancer';
@@ -70,7 +70,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppSecFeedPortal />
         <LocalSecurityPortal />
         <RichMediaPortal />
-        <DailyQuestHUDPortal />
         <EditorialPresentationGuard />
         <TopicShareEnhancer />
         <HomeMediaEnhancer />
