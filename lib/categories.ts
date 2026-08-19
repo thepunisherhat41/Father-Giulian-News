@@ -33,6 +33,7 @@ import './music-top10-overrides';
 import './security-briefing-overrides';
 import './local-security-overrides';
 import './editorial-dedupe';
+import './home-count-fix-2026-08-19';
 
 export type Category = {
   slug: string;
