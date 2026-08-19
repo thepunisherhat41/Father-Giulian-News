@@ -26,28 +26,13 @@ if (fatherDrop) {
   fatherDrop.detail = 'Documentos, água, lanche tolerável, exames e lista de dúvidas prontos reduzem a carga mental antes de sair.';
 }
 
-const financeDrop = drop('financas');
-if (financeDrop) {
-  financeDrop.title = 'Juros de longo prazo sobem: petróleo e dívida pressionam títulos públicos globais';
-  financeDrop.detail = 'Taxas de títulos da Alemanha e França atingiram níveis de muitos anos; inflação de energia e emissão de dívida aumentam o prêmio exigido por investidores.';
-}
-
-const techDrop = drop('tecnologia');
-if (techDrop) {
-  techDrop.title = 'Unitree estreia com forte alta e coloca a robótica humanoide à prova no mercado';
-  techDrop.detail = 'A estreia reforça o interesse por IA e robótica, mas também mostra por que produto, escala, receita e avaliação de mercado precisam ser analisados separadamente.';
-}
+// Finanças, Tecnologia e Segurança ZL são áreas sensíveis a atualizações intradiárias.
+// Não fixe headlines aqui: os overrides de 05h/10h/17h são a fonte editorial mais recente.
 
 const securityBriefingDrop = drop('security-briefing');
 if (securityBriefingDrop) {
   securityBriefingDrop.title = 'Security Briefing: 10 sinais priorizados e decisões para discutir com o time';
   securityBriefingDrop.detail = 'Threat intelligence, AppSec, IAM, cloud, supply chain e IA traduzidos em prioridade, evidência, exposição, controles e decisão.';
-}
-
-const localSecurityDrop = drop('seguranca-zl');
-if (localSecurityDrop) {
-  localSecurityDrop.title = 'Segurança ZL: sem nova ocorrência criminal confirmada nesta atualização';
-  localSecurityDrop.detail = 'Notícias de hoje, ontem e dos últimos 7 dias vêm primeiro; dados antigos aparecem apenas como contexto, sempre com data, área e fonte.';
 }
 
 const musicDrop = drop('musica');
