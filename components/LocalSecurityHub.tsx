@@ -13,11 +13,13 @@ import {
   type LocalSecurityCase,
   type LocalSecuritySignal,
 } from '@/lib/local-security-content';
+import { localEastNews, localEastNewsUpdatedAt, type LocalEastNewsItem } from '@/lib/local-east-news';
 
-type FeedMode = 'FEED' | 'CASOS' | 'MATERIAS' | 'DADOS' | 'AÇÕES' | 'SERVIÇOS';
+type FeedMode = 'REGIAO' | 'FEED' | 'CASOS' | 'MATERIAS' | 'DADOS' | 'AÇÕES' | 'SERVIÇOS';
 
 const tabs: Array<{ id: FeedMode; label: string; icon: string }> = [
-  { id: 'FEED', label: 'Últimas', icon: '●' },
+  { id: 'REGIAO', label: 'Região', icon: '◆' },
+  { id: 'FEED', label: 'Segurança', icon: '●' },
   { id: 'CASOS', label: 'Casos', icon: '◎' },
   { id: 'MATERIAS', label: 'Matérias', icon: '▤' },
   { id: 'DADOS', label: 'Dados', icon: '▥' },
@@ -75,6 +77,22 @@ function shareArticleText(item: LocalSecurityArticle) {
     `Para guardar: ${item.takeaway}`,
     '',
     `${item.area} · ${item.date}`,
+    `Fonte: ${item.source.label}`,
+    item.source.url,
+  ].join('\n');
+}
+
+function shareRegionalNews(item: LocalEastNewsItem) {
+  return [
+    `*${item.scope === 'ITAQUERA' ? 'ITAQUERA' : 'ZONA LESTE'} · NOTÍCIA LOCAL*`,
+    '',
+    `*${item.title}*`,
+    '',
+    item.summary,
+    '',
+    `Por que importa: ${item.whyItMatters}`,
+    '',
+    `${item.category} · ${item.date}`,
     `Fonte: ${item.source.label}`,
     item.source.url,
   ].join('\n');
@@ -154,12 +172,32 @@ function ArticleCard({ item, index }: { item: LocalSecurityArticle; index: numbe
   );
 }
 
+function RegionalNewsCard({ item, featured = false }: { item: LocalEastNewsItem; featured?: boolean }) {
+  return (
+    <article className={`zlRegionalNewsCard ${featured ? 'featured' : ''}`}>
+      <div className="zlRegionalVisual" aria-hidden="true"><span>{item.emoji}</span><i /></div>
+      <div className="zlRegionalBody">
+        <div className="zlRegionalMeta"><span>{item.category}</span><b>{item.freshness}</b><time>{item.date}</time></div>
+        <h4>{item.title}</h4>
+        <p>{item.summary}</p>
+        <section><small>POR QUE IMPORTA</small><p>{item.whyItMatters}</p></section>
+        <div className="zlRegionalActions">
+          <a href={item.source.url} target="_blank" rel="noreferrer">Ler na fonte ↗</a>
+          <button onClick={() => openWhatsApp(shareRegionalNews(item))}>WhatsApp</button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export default function LocalSecurityHub() {
-  const [mode, setMode] = useState<FeedMode>('FEED');
+  const [mode, setMode] = useState<FeedMode>('REGIAO');
   const recent = useMemo(() => localSecuritySignals.filter((item) => item.freshness === 'RECENTE'), []);
   const data = useMemo(() => localSecuritySignals.filter((item) => item.type === 'DADO'), []);
   const actions = useMemo(() => localSecuritySignals.filter((item) => item.type === 'AÇÃO'), []);
   const services = useMemo(() => localSecuritySignals.filter((item) => item.type === 'SERVIÇO'), []);
+  const itaqueraNews = useMemo(() => localEastNews.filter((item) => item.scope === 'ITAQUERA'), []);
+  const zonaLesteNews = useMemo(() => localEastNews.filter((item) => item.scope === 'ZONA LESTE'), []);
 
   const activeSignals = mode === 'DADOS' ? data : mode === 'AÇÕES' ? actions : mode === 'SERVIÇOS' ? services : recent;
 
@@ -167,14 +205,14 @@ export default function LocalSecurityHub() {
     <section className="localSecurityHub">
       <header className="zlCommandHero">
         <div className="zlHeroCopy">
-          <span>SEGURANÇA PÚBLICA · ZONA LESTE</span>
-          <h3>Segurança ZL</h3>
-          <p>Um caderno local de segurança pública: últimas confirmações, casos com status jurídico, procurados divulgados por fontes confiáveis, matérias de contexto, indicadores, ações e serviços. Sem boato, sem caça a pessoas e sem transformar ocorrência isolada em ranking de bairro.</p>
+          <span>ZONA LESTE · ITAQUERA · SEGURANÇA & REGIÃO</span>
+          <h3>Zona Leste em foco</h3>
+          <p>Notícias gerais de Itaquera e da Zona Leste, segurança pública, casos acompanhados, matérias, indicadores, ações e serviços — cada assunto na sua camada, com data e fonte.</p>
           <div className="zlHeroBadges">
             <b>EDIÇÃO ATUAL</b>
-            <b>{localSecurityUpdatedAt}</b>
+            <b>{localEastNewsUpdatedAt}</b>
+            <b>{localEastNews.length} NOTÍCIAS DA REGIÃO</b>
             <b>{localSecurityCases.length} CASOS ACOMPANHADOS</b>
-            <b>{localSecurityArticles.length} MATÉRIAS CURADAS</b>
           </div>
         </div>
         <div className="zlRadarOrb" aria-hidden="true"><span>ZL</span><i /><b>MONITOR</b></div>
@@ -183,14 +221,14 @@ export default function LocalSecurityHub() {
       <section className="zlTodayPulse">
         <div className="zlPulseIcon"><i /></div>
         <div>
-          <small>HOJE · {localSecurityTodayStatus.date}</small>
+          <small>SEGURANÇA · {localSecurityTodayStatus.date}</small>
           <strong>{localSecurityTodayStatus.status}</strong>
           <p>{localSecurityTodayStatus.note}</p>
-          <span>{localSecurityTodayStatus.nextCheck}</span>
+          <span>Segurança atualizada em {localSecurityUpdatedAt} · notícias gerais em {localEastNewsUpdatedAt}</span>
         </div>
       </section>
 
-      <nav className="zlFeedTabs zlFeedTabsExtended" aria-label="Navegação do caderno de segurança local">
+      <nav className="zlFeedTabs zlFeedTabsExtended" aria-label="Navegação do caderno da Zona Leste">
         {tabs.map((item) => (
           <button key={item.id} className={mode === item.id ? 'active' : ''} onClick={() => setMode(item.id)}>
             <span>{item.icon}</span>{item.label}
@@ -198,10 +236,39 @@ export default function LocalSecurityHub() {
         ))}
       </nav>
 
+      {mode === 'REGIAO' && (
+        <>
+          <section className="zlRegionalIntro">
+            <div><span>NOTÍCIAS GERAIS</span><h4>Itaquera e Zona Leste além da pauta policial</h4></div>
+            <p>Saúde, mobilidade, obras, cultura, esporte e serviços locais. Esta seção não mistura notícia geral com indicador criminal e prioriza o que tem impacto prático para quem vive ou circula na região.</p>
+          </section>
+
+          <section className="zlRegionalSection itaquera">
+            <div className="zlSectionHead feedHead">
+              <div><span>ITAQUERA AGORA</span><h4>O que está acontecendo em Itaquera</h4></div>
+              <b>{itaqueraNews.length.toString().padStart(2, '0')} NOTÍCIAS</b>
+            </div>
+            <section className="zlRegionalGrid">
+              {itaqueraNews.map((item, index) => <RegionalNewsCard key={item.id} item={item} featured={index === 0} />)}
+            </section>
+          </section>
+
+          <section className="zlRegionalSection zona-leste">
+            <div className="zlSectionHead feedHead">
+              <div><span>ZONA LESTE</span><h4>Mobilidade, saúde, cultura e cidade</h4></div>
+              <b>{zonaLesteNews.length.toString().padStart(2, '0')} NOTÍCIAS</b>
+            </div>
+            <section className="zlRegionalGrid">
+              {zonaLesteNews.map((item) => <RegionalNewsCard key={item.id} item={item} />)}
+            </section>
+          </section>
+        </>
+      )}
+
       {mode === 'FEED' && (
         <>
           <section className="zlSectionHead feedHead">
-            <div><span>NOTÍCIAS CONFIRMADAS</span><h4>Últimas confirmações da Zona Leste</h4></div>
+            <div><span>SEGURANÇA · NOTÍCIAS CONFIRMADAS</span><h4>Últimas confirmações da Zona Leste</h4></div>
             <b>{recent.length.toString().padStart(2, '0')} ITENS</b>
           </section>
           {recent.length ? (
@@ -292,7 +359,7 @@ export default function LocalSecurityHub() {
       )}
 
       <section className="zlRegions">
-        <div><span>COBERTURA · ZONA LESTE</span><h4>Regiões acompanhadas</h4><p>O caderno busca recortes oficiais por região/DP quando disponíveis. Não existe ranking próprio de “bairro perigoso”, nem lista informal de pessoas.</p></div>
+        <div><span>COBERTURA · ZONA LESTE</span><h4>Regiões acompanhadas</h4><p>O caderno acompanha notícias gerais e recortes oficiais de segurança por região/DP quando disponíveis. Não existe ranking próprio de “bairro perigoso”, nem lista informal de pessoas.</p></div>
         <div className="zlRegionChips">{localSecurityRegions.map((region) => <span key={region}>{region}</span>)}</div>
       </section>
     </section>
