@@ -34,6 +34,8 @@ import './security-briefing-2026-08-18-17h';
 import './music-top10-overrides';
 import './security-briefing-overrides';
 import './local-security-overrides';
+import './local-security-overrides-2026-08-19-17h';
+import './rich-media-overrides-2026-08-19-17h';
 import './editorial-clarity-overrides';
 import './editorial-dedupe';
 import './home-count-fix-2026-08-19';
