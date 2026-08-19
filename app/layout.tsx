@@ -29,6 +29,7 @@ import './home-media.css';
 import './editorial-quality.css';
 import './site-redesign-v3.css';
 import './site-redesign-v3-hubs.css';
+import './magazine-v4.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
@@ -45,7 +46,6 @@ import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
-import HomeMediaEnhancer from '@/components/HomeMediaEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
 
 export const metadata: Metadata = {
@@ -73,7 +73,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RichMediaPortal />
         <EditorialPresentationGuard />
         <TopicShareEnhancer />
-        <HomeMediaEnhancer />
         <EditorialQualityGuard />
       </body>
     </html>
