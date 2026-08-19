@@ -9,6 +9,7 @@ import {
   type SecurityBriefingStory,
 } from '@/lib/security-briefing-content';
 import { securityBriefingMedia } from '@/lib/security-briefing-media';
+import { securityBriefingDeepDive } from '@/lib/security-briefing-deep-dive';
 
 function whatsapp(text: string) {
   window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
@@ -43,14 +44,17 @@ function storyText(story: SecurityBriefingStory, mode: 'executive' | 'technical'
     return [
       `*SECURITY BRIEFING · ${story.pillar} · ${story.priority}*`,
       `Status: ${story.status} · ${story.signalType}`,
+      `Publicado: ${story.publishedAt} · Confiança: ${story.confidence}`,
       '',
       `*${story.title}*`,
       '',
-      `Por que importa agora: ${story.whyNow}`,
+      story.deck,
       '',
-      `Decisão sugerida: ${story.decision}`,
+      `*Por que importa agora*\n${story.whyNow}`,
       '',
-      `Impacto para negócio: ${story.businessImpact}`,
+      `*Decisão sugerida*\n${story.decision}`,
+      '',
+      `*Impacto para negócio*\n${story.businessImpact}`,
       '',
       `Público: ${story.audience.join(' · ')}`,
       `Fonte: ${story.source.label}`,
@@ -60,15 +64,21 @@ function storyText(story: SecurityBriefingStory, mode: 'executive' | 'technical'
 
   return [
     `*TECHNICAL SECURITY BRIEF · ${story.pillar} · ${story.priority}*`,
-    `Status: ${story.status} · Confiança: ${story.confidence}`,
+    `Status: ${story.status} · Tipo: ${story.signalType} · Confiança: ${story.confidence}`,
+    `Publicado: ${story.publishedAt}`,
     '',
     `*${story.title}*`,
     '',
-    `Why now: ${story.whyNow}`,
+    story.deck,
     '',
-    `Decisão: ${story.decision}`,
+    `*Why now*\n${story.whyNow}`,
     '',
-    `Impacto técnico: ${story.technicalImpact}`,
+    `*Decisão*\n${story.decision}`,
+    '',
+    `*Impacto técnico*\n${story.technicalImpact}`,
+    '',
+    '*Evidências da fonte*',
+    ...story.evidence.map((item) => `- ${item.label}: ${item.value}`),
     '',
     '*Perguntas de exposição*',
     ...story.exposureQuestions.map((item) => `- ${item}`),
@@ -79,6 +89,61 @@ function storyText(story: SecurityBriefingStory, mode: 'executive' | 'technical'
     `Frameworks: ${story.frameworks.join(' · ')}`,
     `Fonte: ${story.source.label}`,
     story.source.url,
+  ].join('\n');
+}
+
+function fullStoryText(story: SecurityBriefingStory) {
+  const deepDive = securityBriefingDeepDive[story.id];
+  return [
+    `*SECURITY BRIEFING COMPLETO · ${story.pillar} · ${story.priority}*`,
+    `Status: ${story.status} · Tipo: ${story.signalType} · Confiança: ${story.confidence}`,
+    `Publicado: ${story.publishedAt} · Freshness: ${story.freshness}`,
+    '',
+    `*${story.title}*`,
+    '',
+    story.deck,
+    '',
+    `*WHY NOW*\n${story.whyNow}`,
+    '',
+    `*DECISÃO SUGERIDA*\n${story.decision}`,
+    '',
+    `*IMPACTO TÉCNICO*\n${story.technicalImpact}`,
+    '',
+    `*IMPACTO PARA NEGÓCIO*\n${story.businessImpact}`,
+    '',
+    '*EVIDÊNCIAS DA FONTE*',
+    ...story.evidence.map((item) => `- ${item.label}: ${item.value}`),
+    '',
+    ...(deepDive ? [
+      '*ATTACK / EXPOSURE PATH*',
+      ...deepDive.attackPath.map((item, index) => `${index + 1}. ${item}`),
+      '',
+      '*CONTROLES A VALIDAR*',
+      ...deepDive.controlsToValidate.map((item) => `- ${item}`),
+      '',
+      '*TELEMETRIA / EVIDÊNCIA INTERNA*',
+      ...deepDive.telemetryToCheck.map((item) => `- ${item}`),
+      '',
+      `*OWNER DA CONVERSA*\n${deepDive.decisionOwner}`,
+      `*HORIZONTE*\n${deepDive.horizon}`,
+      `*CRITÉRIO DE SUCESSO*\n${deepDive.successCriteria}`,
+      '',
+      `*PERGUNTA PARA O TIME*\n${deepDive.discussionPrompt}`,
+      '',
+    ] : []),
+    '*PERGUNTAS DE EXPOSIÇÃO*',
+    ...story.exposureQuestions.map((item) => `- ${item}`),
+    '',
+    '*O QUE FAZER AGORA*',
+    ...story.actionNow.map((item) => `- ${item}`),
+    '',
+    `*Frameworks:* ${story.frameworks.join(' · ')}`,
+    `*Público:* ${story.audience.join(' · ')}`,
+    '',
+    `*Fonte primária:* ${story.source.label}`,
+    story.source.url,
+    '',
+    '_Prioridade editorial deve ser contextualizada à exposição, criticidade e controles do ambiente._',
   ].join('\n');
 }
 
@@ -148,11 +213,12 @@ export default function SecurityBriefingHub() {
           <div className="briefingHeroCopy">
             <span>SECURITY INTELLIGENCE / COMMAND CENTER</span>
             <h3>Security Briefing</h3>
-            <p>Threat intel, AppSec, Cloud, IAM, supply chain, IA e negócio convertidos em decisões que o time consegue discutir e executar.</p>
+            <p>Threat intel, AppSec, Cloud, IAM, supply chain, IA e negócio convertidos em decisões, exposição, controles, telemetria e próximos passos para o time.</p>
             <div className="briefingHeroMeta">
               <span>UPDATED / {securityBriefingUpdatedAt}</span>
               <span>SOURCE-FIRST</span>
               <span>NO CLICKBAIT</span>
+              <span>PER-TOPIC SHARE</span>
             </div>
           </div>
           <div className="briefingHeroActions">
@@ -203,12 +269,13 @@ export default function SecurityBriefingHub() {
 
       <div className="briefingStreamHeader">
         <div><span>INTELLIGENCE STREAM</span><h4>{stories.length} sinais no recorte atual</h4></div>
-        <p>Prioridade = curadoria editorial. A decisão real deve considerar exposição, criticidade, controles e contexto do ambiente.</p>
+        <p>Cada tópico tem share executivo, técnico e completo. Prioridade editorial deve ser combinada com exposição e criticidade reais.</p>
       </div>
 
       <div className="briefingGrid">
         {stories.map((story, index) => {
           const hasMedia = Boolean(securityBriefingMedia[story.id]);
+          const deepDive = securityBriefingDeepDive[story.id];
           return (
             <article className={`briefingStory ${hasMedia ? 'withVisual' : 'textOnly'}`} key={story.id}>
               <StoryVisual story={story} />
@@ -250,12 +317,38 @@ export default function SecurityBriefingHub() {
                   <section className="briefingAction"><small>O QUE FAZER AGORA</small><ul>{story.actionNow.map((item) => <li key={item}>{item}</li>)}</ul></section>
                 </div>
 
+                {deepDive && (
+                  <section className="briefingDeepDive">
+                    <div className="briefingDeepDiveHeader">
+                      <div><span>OPERATIONAL DEEP DIVE</span><h5>Do sinal externo para a validação interna</h5></div>
+                      <div><small>OWNER</small><strong>{deepDive.decisionOwner}</strong><small>HORIZONTE</small><strong>{deepDive.horizon}</strong></div>
+                    </div>
+
+                    <div className="briefingAttackPath">
+                      <small>ATTACK / EXPOSURE PATH</small>
+                      <div>{deepDive.attackPath.map((item, pathIndex) => <span key={item}><b>{String(pathIndex + 1).padStart(2, '0')}</b>{item}</span>)}</div>
+                    </div>
+
+                    <div className="briefingDeepDiveGrid">
+                      <section><small>CONTROLES A VALIDAR</small><ul>{deepDive.controlsToValidate.map((item) => <li key={item}>{item}</li>)}</ul></section>
+                      <section><small>TELEMETRIA / EVIDÊNCIA INTERNA</small><ul>{deepDive.telemetryToCheck.map((item) => <li key={item}>{item}</li>)}</ul></section>
+                    </div>
+
+                    <div className="briefingOutcomeGrid">
+                      <section><small>CRITÉRIO DE SUCESSO</small><p>{deepDive.successCriteria}</p></section>
+                      <section><small>PERGUNTA PARA A REUNIÃO</small><p>{deepDive.discussionPrompt}</p></section>
+                    </div>
+                  </section>
+                )}
+
                 <div className="briefingFrameworks">{story.frameworks.map((item) => <span key={item}>{item}</span>)}</div>
                 <div className="briefingAudience"><small>PARA QUEM</small><span>{story.audience.join(' · ')}</span></div>
 
                 <div className="briefingActions">
-                  <button onClick={() => copyStory(story)}>{copiedId === story.id ? '✓ COPIADO' : mode === 'executive' ? '⧉ COPIAR PARA TEAMS' : '⧉ COPIAR TÉCNICO'}</button>
-                  <button className="wa" onClick={() => whatsapp(storyText(story, mode))}>↗ WHATSAPP</button>
+                  <button onClick={() => copyStory(story)}>{copiedId === story.id ? '✓ COPIADO' : mode === 'executive' ? '⧉ COPIAR EXEC' : '⧉ COPIAR TÉCNICO'}</button>
+                  <button className="wa exec" onClick={() => whatsapp(storyText(story, 'executive'))}>↗ WHATSAPP · EXEC</button>
+                  <button className="wa tech" onClick={() => whatsapp(storyText(story, 'technical'))}>↗ WHATSAPP · TÉCNICO</button>
+                  <button className="wa full" onClick={() => whatsapp(fullStoryText(story))}>↗ WHATSAPP · COMPLETO</button>
                   <a href={story.source.url} target="_blank" rel="noreferrer">FONTE PRIMÁRIA ↗</a>
                 </div>
               </div>
@@ -266,7 +359,7 @@ export default function SecurityBriefingHub() {
 
       <footer className="briefingMethodNote">
         <span>METHODOLOGY / SOURCE-FIRST</span>
-        <p>Incidente observado, vulnerabilidade, threat trend, guidance e estratégia são rotulados separadamente. P0/P1 não é CVSS: é uma prioridade editorial para discussão, sempre sujeita ao contexto real de exposição.</p>
+        <p>Incidente observado, vulnerabilidade, threat trend, guidance e estratégia são rotulados separadamente. P0/P1 não é CVSS: é uma prioridade editorial para discussão, sempre sujeita ao contexto real de exposição. O deep dive transforma a notícia em hipóteses de validação defensiva, não em instrução ofensiva.</p>
       </footer>
     </section>
   );
