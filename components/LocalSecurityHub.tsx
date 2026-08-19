@@ -14,7 +14,7 @@ type FeedMode = 'FEED' | 'DADOS' | 'AÇÕES' | 'SERVIÇOS';
 
 function shareText(signal: LocalSecuritySignal) {
   return [
-    '*SEGURANÇA ZL · DAILY FEED*',
+    '*SEGURANÇA ZL · ATUALIZAÇÃO DIÁRIA*',
     '',
     `*${signal.title}*`,
     '',
@@ -46,7 +46,7 @@ function SignalCard({ signal, index, feed = false }: { signal: LocalSecuritySign
         <h4>{signal.title}</h4>
         <p>{signal.summary}</p>
         <section className="zlWhy"><small>POR QUE IMPORTA</small><p>{signal.whyItMatters}</p></section>
-        <div className="zlSourceLine"><small>SOURCE</small><span>{signal.source.label}</span></div>
+        <div className="zlSourceLine"><small>FONTE</small><span>{signal.source.label}</span></div>
         <div className="zlSignalActions">
           <button onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText(signal))}`, '_blank', 'noopener,noreferrer')}>↗ COMPARTILHAR</button>
           <a href={signal.source.url} target="_blank" rel="noreferrer">FONTE ↗</a>
@@ -69,16 +69,16 @@ export default function LocalSecurityHub() {
     <section className="localSecurityHub">
       <header className="zlCommandHero">
         <div className="zlHeroCopy">
-          <span>NEWS://ZONA-LESTE · MOBILE FEED</span>
+          <span>SEGURANÇA PÚBLICA · ZONA LESTE</span>
           <h3>Segurança ZL</h3>
-          <p>Um feed diário de segurança pública da Zona Leste: notícia recente primeiro, contexto depois. Sem boato, sem sensacionalismo e sem transformar caso isolado em ranking de bairro.</p>
+          <p>Atualização diária de segurança pública da Zona Leste: notícia recente primeiro, contexto depois. Sem boato, sem sensacionalismo e sem transformar caso isolado em ranking de bairro.</p>
           <div className="zlHeroBadges">
-            <b>LIVE EDITION</b>
+            <b>EDIÇÃO ATUAL</b>
             <b>{localSecurityUpdatedAt}</b>
             <b>{recent.length} CONFIRMAÇÃO RECENTE</b>
           </div>
         </div>
-        <div className="zlRadarOrb" aria-hidden="true"><span>ZE</span><i /><b>RADAR</b></div>
+        <div className="zlRadarOrb" aria-hidden="true"><span>ZL</span><i /><b>MONITOR</b></div>
       </header>
 
       <section className="zlTodayPulse">
@@ -102,16 +102,16 @@ export default function LocalSecurityHub() {
       {mode === 'FEED' && (
         <>
           <section className="zlSectionHead feedHead">
-            <div><span>NEWS://RECENT</span><h4>Últimas confirmações da Zona Leste</h4></div>
-            <b>{recent.length.toString().padStart(2, '0')} STORIES</b>
+            <div><span>NOTÍCIAS CONFIRMADAS</span><h4>Últimas confirmações da Zona Leste</h4></div>
+            <b>{recent.length.toString().padStart(2, '0')} ITENS</b>
           </section>
           {recent.length ? (
             <section className="zlMobileFeed">{recent.map((signal, index) => <SignalCard key={signal.id} signal={signal} index={index} feed />)}</section>
           ) : (
-            <div className="zlNoRecent">Nenhuma notícia recente confirmada nesta edição. O radar prefere ficar vazio a reciclar conteúdo antigo.</div>
+            <div className="zlNoRecent">Nenhuma notícia recente confirmada nesta edição. A página prefere ficar sem itens a reciclar conteúdo antigo.</div>
           )}
           <section className="zlFeedRule">
-            <span>EDITORIAL RULE</span>
+            <span>CRITÉRIO EDITORIAL</span>
             <p><strong>Hoje → ontem → últimos 7 dias.</strong> Passou dessa janela, sai do feed e vira contexto. Uma ocorrência isolada nunca vira “tendência do bairro”.</p>
           </section>
         </>
@@ -120,8 +120,8 @@ export default function LocalSecurityHub() {
       {mode !== 'FEED' && (
         <>
           <section className="zlSectionHead feedHead">
-            <div><span>{mode === 'DADOS' ? 'DATA://CONTEXT' : mode === 'AÇÕES' ? 'OPS://PUBLIC-SAFETY' : 'SERVICE://CITIZEN'}</span><h4>{mode === 'DADOS' ? 'Indicadores e recortes oficiais' : mode === 'AÇÕES' ? 'Ações e capacidade operacional' : 'Serviços oficiais para o cidadão'}</h4></div>
-            <b>{activeSignals.length.toString().padStart(2, '0')} ITEMS</b>
+            <div><span>{mode === 'DADOS' ? 'DADOS E CONTEXTO' : mode === 'AÇÕES' ? 'AÇÕES DE SEGURANÇA' : 'SERVIÇOS AO CIDADÃO'}</span><h4>{mode === 'DADOS' ? 'Indicadores e recortes oficiais' : mode === 'AÇÕES' ? 'Ações e capacidade operacional' : 'Serviços oficiais para o cidadão'}</h4></div>
+            <b>{activeSignals.length.toString().padStart(2, '0')} ITENS</b>
           </section>
           <section className="zlSignalGrid">{activeSignals.map((signal, index) => <SignalCard key={signal.id} signal={signal} index={index} />)}</section>
         </>
@@ -146,7 +146,7 @@ export default function LocalSecurityHub() {
             <div><small>IMAGEM REAL / FONTE OFICIAL</small><strong>{localSecurityMedia.commandCenter.caption}</strong><span>{localSecurityMedia.commandCenter.credit}</span></div>
           </a>
           <section className="zlVideoIntel">
-            <div><span>VIDEO INTEL / SMARTCOP</span><h4>Tecnologia usada em operação na Zona Leste</h4><p>Vídeo oficial da Prefeitura sobre ocorrência de julho de 2026. É contexto operacional, não notícia de hoje nem mapa de risco.</p></div>
+            <div><span>VÍDEO OFICIAL · CONTEXTO OPERACIONAL</span><h4>Tecnologia usada em operação na Zona Leste</h4><p>Vídeo oficial da Prefeitura sobre ocorrência de julho de 2026. É contexto operacional, não notícia de hoje nem mapa de risco.</p></div>
             <div className="zlVideoFrame"><iframe title="SmartCop na Zona Leste" src={localSecurityMedia.smartCopVideo} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
           </section>
         </>
@@ -166,7 +166,7 @@ export default function LocalSecurityHub() {
       )}
 
       <section className="zlRegions">
-        <div><span>COVERAGE://EAST-ZONE</span><h4>Regiões acompanhadas</h4><p>O feed busca recortes oficiais por região/DP quando disponíveis. Não existe ranking próprio de “bairro perigoso”.</p></div>
+        <div><span>COBERTURA · ZONA LESTE</span><h4>Regiões acompanhadas</h4><p>O feed busca recortes oficiais por região/DP quando disponíveis. Não existe ranking próprio de “bairro perigoso”.</p></div>
         <div className="zlRegionChips">{localSecurityRegions.map((region) => <span key={region}>{region}</span>)}</div>
       </section>
     </section>
