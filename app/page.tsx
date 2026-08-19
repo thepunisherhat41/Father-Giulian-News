@@ -6,6 +6,7 @@ import { categories } from '@/lib/categories';
 import { getPregnancyStatus } from '@/lib/pregnancy';
 import { dailyContent, edition, todayDrops, type DailyIntel } from '@/lib/daily-content';
 import { editorialDossiers } from '@/lib/editorial-dossiers';
+import { findCurrentRichMedia } from '@/lib/current-rich-media';
 import {
   civicFacts,
   officesInSP2026,
@@ -26,6 +27,9 @@ const categoryGroups = [
   { title: 'Trabalho & futuro', slugs: ['financas', 'tecnologia', 'security-briefing', 'seguranca', 'appsec-ssdlc'] },
 ] as const;
 
+const quickNavSlugs = ['hoje', 'brasil', 'seguranca-zl', 'politica', 'mundo'] as const;
+const magazineRailSlugs = new Set(['security-briefing', 'appsec-ssdlc']);
+
 function sourceText(content: DailyIntel) {
   const source = content.sources?.[0];
   if (!source) return [] as string[];
@@ -33,17 +37,16 @@ function sourceText(content: DailyIntel) {
 }
 
 function buildTodayShareText(mode: 'short' | 'full') {
-  const drops = mode === 'short' ? todayDrops.slice(0, 6) : todayDrops;
   const lines: string[] = [
     `*RESUMO DO DIA - ${edition.date}*`,
     '',
-    mode === 'short'
-      ? 'Separei alguns assuntos interessantes de hoje:'
-      : 'Aqui vai o briefing completo de hoje, separado por assunto:',
+    mode === 'full'
+      ? 'Aqui vai o briefing completo de hoje, com todas as áreas da edição:'
+      : 'Separei todos os assuntos da edição de hoje:',
     '',
   ];
 
-  drops.forEach((drop) => {
+  todayDrops.forEach((drop) => {
     lines.push(`*${drop.label}*`, drop.title, drop.detail, '');
   });
 
@@ -117,6 +120,10 @@ function openWhatsApp(text: string) {
   window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 }
 
+function storyImage(label: string, title: string) {
+  return findCurrentRichMedia(label, title)?.images?.[0];
+}
+
 function CandidateGroup({ title, subtitle, profiles }: { title: string; subtitle: string; profiles: PoliticalProfile[] }) {
   return (
     <section className="candidateSection">
@@ -157,6 +164,16 @@ export default function HomePage() {
   const content = dailyContent[active] ?? dailyContent.hoje;
   const dossier = editorialDossiers[active];
   const shortSharePreview = useMemo(() => buildShortShareText(active, category.label, content), [active, category.label, content]);
+  const activeImage = active === 'hoje' ? undefined : storyImage(category.label, content.title);
+
+  const featuredDrop = useMemo(() => {
+    const photo = todayDrops.find((drop) => storyImage(drop.label, drop.title)?.kind === 'PHOTO');
+    return photo ?? todayDrops.find((drop) => storyImage(drop.label, drop.title)) ?? todayDrops[0];
+  }, []);
+
+  const railDrops = useMemo(() => todayDrops.filter((drop) => drop.slug !== featuredDrop.slug && magazineRailSlugs.has(drop.slug)), [featuredDrop.slug]);
+  const magazineDrops = useMemo(() => todayDrops.filter((drop) => drop.slug !== featuredDrop.slug && !magazineRailSlugs.has(drop.slug)), [featuredDrop.slug]);
+  const featuredImage = storyImage(featuredDrop.label, featuredDrop.title);
 
   const openMission = (slug: string) => {
     setActive(slug);
@@ -188,13 +205,13 @@ export default function HomePage() {
   };
 
   return (
-    <div className="appShell appShellV3">
+    <div className="appShell appShellV3 magazineShell" data-active={active}>
       {menuOpen && <button className="navBackdrop" aria-label="Fechar menu" onClick={() => setMenuOpen(false)} />}
 
       <aside className={`sidebar sidebarV3 ${menuOpen ? 'open' : ''}`}>
-        <div className="brand brandV3">
+        <div className="brand brandV3 magazineSideBrand">
           <span className="brandMark">FG</span>
-          <div><b>Father Giulian</b><small>News & Intelligence</small></div>
+          <div><small>FATHER</small><b>GIULIAN</b><em>NEWS</em></div>
           <button className="sidebarClose" onClick={() => setMenuOpen(false)} aria-label="Fechar menu">×</button>
         </div>
 
@@ -223,45 +240,100 @@ export default function HomePage() {
         </nav>
       </aside>
 
-      <main className="content contentV3">
-        <header className="topbar topbarV3">
-          <button className="menuButton" onClick={() => setMenuOpen(true)}><span>☰</span> Áreas</button>
-          <div className="mobileBrand"><span className="brandMark mini">FG</span><b>Father Giulian</b></div>
+      <main className="content contentV3 magazineContent">
+        <header className="topbar topbarV3 magazineMasthead">
+          <button className="menuButton" onClick={() => setMenuOpen(true)}><span>☰</span><b>Áreas</b></button>
+          <div className="mobileBrand magazineBrand"><span className="brandMark mini">FG</span><div><small>FATHER</small><b>GIULIAN</b><em>NEWS</em></div></div>
           <div className="topbarContext"><span>{category.emoji}</span><b>{category.label}</b></div>
           <div className="date">{edition.dateLabel}</div>
         </header>
 
-        <div className="contentCanvas">
-          <section className="stage stageV3">
-            <div className="stageV3Icon heroIcon">{category.emoji}</div>
-            <div className="stageV3Copy">
-              <div className="stageV3Meta"><span>CONTEÚDO DO DIA</span><small>{content.readTime}</small></div>
+        <nav className="magazineQuickNav" aria-label="Acesso rápido">
+          {quickNavSlugs.map((slug) => {
+            const item = categories.find((candidate) => candidate.slug === slug);
+            if (!item) return null;
+            return <button key={slug} className={active === slug ? 'active' : ''} onClick={() => openMission(slug)}><span>{item.emoji}</span>{item.label}</button>;
+          })}
+          <button className="more" onClick={() => setMenuOpen(true)}>＋ Mais áreas</button>
+        </nav>
+
+        <div className="contentCanvas magazineCanvas">
+          <section className={`stage stageV3 magazineSectionCover ${activeImage ? 'withCoverImage' : 'illustratedCover'}`}>
+            {activeImage ? (
+              <figure className="stageCoverMedia">
+                <img src={activeImage.url} alt={activeImage.alt} referrerPolicy="no-referrer" />
+                <span />
+                <figcaption><a href={activeImage.sourceUrl} target="_blank" rel="noreferrer">{activeImage.credit} ↗</a></figcaption>
+              </figure>
+            ) : (
+              <div className="stageCoverIllustration" aria-hidden="true"><span>{category.emoji}</span><i /></div>
+            )}
+            <div className="stageV3Copy magazineCoverCopy">
+              <div className="stageV3Meta"><span>{active === 'hoje' ? 'EDIÇÃO DE HOJE' : category.label.toUpperCase()}</span><small>{content.readTime}</small></div>
               <h1>{category.label}</h1>
               <p className="lead">{category.description}</p>
             </div>
-            <button className="stageShare" onClick={() => shareWhatsApp('short')}>Compartilhar</button>
+            <button className="stageShare" onClick={() => shareWhatsApp('short')}>↗ Compartilhar</button>
           </section>
 
-          <section className="articlePanel articlePanelV3">
+          <section className={`articlePanel articlePanelV3 ${active === 'hoje' ? 'magazineHomePanel' : 'magazineArticlePanel'}`}>
             <div className="articleMeta"><span>{content.badge ?? 'ATUALIZADO'}</span><span>{edition.dateLabel}</span></div>
             <h2>{content.title}</h2>
             <p className="articleSummary">{content.summary}</p>
 
             {active === 'hoje' ? (
               <>
-                <div className="todaySectionHeading">
-                  <div><small>EDIÇÃO DE HOJE</small><h3>Escolha o que quer ler</h3></div>
-                  <span>{todayDrops.length} assuntos</span>
+                <div className="magazineEditionStrip"><div><small>FATHER GIULIAN · EDIÇÃO DIÁRIA</small><strong>{edition.dateLabel}</strong></div><span>{todayDrops.length} assuntos · todos compartilháveis</span></div>
+
+                <section className="magazineLeadGrid">
+                  <article className="magazineFeatureCard">
+                    {featuredImage ? (
+                      <figure className="magazineFeatureMedia"><img src={featuredImage.url} alt={featuredImage.alt} referrerPolicy="no-referrer" /><span /></figure>
+                    ) : (
+                      <div className="magazineFeatureIllustration" aria-hidden="true"><span>{featuredDrop.emoji}</span><i /></div>
+                    )}
+                    <div className="magazineFeatureCopy">
+                      <small>{featuredDrop.label}</small>
+                      <h3>{featuredDrop.title}</h3>
+                      <p>{featuredDrop.detail}</p>
+                      <div><button onClick={() => openMission(featuredDrop.slug)}>Leia a matéria</button><button onClick={() => shareDrop(featuredDrop.slug, featuredDrop.label)}>WhatsApp</button></div>
+                    </div>
+                  </article>
+
+                  <aside className="magazineSideRail">
+                    {railDrops.map((drop) => (
+                      <article className={`magazineRailCard rail-${drop.slug}`} key={drop.slug}>
+                        <div className="magazineRailIcon" aria-hidden="true">{drop.emoji}</div>
+                        <small>{drop.label}</small>
+                        <strong>{drop.title}</strong>
+                        <p>{drop.detail}</p>
+                        <div><button onClick={() => openMission(drop.slug)}>Explorar</button><button onClick={() => shareDrop(drop.slug, drop.label)}>↗</button></div>
+                      </article>
+                    ))}
+                  </aside>
+                </section>
+
+                <div className="todaySectionHeading magazineHeading">
+                  <div><small>MAIS DA EDIÇÃO</small><h3>Uma revista inteira para explorar</h3></div>
+                  <span>{magazineDrops.length} matérias</span>
                 </div>
-                <div className="todayGrid">
-                  {todayDrops.map((drop, index) => (
-                    <article className="dropCard" key={drop.slug}>
-                      <span className="dropIndex">{String(index + 1).padStart(2, '0')}</span>
-                      <span className="dropEmoji">{drop.emoji}</span>
-                      <span className="dropCopy"><small>{drop.label}</small><strong>{drop.title}</strong><p>{drop.detail}</p></span>
-                      <div className="dropActions"><button onClick={() => openMission(drop.slug)}>Ler</button><button className="dropShare" onClick={() => shareDrop(drop.slug, drop.label)}>WhatsApp</button></div>
-                    </article>
-                  ))}
+
+                <div className="todayGrid magazineStoryGrid">
+                  {magazineDrops.map((drop, index) => {
+                    const media = storyImage(drop.label, drop.title);
+                    return (
+                      <article className={`dropCard magazineStoryCard ${media ? 'hasMagazineMedia' : 'hasMagazineIllustration'}`} key={drop.slug} data-slug={drop.slug}>
+                        {media ? (
+                          <figure className="magazineCardMedia"><img src={media.url} alt={media.alt} loading="lazy" referrerPolicy="no-referrer" /><span /></figure>
+                        ) : (
+                          <div className="magazineCardIllustration" aria-hidden="true"><span>{drop.emoji}</span><i /></div>
+                        )}
+                        <span className="dropIndex">{String(index + 1).padStart(2, '0')}</span>
+                        <span className="dropCopy"><small>{drop.label}</small><strong>{drop.title}</strong><p>{drop.detail}</p></span>
+                        <div className="dropActions"><button onClick={() => openMission(drop.slug)}>Ler agora</button><button className="dropShare" onClick={() => shareDrop(drop.slug, drop.label)}>WhatsApp</button></div>
+                      </article>
+                    );
+                  })}
                 </div>
               </>
             ) : (
@@ -345,11 +417,11 @@ export default function HomePage() {
               </>
             )}
 
-            <details className="sharePack sharePackV3">
-              <summary><div><span>COMPARTILHAR</span><strong>{active === 'hoje' ? 'Resumo do dia' : 'Enviar esta matéria'}</strong></div><em>WhatsApp / copiar</em></summary>
+            <details className="sharePack sharePackV3 magazineSharePack">
+              <summary><div><span>COMPARTILHAR</span><strong>{active === 'hoje' ? `Resumo completo · ${todayDrops.length} áreas` : 'Enviar esta matéria'}</strong></div><em>WhatsApp / copiar</em></summary>
               <div className="sharePackBody">
                 <div className="sharePreview exactPreview"><small>PRÉVIA</small><pre>{shortSharePreview}</pre></div>
-                <div className="shareButtons"><button onClick={() => copyText('short')}>{copied === 'short' ? '✓ Resumo copiado' : 'Copiar resumo'}</button><button className="share" onClick={() => shareWhatsApp('short')}>WhatsApp · resumo</button><button onClick={() => shareWhatsApp('full')}>WhatsApp · completo</button><button onClick={() => copyText('full')}>{copied === 'full' ? '✓ Completo copiado' : 'Copiar completo'}</button></div>
+                <div className="shareButtons"><button onClick={() => copyText('short')}>{copied === 'short' ? '✓ Resumo copiado' : active === 'hoje' ? 'Copiar todas as áreas' : 'Copiar resumo'}</button><button className="share" onClick={() => shareWhatsApp('short')}>{active === 'hoje' ? 'WhatsApp · todas as áreas' : 'WhatsApp · resumo'}</button><button onClick={() => shareWhatsApp('full')}>WhatsApp · completo</button><button onClick={() => copyText('full')}>{copied === 'full' ? '✓ Completo copiado' : 'Copiar completo'}</button></div>
               </div>
             </details>
           </section>
