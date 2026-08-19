@@ -11,13 +11,13 @@ export type LocalSecuritySignal = {
   source: { label: string; url: string };
 };
 
-export const localSecurityUpdatedAt = '19 AGO 2026 · 10H';
+export const localSecurityUpdatedAt = '19 AGO 2026 · 17H';
 
 export const localSecurityTodayStatus = {
   date: '19 AGO 2026',
   status: 'SEM NOVA OCORRÊNCIA CONFIRMADA',
-  note: 'Na nova varredura das 10h, o radar pesquisou Itaquera, Artur Alvim, Penha, Vila Matilde, Vila Prudente, Sapopemba, São Mateus, Cidade Tiradentes, Guaianases, Itaim Paulista, São Miguel, Ermelino Matarazzo e Aricanduva/Vila Formosa e não encontrou publicação criminal nova, suficientemente confirmada e diretamente atribuível à Zona Leste nesta manhã. O feed não recicla notícia antiga como recente.',
-  nextCheck: 'nova varredura editorial na próxima janela',
+  note: 'Na revisão das 17h foram pesquisadas Itaquera, Artur Alvim, Penha, Vila Matilde, Vila Prudente, Sapopemba, São Mateus, Cidade Tiradentes, Guaianases, Itaim Paulista, São Miguel, Ermelino Matarazzo e Aricanduva/Vila Formosa. Não apareceu publicação criminal nova, suficientemente confirmada e diretamente atribuível à Zona Leste nesta tarde. Notícias anteriores continuam separadas como contexto.',
+  nextCheck: 'próxima revisão editorial',
 };
 
 export const localSecurityRegions = [
@@ -44,7 +44,7 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     ageLabel: '5D',
     title: 'Justiça decretou prisão de policial civil investigado por sequestro em Artur Alvim',
     summary: 'A Folha informou em 14 de agosto que a Justiça decretou a prisão de um policial civil investigado por participação na agressão e sequestro de um jovem ocorrido em Artur Alvim na noite de 10 de agosto. A Corregedoria e o Decap investigam o caso, que tramita sob sigilo.',
-    whyItMatters: 'É uma ocorrência grave ainda dentro da janela recente de 7 dias. O radar trata o caso como investigação em andamento e não extrapola uma ocorrência isolada para uma tendência do bairro.',
+    whyItMatters: 'É uma ocorrência grave ainda dentro da janela recente de 7 dias. O caso é apresentado como investigação em andamento e não é extrapolado para uma tendência do bairro.',
     source: { label: 'Folha de S.Paulo · 14/08/2026', url: 'https://www1.folha.uol.com.br/cotidiano/2026/08/justica-decreta-prisao-de-policial-civil-envolvido-em-sequestro-em-sao-paulo.shtml' },
   },
   {
@@ -56,7 +56,7 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     ageLabel: '9D',
     title: 'Vila Prudente apareceu entre DPs com alta de roubos de celular no 1º semestre',
     summary: 'Levantamento publicado em 10 de agosto com base em dados da SSP-SP apontou alta de 19,5% nos roubos de celular na área do 29º DP (Vila Prudente) no primeiro semestre de 2026 versus o mesmo período de 2025. Na capital como um todo, o indicador caiu 14,8%.',
-    whyItMatters: 'O dado mostra por que a média da cidade não pode ser aplicada automaticamente a cada região. Como a publicação já passou da janela de 7 dias, fica na camada de contexto, não no feed recente.',
+    whyItMatters: 'O dado mostra por que a média da cidade não pode ser aplicada automaticamente a cada região. Como a publicação já passou da janela de 7 dias, fica na camada de contexto, não nas notícias recentes.',
     source: { label: 'Levantamento de 10/08/2026 com dados SSP-SP', url: 'https://yaconews.com/veja-quais-bairros-de-sp-tiveram-aumento-nos-roubos-de-celular-em-2026/' },
   },
   {
@@ -100,7 +100,7 @@ export const localSecuritySignals: LocalSecuritySignal[] = [
     freshness: 'CONTEXTO',
     title: 'Parte da Zona Leste abriu 2026 com queda em roubos e roubo de veículos',
     summary: 'Segundo balanço divulgado pela Prefeitura com dados da SSP, São Mateus, Cidade Tiradentes e Guaianases tiveram redução conjunta de 42,2% nos roubos em janeiro. A região da Seccional de Itaquera registrou queda superior a 48% nos roubos de veículos.',
-    whyItMatters: 'É um recorte regional oficial, mas antigo para um radar diário. Permanece apenas como contexto histórico e nunca como notícia atual.',
+    whyItMatters: 'É um recorte regional oficial, mas antigo para uma atualização diária. Permanece apenas como contexto histórico e nunca como notícia atual.',
     source: { label: 'Prefeitura de São Paulo · janeiro/2026', url: 'https://prefeitura.sp.gov.br/web/seguranca_urbana/w/capital-paulista-registra-queda-hist%C3%B3rica-da-criminalidade-em-janeiro' },
   },
   {
