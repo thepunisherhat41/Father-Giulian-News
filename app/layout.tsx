@@ -23,6 +23,7 @@ import './local-security.css';
 import './daily-game.css';
 import './editorial-dedupe.css';
 import './ui-polish-v2.css';
+import './home-media.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
@@ -39,6 +40,7 @@ import LocalSecurityPortal from '@/components/LocalSecurityPortal';
 import DailyQuestHUDPortal from '@/components/DailyQuestHUD';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
+import HomeMediaEnhancer from '@/components/HomeMediaEnhancer';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -65,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <DailyQuestHUDPortal />
         <EditorialPresentationGuard />
         <TopicShareEnhancer />
+        <HomeMediaEnhancer />
       </body>
     </html>
   );
