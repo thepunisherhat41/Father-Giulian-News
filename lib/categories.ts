@@ -29,6 +29,7 @@ import './security-briefing-2026-08-18-17h';
 import './music-top10-overrides';
 import './security-briefing-overrides';
 import './local-security-overrides';
+import './editorial-dedupe';
 
 export type Category = {
   slug: string;
