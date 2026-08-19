@@ -26,6 +26,7 @@ import './daily-overrides-2026-08-18-10h';
 import './daily-overrides-2026-08-18-17h';
 import './daily-overrides-2026-08-19';
 import './daily-overrides-2026-08-19-10h';
+import './daily-overrides-2026-08-19-17h';
 import './daily-source-fixes-2026-08-19';
 import './vehicle-options-2026-08-19';
 import './appsec-feed-overrides-2026-08-18-17h';
@@ -55,8 +56,8 @@ export const categories: Category[] = [
   { slug: 'animais', label: 'Mundo Animal', emoji: '🐾', description: 'Comportamento, evolução, inteligência, espécies e ecossistemas.' },
   { slug: 'tempo', label: 'Tempo e Clima', emoji: '🌦️', description: 'Meteorologia, clima, tempestades e fenômenos extremos.' },
   { slug: 'curiosidades', label: 'Curiosidades', emoji: '🧠', description: 'Ciência, história, psicologia, linguagem, vocabulário e conexões inesperadas.', subcategories: ['Palavra do dia', 'Mineirês', 'Português de Portugal', 'Ciência', 'História', 'Psicologia', 'Linguagem', 'Cultura'] },
-  { slug: 'musica', label: 'Música', emoji: '🎵', description: 'Rock e música caipira de época, com contexto, histórias, artistas e seleções sem duplicidade.', subcategories: ['Top 10 Rock', 'Top 10 Sertanejo de Época', 'Moda de Viola', 'Música Caipira', 'História da Música'] },
-  { slug: 'games', label: 'Games', emoji: '🎮', description: 'Lançamentos, retrô, gameplay, indústria, hardware, e-sports e histórias de jogos que merecem contexto.', subcategories: ['Lançamentos', 'PlayStation 5', 'Nintendo Switch 2', 'Retrô', 'Game Design', 'Indies', 'Hardware', 'E-sports', 'Trilhas', 'Vale acompanhar?'] },
+  { slug: 'musica', label: 'Música', emoji: '🎵', description: 'Rock e música caipira de época, com contexto, histórias, artistas e filas Top 10 sem duplicidade.', subcategories: ['Top 10 Rock', 'Top 10 Sertanejo de Época', 'Moda de Viola', 'Música Caipira', 'História da Música'] },
+  { slug: 'games', label: 'Games', emoji: '🎮', description: 'Lançamentos, retrô, gameplay, indústria, hardware, e-sports e histórias de jogos que merecem contexto.', subcategories: ['Lançamentos', 'PS5 Radar', 'Nintendo Switch 2', 'Retrô', 'Game Design', 'Indies', 'Hardware', 'E-sports', 'Trilhas', 'Vale acompanhar?'] },
   { slug: 'gravidez', label: 'Gravidez', emoji: '🤰', description: 'Acompanhamento semanal até a DPP, com foco em informação segura e baseada em fontes confiáveis.' },
   { slug: 'pai', label: 'Ser Pai', emoji: '👨‍👧', description: 'Presença, vínculo, segurança, apoio à mãe e desenvolvimento infantil sem fórmulas mágicas.', subcategories: ['Vínculo', 'Apoio à mãe', 'Segurança', 'Desenvolvimento', 'Rotina', 'Autocuidado'] },
   { slug: 'carros', label: 'Carros', emoji: '🚗', description: 'Novos, usados e clássicos, com preço, ano, km, manutenção e custo-benefício.' },
