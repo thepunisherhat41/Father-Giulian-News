@@ -5,6 +5,7 @@ import './share-improvements.css';
 import './dossier.css';
 import './curiosity-library.css';
 import './pregnancy-maternal.css';
+import './pregnancy-vomiting-care.css';
 import './baby-discovery.css';
 import './music.css';
 import './caipira-top5.css';
