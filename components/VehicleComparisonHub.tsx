@@ -16,7 +16,7 @@ function VehicleCard({ option, active, onSelect }: { option: VehicleOption; acti
         <div><small>FIPE</small><strong>{option.priceFipe}</strong></div>
         <div><small>MERCADO</small><strong>{option.priceMarket}</strong></div>
       </div>
-      <em>ANALISAR →</em>
+      <em>VER ANÁLISE →</em>
     </button>
   );
 }
@@ -71,7 +71,7 @@ function VehicleDetail({ option }: { option: VehicleOption }) {
       </section>
 
       <aside className="vehicleVerdict">
-        <small>VEREDITO / USO REAL</small>
+        <small>VEREDITO PARA USO REAL</small>
         <strong>{option.verdict}</strong>
       </aside>
 
@@ -94,15 +94,15 @@ export default function VehicleComparisonHub({ type }: { type: 'carros' | 'motos
     <section className={`vehicleComparisonHub ${type}`}>
       <div className="vehicleComparisonHeader">
         <div>
-          <span>{type === 'carros' ? 'GARAGE RADAR / 4 OPÇÕES / SEM 1.0' : 'MOTO RADAR / 4 OPÇÕES'}</span>
-          <h3>{type === 'carros' ? 'Até R$ 70 mil, motor acima de 1.0 e quatro alternativas reais' : 'Quatro motos, quatro propostas diferentes'}</h3>
+          <span>{type === 'carros' ? 'COMPARATIVO DE CARROS · 4 OPÇÕES' : 'COMPARATIVO DE MOTOS · 4 OPÇÕES'}</span>
+          <h3>{type === 'carros' ? 'Até R$ 70 mil, motor acima de 1.0 e quatro alternativas reais' : 'Quatro motos para perfis de uso diferentes'}</h3>
           <p>
             {type === 'carros'
               ? 'A curadoria ignora carros 1.0 e mantém FIPE e média nacional até R$ 70 mil. Compare preço, motor, perfil de uso, manutenção, histórico e risco do exemplar — o modelo é só o começo da decisão.'
-              : 'Cidade, trail, esportiva ou viagem: preço parecido pode esconder custos e usos completamente diferentes.'}
+              : 'Cidade, estrada, trail ou uso mais esportivo: preços próximos podem esconder custos, ergonomia e manutenção muito diferentes.'}
           </p>
         </div>
-        <b>{type === 'carros' ? '>1.0 · ≤70K' : '04 PICKS'}</b>
+        <b>{type === 'carros' ? 'MOTOR ACIMA DE 1.0 · ATÉ R$ 70 MIL' : '4 PERFIS DE USO'}</b>
       </div>
 
       <div className="vehicleOptionGrid">
