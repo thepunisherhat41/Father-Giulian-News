@@ -1,0 +1,218 @@
+/* Father Giulian News · Layout Fix V5
+   Structural mobile fixes. This file intentionally loads last. */
+
+/* The old V3 stage used a 3-column grid with higher specificity.
+   Force magazine covers to behave like true full-width editorial covers. */
+.appShellV3 .magazineSectionCover{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  justify-content:flex-end!important;
+  align-items:stretch!important;
+  grid-template-columns:none!important;
+  grid-template-rows:none!important;
+  gap:0!important;
+  width:100%!important;
+  min-width:0!important;
+}
+.appShellV3 .magazineSectionCover .magazineCoverCopy{
+  width:100%!important;
+  max-width:760px!important;
+  min-width:0!important;
+}
+.appShellV3 .magazineSectionCover .magazineCoverCopy .lead{
+  width:auto!important;
+  max-width:640px!important;
+  min-width:0!important;
+  text-wrap:pretty;
+}
+
+/* Dedicated hubs own their content canvas; don't wrap them in another giant card. */
+.magazineShell[data-active='politica'] .articlePanel[data-dedicated-hub='politica'],
+.magazineShell[data-active='seguranca-zl'] .articlePanel[data-dedicated-hub='seguranca-zl']{
+  margin-top:10px!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+}
+.magazineShell[data-active='politica'] .articlePanel[data-dedicated-hub='politica']>.sourceBlock,
+.magazineShell[data-active='politica'] .articlePanel[data-dedicated-hub='politica']>.chips,
+.magazineShell[data-active='politica'] .articlePanel[data-dedicated-hub='politica']>.disclaimer{
+  display:none!important;
+}
+
+/* Rich media is already used by the cover/dedicated experience on these hubs. */
+.magazineShell[data-active='politica'] #daily-rich-media-host,
+.magazineShell[data-active='seguranca-zl'] #daily-rich-media-host,
+.magazineShell[data-active='gravidez'] #daily-rich-media-host,
+.magazineShell[data-active='carros'] #daily-rich-media-host,
+.magazineShell[data-active='motos'] #daily-rich-media-host{
+  display:none!important;
+}
+
+/* Politics should begin with the actual election navigation, not nested empty spacing. */
+.magazineShell[data-active='politica'] .politicsTracker{
+  margin:0!important;
+  gap:12px!important;
+}
+.magazineShell[data-active='politica'] .politicsOfficeNavigator{
+  margin:0 0 10px!important;
+  border-radius:16px!important;
+}
+.magazineShell[data-active='politica'] .candidateSection{
+  border-radius:16px!important;
+  margin-top:10px!important;
+}
+
+@media(max-width:760px){
+  /* App chrome */
+  .magazineMasthead{
+    min-height:62px!important;
+    height:62px!important;
+    padding:0 10px!important;
+  }
+  .magazineBrand{gap:7px!important}
+  .magazineBrand .brandMark{width:32px!important;height:32px!important;border-radius:10px!important}
+  .magazineBrand b{font-size:1.02rem!important}
+  .magazineBrand small{font-size:.42rem!important}
+  .magazineBrand em{font-size:.39rem!important}
+  .magazineQuickNav{
+    min-height:48px!important;
+    padding:0 6px!important;
+    gap:4px!important;
+  }
+  .magazineQuickNav button{
+    min-height:38px!important;
+    margin:5px 0!important;
+    padding:0 11px!important;
+    border:1px solid rgba(255,255,255,.07)!important;
+    border-radius:999px!important;
+    background:#0b1117!important;
+    font-size:.68rem!important;
+  }
+  .magazineQuickNav button:after{display:none!important}
+  .magazineQuickNav button.active{
+    border-color:rgba(229,185,99,.48)!important;
+    background:rgba(229,185,99,.08)!important;
+    color:#fff!important;
+  }
+  .magazineCanvas{
+    width:100%!important;
+    max-width:none!important;
+    padding:8px 8px 30px!important;
+  }
+
+  /* Section cover */
+  .appShellV3 .magazineSectionCover{
+    min-height:265px!important;
+    margin:0!important;
+    padding:18px!important;
+    border-radius:18px!important;
+  }
+  .stageCoverMedia>span{
+    background:
+      linear-gradient(0deg,rgba(3,7,11,.94) 0%,rgba(3,7,11,.66) 56%,rgba(3,7,11,.16) 100%),
+      linear-gradient(90deg,rgba(3,7,11,.82),rgba(3,7,11,.18) 78%)!important;
+  }
+  .appShellV3 .magazineSectionCover .magazineCoverCopy{
+    width:100%!important;
+    max-width:none!important;
+    padding:0!important;
+  }
+  .magazineCoverCopy .stageV3Meta{
+    margin-bottom:8px!important;
+    gap:8px!important;
+  }
+  .magazineCoverCopy h1{
+    max-width:100%!important;
+    font-size:2.35rem!important;
+    line-height:.96!important;
+    letter-spacing:-.045em!important;
+  }
+  .appShellV3 .magazineSectionCover .magazineCoverCopy .lead{
+    max-width:88%!important;
+    margin-top:10px!important;
+    font-size:.84rem!important;
+    line-height:1.48!important;
+  }
+  .magazineSectionCover .stageShare{
+    position:static!important;
+    align-self:flex-start!important;
+    margin-top:14px!important;
+    min-height:36px!important;
+    padding:0 12px!important;
+    border-radius:999px!important;
+    font-size:.64rem!important;
+  }
+  .stageCoverMedia figcaption{
+    right:10px!important;
+    bottom:9px!important;
+  }
+  .stageCoverMedia figcaption a{font-size:.48rem!important}
+
+  /* Main article / generic readable spacing */
+  .magazineArticlePanel{
+    margin-top:9px!important;
+    padding:14px!important;
+    border-radius:16px!important;
+  }
+  .articlePanelV3>h2{font-size:1.52rem!important;line-height:1.08!important}
+  .articlePanelV3>.articleSummary{font-size:.82rem!important;line-height:1.58!important}
+  .intelSectionBody{padding:4px 14px 15px 48px!important}
+  .appShellV3 .intelHeader{padding:14px!important;grid-template-columns:27px minmax(0,1fr) 20px!important}
+  .appShellV3 .topicShareButton{margin:0 14px 14px 48px!important}
+
+  /* Politics: the screenshot problem. */
+  .magazineShell[data-active='politica'] .magazineSectionCover{
+    min-height:285px!important;
+  }
+  .magazineShell[data-active='politica'] .magazineCoverCopy h1{
+    font-size:2.5rem!important;
+  }
+  .magazineShell[data-active='politica'] .magazineCoverCopy .lead{
+    max-width:78%!important;
+  }
+  .magazineShell[data-active='politica'] .politicsOfficeNavigator{
+    padding:13px 11px!important;
+    border-radius:14px!important;
+  }
+  .magazineShell[data-active='politica'] .politicsOfficeTabs{
+    gap:6px!important;
+    margin-right:0!important;
+    padding:0 0 2px!important;
+  }
+  .magazineShell[data-active='politica'] .politicsOfficeTabs button{
+    min-width:auto!important;
+    flex:1 0 auto!important;
+    min-height:38px!important;
+    padding:8px 11px!important;
+    border-radius:999px!important;
+  }
+  .magazineShell[data-active='politica'] .candidateSection{
+    padding:13px 10px!important;
+    border-radius:14px!important;
+  }
+  .magazineShell[data-active='politica'] .candidateCardCollapsible{
+    border-radius:12px!important;
+    padding:12px!important;
+  }
+  .magazineShell[data-active='politica'] .candidateQuickSummary{
+    gap:7px!important;
+  }
+  .magazineShell[data-active='politica'] .candidateQuickColumn{
+    border-radius:11px!important;
+  }
+
+  /* Share utility stays secondary. */
+  .magazineSharePack{margin-top:12px!important;border-radius:14px!important}
+}
+
+@media(max-width:420px){
+  .appShellV3 .magazineSectionCover{min-height:250px!important;padding:16px!important}
+  .magazineCoverCopy h1{font-size:2.15rem!important}
+  .appShellV3 .magazineSectionCover .magazineCoverCopy .lead{max-width:92%!important;font-size:.8rem!important}
+  .magazineShell[data-active='politica'] .magazineCoverCopy .lead{max-width:84%!important}
+  .magazineQuickNav button{padding:0 10px!important;font-size:.65rem!important}
+}
