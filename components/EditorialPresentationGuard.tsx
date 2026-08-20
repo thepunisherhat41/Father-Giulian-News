@@ -10,6 +10,7 @@ const dedicatedHubTitles: Record<string, string> = {
   'Carros': 'carros',
   'Motos': 'motos',
   'Segurança ZL': 'seguranca-zl',
+  'Zona Leste em Foco': 'seguranca-zl',
   'Gravidez': 'gravidez',
   'Política': 'politica',
 };
