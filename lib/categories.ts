@@ -36,6 +36,8 @@ import './security-briefing-overrides';
 import './local-security-overrides';
 import './local-security-overrides-2026-08-19-17h';
 import './rich-media-overrides-2026-08-19-17h';
+import './daily-overrides-2026-08-20-17h';
+import './local-security-overrides-2026-08-20-17h';
 import './editorial-clarity-overrides';
 import './editorial-dedupe';
 import './home-count-fix-2026-08-19';
@@ -51,7 +53,7 @@ export type Category = {
 export const categories: Category[] = [
   { slug: 'hoje', label: 'Hoje', emoji: '☀️', description: 'Seleção diária dos melhores conteúdos.' },
   { slug: 'brasil', label: 'Brasil', emoji: '🇧🇷', description: 'Política, economia, sociedade, infraestrutura e decisões que afetam a vida real.' },
-  { slug: 'seguranca-zl', label: 'Segurança ZL', emoji: '🚨', description: 'Crime, roubos, furtos, tendências e segurança pública na Zona Leste de São Paulo, com dados oficiais e contexto.', subcategories: ['Roubos', 'Furtos', 'Celulares', 'Veículos', 'Dados SSP', 'Ações policiais', 'Smart Sampa', 'Serviços'] },
+  { slug: 'seguranca-zl', label: 'Zona Leste em Foco', emoji: '🚨', description: 'Notícias gerais da Zona Leste e Itaquera, segurança pública, casos, dados, ações e serviços em uma experiência separada por contexto.', subcategories: ['Região', 'Segurança', 'Casos', 'Matérias', 'Dados', 'Ações', 'Serviços'] },
   { slug: 'politica', label: 'Política', emoji: '🏛️', description: 'Fatos, contexto, posições e impacto, com separação entre informação e interpretação.' },
   { slug: 'mundo', label: 'Mundo', emoji: '🌍', description: 'Geopolítica, ciência, conflitos, energia, sociedade e acontecimentos internacionais.' },
   { slug: 'planeta', label: 'Planeta', emoji: '🌎', description: 'Oceanos, geologia, atmosfera, fenômenos naturais, rios, lagos e a Terra.' },
