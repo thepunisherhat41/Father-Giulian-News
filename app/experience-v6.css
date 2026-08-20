@@ -1,0 +1,623 @@
+/* Father Giulian News · Experience V6
+   Premium magazine + meaningful gamification + denser editorial detail. */
+
+:root{
+  --v6-cyan:#65e6bd;
+  --v6-green:#37f0a3;
+  --v6-gold:#e8bd6a;
+  --v6-purple:#9c8cff;
+  --v6-blue:#65c8ff;
+  --v6-red:#f48379;
+  --v6-ink:#05090d;
+  --v6-panel:#0b1219;
+  --v6-panel-2:#101922;
+  --v6-border:rgba(255,255,255,.105);
+  --v6-border-hot:rgba(101,230,189,.34);
+  --v6-shadow:0 22px 58px rgba(0,0,0,.34);
+}
+
+/* ---------- Mission deck ---------- */
+#gamified-mission-layer-host{
+  position:relative;
+  z-index:4;
+  width:100%;
+  min-width:0;
+}
+
+.missionDeckV6{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  margin:10px 0 12px;
+  padding:18px;
+  border:1px solid rgba(101,230,189,.22);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 94% 8%,rgba(156,140,255,.14),transparent 25%),
+    radial-gradient(circle at 7% 95%,rgba(101,230,189,.11),transparent 25%),
+    linear-gradient(135deg,rgba(14,24,31,.98),rgba(7,13,19,.98));
+  box-shadow:inset 0 1px rgba(255,255,255,.045),0 18px 48px rgba(0,0,0,.24);
+}
+
+.missionDeckV6:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  opacity:.36;
+  background-image:
+    linear-gradient(rgba(101,230,189,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(101,230,189,.035) 1px,transparent 1px);
+  background-size:24px 24px;
+  mask-image:linear-gradient(90deg,#000,transparent 76%);
+}
+
+.missionDeckGlow{
+  position:absolute;
+  z-index:-1;
+  right:-90px;
+  top:-115px;
+  width:310px;
+  height:310px;
+  border:1px solid rgba(101,230,189,.12);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 38px rgba(101,230,189,.018),
+    0 0 0 78px rgba(101,230,189,.011),
+    inset 0 0 70px rgba(101,230,189,.025);
+}
+
+.missionDeckV6.isComplete{
+  border-color:rgba(232,189,106,.38);
+  box-shadow:inset 0 1px rgba(255,255,255,.05),0 18px 54px rgba(0,0,0,.26),0 0 38px rgba(232,189,106,.045);
+}
+
+.missionDeckHeader{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:start;
+}
+
+.missionIdentityV6{
+  display:grid;
+  grid-template-columns:46px minmax(0,1fr);
+  gap:12px;
+  align-items:start;
+  min-width:0;
+}
+
+.missionIconV6{
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border:1px solid rgba(101,230,189,.22);
+  border-radius:14px;
+  background:linear-gradient(145deg,#16222c,#0a1117);
+  font-size:1.3rem;
+  box-shadow:inset 0 1px rgba(255,255,255,.05),0 0 22px rgba(101,230,189,.035);
+}
+
+.missionLiveV6{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#76d9ba;
+  font:900 .52rem ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;
+}
+
+.missionLiveV6 i{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--v6-green);
+  box-shadow:0 0 12px rgba(55,240,163,.7);
+  animation:v6Pulse 1.9s ease-in-out infinite;
+}
+
+.missionIdentityV6 strong{
+  display:block;
+  margin-top:4px;
+  color:#f7fafb;
+  font:700 1.24rem/1.05 Georgia,'Times New Roman',serif;
+  letter-spacing:-.025em;
+}
+
+.missionIdentityV6 p{
+  max-width:760px;
+  margin:6px 0 0;
+  color:#98a5ae;
+  font-size:.74rem;
+  line-height:1.48;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+.missionRankV6{
+  min-width:82px;
+  padding:10px 12px;
+  border:1px solid rgba(232,189,106,.22);
+  border-radius:13px;
+  background:linear-gradient(145deg,rgba(232,189,106,.08),rgba(12,18,24,.88));
+  text-align:right;
+}
+
+.missionRankV6 small{
+  display:block;
+  color:#9b855f;
+  font:900 .46rem ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.12em;
+}
+
+.missionRankV6 b{
+  display:block;
+  margin:2px 0;
+  color:#ffe0a0;
+  font:900 1.55rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:-.08em;
+}
+
+.missionRankV6 span{
+  color:#d4b879;
+  font:850 .55rem ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+.missionProgressV6{
+  margin-top:16px;
+  padding-top:13px;
+  border-top:1px solid rgba(255,255,255,.065);
+}
+
+.missionProgressTopV6{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:14px;
+}
+
+.missionProgressTopV6>div{
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+
+.missionProgressTopV6 small{
+  color:#6f7d87;
+  font:900 .47rem ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.1em;
+}
+
+.missionProgressTopV6 strong{
+  color:#dff9ef;
+  font:900 .72rem ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+.missionProgressTopV6>span{
+  color:#7edbbb;
+  font:800 .54rem ui-sans-serif,system-ui;
+}
+
+.missionTrackV6{
+  position:relative;
+  height:9px;
+  margin-top:8px;
+  border:1px solid rgba(101,230,189,.22);
+  border-radius:999px;
+  background:#04090c;
+  overflow:visible;
+}
+
+.missionTrackV6>i{
+  position:absolute;
+  inset:1px auto 1px 1px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#27c98c,#65e6bd 72%,#e8bd6a);
+  box-shadow:0 0 16px rgba(101,230,189,.24);
+  transition:width .22s ease;
+}
+
+.missionTrackV6>b{
+  position:absolute;
+  z-index:2;
+  top:50%;
+  width:8px;
+  height:8px;
+  margin-left:-4px;
+  transform:translateY(-50%);
+  border:2px solid #101922;
+  border-radius:50%;
+  background:#47535d;
+  box-shadow:0 0 0 1px rgba(255,255,255,.12);
+}
+
+.missionTrackV6>b.reached{
+  background:#f0c46f;
+  box-shadow:0 0 10px rgba(240,196,111,.5);
+}
+
+.missionCheckpointLabelsV6{
+  display:grid;
+  grid-template-columns:1fr repeat(3,auto) 1fr;
+  align-items:center;
+  gap:11px;
+  margin-top:5px;
+  color:#52606a;
+  font:800 .4rem ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+.missionCheckpointLabelsV6 span:nth-child(2),
+.missionCheckpointLabelsV6 span:nth-child(3),
+.missionCheckpointLabelsV6 span:nth-child(4){text-align:center}
+.missionCheckpointLabelsV6 span:last-child{text-align:right}
+
+.missionStatsV6{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px;
+  margin-top:14px;
+}
+
+.missionStatsV6 article{
+  min-width:0;
+  padding:10px 11px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:11px;
+  background:rgba(4,10,14,.44);
+}
+
+.missionStatsV6 small{
+  display:block;
+  color:#66737d;
+  font:900 .43rem ui-monospace,SFMono-Regular,Menlo,monospace;
+  letter-spacing:.08em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.missionStatsV6 strong{
+  display:block;
+  margin-top:4px;
+  color:#edf4f5;
+  font:800 .86rem/1.1 ui-sans-serif,system-ui;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.missionStatsV6 span{
+  display:block;
+  margin-top:3px;
+  color:#56636d;
+  font-size:.54rem;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.missionFooterV6{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(220px,.55fr);
+  gap:14px;
+  align-items:end;
+  margin-top:12px;
+}
+
+.missionBadgesV6{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.missionBadgesV6 span{
+  display:inline-flex;
+  align-items:center;
+  min-height:28px;
+  padding:0 9px;
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:999px;
+  background:#091016;
+  color:#53616b;
+  font:800 .51rem ui-sans-serif,system-ui;
+}
+
+.missionBadgesV6 span.earned{
+  border-color:rgba(101,230,189,.25);
+  background:rgba(101,230,189,.065);
+  color:#97e4c8;
+}
+
+.missionLevelTrackV6{
+  display:grid;
+  grid-template-columns:auto minmax(70px,1fr) auto;
+  gap:7px;
+  align-items:center;
+}
+
+.missionLevelTrackV6 small,.missionLevelTrackV6 span{
+  color:#66747e;
+  font:850 .43rem ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+.missionLevelTrackV6 i{
+  display:block;
+  height:5px;
+  overflow:hidden;
+  border-radius:999px;
+  background:#04080b;
+}
+
+.missionLevelTrackV6 i b{
+  display:block;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,var(--v6-purple),var(--v6-blue));
+}
+
+.missionStorageNoteV6{
+  display:block;
+  margin-top:9px;
+  color:#43505a;
+  font-size:.46rem;
+  text-align:right;
+}
+
+/* ---------- Bring back personality without breaking readability ---------- */
+.magazineMasthead{
+  box-shadow:0 10px 34px rgba(0,0,0,.22)!important;
+}
+
+.magazineQuickNav button.active{
+  box-shadow:0 0 0 1px rgba(232,189,106,.1),0 0 20px rgba(232,189,106,.035)!important;
+}
+
+.appShellV3 .magazineSectionCover{
+  border-color:rgba(255,255,255,.14)!important;
+  box-shadow:0 22px 62px rgba(0,0,0,.31),inset 0 1px rgba(255,255,255,.045)!important;
+}
+
+.appShellV3 .magazineSectionCover.withCoverImage{
+  box-shadow:0 24px 70px rgba(0,0,0,.36),0 0 0 1px rgba(101,230,189,.025)!important;
+}
+
+.magazineSectionCover .stageV3Meta span:before{
+  content:'●';
+  margin-right:6px;
+  color:var(--v6-green);
+  font-size:.58em;
+  text-shadow:0 0 9px rgba(55,240,163,.75);
+}
+
+.magazineArticlePanel:not([data-dedicated-hub]){
+  position:relative;
+  overflow:hidden;
+}
+
+.magazineArticlePanel:not([data-dedicated-hub]):before{
+  content:''!important;
+  display:block!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  width:86px!important;
+  height:2px!important;
+  background:linear-gradient(90deg,var(--v6-cyan),transparent)!important;
+  box-shadow:0 0 16px rgba(101,230,189,.28)!important;
+}
+
+/* richer chapter cards */
+.magazineArticlePanel .intelSection{
+  transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease!important;
+}
+
+.magazineArticlePanel .intelSection:hover{
+  border-color:rgba(101,230,189,.2)!important;
+  background:#111b23!important;
+}
+
+.magazineArticlePanel .intelSection[open]{
+  border-color:rgba(101,230,189,.24)!important;
+  background:linear-gradient(145deg,#111c24,#0d151c)!important;
+  box-shadow:inset 3px 0 rgba(101,230,189,.42)!important;
+}
+
+.magazineArticlePanel .intelHeader>span{
+  display:grid!important;
+  place-items:center!important;
+  width:28px!important;
+  height:28px!important;
+  border:1px solid rgba(101,230,189,.12)!important;
+  border-radius:8px!important;
+  background:#091016!important;
+  color:#73cdb0!important;
+}
+
+.magazineArticlePanel .intelSection[open] .intelHeader>span{
+  border-color:rgba(232,189,106,.24)!important;
+  color:#edc774!important;
+}
+
+.magazineArticlePanel .intelSectionBody p{
+  max-width:930px;
+}
+
+.magazineArticlePanel .intelSectionBody li{
+  margin-bottom:6px;
+}
+
+/* dedicated hubs feel like missions in the same universe */
+.briefingV2Story,
+.candidateCardCollapsible,
+.zlRegionalNewsCard,
+.zlSignal,
+.zlCaseCard,
+.zlArticleCard,
+.vehicleOptionCard,
+.appSecStoryCard,
+.babyMilestoneList article,
+.babyCuriosityGrid article,
+.gameStoryGrid article,
+.gameStoryGrid section{
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease!important;
+}
+
+.briefingV2Story:hover,
+.candidateCardCollapsible:hover,
+.zlRegionalNewsCard:hover,
+.zlSignal:hover,
+.zlCaseCard:hover,
+.zlArticleCard:hover,
+.vehicleOptionCard:hover,
+.appSecStoryCard:hover{
+  border-color:rgba(101,230,189,.22)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.16)!important;
+}
+
+.candidateCardCollapsible[data-expanded='true'],
+.briefingV2Story:has(details[open]){
+  box-shadow:inset 3px 0 rgba(232,189,106,.42),0 14px 32px rgba(0,0,0,.16)!important;
+}
+
+/* home: richer, more game-like campaign cards */
+.magazineFeatureCard{
+  border-color:rgba(232,189,106,.22)!important;
+}
+
+.magazineFeatureCopy>small:before{
+  content:'MISSÃO PRINCIPAL · ';
+  color:#80e1bf;
+}
+
+.magazineStoryCard{
+  border-color:rgba(255,255,255,.105)!important;
+}
+
+.magazineStoryCard:hover{
+  border-color:rgba(101,230,189,.2)!important;
+  box-shadow:0 14px 30px rgba(0,0,0,.18)!important;
+}
+
+.magazineStoryCard .dropIndex{
+  border:1px solid rgba(101,230,189,.16)!important;
+  color:#91d9c0!important;
+}
+
+.magazineStoryCard .dropActions button:first-child:before{
+  content:'▶ ';
+  font-size:.8em;
+}
+
+.magazineRailCard{
+  border-color:rgba(101,230,189,.13)!important;
+}
+
+.magazineRailCard.rail-appsec-ssdlc{
+  border-color:rgba(156,140,255,.18)!important;
+}
+
+/* detailed utilities should feel intentionally expandable */
+.magazineSharePack>summary,
+.sourceBlockV3>summary,
+.dossierSummary{
+  transition:background .18s ease,border-color .18s ease!important;
+}
+
+.magazineSharePack>summary:hover,
+.sourceBlockV3>summary:hover,
+.dossierSummary:hover{
+  background:rgba(101,230,189,.035)!important;
+}
+
+/* sections get stronger information hierarchy */
+.candidateQuickColumn,
+.briefingV2Core section,
+.briefingV2FactGrid section,
+.briefingV2Operational section,
+.zlCasePolicy>div,
+.zlRegionalBody>section,
+.vehicleDetailStats>div,
+.babyNowGrid article,
+.gamePs5Grid article,
+.aiPentestTwoWays article{
+  box-shadow:inset 0 1px rgba(255,255,255,.025)!important;
+}
+
+@keyframes v6Pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.48;transform:scale(.78)}
+}
+
+@media(max-width:900px){
+  .missionStatsV6{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .missionFooterV6{grid-template-columns:1fr}
+  .missionLevelTrackV6{max-width:420px}
+}
+
+@media(max-width:760px){
+  #gamified-mission-layer-host{padding:0}
+  .missionDeckV6{
+    margin:8px 0 9px;
+    padding:13px;
+    border-radius:15px;
+  }
+  .missionDeckHeader{gap:9px}
+  .missionIdentityV6{grid-template-columns:38px minmax(0,1fr);gap:9px}
+  .missionIconV6{width:38px;height:38px;border-radius:11px;font-size:1.06rem}
+  .missionIdentityV6 strong{font-size:1.02rem}
+  .missionIdentityV6 p{font-size:.67rem;-webkit-line-clamp:2}
+  .missionLiveV6{font-size:.43rem}
+  .missionRankV6{min-width:68px;padding:8px 9px;border-radius:10px}
+  .missionRankV6 b{font-size:1.22rem}
+  .missionRankV6 small{font-size:.4rem}.missionRankV6 span{font-size:.49rem}
+  .missionProgressV6{margin-top:12px;padding-top:10px}
+  .missionProgressTopV6 small{font-size:.41rem}
+  .missionProgressTopV6>span{font-size:.48rem}
+  .missionCheckpointLabelsV6{font-size:.36rem}
+  .missionStatsV6{gap:6px;margin-top:11px}
+  .missionStatsV6 article{padding:8px 9px;border-radius:9px}
+  .missionStatsV6 small{font-size:.37rem}.missionStatsV6 strong{font-size:.75rem}.missionStatsV6 span{font-size:.47rem}
+  .missionFooterV6{gap:9px;margin-top:9px}
+  .missionBadgesV6{gap:5px}
+  .missionBadgesV6 span{min-height:25px;padding:0 7px;font-size:.45rem}
+  .missionStorageNoteV6{font-size:.4rem;margin-top:6px}
+
+  /* more content above the fold, but not cramped */
+  .appShellV3 .magazineSectionCover{min-height:285px!important}
+  .magazineShell[data-active='politica'] .magazineSectionCover{min-height:300px!important}
+  .magazineArticlePanel{padding:16px!important}
+}
+
+@media(max-width:480px){
+  .missionDeckV6{padding:12px}
+  .missionIdentityV6 p{-webkit-line-clamp:1}
+  .missionStatsV6 article:nth-child(3) strong{font-size:.69rem}
+  .missionBadgesV6 span{font-size:.42rem}
+  .missionLevelTrackV6{grid-template-columns:auto 1fr auto}
+  .missionLevelTrackV6 small,.missionLevelTrackV6 span{font-size:.38rem}
+
+  /* home cards show more detail than v4 */
+  .magazineStoryGrid{gap:10px!important}
+  .magazineStoryCard{
+    grid-template-columns:126px minmax(0,1fr)!important;
+    min-height:184px!important;
+  }
+  .magazineCardMedia,.magazineCardIllustration{min-height:184px!important}
+  .magazineStoryCard .dropCopy{padding:13px 12px 4px!important}
+  .magazineStoryCard .dropCopy p{
+    font-size:.67rem!important;
+    line-height:1.45!important;
+    -webkit-line-clamp:3!important;
+  }
+  .magazineStoryCard .dropActions{padding:0 8px 9px!important}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .missionLiveV6 i{animation:none}
+  .missionTrackV6>i{transition:none}
+  .briefingV2Story,.candidateCardCollapsible,.zlRegionalNewsCard,.zlSignal,.zlCaseCard,.zlArticleCard,.vehicleOptionCard,.appSecStoryCard,.magazineStoryCard,.magazineArticlePanel .intelSection{transition:none!important}
+}
