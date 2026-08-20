@@ -94,6 +94,7 @@ export default function RichMediaPortal() {
       'Security Briefing',
       'Política',
       'Segurança ZL',
+      'Zona Leste em Foco',
       'Gravidez',
       'Carros',
       'Motos',
