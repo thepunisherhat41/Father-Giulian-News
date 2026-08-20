@@ -15,6 +15,8 @@ const requiredFiles = [
   'lib/editorial-inline-media-2026-08-20.ts',
   'components/EditorialDeepReadPortal.tsx',
   'lib/editorial-deep-read-2026-08-20.ts',
+  'components/EditorialFreshnessPortal.tsx',
+  'lib/editorial-freshness-current.ts',
 ];
 
 const failures = [];
@@ -79,8 +81,27 @@ if (postpartum) {
 }
 
 const vehicleMedia = existsSync('lib/vehicle-media.ts') ? readFileSync('lib/vehicle-media.ts', 'utf8') : '';
-if (vehicleMedia && !vehicleMedia.includes("'cruze-lt-auto-2014'") || vehicleMedia && !vehicleMedia.includes("'nc750x-2016'")) {
+if ((vehicleMedia && !vehicleMedia.includes("'cruze-lt-auto-2014'")) || (vehicleMedia && !vehicleMedia.includes("'nc750x-2016'"))) {
   failures.push('lib/vehicle-media.ts: catálogo precisa cobrir carros e motos da edição atual.');
+}
+
+// HARD GATE diário: o deploy só pode acontecer depois da validação das 22 áreas no dia corrente em São Paulo.
+const freshnessPath = 'lib/editorial-freshness-current.ts';
+if (existsSync(freshnessPath)) {
+  const freshness = readFileSync(freshnessPath, 'utf8');
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).formatToParts(new Date());
+  const byType = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  const today = `${byType.year}-${byType.month}-${byType.day}`;
+  const declared = freshness.match(/editorialFreshnessDate\s*=\s*'([^']+)'/)?.[1];
+  if (declared !== today) {
+    failures.push(`Auditoria editorial diária desatualizada: esperado ${today}, encontrado ${declared ?? 'sem data'}. Valide todas as abas antes do build.`);
+  }
+  const requiredSlugs = ['brasil','seguranca-zl','politica','mundo','planeta','animais','tempo','curiosidades','musica','games','gravidez','pai','carros','motos','mecanica','nautica','viagens','financas','tecnologia','security-briefing','seguranca','appsec-ssdlc'];
+  for (const slug of requiredSlugs) {
+    if (!freshness.includes(`slug: '${slug}'`)) failures.push(`Auditoria editorial diária incompleta: aba ${slug} não foi validada.`);
+  }
 }
 
 if (failures.length) {
