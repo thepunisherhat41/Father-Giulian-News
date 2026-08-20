@@ -34,9 +34,15 @@ import './local-security-magazine.css';
 import './local-east-news.css';
 import './layout-fix-v5.css';
 import './experience-v6.css';
+import './local-east-media-v7.css';
+import './editorial-inline-media-v7.css';
+import './editorial-deep-read-v7.css';
+import './pregnancy-postpartum-v7.css';
+import './vehicle-media-v7.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
+import PregnancyPostpartumGuide from '@/components/PregnancyPostpartumGuide';
 import { BabyDiscoveryLabPortal } from '@/components/BabyDiscoveryLab';
 import MusicHubPortal from '@/components/MusicHubPortal';
 import PoliticalCandidateAnalysisPortal from '@/components/PoliticalCandidateAnalysisPortal';
@@ -48,6 +54,8 @@ import SecurityBriefingAnalystLayer from '@/components/SecurityBriefingAnalystLa
 import AppSecFeedPortal from '@/components/AppSecFeedPortal';
 import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
+import LocalEastMediaEnhancer from '@/components/LocalEastMediaEnhancer';
+import EditorialDeepReadPortal from '@/components/EditorialDeepReadPortal';
 import GamifiedMissionLayerPortal from '@/components/GamifiedMissionLayer';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
@@ -66,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PregnancyMaternalChanges />
         <BabyDiscoveryLabPortal />
         <PregnancyVomitingCare />
+        <PregnancyPostpartumGuide />
         <MusicHubPortal />
         <PoliticalCandidateAnalysisPortal />
         <VehicleComparisonPortal />
@@ -75,7 +84,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SecurityBriefingAnalystLayer />
         <AppSecFeedPortal />
         <LocalSecurityPortal />
+        <LocalEastMediaEnhancer />
         <RichMediaPortal />
+        <EditorialDeepReadPortal />
         <GamifiedMissionLayerPortal />
         <EditorialPresentationGuard />
         <TopicShareEnhancer />
