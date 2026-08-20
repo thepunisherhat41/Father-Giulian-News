@@ -9,7 +9,7 @@ Object.assign(dailyContent.hoje,{
 });
 
 const updates:Record<string,{label?:string;title:string;detail:string}>={
-  'seguranca-zl':{label:'Zona Leste em Foco',title:'Itaquera e Zona Leste: serviços de hoje; segurança sem novo fato confirmado',detail:'Região e segurança ficam separadas: atividades e serviços entram como notícia local; casos policiais mantêm data, fonte e status jurídico.'},
+  'seguranca-zl':{label:'Zona Leste em Foco',title:'Zona Leste agora: jogo em Itaquera, serviços e nova ocorrência confirmada em Aricanduva',detail:'A seção regional foi ampliada com notícias de hoje, mídia, contexto e próximos passos; segurança mantém ocorrência, status jurídico e tendência como coisas diferentes.'},
   musica:{title:'Música: Rock e sertanejo de época seguem em trilhas independentes',detail:'Curadoria preserva repertório, contexto e players separados, sem letras protegidas e sem duplicar artista+título.'},
   games:{title:'Gamescom 2026 se aproxima: agenda oficial vale mais que rumor',detail:'A cobertura separa datas e anúncios confirmados de expectativas ainda sem confirmação.'},
   gravidez:{title:'6 semanas + 4 dias: enjoo, vômito e recuperação entre episódios',detail:'A aba mantém orientação prática sobre hidratação, proteção dos dentes, alimentação gradual e sinais de alerta.'},
