@@ -39,6 +39,7 @@ import './editorial-inline-media-v7.css';
 import './editorial-deep-read-v7.css';
 import './pregnancy-postpartum-v7.css';
 import './vehicle-media-v7.css';
+import './editorial-freshness-v8.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
@@ -56,6 +57,7 @@ import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
 import LocalEastMediaEnhancer from '@/components/LocalEastMediaEnhancer';
 import EditorialDeepReadPortal from '@/components/EditorialDeepReadPortal';
+import EditorialFreshnessPortal from '@/components/EditorialFreshnessPortal';
 import GamifiedMissionLayerPortal from '@/components/GamifiedMissionLayer';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
@@ -87,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LocalEastMediaEnhancer />
         <RichMediaPortal />
         <EditorialDeepReadPortal />
+        <EditorialFreshnessPortal />
         <GamifiedMissionLayerPortal />
         <EditorialPresentationGuard />
         <TopicShareEnhancer />
