@@ -33,6 +33,7 @@ import './magazine-v4.css';
 import './local-security-magazine.css';
 import './local-east-news.css';
 import './layout-fix-v5.css';
+import './experience-v6.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
@@ -47,6 +48,7 @@ import SecurityBriefingAnalystLayer from '@/components/SecurityBriefingAnalystLa
 import AppSecFeedPortal from '@/components/AppSecFeedPortal';
 import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
+import GamifiedMissionLayerPortal from '@/components/GamifiedMissionLayer';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
@@ -74,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AppSecFeedPortal />
         <LocalSecurityPortal />
         <RichMediaPortal />
+        <GamifiedMissionLayerPortal />
         <EditorialPresentationGuard />
         <TopicShareEnhancer />
         <EditorialQualityGuard />
