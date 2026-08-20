@@ -84,7 +84,20 @@ export default function RichMediaPortal() {
 
   useEffect(() => {
     const id = 'daily-rich-media-host';
-    const special = new Set(['Hoje', 'Música', 'Games', 'AppSec / SSDLC', 'Security Briefing']);
+    // Dedicated hubs already own their visual storytelling. Injecting the generic
+    // media panel duplicates the same image and pushes the real content too far down.
+    const special = new Set([
+      'Hoje',
+      'Música',
+      'Games',
+      'AppSec / SSDLC',
+      'Security Briefing',
+      'Política',
+      'Segurança ZL',
+      'Gravidez',
+      'Carros',
+      'Motos',
+    ]);
 
     const sync = () => {
       const label = document.querySelector('.stage h1')?.textContent?.trim() ?? '';
