@@ -32,6 +32,7 @@ import './site-redesign-v3-hubs.css';
 import './magazine-v4.css';
 import './local-security-magazine.css';
 import './local-east-news.css';
+import './layout-fix-v5.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
