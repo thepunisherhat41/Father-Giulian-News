@@ -1,5 +1,6 @@
 import { applyDailyOverride20260821_10h } from './daily-overrides-2026-08-21-10h';
 import { findRichMediaForStory, type RichMediaEntry } from './rich-media';
+import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
 import { dailyRichMedia20260821_10h } from './daily-rich-media-2026-08-21-10h';
 import { dailyRichMedia20260821 } from './daily-rich-media-2026-08-21';
 import { dailyRichMedia20260820 } from './daily-rich-media-2026-08-20';
@@ -21,10 +22,14 @@ function findIn(catalog: RichMediaEntry[], label: string, canonicalLabel: string
 }
 
 export function findCurrentRichMedia(label: string, storyTitle: string): RichMediaEntry | undefined {
+  // O nome da função é mantido por compatibilidade; nesta janela ele aplica a revisão ativa das 17h.
   applyDailyOverride20260821_10h(true);
 
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
+
+  const late = findIn(dailyRichMedia20260821_17h, label, canonicalLabel, normalizedTitle);
+  if (late) return late;
 
   const intraday = findIn(dailyRichMedia20260821_10h, label, canonicalLabel, normalizedTitle);
   if (intraday) return intraday;

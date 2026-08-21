@@ -10,31 +10,31 @@ export type EditorialFreshnessEntry = {
 // HARD GATE: este arquivo precisa ser regenerado em toda execução antes do deploy.
 // O quality gate compara a data abaixo com America/Sao_Paulo e exige exatamente 22 entradas.
 export const editorialFreshnessDate = '2026-08-21';
-export const editorialFreshnessValidatedAt = '21/08/2026 · 10h';
+export const editorialFreshnessValidatedAt = '21/08/2026 · 17h';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'PEC da jornada 6x1 avançada em 20/08 continua dentro da janela de 24h e segue material; nenhuma fonte melhor justificou troca às 10h.' },
-  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Região, Segurança, Casos, Matérias, Dados, Ações e Serviços rechecados; vacinação em Corinthians-Itaquera e fatos locais seguem atuais, sem reciclar ocorrência antiga como novidade.' },
-  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Calendário do TSE de 21/08 incorporado: percentuais nacionais de candidaturas para destinação de recursos e obrigações operacionais das emissoras antes do horário eleitoral.' },
-  { slug:'mundo', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ataque de grande escala a Kyiv de 20/08 permanece dentro da janela prioritária e continua material; não foi substituído por manchete mais forte às 10h.' },
-  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Termoclina e seus efeitos em som, mistura oceânica e ecossistemas foram rechecados; conteúdo científico evergreen permanece correto.' },
-  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Canal acústico oceânico e relação com mamíferos marinhos permanecem corretos e não exigem rotação artificial.' },
-  { slug:'tempo', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'INMET rechecado para 21/08: massa de ar frio e ventos no Sudeste confirmam a leitura publicada; sem mudança material adicional às 10h.' },
-  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Explicação sobre espalhamento da luz e pôr do sol permanece cientificamente correta e com mídia adequada.' },
-  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Trilhas Rock e Sertanejo de Época, Top 10 e agenda do fim de semana foram rechecados; nenhuma atualização material exigiu troca.' },
-  { slug:'games', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Agenda oficial da gamescom 2026 permanece correta; confirmado, a caminho e rumor continuam separados.' },
-  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Idade gestacional de 6s5d, cuidados com vômito, Baby Discovery Lab e guia de puerpério continuam corretos e com fontes médicas confiáveis.' },
-  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática de redução de carga mental permanece segura, nova no dia e aplicável.' },
-  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Comparativo mantém quatro opções acima de 1.0 e até R$70 mil; foco em histórico térmico continua útil e coerente com inspeção de usado.' },
-  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Comparativo e foco em idade/ressecamento/deformação de pneus permanecem tecnicamente corretos.' },
-  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Fluido de freio higroscópico e perda de margem térmica continuam corretos; mídia da peça permanece pertinente.' },
-  { slug:'nautica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Milha náutica, nó e conexão com cartas foram rechecados e continuam corretos.' },
-  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Paranapiacaba segue adequado como bate-volta; planejamento de clima, caminhada e horários permanece aplicável.' },
-  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters de 21/08 incorporada: Brent perto de US$95, dólar pressionado e Treasury de 30 anos na região de 5,25%; impacto e limites foram reescritos.' },
-  { slug:'tecnologia', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Cerebras CS-4 segue recente e material para inferência de IA; nenhuma notícia de hardware mais forte justificou substituição às 10h.' },
-  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Decision Desk e sinais profissionais foram reavaliados na web; conjunto continua material e prioridade segue contextual, não baseada apenas em CVSS.' },
-  { slug:'seguranca', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'ClickFix/CrashFix e cadeia de engenharia social seguem relevantes; fontes Microsoft foram rechecadas e o foco defensivo permanece válido.' },
-  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Agentic CI/CD, autorização de tools, tokens, supply chain e trust boundaries permanecem atuais; Mandiant reforça guardrails para agentes privilegiados.' },
+  { slug:'brasil', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters 21/08: Lula e Trump conversaram sobre tarifas; conteúdo reescrito para separar diálogo, negociação futura e eventual contramedida.' },
+  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sete seções rechecadas. Vacinação em Corinthians-Itaquera, obra do Córrego Rio Verde e fatos locais seguem atuais; nenhuma ocorrência criminal nova e suficientemente confirmada justificou troca.' },
+  { slug:'politica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Marcos oficiais do TSE incorporados às 10h continuam atuais às 17h; nenhuma mudança jurídica ou calendário mais relevante exigiu substituição. Conteúdo permanece neutro e sem recomendação.' },
+  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Fechamento Reuters 21/08 incorporado: Brent US$93,86, risco de sanções e oferta/Hormuz; narrativa substitui o pico intradiário da manhã.' },
+  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Termoclina e efeitos em mistura, som e ecossistemas permanecem cientificamente corretos e com mídia científica pertinente.' },
+  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Canal acústico oceânico e relação com mamíferos marinhos seguem corretos; não houve fato novo que justificasse rotação artificial.' },
+  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE rechecado à tarde: rajada de 53,6 km/h na Guarapiranga às 14h20 e entrada de ar frio; conteúdo atualizado com medição e limites do dado.' },
+  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Espalhamento da luz e cores do pôr do sol permanecem corretos, profundos e com diagrama científico adequado.' },
+  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Rock e Sertanejo de Época, Top 10, players e deduplicação foram rechecados; conteúdo continua válido sem repetir faixa dentro das trilhas.' },
+  { slug:'games', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Agenda oficial da gamescom 2026 foi revalidada; datas e distinção entre confirmado, a caminho e rumor permanecem corretas.' },
+  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Idade gestacional, PregnancyMaternalChanges, BabyDiscoveryLab, cuidados pós-vômito e guia de puerpério permanecem coerentes com fontes médicas e com a DPP configurada.' },
+  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática do dia segue segura, concreta e aplicável; apoio, consentimento e divisão de tarefas permanecem adequados.' },
+  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Quatro opções com motor acima de 1.0 e teto de R$70 mil, inspeção, manutenção, veredito e fotos por modelo permanecem coerentes.' },
+  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Quatro motos, preços de referência, ciclística, consumíveis, sinais de queda, freios/ABS e fotos por modelo permanecem coerentes.' },
+  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Fluido de freio higroscópico, margem térmica e diagnóstico permanecem tecnicamente corretos e com mídia da peça.' },
+  { slug:'nautica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Milha náutica, nó e leitura de carta continuam corretos e aplicáveis; não houve mudança factual que exigisse troca.' },
+  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Paranapiacaba continua adequada para bate-volta e o planejamento de clima, caminhada e horários segue aplicável.' },
+  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Fechamento de 21/08 incorporado: Brent US$93,86 e juros longos ainda altos; ângulo permanece custo de capital/CET, distinto da geopolítica da aba Mundo.' },
+  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters 21/08: Nvidia investiu na Cloverleaf Infrastructure; pauta atualizada para gargalos físicos de data centers, energia e interconexão.' },
+  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Decision Desk e 8–12 sinais foram reavaliados; prioridades permanecem materiais e contextuais. Timestamp da revisão foi atualizado para 17h.' },
+  { slug:'seguranca', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'ClickFix/CrashFix e engenharia social continuam relevantes; não surgiu sinal primário novo mais forte que justificasse substituir o tema defensivo nesta janela.' },
+  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Agentic CI/CD, autorização de tools, supply chain e trust boundaries foram revalidados; OWASP Agentic Top 10 continua reforçando supply chain dinâmica e tool misuse.' },
 ];
 
 export function freshnessForSlug(slug: string) {
