@@ -1,6 +1,6 @@
 import { dailyContent, todayDrops } from './daily-content';
 
-const brasil = dailyContent.brasiL ?? dailyContent.brasil;
+const brasil = dailyContent.brasil;
 
 if (brasil) {
   Object.assign(brasil, {
