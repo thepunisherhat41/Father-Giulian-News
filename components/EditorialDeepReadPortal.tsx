@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { deepReadForSlug, type EditorialDeepRead } from '@/lib/editorial-deep-read-2026-08-21';
 
-const dedicated = new Set(['hoje','seguranca-zl','politica','gravidez','carros','motos','musica','games','security-briefing','appsec-ssdlc']);
+const dedicated = new Set(['hoje','brasil','seguranca-zl','politica','gravidez','carros','motos','musica','games','security-briefing','appsec-ssdlc']);
 
 type Mount = { host: HTMLElement; data: EditorialDeepRead; slug: string };
 
