@@ -1,3 +1,5 @@
+import './daily-overrides-2026-08-21-10h';
+
 export type DailyWord = {
   word: string;
   pronunciation?: string;
