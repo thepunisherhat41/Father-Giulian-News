@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { deepReadForSlug, type EditorialDeepRead } from '@/lib/editorial-deep-read-2026-08-20';
+import { deepReadForSlug, type EditorialDeepRead } from '@/lib/editorial-deep-read-2026-08-21';
 
 const dedicated = new Set(['hoje','seguranca-zl','politica','gravidez','carros','motos','musica','games','security-briefing','appsec-ssdlc']);
 
@@ -15,7 +15,7 @@ function Block({ title, items }: { title: string; items: string[] }) {
 function DeepRead({ data }: { data: EditorialDeepRead }) {
   return (
     <section className="editorialDeepReadV7">
-      <header><div><span>LEITURA AMPLIADA</span><h3>Além do resumo</h3></div><p>Contexto, impacto e limites para não ficar só na manchete.</p></header>
+      <header><div><span>LEITURA AMPLIADA · EDIÇÃO ATUAL</span><h3>Além do resumo</h3></div><p>Contexto, impacto, limites e próximos sinais para não ficar só na manchete.</p></header>
       <div className="editorialDeepReadGridV7">
         <Block title="O QUE ESTÁ POR TRÁS" items={data.context} />
         <Block title="IMPACTO / APLICAÇÃO" items={data.practical} />
