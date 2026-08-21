@@ -1,0 +1,2 @@
+/* When a topic has a specialized decision tracker, do not repeat the same material in the generic accordion. */
+.articlePanel:has(#policy-conversation-v11-host) > .intelStack{display:none!important}
