@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 
 const requiredFiles = [
-  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','app/mobile-v10.css',
+  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','lib/daily-overrides-2026-08-21-depth.ts','components/PolicyConversationPortal.tsx','lib/policy-conversation-current.ts','app/policy-conversation-v11.css','app/policy-conversation-dedupe-v11.css','app/mobile-v10.css',
 ];
 const failures = [];
 for (const file of requiredFiles) if (!existsSync(file)) failures.push(`Arquivo obrigatório ausente: ${file}`);
@@ -17,6 +17,7 @@ for (const check of checks) for (const token of check.forbidden) if (text(check.
 
 const categories = text('lib/categories.ts');
 if (!categories.includes("import './daily-overrides-2026-08-21';")) failures.push('lib/categories.ts: edição de 21/08 não está carregada como override atual.');
+if (!categories.includes("import './daily-overrides-2026-08-21-depth';")) failures.push('lib/categories.ts: aprofundamento de 21/08 precisa ser carregado depois da edição base.');
 if (categories.includes("subcategories: ['Lançamentos', 'PS5 Radar'")) failures.push('lib/categories.ts: não reintroduzir “PS5 Radar”.');
 
 const portal = text('components/LocalSecurityPortal.tsx');
@@ -37,9 +38,23 @@ for (const label of ['Brasil','Zona Leste em Foco','Política','Mundo','Planeta'
 
 const deepPortal = text('components/EditorialDeepReadPortal.tsx');
 if (!deepPortal.includes('editorial-deep-read-2026-08-21')) failures.push('EditorialDeepReadPortal: leitura ampliada ainda não aponta para a edição de 21/08.');
+if (!deepPortal.includes("'brasil'")) failures.push('EditorialDeepReadPortal: Brasil deve evitar a camada genérica quando o Decision Tracker especializado estiver ativo.');
 const deep21 = text('lib/editorial-deep-read-2026-08-21.ts');
 for (const slug of ['brasil','mundo','planeta','animais','tempo','curiosidades','pai','mecanica','nautica','viagens','financas','tecnologia','seguranca']) {
   if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(deep21)) failures.push(`Leitura ampliada 21/08: ausente para ${slug}.`);
+}
+
+const policyData = text('lib/policy-conversation-current.ts');
+for (const token of ['Fim da escala 6x1: o que realmente foi discutido','O que cada lado disse','CENÁRIO D','49 votos','ANPT','statusCaveat']) {
+  if (!policyData.includes(token)) failures.push(`Policy Decision Tracker: conteúdo obrigatório ausente “${token}”.`);
+}
+const policyPortal = text('components/PolicyConversationPortal.tsx');
+for (const token of ['O que cada lado disse','Quais decisões podem sair','O que observar nos próximos dias','policy-conversation-v11-host']) {
+  if (!policyPortal.includes(token)) failures.push(`PolicyConversationPortal: experiência incompleta; ausente “${token}”.`);
+}
+const depthOverride = text('lib/daily-overrides-2026-08-21-depth.ts');
+for (const token of ['O que foi falado no debate','Próximos passos','Decisões possíveis','49 votos']) {
+  if (!depthOverride.includes(token)) failures.push(`Aprofundamento Brasil 21/08: ausente “${token}”.`);
 }
 
 const postpartum = text('components/PregnancyPostpartumGuide.tsx');
@@ -51,6 +66,9 @@ if (!vehicleMedia.includes("'cruze-lt-auto-2014'") || !vehicleMedia.includes("'n
 const mobile = text('app/mobile-v10.css');
 for (const token of ['grid-template-columns:minmax(0,1fr)!important','flex-direction:column!important','.zlCurrentNewsGrid']) if (!mobile.includes(token)) failures.push(`app/mobile-v10.css: hardening mobile incompleto; ausente “${token}”.`);
 const layout = text('app/layout.tsx');
+if (!layout.includes("import './policy-conversation-v11.css';")) failures.push('app/layout.tsx: CSS do Policy Decision Tracker não está carregado.');
+if (!layout.includes("import './policy-conversation-dedupe-v11.css';")) failures.push('app/layout.tsx: dedupe do Policy Decision Tracker não está carregado.');
+if (!layout.includes('PolicyConversationPortal')) failures.push('app/layout.tsx: PolicyConversationPortal precisa estar montado globalmente.');
 if (!layout.includes("import './mobile-v10.css';")) failures.push('app/layout.tsx: mobile-v10.css precisa estar carregado.');
 const cssImports = [...layout.matchAll(/import '\.\/(.+\.css)';/g)].map((m) => m[1]);
 if (cssImports.at(-1) !== 'mobile-v10.css') failures.push(`app/layout.tsx: mobile-v10.css deve ser o último CSS; último atual: ${cssImports.at(-1) ?? 'nenhum'}.`);
