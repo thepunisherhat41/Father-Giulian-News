@@ -7,6 +7,7 @@ import { getPregnancyStatus } from '@/lib/pregnancy';
 import { dailyContent, edition, todayDrops, type DailyIntel } from '@/lib/daily-content';
 import { editorialDossiers } from '@/lib/editorial-dossiers';
 import { findCurrentRichMedia } from '@/lib/current-rich-media';
+import { applyDailyOverride20260821_10h } from '@/lib/daily-overrides-2026-08-21-10h';
 import {
   civicFacts,
   officesInSP2026,
@@ -155,6 +156,7 @@ function CandidateGroup({ title, subtitle, profiles }: { title: string; subtitle
 }
 
 export default function HomePage() {
+  applyDailyOverride20260821_10h(true);
   const pregnancy = getPregnancyStatus();
   const [active, setActive] = useState('hoje');
   const [copied, setCopied] = useState<'full' | 'short' | null>(null);
