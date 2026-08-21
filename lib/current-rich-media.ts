@@ -1,44 +1,36 @@
 import { findRichMediaForStory, type RichMediaEntry } from './rich-media';
+import { dailyRichMedia20260821 } from './daily-rich-media-2026-08-21';
 import { dailyRichMedia20260820 } from './daily-rich-media-2026-08-20';
 import { dailyRichMedia20260819 } from './daily-rich-media-2026-08-19';
 
 const labelAliases: Record<string, string> = {
   Cyber: 'Cyber Security',
   AppSec: 'AppSec / SSDLC',
-  // Legacy catalogs used the old label. The current edition uses "Zona Leste em Foco",
-  // so exact-label matching must happen before this compatibility alias is consulted.
-  'Zona Leste em Foco': 'Segurança ZL',
+  'Segurança ZL': 'Zona Leste em Foco',
 };
 
 function matchesTitle(entry: RichMediaEntry, title: string) {
   return entry.matches.some((match) => title.includes(match.toLocaleLowerCase('pt-BR')));
 }
 
+function findIn(catalog: RichMediaEntry[], label: string, canonicalLabel: string, normalizedTitle: string) {
+  return catalog.find((entry) => entry.label === label && matchesTitle(entry, normalizedTitle))
+    ?? catalog.find((entry) => entry.label === canonicalLabel && matchesTitle(entry, normalizedTitle));
+}
+
 export function findCurrentRichMedia(label: string, storyTitle: string): RichMediaEntry | undefined {
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
-  // Prefer the exact current UI label. This prevents a compatibility alias from
-  // hiding a newly curated current-edition media entry (e.g. Zona Leste em Foco).
-  const currentExact = dailyRichMedia20260820.find((entry) =>
-    entry.label === label && matchesTitle(entry, normalizedTitle),
-  );
-  if (currentExact) return currentExact;
+  const current = findIn(dailyRichMedia20260821, label, canonicalLabel, normalizedTitle);
+  if (current) return current;
 
-  const currentCanonical = dailyRichMedia20260820.find((entry) =>
-    entry.label === canonicalLabel && matchesTitle(entry, normalizedTitle),
-  );
-  if (currentCanonical) return currentCanonical;
+  // Historical catalogs are fallbacks only while the current headline still matches the same idea.
+  const previous = findIn(dailyRichMedia20260820, label, canonicalLabel, normalizedTitle);
+  if (previous) return previous;
 
-  // A edição anterior só é fallback quando o título ainda corresponde semanticamente ao mesmo assunto.
-  const historicalExact = dailyRichMedia20260819.find((entry) =>
-    entry.label === label && matchesTitle(entry, normalizedTitle),
-  );
-  if (historicalExact) return historicalExact;
+  const older = findIn(dailyRichMedia20260819, label, canonicalLabel, normalizedTitle);
+  if (older) return older;
 
-  const historicalCanonical = dailyRichMedia20260819.find((entry) =>
-    entry.label === canonicalLabel && matchesTitle(entry, normalizedTitle),
-  );
-
-  return historicalCanonical ?? findRichMediaForStory(canonicalLabel, storyTitle);
+  return findRichMediaForStory(canonicalLabel, storyTitle);
 }
