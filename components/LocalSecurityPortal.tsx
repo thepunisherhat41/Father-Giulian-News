@@ -13,8 +13,9 @@ export default function LocalSecurityPortal() {
       const title = document.querySelector('.stage h1')?.textContent?.trim();
       const stack = document.querySelector('.intelStack');
       const old = document.getElementById(id);
+      const isZonaLeste = title === 'Segurança ZL' || title === 'Zona Leste em Foco';
 
-      if (title !== 'Segurança ZL' || !stack) {
+      if (!isZonaLeste || !stack) {
         old?.remove();
         setHost(null);
         return;
@@ -33,7 +34,7 @@ export default function LocalSecurityPortal() {
 
     sync();
     const observer = new MutationObserver(sync);
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
 
     return () => {
       observer.disconnect();
