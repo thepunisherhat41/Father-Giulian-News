@@ -44,6 +44,7 @@ import './dedicated-hub-freshness-v8.css';
 import './dedicated-daily-pulse-v8.css';
 import './policy-conversation-v11.css';
 import './policy-conversation-dedupe-v11.css';
+import './editorial-reflection-v12.css';
 import './mobile-v10.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
@@ -62,6 +63,7 @@ import RichMediaPortal from '@/components/RichMediaPortal';
 import LocalSecurityPortal from '@/components/LocalSecurityPortal';
 import LocalEastMediaEnhancer from '@/components/LocalEastMediaEnhancer';
 import EditorialDeepReadPortal from '@/components/EditorialDeepReadPortal';
+import EditorialReflectionPortal from '@/components/EditorialReflectionPortal';
 import EditorialFreshnessPortal from '@/components/EditorialFreshnessPortal';
 import DedicatedHubFreshnessEnhancer from '@/components/DedicatedHubFreshnessEnhancer';
 import DedicatedDailyPulsePortal from '@/components/DedicatedDailyPulsePortal';
@@ -98,6 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RichMediaPortal />
         <PolicyConversationPortal />
         <EditorialDeepReadPortal />
+        <EditorialReflectionPortal />
         <EditorialFreshnessPortal />
         <DedicatedHubFreshnessEnhancer />
         <DedicatedDailyPulsePortal />
