@@ -45,7 +45,7 @@ for (const slug of ['brasil','mundo','planeta','animais','tempo','curiosidades',
 }
 
 const policyData = text('lib/policy-conversation-current.ts');
-for (const token of ['Fim da escala 6x1: o que realmente foi discutido','O que cada lado disse','CENÁRIO D','49 votos','ANPT','statusCaveat']) {
+for (const token of ['Fim da escala 6x1: o que realmente foi discutido','voices:','CENÁRIO D','49 votos','ANPT','statusCaveat']) {
   if (!policyData.includes(token)) failures.push(`Policy Decision Tracker: conteúdo obrigatório ausente “${token}”.`);
 }
 const policyPortal = text('components/PolicyConversationPortal.tsx');
