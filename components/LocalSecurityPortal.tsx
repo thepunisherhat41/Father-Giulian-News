@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import LocalSecurityHub from './LocalSecurityHub';
+import LocalSecurityHub from './LocalSecurityHubCurrent';
 
 export default function LocalSecurityPortal() {
   const [host, setHost] = useState<HTMLElement | null>(null);
