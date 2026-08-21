@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 
 const requiredFiles = [
-  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','app/mobile-v10.css',
+  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','app/mobile-v10.css',
 ];
 const failures = [];
 for (const file of requiredFiles) if (!existsSync(file)) failures.push(`Arquivo obrigatório ausente: ${file}`);
@@ -28,6 +28,20 @@ for (const token of ['21 AGO 2026','aricanduva-homicidio-20ago','ponte-rasa-ofic
 const localEast = text('lib/local-east-news-current.ts');
 for (const token of ['21 AGO 2026','Corinthians vence Rosario Central','Córrego Rio Verde','vacinação contra sarampo']) if (!localEast.includes(token)) failures.push(`lib/local-east-news-current.ts: pauta regional atual incompleta; ausente “${token}”.`);
 
+const currentMedia = text('lib/current-rich-media.ts');
+if (!currentMedia.includes('dailyRichMedia20260821')) failures.push('lib/current-rich-media.ts: catálogo visual de 21/08 precisa ser prioridade.');
+const media21 = text('lib/daily-rich-media-2026-08-21.ts');
+for (const label of ['Brasil','Zona Leste em Foco','Política','Mundo','Planeta','Mundo Animal','Tempo e Clima','Curiosidades','Música','Games','Gravidez','Ser Pai','Carros','Motos','Mecânica','Náutica','Viagens','Finanças','Tecnologia','Security Briefing','Cyber Security','AppSec / SSDLC']) {
+  if (!media21.includes(`reuse('${label}'`)) failures.push(`Mídia 21/08: cobertura ausente para ${label}.`);
+}
+
+const deepPortal = text('components/EditorialDeepReadPortal.tsx');
+if (!deepPortal.includes('editorial-deep-read-2026-08-21')) failures.push('EditorialDeepReadPortal: leitura ampliada ainda não aponta para a edição de 21/08.');
+const deep21 = text('lib/editorial-deep-read-2026-08-21.ts');
+for (const slug of ['brasil','mundo','planeta','animais','tempo','curiosidades','pai','mecanica','nautica','viagens','financas','tecnologia','seguranca']) {
+  if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(deep21)) failures.push(`Leitura ampliada 21/08: ausente para ${slug}.`);
+}
+
 const postpartum = text('components/PregnancyPostpartumGuide.tsx');
 for (const token of ['PUERPÉRIO · PLANO DO PARCEIRO','CDC · Hear Her','WHO · Positive postnatal experience']) if (!postpartum.includes(token)) failures.push(`PregnancyPostpartumGuide: conteúdo obrigatório ausente “${token}”.`);
 
@@ -49,10 +63,7 @@ if (freshness) {
   const declared = freshness.match(/editorialFreshnessDate\s*=\s*['"]([^'"]+)['"]/)?.[1];
   if (declared !== today) failures.push(`Auditoria editorial diária desatualizada: esperado ${today}, encontrado ${declared ?? 'sem data'}.`);
   const requiredSlugs = ['brasil','seguranca-zl','politica','mundo','planeta','animais','tempo','curiosidades','musica','games','gravidez','pai','carros','motos','mecanica','nautica','viagens','financas','tecnologia','security-briefing','seguranca','appsec-ssdlc'];
-  for (const slug of requiredSlugs) {
-    const re = new RegExp(`slug\\s*:\\s*['"]${slug}['"]`);
-    if (!re.test(freshness)) failures.push(`Auditoria editorial diária incompleta: aba ${slug} não foi validada.`);
-  }
+  for (const slug of requiredSlugs) if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(freshness)) failures.push(`Auditoria editorial diária incompleta: aba ${slug} não foi validada.`);
   const entryCount = (freshness.match(/\{\s*slug\s*:\s*['"]/g) ?? []).length;
   if (entryCount !== 22) failures.push(`Auditoria editorial diária deve conter exatamente 22 áreas; encontrado ${entryCount}.`);
 }
