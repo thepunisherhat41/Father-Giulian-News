@@ -24,9 +24,9 @@ const fresh: LocalEastNewsItem[] = [
     source:{ label:'UOL Esporte · 20/08/2026', url:'https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/08/20/libertadores-corinthians-x-rosario-central.ghtm' },
     media:{
       type:'IMAGE',
-      url:'https://conteudo.imguol.com.br/c/esporte/2026/08/20/memphis-depay-do-corinthians-durante-jogo-contra-o-rosario-central-pela-libertadores-1787289329401_v2_900x506.jpg',
-      alt:'Partida entre Corinthians e Rosario Central na Neo Química Arena',
-      credit:'UOL Esporte · cobertura da partida',
+      url:'https://conteudo.imguol.com.br/c/esporte/f5/2026/08/20/memphis-comemora-gol-do-corinthians-sobre-o-rosario-central-em-jogo-da-libertadores-1787279421859_v2_450x450.jpg',
+      alt:'Memphis comemora gol do Corinthians sobre o Rosario Central em jogo da Libertadores',
+      credit:'REUTERS / Jean Carniel · via UOL Esporte',
       sourceUrl:'https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/08/20/libertadores-corinthians-x-rosario-central.ghtm',
     },
   },
