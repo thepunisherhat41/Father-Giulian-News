@@ -42,6 +42,7 @@ import './vehicle-media-v7.css';
 import './editorial-freshness-v8.css';
 import './dedicated-hub-freshness-v8.css';
 import './dedicated-daily-pulse-v8.css';
+import './mobile-v10.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
 import PregnancyVomitingCare from '@/components/PregnancyVomitingCare';
