@@ -1,4 +1,5 @@
-import { dailyContent, todayDrops } from './daily-content';
+import { dailyContent, edition, todayDrops } from './daily-content';
+import { politicsTracker } from './politics-2026';
 import { applyDailyOverride20260821_10h as apply10hBase } from './daily-overrides-2026-08-21-10h-base';
 
 let applied = false;
@@ -14,95 +15,129 @@ export function applyDailyOverride20260821_17h(force = false) {
     if (index >= 0) todayDrops[index] = { ...todayDrops[index], ...data };
   };
 
-  set('hoje', {
-    title: '22 áreas revisadas · atualização das 17h de 21 de agosto',
-    summary: 'Todas as 22 áreas foram novamente auditadas antes do deploy. Brasil, Mundo, Tempo e Clima, Finanças e Tecnologia ganharam mudança material; as outras 17 foram validadas hoje porque continuam corretas, atuais e editorialmente úteis.',
-    shareSummary: '21/08 · 17h: 22 áreas revisadas. Cinco áreas foram atualizadas com fatos novos e 17 foram validadas hoje sem rotação artificial.',
-    readTime: '22 MISSÕES',
-    badge: '17H · REVISÃO COMPLETA',
+  Object.assign(edition, {
+    date: '22/08/2026',
+    dateLabel: '22 AGO 2026',
+    title: 'Daily Intelligence · 22 de agosto',
   });
 
-  set('brasil', {
-    title: 'Brasil e Estados Unidos voltam à mesa por tarifas após telefonema entre Lula e Trump',
-    summary: 'Lula e Donald Trump conversaram nesta sexta sobre as tarifas americanas aplicadas a produtos brasileiros. O governo brasileiro disse que pretende ampliar a negociação com autoridades comerciais dos EUA e mantém a possibilidade de contramedidas, sem tratar retaliação como decisão já executada.',
-    shareSummary: 'Brasil 21/08 · 17h: Lula e Trump conversaram sobre as tarifas americanas. O fato confirmado é a retomada do diálogo; negociação futura e possíveis contramedidas continuam sendo etapas em aberto.',
-    readTime: '7 MIN READ',
-    badge: 'BRASIL · ATUALIZADO 17H',
-    sections: [
-      { title: 'O que aconteceu', paragraphs: ['Os presidentes Luiz Inácio Lula da Silva e Donald Trump falaram por telefone nesta sexta-feira sobre as tarifas impostas pelos Estados Unidos a produtos brasileiros. Segundo o governo brasileiro, Lula contestou justificativas apresentadas por Washington e defendeu negociação diplomática.'], bullets: ['O governo brasileiro pretende buscar novas conversas com autoridades comerciais americanas.', 'Trump sugeriu uma reunião presencial em prazo curto entre representantes dos dois países.', 'O Brasil também mencionou cooperação contra o crime organizado, mas contestou a classificação de facções brasileiras como organizações terroristas.'] },
-      { title: 'Por que importa', paragraphs: ['Tarifas afetam competitividade, margens de exportadores, cadeias de suprimento e eventualmente preços. Para empresas e trabalhadores, o impacto depende de quais produtos estão sujeitos às alíquotas, duração da medida, câmbio e capacidade de redirecionar vendas.'] },
-      { title: 'O que não concluir', bullets: ['Telefonema não significa retirada das tarifas.', 'Negociação anunciada não garante acordo.', 'Menção a contramedidas não significa que uma retaliação brasileira já tenha sido aplicada.'] },
-      { title: 'O que acompanhar', bullets: ['Próximas reuniões entre autoridades comerciais.', 'Eventuais mudanças formais nas alíquotas ou listas de produtos.', 'Medidas brasileiras de reciprocidade, caso sejam efetivamente adotadas.'] },
-    ],
-    sources: [{ label: 'Reuters · Brasil–EUA · 21/08/2026', url: 'https://www.reuters.com/world/americas/lula-trump-discuss-tariffs-phone-call-brazil-says-2026-08-21/' }],
+  Object.assign(politicsTracker, {
+    updatedAt: '22/08/2026 · 10h',
+    notice: 'A campanha eleitoral segue ativa. A pesquisa Datafolha divulgada em 21/08 é uma fotografia amostral de intenção de voto e não substitui o status jurídico das candidaturas no TSE. Pesquisa, proposta, propaganda e decisão judicial são trilhas diferentes.',
   });
-  replaceDrop('brasil', { title: 'Lula e Trump retomam diálogo sobre tarifas entre Brasil e EUA', detail: 'O telefonema abre nova rodada de negociação; retirada de tarifas ou contramedidas ainda não são fatos consumados.' });
+
+  set('hoje', {
+    title: '22 áreas revisadas · atualização das 10h de 22 de agosto',
+    summary: 'O hard gate foi refeito nesta manhã. Política, Mundo, Tempo e Clima, Games, Gravidez e Ser Pai receberam mudança material; as outras 16 áreas foram validadas porque continuam corretas e úteis sem rotação artificial.',
+    shareSummary: '22/08 · 10h: 22 áreas revisadas. Seis áreas foram atualizadas com fatos ou mudança material; 16 foram validadas hoje.',
+    readTime: '22 MISSÕES',
+    badge: '10H · REVISÃO COMPLETA',
+  });
+
+  set('politica', {
+    title: 'Datafolha mostra disputa presidencial competitiva — e margem de erro continua essencial para ler o resultado',
+    summary: 'Pesquisa divulgada em 21 de agosto mostra Lula com 47% e Flávio Bolsonaro com 43% em um cenário simulado de segundo turno. A diferença caiu um ponto em relação ao levantamento anterior, mas a variação permanece dentro da margem de erro informada.',
+    shareSummary: 'Política 22/08 · 10h: Datafolha mostra 47% a 43% em cenário de segundo turno. É pesquisa amostral, não previsão do resultado nem mudança automática na situação jurídica das candidaturas.',
+    readTime: '8 MIN READ',
+    badge: 'POLÍTICA · ATUALIZADO 10H',
+    sections: [
+      { title: 'O que a pesquisa mostrou', paragraphs: ['A Reuters reportou pesquisa Datafolha publicada em 21/08 na qual Lula aparece com 47% e Flávio Bolsonaro com 43% em uma simulação de segundo turno. No levantamento anterior, o placar citado era 48% a 43%.'], bullets: ['A margem de erro informada é de dois pontos percentuais.', 'A redução de um ponto na vantagem de Lula não deve ser tratada isoladamente como tendência definitiva.', 'O levantamento mede intenção declarada de voto em uma amostra, não o resultado futuro da eleição.'] },
+      { title: 'Por que importa', paragraphs: ['Pesquisas ajudam a acompanhar competitividade, rejeição, migração de voto e estratégias de campanha. Para o eleitor, o uso mais responsável é observar séries de pesquisas e metodologia, não transformar um único número em certeza.'] },
+      { title: 'O que não concluir', bullets: ['Pesquisa não é urna.', 'Diferenças dentro da margem de erro exigem cautela.', 'Intenção de voto não altera deferimento, impugnação ou situação jurídica de candidatura.'] },
+      { title: 'O que acompanhar', bullets: ['Próximos levantamentos de institutos diferentes.', 'Mudanças após início do horário eleitoral no rádio e na TV em 28/08.', 'Atualizações oficiais de candidaturas no DivulgaCandContas.'] },
+    ],
+    sources: [{ label: 'Reuters · Datafolha · 21/08/2026', url: 'https://www.reuters.com/world/americas/lula-retains-lead-over-flavio-bolsonaro-ahead-brazil-election-datafolha-shows-2026-08-21/' }],
+  });
+  replaceDrop('politica', { title: 'Datafolha: 47% a 43% em cenário de segundo turno; margem de erro pede cautela', detail: 'A nova pesquisa mantém a disputa competitiva. Levantamento é fotografia amostral, não previsão nem status jurídico.' });
 
   set('mundo', {
-    title: 'Petróleo fecha a sexta acima de US$93 com sanções e Hormuz no centro do risco de oferta',
-    summary: 'O Brent encerrou a sessão em US$ 93,86 por barril após ameaças americanas de sanções a parceiros comerciais do Irã e continuidade das restrições de fluxo associadas ao conflito. O preço segue alto, mas ficou abaixo do pico próximo de US$95 visto mais cedo.',
-    shareSummary: 'Mundo 21/08 · 17h: Brent fechou em US$93,86. O risco continua ligado a sanções, oferta e Hormuz; isso não equivale a bloqueio total nem garante repasse automático para combustíveis no Brasil.',
+    title: 'Irã libera passagem de alguns petroleiros iraquianos por Hormuz, mas fluxo continua muito abaixo do normal',
+    summary: 'Teerã concedeu autorização especial para alguns navios iraquianos atravessarem o Estreito de Hormuz. A exceção alivia parte da pressão sobre o Iraque, mas não representa reabertura ampla da rota e o risco geopolítico segue elevado.',
+    shareSummary: 'Mundo 22/08 · 10h: alguns petroleiros iraquianos receberam autorização especial para passar por Hormuz. Isso não significa reabertura total; tráfego segue muito reduzido e novas sanções dos EUA são esperadas para segunda-feira.',
     readTime: '8 MIN READ',
-    badge: 'MUNDO · ATUALIZADO 17H',
+    badge: 'MUNDO · ATUALIZADO 10H',
     sections: [
-      { title: 'O fechamento do dia', paragraphs: ['O Brent fechou a sexta-feira em US$ 93,86 e o WTI em US$ 86,99. O mercado reagiu à ameaça dos Estados Unidos de impor sanções a países que continuem negociando com o Irã e à percepção de oferta mais apertada.'], bullets: ['O Brent permaneceu em patamar elevado, embora abaixo do pico intradiário perto de US$95.', 'O tráfego e a segurança das rotas de energia no Golfo continuam no centro da avaliação de oferta.', 'Declarações iranianas de resposta ampliam incerteza, mas não devem ser tratadas como prova de uma ação futura específica.'] },
-      { title: 'Por que importa', paragraphs: ['Hormuz é uma rota crítica para energia. Quando o risco de interrupção cresce, petróleo, frete marítimo, seguros e expectativas de inflação podem reagir antes mesmo de uma perda física equivalente de barris.'] },
-      { title: 'Limites da leitura', bullets: ['Fluxo reduzido não é sinônimo de fechamento total do estreito.', 'Brent mais caro não determina sozinho o preço da gasolina no Brasil.', 'Ameaça de sanção precisa ser separada de medida efetivamente implementada e de seu impacto final.'] },
-      { title: 'O que acompanhar', bullets: ['Medidas formais de sanção e resposta iraniana.', 'Tráfego marítimo e oferta efetiva de petróleo.', 'Evolução do Brent na abertura da próxima semana.'] },
-    ],
-    sources: [{ label: 'Reuters · Oil Markets · 21/08/2026', url: 'https://www.reuters.com/business/energy/oil-set-second-weekly-rise-unsettled-us-iran-war-crimps-supply-2026-08-21/' }],
-  });
-  replaceDrop('mundo', { title: 'Brent fecha em US$93,86 com sanções e Hormuz sustentando o prêmio de risco', detail: 'O petróleo terminou abaixo do pico da manhã, mas ainda elevado por risco de oferta e tensão com o Irã.' });
-
-  set('tempo', {
-    title: 'São Paulo fecha a tarde com rajadas acima de 50 km/h em ponto da cidade e entrada de ar frio',
-    summary: 'O CGE registrou rajada de 53,6 km/h na Barragem Guarapiranga às 14h20. A frente fria avançou sem chuva significativa na capital, mas trouxe vento e queda de temperatura; a noite tende a ficar mais fria.',
-    shareSummary: 'Tempo 21/08 · 17h: o CGE mediu rajada de 53,6 km/h na Barragem Guarapiranga. O dado é localizado, não significa vento igual em toda a cidade; a tendência é de ar mais frio à noite e fim de semana ameno.',
-    readTime: '6 MIN READ',
-    badge: 'TEMPO · ATUALIZADO 17H',
-    sections: [
-      { title: 'O que foi medido', paragraphs: ['Na tarde desta sexta, o Centro de Gerenciamento de Emergências Climáticas registrou rajada de 53,6 km/h na Barragem Guarapiranga, além de valores menores em outras estações. A passagem frontal ocorreu com pouca chuva na capital.'], bullets: ['Rajada é uma medição pontual e de curta duração; não representa a velocidade do vento em toda São Paulo.', 'A entrada de ar mais frio reduz as temperaturas durante a noite.', 'Galhos, objetos soltos e estruturas vulneráveis merecem atenção durante rajadas mais fortes.'] },
-      { title: 'Aplicação prática', bullets: ['Em deslocamentos, observe alertas do CGE e Defesa Civil e evite permanecer sob árvores ou estruturas instáveis em rajadas fortes.', 'Quem sai à noite deve considerar a queda rápida de temperatura em relação à tarde.', 'Para o fim de semana, acompanhe atualização local porque vento e nebulosidade podem variar entre bairros.'] },
-      { title: 'O que não concluir', paragraphs: ['Uma rajada acima de 50 km/h em uma estação não significa que toda a capital enfrentou a mesma intensidade nem que houve temporal generalizado.'] },
-      { title: 'O que acompanhar', bullets: ['Temperatura mínima durante a madrugada.', 'Novos avisos do CGE/Defesa Civil.', 'Condições de sábado e domingo antes de atividades ao ar livre.'] },
-    ],
-    sources: [{ label: 'CGE São Paulo · 21/08/2026', url: 'https://www.cgesp.org/v3/noticias.jsp?data=2026-08-21' }],
-  });
-  replaceDrop('tempo', { title: 'Rajadas passam de 50 km/h em ponto de São Paulo e ar frio avança', detail: 'CGE mediu 53,6 km/h na Guarapiranga; a marca é localizada e a noite tende a esfriar.' });
-
-  set('financas', {
-    title: 'Petróleo fecha perto de US$94 e juros longos seguem altos: a semana termina com energia e funding pressionados',
-    summary: 'O fechamento consolidou dois riscos diferentes: petróleo ainda caro por geopolítica e yields longos americanos em patamar elevado por preocupações fiscais e oferta de dívida. Para famílias e empresas, isso importa mais pelo custo de energia, crédito e capital do que pelo número de um único pregão.',
-    shareSummary: 'Finanças 21/08 · 17h: Brent fechou em US$93,86 e juros longos americanos seguem altos. Energia e custo de capital pressionam canais diferentes; nenhum deles determina sozinho Selic, gasolina ou financiamento no Brasil.',
-    readTime: '8 MIN READ',
-    badge: 'FINANÇAS · ATUALIZADO 17H',
-    sections: [
-      { title: 'O que mudou desde a manhã', paragraphs: ['O Brent terminou em US$93,86, abaixo do pico próximo de US$95 visto mais cedo. Ao mesmo tempo, a semana continuou marcada por yields longos elevados nos Estados Unidos, com preocupação fiscal e oferta de dívida sustentando prêmio de prazo.'] },
-      { title: 'Por que isso importa no bolso', bullets: ['Energia mais cara pode elevar custos de transporte e produção.', 'Juros longos altos elevam a taxa de desconto e o custo de financiamento de projetos e empresas.', 'O efeito no Brasil passa também por câmbio, expectativas de inflação, política monetária doméstica e condições de crédito.'] },
-      { title: 'Aplicação prática', bullets: ['Compare CET, prazo e capacidade de pagamento antes de assumir dívida longa.', 'Não conte com queda futura de juros como condição necessária para uma compra caber no orçamento.', 'Separe volatilidade de mercado de mudança estrutural antes de alterar investimentos ou orçamento doméstico.'] },
-      { title: 'O que não concluir', bullets: ['Treasury alto não implica alta automática da Selic.', 'Brent a US$93,86 não fixa o preço brasileiro dos combustíveis.', 'Um fechamento semanal não garante tendência para a semana seguinte.'] },
-      { title: 'O que acompanhar', bullets: ['Curva longa dos Treasuries.', 'Brent e risco de oferta no Golfo.', 'USD/BRL e expectativas de inflação doméstica.'] },
+      { title: 'O que aconteceu', paragraphs: ['Segundo a Reuters, o Irã autorizou a passagem de alguns petroleiros iraquianos após pedidos de Bagdá. O Iraque depende fortemente de rotas do Golfo e vem buscando alternativas de exportação por Turquia, Síria e Jordânia.'], bullets: ['A autorização é seletiva, não uma normalização geral do estreito.', 'O tráfego de grandes navios de energia permanece significativamente abaixo do período pré-guerra.', 'Estados Unidos e Irã continuam trocando mensagens hostis antes do anúncio de novas sanções americanas previsto para segunda-feira.'] },
+      { title: 'Por que importa', paragraphs: ['Hormuz funciona como gargalo físico para petróleo e gás. Mesmo exceções pontuais podem alterar expectativa de oferta, frete e seguro marítimo, mas o mercado precisa distinguir autorização específica de reabertura estrutural.'] },
+      { title: 'O que não concluir', bullets: ['Passagem de navios iraquianos não significa fim do bloqueio efetivo.', 'Uma autorização pontual não garante fluxo estável nos próximos dias.', 'Sanções anunciadas politicamente só devem ser avaliadas pelo texto formal quando publicadas.'] },
+      { title: 'O que acompanhar', bullets: ['Detalhes das sanções dos EUA na segunda-feira.', 'Número e tipo de navios autorizados a transitar.', 'Rotas alternativas de exportação do Iraque e impacto no Brent.'] },
     ],
     sources: [
-      { label: 'Reuters · Oil Markets · 21/08/2026', url: 'https://www.reuters.com/business/energy/oil-set-second-weekly-rise-unsettled-us-iran-war-crimps-supply-2026-08-21/' },
-      { label: 'Reuters · Global Markets · 21/08/2026', url: 'https://www.reuters.com/world/china/global-markets-global-markets-2026-08-21/' },
+      { label: 'Reuters · Hormuz / Iraque · 22/08/2026', url: 'https://www.reuters.com/business/energy/iran-grants-permission-number-iraqi-oil-tankers-pass-through-hormuz-2026-08-22/' },
+      { label: 'Reuters · EUA–Irã · 22/08/2026', url: 'https://www.reuters.com/world/middle-east/us-iran-keep-up-hostile-rhetoric-ahead-new-sanctions-2026-08-22/' },
     ],
   });
-  replaceDrop('financas', { title: 'Energia e juros longos fecham a semana pressionando custo de capital', detail: 'Brent terminou em US$93,86; yields longos seguem elevados por fiscal e dívida, com canais distintos para o bolso brasileiro.' });
+  replaceDrop('mundo', { title: 'Irã libera alguns petroleiros iraquianos em Hormuz; rota continua fortemente restrita', detail: 'A exceção ajuda o Iraque, mas não equivale à reabertura do estreito. Novas sanções americanas são esperadas para segunda.' });
 
-  set('tecnologia', {
-    title: 'Nvidia passa da GPU ao terreno: investimento na Cloverleaf reforça corrida por sites de data centers',
-    summary: 'A Nvidia adquiriu participação minoritária na Cloverleaf Infrastructure, desenvolvedora de sites para data centers, para acelerar preparação de terrenos e infraestrutura nos Estados Unidos. O movimento mostra que a corrida de IA depende de energia, interconexão e implantação física, não só de chips.',
-    shareSummary: 'Tecnologia 21/08 · 17h: Nvidia investiu na Cloverleaf Infrastructure. A mensagem estratégica é clara: capacidade de IA depende também de terreno, energia, rede e licenciamento; participação minoritária não significa que a Nvidia passe a operar todos esses data centers.',
-    readTime: '7 MIN READ',
-    badge: 'TECNOLOGIA · ATUALIZADO 17H',
+  set('tempo', {
+    title: 'São Paulo amanhece fria e entra em estado de atenção para baixas temperaturas',
+    summary: 'O CGE registrou média de 13°C na madrugada deste sábado e mínima absoluta de 8,9°C em Parelheiros. A Defesa Civil Municipal colocou toda a cidade em estado de atenção para baixas temperaturas desde 0h.',
+    shareSummary: 'Tempo 22/08 · 10h: São Paulo amanheceu com média de 13°C e estado de atenção para baixas temperaturas. O CGE prevê máxima perto de 23°C e baixa probabilidade de chuva.',
+    readTime: '6 MIN READ',
+    badge: 'TEMPO · ATUALIZADO 10H',
     sections: [
-      { title: 'O que aconteceu', paragraphs: ['A Nvidia anunciou investimento minoritário na Cloverleaf Infrastructure, empresa que desenvolve locais e infraestrutura para data centers nos Estados Unidos. O objetivo declarado é acelerar a disponibilidade de capacidade para a expansão de computação de IA.'] },
-      { title: 'A conexão menos óbvia', bullets: ['GPU sem energia e conexão à rede não vira capacidade útil.', 'Interconexão elétrica, licenças, água/refrigeração e construção têm ciclos muito mais longos que a compra de servidores.', 'Investir upstream em infraestrutura pode reduzir gargalos de implantação para o ecossistema que consome aceleradores.'] },
-      { title: 'O que não concluir', bullets: ['Participação minoritária não significa aquisição da Cloverleaf.', 'O anúncio não garante que todos os projetos receberão GPUs Nvidia.', 'Mais sites planejados não equivalem automaticamente a capacidade operacional imediata.'] },
-      { title: 'O que acompanhar', bullets: ['Projetos concretos anunciados pela Cloverleaf após o investimento.', 'Capacidade elétrica e prazos de conexão à rede.', 'Capex e retorno econômico dos grandes data centers de IA.'] },
+      { title: 'O que foi observado', paragraphs: ['O CGE informou às 6h37 que a capital começou o sábado com céu nublado a encoberto e sensação de frio. A média das mínimas foi de 13°C, com sensação térmica até 3°C menor em alguns pontos.'], bullets: ['Parelheiros registrou mínima absoluta de 8,9°C.', 'Pirituba teve a maior mínima entre as estações citadas, com 14,9°C.', 'O estado de atenção para baixas temperaturas vale para toda a cidade.'] },
+      { title: 'Como fica o dia', paragraphs: ['A previsão estendida do CGE aponta mínima de 12°C, máxima de 23°C, umidade entre 42% e 95% e baixo potencial para chuva. Ventos do quadrante sul mantêm entrada de ar frio e úmido.'] },
+      { title: 'Aplicação prática', bullets: ['Leve camada extra de roupa para manhã e noite.', 'Pessoas em situação de vulnerabilidade podem ser encaminhadas para acolhimento pelo 156.', 'Antes de atividade ao ar livre, confira a atualização do CGE porque sensação térmica varia com vento e bairro.'] },
+      { title: 'O que não concluir', paragraphs: ['A mínima de Parelheiros não representa toda a capital, e previsão de máxima é estimativa sujeita a revisão ao longo do dia.'] },
     ],
-    sources: [{ label: 'Reuters · Nvidia / Cloverleaf · 21/08/2026', url: 'https://www.reuters.com/technology/nvidia-invests-data-center-developer-cloverleaf-infrastructure-2026-08-21/' }],
+    sources: [
+      { label: 'CGE São Paulo · manhã de 22/08/2026', url: 'https://www.cgesp.org/v3/noticias.jsp?id=55723' },
+      { label: 'CGE · Previsão estendida', url: 'https://www.cgesp.org/v3/previsao_estendida.jsp' },
+    ],
   });
-  replaceDrop('tecnologia', { title: 'Nvidia investe em desenvolvedora de sites para data centers de IA', detail: 'A participação na Cloverleaf mostra que o gargalo da IA já inclui terreno, energia e conexão à rede — não apenas GPU.' });
+  replaceDrop('tempo', { title: 'São Paulo entra em atenção para frio; madrugada teve média de 13°C', detail: 'CGE registrou 8,9°C em Parelheiros e prevê máxima perto de 23°C, com baixo potencial de chuva.' });
+
+  set('games', {
+    title: 'gamescom entra na reta final: gamescom dev começa amanhã e Opening Night Live será terça-feira',
+    summary: 'A semana oficial da gamescom 2026 começa neste domingo, 23/08, com a gamescom dev. A Opening Night Live acontece em 25/08 e a feira principal vai de 26 a 30/08 em Colônia.',
+    shareSummary: 'Games 22/08 · 10h: gamescom dev começa amanhã; Opening Night Live é 25/08; feira principal, 26–30/08. Agenda oficial deve ser separada de rumores sobre anúncios.',
+    readTime: '6 MIN READ',
+    badge: 'GAMES · ATUALIZADO 10H',
+    sections: [
+      { title: 'Agenda confirmada', bullets: ['gamescom dev: 23–25 de agosto.', 'Opening Night Live: 25 de agosto.', 'gamescom: 26–30 de agosto.', 'A organização informa mais de 1.600 expositores de 67 países e 233 mil m² de área bruta.'] },
+      { title: 'O que já é oficial', paragraphs: ['A própria gamescom já lista centenas de jogos e expositores. Entre os conteúdos confirmados há apresentações específicas de empresas, como a CD PROJEKT RED no dia 25.'] },
+      { title: 'O que ainda é rumor', paragraphs: ['Listas de supostos trailers, datas ou anúncios que não aparecem nos canais oficiais devem permanecer rotuladas como rumor/hype. Presença de uma empresa na feira não prova que determinado jogo será anunciado.'] },
+      { title: 'O que acompanhar', bullets: ['Programação final da Opening Night Live.', 'Trailers e anúncios publicados pelos canais oficiais dos estúdios.', 'Mudanças de data ou plataforma confirmadas pelos próprios publishers.'] },
+    ],
+    sources: [
+      { label: 'gamescom · site oficial', url: 'https://www.gamescom.global/' },
+      { label: 'gamescom · expansão e expositores 2026', url: 'https://www.gamescom.global/en/gamescom-2026-expands-leading-position-more-exhibitors-bigger-indie-area-and-strong-international-presence' },
+    ],
+  });
+  replaceDrop('games', { title: 'gamescom dev começa amanhã; Opening Night Live será em 25 de agosto', detail: 'A semana oficial entra na reta final. Agenda confirmada fica separada de rumores de anúncios.' });
+
+  set('gravidez', {
+    title: '6 semanas + 6 dias: amanhã começa a 7ª semana gestacional',
+    summary: 'A gestação chega hoje a 6 semanas e 6 dias pela DPP de 11/04/2027. Náusea, fadiga e sensibilidade a cheiros podem continuar; o cuidado após cada vômito permanece focado em hidratação gradual, proteção da boca e sinais de desidratação.',
+    shareSummary: 'Gravidez 22/08: 6s+6d. Amanhã começa a 7ª semana. Após vômitos: enxaguar a boca, reidratar em pequenos goles, voltar à alimentação aos poucos e observar sinais de desidratação.',
+    readTime: '9 MIN READ',
+    badge: 'GRAVIDEZ · ATUALIZADO HOJE',
+    sections: [
+      { title: 'Fase atual', paragraphs: ['Com 6 semanas e 6 dias, o desenvolvimento embrionário segue muito rápido. Em ultrassons precoces, poucos dias podem mudar bastante o que é visível; a interpretação precisa considerar datação e avaliação clínica.'] },
+      { title: 'Depois de cada vômito', bullets: ['Enxágue a boca e evite escovar os dentes imediatamente.', 'Quando tolerado, retome líquidos em pequenos goles frequentes.', 'Depois que líquidos permanecerem no estômago, tente pequenas porções de alimentos simples e toleráveis.', 'Observe urina, tontura, fraqueza e capacidade de manter líquidos.'] },
+      { title: 'Quando procurar orientação', paragraphs: ['Incapacidade persistente de manter líquidos, urina muito reduzida/escura, desmaio, sangue no vômito, febre, dor importante ou perda de peso justificam contato com a equipe do pré-natal ou avaliação médica.'] },
+      { title: 'Próximo marco', paragraphs: ['Amanhã começa a 7ª semana gestacional. Os sintomas podem continuar oscilando e ausência ou intensidade de sintomas, isoladamente, não confirma evolução da gestação.'] },
+    ],
+    sources: [
+      { label: 'ACOG · Morning Sickness', url: 'https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy' },
+      { label: 'NHS · Vomiting and morning sickness', url: 'https://www.nhs.uk/pregnancy/common-symptoms/vomiting-and-morning-sickness/' },
+    ],
+  });
+  replaceDrop('gravidez', { title: '6 semanas + 6 dias: amanhã começa a 7ª semana', detail: 'Desenvolvimento segue acelerado; a aba reforça também o roteiro seguro após cada episódio de vômito.' });
+
+  set('pai', {
+    title: 'Ser Pai hoje: monte um kit de recuperação pós-enjoo e mantenha-o sempre pronto',
+    summary: 'A ação concreta de hoje é reduzir a fricção depois de um episódio de vômito: deixar água, recipiente limpo, enxágue para a boca, toalha e um lanche simples tolerado acessíveis, sem transformar cuidado em cobrança para ela comer ou beber imediatamente.',
+    shareSummary: 'Ser Pai 22/08: deixe um kit pós-enjoo pronto e reponha sozinho. Apoio é facilitar hidratação, higiene e descanso sem pressionar ou decidir por ela.',
+    readTime: '5 MIN READ',
+    badge: 'SER PAI · AÇÃO DO DIA',
+    sections: [
+      { title: 'A missão de hoje', bullets: ['Separe água e copo/garrafa limpa.', 'Deixe toalha e recipiente acessíveis.', 'Tenha uma opção de alimento simples que ela já sabe que tolera.', 'Depois do uso, higienize e reponha tudo sem esperar pedido.'] },
+      { title: 'O detalhe que muda o cuidado', paragraphs: ['Perguntar o que ela prefere é diferente de delegar toda a organização para ela. A ideia é assumir a logística e preservar autonomia sobre o que comer, beber e quando descansar.'] },
+      { title: 'Quando apoio vira segurança', paragraphs: ['Se ela não consegue manter líquidos, está urinando muito pouco, tem tontura importante, desmaio, sangue no vômito ou piora relevante, ajude a contatar a equipe de saúde e organizar deslocamento seguro.'] },
+    ],
+    sources: [{ label: 'ACOG · Nausea and Vomiting of Pregnancy', url: 'https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy' }],
+  });
+  replaceDrop('pai', { title: 'Ser Pai hoje: deixe um kit pós-enjoo pronto antes que ele seja necessário', detail: 'Água, higiene, recipiente e lanche tolerado organizados reduzem carga mental e facilitam recuperação.' });
 }
