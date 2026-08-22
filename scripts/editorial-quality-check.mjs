@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 
 const requiredFiles = [
-  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','lib/daily-overrides-2026-08-21-depth.ts','components/PolicyConversationPortal.tsx','lib/policy-conversation-current.ts','app/policy-conversation-v11.css','app/policy-conversation-dedupe-v11.css','app/mobile-v10.css',
+  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/editorial-deep-read-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','lib/daily-overrides-2026-08-21-depth.ts','components/PolicyConversationPortal.tsx','lib/policy-conversation-current.ts','app/policy-conversation-v11.css','app/policy-conversation-dedupe-v11.css','app/mobile-v10.css',
 ];
 const failures = [];
 for (const file of requiredFiles) if (!existsSync(file)) failures.push(`Arquivo obrigatório ausente: ${file}`);
@@ -16,8 +16,8 @@ const checks = [
 for (const check of checks) for (const token of check.forbidden) if (text(check.file).includes(token)) failures.push(`${check.file}: rótulo/estado proibido “${token}”. ${check.reason}`);
 
 const categories = text('lib/categories.ts');
-if (!categories.includes("import './daily-overrides-2026-08-21';")) failures.push('lib/categories.ts: edição de 21/08 não está carregada como override atual.');
-if (!categories.includes("import './daily-overrides-2026-08-21-depth';")) failures.push('lib/categories.ts: aprofundamento de 21/08 precisa ser carregado depois da edição base.');
+if (!categories.includes("import './daily-overrides-2026-08-21';")) failures.push('lib/categories.ts: edição-base precisa continuar carregada antes dos overrides intradiários.');
+if (!categories.includes("import './daily-overrides-2026-08-21-depth';")) failures.push('lib/categories.ts: aprofundamento-base precisa continuar carregado antes da edição atual.');
 if (categories.includes("subcategories: ['Lançamentos', 'PS5 Radar'")) failures.push('lib/categories.ts: não reintroduzir “PS5 Radar”.');
 
 const portal = text('components/LocalSecurityPortal.tsx');
@@ -25,23 +25,25 @@ if (!portal.includes("title === 'Zona Leste em Foco'")) failures.push('LocalSecu
 if (!portal.includes('./LocalSecurityHubCurrent')) failures.push('LocalSecurityPortal: o hub precisa usar o feed atual da Zona Leste.');
 
 const localCurrent = text('lib/local-security-current.ts');
-for (const token of ['21 AGO 2026','aricanduva-homicidio-20ago','ponte-rasa-oficina-20ago','sao-mateus-motorista-refem-19ago']) if (!localCurrent.includes(token)) failures.push(`lib/local-security-current.ts: feed recente incompleto; ausente “${token}”.`);
+for (const token of ['21 AGO 2026','aricanduva-homicidio-20ago','ponte-rasa-oficina-20ago','sao-mateus-motorista-refem-19ago']) if (!localCurrent.includes(token)) failures.push(`lib/local-security-current.ts: feed-base recente incompleto; ausente “${token}”.`);
 const localEast = text('lib/local-east-news-current.ts');
-for (const token of ['21 AGO 2026','Corinthians vence Rosario Central','Córrego Rio Verde','vacinação contra sarampo']) if (!localEast.includes(token)) failures.push(`lib/local-east-news-current.ts: pauta regional atual incompleta; ausente “${token}”.`);
+for (const token of ['21 AGO 2026','Corinthians vence Rosario Central','Córrego Rio Verde','vacinação contra sarampo']) if (!localEast.includes(token)) failures.push(`lib/local-east-news-current.ts: pauta regional-base incompleta; ausente “${token}”.`);
 
 const currentMedia = text('lib/current-rich-media.ts');
-if (!currentMedia.includes('dailyRichMedia20260821')) failures.push('lib/current-rich-media.ts: catálogo visual de 21/08 precisa ser prioridade.');
+if (!currentMedia.includes('dailyRichMedia20260821')) failures.push('lib/current-rich-media.ts: catálogo visual-base precisa permanecer disponível como fallback.');
 const media21 = text('lib/daily-rich-media-2026-08-21.ts');
 for (const label of ['Brasil','Zona Leste em Foco','Política','Mundo','Planeta','Mundo Animal','Tempo e Clima','Curiosidades','Música','Games','Gravidez','Ser Pai','Carros','Motos','Mecânica','Náutica','Viagens','Finanças','Tecnologia','Security Briefing','Cyber Security','AppSec / SSDLC']) {
-  if (!media21.includes(`reuse('${label}'`)) failures.push(`Mídia 21/08: cobertura ausente para ${label}.`);
+  if (!media21.includes(`reuse('${label}'`)) failures.push(`Mídia-base: cobertura ausente para ${label}.`);
 }
 
 const deepPortal = text('components/EditorialDeepReadPortal.tsx');
-if (!deepPortal.includes('editorial-deep-read-2026-08-21')) failures.push('EditorialDeepReadPortal: leitura ampliada ainda não aponta para a edição de 21/08.');
+if (!deepPortal.includes('editorial-deep-read-current')) failures.push('EditorialDeepReadPortal: leitura ampliada precisa apontar para o ponteiro da edição atual.');
 if (!deepPortal.includes("'brasil'")) failures.push('EditorialDeepReadPortal: Brasil deve evitar a camada genérica quando o Decision Tracker especializado estiver ativo.');
+const deepCurrent = text('lib/editorial-deep-read-current.ts');
+if (!deepCurrent.includes('deepReadForSlug')) failures.push('lib/editorial-deep-read-current.ts: ponteiro atual precisa exportar deepReadForSlug.');
 const deep21 = text('lib/editorial-deep-read-2026-08-21.ts');
 for (const slug of ['brasil','mundo','planeta','animais','tempo','curiosidades','pai','mecanica','nautica','viagens','financas','tecnologia','seguranca']) {
-  if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(deep21)) failures.push(`Leitura ampliada 21/08: ausente para ${slug}.`);
+  if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(deep21)) failures.push(`Leitura ampliada-base: ausente para ${slug}.`);
 }
 
 const policyData = text('lib/policy-conversation-current.ts');
@@ -54,7 +56,7 @@ for (const token of ['O que cada lado disse','Quais decisões podem sair','O que
 }
 const depthOverride = text('lib/daily-overrides-2026-08-21-depth.ts');
 for (const token of ['O que foi falado no debate','Próximos passos','Decisões possíveis','49 votos']) {
-  if (!depthOverride.includes(token)) failures.push(`Aprofundamento Brasil 21/08: ausente “${token}”.`);
+  if (!depthOverride.includes(token)) failures.push(`Aprofundamento Brasil-base: ausente “${token}”.`);
 }
 
 const postpartum = text('components/PregnancyPostpartumGuide.tsx');
