@@ -1,4 +1,4 @@
-import { findRichMediaForStory, type RichMediaEntry } from './rich-media';
+import type { RichMediaEntry } from './rich-media';
 import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
 import { dailyRichMedia20260821_10h } from './daily-rich-media-2026-08-21-10h';
 import { dailyRichMedia20260821 } from './daily-rich-media-2026-08-21';
@@ -11,7 +11,13 @@ const labelAliases: Record<string, string> = {
   'Segurança ZL': 'Zona Leste em Foco',
 };
 
-const catalogs = [dailyRichMedia20260821_17h, dailyRichMedia20260821_10h, dailyRichMedia20260821, dailyRichMedia20260820, dailyRichMedia20260819];
+const catalogs = [
+  dailyRichMedia20260821_17h,
+  dailyRichMedia20260821_10h,
+  dailyRichMedia20260821,
+  dailyRichMedia20260820,
+  dailyRichMedia20260819,
+];
 
 function matchesTitle(entry: RichMediaEntry, title: string) {
   return entry.matches.some((match) => title.includes(match.toLocaleLowerCase('pt-BR')));
@@ -26,6 +32,8 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
+  // Local news is especially sensitive to a wrong person/place being shown.
+  // It only receives real media from a same-story catalog added explicitly.
   if (canonicalLabel === 'Zona Leste em Foco') return undefined;
 
   for (const catalog of catalogs) {
@@ -33,5 +41,7 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
     if (exact) return exact;
   }
 
-  return findRichMediaForStory(canonicalLabel, storyTitle);
+  // Never fall back to a merely category-compatible old photo. ReelsExperience
+  // supplies a contextual editorial visual when an exact photo/video is absent.
+  return undefined;
 }
