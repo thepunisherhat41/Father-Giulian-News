@@ -120,11 +120,19 @@ function priorityOf(slug: string) {
 
 function getImage(label: string, title: string): ReelImage | undefined {
   const image = findCurrentRichMedia(label, title)?.images?.[0];
-  return image ? { url: image.url, alt: image.alt } : undefined;
+  return image ? { url: image.url, alt: image.alt ?? label } : undefined;
 }
 
+const XML_ENTITIES: Record<string, string> = {
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&apos;',
+};
+
 function escapeXml(value: string) {
-  return value.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' }[char] ?? char));
+  return value.replace(/[&<>"']/g, (char) => XML_ENTITIES[char] ?? char);
 }
 
 function paletteFor(seed: string) {
@@ -139,7 +147,9 @@ function paletteFor(seed: string) {
     ['#3f1d0b', '#9a3412', '#fb923c'],
   ];
   let hash = 0;
-  for (const char of seed) hash = ((hash << 5) - hash + char.charCodeAt(0)) | 0;
+  for (let index = 0; index < seed.length; index += 1) {
+    hash = ((hash << 5) - hash + seed.charCodeAt(index)) | 0;
+  }
   return palettes[Math.abs(hash) % palettes.length];
 }
 
@@ -167,7 +177,7 @@ function contextualVisual(reel: Reel): ReelImage {
 }
 
 function withMandatoryMedia(reel: Reel): Reel {
-  if (reel.image) return reel;
+  if (reel.videoEmbed || reel.image) return reel;
   return { ...reel, image: contextualVisual(reel) };
 }
 
@@ -185,7 +195,7 @@ function editionTokens() {
     tokens.add(`${day}/${month}/${year}`.toLowerCase());
   }
 
-  return [...tokens];
+  return Array.from(tokens);
 }
 
 function hasEditionToken(content: any) {
