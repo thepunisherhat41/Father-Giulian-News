@@ -158,7 +158,7 @@ function editionTokens() {
     tokens.add(`${year}-${month}-${day}`);
     tokens.add(`${day}/${month}/${year}`);
   }
-  return [...tokens];
+  return Array.from(tokens);
 }
 
 function hasEditionToken(content: any) {
