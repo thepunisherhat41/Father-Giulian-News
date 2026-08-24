@@ -1,0 +1,228 @@
+/* Father Giulian News — Reels-first experience v13
+   Direct navigation, mobile-first vertical feed, no menu dependency. */
+
+:root {
+  --reel-nav-h: 62px;
+  --reel-top-h: 54px;
+}
+
+html { scroll-behavior: smooth; }
+body { overflow-x: hidden; }
+
+/* Every area is directly reachable: the old sidebar becomes a horizontal topic rail. */
+.appShell.magazineShell { display: block !important; min-height: 100dvh; }
+.sidebar.sidebarV3 {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 90 !important;
+  width: 100% !important;
+  height: var(--reel-nav-h) !important;
+  min-height: 0 !important;
+  transform: none !important;
+  inset-inline: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.09) !important;
+  background: rgba(7,10,18,.92) !important;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 8px 30px rgba(0,0,0,.18);
+}
+.sidebar .brand,
+.sidebar .sidebarEdition,
+.sidebar .sidebarClose,
+.sidebar .navGroup > small { display: none !important; }
+.groupedNav {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 8px 14px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+}
+.groupedNav::-webkit-scrollbar { display: none; }
+.groupedNav .navGroup,
+.groupedNav .navGroup > div { display: contents !important; }
+.groupedNav button {
+  flex: 0 0 auto !important;
+  min-width: max-content !important;
+  height: 42px !important;
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  border: 1px solid rgba(255,255,255,.11) !important;
+  background: rgba(255,255,255,.055) !important;
+  color: rgba(255,255,255,.82) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+.groupedNav button em { display: none !important; }
+.groupedNav button.active {
+  background: #fff !important;
+  color: #0b1020 !important;
+  border-color: #fff !important;
+  box-shadow: 0 6px 22px rgba(255,255,255,.12);
+}
+
+.navBackdrop,
+.menuButton,
+.magazineQuickNav { display: none !important; }
+.content.contentV3.magazineContent {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.topbar.topbarV3.magazineMasthead {
+  position: sticky !important;
+  top: var(--reel-nav-h) !important;
+  z-index: 80 !important;
+  min-height: var(--reel-top-h) !important;
+  padding: 0 16px !important;
+  background: rgba(8,11,20,.84) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.07) !important;
+}
+
+/* Vertical news/reels surface. */
+.contentCanvas.magazineCanvas {
+  width: min(100%, 920px) !important;
+  margin: 0 auto !important;
+  padding: 0 12px 40px !important;
+}
+.stage.magazineSectionCover,
+.magazineFeatureCard,
+.magazineStoryCard,
+.magazineRailCard,
+.articlePanelV3 > section,
+.articlePanelV3 > article,
+.articlePanelV3 .contentSection,
+.articlePanelV3 .sectionBlock {
+  scroll-snap-align: start;
+  scroll-margin-top: calc(var(--reel-nav-h) + var(--reel-top-h) + 10px);
+}
+.stage.magazineSectionCover {
+  min-height: min(72dvh, 720px) !important;
+  margin: 12px 0 !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,.28);
+}
+.articlePanel.articlePanelV3 {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding-inline: 0 !important;
+}
+
+/* Home edition: each story behaves like a reel/news card. */
+.magazineLeadGrid,
+.magazineStoryGrid,
+.magazineSideRail {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+}
+.magazineFeatureCard,
+.magazineStoryCard,
+.magazineRailCard {
+  position: relative !important;
+  min-height: min(74dvh, 760px) !important;
+  border-radius: 28px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,.09) !important;
+  background: linear-gradient(180deg, rgba(19,25,42,.98), rgba(8,12,22,.99)) !important;
+  box-shadow: 0 18px 50px rgba(0,0,0,.22) !important;
+}
+.magazineFeatureMedia,
+.magazineStoryMedia {
+  min-height: 42dvh !important;
+  max-height: 52dvh !important;
+}
+.magazineFeatureMedia img,
+.magazineStoryMedia img,
+.stageCoverMedia img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+.magazineFeatureCopy,
+.magazineStoryCopy,
+.magazineRailCard {
+  padding: clamp(18px, 4vw, 30px) !important;
+}
+.magazineFeatureCopy h3,
+.magazineStoryCard h3,
+.magazineRailCard strong {
+  font-size: clamp(25px, 5.8vw, 42px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.035em !important;
+}
+.magazineFeatureCopy p,
+.magazineStoryCard p,
+.magazineRailCard p {
+  font-size: clamp(15px, 2.6vw, 18px) !important;
+  line-height: 1.55 !important;
+}
+
+/* Reading an area should feel like swiping through cards, while keeping full detail. */
+.magazineArticlePanel .articleMeta,
+.magazineArticlePanel > h2,
+.magazineArticlePanel > .articleSummary {
+  width: min(100%, 760px);
+  margin-inline: auto;
+}
+.magazineArticlePanel .contentSection,
+.magazineArticlePanel .sectionBlock {
+  min-height: 58dvh;
+  margin: 14px 0 !important;
+  padding: clamp(22px, 5vw, 42px) !important;
+  border-radius: 28px !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  background: rgba(255,255,255,.035) !important;
+}
+
+/* Share stays close to the story, like a news reel action. */
+.stageShare,
+.magazineFeatureCard button,
+.magazineStoryCard button,
+.magazineRailCard button {
+  min-height: 42px;
+  border-radius: 999px !important;
+}
+
+@media (max-width: 760px) {
+  :root { --reel-nav-h: 58px; --reel-top-h: 48px; }
+  .groupedNav { padding-inline: 10px !important; gap: 6px !important; }
+  .groupedNav button { height: 38px !important; padding-inline: 12px !important; font-size: 12px !important; }
+  .mobileBrand.magazineBrand { transform: scale(.88); transform-origin: left center; }
+  .topbarContext { display: none !important; }
+  .contentCanvas.magazineCanvas { padding-inline: 8px !important; }
+  .stage.magazineSectionCover,
+  .magazineFeatureCard,
+  .magazineStoryCard,
+  .magazineRailCard,
+  .magazineArticlePanel .contentSection,
+  .magazineArticlePanel .sectionBlock { border-radius: 22px !important; }
+  .stage.magazineSectionCover { min-height: 68dvh !important; }
+  .magazineFeatureCard,
+  .magazineStoryCard,
+  .magazineRailCard { min-height: 70dvh !important; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .magazineFeatureCard,
+  .magazineStoryCard,
+  .magazineRailCard,
+  .magazineArticlePanel .contentSection,
+  .magazineArticlePanel .sectionBlock { transition: transform .18s ease, border-color .18s ease; }
+}
