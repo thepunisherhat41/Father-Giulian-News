@@ -73,6 +73,7 @@ import GamifiedMissionLayerPortal from '@/components/GamifiedMissionLayer';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
+import ReelsExperience from '@/components/ReelsExperience';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
@@ -84,6 +85,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <body>
         {children}
+        <ReelsExperience />
         <PregnancyMaternalChanges />
         <BabyDiscoveryLabPortal />
         <PregnancyVomitingCare />
