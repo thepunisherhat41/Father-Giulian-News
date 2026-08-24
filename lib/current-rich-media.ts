@@ -26,15 +26,12 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
+  if (canonicalLabel === 'Zona Leste em Foco') return undefined;
+
   for (const catalog of catalogs) {
     const exact = findIn(catalog, label, canonicalLabel, normalizedTitle);
     if (exact) return exact;
   }
 
-  // Nunca mutar dailyContent durante busca de mídia. A antiga chamada ao override
-  // de 21/08 regravava editorias atuais e fazia conteúdo velho reaparecer no feed.
-  // Também não usamos imagem genérica apenas por pertencer à mesma editoria:
-  // sem correspondência semântica, é melhor o Reel usar arte neutra até receber
-  // mídia validada da pauta do que mostrar um carro/pessoa/evento errado.
   return findRichMediaForStory(canonicalLabel, storyTitle);
 }
