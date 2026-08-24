@@ -1,0 +1,87 @@
+@media (max-width: 900px) {
+  /* Clean AI covers generated for the conversation/discovery block. */
+  [aria-label^="Arte gerada por IA para"] {
+    background-color: #10131a !important;
+    background-repeat: no-repeat !important;
+  }
+
+  [aria-label*="Papo de hoje"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 0% 0% !important;
+  }
+
+  [aria-label*="Desafio do casal"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 33.333% 0% !important;
+  }
+
+  [aria-label*="Curiosidade · Ciência"],
+  [aria-label*="Curiosidade · Psicologia"],
+  [aria-label*="Curiosidade · Tecnologia"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 66.667% 0% !important;
+  }
+
+  [aria-label*="Curiosidade · Corpo"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 100% 0% !important;
+  }
+
+  [aria-label*="Curiosidade · Espaço"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 0% 100% !important;
+  }
+
+  [aria-label*="Curiosidade · História"],
+  [aria-label*="Curiosidade · Linguagem"],
+  [aria-label*="Curiosidade · Cultura"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 33.333% 100% !important;
+  }
+
+  [aria-label*="Curiosidade · Animais"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 66.667% 100% !important;
+  }
+
+  [aria-label*="Curiosidade · Natureza"] {
+    background-image: url('/reel-ai/clean-covers.jpg') !important;
+    background-size: 400% 200% !important;
+    background-position: 100% 100% !important;
+  }
+
+  /* The art must remain visible; the gradient exists only to preserve text contrast. */
+  div[aria-label="Father Giulian News em modo Reels"] article figure::after {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, .10) 0%,
+      rgba(0, 0, 0, .01) 30%,
+      rgba(0, 0, 0, .25) 58%,
+      rgba(0, 0, 0, .80) 100%
+    ) !important;
+  }
+
+  div[aria-label="Father Giulian News em modo Reels"] article figure img {
+    filter: saturate(1.04) contrast(1.03) brightness(1.03) !important;
+  }
+
+  /* Never reuse a random person/team photo for a local-news story. */
+  div[aria-label="Father Giulian News em modo Reels"] article:has(button[aria-label*="Zona Leste"]) figure img {
+    display: none !important;
+  }
+
+  div[aria-label="Father Giulian News em modo Reels"] article:has(button[aria-label*="Zona Leste"]) figure {
+    background-image: url('/reel-ai/sprite-news.jpg') !important;
+    background-size: 300% 300% !important;
+    background-position: 0% 50% !important;
+    background-repeat: no-repeat !important;
+    background-color: #111820 !important;
+  }
+}
