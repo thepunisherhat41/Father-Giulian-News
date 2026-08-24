@@ -5,7 +5,6 @@ import styles from './ReelsExperience.module.css';
 import { categories } from '@/lib/categories';
 import { dailyContent, edition } from '@/lib/daily-content';
 import { findCurrentRichMedia } from '@/lib/current-rich-media';
-import { applyDailyOverride20260821_10h } from '@/lib/daily-overrides-2026-08-21-10h';
 
 type Reel = any;
 
@@ -63,10 +62,25 @@ function getImage(label: string, title: string) {
   return findCurrentRichMedia(label, title)?.images?.[0];
 }
 
+const todayTokens = () => [edition.date, edition.dateLabel, '24/08/2026', '24 ago 2026', '24 de agosto de 2026', '2026-08-24']
+  .filter(Boolean)
+  .map((token) => String(token).toLowerCase());
+
+function hasSameDaySource(content: any) {
+  const sources = content?.sources ?? [];
+  const sourceText = sources.flatMap((source: any) => [source.label, source.url]).filter(Boolean).join(' ').toLowerCase();
+  return todayTokens().some((token) => sourceText.includes(token));
+}
+
 function isFreshToday(item: Reel) {
   if (item.kind === 'special' || item.kind === 'osint') return true;
   const content = item.content;
   if (!content) return false;
+
+  // Notícias locais não podem sobreviver só porque alguém escreveu “revalidado hoje”.
+  // Para Zona Leste, é obrigatório existir uma fonte local explicitamente datada da edição.
+  if (item.slug === 'seguranca-zl') return hasSameDaySource(content);
+
   const haystack = [
     content.badge,
     content.title,
@@ -74,10 +88,8 @@ function isFreshToday(item: Reel) {
     content.shareSummary,
     ...(content.sources ?? []).flatMap((source: any) => [source.label, source.url]),
   ].filter(Boolean).join(' ').toLowerCase();
-  const tokens = [edition.date, edition.dateLabel, '24/08/2026', '24 ago 2026', '24 de agosto de 2026', '2026-08-24']
-    .filter(Boolean)
-    .map((token) => String(token).toLowerCase());
-  return tokens.some((token) => haystack.includes(token)) || /\bhoje\b|nesta segunda|24\/08/.test(haystack);
+
+  return todayTokens().some((token) => haystack.includes(token)) || /\bhoje\b|nesta segunda|24\/08/.test(haystack);
 }
 
 function shareText(slug: string, reel?: Reel) {
@@ -102,7 +114,6 @@ function openShare(slug: string, reel?: Reel) {
 }
 
 export default function ReelsExperience() {
-  applyDailyOverride20260821_10h(true);
   const [detailSlug, setDetailSlug] = useState<string | null>(null);
   const feedRef = useRef<HTMLDivElement>(null);
 
@@ -112,11 +123,6 @@ export default function ReelsExperience() {
       { ...TALK_REEL, image: getImage('Curiosidades', dailyContent.curiosidades?.title ?? TALK_REEL.title) },
       { ...CHALLENGE_REEL, image: getImage('Música', dailyContent.musica?.title ?? CHALLENGE_REEL.title) },
     ];
-
-    const corinthians: Reel = {
-      ...CORINTHIANS_REEL,
-      image: getImage('Carros', CORINTHIANS_REEL.title),
-    };
 
     const editorial: Reel[] = categories
       .filter((category) => category.slug !== 'hoje')
@@ -134,9 +140,7 @@ export default function ReelsExperience() {
       .filter((item) => item.content && item.title && item.detail)
       .filter(isFreshToday);
 
-    // Corinthians é um radar separado. Zona Leste só entra quando houver atualização
-    // realmente datada de hoje; conteúdo local antigo não ganha sobrevida artificial.
-    return [...special, corinthians, ...editorial];
+    return [...special, CORINTHIANS_REEL, ...editorial];
   }, []);
 
   const detail = detailSlug ? reels.find((item) => item.slug === detailSlug) : undefined;
