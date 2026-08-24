@@ -1,4 +1,3 @@
-import { applyDailyOverride20260821_10h } from './daily-overrides-2026-08-21-10h';
 import { findRichMediaForStory, type RichMediaEntry } from './rich-media';
 import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
 import { dailyRichMedia20260821_10h } from './daily-rich-media-2026-08-21-10h';
@@ -24,7 +23,6 @@ function findIn(catalog: RichMediaEntry[], label: string, canonicalLabel: string
 }
 
 export function findCurrentRichMedia(label: string, storyTitle: string): RichMediaEntry | undefined {
-  applyDailyOverride20260821_10h(true);
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
@@ -33,16 +31,10 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
     if (exact) return exact;
   }
 
-  const generic = findRichMediaForStory(canonicalLabel, storyTitle);
-  if (generic) return generic;
-
-  // Reels precisam de mídia. Quando uma pauta do dia é nova e ainda não ganhou
-  // asset dedicado, reutilizamos apenas uma imagem contextual da MESMA área.
-  // Isso evita puxar fotografia de outra editoria e é visualmente melhor que emoji gigante.
-  for (const catalog of catalogs) {
-    const byLabel = catalog.find((entry) => (entry.label === label || entry.label === canonicalLabel) && entry.images?.length);
-    if (byLabel) return byLabel;
-  }
-
-  return undefined;
+  // Nunca mutar dailyContent durante busca de mídia. A antiga chamada ao override
+  // de 21/08 regravava editorias atuais e fazia conteúdo velho reaparecer no feed.
+  // Também não usamos imagem genérica apenas por pertencer à mesma editoria:
+  // sem correspondência semântica, é melhor o Reel usar arte neutra até receber
+  // mídia validada da pauta do que mostrar um carro/pessoa/evento errado.
+  return findRichMediaForStory(canonicalLabel, storyTitle);
 }
