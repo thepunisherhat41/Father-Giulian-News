@@ -12,6 +12,8 @@ const labelAliases: Record<string, string> = {
   'Segurança ZL': 'Zona Leste em Foco',
 };
 
+const catalogs = [dailyRichMedia20260821_17h, dailyRichMedia20260821_10h, dailyRichMedia20260821, dailyRichMedia20260820, dailyRichMedia20260819];
+
 function matchesTitle(entry: RichMediaEntry, title: string) {
   return entry.matches.some((match) => title.includes(match.toLocaleLowerCase('pt-BR')));
 }
@@ -22,26 +24,25 @@ function findIn(catalog: RichMediaEntry[], label: string, canonicalLabel: string
 }
 
 export function findCurrentRichMedia(label: string, storyTitle: string): RichMediaEntry | undefined {
-  // O nome da função é mantido por compatibilidade; nesta janela ele aplica a revisão ativa das 17h.
   applyDailyOverride20260821_10h(true);
-
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
-  const late = findIn(dailyRichMedia20260821_17h, label, canonicalLabel, normalizedTitle);
-  if (late) return late;
+  for (const catalog of catalogs) {
+    const exact = findIn(catalog, label, canonicalLabel, normalizedTitle);
+    if (exact) return exact;
+  }
 
-  const intraday = findIn(dailyRichMedia20260821_10h, label, canonicalLabel, normalizedTitle);
-  if (intraday) return intraday;
+  const generic = findRichMediaForStory(canonicalLabel, storyTitle);
+  if (generic) return generic;
 
-  const current = findIn(dailyRichMedia20260821, label, canonicalLabel, normalizedTitle);
-  if (current) return current;
+  // Reels precisam de mídia. Quando uma pauta do dia é nova e ainda não ganhou
+  // asset dedicado, reutilizamos apenas uma imagem contextual da MESMA área.
+  // Isso evita puxar fotografia de outra editoria e é visualmente melhor que emoji gigante.
+  for (const catalog of catalogs) {
+    const byLabel = catalog.find((entry) => (entry.label === label || entry.label === canonicalLabel) && entry.images?.length);
+    if (byLabel) return byLabel;
+  }
 
-  const previous = findIn(dailyRichMedia20260820, label, canonicalLabel, normalizedTitle);
-  if (previous) return previous;
-
-  const older = findIn(dailyRichMedia20260819, label, canonicalLabel, normalizedTitle);
-  if (older) return older;
-
-  return findRichMediaForStory(canonicalLabel, storyTitle);
+  return undefined;
 }
