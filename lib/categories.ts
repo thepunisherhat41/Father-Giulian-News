@@ -50,6 +50,7 @@ import './daily-overrides-2026-08-24-reels';
 import './daily-overrides-2026-08-24-17h';
 import './daily-overrides-2026-08-24-security-reels';
 import './daily-overrides-2026-08-24-vehicle-cap';
+import './daily-overrides-2026-08-24-politics-radar';
 
 export type Category = {
   slug: string;
