@@ -1,4 +1,4 @@
-import { dailyContent } from './daily-content';
+import { dailyContent, todayDrops } from './daily-content';
 
 const set = (slug: string, data: any) => {
   if (!dailyContent[slug]) return;
@@ -32,3 +32,7 @@ set('carros', {
     { label: 'Quatro Rodas · usados econômicos · atualização 2026', url: 'https://quatrorodas.abril.com.br/carros-usados/23-carros-usados-completos-e-economicos-por-menos-de-r-60-000/' },
   ],
 });
+
+for (let index = todayDrops.length - 1; index >= 0; index -= 1) {
+  if (todayDrops[index]?.slug === 'nautica') todayDrops.splice(index, 1);
+}
