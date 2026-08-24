@@ -51,7 +51,8 @@
     background-position: 66.667% 100% !important;
   }
 
-  [aria-label*="Curiosidade · Natureza"] {
+  [aria-label*="Curiosidade · Natureza"],
+  [aria-label*="Curiosidade · Planeta"] {
     background-image: url('/reel-ai/clean-covers.jpg') !important;
     background-size: 400% 200% !important;
     background-position: 100% 100% !important;
