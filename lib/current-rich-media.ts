@@ -1,4 +1,5 @@
 import type { RichMediaEntry } from './rich-media';
+import { dailyRichMedia20260825Evening } from './daily-rich-media-2026-08-25-evening';
 import { dailyRichMedia20260825 } from './daily-rich-media-2026-08-25';
 import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
 import { dailyRichMedia20260821_10h } from './daily-rich-media-2026-08-21-10h';
@@ -34,12 +35,15 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
-  // The current edition always wins. This keeps media semantically tied to today's story.
+  // Evening/current corrections take precedence over the morning catalog.
+  const evening = findIn(dailyRichMedia20260825Evening, label, canonicalLabel, normalizedTitle);
+  if (evening) return evening;
+
+  // The current edition always wins over historical media.
   const current = findIn(dailyRichMedia20260825, label, canonicalLabel, normalizedTitle);
   if (current) return current;
 
   // Local news is especially sensitive to a wrong person/place being shown.
-  // It can only receive media from the explicit current-day catalog above.
   if (canonicalLabel === 'Zona Leste em Foco') return undefined;
 
   for (const catalog of olderCatalogs) {
@@ -47,7 +51,6 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
     if (exact) return exact;
   }
 
-  // Never fall back to a merely category-compatible old photo. ReelsExperience
-  // supplies a contextual visual only when an exact photo/video is absent.
+  // Never fall back to a merely category-compatible old photo.
   return undefined;
 }
