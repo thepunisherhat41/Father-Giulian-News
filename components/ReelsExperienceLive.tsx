@@ -6,16 +6,16 @@ import { applyCurrentReelPatches } from '@/lib/current-reel-patches';
 import { applyCurrentReelPatches1432 } from '@/lib/current-reel-patches-1432';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
-const COVER_REV = '20260825-1432';
+const COVER_REV = '20260825-1500';
 
-/* Only point <img> directly at assets that actually exist in /public.
-   Space/History/Animals/Nature are rendered by reel-cover-direct-v16.css
-   from the validated clean-covers sheet, so they can never 404 here. */
+/* Point deterministic early reels at clean public assets after hydration.
+   CSS provides the same cover before hydration, so the visual never depends
+   on the transparent placeholder being visible. */
 const coverForAlt = (alt: string) => {
   if (alt.includes('Papo de hoje')) return `/reel-ai/covers/conversation.svg?v=${COVER_REV}`;
   if (alt.includes('Desafio do casal')) return `/reel-ai/covers/challenge.svg?v=${COVER_REV}`;
-  if (alt.includes('Ciência')) return `/reel-ai/covers/science.svg?v=${COVER_REV}`;
-  if (alt.includes('Corpo Humano')) return `/reel-ai/covers/body.svg?v=${COVER_REV}`;
+  if (alt.includes('Ciência')) return `/reel-ai/covers/science.svg?v=20260825-1432`;
+  if (alt.includes('Corpo Humano')) return `/reel-ai/covers/body.svg?v=20260825-1432`;
   return null;
 };
 
