@@ -7,6 +7,7 @@ import { applyCurrentCuriosityRotation } from '@/lib/current-curiosity-rotation'
 import { applyCurrentReelPatches } from '@/lib/current-reel-patches';
 import { applyCurrentReelPatches1432 } from '@/lib/current-reel-patches-1432';
 import { applyCurrentReelPatches17h } from '@/lib/current-reel-patches-17h';
+import { applyCurrentReelPatches1730 } from '@/lib/current-reel-patches-1730';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
 const COVER_REV = '20260825-1715';
@@ -52,6 +53,7 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches(dailyContent);
   applyCurrentReelPatches1432(dailyContent);
   applyCurrentReelPatches17h(dailyContent);
+  applyCurrentReelPatches1730(dailyContent);
 
   useLayoutEffect(() => {
     applyRealReelCovers();
