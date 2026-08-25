@@ -8,17 +8,16 @@ import { applyCurrentReelPatches } from '@/lib/current-reel-patches';
 import { applyCurrentReelPatches1432 } from '@/lib/current-reel-patches-1432';
 import { applyCurrentReelPatches17h } from '@/lib/current-reel-patches-17h';
 import { applyCurrentReelPatches1730 } from '@/lib/current-reel-patches-1730';
+import { applyCurrentReelPatches1835 } from '@/lib/current-reel-patches-1835';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
-const MEDIA_REV = '20260825-1835';
+const MEDIA_REV = '20260825-1845';
+const GAMES_VIDEO_ID = 'qwC9EFT6EFk';
+const GAMES_THUMB = `https://i.ytimg.com/vi/${GAMES_VIDEO_ID}/maxresdefault.jpg`;
 const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
 
-/*
-  Production safety net: every image-based Reel in the current edition is
-  resolved to a real, semantically related photo/diagram from the source,
-  Wikimedia Commons, CDC or the official YouTube thumbnail. This also
-  replaces legacy sprite/transparent placeholders before the browser paints.
-*/
+/* Production safety net for legacy fallbacks. Current-day rich-media entries
+   remain the primary source; this only replaces transparent/old fallback art. */
 const coverForAlt = (alt: string) => {
   const a = alt.toLocaleLowerCase('pt-BR');
 
@@ -37,11 +36,10 @@ const coverForAlt = (alt: string) => {
   if (a.includes('gravidez')) return commons('Embryo at 6 weeks.JPG');
   if (a.includes('ser pai')) return 'https://www.cdc.gov/hearher/media/images/support-family-friends-16x9-1.jpg';
   if (a.includes('mundo')) return commons('Tehran night view.jpg');
-  if (a.includes('política') || a.includes('politica')) return commons('Ronaldo Caiado in 2026 - 55064971042 (3x4) (cropped).jpg');
   if (a.includes('tempo e clima')) return commons('Sao Paulo-Skyline.jpg');
   if (a.includes('viagens')) return commons('Holambra windmill.jpg');
   if (a.includes('música') || a.includes('musica')) return 'https://i.ytimg.com/vi/1DnSiznUrVI/maxresdefault.jpg';
-  if (a.includes('games')) return 'https://image.gamer.ne.jp/news/2026/20260805/0048074131c8bc4dad2a299f5ad95c5f9576/o/1.jpg';
+  if (a.includes('games')) return GAMES_THUMB;
   if (a === 'arte para tecnologia' || a === 'tecnologia' || (a.includes('tecnologia') && !a.includes('curiosidade'))) return commons('NVIDIA GPU.jpg');
   if (a.includes('finanças') || a.includes('financas')) return commons('Edifício sede da Bovespa.jpg');
   if (a.includes('cyber security') || a.includes('zimbra')) return 'https://www.bleepstatic.com/content/hl-images/2026/08/25/Zimbra.jpg';
@@ -81,16 +79,62 @@ function applyRealReelMedia() {
   });
 }
 
+/* ONL is a real video-first story. Keep the official thumbnail as the full
+   background and play the official stream in a centered 16:9 window so the
+   mobile Reel still swipes naturally instead of stretching a landscape video. */
+function upgradeGamesReelToVideo() {
+  const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
+  if (!root) return;
+
+  root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
+    const category = article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]');
+    if (!category?.textContent?.toLocaleLowerCase('pt-BR').includes('games')) return;
+
+    const figure = article.querySelector<HTMLElement>('figure');
+    if (!figure || figure.querySelector('iframe[data-fg-games="official"]')) return;
+
+    figure.style.backgroundImage = `url('${GAMES_THUMB}')`;
+    figure.style.backgroundSize = 'cover';
+    figure.style.backgroundPosition = 'center';
+
+    const iframe = document.createElement('iframe');
+    iframe.dataset.fgGames = 'official';
+    iframe.src = `https://www.youtube.com/embed/${GAMES_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${GAMES_VIDEO_ID}&playsinline=1&rel=0&controls=0`;
+    iframe.title = 'gamescom Opening Night Live 2026 · vídeo oficial';
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+    iframe.setAttribute('allowfullscreen', 'true');
+    iframe.style.position = 'absolute';
+    iframe.style.left = '0';
+    iframe.style.top = '18%';
+    iframe.style.width = '100%';
+    iframe.style.height = '56.25vw';
+    iframe.style.minHeight = '220px';
+    iframe.style.maxHeight = '38vh';
+    iframe.style.border = '0';
+    iframe.style.zIndex = '3';
+    iframe.style.background = '#000';
+    iframe.style.boxShadow = '0 18px 50px rgba(0,0,0,.45)';
+    iframe.style.pointerEvents = 'none';
+    figure.appendChild(iframe);
+  });
+}
+
+function applyLiveMedia() {
+  applyRealReelMedia();
+  upgradeGamesReelToVideo();
+}
+
 export default function ReelsExperienceLive() {
   applyCurrentCuriosityRotation(curiosityCollections);
   applyCurrentReelPatches(dailyContent);
   applyCurrentReelPatches1432(dailyContent);
   applyCurrentReelPatches17h(dailyContent);
   applyCurrentReelPatches1730(dailyContent);
+  applyCurrentReelPatches1835(dailyContent);
 
   useLayoutEffect(() => {
-    applyRealReelMedia();
-    const observer = new MutationObserver(applyRealReelMedia);
+    applyLiveMedia();
+    const observer = new MutationObserver(applyLiveMedia);
     observer.observe(document.body, { childList: true, subtree: true });
     return () => observer.disconnect();
   }, []);
