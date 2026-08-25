@@ -70,24 +70,47 @@ const SERTANEJO_REEL: Reel = {
 };
 const CORINTHIANS_REEL: Reel = {
   slug:'corinthians-hoje',label:'Corinthians Hoje',emoji:'⚫⚪',kind:'osint',
-  title:'Corinthians: último resultado, elenco e próximo clássico',
-  detail:'O último resultado confirmado foi a derrota por 2 a 1 para o Coritiba. O próximo jogo oficial é contra o Santos, domingo (30), às 16h, na Neo Química Arena.',
-  videoEmbed:'https://www.youtube.com/embed/wNwIwusgns8?autoplay=1&mute=1&loop=1&playlist=wNwIwusgns8&playsinline=1&rel=0',
+  title:'Yuri Alberto avança na recuperação e pode voltar ao treino com o elenco nesta quarta',
+  detail:'O atacante fez testes em campo nesta terça (25) sem desconforto e fará ultrassom na quarta para confirmar a cicatrização da lesão. O Corinthians trabalha para tê-lo contra o Santos no domingo (30), às 16h, na Neo Química Arena. Breno Bidon está suspenso; Rodrigo Garro volta após cumprir suspensão.',
+  image:{url:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Yuri%20Alberto%20Corinthians.jpg',alt:'Yuri Alberto em treino pelo Corinthians'},
   category:{slug:'corinthians-hoje',label:'Corinthians Hoje'},
-  content:{badge:'CORINTHIANS · 24/08',title:'Corinthians: último resultado e próximos jogos',summary:'Contexto do último dia sem fingir que é notícia de hoje.',sections:[],sources:[{label:'ge · Corinthians · 24/08/2026',url:'https://ge.globo.com/futebol/times/corinthians/'}]}
+  content:{badge:'CORINTHIANS · 25/08',title:'Yuri Alberto pode avançar para retorno contra o Santos',summary:'Atualização médica e esportiva publicada nesta terça-feira.',shareSummary:'Corinthians 25/08: Yuri Alberto fez testes sem desconforto e pode voltar a treinar com o elenco após ultrassom. Santos é o próximo adversário, domingo às 16h.',sections:[{title:'Situação de Yuri Alberto',bullets:['Testes em campo nesta terça não provocaram desconforto.','Ultrassom está previsto para quarta-feira para verificar a cicatrização.','A eventual presença contra o Santos depende da liberação médica e da evolução nos treinos.']},{title:'Clássico de domingo',bullets:['Corinthians x Santos: 30/08, às 16h, na Neo Química Arena.','Breno Bidon cumpre suspensão automática.','Rodrigo Garro volta após cumprir suspensão contra o Coritiba.']}],sources:[{label:'ge · Corinthians · 25/08/2026',url:'https://ge.globo.com/futebol/times/corinthians/noticia/2026/08/25/corinthians-programa-retorno-de-yuri-alberto-aos-treinos-com-elenco-e-aguarda-exame-para-liberacao.ghtml'}]}
 };
 
-const TRANSPARENT='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
-const EXACT_COVERS: Partial<Record<AiTheme,string>> = {conversation:TRANSPARENT,challenge:TRANSPARENT,science:TRANSPARENT,body:TRANSPARENT,space:TRANSPARENT,history:TRANSPARENT,animals:TRANSPARENT,nature:TRANSPARENT};
-const CLEAN_POS: Partial<Record<AiTheme,[number,number]>> = { psychology:[2,0],technology:[2,0] };
-const MAIN_POS: Record<string,[number,number]> = { pregnancy:[0,3],brazil:[1,3],travel:[2,3],music:[0,4],games:[1,4],security:[2,4],cars:[0,5],motos:[1,5],mechanic:[2,5],conversation:[0,0],challenge:[1,0],science:[2,0],space:[0,1],body:[1,1],animals:[2,1],history:[0,2],psychology:[1,2],nature:[2,2] };
-const NEWS_POS: Record<string,[number,number]> = { world:[0,0],politics:[1,0],weather:[2,0],local:[0,1],finance:[1,1],technology:[2,1],cyber:[0,2],appsec:[1,2],parenthood:[2,2] };
+const REAL_FALLBACKS:Record<AiTheme,string>={
+  conversation:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple%20at%20sunset%20on%20the%20beach.jpg',
+  challenge:'https://commons.wikimedia.org/wiki/Special:Redirect/file/DSCF0763%20A%20couple%20seated%20at%20a%20seaside%20table%20enjoying%20an%20evening%20meal%20and%20drinks%20while%20watching%20the%20sunset%20over%20the%20water.jpg',
+  science:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Lightning%20strike%20base.JPG',
+  space:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Global%20Positioning%20System%20satellite.jpg',
+  body:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Human%20body%20features.svg',
+  animals:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Homing%20pigeon.jpg',
+  history:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Rosetta%20Stone.JPG',
+  psychology:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Stroop%20effect%20example.png',
+  nature:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Earth%20Eastern%20Hemisphere.jpg',
+  pregnancy:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Embryo%20at%206%20weeks.JPG',
+  parenthood:'https://www.cdc.gov/hearher/media/images/support-family-friends-16x9-1.jpg',
+  brazil:'https://commons.wikimedia.org/wiki/Special:Redirect/file/PlenarioSenadoFederal.jpg',
+  world:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Tehran%20night%20view.jpg',
+  politics:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Brazilian%20DRE%20voting%20machine%20for%202022%20elections.jpg',
+  weather:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Sao%20Paulo-Skyline.jpg',
+  local:'https://commons.wikimedia.org/wiki/Special:Redirect/file/S%C3%A3o%20Paulo%20subway%20train.jpg',
+  travel:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Holambra%20windmill.jpg',
+  music:'https://i.ytimg.com/vi/1DnSiznUrVI/maxresdefault.jpg',
+  games:'https://i.ytimg.com/vi/qwC9EFT6EFk/maxresdefault.jpg',
+  technology:'https://commons.wikimedia.org/wiki/Special:Redirect/file/NVIDIA%20GPU.jpg',
+  finance:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Edif%C3%ADcio%20sede%20da%20Bovespa.jpg',
+  security:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Computer%20security%20lock.jpg',
+  cyber:'https://www.bleepstatic.com/content/hl-images/2026/08/25/Zimbra.jpg',
+  appsec:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Software-development.jpg',
+  cars:'https://static.cargurus.com/images/site/2017/12/12/13/00/2014_chevrolet_cruze_2lt-pic-3747308311327765241-1600x1200.jpeg',
+  motos:'https://www.planetcarsz.com/assets/uploads/2021/01/c08a054f8b23f375fc1a7475013d6242.jpg',
+  mechanic:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Porsche%20Tire%20Pressure%20Gauge%20(9207945919).jpg'
+};
 
 function normalize(value:string){return value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
 function curiosityTheme(value:string):AiTheme{const v=normalize(value);if(v.includes('espaco')||v.includes('astronom'))return'space';if(v.includes('corpo')||v.includes('humano'))return'body';if(v.includes('animal'))return'animals';if(v.includes('historia')||v.includes('cultura'))return'history';if(v.includes('psicolog')||v.includes('mente')||v.includes('comportamento'))return'psychology';if(v.includes('natureza')||v.includes('terra')||v.includes('planeta')||v.includes('oceano'))return'nature';if(v.includes('tecnolog'))return'technology';return'science';}
 function aiThemeFor(reel:Reel):AiTheme{if(reel.aiTheme)return reel.aiTheme;if(reel.slug==='papo-do-dia')return'conversation';if(reel.slug==='desafio-do-casal')return'challenge';if(reel.kind==='curiosity')return curiosityTheme(`${reel.label} ${reel.title}`);const m:Record<string,AiTheme>={gravidez:'pregnancy',pai:'parenthood',brasil:'brazil',mundo:'world',politica:'politics',tempo:'weather','seguranca-zl':'local',viagens:'travel',musica:'music','sertanejo-da-roca':'music',games:'games',tecnologia:'technology',financas:'finance','security-briefing':'security',seguranca:'cyber','appsec-ssdlc':'appsec',carros:'cars',motos:'motos',mecanica:'mechanic'};return m[reel.slug]??'science';}
-function cropStyle(cols:number,rows:number,col:number,row:number):CSSProperties{return{position:'absolute',width:`${cols*100}%`,height:`${rows*100}%`,maxWidth:'none',left:`-${col*100}%`,top:`-${row*100}%`,objectFit:'fill',display:'block',filter:'none'};}
-function localArtwork(theme:AiTheme){const exact=EXACT_COVERS[theme];if(exact)return{src:exact,style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover'} as CSSProperties};const clean=CLEAN_POS[theme];if(clean)return{src:'/reel-ai/clean-covers.jpg?rev=20260825',style:cropStyle(4,2,clean[0],clean[1])};const news=NEWS_POS[theme];if(news)return{src:'/reel-ai/sprite-news.jpg?rev=20260825',style:cropStyle(3,3,news[0],news[1])};const pos=MAIN_POS[theme]??MAIN_POS.science;return{src:'/reel-ai/sprite.jpg?rev=20260825',style:cropStyle(3,6,pos[0],pos[1])};}
+function localArtwork(theme:AiTheme){return{src:REAL_FALLBACKS[theme]??REAL_FALLBACKS.science,style:{position:'absolute',inset:0,width:'100%',height:'100%',maxWidth:'none',objectFit:'cover',objectPosition:'center',display:'block',filter:'none'} as CSSProperties};}
 function getImage(label:string,title:string){const image=findCurrentRichMedia(label,title)?.images?.[0];return image?{url:image.url,alt:image.alt??label}:undefined;}
 function withMedia(reel:Reel){return reel.videoEmbed||reel.image?reel:{...reel,aiTheme:aiThemeFor(reel)};}
 function todayTokens(){const short=CURRENT.date.slice(0,5);const [day,month,year]=CURRENT.date.split('/');return[CURRENT.date.toLowerCase(),CURRENT.iso,short,`${day} ${MONTHS[Number(month)-1].toLowerCase()} ${year}`];}
@@ -99,7 +122,7 @@ function categoryReel(slug:string):Reel|undefined{const category=categories.find
 function curiosityReels():Reel[]{const seed=CURRENT.seed;return curiosityCollections.map((collection,index)=>{const story=collection.stories[(seed+index)%collection.stories.length];const content={badge:`CURIOSIDADE · ${collection.title.toUpperCase()}`,title:story.title,summary:story.hook,shareSummary:story.shareText,sections:[{title:'Como isso funciona',paragraphs:story.explanation},{title:'Conexão inesperada',paragraphs:[story.connection]},{title:'Para guardar',paragraphs:[story.remember]}],sources:story.sourceLabel&&story.sourceUrl?[{label:story.sourceLabel,url:story.sourceUrl}]:[]};return withMedia({slug:`curiosidade-${collection.id}`,label:`Curiosidade · ${collection.title}`,emoji:collection.emoji,kind:'curiosity',title:story.title,detail:story.hook,category:{slug:`curiosidade-${collection.id}`,label:collection.title},content,image:getImage('Curiosidades',story.title)});});}
 function shareText(reel:Reel){const content=reel.content;if(reel.kind==='special'||reel.kind==='special-media')return[`*${reel.label.toUpperCase()} · ${CURRENT.date}*`,'',`*${reel.title}*`,'',reel.detail,...(reel.conversation?['',`💬 ${reel.conversation}`]:[])].join('\n');const bullets=content?.sections?.flatMap((s:any)=>s.bullets??[]).slice(0,3)??[];return[`*${String(reel.label).toUpperCase()} · ${CURRENT.date}*`,'',`*${reel.title}*`,'',content?.shareSummary??reel.detail,...(bullets.length?['',...bullets.map((b:string)=>`- ${b}`)]:[]),...(content?.sources?.[0]?['',`Fonte: ${content.sources[0].label}`,content.sources[0].url]:[])].join('\n');}
 function openShare(reel:Reel){window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(shareText(reel))}`,'_blank','noopener,noreferrer');}
-function ReelMedia({reel,detail=false}:{reel:Reel;detail?:boolean}){if(reel.videoEmbed)return <figure className={detail?styles.detailVideo:styles.videoMedia}><iframe src={reel.videoEmbed} title={`Vídeo de ${reel.label}`} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen /></figure>;if(reel.image)return <figure className={detail?styles.detailMedia:styles.media}><img src={reel.image.url} alt={reel.image.alt??reel.label} referrerPolicy="no-referrer" onError={e=>{const fb=localArtwork(aiThemeFor(reel));e.currentTarget.onerror=null;e.currentTarget.src=fb.src;Object.assign(e.currentTarget.style,fb.style);}} /></figure>;const fb=localArtwork(aiThemeFor(reel));return <figure className={detail?styles.detailMedia:styles.media}><img src={fb.src} alt={`Arte para ${reel.label}`} style={fb.style} /></figure>;}
+function ReelMedia({reel,detail=false}:{reel:Reel;detail?:boolean}){if(reel.videoEmbed)return <figure className={detail?styles.detailVideo:styles.videoMedia}><iframe src={reel.videoEmbed} title={`Vídeo de ${reel.label}`} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen /></figure>;if(reel.image)return <figure className={detail?styles.detailMedia:styles.media}><img src={reel.image.url} alt={reel.image.alt??reel.label} referrerPolicy="no-referrer" onError={e=>{const fb=localArtwork(aiThemeFor(reel));e.currentTarget.onerror=null;e.currentTarget.src=fb.src;Object.assign(e.currentTarget.style,fb.style);}} /></figure>;const fb=localArtwork(aiThemeFor(reel));return <figure className={detail?styles.detailMedia:styles.media}><img src={fb.src} alt={`Imagem relacionada a ${reel.label}`} style={fb.style} referrerPolicy="no-referrer" /></figure>;}
 
 export default function ReelsExperienceV25(){
   const [detailSlug,setDetailSlug]=useState<string|null>(null);const feedRef=useRef<HTMLDivElement>(null);
