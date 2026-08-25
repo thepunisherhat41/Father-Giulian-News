@@ -74,7 +74,7 @@ import GamifiedMissionLayerPortal from '@/components/GamifiedMissionLayer';
 import EditorialPresentationGuard from '@/components/EditorialPresentationGuard';
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
-import ReelsExperience from '@/components/ReelsExperience';
+import ReelsExperienceCurrent from '@/components/ReelsExperienceCurrent';
 import '@/lib/final-edition-2026-08-25';
 
 export const metadata: Metadata = {
@@ -87,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <body>
         {children}
-        <ReelsExperience />
+        <ReelsExperienceCurrent />
         <PregnancyMaternalChanges />
         <BabyDiscoveryLabPortal />
         <PregnancyVomitingCare />
