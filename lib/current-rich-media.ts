@@ -1,4 +1,5 @@
 import type { RichMediaEntry } from './rich-media';
+import { dailyRichMedia20260825 } from './daily-rich-media-2026-08-25';
 import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
 import { dailyRichMedia20260821_10h } from './daily-rich-media-2026-08-21-10h';
 import { dailyRichMedia20260821 } from './daily-rich-media-2026-08-21';
@@ -11,7 +12,7 @@ const labelAliases: Record<string, string> = {
   'Segurança ZL': 'Zona Leste em Foco',
 };
 
-const catalogs = [
+const olderCatalogs = [
   dailyRichMedia20260821_17h,
   dailyRichMedia20260821_10h,
   dailyRichMedia20260821,
@@ -32,16 +33,20 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
+  // The current edition always wins. This keeps media semantically tied to today's story.
+  const current = findIn(dailyRichMedia20260825, label, canonicalLabel, normalizedTitle);
+  if (current) return current;
+
   // Local news is especially sensitive to a wrong person/place being shown.
-  // It only receives real media from a same-story catalog added explicitly.
+  // It can only receive media from the explicit current-day catalog above.
   if (canonicalLabel === 'Zona Leste em Foco') return undefined;
 
-  for (const catalog of catalogs) {
+  for (const catalog of olderCatalogs) {
     const exact = findIn(catalog, label, canonicalLabel, normalizedTitle);
     if (exact) return exact;
   }
 
   // Never fall back to a merely category-compatible old photo. ReelsExperience
-  // supplies a contextual editorial visual when an exact photo/video is absent.
+  // supplies a contextual visual only when an exact photo/video is absent.
   return undefined;
 }
