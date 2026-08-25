@@ -68,8 +68,24 @@ const CORINTHIANS_REEL: Reel = {
   },
 };
 
-const SPRITE = '/reel-ai/sprite.jpg';
-const NEWS_SPRITE = '/reel-ai/sprite-news.jpg';
+const MEDIA_REV = '20260824-2205';
+const CLEAN_COVERS = `/reel-ai/clean-covers.jpg?rev=${MEDIA_REV}`;
+const SPRITE = `/reel-ai/sprite.jpg?rev=${MEDIA_REV}`;
+const NEWS_SPRITE = `/reel-ai/sprite-news.jpg?rev=${MEDIA_REV}`;
+
+const CLEAN_POS: Partial<Record<AiTheme, [number, number]>> = {
+  conversation: [0, 0],
+  challenge: [1, 0],
+  science: [2, 0],
+  psychology: [2, 0],
+  technology: [2, 0],
+  body: [3, 0],
+  space: [0, 1],
+  history: [1, 1],
+  animals: [2, 1],
+  nature: [3, 1],
+};
+
 const MAIN_POS: Record<string, [number, number]> = {
   conversation: [0, 0], challenge: [1, 0], science: [2, 0], space: [0, 1], body: [1, 1], animals: [2, 1],
   history: [0, 2], psychology: [1, 2], nature: [2, 2], pregnancy: [0, 3], brazil: [1, 3], travel: [2, 3],
@@ -133,13 +149,27 @@ function aiThemeFor(reel: Reel): AiTheme {
 }
 
 function spriteStyle(theme: AiTheme) {
+  const clean = CLEAN_POS[theme];
+  if (clean) {
+    const [column, row] = clean;
+    return {
+      width: '100%',
+      height: '100%',
+      backgroundImage: `url(${CLEAN_COVERS})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: '400% 200%',
+      backgroundPosition: `${column * 33.333333}% ${row * 100}%`,
+      backgroundColor: '#10131a',
+    } as const;
+  }
+
   const news = NEWS_POS[theme];
   if (news) {
     const [column, row] = news;
-    return { width: '100%', height: '100%', backgroundImage: `url(${NEWS_SPRITE})`, backgroundRepeat: 'no-repeat', backgroundSize: '300% 300%', backgroundPosition: `${column * 50}% ${row * 50}%` } as const;
+    return { width: '100%', height: '100%', backgroundImage: `url(${NEWS_SPRITE})`, backgroundRepeat: 'no-repeat', backgroundSize: '300% 300%', backgroundPosition: `${column * 50}% ${row * 50}%`, backgroundColor: '#10131a' } as const;
   }
   const [column, row] = MAIN_POS[theme] ?? MAIN_POS.science;
-  return { width: '100%', height: '100%', backgroundImage: `url(${SPRITE})`, backgroundRepeat: 'no-repeat', backgroundSize: '300% 600%', backgroundPosition: `${column * 50}% ${row * 20}%` } as const;
+  return { width: '100%', height: '100%', backgroundImage: `url(${SPRITE})`, backgroundRepeat: 'no-repeat', backgroundSize: '300% 600%', backgroundPosition: `${column * 50}% ${row * 20}%`, backgroundColor: '#10131a' } as const;
 }
 
 function withMandatoryMedia(reel: Reel): Reel {
