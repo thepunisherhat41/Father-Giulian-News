@@ -9,34 +9,32 @@ import { applyCurrentReelPatches1432 } from '@/lib/current-reel-patches-1432';
 import { applyCurrentReelPatches17h } from '@/lib/current-reel-patches-17h';
 import { applyCurrentReelPatches1730 } from '@/lib/current-reel-patches-1730';
 import { applyCurrentReelPatches1835 } from '@/lib/current-reel-patches-1835';
+import { applyCurrentReelPatches20h } from '@/lib/current-reel-patches-20h';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
-const MEDIA_REV = '20260825-1845';
+const MEDIA_REV = '20260825-2025';
 const GAMES_VIDEO_ID = 'qwC9EFT6EFk';
 const GAMES_THUMB = `https://i.ytimg.com/vi/${GAMES_VIDEO_ID}/maxresdefault.jpg`;
 const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
 
-/* Production safety net for legacy fallbacks. Current-day rich-media entries
-   remain the primary source; this only replaces transparent/old fallback art. */
 const coverForAlt = (alt: string) => {
   const a = alt.toLocaleLowerCase('pt-BR');
-
   if (a.includes('papo de hoje')) return commons('Couple at sunset on the beach.jpg');
   if (a.includes('desafio do casal')) return commons('DSCF0763 A couple seated at a seaside table enjoying an evening meal and drinks while watching the sunset over the water.jpg');
-
   if (a.includes('curiosidade · ciência') || a.includes('curiosidade · ciencia')) return commons('Lightning strike base.JPG');
   if (a.includes('curiosidade · psicologia')) return commons('Stroop effect example.png');
   if (a.includes('curiosidade · tecnologia')) return commons('Global Positioning System satellite.jpg');
-  if (a.includes('curiosidade · corpo humano')) return '/reel-ai/covers/body.svg?v=20260825-1432';
+  if (a.includes('curiosidade · corpo humano')) return commons('Human body features.svg');
   if (a.includes('curiosidade · espaço') || a.includes('curiosidade · espaco')) return commons('Global Positioning System satellite.jpg');
   if (a.includes('curiosidade · animais')) return commons('Homing pigeon.jpg');
   if (a.includes('curiosidade · história') || a.includes('curiosidade · historia')) return commons('Rosetta Stone.JPG');
   if (a.includes('curiosidade · planeta') || a.includes('curiosidade · natureza')) return commons('Earth Eastern Hemisphere.jpg');
-
   if (a.includes('gravidez')) return commons('Embryo at 6 weeks.JPG');
   if (a.includes('ser pai')) return 'https://www.cdc.gov/hearher/media/images/support-family-friends-16x9-1.jpg';
   if (a.includes('mundo')) return commons('Tehran night view.jpg');
+  if (a.includes('política') || a.includes('politica')) return commons('Brazilian DRE voting machine for 2022 elections.jpg');
   if (a.includes('tempo e clima')) return commons('Sao Paulo-Skyline.jpg');
+  if (a.includes('corinthians') || a.includes('yuri alberto')) return commons('Yuri Alberto Corinthians.jpg');
   if (a.includes('viagens')) return commons('Holambra windmill.jpg');
   if (a.includes('música') || a.includes('musica')) return 'https://i.ytimg.com/vi/1DnSiznUrVI/maxresdefault.jpg';
   if (a.includes('games')) return GAMES_THUMB;
@@ -47,21 +45,17 @@ const coverForAlt = (alt: string) => {
   if (a.includes('motos')) return 'https://www.planetcarsz.com/assets/uploads/2021/01/c08a054f8b23f375fc1a7475013d6242.jpg';
   if (a.includes('mecânica') || a.includes('mecanica')) return commons('Porsche Tire Pressure Gauge (9207945919).jpg');
   if (a.includes('brasil')) return commons('PlenarioSenadoFederal.jpg');
-
   return null;
 };
 
 function applyRealReelMedia() {
   const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
   if (!root) return;
-
   root.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
     const cover = coverForAlt(img.alt || '');
     if (!cover) return;
-
     const resolved = cover.startsWith('/') ? `${cover}${cover.includes('?') ? '&' : '?'}r=${MEDIA_REV}` : cover;
     if (img.getAttribute('src') !== resolved) img.setAttribute('src', resolved);
-
     img.style.position = 'absolute';
     img.style.inset = '0';
     img.style.left = '0';
@@ -79,24 +73,17 @@ function applyRealReelMedia() {
   });
 }
 
-/* ONL is a real video-first story. Keep the official thumbnail as the full
-   background and play the official stream in a centered 16:9 window so the
-   mobile Reel still swipes naturally instead of stretching a landscape video. */
 function upgradeGamesReelToVideo() {
   const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
   if (!root) return;
-
   root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
     const category = article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]');
     if (!category?.textContent?.toLocaleLowerCase('pt-BR').includes('games')) return;
-
     const figure = article.querySelector<HTMLElement>('figure');
     if (!figure || figure.querySelector('iframe[data-fg-games="official"]')) return;
-
     figure.style.backgroundImage = `url('${GAMES_THUMB}')`;
     figure.style.backgroundSize = 'cover';
     figure.style.backgroundPosition = 'center';
-
     const iframe = document.createElement('iframe');
     iframe.dataset.fgGames = 'official';
     iframe.src = `https://www.youtube.com/embed/${GAMES_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${GAMES_VIDEO_ID}&playsinline=1&rel=0&controls=0`;
@@ -131,6 +118,7 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches17h(dailyContent);
   applyCurrentReelPatches1730(dailyContent);
   applyCurrentReelPatches1835(dailyContent);
+  applyCurrentReelPatches20h(dailyContent);
 
   useLayoutEffect(() => {
     applyLiveMedia();
