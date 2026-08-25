@@ -3,20 +3,19 @@
 import { useLayoutEffect } from 'react';
 import { dailyContent } from '@/lib/daily-content';
 import { applyCurrentReelPatches } from '@/lib/current-reel-patches';
+import { applyCurrentReelPatches1432 } from '@/lib/current-reel-patches-1432';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
-const COVER_REV = '20260825-1414';
+const COVER_REV = '20260825-1432';
 
+/* Only point <img> directly at assets that actually exist in /public.
+   Space/History/Animals/Nature are rendered by reel-cover-direct-v16.css
+   from the validated clean-covers sheet, so they can never 404 here. */
 const coverForAlt = (alt: string) => {
   if (alt.includes('Papo de hoje')) return `/reel-ai/covers/conversation.svg?v=${COVER_REV}`;
   if (alt.includes('Desafio do casal')) return `/reel-ai/covers/challenge.svg?v=${COVER_REV}`;
   if (alt.includes('Ciência')) return `/reel-ai/covers/science.svg?v=${COVER_REV}`;
   if (alt.includes('Corpo Humano')) return `/reel-ai/covers/body.svg?v=${COVER_REV}`;
-  if (alt.includes('Espaço')) return `/reel-ai/covers/space.svg?v=${COVER_REV}`;
-  if (alt.includes('História')) return `/reel-ai/covers/history.svg?v=${COVER_REV}`;
-  if (alt.includes('Animais')) return `/reel-ai/covers/animals.svg?v=${COVER_REV}`;
-  if (alt.includes('Planeta')) return `/reel-ai/covers/nature.svg?v=${COVER_REV}`;
-  if (alt.includes('Natureza')) return `/reel-ai/covers/nature.svg?v=${COVER_REV}`;
   return null;
 };
 
@@ -39,12 +38,15 @@ function applyRealReelCovers() {
     img.style.objectFit = 'cover';
     img.style.objectPosition = 'center';
     img.style.display = 'block';
+    img.style.opacity = '1';
+    img.style.visibility = 'visible';
     img.style.filter = 'none';
   });
 }
 
 export default function ReelsExperienceLive() {
   applyCurrentReelPatches(dailyContent);
+  applyCurrentReelPatches1432(dailyContent);
 
   useLayoutEffect(() => {
     applyRealReelCovers();
