@@ -2,12 +2,14 @@
 
 import { useLayoutEffect } from 'react';
 import { dailyContent } from '@/lib/daily-content';
+import { curiosityCollections } from '@/lib/curiosity-collections';
+import { applyCurrentCuriosityRotation } from '@/lib/current-curiosity-rotation';
 import { applyCurrentReelPatches } from '@/lib/current-reel-patches';
 import { applyCurrentReelPatches1432 } from '@/lib/current-reel-patches-1432';
 import { applyCurrentReelPatches17h } from '@/lib/current-reel-patches-17h';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
-const COVER_REV = '20260825-1700';
+const COVER_REV = '20260825-1715';
 
 /* Point deterministic early reels at clean public assets after hydration.
    CSS provides the same cover before hydration, so the visual never depends
@@ -46,6 +48,7 @@ function applyRealReelCovers() {
 }
 
 export default function ReelsExperienceLive() {
+  applyCurrentCuriosityRotation(curiosityCollections);
   applyCurrentReelPatches(dailyContent);
   applyCurrentReelPatches1432(dailyContent);
   applyCurrentReelPatches17h(dailyContent);
