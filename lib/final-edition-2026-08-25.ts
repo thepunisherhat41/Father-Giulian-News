@@ -1,3 +1,4 @@
+import './daily-overrides-2026-08-25-05h';
 import { edition } from './daily-content';
 
 // Final render guard: some legacy portal modules still import dated overrides as
