@@ -21,12 +21,12 @@
     transform:translateZ(0);
   }
 
-  /* Approved clean covers — direct public assets, no screenshot/UI/text embedded. */
+  /* Clean covers: artwork only. No baked UI, date, title or browser chrome. */
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="0"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/covers/conversation.svg?v=20260825-1432');
+    background-image:url('/reel-ai/covers/conversation.svg?v=20260825-1500');
   }
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="1"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/covers/challenge.svg?v=20260825-1432');
+    background-image:url('/reel-ai/covers/challenge.svg?v=20260825-1500');
   }
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="2"] [class*="ReelsExperience_media"]::before{
     background-image:url('/reel-ai/covers/science.svg?v=20260825-1432');
@@ -35,8 +35,7 @@
     background-image:url('/reel-ai/covers/body.svg?v=20260825-1432');
   }
 
-  /* Remaining curiosity covers come from the validated clean 4x2 sheet.
-     This avoids references to missing individual SVG files. */
+  /* Remaining curiosity covers come from the validated clean 4x2 sheet. */
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="4"] [class*="ReelsExperience_media"]::before,
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="5"] [class*="ReelsExperience_media"]::before,
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="6"] [class*="ReelsExperience_media"]::before,
@@ -49,7 +48,6 @@
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="6"] [class*="ReelsExperience_media"]::before{background-position:66.666% 100%}
   [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="7"] [class*="ReelsExperience_media"]::before{background-position:100% 100%}
 
-  /* Transparent placeholder must never be the visible layer. */
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img[src^="data:image/gif"]{
     position:absolute!important;
     inset:0!important;
@@ -60,7 +58,6 @@
     pointer-events:none!important;
   }
 
-  /* Real editorial imagery remains above the fallback. */
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img:not([src^="data:image/gif"]){
     position:absolute!important;
     inset:0!important;
@@ -68,9 +65,9 @@
     width:100%!important;
     height:100%!important;
     object-fit:cover!important;
+    object-position:center!important;
   }
 
-  /* Keep the readability shade above media and below editorial text. */
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]::after{
     z-index:2!important;
   }
