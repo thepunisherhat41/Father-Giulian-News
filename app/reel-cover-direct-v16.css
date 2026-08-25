@@ -1,71 +1,35 @@
-/* Direct reel covers v16 — mobile-safe visual fallback independent from img src.
-   The first 8 reels are deterministic: Papo, Desafio and six curiosity families.
-   Keep mobile-v10.css last in layout. */
+/* Reel media hardening only.
+   Visual content now comes from current-rich-media and ReelsExperienceLive.
+   Do not assign artwork by reel index: the feed is dynamic and freshness can
+   change the number/order of cards during the day. */
 @media (max-width:900px){
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index] [class*="ReelsExperience_media"]{
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]{
     position:absolute!important;
     inset:0!important;
     overflow:hidden!important;
     background:#090c12!important;
   }
 
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index] [class*="ReelsExperience_media"]::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:0;
-    display:block;
-    background-position:center;
-    background-size:cover;
-    background-repeat:no-repeat;
-    transform:translateZ(0);
-  }
-
-  /* Clean covers: artwork only. No baked UI, date, title or browser chrome. */
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="0"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/covers/conversation.svg?v=20260825-1500');
-  }
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="1"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/covers/challenge.svg?v=20260825-1500');
-  }
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="2"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/covers/science.svg?v=20260825-1432');
-  }
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="3"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/covers/body.svg?v=20260825-1432');
-  }
-
-  /* Remaining curiosity covers come from the validated clean 4x2 sheet. */
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="4"] [class*="ReelsExperience_media"]::before,
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="5"] [class*="ReelsExperience_media"]::before,
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="6"] [class*="ReelsExperience_media"]::before,
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="7"] [class*="ReelsExperience_media"]::before{
-    background-image:url('/reel-ai/clean-covers.jpg?v=20260825-1432');
-    background-size:400% 200%;
-  }
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="4"] [class*="ReelsExperience_media"]::before{background-position:0% 100%}
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="5"] [class*="ReelsExperience_media"]::before{background-position:33.333% 100%}
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="6"] [class*="ReelsExperience_media"]::before{background-position:66.666% 100%}
-  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="7"] [class*="ReelsExperience_media"]::before{background-position:100% 100%}
-
-  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img[src^="data:image/gif"]{
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img{
     position:absolute!important;
     inset:0!important;
     z-index:1!important;
     width:100%!important;
     height:100%!important;
-    opacity:0!important;
-    pointer-events:none!important;
-  }
-
-  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img:not([src^="data:image/gif"]){
-    position:absolute!important;
-    inset:0!important;
-    z-index:1!important;
-    width:100%!important;
-    height:100%!important;
+    max-width:none!important;
     object-fit:cover!important;
     object-position:center!important;
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+    filter:none!important;
+    transform:none!important;
+  }
+
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]::before{
+    content:none!important;
+    display:none!important;
+    background-image:none!important;
   }
 
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]::after{
