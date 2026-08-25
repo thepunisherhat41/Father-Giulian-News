@@ -54,6 +54,7 @@ import './reel-cover-space-v16.css';
 import './reel-cover-history-v16.css';
 import './reel-cover-animals-v16.css';
 import './reel-cover-nature-v16.css';
+import './reel-cover-direct-v16.css';
 import './mobile-v10.css';
 import type { Metadata } from 'next';
 import PregnancyMaternalChanges from '@/components/PregnancyMaternalChanges';
@@ -82,7 +83,6 @@ import EditorialPresentationGuard from '@/components/EditorialPresentationGuard'
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
 import ReelsExperienceLive from '@/components/ReelsExperienceLive';
-// ReelsExperienceV25 remains the render engine; ReelsExperienceLive only pins the current editorial override first.
 import '@/lib/final-edition-2026-08-25';
 
 export const metadata: Metadata = {
