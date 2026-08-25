@@ -1,0 +1,100 @@
+/* Reels visual rescue v15 — no binary fallback dependency */
+@media (max-width:900px){
+  [class*="ReelsExperience_media"]:has(>img[src^="/reel-ai/"]){
+    background:#111!important;
+    isolation:isolate;
+  }
+  [class*="ReelsExperience_media"]>img[src^="/reel-ai/"]{display:none!important}
+  [class*="ReelsExperience_media"]:has(>img[src^="/reel-ai/"])::before{
+    content:"";position:absolute;inset:0;z-index:0;background:
+      radial-gradient(circle at 74% 16%,rgba(255,255,255,.22),transparent 18%),
+      radial-gradient(circle at 22% 42%,rgba(255,255,255,.10),transparent 28%),
+      linear-gradient(150deg,#24364e 0%,#172235 45%,#080b12 100%)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Papo de hoje"])::before{
+    background:radial-gradient(circle at 76% 18%,rgba(255,179,124,.45),transparent 22%),radial-gradient(circle at 20% 34%,rgba(221,86,168,.30),transparent 30%),linear-gradient(150deg,#60225f,#241538 55%,#090711)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Papo de hoje"])::after{
+    content:"";position:absolute;z-index:1;left:14%;top:20%;width:66%;height:28%;border:4px solid rgba(255,255,255,.22);border-radius:46% 46% 42% 42%;box-shadow:110px 150px 0 -38px rgba(255,255,255,.08),-70px 210px 0 -25px rgba(255,180,220,.10);transform:rotate(-5deg)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Desafio do casal"])::before{
+    background:radial-gradient(circle at 70% 20%,rgba(255,211,158,.42),transparent 23%),radial-gradient(circle at 26% 38%,rgba(255,93,124,.30),transparent 29%),linear-gradient(150deg,#7a283d,#321627 58%,#0c080e)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Desafio do casal"])::after{
+    content:"";position:absolute;z-index:1;left:23%;top:18%;width:52%;aspect-ratio:1;border:5px solid rgba(255,255,255,.20);border-radius:50%;box-shadow:0 0 0 34px rgba(255,255,255,.035),0 0 120px rgba(255,164,130,.18)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Ciência"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Tecnologia"])::before{
+    background:radial-gradient(circle at 72% 17%,rgba(106,255,224,.38),transparent 24%),radial-gradient(circle at 18% 35%,rgba(37,145,197,.35),transparent 32%),linear-gradient(150deg,#0d536b,#10293f 55%,#07111c)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Ciência"])::after,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Tecnologia"])::after{
+    content:"";position:absolute;z-index:1;left:22%;top:17%;width:56%;aspect-ratio:1;border:4px solid rgba(255,255,255,.19);border-radius:50%;box-shadow:0 0 0 50px rgba(83,221,211,.045),0 0 0 105px rgba(83,221,211,.025);transform:rotate(18deg)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Corpo Humano"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Gravidez"])::before{
+    background:radial-gradient(circle at 73% 18%,rgba(255,190,166,.42),transparent 24%),radial-gradient(circle at 22% 40%,rgba(220,66,110,.31),transparent 31%),linear-gradient(150deg,#7a2345,#3c172d 58%,#120811)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Corpo Humano"])::after,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Gravidez"])::after{
+    content:"";position:absolute;z-index:1;left:31%;top:16%;width:38%;height:35%;border:4px solid rgba(255,255,255,.17);border-radius:48% 48% 44% 44%;box-shadow:0 130px 0 28px rgba(255,255,255,.055),0 205px 80px 40px rgba(255,126,155,.10)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Espaço"])::before{
+    background:radial-gradient(circle at 72% 17%,rgba(158,116,255,.50),transparent 20%),radial-gradient(circle at 18% 31%,rgba(51,107,205,.35),transparent 30%),linear-gradient(150deg,#231673,#17133f 55%,#05050e)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Espaço"])::after{
+    content:"";position:absolute;z-index:1;right:13%;top:14%;width:38%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.34),rgba(185,151,255,.16) 48%,rgba(77,52,146,.08) 70%);box-shadow:-210px 90px 0 -88px rgba(255,255,255,.38),-95px 250px 0 -98px rgba(255,255,255,.35)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="História"])::before{
+    background:radial-gradient(circle at 72% 18%,rgba(241,197,132,.42),transparent 24%),radial-gradient(circle at 19% 38%,rgba(143,83,40,.30),transparent 30%),linear-gradient(150deg,#70441f,#3d2818 58%,#130d08)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="História"])::after{
+    content:"";position:absolute;z-index:1;left:18%;top:18%;width:64%;height:32%;border-top:5px solid rgba(255,255,255,.20);border-bottom:5px solid rgba(255,255,255,.20);background:repeating-linear-gradient(90deg,transparent 0 14%,rgba(255,255,255,.08) 14% 17%,transparent 17% 28%);transform:perspective(500px) rotateX(8deg)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Animais"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Planeta"])::before{
+    background:radial-gradient(circle at 72% 18%,rgba(181,226,119,.40),transparent 24%),radial-gradient(circle at 20% 38%,rgba(38,148,102,.32),transparent 31%),linear-gradient(150deg,#1d684c,#173b32 58%,#081611)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Animais"])::after,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Planeta"])::after{
+    content:"";position:absolute;z-index:1;left:15%;top:18%;width:70%;height:34%;border-radius:55% 45% 52% 48%;background:radial-gradient(ellipse at 40% 55%,rgba(255,255,255,.12),transparent 45%),linear-gradient(145deg,rgba(130,211,124,.16),rgba(255,255,255,.02));transform:rotate(-8deg);box-shadow:60px 170px 0 -70px rgba(255,255,255,.16)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Política"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Brasil"])::before{
+    background:radial-gradient(circle at 72% 18%,rgba(226,190,104,.36),transparent 23%),radial-gradient(circle at 18% 34%,rgba(71,76,168,.28),transparent 31%),linear-gradient(150deg,#403584,#211d49 58%,#0c0a1b)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Política"])::after,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Brasil"])::after{
+    content:"";position:absolute;z-index:1;left:18%;top:19%;width:64%;height:30%;clip-path:polygon(50% 0,100% 36%,91% 36%,91% 100%,9% 100%,9% 36%,0 36%);background:linear-gradient(180deg,rgba(255,255,255,.20),rgba(255,255,255,.05))
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Mundo"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Tempo"])::before{
+    background:radial-gradient(circle at 72% 17%,rgba(148,202,244,.38),transparent 24%),radial-gradient(circle at 20% 36%,rgba(46,98,148,.34),transparent 32%),linear-gradient(150deg,#24577b,#1b354d 58%,#09131c)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Zona Leste"])::before{
+    background:radial-gradient(circle at 72% 18%,rgba(246,168,92,.38),transparent 24%),radial-gradient(circle at 20% 38%,rgba(181,59,56,.34),transparent 31%),linear-gradient(150deg,#7b2d2c,#3b1b1c 58%,#12090a)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Zona Leste"])::after{
+    content:"";position:absolute;z-index:1;left:29%;top:15%;width:42%;aspect-ratio:.82;border:5px solid rgba(255,255,255,.18);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 90px rgba(255,110,80,.14)
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Música"])::before{
+    background:radial-gradient(circle at 74% 17%,rgba(248,171,84,.42),transparent 22%),radial-gradient(circle at 20% 38%,rgba(159,62,167,.34),transparent 31%),linear-gradient(150deg,#62306f,#32183c 58%,#100814)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Games"])::before{
+    background:radial-gradient(circle at 73% 17%,rgba(99,239,212,.40),transparent 23%),radial-gradient(circle at 19% 36%,rgba(24,117,178,.34),transparent 31%),linear-gradient(150deg,#155b80,#17334e 58%,#08111c)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Finanças"])::before{
+    background:radial-gradient(circle at 73% 18%,rgba(219,197,99,.38),transparent 24%),radial-gradient(circle at 20% 38%,rgba(53,145,84,.34),transparent 31%),linear-gradient(150deg,#256040,#193528 58%,#09150e)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Security Briefing"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Cyber Security"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="AppSec"])::before{
+    background:radial-gradient(circle at 73% 17%,rgba(89,242,198,.34),transparent 24%),radial-gradient(circle at 19% 38%,rgba(62,85,155,.32),transparent 31%),linear-gradient(150deg,#173b49,#18243b 58%,#070d14)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[alt*="Carros"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Motos"])::before,
+  [class*="ReelsExperience_media"]:has(>img[alt*="Mecânica"])::before{
+    background:radial-gradient(circle at 73% 18%,rgba(221,168,102,.35),transparent 24%),radial-gradient(circle at 19% 38%,rgba(95,76,65,.32),transparent 31%),linear-gradient(150deg,#55453d,#282321 58%,#0d0b0a)!important;
+  }
+  [class*="ReelsExperience_media"]:has(>img[src^="/reel-ai/"])::after{pointer-events:none}
+}
