@@ -11,30 +11,30 @@ export type EditorialFreshnessEntry = {
 // O quality gate compara a data abaixo com America/Sao_Paulo e exige exatamente 21 entradas.
 // Náutica foi removida do produto editorial e não pode reaparecer nesta auditoria.
 export const editorialFreshnessDate = '2026-08-25';
-export const editorialFreshnessValidatedAt = '25/08/2026 · 10h';
+export const editorialFreshnessValidatedAt = '25/08/2026 · 17h';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nova busca das 10h não encontrou fato nacional de 25/08 melhor e suficientemente material para substituir a pauta; sem Reel jornalístico artificial.' },
-  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Varredura de Itaquera/Zona Leste às 10h não encontrou notícia material de 25/08 com confirmação oficial/profissional e mídia semanticamente correta; Reel omitido.' },
-  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar de 25/08 às 10h incorpora pesquisa BTG/Nexus publicada hoje e entrevista de Ronaldo Caiado anunciada pela Globo para 21h05, separando pesquisa, agenda e presença.' },
-  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Sanções dos EUA ao Irã e resposta anunciada por Teerã continuam sendo fato material de hoje; risco energético mantido com incerteza explícita.' },
-  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e ainda válido; não foi criada novidade artificial.' },
-  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e ainda válido; permanece na rotação de descoberta.' },
-  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Previsão oficial de São Paulo para 25/08 permanece atual e datada; sem extrapolar condição local não confirmada.' },
-  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Coleções científicas continuam válidas e a seleção diária segue rotacionada por tipo, sem fabricar notícia.' },
-  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo musical e players seguem válidos; Reel permanece como descoberta cultural, não como notícia.' },
-  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'gamescom confirmou Opening Night Live hoje, 25/08, 18h–20h CEST, equivalente a 13h–15h em São Paulo; agenda atualizada sem promover rumor a anúncio.' },
-  { slug:'gravidez', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Idade gestacional do dia permanece 7 semanas + 2 dias; módulos profundos, cuidados pós-vômito e puerpério preservados.' },
-  { slug:'pai', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática do dia permanece renovada para apoio real e divisão de carga, sem romantização artificial.' },
-  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Critério até R$70 mil, usados reais, manutenção, inspeção e custo-benefício continua válido; seletor e mídia de veículos preservados.' },
-  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Critérios de compra, manutenção e ciclística permanecem válidos; mídia por modelo preservada.' },
-  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico continua correto e adequado à edição; mídia/fallback específico permanece disponível.' },
-  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino permanece útil e datado quando necessário; não foi inventada programação dinâmica sem fonte.' },
-  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Mercados de 25/08 seguem com yields menores, petróleo oscilando e expectativa pelo balanço da Nvidia; leitura intradiária continua explicitamente não tratada como fechamento.' },
-  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Nvidia permanece principal teste da semana para infraestrutura de IA; matéria revalidada às 10h com foco em demanda, capex e retorno do investimento.' },
-  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Revalidação web das 10h não identificou sinal novo de 25/08 forte o bastante para substituir os tópicos source-first já materiais; Reel jornalístico omitido.' },
-  { slug:'seguranca', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Busca atual em fontes primárias não encontrou advisory/incidente novo de 25/08 que justificasse Reel; conteúdo profundo permanece disponível.' },
-  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Busca atual não encontrou mudança material primária de 25/08 forte o bastante para novo Reel; feed profundo de AppSec permanece preservado.' },
+  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Busca das 17h não encontrou fato nacional de 25/08 mais material e melhor confirmado para abrir novo Reel; conteúdo profundo permanece disponível e Reel jornalístico fica omitido.' },
+  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nova varredura de Itaquera e Zona Leste não encontrou notícia material de 25/08 com confirmação suficiente e mídia semanticamente correta; Reel omitido, sem reciclar pauta antiga.' },
+  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'TSE publicou às 15h56 aviso de manutenção do e-Título; sessão plenária segue marcada para 19h e Caiado permanece em agenda anunciada para entrevista, com presença tratada separadamente.' },
+  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Revisão da tarde incorpora reação material dos mercados às sanções contra o Irã: petróleo caía mais de 3%, sem tratar promessa de retaliação como fato consumado.' },
+  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e ainda correto; não foi inventada novidade para forçar rotação jornalística.' },
+  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e segue adequado para descoberta; sem novidade artificial.' },
+  { slug:'tempo', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE foi rechecado na tarde de 25/08 e a previsão vigente de São Paulo segue coerente, sem mudança material posterior que justifique novo Reel além da atualização já datada do dia.' },
+  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Coleções científicas permanecem válidas e a seleção diária determinística troca os itens por data; revisão confirmou manutenção da rotação por tipo sem reaproveitar notícia.' },
+  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Escuta cultural do dia permanece válida, com player/fonte preservados e sem tratar conteúdo musical como breaking news.' },
+  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Horário do Opening Night Live foi corrigido para 15h BRT em São Paulo; evento ocorreu hoje e a feira principal começa em 26/08. Rumores continuam separados de anúncios oficiais.' },
+  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Idade gestacional e módulos médicos de 25/08 continuam atuais nesta janela; cuidados pós-vômito e puerpério foram preservados sem diagnóstico.' },
+  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática de apoio do dia segue adequada e não foi trocada artificialmente dentro da mesma data.' },
+  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Critério até R$70 mil, usados reais, FIPE/preço, manutenção, inspeção e custo-benefício permanece válido; mídia por modelo preservada.' },
+  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Checklist de compra, manutenção, ciclística e mídia por modelo seguem válidos; permanece no fim do feed.' },
+  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico e mídia/fallback específico continuam corretos e úteis; permanece no fim do feed.' },
+  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino foi reavaliado e continua útil; programação/preço dinâmicos só entram quando confirmados por fonte.' },
+  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Snapshot das 17h incorpora yields menores, ações em alta e queda superior a 3% no petróleo, com números explicitamente tratados como intradiários.' },
+  { slug:'tecnologia', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Revisão web mantém o balanço iminente da Nvidia como tema material de 25/08; tese de infraestrutura de IA segue atual, sem nova mudança suficiente para reescrever a matéria nesta janela.' },
+  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sinais source-first foram rechecados; não apareceu novo conjunto material que justifique substituir o briefing profundo nesta janela. Reel jornalístico permanece condicionado a fato do dia.' },
+  { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CVE-2026-73570 do Zimbra está sob exploração ativa; alerta de 25/08 e evidência de mais de 270 instâncias comprometidas justificam Reel Cyber novo e ação defensiva imediata.' },
+  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Busca da tarde não encontrou mudança primária AppSec/SSDLC de 25/08 forte o bastante para novo Reel sem duplicar o ângulo Cyber; feed profundo permanece preservado.' },
 ];
 
 export function freshnessForSlug(slug: string) {
