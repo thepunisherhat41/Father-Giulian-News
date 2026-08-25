@@ -75,6 +75,7 @@ import EditorialPresentationGuard from '@/components/EditorialPresentationGuard'
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
 import ReelsExperienceLive from '@/components/ReelsExperienceLive';
+// ReelsExperienceV25 remains the render engine; ReelsExperienceLive only pins the current editorial override first.
 import '@/lib/final-edition-2026-08-25';
 
 export const metadata: Metadata = {
