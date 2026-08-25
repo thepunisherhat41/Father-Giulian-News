@@ -1,4 +1,5 @@
 import './daily-overrides-2026-08-25-05h';
+import './daily-overrides-2026-08-25-10h';
 import { edition } from './daily-content';
 
 // Final render guard: some legacy portal modules still import dated overrides as
@@ -7,5 +8,5 @@ import { edition } from './daily-content';
 Object.assign(edition, {
   date: '25/08/2026',
   dateLabel: '25 AGO 2026',
-  title: 'Daily Intelligence · 25 de agosto',
+  title: 'Daily Intelligence · 25 de agosto · revisão 10h',
 });
