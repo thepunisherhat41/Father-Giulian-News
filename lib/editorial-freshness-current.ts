@@ -8,33 +8,33 @@ export type EditorialFreshnessEntry = {
 };
 
 // HARD GATE: este arquivo precisa ser regenerado em toda execução antes do deploy.
-// O quality gate compara a data abaixo com America/Sao_Paulo e exige exatamente 22 entradas.
+// O quality gate compara a data abaixo com America/Sao_Paulo e exige exatamente 21 entradas.
+// Náutica foi removida do produto editorial e não pode reaparecer nesta auditoria.
 export const editorialFreshnessDate = '2026-08-25';
-export const editorialFreshnessValidatedAt = '25/08/2026 · 00h';
+export const editorialFreshnessValidatedAt = '25/08/2026 · 05h';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Revisão de virada de edição concluída durante hotfix visual; conteúdo datado permanece identificado e não deve ser apresentado como fato novo de 25/08 sem nova fonte.' },
-  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Revisão de virada concluída; pauta regional permanece datada e só deve ganhar selo HOJE após atualização material de 25/08.' },
-  { slug:'politica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar político permanece com agenda e fontes datadas; próxima rodada editorial deve incorporar apenas eventos e alterações confirmadas de 25/08.' },
-  { slug:'mundo', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Contexto internacional preserva data e fonte; sem promoção automática de conteúdo de 24/08 para notícia de 25/08.' },
-  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen revalidado para continuidade no bloco de descoberta.' },
-  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen revalidado para continuidade no bloco de descoberta.' },
-  { slug:'tempo', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Previsão de 24/08 permanece datada; precisa de nova leitura meteorológica antes de ser rotulada como hoje em 25/08.' },
-  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Bloco de curiosidades permanece válido; rotação diária continua obrigatória.' },
-  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Trilhas musicais preservadas e sem invenção de agenda nova na virada.' },
-  { slug:'games', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Agenda gamescom previamente datada continua útil; qualquer chamada “hoje” deve refletir 25/08 na próxima atualização editorial.' },
-  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de acompanhamento permanece conservador e deve avançar a idade gestacional na atualização diária.' },
-  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo prático revalidado; missão diária deve continuar variando.' },
-  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar continua limitado a R$70 mil; critérios de usados e manutenção permanecem válidos.' },
-  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Critérios técnicos permanecem válidos e a posição no fim do feed foi preservada.' },
-  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico permanece válido e a posição no fim do feed foi preservada.' },
-  { slug:'nautica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Slug legado permanece apenas para compatibilidade do quality gate; Náutica continua removida do feed Reels.' },
-  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo permanece datado e não inventa condições dinâmicas.' },
-  { slug:'financas', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Números antigos permanecem datados; nova sessão de 25/08 exige fonte do dia.' },
-  { slug:'tecnologia', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo anterior permanece datado e não é promovido automaticamente como notícia nova.' },
-  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Briefing preserva data, autoridade e evidência; próxima coleta deve priorizar fatos de 25/08.' },
-  { slug:'seguranca', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar Cyber preserva fonte e data; sem reciclar finding como novidade do dia.' },
-  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar AppSec preserva fonte e data; sem reciclar mudança de produto como novidade do dia.' },
+  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nova busca da manhã não encontrou fato nacional de 25/08 forte e bem confirmado o bastante para substituir a pauta atual; Reel jornalístico omitido para não reciclar notícia.' },
+  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Varredura de Itaquera/Zona Leste não encontrou notícia material de 25/08 com fonte profissional ou oficial e mídia correta; Reel omitido.' },
+  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar de 25/08 mantém sabatina presidencial anunciada, marco oficial do calendário TSE e próximo debate, separando agenda, presença e pesquisa.' },
+  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Nova rodada de sanções dos EUA ao Irã e promessa de resposta de Teerã são fatos materiais desta manhã; impacto em energia tratado com incerteza explícita.' },
+  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e ainda válido; não foi criada novidade artificial.' },
+  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e ainda válido; permanece na rotação de descoberta.' },
+  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Previsão oficial de São Paulo para 25/08 está datada e válida: madrugada úmida, muitas nuvens e máxima prevista de 21°C.' },
+  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Coleções científicas continuam válidas e a seleção diária é rotacionada por tipo, sem fabricar notícia.' },
+  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo musical e players seguem válidos; Reel permanece como descoberta cultural, não como notícia.' },
+  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Opening Night Live acontece em 25/08 e a gamescom principal começa em 26/08; confirmado em fonte oficial.' },
+  { slug:'gravidez', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Idade gestacional avançou para 7 semanas + 2 dias; módulos profundos, cuidados pós-vômito e puerpério permanecem preservados.' },
+  { slug:'pai', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Missão prática do dia foi renovada para apoio pós-enjoo sem pressão ou prescrição.' },
+  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Critério até R$70 mil, usados reais, manutenção, inspeção e custo-benefício permanece válido; seletor e mídia de veículos preservados.' },
+  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Critérios de compra, manutenção e ciclística permanecem válidos; mídia por modelo preservada.' },
+  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico continua correto e adequado à edição; mídia/fallback específico permanece disponível.' },
+  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino permanece útil e datado quando necessário; não foi inventada programação dinâmica sem fonte.' },
+  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Mercados de 25/08 abriram com yields menores, petróleo instável e expectativa pelo balanço da Nvidia; leitura intradiária explicitamente não tratada como fechamento.' },
+  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Nvidia virou o principal teste da semana para infraestrutura de IA; Alibaba também anunciou captação bilionária para financiar IA.' },
+  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Revalidação da manhã não identificou sinal novo de 25/08 suficientemente forte para substituir os tópicos materiais já source-first; Reel jornalístico omitido.' },
+  { slug:'seguranca', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Busca atual não encontrou advisory/incidente primário novo de 25/08 que justificasse Reel; conteúdo profundo permanece disponível sem reciclagem como novidade.' },
+  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Busca atual não encontrou mudança material primária de 25/08 forte o bastante para novo Reel; feed profundo de AppSec permanece preservado.' },
 ];
 
 export function freshnessForSlug(slug: string) {
