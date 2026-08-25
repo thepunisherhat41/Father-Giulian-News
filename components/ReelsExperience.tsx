@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import styles from './ReelsExperience.module.css';
 import { categories } from '@/lib/categories';
 import { dailyContent, edition } from '@/lib/daily-content';
@@ -68,24 +68,15 @@ const CORINTHIANS_REEL: Reel = {
   },
 };
 
-const MEDIA_REV = '20260824-2205';
+const MEDIA_REV = '20260824-2242';
 const CLEAN_COVERS = `/reel-ai/clean-covers.jpg?rev=${MEDIA_REV}`;
 const SPRITE = `/reel-ai/sprite.jpg?rev=${MEDIA_REV}`;
 const NEWS_SPRITE = `/reel-ai/sprite-news.jpg?rev=${MEDIA_REV}`;
 
 const CLEAN_POS: Partial<Record<AiTheme, [number, number]>> = {
-  conversation: [0, 0],
-  challenge: [1, 0],
-  science: [2, 0],
-  psychology: [2, 0],
-  technology: [2, 0],
-  body: [3, 0],
-  space: [0, 1],
-  history: [1, 1],
-  animals: [2, 1],
-  nature: [3, 1],
+  conversation: [0, 0], challenge: [1, 0], science: [2, 0], psychology: [2, 0], technology: [2, 0], body: [3, 0],
+  space: [0, 1], history: [1, 1], animals: [2, 1], nature: [3, 1],
 };
-
 const MAIN_POS: Record<string, [number, number]> = {
   conversation: [0, 0], challenge: [1, 0], science: [2, 0], space: [0, 1], body: [1, 1], animals: [2, 1],
   history: [0, 2], psychology: [1, 2], nature: [2, 2], pregnancy: [0, 3], brazil: [1, 3], travel: [2, 3],
@@ -148,28 +139,33 @@ function aiThemeFor(reel: Reel): AiTheme {
   return 'brazil';
 }
 
-function spriteStyle(theme: AiTheme) {
+function cropStyle(columns: number, rows: number, column: number, row: number): CSSProperties {
+  return {
+    position: 'absolute',
+    width: `${columns * 100}%`,
+    height: `${rows * 100}%`,
+    maxWidth: 'none',
+    left: `-${column * 100}%`,
+    top: `-${row * 100}%`,
+    objectFit: 'fill',
+    display: 'block',
+    filter: 'none',
+  };
+}
+
+function spriteImage(theme: AiTheme) {
   const clean = CLEAN_POS[theme];
   if (clean) {
     const [column, row] = clean;
-    return {
-      width: '100%',
-      height: '100%',
-      backgroundImage: `url(${CLEAN_COVERS})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundSize: '400% 200%',
-      backgroundPosition: `${column * 33.333333}% ${row * 100}%`,
-      backgroundColor: '#10131a',
-    } as const;
+    return { src: CLEAN_COVERS, style: cropStyle(4, 2, column, row) };
   }
-
   const news = NEWS_POS[theme];
   if (news) {
     const [column, row] = news;
-    return { width: '100%', height: '100%', backgroundImage: `url(${NEWS_SPRITE})`, backgroundRepeat: 'no-repeat', backgroundSize: '300% 300%', backgroundPosition: `${column * 50}% ${row * 50}%`, backgroundColor: '#10131a' } as const;
+    return { src: NEWS_SPRITE, style: cropStyle(3, 3, column, row) };
   }
   const [column, row] = MAIN_POS[theme] ?? MAIN_POS.science;
-  return { width: '100%', height: '100%', backgroundImage: `url(${SPRITE})`, backgroundRepeat: 'no-repeat', backgroundSize: '300% 600%', backgroundPosition: `${column * 50}% ${row * 20}%`, backgroundColor: '#10131a' } as const;
+  return { src: SPRITE, style: cropStyle(3, 6, column, row) };
 }
 
 function withMandatoryMedia(reel: Reel): Reel {
@@ -192,12 +188,12 @@ function editionTokens() {
 }
 
 function hasEditionToken(content: any) {
-  const text = [content?.badge, content?.title, content?.summary, content?.shareSummary, ...(content?.sources ?? []).flatMap((s: any) => [s.label, s.url])].filter(Boolean).join(' ').toLowerCase();
+  const text = [content?.badge, content?.title, content?.summary, content?.shareSummary, ...(content?.sources ?? []).flatMap((source: any) => [source.label, source.url])].filter(Boolean).join(' ').toLowerCase();
   return editionTokens().some((token) => text.includes(token));
 }
 
 function hasSameDaySource(content: any) {
-  const text = (content?.sources ?? []).flatMap((s: any) => [s.label, s.url]).filter(Boolean).join(' ').toLowerCase();
+  const text = (content?.sources ?? []).flatMap((source: any) => [source.label, source.url]).filter(Boolean).join(' ').toLowerCase();
   return editionTokens().some((token) => text.includes(token));
 }
 
@@ -213,7 +209,17 @@ function categoryReel(slug: string): Reel | undefined {
   const category = categories.find((item) => item.slug === slug);
   const content = dailyContent[slug];
   if (!category || !content) return undefined;
-  return withMandatoryMedia({ slug, label: category.label, emoji: category.emoji, kind: slug === 'seguranca-zl' ? 'local-osint' : 'editorial', title: content.title, detail: content.summary, category, content, image: getImage(category.label, content.title) });
+  return withMandatoryMedia({
+    slug,
+    label: category.label,
+    emoji: category.emoji,
+    kind: slug === 'seguranca-zl' ? 'local-osint' : 'editorial',
+    title: content.title,
+    detail: content.summary,
+    category,
+    content,
+    image: getImage(category.label, content.title),
+  });
 }
 
 function dailyCuriosityReels(): Reel[] {
@@ -232,17 +238,33 @@ function dailyCuriosityReels(): Reel[] {
       ],
       sources: story.sourceLabel && story.sourceUrl ? [{ label: story.sourceLabel, url: story.sourceUrl }] : [],
     };
-    return withMandatoryMedia({ slug: `curiosidade-${collection.id}`, label: `Curiosidade · ${collection.title}`, emoji: collection.emoji, kind: 'curiosity', title: story.title, detail: story.hook, category: { slug: `curiosidade-${collection.id}`, label: collection.title }, content, image: getImage('Curiosidades', story.title) });
+    return withMandatoryMedia({
+      slug: `curiosidade-${collection.id}`,
+      label: `Curiosidade · ${collection.title}`,
+      emoji: collection.emoji,
+      kind: 'curiosity',
+      title: story.title,
+      detail: story.hook,
+      category: { slug: `curiosidade-${collection.id}`, label: collection.title },
+      content,
+      image: getImage('Curiosidades', story.title),
+    });
   });
 }
 
 function shareText(slug: string, reel?: Reel) {
-  if (reel?.kind === 'special' || reel?.kind === 'special-media') return [`*${reel.label.toUpperCase()} · ${edition.date}*`, '', `*${reel.title}*`, '', reel.detail, ...(reel.conversation ? ['', `💬 ${reel.conversation}`] : [])].join('\n');
+  if (reel?.kind === 'special' || reel?.kind === 'special-media') {
+    return [`*${reel.label.toUpperCase()} · ${edition.date}*`, '', `*${reel.title}*`, '', reel.detail, ...(reel.conversation ? ['', `💬 ${reel.conversation}`] : [])].join('\n');
+  }
   const content = reel?.content ?? dailyContent[slug];
   const category = reel?.category ?? categories.find((item) => item.slug === slug);
   if (!content || !category) return '';
   const bullets = content.sections?.flatMap((section: any) => section.bullets ?? []).slice(0, 3) ?? [];
-  return [`*${String(category.label).toUpperCase()} · ${edition.date}*`, '', `*${content.title}*`, '', content.shareSummary ?? content.summary, ...(bullets.length ? ['', ...bullets.map((item: string) => `- ${item}`)] : []), ...(content.sources?.[0] ? ['', `Fonte: ${content.sources[0].label}`, content.sources[0].url] : [])].join('\n');
+  return [
+    `*${String(category.label).toUpperCase()} · ${edition.date}*`, '', `*${content.title}*`, '', content.shareSummary ?? content.summary,
+    ...(bullets.length ? ['', ...bullets.map((item: string) => `- ${item}`)] : []),
+    ...(content.sources?.[0] ? ['', `Fonte: ${content.sources[0].label}`, content.sources[0].url] : []),
+  ].join('\n');
 }
 
 function openShare(slug: string, reel?: Reel) {
@@ -250,10 +272,38 @@ function openShare(slug: string, reel?: Reel) {
   if (text) window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 }
 
+function applyLocalFallback(image: HTMLImageElement, reel: Reel) {
+  const fallback = spriteImage(reel.aiTheme ?? aiThemeFor(reel));
+  image.onerror = null;
+  image.src = fallback.src;
+  image.removeAttribute('referrerpolicy');
+  Object.assign(image.style, fallback.style);
+}
+
 function ReelMedia({ reel, detail = false }: { reel: Reel; detail?: boolean }) {
-  if (reel.videoEmbed) return <figure className={detail ? styles.detailVideo : styles.videoMedia}><iframe src={reel.videoEmbed} title={`Vídeo de ${reel.label}`} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen /></figure>;
-  if (reel.image) return <figure className={detail ? styles.detailMedia : styles.media}><img src={reel.image.url} alt={reel.image.alt ?? reel.label} referrerPolicy="no-referrer" /></figure>;
-  return <figure className={detail ? styles.detailMedia : styles.media}><div style={spriteStyle(reel.aiTheme ?? aiThemeFor(reel))} aria-label={`Arte gerada por IA para ${reel.label}`} /></figure>;
+  if (reel.videoEmbed) {
+    return <figure className={detail ? styles.detailVideo : styles.videoMedia}><iframe src={reel.videoEmbed} title={`Vídeo de ${reel.label}`} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen /></figure>;
+  }
+
+  if (reel.image) {
+    return (
+      <figure className={detail ? styles.detailMedia : styles.media}>
+        <img
+          src={reel.image.url}
+          alt={reel.image.alt ?? reel.label}
+          referrerPolicy="no-referrer"
+          onError={(event) => applyLocalFallback(event.currentTarget, reel)}
+        />
+      </figure>
+    );
+  }
+
+  const fallback = spriteImage(reel.aiTheme ?? aiThemeFor(reel));
+  return (
+    <figure className={detail ? styles.detailMedia : styles.media}>
+      <img src={fallback.src} alt={`Arte para ${reel.label}`} style={fallback.style} />
+    </figure>
+  );
 }
 
 export default function ReelsExperience() {
@@ -266,16 +316,35 @@ export default function ReelsExperience() {
     const lifestyle = LIFESTYLE_ORDER.map(categoryReel).filter(Boolean) as Reel[];
     const tech = TECH_ORDER.map(categoryReel).filter(Boolean) as Reel[];
     const automotive = AUTO_ORDER.map(categoryReel).filter(Boolean) as Reel[];
-    return [withMandatoryMedia({ ...TALK_REEL }), withMandatoryMedia({ ...CHALLENGE_REEL }), ...dailyCuriosityReels(), ...family, ...news, withMandatoryMedia({ ...CORINTHIANS_REEL }), ...lifestyle, withMandatoryMedia({ ...SERTANEJO_REEL }), ...tech, ...automotive].filter(isFreshToday);
+    return [
+      withMandatoryMedia({ ...TALK_REEL }),
+      withMandatoryMedia({ ...CHALLENGE_REEL }),
+      ...dailyCuriosityReels(),
+      ...family,
+      ...news,
+      withMandatoryMedia({ ...CORINTHIANS_REEL }),
+      ...lifestyle,
+      withMandatoryMedia({ ...SERTANEJO_REEL }),
+      ...tech,
+      ...automotive,
+    ].filter(isFreshToday);
   }, []);
 
   const detail = detailSlug ? reels.find((item) => item.slug === detailSlug) : undefined;
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 900px)');
-    const sync = () => { document.documentElement.style.overflow = mq.matches ? 'hidden' : ''; document.body.style.overflow = mq.matches ? 'hidden' : ''; };
-    sync(); mq.addEventListener('change', sync);
-    return () => { mq.removeEventListener('change', sync); document.documentElement.style.overflow = ''; document.body.style.overflow = ''; };
+    const sync = () => {
+      document.documentElement.style.overflow = mq.matches ? 'hidden' : '';
+      document.body.style.overflow = mq.matches ? 'hidden' : '';
+    };
+    sync();
+    mq.addEventListener('change', sync);
+    return () => {
+      mq.removeEventListener('change', sync);
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
   }, []);
 
   return (
@@ -284,7 +353,10 @@ export default function ReelsExperience() {
         {reels.map((reel, index) => (
           <article className={`${styles.reel} ${reel.kind === 'special' ? styles.special : ''}`} data-reel-index={index} key={reel.slug}>
             <ReelMedia reel={reel} />
-            <div className={styles.top}><div className={styles.brand}><span className={styles.mark}>FG</span><span>NEWS · {edition.dateLabel}</span></div><div className={styles.counter}>{index + 1} / {reels.length}</div></div>
+            <div className={styles.top}>
+              <div className={styles.brand}><span className={styles.mark}>FG</span><span>NEWS · {edition.dateLabel}</span></div>
+              <div className={styles.counter}>{index + 1} / {reels.length}</div>
+            </div>
             <div className={styles.content}>
               <div className={styles.category}><span>{reel.emoji}</span>{reel.label}{(reel.kind === 'osint' || reel.kind === 'local-osint') && <b className={styles.verified}>HOJE</b>}</div>
               <h2 className={styles.title}>{reel.title}</h2>
@@ -307,11 +379,22 @@ export default function ReelsExperience() {
           <button className={styles.back} onClick={() => setDetailSlug(null)}>← Voltar</button>
           <button className={styles.detailShare} onClick={() => openShare(detail.slug, detail)}>↗</button>
           <div className={styles.detailFeed}>
-            <section className={styles.detailReel}><ReelMedia reel={detail} detail /><div className={styles.detailShade} /><div className={styles.detailCopy}><small>{detail.emoji} {detail.label} · {detail.content.badge ?? 'EDIÇÃO DE HOJE'}</small><h2>{detail.content.title}</h2><p>{detail.content.summary}</p><p><strong>Continue deslizando para ler.</strong></p></div></section>
+            <section className={styles.detailReel}>
+              <ReelMedia reel={detail} detail />
+              <div className={styles.detailShade} />
+              <div className={styles.detailCopy}><small>{detail.emoji} {detail.label} · {detail.content.badge ?? 'EDIÇÃO DE HOJE'}</small><h2>{detail.content.title}</h2><p>{detail.content.summary}</p><p><strong>Continue deslizando para ler.</strong></p></div>
+            </section>
             {(detail.content.sections ?? []).map((section: any, sectionIndex: number) => (
               <section className={styles.detailReel} key={`${detail.slug}-${section.title}-${sectionIndex}`}>
-                <ReelMedia reel={detail} detail /><div className={styles.detailShade} />
-                <div className={styles.detailCopy}><small>{detail.label} · {sectionIndex + 1}/{detail.content.sections.length}</small><h3>{section.title}</h3>{section.paragraphs?.map((paragraph: string) => <p key={paragraph}>{paragraph}</p>)}{section.bullets?.length ? <ul>{section.bullets.map((bullet: string) => <li key={bullet}>{bullet}</li>)}</ul> : null}{sectionIndex === detail.content.sections.length - 1 && detail.content.sources?.length ? <div className={styles.sources}>{detail.content.sources.map((source: any) => <a className={styles.source} href={source.url} target="_blank" rel="noreferrer" key={source.url}>Fonte: {source.label} ↗</a>)}</div> : null}</div>
+                <ReelMedia reel={detail} detail />
+                <div className={styles.detailShade} />
+                <div className={styles.detailCopy}>
+                  <small>{detail.label} · {sectionIndex + 1}/{detail.content.sections.length}</small>
+                  <h3>{section.title}</h3>
+                  {section.paragraphs?.map((paragraph: string) => <p key={paragraph}>{paragraph}</p>)}
+                  {section.bullets?.length ? <ul>{section.bullets.map((bullet: string) => <li key={bullet}>{bullet}</li>)}</ul> : null}
+                  {sectionIndex === detail.content.sections.length - 1 && detail.content.sources?.length ? <div className={styles.sources}>{detail.content.sources.map((source: any) => <a className={styles.source} href={source.url} target="_blank" rel="noreferrer" key={source.url}>Fonte: {source.label} ↗</a>)}</div> : null}
+                </div>
               </section>
             ))}
           </div>
