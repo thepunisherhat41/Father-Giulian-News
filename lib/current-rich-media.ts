@@ -10,6 +10,7 @@ const labelAliases: Record<string, string> = {
   Cyber: 'Cyber Security',
   AppSec: 'AppSec / SSDLC',
   'Segurança ZL': 'Zona Leste em Foco',
+  'Carros até R$ 70 mil': 'Carros',
 };
 
 const olderCatalogs = [
