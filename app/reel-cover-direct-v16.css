@@ -1,0 +1,12 @@
+/* Direct reel covers v16 — SSR-safe visual fallback. Keep mobile-v10.css last. */
+@media (max-width:900px){
+  img[alt*="Papo de hoje"]{background:url('/reel-ai/covers/conversation.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Desafio do casal"]{background:url('/reel-ai/covers/challenge.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · Ciência"]{background:url('/reel-ai/covers/science.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · Corpo Humano"]{background:url('/reel-ai/covers/body.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · Espaço"]{background:url('/reel-ai/covers/space.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · História"]{background:url('/reel-ai/covers/history.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · Animais"]{background:url('/reel-ai/covers/animals.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · Planeta"]{background:url('/reel-ai/covers/nature.svg?v=20260825-1414') center/cover no-repeat!important}
+  img[alt*="Curiosidade · Natureza"]{background:url('/reel-ai/covers/nature.svg?v=20260825-1414') center/cover no-repeat!important}
+}
