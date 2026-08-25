@@ -1,13 +1,24 @@
 /* Reel media hardening only.
    Visual content now comes from current-rich-media and ReelsExperienceLive.
-   Do not assign artwork by reel index: the feed is dynamic and freshness can
-   change the number/order of cards during the day. */
+   Never assign artwork by reel index: freshness changes the feed dynamically. */
 @media (max-width:900px){
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]{
     position:absolute!important;
     inset:0!important;
     overflow:hidden!important;
     background:#090c12!important;
+    background-size:cover!important;
+    background-position:center!important;
+    background-repeat:no-repeat!important;
+  }
+
+  /* The two daily special cards are client-generated. Give them real photos
+     before hydration so a slow device never paints a black placeholder. */
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]:has(> img[alt*="Papo de hoje"]){
+    background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple%20at%20sunset%20on%20the%20beach.jpg')!important;
+  }
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]:has(> img[alt*="Desafio do casal"]){
+    background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/DSCF0763%20A%20couple%20seated%20at%20a%20seaside%20table%20enjoying%20an%20evening%20meal%20and%20drinks%20while%20watching%20the%20sunset%20over%20the%20water.jpg')!important;
   }
 
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img{
@@ -24,6 +35,11 @@
     visibility:visible!important;
     filter:none!important;
     transform:none!important;
+  }
+
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img[src^="data:image/gif"]{
+    opacity:0!important;
+    pointer-events:none!important;
   }
 
   [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]::before{
