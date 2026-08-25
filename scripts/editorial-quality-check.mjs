@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 
 const requiredFiles = [
-  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/editorial-deep-read-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','lib/daily-overrides-2026-08-21-depth.ts','components/PolicyConversationPortal.tsx','lib/policy-conversation-current.ts','app/policy-conversation-v11.css','app/policy-conversation-dedupe-v11.css','app/mobile-v10.css',
+  'components/EditorialQualityGuard.tsx','app/editorial-quality.css','lib/editorial-clarity-overrides.ts','components/LocalSecurityHubCurrent.tsx','components/LocalSecurityPortal.tsx','lib/local-security-current.ts','lib/local-east-news-current.ts','components/VehicleComparisonHub.tsx','lib/vehicle-media.ts','components/PoliticalCandidateAnalysisPortal.tsx','components/PregnancyPostpartumGuide.tsx','components/EditorialDeepReadPortal.tsx','components/EditorialFreshnessPortal.tsx','lib/editorial-freshness-current.ts','lib/editorial-deep-read-current.ts','lib/daily-rich-media-2026-08-21.ts','lib/editorial-deep-read-2026-08-21.ts','lib/daily-overrides-2026-08-21-depth.ts','components/PolicyConversationPortal.tsx','lib/policy-conversation-current.ts','app/policy-conversation-v11.css','app/policy-conversation-dedupe-v11.css','app/mobile-v10.css','components/ReelsExperienceV25.tsx',
 ];
 const failures = [];
 for (const file of requiredFiles) if (!existsSync(file)) failures.push(`Arquivo obrigatório ausente: ${file}`);
@@ -19,6 +19,7 @@ const categories = text('lib/categories.ts');
 if (!categories.includes("import './daily-overrides-2026-08-21';")) failures.push('lib/categories.ts: edição-base precisa continuar carregada antes dos overrides intradiários.');
 if (!categories.includes("import './daily-overrides-2026-08-21-depth';")) failures.push('lib/categories.ts: aprofundamento-base precisa continuar carregado antes da edição atual.');
 if (categories.includes("subcategories: ['Lançamentos', 'PS5 Radar'")) failures.push('lib/categories.ts: não reintroduzir “PS5 Radar”.');
+if (/slug\s*:\s*['"]nautica['"]/.test(categories)) failures.push('lib/categories.ts: Náutica foi removida e não pode reaparecer como área editorial.');
 
 const portal = text('components/LocalSecurityPortal.tsx');
 if (!portal.includes("title === 'Zona Leste em Foco'")) failures.push('LocalSecurityPortal: o hub precisa montar com o título atual “Zona Leste em Foco”.');
@@ -32,7 +33,7 @@ for (const token of ['21 AGO 2026','Corinthians vence Rosario Central','Córrego
 const currentMedia = text('lib/current-rich-media.ts');
 if (!currentMedia.includes('dailyRichMedia20260821')) failures.push('lib/current-rich-media.ts: catálogo visual-base precisa permanecer disponível como fallback.');
 const media21 = text('lib/daily-rich-media-2026-08-21.ts');
-for (const label of ['Brasil','Zona Leste em Foco','Política','Mundo','Planeta','Mundo Animal','Tempo e Clima','Curiosidades','Música','Games','Gravidez','Ser Pai','Carros','Motos','Mecânica','Náutica','Viagens','Finanças','Tecnologia','Security Briefing','Cyber Security','AppSec / SSDLC']) {
+for (const label of ['Brasil','Zona Leste em Foco','Política','Mundo','Planeta','Mundo Animal','Tempo e Clima','Curiosidades','Música','Games','Gravidez','Ser Pai','Carros','Motos','Mecânica','Viagens','Finanças','Tecnologia','Security Briefing','Cyber Security','AppSec / SSDLC']) {
   if (!media21.includes(`reuse('${label}'`)) failures.push(`Mídia-base: cobertura ausente para ${label}.`);
 }
 
@@ -42,7 +43,7 @@ if (!deepPortal.includes("'brasil'")) failures.push('EditorialDeepReadPortal: Br
 const deepCurrent = text('lib/editorial-deep-read-current.ts');
 if (!deepCurrent.includes('deepReadForSlug')) failures.push('lib/editorial-deep-read-current.ts: ponteiro atual precisa exportar deepReadForSlug.');
 const deep21 = text('lib/editorial-deep-read-2026-08-21.ts');
-for (const slug of ['brasil','mundo','planeta','animais','tempo','curiosidades','pai','mecanica','nautica','viagens','financas','tecnologia','seguranca']) {
+for (const slug of ['brasil','mundo','planeta','animais','tempo','curiosidades','pai','mecanica','viagens','financas','tecnologia','seguranca']) {
   if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(deep21)) failures.push(`Leitura ampliada-base: ausente para ${slug}.`);
 }
 
@@ -72,8 +73,14 @@ if (!layout.includes("import './policy-conversation-v11.css';")) failures.push('
 if (!layout.includes("import './policy-conversation-dedupe-v11.css';")) failures.push('app/layout.tsx: dedupe do Policy Decision Tracker não está carregado.');
 if (!layout.includes('PolicyConversationPortal')) failures.push('app/layout.tsx: PolicyConversationPortal precisa estar montado globalmente.');
 if (!layout.includes("import './mobile-v10.css';")) failures.push('app/layout.tsx: mobile-v10.css precisa estar carregado.');
+if (!layout.includes('ReelsExperienceV25')) failures.push('app/layout.tsx: experiência Reels mobile atual precisa estar montada.');
 const cssImports = [...layout.matchAll(/import '\.\/(.+\.css)';/g)].map((m) => m[1]);
 if (cssImports.at(-1) !== 'mobile-v10.css') failures.push(`app/layout.tsx: mobile-v10.css deve ser o último CSS; último atual: ${cssImports.at(-1) ?? 'nenhum'}.`);
+
+const reels = text('components/ReelsExperienceV25.tsx');
+if (/['"]nautica['"]/.test(reels) || /Náutica/i.test(reels)) failures.push('ReelsExperienceV25: Náutica foi removida e não pode reaparecer no feed ou em fallbacks.');
+for (const slug of ['carros','motos','mecanica']) if (!reels.includes(`'${slug}'`)) failures.push(`ReelsExperienceV25: área final obrigatória ausente: ${slug}.`);
+if (!reels.includes("'/reel-ai/") && !reels.includes("'./reel-ai/")) failures.push('ReelsExperienceV25: fallback visual de /public/reel-ai precisa permanecer disponível.');
 
 const freshness = text('lib/editorial-freshness-current.ts');
 if (freshness) {
@@ -82,10 +89,11 @@ if (freshness) {
   const today = `${byType.year}-${byType.month}-${byType.day}`;
   const declared = freshness.match(/editorialFreshnessDate\s*=\s*['"]([^'"]+)['"]/)?.[1];
   if (declared !== today) failures.push(`Auditoria editorial diária desatualizada: esperado ${today}, encontrado ${declared ?? 'sem data'}.`);
-  const requiredSlugs = ['brasil','seguranca-zl','politica','mundo','planeta','animais','tempo','curiosidades','musica','games','gravidez','pai','carros','motos','mecanica','nautica','viagens','financas','tecnologia','security-briefing','seguranca','appsec-ssdlc'];
+  const requiredSlugs = ['brasil','seguranca-zl','politica','mundo','planeta','animais','tempo','curiosidades','musica','games','gravidez','pai','carros','motos','mecanica','viagens','financas','tecnologia','security-briefing','seguranca','appsec-ssdlc'];
   for (const slug of requiredSlugs) if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`).test(freshness)) failures.push(`Auditoria editorial diária incompleta: aba ${slug} não foi validada.`);
+  if (/slug\s*:\s*['"]nautica['"]/.test(freshness)) failures.push('Auditoria editorial diária contém Náutica, área removida do produto.');
   const entryCount = (freshness.match(/\{\s*slug\s*:\s*['"]/g) ?? []).length;
-  if (entryCount !== 22) failures.push(`Auditoria editorial diária deve conter exatamente 22 áreas; encontrado ${entryCount}.`);
+  if (entryCount !== 21) failures.push(`Auditoria editorial diária deve conter exatamente 21 áreas; encontrado ${entryCount}.`);
 }
 
 if (failures.length) {
