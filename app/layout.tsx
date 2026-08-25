@@ -75,6 +75,7 @@ import EditorialPresentationGuard from '@/components/EditorialPresentationGuard'
 import TopicShareEnhancer from '@/components/TopicShareEnhancer';
 import EditorialQualityGuard from '@/components/EditorialQualityGuard';
 import ReelsExperience from '@/components/ReelsExperience';
+import '@/lib/final-edition-2026-08-25';
 
 export const metadata: Metadata = {
   title: 'Father Giulian News',
