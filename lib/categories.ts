@@ -53,8 +53,9 @@ import './daily-overrides-2026-08-24-vehicle-cap';
 import './daily-overrides-2026-08-24-politics-radar';
 import './daily-overrides-2026-08-25';
 import './daily-overrides-2026-08-25-lifestyle';
-// Current-window override must be last so legacy dated imports cannot overwrite audited Reels data.
+// Current-window overrides must stay last so legacy dated imports cannot overwrite audited Reels data.
 import './daily-overrides-2026-08-25-05h';
+import './daily-overrides-2026-08-25-11h';
 
 export type Category = {
   slug: string;
