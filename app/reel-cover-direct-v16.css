@@ -1,44 +1,77 @@
-/* Direct reel covers v16 — SSR-safe visual fallback. Keep mobile-v10.css last. */
+/* Direct reel covers v16 — mobile-safe visual fallback independent from img src.
+   The first 8 reels are deterministic: Papo, Desafio and six curiosity families.
+   Keep mobile-v10.css last in layout. */
 @media (max-width:900px){
-  [class*="ReelsExperience_media"]:has(>img[alt*="Papo de hoje"]){background:url('/reel-ai/covers/conversation.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Desafio do casal"]){background:url('/reel-ai/covers/challenge.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Ciência"]){background:url('/reel-ai/covers/science.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Corpo Humano"]){background:url('/reel-ai/covers/body.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Espaço"]){background:url('/reel-ai/covers/space.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · História"]){background:url('/reel-ai/covers/history.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Animais"]){background:url('/reel-ai/covers/animals.svg?v=20260825-1432') center/cover no-repeat!important}
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Planeta"]),
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Natureza"]){background:url('/reel-ai/covers/nature.svg?v=20260825-1432') center/cover no-repeat!important}
-
-  [class*="ReelsExperience_media"]:has(>img[alt*="Papo de hoje"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Desafio do casal"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Ciência"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Corpo Humano"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Espaço"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · História"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Animais"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Planeta"])>img,
-  [class*="ReelsExperience_media"]:has(>img[alt*="Curiosidade · Natureza"])>img{
-    display:block!important;
-    visibility:visible!important;
-    opacity:1!important;
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index] [class*="ReelsExperience_media"]{
     position:absolute!important;
     inset:0!important;
-    left:0!important;
-    top:0!important;
-    width:100%!important;
-    height:100%!important;
-    max-width:none!important;
-    object-fit:cover!important;
-    object-position:center!important;
+    overflow:hidden!important;
+    background:#090c12!important;
   }
 
-  img[alt*="Papo de hoje"]{background:url('/reel-ai/covers/conversation.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Desafio do casal"]{background:url('/reel-ai/covers/challenge.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Curiosidade · Ciência"]{background:url('/reel-ai/covers/science.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Curiosidade · Corpo Humano"]{background:url('/reel-ai/covers/body.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Curiosidade · Espaço"]{background:url('/reel-ai/covers/space.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Curiosidade · História"]{background:url('/reel-ai/covers/history.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Curiosidade · Animais"]{background:url('/reel-ai/covers/animals.svg?v=20260825-1432') center/cover no-repeat!important}
-  img[alt*="Curiosidade · Planeta"],img[alt*="Curiosidade · Natureza"]{background:url('/reel-ai/covers/nature.svg?v=20260825-1432') center/cover no-repeat!important}
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index] [class*="ReelsExperience_media"]::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    display:block;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    transform:translateZ(0);
+  }
+
+  /* Approved clean covers — direct public assets, no screenshot/UI/text embedded. */
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="0"] [class*="ReelsExperience_media"]::before{
+    background-image:url('/reel-ai/covers/conversation.svg?v=20260825-1432');
+  }
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="1"] [class*="ReelsExperience_media"]::before{
+    background-image:url('/reel-ai/covers/challenge.svg?v=20260825-1432');
+  }
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="2"] [class*="ReelsExperience_media"]::before{
+    background-image:url('/reel-ai/covers/science.svg?v=20260825-1432');
+  }
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="3"] [class*="ReelsExperience_media"]::before{
+    background-image:url('/reel-ai/covers/body.svg?v=20260825-1432');
+  }
+
+  /* Remaining curiosity covers come from the validated clean 4x2 sheet.
+     This avoids references to missing individual SVG files. */
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="4"] [class*="ReelsExperience_media"]::before,
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="5"] [class*="ReelsExperience_media"]::before,
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="6"] [class*="ReelsExperience_media"]::before,
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="7"] [class*="ReelsExperience_media"]::before{
+    background-image:url('/reel-ai/clean-covers.jpg?v=20260825-1432');
+    background-size:400% 200%;
+  }
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="4"] [class*="ReelsExperience_media"]::before{background-position:0% 100%}
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="5"] [class*="ReelsExperience_media"]::before{background-position:33.333% 100%}
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="6"] [class*="ReelsExperience_media"]::before{background-position:66.666% 100%}
+  [aria-label="Father Giulian News em modo Reels"] article[data-reel-index="7"] [class*="ReelsExperience_media"]::before{background-position:100% 100%}
+
+  /* Transparent placeholder must never be the visible layer. */
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img[src^="data:image/gif"]{
+    position:absolute!important;
+    inset:0!important;
+    z-index:1!important;
+    width:100%!important;
+    height:100%!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+
+  /* Real editorial imagery remains above the fallback. */
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"] > img:not([src^="data:image/gif"]){
+    position:absolute!important;
+    inset:0!important;
+    z-index:1!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+
+  /* Keep the readability shade above media and below editorial text. */
+  [aria-label="Father Giulian News em modo Reels"] [class*="ReelsExperience_media"]::after{
+    z-index:2!important;
+  }
 }
