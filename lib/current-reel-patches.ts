@@ -14,20 +14,20 @@ export function applyCurrentReelPatches(dailyContent: Record<string, any>) {
   });
 
   Object.assign(dailyContent.politica, {
-    title: 'Radar eleitoral: nova pesquisa e sabatina presidencial hoje às 21h05',
-    summary: 'A pesquisa BTG/Nexus divulgada em 25/08 mostra Lula com 41% e Flávio Bolsonaro com 37% no primeiro turno, diferença dentro da margem de erro de dois pontos. À noite, Ronaldo Caiado participa da série de entrevistas da Globo às 21h05. Pesquisa, agenda anunciada e presença confirmada são informações diferentes.',
-    shareSummary: 'Política 25/08 · 10h: BTG/Nexus mostra Lula 41% e Flávio Bolsonaro 37%, dentro da margem de erro de 2 pontos. Ronaldo Caiado tem entrevista anunciada pela Globo hoje às 21h05. Pesquisa não é previsão de resultado.',
-    readTime: '6 MIN', badge: 'POLÍTICA · RADAR 25/08 · 10H',
+    title: 'Radar eleitoral: Caiado tem sabatina hoje e TSE publica novo marco operacional',
+    summary: 'Ronaldo Caiado permanece na agenda da série de entrevistas presidenciais da Globo nesta terça-feira. Às 10h, o TSE publicou orientação sobre a Comissão Especial de Transporte para eleitores da zona rural, cujo prazo de indicação pelos partidos termina hoje. Não apareceu pesquisa presidencial nova em 25/08 nesta checagem; a BTG/Nexus divulgada em 24/08 permanece apenas como contexto.',
+    shareSummary: 'Política 25/08 · 11h: Caiado segue na agenda da sabatina da Globo. O TSE publicou às 10h o marco da Comissão Especial de Transporte. Nenhuma nova pesquisa presidencial de 25/08 foi incorporada; a BTG/Nexus é de 24/08.',
+    readTime: '5 MIN', badge: 'POLÍTICA · RADAR 25/08 · 11H',
     sections: [
-      { title: 'Pesquisa divulgada hoje', bullets: ['BTG/Nexus: Lula 41%, Flávio Bolsonaro 37%, Ronaldo Caiado 5%, Renan Santos e Romeu Zema 3% cada.', 'A pesquisa ouviu 2.006 eleitores por telefone entre 21 e 23/08, tem margem de erro de 2 pontos percentuais e registro BR-09028/2026 no TSE.', 'Em eventual segundo turno Lula e Flávio aparecem tecnicamente empatados, 46% a 45%.'] },
-      { title: 'Agenda confirmada para hoje', paragraphs: ['A TV Globo programou entrevista com Ronaldo Caiado nesta terça-feira, 25/08, às 21h05, após o Jornal Nacional, com transmissão também na GloboNews e no g1.'] },
-      { title: 'Próximos marcos', bullets: ['26/08: entrevista anunciada com Renan Santos.', '27/08: entrevista anunciada com Lula.', '28/08: início do horário eleitoral gratuito de rádio e TV, conforme operação divulgada pelo TSE.'] },
-      { title: 'O que não concluir', paragraphs: ['Pesquisa mede intenção de voto no período em que foi realizada; não prevê o resultado final. Presença anunciada deve ser revalidada no dia porque grade e participação podem mudar.'] },
+      { title: 'Agenda de hoje', bullets: ['Ronaldo Caiado (PSD) permanece programado para a entrevista presidencial da Globo nesta terça-feira (25), após o Jornal Nacional.', 'A série é transmitida na TV Globo, GloboNews e g1.', 'Agenda publicada não equivale a comparecimento consumado; eventual mudança ou cancelamento deve substituir este estado imediatamente.'] },
+      { title: 'TSE · fato novo de hoje', paragraphs: ['O TSE publicou às 10h desta terça que termina hoje o prazo para partidos e federações indicarem aos juízos eleitorais até três pessoas por agremiação para compor a Comissão Especial de Transporte do primeiro e eventual segundo turno.'] },
+      { title: 'Pesquisas', paragraphs: ['Nenhum levantamento presidencial novo com divulgação em 25/08 foi incorporado nesta checagem. A BTG/Nexus registrada sob BR-09028/2026 foi divulgada em 24/08 e não deve ser rotulada como pesquisa de hoje.'] },
+      { title: 'Próximos marcos', bullets: ['26/08: entrevista anunciada com Renan Santos.', '27/08: entrevista anunciada com Lula.', '28/08: início do horário eleitoral gratuito no rádio e na TV.', 'Debates futuros continuam tratados como agenda anunciada até confirmação de presença mais próxima de cada evento.'] },
     ],
     sources: [
-      { label: 'UOL · BTG/Nexus · 25/08/2026', url: 'https://noticias.uol.com.br/eleicoes/2026/08/24/pesquisa-presidente-2026-atualizada-veja-numeros-do-ultimo-levantamento.ghtm' },
-      { label: 'Globo/RPC · programação eleitoral · 25/08/2026', url: 'https://redeglobo.globo.com/rpc/noticia/rpc-tera-mudancas-na-programacao-durante-eleicoes-2026.ghtml' },
-      { label: 'TSE · Pool de Mídia Eleições 2026', url: 'https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/pool-de-midia-das-eleicoes-2026-comeca-a-funcionar-nesta-segunda-feira-24' },
+      { label: 'TSE · Comissão Especial de Transporte · 25/08/2026 · 10h', url: 'https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/tse-compoe-comissao-especial-de-transporte-para-eleitores-da-zona-rural' },
+      { label: 'UOL · agenda de entrevistas da Globo · 24/08/2026', url: 'https://noticias.uol.com.br/eleicoes/2026/08/24/entrevistas-dos-candidatos-no-jornal-nacional-veja-datas-e-quem-vai-nas-sabatinas.ghtm' },
+      { label: 'TSE · Pool de Mídia Eleições 2026 · 24/08/2026', url: 'https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/pool-de-midia-das-eleicoes-2026-comeca-a-funcionar-nesta-segunda-feira-24' },
     ],
   });
 
