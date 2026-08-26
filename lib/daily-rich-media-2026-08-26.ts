@@ -33,6 +33,14 @@ export const dailyRichMedia20260826: RichMediaEntry[] = [
     relatedLabel:'Reuters · Iran-Oman talks / Hormuz',relatedHref:'https://www.reuters.com/world/asia-pacific/us-oil-prices-extend-losses-hopes-iran-oman-talks-strait-hormuz-2026-08-25/'
   },
   {
+    label:'Política',
+    matches:['política hoje: renan santos','politica hoje: renan santos','entrevista às 21h05','entrevista as 21h05','tse fecha marco do horário eleitoral','tse fecha marco do horario eleitoral'],
+    tag:'MÍDIA ELEITORAL · TSE', title:'Urna eletrônica brasileira',
+    caption:'Fotografia institucional de urna eletrônica usada como visual neutro para o radar presidencial e o marco operacional do horário eleitoral.',
+    images:[{url:commons('Brazilian DRE voting machine for 2022 elections.jpg'),alt:'Urna eletrônica brasileira em fotografia institucional',caption:'Urna eletrônica brasileira.',credit:'Tribunal Superior Eleitoral / Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Brazilian_DRE_voting_machine_for_2022_elections.jpg',kind:'PHOTO'}],
+    relatedLabel:'TSE · Calendário Eleitoral 2026',relatedHref:'https://www.tse.jus.br/eleicoes/calendario-eleitoral'
+  },
+  {
     label:'Tempo e Clima',
     matches:['quarta em sp','máxima pode chegar a 24','maxima pode chegar a 24'],
     tag:'MÍDIA REAL · SÃO PAULO', title:'São Paulo sob variação de nuvens',
