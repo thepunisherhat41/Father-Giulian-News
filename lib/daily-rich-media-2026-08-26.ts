@@ -70,5 +70,19 @@ export const dailyRichMedia20260826: RichMediaEntry[] = [
     caption:'Fotografia real de monitores em um Security Operations Center, semanticamente ligada às lições de detecção e resposta do advisory da CISA.',
     images:[{url:commons('SOC Security Monitors.jpg'),alt:'Monitores em um Security Operations Center',caption:'Security Operations Center em operação.',credit:'UMD-Eskin / Wikimedia Commons · domínio público',sourceUrl:'https://commons.wikimedia.org/wiki/File:SOC_Security_Monitors.jpg',kind:'PHOTO'}],
     relatedLabel:'CISA · A Tale of Two SOCs',relatedHref:'https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-237a'
+  },
+  {
+    label:'Carros até R$ 70 mil',
+    matches:['carros até r$ 70 mil: cinco usados que valem entrar no radar','cinco usados que valem entrar no radar','carros até r$70 mil'],
+    tag:'MÍDIA REAL · USADO', title:'Chevrolet Cruze 2014',
+    caption:'Fotografia real de um Chevrolet Cruze 2014, exemplo compatível com a faixa de usados discutida no Reel.',
+    images:[{url:commons('Chevrolet Cruze 2014 facelift IMG002.jpg'),alt:'Chevrolet Cruze 2014 facelift em fotografia real',caption:'Chevrolet Cruze 2014.',credit:'Zotyefan / Wikimedia Commons · CC BY-SA 4.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Chevrolet_Cruze_2014_facelift_IMG002.jpg',kind:'PHOTO'}]
+  },
+  {
+    label:'Motos',
+    matches:['moto usada do dia: antes de olhar acessórios','procure sinais de queda e alinhamento','moto usada'],
+    tag:'MÍDIA REAL · MOTO USADA', title:'Honda CBX 250 Twister',
+    caption:'Fotografia real de uma Honda CBX 250 Twister, adequada ao contexto de inspeção de moto usada.',
+    images:[{url:commons('HONDA CBX 250 TWISTER.jpg'),alt:'Honda CBX 250 Twister em fotografia real',caption:'Honda CBX 250 Twister.',credit:'Al1997 / Wikimedia Commons · CC BY-SA 3.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:HONDA_CBX_250_TWISTER.jpg',kind:'PHOTO'}]
   }
 ];
