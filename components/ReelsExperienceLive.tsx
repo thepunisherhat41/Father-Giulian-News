@@ -1,6 +1,5 @@
 'use client';
 
-import { useLayoutEffect } from 'react';
 import { dailyContent } from '@/lib/daily-content';
 import { curiosityCollections } from '@/lib/curiosity-collections';
 import { applyCurrentCuriosityRotation } from '@/lib/current-curiosity-rotation';
@@ -12,87 +11,11 @@ import { applyCurrentReelPatches1835 } from '@/lib/current-reel-patches-1835';
 import { applyCurrentReelPatches20h } from '@/lib/current-reel-patches-20h';
 import { applyCurrentReelPatches23h } from '@/lib/current-reel-patches-23h';
 import { applyCurrentReelPatches20260826 } from '@/lib/current-reel-patches-2026-08-26';
-import ReelsExperienceV25 from './ReelsExperienceV25';
-
-const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
-
-function normalizeLabel(value:string) {
-  return value.replace(/HOJE/g,'').trim().toLocaleLowerCase('pt-BR');
-}
-
-function applySpecialMedia() {
-  const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
-  if (!root) return;
-
-  root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
-    const category = normalizeLabel(article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]')?.textContent ?? '');
-    const img = article.querySelector<HTMLImageElement>('figure img');
-    if (!img) return;
-
-    let cover:string|undefined;
-    if (category === 'papo de hoje') cover = commons('Couple enjoys coffee together at home.jpg');
-    if (category === 'desafio do casal') cover = commons('Album Photos-(1).jpg');
-    if (!cover) return;
-
-    if (img.getAttribute('src') !== cover) img.setAttribute('src', cover);
-    img.style.position = 'absolute';
-    img.style.inset = '0';
-    img.style.width = '100%';
-    img.style.height = '100%';
-    img.style.maxWidth = 'none';
-    img.style.objectFit = 'cover';
-    img.style.objectPosition = 'center';
-    img.style.display = 'block';
-    img.style.opacity = '1';
-    img.style.visibility = 'visible';
-    img.style.filter = 'none';
-    img.style.transform = 'none';
-  });
-}
-
-/* Safety gate for 26/08: only journalistic categories with a material fact
-   validated for the current date may remain in the live Reels experience.
-   Discovery/family/automotive cards are untouched. */
-function pruneStaleJournalisticReels() {
-  const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
-  if (!root) return;
-
-  const allowedJournalistic = new Set([
-    'mundo',
-    'tempo e clima',
-    'games',
-    'tecnologia',
-    'finanças',
-    'financas',
-    'security briefing'
-  ]);
-  const journalisticLabels = new Set([
-    'brasil','mundo','política','politica','tempo e clima','zona leste em foco','corinthians hoje',
-    'games','tecnologia','finanças','financas','security briefing','cyber security','appsec / ssdlc'
-  ]);
-
-  root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
-    const label = normalizeLabel(article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]')?.textContent ?? '');
-    if (journalisticLabels.has(label) && !allowedJournalistic.has(label)) article.remove();
-  });
-
-  const articles = Array.from(root.querySelectorAll<HTMLElement>('article[data-reel-index]'));
-  const total = articles.length;
-  articles.forEach((article,index) => {
-    article.dataset.reelIndex = String(index);
-    const counter = article.querySelector<HTMLElement>('[class*="ReelsExperience_counter"]');
-    if (counter) counter.textContent = `${index + 1} / ${total}`;
-    const progress = article.querySelector<HTMLElement>('[class*="ReelsExperience_progress"] i');
-    if (progress) progress.style.width = `${((index + 1) / total) * 100}%`;
-  });
-}
-
-function hardenLiveReels() {
-  applySpecialMedia();
-  pruneStaleJournalisticReels();
-}
+import ReelsExperienceV26 from './ReelsExperienceV26';
 
 export default function ReelsExperienceLive() {
+  // Legacy content layers are still evaluated by the broader magazine shell.
+  // Apply them first, then pin the current-date editorial patch last.
   applyCurrentCuriosityRotation(curiosityCollections);
   applyCurrentReelPatches(dailyContent);
   applyCurrentReelPatches1432(dailyContent);
@@ -103,12 +26,7 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches23h(dailyContent);
   applyCurrentReelPatches20260826(dailyContent);
 
-  useLayoutEffect(() => {
-    hardenLiveReels();
-    const observer = new MutationObserver(hardenLiveReels);
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, []);
-
-  return <ReelsExperienceV25 />;
+  // V26 gates journalistic Reels from editorialFreshness directly at render time.
+  // Stale Politics/Zona Leste/Corinthians cards are not emitted into SSR at all.
+  return <ReelsExperienceV26 />;
 }
