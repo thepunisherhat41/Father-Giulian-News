@@ -25,6 +25,14 @@ export const dailyRichMedia20260826: RichMediaEntry[] = [
     images:[{url:commons('Fibre-optic cable in a Telstra pit.jpg'),alt:'Cabos reais de fibra óptica em caixa de telecomunicações',caption:'Fibra óptica em infraestrutura de telecom.',credit:'Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Fibre-optic_cable_in_a_Telstra_pit.jpg',kind:'PHOTO'}]
   },
   {
+    label:'Mundo',
+    matches:['hormuz: irã e omã retomam conversas','hormuz: ira e oma retomam conversas','corredor temporário de navegação','corredor temporario de navegacao'],
+    tag:'MÍDIA REAL · MAPA', title:'Estreito de Hormuz',
+    caption:'Mapa do Estreito de Hormuz entre Irã, Omã e Emirados Árabes Unidos, diretamente ligado à negociação sobre navegação.',
+    images:[{url:commons('Strait of Hormuz-svg-en.svg'),alt:'Mapa do Estreito de Hormuz entre Irã, Omã e Emirados Árabes Unidos',caption:'Estreito de Hormuz e seus acessos marítimos.',credit:'Goran tek-en / Wikimedia Commons · CC BY-SA 4.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Strait_of_Hormuz-svg-en.svg',kind:'REFERENCE'}],
+    relatedLabel:'Reuters · Iran-Oman talks / Hormuz',relatedHref:'https://www.reuters.com/world/asia-pacific/us-oil-prices-extend-losses-hopes-iran-oman-talks-strait-hormuz-2026-08-25/'
+  },
+  {
     label:'Tempo e Clima',
     matches:['quarta em sp','máxima pode chegar a 24','maxima pode chegar a 24'],
     tag:'MÍDIA REAL · SÃO PAULO', title:'São Paulo sob variação de nuvens',
@@ -34,10 +42,26 @@ export const dailyRichMedia20260826: RichMediaEntry[] = [
   {
     label:'Games',
     matches:['gamescom abre hoje','dia de imprensa e profissionais','trade visitor'],
-    tag:'MÍDIA OFICIAL · GAME​​SCOM', title:'gamescom 2026 · Opening Night Live',
-    caption:'Thumbnail oficial já validada da transmissão gamescom 2026; usada como mídia segura do evento enquanto o radar acompanha a abertura da feira.',
+    tag:'MÍDIA OFICIAL · GAMESCOM', title:'gamescom 2026 · Opening Night Live',
+    caption:'Thumbnail oficial da transmissão gamescom 2026; mídia diretamente ligada à feira.',
     images:[{url:'https://i.ytimg.com/vi/qwC9EFT6EFk/maxresdefault.jpg',alt:'Thumbnail oficial da gamescom Opening Night Live 2026',caption:'gamescom 2026.',credit:'gamescom / YouTube',sourceUrl:'https://www.youtube.com/watch?v=qwC9EFT6EFk',kind:'REFERENCE'}],
     youtubeId:'qwC9EFT6EFk',relatedLabel:'gamescom · horários oficiais',relatedHref:'https://www.gamescom.global/en/info/opening-times'
+  },
+  {
+    label:'Finanças',
+    matches:['petróleo e juros longos cedem','petroleo e juros longos cedem','treasury de 10 anos','brent caiu para a faixa de us$86'],
+    tag:'MÍDIA REAL · TREASURY', title:'U.S. Treasury Building',
+    caption:'Sede do Departamento do Tesouro dos EUA, ligada ao mercado de Treasuries citado na matéria.',
+    images:[{url:commons('US Treasury Building.jpg'),alt:'Edifício do Departamento do Tesouro dos Estados Unidos em Washington',caption:'U.S. Treasury Building, Washington, D.C.',credit:'Loren / Wikimedia Commons · domínio público',sourceUrl:'https://commons.wikimedia.org/wiki/File:US_Treasury_Building.jpg',kind:'PHOTO'}],
+    relatedLabel:'Reuters · mercados globais · 26/08',relatedHref:'https://www.reuters.com/world/china/global-markets-wrapup-1-2026-08-26/'
+  },
+  {
+    label:'Tecnologia',
+    matches:['nvidia divulga resultados hoje','rubin testa','blackwell→rubin','blackwell'],
+    tag:'MÍDIA REAL · NVIDIA', title:'GPU NVIDIA',
+    caption:'Fotografia real de um processador gráfico NVIDIA, diretamente ligada à pauta sobre a evolução da arquitetura de GPUs para IA.',
+    images:[{url:commons('NVIDIA GPU.jpg'),alt:'Processador gráfico NVIDIA fotografado em close',caption:'GPU NVIDIA.',credit:'Mickael Courtiade / Wikimedia Commons · CC BY 2.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:NVIDIA_GPU.jpg',kind:'PHOTO'}],
+    relatedLabel:'Reuters · Nvidia / Rubin · 26/08',relatedHref:'https://www.reuters.com/business/retail-consumer/nvidia-faces-growth-test-rubin-debut-meets-ai-financing-scrutiny-2026-08-25/'
   },
   {
     label:'Security Briefing',
