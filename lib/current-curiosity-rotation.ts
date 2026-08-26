@@ -11,79 +11,76 @@ type CuriosityCollectionLike = {
 
 const TODAY_STORIES: CuriosityCollectionLike[] = [
   {
-    id: 'ciencia-hoje-20260825',
+    id: 'ciencia-hoje-20260826',
     title: 'Ciência',
-    subtitle: 'Fenômenos do cotidiano explicados pelo mecanismo real',
-    emoji: '🧪',
-    accent: 'magenta',
-    coverWords: ['ENERGIA', 'ATMOSFERA', 'SOM'],
-    description: 'Curiosidade científica inédita na janela móvel dos últimos sete dias.',
-    stories: [{
-      id: 'raio-aquece-ar-20260825',
-      title: 'O relâmpago aquece o ar a temperaturas maiores que a superfície do Sol',
-      hook: 'O clarão dura muito pouco, mas o canal elétrico consegue aquecer o ar ao redor para algo próximo de 50 mil °F.',
-      explanation: [
-        'O raio em si é movimento de cargas; o aquecimento aparece porque o ar oferece resistência à passagem dessa corrente elétrica.',
-        'Segundo o National Weather Service, o ar no canal de um relâmpago pode chegar perto de 50.000 °F, aproximadamente cinco vezes a temperatura da superfície do Sol.'
-      ],
-      connection: 'Esse aquecimento extremamente rápido faz o ar expandir de forma explosiva. A onda de choque resultante é o que ouvimos como trovão.',
-      remember: 'O trovão é consequência mecânica da expansão ultrarrápida do ar aquecido pelo relâmpago.',
-      shareText: 'Um relâmpago pode aquecer o ar do seu canal a cerca de 50 mil °F. O ar se expande violentamente em uma fração de segundo e essa onda de choque produz o trovão.',
-      sourceLabel: 'NOAA/National Weather Service · Lightning Science',
-      sourceUrl: 'https://www.weather.gov/safety/lightning-temperature'
-    }]
-  },
-  {
-    id: 'psicologia-hoje-20260825',
-    title: 'Psicologia',
-    subtitle: 'A mente tentando fazer duas tarefas incompatíveis ao mesmo tempo',
-    emoji: '🧠',
-    accent: 'violet',
-    coverWords: ['ATENÇÃO', 'LEITURA', 'CONFLITO'],
-    description: 'Curiosidade de psicologia cognitiva inédita na janela móvel dos últimos sete dias.',
-    stories: [{
-      id: 'stroop-20260825',
-      title: 'Uma palavra pode atrapalhar você mesmo quando sua missão é ignorá-la',
-      hook: 'Se a palavra “VERDE” aparece escrita em vermelho, dizer a cor da tinta costuma ficar mais lento do que parece que deveria.',
-      explanation: [
-        'Esse conflito é conhecido como efeito Stroop. Ler é um processo altamente treinado e a informação da palavra compete com a resposta exigida pela tarefa de nomear a cor.',
-        'Estudos mostram que a interferência depende também de atenção e do objetivo da tarefa; não é simplesmente uma máquina automática impossível de modular.'
-      ],
-      connection: 'O experimento virou uma maneira clássica de estudar atenção, controle cognitivo e competição entre processos mentais.',
-      remember: 'Ser bom em uma habilidade pode torná-la tão rápida que ela interfere quando você precisa fazer outra coisa.',
-      shareText: 'No efeito Stroop, uma palavra de cor escrita em outra cor atrasa a resposta quando você tenta nomear apenas a tinta. O conflito ajuda a revelar como leitura, atenção e controle cognitivo competem.',
-      sourceLabel: 'PubMed Central · pesquisa sobre o efeito Stroop',
-      sourceUrl: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6600873/'
-    }]
-  },
-  {
-    id: 'tecnologia-hoje-20260825',
-    title: 'Tecnologia',
-    subtitle: 'Quando uma teoria de Einstein vira infraestrutura do seu celular',
-    emoji: '🛰️',
+    subtitle: 'Forças invisíveis que aparecem em uma gota d’água',
+    emoji: '💧',
     accent: 'blue',
-    coverWords: ['GPS', 'RELATIVIDADE', 'TEMPO'],
-    description: 'Curiosidade tecnológica inédita na janela móvel dos últimos sete dias.',
+    coverWords: ['ÁGUA', 'SUPERFÍCIE', 'COESÃO'],
+    description: 'Conceito novo em relação à janela editorial dos sete dias anteriores.',
     stories: [{
-      id: 'gps-relatividade-20260825',
-      title: 'O ponto azul do seu celular precisa de correções previstas pela relatividade',
-      hook: 'Relógios atômicos em satélites não marcam o tempo exatamente no mesmo ritmo que relógios na Terra.',
+      id: 'tensao-superficial-20260826',
+      title: 'Por que uma gota de água tenta ficar redonda?',
+      hook: 'Na superfície, as moléculas de água sentem uma atração resultante para dentro; a gota tende a reduzir sua área superficial.',
       explanation: [
-        'Velocidade e gravidade afetam o ritmo dos relógios. No GPS, os efeitos da relatividade especial e geral não se cancelam: juntos fazem os relógios dos satélites tenderem a correr cerca de 38 microssegundos por dia mais rápido que relógios equivalentes na Terra.',
-        'O sistema incorpora correções relativísticas para que o tempo transmitido pelos satélites continue útil para posicionamento preciso.'
+        'Moléculas no interior do líquido são atraídas em várias direções. Na superfície, essa distribuição é assimétrica e produz o efeito macroscópico conhecido como tensão superficial.',
+        'Para um mesmo volume, a esfera é a forma com menor área superficial. Por isso gotas pequenas, quando gravidade e contato com outras superfícies não dominam, tendem a formas arredondadas.'
       ],
-      connection: 'Uma diferença de microssegundos parece minúscula, mas localização por satélite depende de medir o tempo de propagação dos sinais com enorme precisão.',
-      remember: 'Relatividade não é só cosmologia: ela participa do funcionamento cotidiano do GPS.',
-      shareText: 'Relógios dos satélites GPS sofrem efeitos de velocidade e gravidade. Sem correções relativísticas, o sistema acumularia erro rapidamente e o posicionamento deixaria de ser preciso.',
-      sourceLabel: 'NIST · GPS e relatividade',
-      sourceUrl: 'https://www.nist.gov/atomic-clocks/a-powerful-tool-for-science/putting-einstein-test'
+      connection: 'O mesmo fenômeno ajuda a explicar insetos que se apoiam na superfície da água e gotas que permanecem sobre materiais hidrofóbicos.',
+      remember: 'A gota não tem uma “pele”: a forma vem das forças intermoleculares e da minimização da energia da superfície.',
+      shareText: 'Uma gota tende a ficar redonda porque a tensão superficial faz o líquido buscar a menor área possível para aquele volume.',
+      sourceLabel: 'USGS · Surface Tension and Water',
+      sourceUrl: 'https://www.usgs.gov/special-topics/water-science-school/science/surface-tension-and-water'
+    }]
+  },
+  {
+    id: 'psicologia-hoje-20260826',
+    title: 'Psicologia',
+    subtitle: 'Quando o cérebro mede linhas iguais como se fossem diferentes',
+    emoji: '👁️',
+    accent: 'violet',
+    coverWords: ['VISÃO', 'CONTEXTO', 'ILUSÃO'],
+    description: 'Conceito visual e cognitivo diferente do efeito Stroop usado em 25/08.',
+    stories: [{
+      id: 'muller-lyer-20260826',
+      title: 'Duas linhas podem ter o mesmo tamanho e ainda parecer diferentes',
+      hook: 'Na ilusão de Müller-Lyer, pequenas “setas” nas extremidades alteram a percepção do comprimento mesmo quando as linhas centrais são iguais.',
+      explanation: [
+        'A percepção visual não mede cada trecho como uma régua independente: o cérebro interpreta relações, contornos e contexto espacial.',
+        'A força da ilusão varia entre pessoas e condições, mas ela mostra de forma simples que perceber é interpretar, não apenas registrar pixels.'
+      ],
+      connection: 'Ilusões geométricas ajudam pesquisadores a estudar como contexto e pistas visuais influenciam julgamentos aparentemente básicos.',
+      remember: 'Ver duas linhas como diferentes não significa que seus olhos falharam; significa que o sistema visual está usando contexto para inferir tamanho.',
+      shareText: 'Na ilusão de Müller-Lyer, linhas do mesmo comprimento parecem diferentes por causa das formas nas extremidades.',
+      sourceLabel: 'Wikimedia Commons · Müller-Lyer illusion',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:M%C3%BCller-Lyer_illusion.svg'
+    }]
+  },
+  {
+    id: 'tecnologia-hoje-20260826',
+    title: 'Tecnologia',
+    subtitle: 'Como a internet consegue guiar luz dentro de um fio',
+    emoji: '🌐',
+    accent: 'cyan',
+    coverWords: ['FIBRA', 'LUZ', 'REFLEXÃO'],
+    description: 'Tema novo em relação a GPS/relatividade da edição anterior.',
+    stories: [{
+      id: 'fibra-optica-reflexao-20260826',
+      title: 'A fibra óptica consegue “prender” luz e fazê-la contornar curvas',
+      hook: 'O sinal viaja pelo núcleo da fibra e é mantido ali por reflexão interna total na interface com o revestimento.',
+      explanation: [
+        'O núcleo e o revestimento têm índices de refração diferentes. Acima de determinado ângulo, a luz que tenta sair do núcleo é refletida de volta para dentro.',
+        'Isso permite transportar pulsos de luz por grandes distâncias com baixa perda e alta largura de banda, embora curvas excessivas, conexões e impurezas ainda introduzam atenuação.'
+      ],
+      connection: 'É uma aplicação direta de óptica básica em uma infraestrutura que carrega enorme parte do tráfego de internet do mundo.',
+      remember: 'A luz não faz uma curva livremente: a geometria e os materiais da fibra mantêm o sinal confinado.',
+      shareText: 'Fibra óptica guia luz usando reflexão interna total entre o núcleo e o revestimento, permitindo transportar dados com alta capacidade.',
+      sourceLabel: 'RP Photonics · Total Internal Reflection',
+      sourceUrl: 'https://www.rp-photonics.com/total_internal_reflection.html'
     }]
   }
 ];
 
 export function applyCurrentCuriosityRotation(collections: CuriosityCollectionLike[]) {
-  // A edição de 25/08 usa três conceitos novos que não existiam no catálogo diário
-  // dos sete dias anteriores. Em novas datas, a automação editorial deve substituir
-  // este conjunto somente depois de comparar o histórico recente do repositório.
   collections.splice(0, collections.length, ...TODAY_STORIES);
 }
