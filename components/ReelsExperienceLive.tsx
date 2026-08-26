@@ -16,18 +16,22 @@ import ReelsExperienceV25 from './ReelsExperienceV25';
 
 const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
 
+function normalizeLabel(value:string) {
+  return value.replace(/HOJE/g,'').trim().toLocaleLowerCase('pt-BR');
+}
+
 function applySpecialMedia() {
   const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
   if (!root) return;
 
   root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
-    const category = article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]')?.textContent?.toLocaleLowerCase('pt-BR') ?? '';
+    const category = normalizeLabel(article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]')?.textContent ?? '');
     const img = article.querySelector<HTMLImageElement>('figure img');
     if (!img) return;
 
     let cover:string|undefined;
-    if (category.includes('papo de hoje')) cover = commons('Couple enjoys coffee together at home.jpg');
-    if (category.includes('desafio do casal')) cover = commons('Album Photos-(1).jpg');
+    if (category === 'papo de hoje') cover = commons('Couple enjoys coffee together at home.jpg');
+    if (category === 'desafio do casal') cover = commons('Album Photos-(1).jpg');
     if (!cover) return;
 
     if (img.getAttribute('src') !== cover) img.setAttribute('src', cover);
@@ -46,27 +50,22 @@ function applySpecialMedia() {
   });
 }
 
-/* The base component still contains some 25/08 OSINT objects. On 26/08 only
-   current-date journalistic cards are allowed to remain visible. This safety
-   layer prevents a stale card from being badged as HOJE while the next base
-   refactor is performed. */
+/* Safety gate for 26/08: base data still contains some 25/08 journalistic
+   objects. Only current-date journalistic categories are allowed to remain in
+   the live Reels experience. Discovery/family/automotive cards are untouched. */
 function pruneStaleJournalisticReels() {
   const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
   if (!root) return;
 
   const allowedJournalistic = new Set(['tempo e clima', 'games', 'security briefing']);
-  const journalisticLabels = [
+  const journalisticLabels = new Set([
     'brasil','mundo','política','politica','tempo e clima','zona leste em foco','corinthians hoje',
     'games','tecnologia','finanças','financas','security briefing','cyber security','appsec / ssdlc'
-  ];
+  ]);
 
   root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
-    const categoryEl = article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]');
-    const label = (categoryEl?.textContent ?? '').replace(/HOJE/g,'').trim().toLocaleLowerCase('pt-BR');
-    const isJournalistic = journalisticLabels.some((candidate) => label.includes(candidate));
-    if (isJournalistic && !Array.from(allowedJournalistic).some((allowed) => label.includes(allowed))) {
-      article.remove();
-    }
+    const label = normalizeLabel(article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]')?.textContent ?? '');
+    if (journalisticLabels.has(label) && !allowedJournalistic.has(label)) article.remove();
   });
 
   const articles = Array.from(root.querySelectorAll<HTMLElement>('article[data-reel-index]'));
