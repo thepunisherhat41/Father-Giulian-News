@@ -1,6 +1,5 @@
 import type { RichMediaEntry } from './rich-media';
-import { dailyRichMedia20260826_1128 } from './daily-rich-media-2026-08-26-1128';
-import { dailyRichMedia20260826 } from './daily-rich-media-2026-08-26';
+import { dailyRichMediaCurrent } from './daily-rich-media-current';
 import { dailyRichMedia20260825Evening } from './daily-rich-media-2026-08-25-evening';
 import { dailyRichMedia20260825 } from './daily-rich-media-2026-08-25';
 import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
@@ -39,12 +38,11 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
-  const latestToday = findIn(dailyRichMedia20260826_1128, label, canonicalLabel, normalizedTitle);
-  if (latestToday) return latestToday;
+  // HARD GATE: o catálogo visual da data corrente sempre tem precedência.
+  const current = findIn(dailyRichMediaCurrent, label, canonicalLabel, normalizedTitle);
+  if (current) return current;
 
-  const today = findIn(dailyRichMedia20260826, label, canonicalLabel, normalizedTitle);
-  if (today) return today;
-
+  // Zona Leste só pode renderizar com mídia da própria edição corrente.
   if (canonicalLabel === 'Zona Leste em Foco') return undefined;
 
   for (const catalog of olderCatalogs) {
