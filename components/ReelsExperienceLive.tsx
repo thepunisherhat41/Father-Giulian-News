@@ -16,9 +16,6 @@ import ReelsExperienceV25 from './ReelsExperienceV25';
 
 const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
 
-/* Only special reels need a client safety-net. Editorial/curiosity media now comes
-   from the date-specific rich-media catalog and must not be overwritten by a
-   category-wide legacy image. */
 function applySpecialMedia() {
   const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
   if (!root) return;
@@ -49,6 +46,45 @@ function applySpecialMedia() {
   });
 }
 
+/* The base component still contains some 25/08 OSINT objects. On 26/08 only
+   current-date journalistic cards are allowed to remain visible. This safety
+   layer prevents a stale card from being badged as HOJE while the next base
+   refactor is performed. */
+function pruneStaleJournalisticReels() {
+  const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
+  if (!root) return;
+
+  const allowedJournalistic = new Set(['tempo e clima', 'games', 'security briefing']);
+  const journalisticLabels = [
+    'brasil','mundo','política','politica','tempo e clima','zona leste em foco','corinthians hoje',
+    'games','tecnologia','finanças','financas','security briefing','cyber security','appsec / ssdlc'
+  ];
+
+  root.querySelectorAll<HTMLElement>('article[data-reel-index]').forEach((article) => {
+    const categoryEl = article.querySelector<HTMLElement>('[class*="ReelsExperience_category"]');
+    const label = (categoryEl?.textContent ?? '').replace(/HOJE/g,'').trim().toLocaleLowerCase('pt-BR');
+    const isJournalistic = journalisticLabels.some((candidate) => label.includes(candidate));
+    if (isJournalistic && !Array.from(allowedJournalistic).some((allowed) => label.includes(allowed))) {
+      article.remove();
+    }
+  });
+
+  const articles = Array.from(root.querySelectorAll<HTMLElement>('article[data-reel-index]'));
+  const total = articles.length;
+  articles.forEach((article,index) => {
+    article.dataset.reelIndex = String(index);
+    const counter = article.querySelector<HTMLElement>('[class*="ReelsExperience_counter"]');
+    if (counter) counter.textContent = `${index + 1} / ${total}`;
+    const progress = article.querySelector<HTMLElement>('[class*="ReelsExperience_progress"] i');
+    if (progress) progress.style.width = `${((index + 1) / total) * 100}%`;
+  });
+}
+
+function hardenLiveReels() {
+  applySpecialMedia();
+  pruneStaleJournalisticReels();
+}
+
 export default function ReelsExperienceLive() {
   applyCurrentCuriosityRotation(curiosityCollections);
   applyCurrentReelPatches(dailyContent);
@@ -61,8 +97,8 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches20260826(dailyContent);
 
   useLayoutEffect(() => {
-    applySpecialMedia();
-    const observer = new MutationObserver(applySpecialMedia);
+    hardenLiveReels();
+    const observer = new MutationObserver(hardenLiveReels);
     observer.observe(document.body, { childList: true, subtree: true });
     return () => observer.disconnect();
   }, []);
