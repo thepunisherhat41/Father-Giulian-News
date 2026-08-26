@@ -7,33 +7,33 @@ export type EditorialFreshnessEntry = {
   note: string;
 };
 
-// HARD GATE: regenerado para a edição das 05h20 de 26/08 em America/Sao_Paulo.
+// HARD GATE: revisão editorial completa das 10h de 26/08 em America/Sao_Paulo.
 // Exatamente 21 áreas; Náutica permanece removida.
 export const editorialFreshnessDate = '2026-08-26';
-export const editorialFreshnessValidatedAt = '26/08/2026 · 05h20';
+export const editorialFreshnessValidatedAt = '26/08/2026 · 10h05';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A varredura das 05h20 não encontrou fato nacional de 26/08 suficientemente material e confirmado para justificar Reel novo; a área fica omitida em vez de reciclar 25/08.' },
-  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nenhuma pauta de 26/08 na Zona Leste passou simultaneamente pelos gates de data, confirmação e mídia específica. Conteúdo anterior não é reapresentado como notícia de hoje.' },
-  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Agenda de 26/08 confirmada: Renan Santos está anunciado para entrevista presidencial da Globo às 21h05. O calendário oficial do TSE também traz hoje o prazo operacional para credenciamento de entrega de mapas e mídias do horário eleitoral. Agenda não é tratada como evento já realizado.' },
-  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Iran e Omã retomaram conversas sobre um corredor temporário de navegação no Estreito de Hormuz; o tráfego segue muito abaixo do normal e não se trata de reabertura confirmada.' },
-  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de descoberta permanece válido fora do filtro jornalístico; nenhuma novidade foi inventada para forçar Reel.' },
-  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de descoberta segue correto e útil; sem rotação artificial de notícia.' },
-  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE indica para 26/08 sol entre nuvens, mínima perto de 14°C, máxima de até 24°C e possibilidade de chuva isolada/chuvisco entre fim da tarde e noite.' },
-  { slug:'curiosidades', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Rotação de 26/08 usa tensão superficial, ilusão de Müller-Lyer e reflexão interna total em fibra óptica, sem repetir os conceitos de 25/08 e com mídia real específica.' },
-  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo cultural diário permanece no feed e não é apresentado como breaking news.' },
-  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A gamescom abre oficialmente em 26/08; o dia é de imprensa e visitantes profissionais, com horários oficiais da Koelnmesse usados como referência.' },
-  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Módulo diário permanece válido e separado de diagnóstico; PregnancyMaternalChanges, BabyDiscoveryLab, PregnancyVomitingCare e puerpério permanecem preservados.' },
-  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática diária de apoio segue adequada e não depende de fato jornalístico.' },
-  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Permanece limitado a usados até R$70 mil, com foco em FIPE/preço, manutenção, confiabilidade, inspeção e custo-benefício.' },
-  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico de compra e manutenção segue válido e permanece no fim do feed.' },
-  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen segue útil e com mídia específica.' },
-  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo diário de destino permanece; dados dinâmicos só entram quando confirmados.' },
-  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Na manhã de 26/08, Brent caiu para a faixa de US$86 e o Treasury de 10 anos recuou para perto de 4,63%, refletindo esperança cautelosa sobre Hormuz antes de novos dados de inflação dos EUA.' },
-  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Nvidia divulga resultados nesta quarta; o mercado acompanha a transição Blackwell→Rubin e a sustentabilidade do ciclo de financiamento de infraestrutura de IA. Tratar expectativas como projeções, não como resultado já divulgado.' },
-  { slug:'security-briefing', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CISA publicou em 26/08 “A Tale of Two SOCs”, com aprendizados de duas avaliações de red team sobre visibilidade, detecção, investigação e resposta.' },
-  { slug:'seguranca', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'O incidente Zimbra continua relevante, porém a publicação-base é de 25/08; sem fato novo de 26/08 nesta janela, o Reel Cyber anterior não é reciclado.' },
-  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nenhuma mudança primária AppSec/SSDLC de 26/08 forte o suficiente foi encontrada nesta janela; Reel jornalístico omitido.' },
+  { slug:'brasil', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou hoje análise nova sobre o desafio fiscal que qualquer governo eleito enfrentará: dívida bruta em 81,9% do PIB, déficit nominal próximo de 10% do PIB e necessidade de medidas politicamente difíceis para estabilizar a trajetória. A matéria é tratada como análise econômica, não como previsão eleitoral.' },
+  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nova varredura às 10h não encontrou pauta de 26/08 na Zona Leste que passasse simultaneamente por atualidade, confirmação e mídia específica. Reel omitido; nada de ontem é reciclado como hoje.' },
+  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar de 26/08 mantém a entrevista de Renan Santos anunciada para 21h05 e o marco operacional do calendário TSE; acrescenta a discussão publicada hoje sobre a proposta de selo para institutos de pesquisa, deixando claro que a medida ainda está em avaliação e não é regra vigente.' },
+  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Irã e Omã avançaram em conversas sobre um corredor temporário em Hormuz, mas dados de tráfego seguem muito abaixo da média; negociação não é reabertura.' },
+  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e mantido; não foi inventada novidade para forçar Reel jornalístico.' },
+  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico/animal continua correto e útil; sem rotação artificial.' },
+  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE mantém para 26/08 sol entre nuvens, máxima perto de 24°C e possibilidade de chuva isolada/chuvisco entre fim da tarde e noite.' },
+  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A rotação de 26/08 permanece válida: tensão superficial, Müller-Lyer e reflexão interna total em fibra óptica, sem repetir os conceitos de 25/08.' },
+  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo musical cultural segue válido no feed e não é apresentado como breaking news.' },
+  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A gamescom está oficialmente aberta em 26/08; primeiro dia é voltado a profissionais e imprensa conforme horários oficiais da organização.' },
+  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Módulos médicos e de desenvolvimento permanecem preservados e válidos; conteúdo não é tratado como diagnóstico.' },
+  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática diária de apoio e conteúdo de paternidade permanecem adequados e não dependem de notícia.' },
+  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Permanece limitado a usados até R$70 mil, com FIPE/preço, manutenção, confiabilidade, inspeção e custo-benefício.' },
+  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico de compra/manutenção continua válido e permanece no fim do feed.' },
+  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen segue útil e precisa manter mídia específica.' },
+  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino permanece válido; programação/preço só mudam quando houver confirmação atual.' },
+  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Snapshot intradiário de 26/08 mantém petróleo e yields longos em queda com cautela sobre Hormuz; valores são apresentados como fotografia da manhã, não fechamento.' },
+  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Nvidia divulga resultados hoje; até a divulgação, consenso de receita/margens e leitura sobre Blackwell→Rubin são expectativas, não números reportados.' },
+  { slug:'security-briefing', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CISA publicou hoje A Tale of Two SOCs, com lições de duas avaliações de red team sobre telemetria, detecção, investigação e resposta.' },
+  { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Relato profissional de 26/08 aponta exploração ativa da CVE-2026-60004 no Gitea. Cyber trata detecção/exposição e risco operacional da plataforma self-hosted.' },
+  { slug:'appsec-ssdlc', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A CVE-2026-60004 no Gitea entra pelo ângulo AppSec/SSDLC: usuário com write access pode alcançar execução de comandos no contexto do serviço, tornando identidade, permissões, runners, secrets e blast radius parte do gate de priorização.' },
 ];
 
 export function freshnessForSlug(slug: string) {
