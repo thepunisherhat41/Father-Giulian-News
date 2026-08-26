@@ -34,17 +34,17 @@ export const dailyRichMedia20260826: RichMediaEntry[] = [
   {
     label:'Games',
     matches:['gamescom abre hoje','dia de imprensa e profissionais','trade visitor'],
-    tag:'MÍDIA REAL · GAME​​SCOM', title:'gamescom em Colônia',
-    caption:'Fotografia da feira gamescom fornecida no contexto oficial de turismo de Colônia.',
-    images:[{url:'https://www.cologne-tourism.com/fileadmin/Mediendatenbank/Veranstaltungen/gamescom/gamescom_01.jpg',alt:'Público em área de exposição da gamescom em Colônia',caption:'Ambiente da gamescom em Colônia.',credit:'Koelnmesse / gamescom',sourceUrl:'https://www.cologne-tourism.com/experiences-lifestyle/events/detail/gamescom',kind:'PHOTO'}],
-    relatedLabel:'gamescom · horários oficiais',relatedHref:'https://www.gamescom.global/en/info/opening-times'
+    tag:'MÍDIA OFICIAL · GAME​​SCOM', title:'gamescom 2026 · Opening Night Live',
+    caption:'Thumbnail oficial já validada da transmissão gamescom 2026; usada como mídia segura do evento enquanto o radar acompanha a abertura da feira.',
+    images:[{url:'https://i.ytimg.com/vi/qwC9EFT6EFk/maxresdefault.jpg',alt:'Thumbnail oficial da gamescom Opening Night Live 2026',caption:'gamescom 2026.',credit:'gamescom / YouTube',sourceUrl:'https://www.youtube.com/watch?v=qwC9EFT6EFk',kind:'REFERENCE'}],
+    youtubeId:'qwC9EFT6EFk',relatedLabel:'gamescom · horários oficiais',relatedHref:'https://www.gamescom.global/en/info/opening-times'
   },
   {
     label:'Security Briefing',
     matches:['cisa publica lições de dois red teams','cisa publica licoes de dois red teams','two socs','red teams'],
-    tag:'FONTE PRIMÁRIA · CISA', title:'CISA · red team e SOC',
-    caption:'Imagem institucional de segurança cibernética usada apenas como contexto para o advisory da CISA.',
-    images:[{url:commons('Computer security lock.jpg'),alt:'Cadeado físico junto a equipamento de computação como símbolo de segurança',caption:'Contexto visual para operações de segurança.',credit:'Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Computer_security_lock.jpg',kind:'PHOTO'}],
+    tag:'FONTE PRIMÁRIA · CISA', title:'Security Operations Center em operação',
+    caption:'Fotografia real de monitores em um Security Operations Center, semanticamente ligada às lições de detecção e resposta do advisory da CISA.',
+    images:[{url:commons('SOC Security Monitors.jpg'),alt:'Monitores em um Security Operations Center',caption:'Security Operations Center em operação.',credit:'UMD-Eskin / Wikimedia Commons · domínio público',sourceUrl:'https://commons.wikimedia.org/wiki/File:SOC_Security_Monitors.jpg',kind:'PHOTO'}],
     relatedLabel:'CISA · A Tale of Two SOCs',relatedHref:'https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-237a'
   }
 ];
