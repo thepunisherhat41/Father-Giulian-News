@@ -10,9 +10,10 @@ import { applyCurrentReelPatches17h } from '@/lib/current-reel-patches-17h';
 import { applyCurrentReelPatches1730 } from '@/lib/current-reel-patches-1730';
 import { applyCurrentReelPatches1835 } from '@/lib/current-reel-patches-1835';
 import { applyCurrentReelPatches20h } from '@/lib/current-reel-patches-20h';
+import { applyCurrentReelPatches23h } from '@/lib/current-reel-patches-23h';
 import ReelsExperienceV25 from './ReelsExperienceV25';
 
-const MEDIA_REV = '20260825-2025';
+const MEDIA_REV = '20260825-2333';
 const GAMES_VIDEO_ID = 'qwC9EFT6EFk';
 const GAMES_THUMB = `https://i.ytimg.com/vi/${GAMES_VIDEO_ID}/maxresdefault.jpg`;
 const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
@@ -119,6 +120,7 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches1730(dailyContent);
   applyCurrentReelPatches1835(dailyContent);
   applyCurrentReelPatches20h(dailyContent);
+  applyCurrentReelPatches23h(dailyContent);
 
   useLayoutEffect(() => {
     applyLiveMedia();
