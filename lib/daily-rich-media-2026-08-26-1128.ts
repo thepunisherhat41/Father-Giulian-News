@@ -1,5 +1,7 @@
 import type { RichMediaEntry } from './rich-media';
 
+const commons = (name:string) => `https://commons.wikimedia.org/wiki/Special:Redirect/file/${encodeURIComponent(name).replace(/%2F/g,'/')}`;
+
 export const dailyRichMedia20260826_1128: RichMediaEntry[] = [
   {
     label:'Security Briefing',
@@ -35,5 +37,22 @@ export const dailyRichMedia20260826_1128: RichMediaEntry[] = [
     youtubeId:'Zzvzt3IjNik',
     relatedLabel:'gamescom Opening Night Live 2026',
     relatedHref:'https://www.youtube.com/watch?v=Zzvzt3IjNik'
+  },
+  {
+    label:'Finanças',
+    matches:['inflação dos eua surpreende para cima','inflacao dos eua surpreende para cima','wall street abre em queda','nvidia'],
+    tag:'MÍDIA REAL · MERCADO / JUROS',
+    title:'U.S. Treasury Building',
+    caption:'Fotografia real do Departamento do Tesouro dos EUA, ligada ao impacto do dado de inflação sobre juros e ativos.',
+    images:[{
+      url:commons('US Treasury Building.jpg'),
+      alt:'Edifício do Departamento do Tesouro dos Estados Unidos em Washington',
+      caption:'U.S. Treasury Building, Washington, D.C.',
+      credit:'Loren / Wikimedia Commons · domínio público',
+      sourceUrl:'https://commons.wikimedia.org/wiki/File:US_Treasury_Building.jpg',
+      kind:'PHOTO'
+    }],
+    relatedLabel:'Reuters · Wall Street e inflação · 26/08',
+    relatedHref:'https://www.reuters.com/business/us-stock-futures-subdued-run-up-nvidia-results-inflation-print-2026-08-26/'
   }
 ];
