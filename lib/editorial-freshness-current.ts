@@ -7,15 +7,15 @@ export type EditorialFreshnessEntry = {
   note: string;
 };
 
-// HARD GATE: regenerado para a edição das 05h de 26/08 em America/Sao_Paulo.
+// HARD GATE: regenerado para a edição das 05h20 de 26/08 em America/Sao_Paulo.
 // Exatamente 21 áreas; Náutica permanece removida.
 export const editorialFreshnessDate = '2026-08-26';
-export const editorialFreshnessValidatedAt = '26/08/2026 · 05h00';
+export const editorialFreshnessValidatedAt = '26/08/2026 · 05h20';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A varredura das 05h não encontrou fato nacional de 26/08 suficientemente material e confirmado para justificar Reel novo; a área fica omitida em vez de reciclar 25/08.' },
+  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A varredura das 05h20 não encontrou fato nacional de 26/08 suficientemente material e confirmado para justificar Reel novo; a área fica omitida em vez de reciclar 25/08.' },
   { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nenhuma pauta de 26/08 na Zona Leste passou simultaneamente pelos gates de data, confirmação e mídia específica. Conteúdo anterior não é reapresentado como notícia de hoje.' },
-  { slug:'politica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'O plano de mídia presidencial aprovado pelo TSE em 25/08 continua relevante, mas não é fato novo de 26/08. Sem nova pesquisa/debate/sabatina confirmada nesta janela, Reel jornalístico omitido.' },
+  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Agenda de 26/08 confirmada: Renan Santos está anunciado para entrevista presidencial da Globo às 21h05. O calendário oficial do TSE também traz hoje o prazo operacional para credenciamento de entrega de mapas e mídias do horário eleitoral. Agenda não é tratada como evento já realizado.' },
   { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Iran e Omã retomaram conversas sobre um corredor temporário de navegação no Estreito de Hormuz; o tráfego segue muito abaixo do normal e não se trata de reabertura confirmada.' },
   { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de descoberta permanece válido fora do filtro jornalístico; nenhuma novidade foi inventada para forçar Reel.' },
   { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de descoberta segue correto e útil; sem rotação artificial de notícia.' },
