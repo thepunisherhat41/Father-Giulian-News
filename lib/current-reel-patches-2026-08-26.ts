@@ -25,6 +25,39 @@ export function applyCurrentReelPatches20260826(dailyContent: Record<string, any
     sources: [{ label: 'Reuters · Iran-Oman talks / Hormuz · 26/08/2026', url: 'https://www.reuters.com/world/asia-pacific/us-oil-prices-extend-losses-hopes-iran-oman-talks-strait-hormuz-2026-08-25/' }]
   });
 
+  Object.assign(dailyContent.politica, {
+    title: 'Política hoje: Renan Santos tem entrevista às 21h05; TSE fecha marco do horário eleitoral',
+    summary: 'Nesta quarta-feira (26), Renan Santos (Missão) está agendado para a série de entrevistas presidenciais da Globo às 21h05, depois do Jornal Nacional, com transmissão também na GloboNews e no g1. No calendário oficial, hoje também é o último dia para partidos, federações e coligações indicarem às emissoras as pessoas autorizadas a entregar mapas e mídias do horário eleitoral. Agenda anunciada não é entrevista realizada.',
+    shareSummary: 'Política 26/08: Renan Santos está agendado para entrevista na Globo às 21h05. O TSE também marca hoje o prazo operacional para credenciamento de entrega de mapas e mídias do horário eleitoral. A participação será atualizada depois da realização efetiva.',
+    badge: 'POLÍTICA · RADAR 26/08',
+    readTime: '5 MIN',
+    sections: [
+      { title: 'Agenda presidencial de hoje', bullets: [
+        'Renan Santos (Missão) está anunciado para entrevista na Globo às 21h05, depois do Jornal Nacional.',
+        'A transmissão também está prevista na GloboNews e no g1; depois, o conteúdo deve ficar disponível no g1 e no Globoplay.',
+        'A agenda da série segue com Lula em 27/08, Flávio Bolsonaro em 28/08 e Augusto Cury em 29/08.'
+      ]},
+      { title: 'Marco oficial do TSE em 26/08', bullets: [
+        'Hoje é o último dia para partidos, federações e coligações indicarem às emissoras as pessoas autorizadas a entregar mapas e mídias do horário eleitoral gratuito.',
+        'Também termina hoje o prazo para as emissoras responsáveis pela geração fornecerem à Justiça Eleitoral e às legendas seus contatos e responsáveis pelo recebimento dessas mídias.',
+        'O marco é operacional e não altera, sozinho, intenção de voto ou registro de candidatura.'
+      ]},
+      { title: 'Pesquisas', paragraphs: [
+        'Até esta revisão das 05h20, nenhuma nova pesquisa presidencial nacional divulgada em 26/08 foi incorporada. Levantamentos anteriores permanecem contexto histórico e não são apresentados como pesquisa de hoje.'
+      ]},
+      { title: 'O que acompanhar', bullets: [
+        'Realização efetiva da entrevista de Renan Santos e eventuais mudanças de horário.',
+        'Declarações verificáveis da sabatina, separadas de propostas e opinião do candidato.',
+        'Novas pesquisas registradas/divulgadas hoje.',
+        'Mudanças em debates, sabatinas ou presença dos candidatos.'
+      ]}
+    ],
+    sources: [
+      { label: 'GZH · Renan Santos na Globo · agenda de 26/08/2026', url: 'https://gauchazh.clicrbs.com.br/politica/eleicoes/noticia/2026/08/renan-santos-da-entrevista-a-globo-na-quarta-feira-veja-como-acompanhar-cmt940kig00s00179sj7e3olv.html' },
+      { label: 'TSE · Calendário Eleitoral 2026 · 26/08', url: 'https://www.tse.jus.br/eleicoes/calendario-eleitoral' }
+    ]
+  });
+
   Object.assign(dailyContent.tempo, {
     title: 'Quarta em SP: máxima pode chegar a 24°C; chuva isolada volta no fim do dia',
     summary: 'A previsão do CGE para esta quarta-feira (26) indica sol entre nuvens, mínima em torno de 14°C, máxima de até 24°C e umidade acima de 50%. Entre o fim da tarde e a noite, áreas de instabilidade podem provocar chuvas isoladas e chuviscos na Grande São Paulo.',
