@@ -50,14 +50,22 @@ function applySpecialMedia() {
   });
 }
 
-/* Safety gate for 26/08: base data still contains some 25/08 journalistic
-   objects. Only current-date journalistic categories are allowed to remain in
-   the live Reels experience. Discovery/family/automotive cards are untouched. */
+/* Safety gate for 26/08: only journalistic categories with a material fact
+   validated for the current date may remain in the live Reels experience.
+   Discovery/family/automotive cards are untouched. */
 function pruneStaleJournalisticReels() {
   const root = document.querySelector('[aria-label="Father Giulian News em modo Reels"]');
   if (!root) return;
 
-  const allowedJournalistic = new Set(['tempo e clima', 'games', 'security briefing']);
+  const allowedJournalistic = new Set([
+    'mundo',
+    'tempo e clima',
+    'games',
+    'tecnologia',
+    'finanças',
+    'financas',
+    'security briefing'
+  ]);
   const journalisticLabels = new Set([
     'brasil','mundo','política','politica','tempo e clima','zona leste em foco','corinthians hoje',
     'games','tecnologia','finanças','financas','security briefing','cyber security','appsec / ssdlc'
