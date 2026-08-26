@@ -1,4 +1,5 @@
 import type { RichMediaEntry } from './rich-media';
+import { dailyRichMedia20260826_1128 } from './daily-rich-media-2026-08-26-1128';
 import { dailyRichMedia20260826 } from './daily-rich-media-2026-08-26';
 import { dailyRichMedia20260825Evening } from './daily-rich-media-2026-08-25-evening';
 import { dailyRichMedia20260825 } from './daily-rich-media-2026-08-25';
@@ -38,14 +39,14 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
-  // 26/08 is the active editorial catalog and always wins for matching stories.
+  const latestToday = findIn(dailyRichMedia20260826_1128, label, canonicalLabel, normalizedTitle);
+  if (latestToday) return latestToday;
+
   const today = findIn(dailyRichMedia20260826, label, canonicalLabel, normalizedTitle);
   if (today) return today;
 
-  // Zona Leste must never inherit media from a previous day.
   if (canonicalLabel === 'Zona Leste em Foco') return undefined;
 
-  // Historical catalogs are allowed only on exact title/concept matches.
   for (const catalog of olderCatalogs) {
     const exact = findIn(catalog, label, canonicalLabel, normalizedTitle);
     if (exact) return exact;
