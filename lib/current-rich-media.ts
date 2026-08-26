@@ -1,4 +1,5 @@
 import type { RichMediaEntry } from './rich-media';
+import { dailyRichMedia20260826 } from './daily-rich-media-2026-08-26';
 import { dailyRichMedia20260825Evening } from './daily-rich-media-2026-08-25-evening';
 import { dailyRichMedia20260825 } from './daily-rich-media-2026-08-25';
 import { dailyRichMedia20260821_17h } from './daily-rich-media-2026-08-21-17h';
@@ -15,6 +16,8 @@ const labelAliases: Record<string, string> = {
 };
 
 const olderCatalogs = [
+  dailyRichMedia20260825Evening,
+  dailyRichMedia20260825,
   dailyRichMedia20260821_17h,
   dailyRichMedia20260821_10h,
   dailyRichMedia20260821,
@@ -35,22 +38,18 @@ export function findCurrentRichMedia(label: string, storyTitle: string): RichMed
   const canonicalLabel = labelAliases[label] ?? label;
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
-  // Evening/current corrections take precedence over the morning catalog.
-  const evening = findIn(dailyRichMedia20260825Evening, label, canonicalLabel, normalizedTitle);
-  if (evening) return evening;
+  // 26/08 is the active editorial catalog and always wins for matching stories.
+  const today = findIn(dailyRichMedia20260826, label, canonicalLabel, normalizedTitle);
+  if (today) return today;
 
-  // The current edition always wins over historical media.
-  const current = findIn(dailyRichMedia20260825, label, canonicalLabel, normalizedTitle);
-  if (current) return current;
-
-  // Local news is especially sensitive to a wrong person/place being shown.
+  // Zona Leste must never inherit media from a previous day.
   if (canonicalLabel === 'Zona Leste em Foco') return undefined;
 
+  // Historical catalogs are allowed only on exact title/concept matches.
   for (const catalog of olderCatalogs) {
     const exact = findIn(catalog, label, canonicalLabel, normalizedTitle);
     if (exact) return exact;
   }
 
-  // Never fall back to a merely category-compatible old photo.
   return undefined;
 }
