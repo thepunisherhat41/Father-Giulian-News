@@ -11,11 +11,10 @@ import { applyCurrentReelPatches1835 } from '@/lib/current-reel-patches-1835';
 import { applyCurrentReelPatches20h } from '@/lib/current-reel-patches-20h';
 import { applyCurrentReelPatches23h } from '@/lib/current-reel-patches-23h';
 import { applyCurrentReelPatches20260826 } from '@/lib/current-reel-patches-2026-08-26';
+import { applyCurrentReelPatches20260826_1128 } from '@/lib/current-reel-patches-2026-08-26-1128';
 import ReelsExperienceV26 from './ReelsExperienceV26';
 
 export default function ReelsExperienceLive() {
-  // Legacy content layers are still evaluated by the broader magazine shell.
-  // Apply them first, then pin the current-date editorial patch last.
   applyCurrentCuriosityRotation(curiosityCollections);
   applyCurrentReelPatches(dailyContent);
   applyCurrentReelPatches1432(dailyContent);
@@ -25,8 +24,7 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches20h(dailyContent);
   applyCurrentReelPatches23h(dailyContent);
   applyCurrentReelPatches20260826(dailyContent);
+  applyCurrentReelPatches20260826_1128(dailyContent);
 
-  // V26 gates journalistic Reels from editorialFreshness directly at render time.
-  // Stale Politics/Zona Leste/Corinthians cards are not emitted into SSR at all.
   return <ReelsExperienceV26 />;
 }
