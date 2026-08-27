@@ -4,6 +4,11 @@ const failures = [];
 const text = (file) => existsSync(file) ? readFileSync(file, 'utf8') : '';
 const requireFile = (file) => { if (!existsSync(file)) failures.push(`Arquivo obrigatório ausente: ${file}`); };
 
+const parts = new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+const byType = Object.fromEntries(parts.map((part) => [part.type,part.value]));
+const today = `${byType.year}-${byType.month}-${byType.day}`;
+const currentMediaFile = `lib/daily-rich-media-${today}.ts`;
+
 [
   'app/layout.tsx',
   'components/ReelsExperienceLive.tsx',
@@ -11,6 +16,8 @@ const requireFile = (file) => { if (!existsSync(file)) failures.push(`Arquivo ob
   'components/ReelsExperience.module.css',
   'lib/editorial-freshness-current.ts',
   'lib/current-rich-media.ts',
+  'lib/daily-rich-media-current.ts',
+  currentMediaFile,
   'lib/current-reel-patches-2026-08-27-0944.ts',
   'app/mobile-v10.css',
   'vercel.json'
@@ -42,11 +49,12 @@ if (!reels.includes("CURRENT.date")) failures.push('ReelsExperienceV26: conteúd
 if (!reels.includes('freshnessForSlug')) failures.push('ReelsExperienceV26: Reels jornalísticos precisam respeitar o gate de atualidade.');
 if (!reels.includes("state!=='ATUALIZADO'")) failures.push('ReelsExperienceV26: jornalismo sem ATUALIZADO deve ser omitido.');
 if (!reels.includes('if(!reel?.image)return undefined')) failures.push('ReelsExperienceV26: Reel jornalístico sem mídia validada deve ser omitido.');
+if (!reels.includes("conversation:'https://commons.wikimedia.org/") || !reels.includes("challenge:'https://commons.wikimedia.org/")) failures.push('ReelsExperienceV26: Papo e Desafio precisam usar fotografias reais limpas do Commons.');
+for (const forbidden of ['/reel-ai/sprite','sprite.jpg','sprite-news.jpg','clean-covers.jpg','data:image/gif','transparent.gif']) {
+  if (reels.includes(forbidden)) failures.push(`ReelsExperienceV26: mídia/fallback proibido encontrado: ${forbidden}.`);
+}
 
 const freshness = text('lib/editorial-freshness-current.ts');
-const parts = new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
-const byType = Object.fromEntries(parts.map((part) => [part.type,part.value]));
-const today = `${byType.year}-${byType.month}-${byType.day}`;
 const declared = freshness.match(/editorialFreshnessDate\s*=\s*['"]([^'"]+)['"]/)?.[1];
 if (declared !== today) failures.push(`Auditoria editorial diária desatualizada: esperado ${today}, encontrado ${declared ?? 'sem data'}.`);
 const requiredSlugs = ['brasil','seguranca-zl','politica','mundo','planeta','animais','tempo','curiosidades','musica','games','gravidez','pai','carros','motos','mecanica','viagens','financas','tecnologia','security-briefing','seguranca','appsec-ssdlc'];
@@ -54,7 +62,26 @@ for (const slug of requiredSlugs) if (!new RegExp(`slug\\s*:\\s*['"]${slug}['"]`
 const entryCount = (freshness.match(/\{\s*slug\s*:\s*['"]/g) ?? []).length;
 if (entryCount !== 21) failures.push(`Auditoria editorial diária deve conter exatamente 21 áreas; encontrado ${entryCount}.`);
 if (/slug\s*:\s*['"]nautica['"]/.test(freshness)) failures.push('Auditoria editorial diária contém Náutica, área removida.');
-if (!/slug:'security-briefing', state:'VALIDADO'/.test(freshness)) failures.push('Security Briefing não verificável deve permanecer fora do feed jornalístico nesta revisão.');
+if (!/slug:'security-briefing', state:'VALIDADO'/.test(freshness)) failures.push('Security Briefing sem sinal primário novo deve permanecer fora do feed jornalístico nesta revisão.');
+
+const currentMedia = text(currentMediaFile);
+const dailyMediaPointer = text('lib/daily-rich-media-current.ts');
+const currentRichMedia = text('lib/current-rich-media.ts');
+const expectedMediaImport = `./daily-rich-media-${today}`;
+if (!dailyMediaPointer.includes(expectedMediaImport)) failures.push(`Mídia corrente: daily-rich-media-current.ts precisa incluir ${expectedMediaImport}.`);
+if (!currentRichMedia.includes('dailyRichMediaCurrent')) failures.push('Mídia corrente: current-rich-media.ts precisa consultar o catálogo diário atual.');
+const currentLookupPos = currentRichMedia.indexOf('const current = findIn(dailyRichMediaCurrent');
+const olderLoopPos = currentRichMedia.indexOf('for (const catalog of olderCatalogs)');
+if (currentLookupPos < 0 || olderLoopPos < 0 || currentLookupPos > olderLoopPos) failures.push('Mídia corrente: catálogo do dia precisa ser consultado antes de catálogos históricos.');
+for (const forbidden of ['/reel-ai/sprite','sprite.jpg','sprite-news.jpg','clean-covers.jpg','data:image/gif','transparent.gif','Father Giulian News screenshot']) {
+  if (currentMedia.includes(forbidden)) failures.push(`Catálogo de mídia do dia contém asset proibido: ${forbidden}.`);
+}
+const imageCount = (currentMedia.match(/images:\s*\[\s*\{/g) ?? []).length;
+const altCount = (currentMedia.match(/\balt\s*:/g) ?? []).length;
+const sourceCount = (currentMedia.match(/\bsourceUrl\s*:/g) ?? []).length;
+if (!imageCount) failures.push('Catálogo de mídia do dia não contém imagens validadas.');
+if (altCount < imageCount) failures.push(`Catálogo de mídia do dia: ${imageCount} imagens, mas apenas ${altCount} alt texts.`);
+if (sourceCount < imageCount) failures.push(`Catálogo de mídia do dia: ${imageCount} imagens, mas apenas ${sourceCount} sourceUrl.`);
 
 const appsecPatch = text('lib/current-reel-patches-2026-08-27-0944.ts');
 for (const token of ['ATUALIZAÇÃO · 27/08','descoberta original é anterior','Avada 7.16.1','Fusion Builder 3.16.1']) {
