@@ -11,72 +11,72 @@ type CuriosityCollectionLike = {
 
 const TODAY_STORIES: CuriosityCollectionLike[] = [
   {
-    id: 'ciencia-hoje-20260826',
+    id: 'ciencia-hoje-20260827',
     title: 'Ciência',
-    subtitle: 'Forças invisíveis que aparecem em uma gota d’água',
-    emoji: '💧',
+    subtitle: 'Uma propriedade incomum da água que muda lagos e oceanos',
+    emoji: '🧊',
     accent: 'blue',
-    coverWords: ['ÁGUA', 'SUPERFÍCIE', 'COESÃO'],
+    coverWords: ['GELO', 'DENSIDADE', 'ÁGUA'],
     description: 'Conceito novo em relação à janela editorial dos sete dias anteriores.',
     stories: [{
-      id: 'tensao-superficial-20260826',
-      title: 'Por que uma gota de água tenta ficar redonda?',
-      hook: 'Na superfície, as moléculas de água sentem uma atração resultante para dentro; a gota tende a reduzir sua área superficial.',
+      id: 'gelo-flutua-20260827',
+      title: 'Por que o gelo flutua se ele também é água?',
+      hook: 'Ao congelar, a água organiza suas moléculas numa estrutura mais aberta; o gelo fica menos denso do que a água líquida.',
       explanation: [
-        'Moléculas no interior do líquido são atraídas em várias direções. Na superfície, essa distribuição é assimétrica e produz o efeito macroscópico conhecido como tensão superficial.',
-        'Para um mesmo volume, a esfera é a forma com menor área superficial. Por isso gotas pequenas, quando gravidade e contato com outras superfícies não dominam, tendem a formas arredondadas.'
+        'As ligações de hidrogênio organizam as moléculas de água no gelo em uma rede cristalina que ocupa mais volume para a mesma massa.',
+        'Como densidade é massa dividida por volume, esse aumento de volume reduz a densidade do gelo e permite que ele flutue.'
       ],
-      connection: 'O mesmo fenômeno ajuda a explicar insetos que se apoiam na superfície da água e gotas que permanecem sobre materiais hidrofóbicos.',
-      remember: 'A gota não tem uma “pele”: a forma vem das forças intermoleculares e da minimização da energia da superfície.',
-      shareText: 'Uma gota tende a ficar redonda porque a tensão superficial faz o líquido buscar a menor área possível para aquele volume.',
-      sourceLabel: 'USGS · Surface Tension and Water',
-      sourceUrl: 'https://www.usgs.gov/special-topics/water-science-school/science/surface-tension-and-water'
+      connection: 'Se o gelo afundasse, lagos poderiam congelar de baixo para cima com muito mais facilidade; o gelo superficial ajuda a isolar a água abaixo.',
+      remember: 'A maioria dos sólidos é mais densa que seu líquido correspondente; a água é uma exceção importante.',
+      shareText: 'O gelo flutua porque a estrutura cristalina da água congelada ocupa mais espaço e fica menos densa que a água líquida.',
+      sourceLabel: 'USGS · Water Density',
+      sourceUrl: 'https://www.usgs.gov/special-topics/water-science-school/science/water-density'
     }]
   },
   {
-    id: 'psicologia-hoje-20260826',
+    id: 'psicologia-hoje-20260827',
     title: 'Psicologia',
-    subtitle: 'Quando o cérebro mede linhas iguais como se fossem diferentes',
-    emoji: '👁️',
+    subtitle: 'Quando dois tons idênticos parecem diferentes por causa do contexto',
+    emoji: '◻️',
     accent: 'violet',
-    coverWords: ['VISÃO', 'CONTEXTO', 'ILUSÃO'],
-    description: 'Conceito visual e cognitivo diferente do efeito Stroop usado em 25/08.',
+    coverWords: ['SOMBRA', 'CONTEXTO', 'PERCEPÇÃO'],
+    description: 'Conceito visual novo, diferente de Stroop e Müller-Lyer usados nas edições anteriores.',
     stories: [{
-      id: 'muller-lyer-20260826',
-      title: 'Duas linhas podem ter o mesmo tamanho e ainda parecer diferentes',
-      hook: 'Na ilusão de Müller-Lyer, pequenas “setas” nas extremidades alteram a percepção do comprimento mesmo quando as linhas centrais são iguais.',
+      id: 'checker-shadow-20260827',
+      title: 'Dois quadrados podem ter exatamente o mesmo tom e ainda parecer diferentes',
+      hook: 'Na ilusão checker-shadow, o cérebro compensa sombra e iluminação ao estimar a cor de uma superfície.',
       explanation: [
-        'A percepção visual não mede cada trecho como uma régua independente: o cérebro interpreta relações, contornos e contexto espacial.',
-        'A força da ilusão varia entre pessoas e condições, mas ela mostra de forma simples que perceber é interpretar, não apenas registrar pixels.'
+        'O sistema visual interpreta brilho de forma relativa: ele usa o contexto ao redor, as bordas e a iluminação provável da cena.',
+        'Por isso dois pixels ou áreas fisicamente iguais podem ser percebidos como tons diferentes quando estão em contextos diferentes.'
       ],
-      connection: 'Ilusões geométricas ajudam pesquisadores a estudar como contexto e pistas visuais influenciam julgamentos aparentemente básicos.',
-      remember: 'Ver duas linhas como diferentes não significa que seus olhos falharam; significa que o sistema visual está usando contexto para inferir tamanho.',
-      shareText: 'Na ilusão de Müller-Lyer, linhas do mesmo comprimento parecem diferentes por causa das formas nas extremidades.',
-      sourceLabel: 'Wikimedia Commons · Müller-Lyer illusion',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:M%C3%BCller-Lyer_illusion.svg'
+      connection: 'A mesma lógica ajuda a manter objetos reconhecíveis sob iluminação muito diferente ao longo do dia.',
+      remember: 'Percepção de brilho não é leitura direta do valor de cada pixel; o cérebro tenta inferir a superfície por trás da luz.',
+      shareText: 'Na ilusão checker-shadow, duas áreas com o mesmo tom parecem diferentes porque o cérebro corrige mentalmente sombra e contexto.',
+      sourceLabel: 'Wikimedia Commons · Checker shadow illusion',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Grey_square_optical_illusion_proof2.svg'
     }]
   },
   {
-    id: 'tecnologia-hoje-20260826',
+    id: 'tecnologia-hoje-20260827',
     title: 'Tecnologia',
-    subtitle: 'Como a internet consegue guiar luz dentro de um fio',
-    emoji: '🌐',
+    subtitle: 'Como um QR Code ainda funciona mesmo depois de perder pedaços',
+    emoji: '▦',
     accent: 'cyan',
-    coverWords: ['FIBRA', 'LUZ', 'REFLEXÃO'],
-    description: 'Tema novo em relação a GPS/relatividade da edição anterior.',
+    coverWords: ['QR', 'REDUNDÂNCIA', 'REED-SOLOMON'],
+    description: 'Tema novo em relação a GPS/relatividade e fibra óptica das edições anteriores.',
     stories: [{
-      id: 'fibra-optica-reflexao-20260826',
-      title: 'A fibra óptica consegue “prender” luz e fazê-la contornar curvas',
-      hook: 'O sinal viaja pelo núcleo da fibra e é mantido ali por reflexão interna total na interface com o revestimento.',
+      id: 'qr-error-correction-20260827',
+      title: 'Um QR Code pode continuar funcionando mesmo danificado',
+      hook: 'QR Codes usam redundância e códigos de correção de erros para reconstruir parte dos dados perdidos ou ilegíveis.',
       explanation: [
-        'O núcleo e o revestimento têm índices de refração diferentes. Acima de determinado ângulo, a luz que tenta sair do núcleo é refletida de volta para dentro.',
-        'Isso permite transportar pulsos de luz por grandes distâncias com baixa perda e alta largura de banda, embora curvas excessivas, conexões e impurezas ainda introduzam atenuação.'
+        'O padrão usa correção Reed-Solomon. Parte dos símbolos armazenados funciona como informação redundante capaz de recuperar erros dentro de certos limites.',
+        'Existem diferentes níveis de correção: aumentar a tolerância a danos reduz a capacidade disponível para dados.'
       ],
-      connection: 'É uma aplicação direta de óptica básica em uma infraestrutura que carrega enorme parte do tráfego de internet do mundo.',
-      remember: 'A luz não faz uma curva livremente: a geometria e os materiais da fibra mantêm o sinal confinado.',
-      shareText: 'Fibra óptica guia luz usando reflexão interna total entre o núcleo e o revestimento, permitindo transportar dados com alta capacidade.',
-      sourceLabel: 'RP Photonics · Total Internal Reflection',
-      sourceUrl: 'https://www.rp-photonics.com/total_internal_reflection.html'
+      connection: 'A mesma família de técnicas de correção de erros aparece em armazenamento, transmissão digital e outros sistemas onde bits podem se perder ou corromper.',
+      remember: 'O QR Code não “adivinha” o pedaço faltante: ele carrega redundância matemática planejada desde a geração.',
+      shareText: 'QR Codes sobrevivem a certos danos porque carregam códigos Reed-Solomon de correção de erros e dados redundantes.',
+      sourceLabel: 'Wikimedia Commons · QR Code Damaged',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:QR_Code_Damaged.jpg'
     }]
   }
 ];
