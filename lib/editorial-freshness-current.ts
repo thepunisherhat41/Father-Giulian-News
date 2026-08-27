@@ -7,33 +7,34 @@ export type EditorialFreshnessEntry = {
   note: string;
 };
 
-// HARD GATE: revisão editorial completa das 17h de 26/08 em America/Sao_Paulo.
-// Exatamente 21 áreas; Náutica permanece removida.
-export const editorialFreshnessDate = '2026-08-26';
-export const editorialFreshnessValidatedAt = '26/08/2026 · 17h02';
+// HARD GATE: edição de 27/08 em America/Sao_Paulo.
+// Áreas jornalísticas sem fato/materialidade do próprio dia ficam VALIDADO e não entram no Reel jornalístico.
+export const editorialFreshnessDate = '2026-08-27';
+export const editorialFreshnessValidatedAt = '27/08/2026 · revisão da manhã';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 26/08 análise nova sobre o desafio fiscal que qualquer governo eleito enfrentará: dívida bruta em 81,9% do PIB, déficit nominal próximo de 10% do PIB e necessidade de medidas politicamente difíceis para estabilizar a trajetória. A matéria é tratada como análise econômica, não como previsão eleitoral.' },
-  { slug:'seguranca-zl', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Prefeitura de São Paulo publicou hoje ação de vacinação contra sarampo no Shopping Metrô Itaquera para 27 e 28/08, das 10h às 20h. É serviço local novo da data corrente, com fonte oficial e mídia específica do local.' },
-  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Radar de 26/08 mantém entrevista anunciada para 21h05 e marcos operacionais do TSE; regras, agenda anunciada, pesquisa e presença confirmada permanecem separadas. Publicações do TSE de hoje foram rechecadas antes desta validação.' },
-  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Irã e Omã avançaram em conversas sobre gestão do Estreito de Hormuz, enquanto o tráfego de navios segue muito abaixo da média pré-conflito. Negociação não é tratada como reabertura efetiva.' },
-  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen reavaliado e mantido; não foi inventada novidade para forçar Reel jornalístico.' },
-  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico/animal continua correto e útil; sem rotação artificial.' },
-  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE atualizou às 15h46: Penha registrava 23°C, Parelheiros 21°C, média das máximas na capital em 23°C e havia possibilidade de chuviscos nas horas seguintes. A tendência é de queda de temperatura no fim do dia.' },
-  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A rotação de 26/08 permanece válida: tensão superficial, Müller-Lyer e reflexão interna total em fibra óptica, sem repetir os conceitos de 25/08.' },
-  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo musical cultural segue válido no feed e não é apresentado como breaking news.' },
-  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A gamescom está oficialmente aberta em 26/08; o Reel usa mídia oficial e só trata anúncio, trailer, data e plataforma como confirmados quando publicados pela organização ou pelo publisher/estúdio.' },
-  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Módulos médicos e de desenvolvimento permanecem preservados e válidos; conteúdo não é tratado como diagnóstico.' },
-  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Ação prática diária de apoio e conteúdo de paternidade permanecem adequados e não dependem de notícia.' },
-  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Permanece limitado a usados até R$70 mil, com FIPE/preço, manutenção, confiabilidade, inspeção e custo-benefício.' },
-  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico de compra/manutenção continua válido e permanece no fim do feed.' },
-  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen segue útil e mantém mídia específica.' },
-  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino permanece válido; programação/preço só mudam quando houver confirmação atual.' },
-  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Inflação dos EUA divulgada em 26/08 veio acima do esperado e alterou a leitura sobre juros; Wall Street operou cautelosa antes do balanço da Nvidia. Valores intradiários são identificados como fotografia do momento, não fechamento.' },
-  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Nvidia divulga resultados após o fechamento de 26/08; até a publicação oficial, consenso de receita/margens e leitura sobre Blackwell→Rubin são expectativas, não números reportados.' },
-  { slug:'security-briefing', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Ubiquiti publicou em 26/08 o Security Advisory Bulletin 067 com falhas críticas em UniFi Protect, UniFi OS e UniFi Talk. O briefing diferencia explorável de exploração confirmada e prioriza inventário, exposição, versão e patch.' },
-  { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Relato profissional de 26/08 aponta exploração ativa da CVE-2026-60004 no Gitea. Cyber trata detecção, exposição e risco operacional da plataforma self-hosted.' },
-  { slug:'appsec-ssdlc', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A CVE-2026-60004 no Gitea entra pelo ângulo AppSec/SSDLC: write access pode alcançar execução no contexto do serviço, tornando identidade, permissões, runners, secrets, reachability e blast radius parte da priorização.' },
+  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem atualização material de 27/08 suficientemente confirmada nesta janela; omitir em vez de reciclar 26/08.' },
+  { slug:'seguranca-zl', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A ação de vacinação em Itaquera ocorre hoje, mas a fonte oficial localizada foi publicada em 26/08. Pelo gate de fonte do próprio dia para Zona Leste, o Reel fica omitido até aparecer atualização datada de 27/08.' },
+  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Agenda presidencial de 27/08: Lula está previsto na série de entrevistas da Globo. Nenhuma pesquisa com divulgação em 27/08 foi incorporada nesta revisão; pesquisas anteriores permanecem contexto, não notícia do dia.' },
+  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 27/08 nova leitura de tráfego no Estreito de Hormuz: leve alta diária, ainda muito abaixo do normal, com negociação Irã-Omã em andamento.' },
+  { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo evergreen; não tratado como notícia.' },
+  { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo evergreen; não tratado como notícia.' },
+  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE publicou boletim de 27/08 às 00h18 com média de 18°C, nebulosidade e sem áreas de instabilidade sobre a capital.' },
+  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Rotação 27/08 substituída por gelo/densidade, checker-shadow e correção de erros em QR Code; conceitos diferentes dos sete dias anteriores revisados.' },
+  { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo cultural, não notícia.' },
+  { slug:'games', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem anúncio material de 27/08 suficientemente confirmado nesta janela; não reciclar apenas porque a gamescom está em andamento.' },
+  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de acompanhamento/educação permanece válido e não é notícia.' },
+  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de paternidade permanece válido e não é notícia.' },
+  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Permanece restrito a usados até R$70 mil.' },
+  { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen.' },
+  { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen.' },
+  { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino/planejamento, não breaking news.' },
+  { slug:'financas', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem fechamento ou atualização brasileira material de 27/08 consolidada nesta janela; omitir em vez de reutilizar 26/08.' },
+  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 27/08 informação reportada sobre acordo Nvidia-Hugging Face de US$12,9 bi. Sem confirmação imediata das empresas, o status editorial é reportado por fonte jornalística, não anúncio oficial.' },
+  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem briefing novo de 27/08 validado nesta janela; omitir.' },
+  { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'BleepingComputer publicou em 27/08 exploração ativa da CVE-2026-60004 no Gitea.' },
+  { slug:'appsec-ssdlc', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A exploração ativa do Gitea em 27/08 muda a priorização AppSec/SSDLC por impacto potencial em SCM, runners, tokens e secrets.' },
+  { slug:'corinthians', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nenhuma atualização de 27/08 suficientemente confirmada nas fontes revisadas nesta janela; omitir para não reciclar o quadro de 26/08.' },
 ];
 
 export function freshnessForSlug(slug: string) {
