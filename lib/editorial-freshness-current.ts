@@ -34,7 +34,6 @@ export const editorialFreshness: EditorialFreshnessEntry[] = [
   { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem briefing novo de 27/08 validado nesta janela; omitir.' },
   { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'BleepingComputer publicou em 27/08 exploração ativa da CVE-2026-60004 no Gitea.' },
   { slug:'appsec-ssdlc', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'A exploração ativa do Gitea em 27/08 muda a priorização AppSec/SSDLC por impacto potencial em SCM, runners, tokens e secrets.' },
-  { slug:'corinthians', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Nenhuma atualização de 27/08 suficientemente confirmada nas fontes revisadas nesta janela; omitir para não reciclar o quadro de 26/08.' },
 ];
 
 export function freshnessForSlug(slug: string) {
