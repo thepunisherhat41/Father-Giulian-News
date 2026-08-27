@@ -16,6 +16,7 @@ import { applyCurrentReelPatches20260826_17h } from '@/lib/current-reel-patches-
 import { applyCurrentReelPatches20260826_1735 } from '@/lib/current-reel-patches-2026-08-26-1735';
 import { applyCurrentReelPatches20260826_23h } from '@/lib/current-reel-patches-2026-08-26-23h';
 import { applyCurrentReelPatches20260827 } from '@/lib/current-reel-patches-2026-08-27';
+import { applyCurrentReelPatches20260827Family } from '@/lib/current-reel-patches-2026-08-27-family';
 import ReelsExperienceV26 from './ReelsExperienceV26';
 
 export default function ReelsExperienceLive() {
@@ -34,6 +35,7 @@ export default function ReelsExperienceLive() {
   applyCurrentReelPatches20260826_23h(dailyContent);
   // A edição corrente SEMPRE é aplicada por último para neutralizar conteúdo intradiário do dia anterior.
   applyCurrentReelPatches20260827(dailyContent);
+  applyCurrentReelPatches20260827Family(dailyContent);
 
   return <ReelsExperienceV26 />;
 }
