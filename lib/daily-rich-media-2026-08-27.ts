@@ -41,14 +41,23 @@ export const dailyRichMedia20260827: RichMediaEntry[] = [
   },
   {
     label:'Política',
-    matches:['radar eleitoral 27/08','entrevista de lula está na agenda','entrevista de lula esta na agenda'],
+    matches:['poderdata 27/08','lula 38% e flávio 35%','lula 38% e flavio 35%','sabatina de lula é às 21h05','sabatina de lula e as 21h05','radar eleitoral 27/08','entrevista de lula está na agenda','entrevista de lula esta na agenda'],
     tag:'MÍDIA ELEITORAL · TSE', title:'Urna eletrônica brasileira',
-    caption:'Imagem neutra da Justiça Eleitoral para um Reel que acompanha agenda, TSE e múltiplos candidatos.',
-    images:[{url:commons('Brazilian DRE voting machine for 2022 elections.jpg'),alt:'Urna eletrônica brasileira em fotografia institucional',caption:'Urna eletrônica brasileira.',credit:'Tribunal Superior Eleitoral / Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Brazilian_DRE_voting_machine_for_2022_elections.jpg',kind:'PHOTO'}]
+    caption:'Imagem neutra da Justiça Eleitoral para um Reel que combina pesquisa, agenda de sabatina e calendário eleitoral sem favorecer um candidato.',
+    images:[{url:commons('Brazilian DRE voting machine for 2022 elections.jpg'),alt:'Urna eletrônica brasileira em fotografia institucional',caption:'Urna eletrônica brasileira.',credit:'Tribunal Superior Eleitoral / Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Brazilian_DRE_voting_machine_for_2022_elections.jpg',kind:'PHOTO'}],
+    relatedLabel:'TSE · Eleições 2026',relatedHref:'https://www.tse.jus.br/'
+  },
+  {
+    label:'Corinthians',
+    matches:['andré pode ser vendido ao nottingham forest','andre pode ser vendido ao nottingham forest','corinthians ainda aguarda proposta formal'],
+    tag:'MÍDIA REAL · CORINTHIANS', title:'Corinthians',
+    caption:'Imagem do Corinthians usada apenas como identificação visual do clube enquanto a pauta acompanha a negociação de André; não é apresentada como foto do jogador.',
+    images:[{url:'https://s2-cbn.glbimg.com/P_wXvQ-Ks8UHdDwWGCCglRTv52A=/1200x/smart/filters:cover()/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_d975fad146a14bbfad9e763717b09688/internal_photos/bs/2024/z/7/dl7DuXRIuwuFzGi0fAaQ/corinthian.png',alt:'Imagem de identificação visual do Corinthians',caption:'Corinthians.',credit:'Globo/CBN',sourceUrl:'https://ge.globo.com/futebol/times/corinthians/noticia/2026/08/27/entenda-por-que-o-corinthians-planeja-vender-andre-nesta-janela-de-transferencias.ghtml',kind:'REFERENCE'}],
+    relatedLabel:'ge · negociação de André · 27/08',relatedHref:'https://ge.globo.com/futebol/times/corinthians/noticia/2026/08/27/entenda-por-que-o-corinthians-planeja-vender-andre-nesta-janela-de-transferencias.ghtml'
   },
   {
     label:'Tempo e Clima',
-    matches:['são paulo começa 27/08','sao paulo comeca 27/08','18°c','sem chuva no radar'],
+    matches:['são paulo começa 27/08','sao paulo comeca 27/08','são paulo amanhece com 16°c','sao paulo amanhece com 16°c','28°c'],
     tag:'MÍDIA REAL · SÃO PAULO', title:'São Paulo sob nebulosidade',
     caption:'Fotografia real da cidade como contexto; os dados meteorológicos vêm do CGE.',
     images:[{url:commons('Bairro dos jardins em são paulo.jpg'),alt:'Vista urbana de São Paulo sob céu parcialmente nublado',caption:'São Paulo.',credit:'Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Bairro_dos_jardins_em_s%C3%A3o_paulo.jpg',kind:'PHOTO'}]
@@ -81,14 +90,14 @@ export const dailyRichMedia20260827: RichMediaEntry[] = [
     label:'Cyber Security',
     matches:['gitea sob exploração ativa','gitea sob exploracao ativa','cve-2026-60004'],
     tag:'MÍDIA REAL · GITEA', title:'Gitea',
-    caption:'Logotipo oficial do produto afetado; mantido no catálogo para o hub profundo, não como justificativa para Reel novo de 27/08.',
+    caption:'Logotipo oficial do produto afetado; mantido no catálogo para conteúdo profundo antigo e não como justificativa para Reel novo de 27/08.',
     images:[{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Gitea_Logo_with_Wordmark.svg/1920px-Gitea_Logo_with_Wordmark.svg.png',alt:'Logotipo oficial do Gitea',caption:'Gitea.',credit:'Gitea / Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Gitea_Logo_with_Wordmark.svg',kind:'REFERENCE'}]
   },
   {
     label:'AppSec / SSDLC',
     matches:['cve-2026-60004 no gitea','write access vira caminho','risco de supply chain'],
     tag:'MÍDIA REAL · GITEA / SSDLC', title:'Gitea e supply chain',
-    caption:'Logotipo oficial do Gitea para a análise profunda de SCM e CI/CD; o Reel jornalístico fica omitido sem fato novo de 27/08.',
+    caption:'Logotipo oficial do Gitea para conteúdo profundo; AppSec jornalístico permanece omitido sem fato novo próprio de 27/08.',
     images:[{url:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Gitea_Logo_with_Wordmark.svg/1920px-Gitea_Logo_with_Wordmark.svg.png',alt:'Logotipo oficial do Gitea',caption:'Gitea no caminho crítico do SSDLC.',credit:'Gitea / Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:Gitea_Logo_with_Wordmark.svg',kind:'REFERENCE'}]
   }
 ];
