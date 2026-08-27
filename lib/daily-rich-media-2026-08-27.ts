@@ -48,9 +48,9 @@ export const dailyRichMedia20260827: RichMediaEntry[] = [
   {
     label:'Tecnologia',
     matches:['nvidia e hugging face','hugging face','us$ 12,9 bi'],
-    tag:'MÍDIA DA MATÉRIA · 27/08', title:'Nvidia em pauta de aquisição da Hugging Face',
-    caption:'Imagem usada pela Reuters na matéria publicada em 27/08 sobre a operação reportada.',
-    images:[{url:'https://www.reuters.com/resizer/v2/ESPRTFYDJVJNJFAZTAKQRQKIPE.jpg?auth=5c464b539e1090bc09e55dd644176d4ca21a8e50fcdcd6b0f2824235203fdef2&width=1200&quality=80',alt:'Marca Nvidia em imagem associada à matéria sobre Hugging Face',caption:'Nvidia.',credit:'Reuters',sourceUrl:'https://www.reuters.com/technology/nvidia-talks-acquire-hugging-face-13-billion-deal-business-insider-reports-2026-08-27/',kind:'REFERENCE'}],
+    tag:'MÍDIA REAL · NVIDIA', title:'GPU NVIDIA em fotografia real',
+    caption:'Fotografia estável de hardware NVIDIA para contextualizar a operação reportada; a existência do acordo é descrita no texto com o status editorial correto.',
+    images:[{url:commons('NVIDIA GPU.jpg'),alt:'GPU NVIDIA em fotografia real',caption:'Hardware NVIDIA.',credit:'Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/File:NVIDIA_GPU.jpg',kind:'PHOTO'}],
     relatedLabel:'Reuters · Nvidia / Hugging Face · 27/08',relatedHref:'https://www.reuters.com/technology/nvidia-talks-acquire-hugging-face-13-billion-deal-business-insider-reports-2026-08-27/'
   },
   {
