@@ -18,7 +18,16 @@ export const dailyRichMedia20260826_23h: RichMediaEntry[] = [
     tag:'MÍDIA REAL · SÃO PAULO',
     title:'São Paulo à noite',
     caption:'Fotografia real da cidade usada como contexto geográfico; as condições meteorológicas vêm do boletim oficial do CGE.',
-    images:[{url:commons('São Paulo at night.jpg'),alt:'Vista noturna da cidade de São Paulo',caption:'São Paulo à noite.',credit:'Wikimedia Commons',sourceUrl:'https://commons.wikimedia.org/wiki/Category:São_Paulo_at_night',kind:'PHOTO'}],
+    images:[{url:commons('Sao Paulo at night.jpg'),alt:'Vista noturna da cidade de São Paulo',caption:'São Paulo à noite.',credit:'Thomas Hobbs / Wikimedia Commons · CC BY-SA 2.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:Sao_Paulo_at_night.jpg',kind:'PHOTO'}],
     relatedLabel:'CGE São Paulo · 26/08 · 21h11',relatedHref:'https://www.cgesp.org/v3/noticias.jsp?id=55757'
+  },
+  {
+    label:'Tecnologia',
+    matches:['nvidia supera expectativas','receita chega a us$ 96,2 bi','data center dobra em um ano','resultado 26/08'],
+    tag:'MÍDIA REAL · NVIDIA',
+    title:'GPU NVIDIA',
+    caption:'Fotografia real de hardware NVIDIA, diretamente ligada ao resultado e ao ciclo de infraestrutura de IA.',
+    images:[{url:commons('NVIDIA GPU.jpg'),alt:'Processador gráfico NVIDIA fotografado em close',caption:'GPU NVIDIA.',credit:'Mickael Courtiade / Wikimedia Commons · CC BY 2.0',sourceUrl:'https://commons.wikimedia.org/wiki/File:NVIDIA_GPU.jpg',kind:'PHOTO'}],
+    relatedLabel:'NVIDIA · resultados oficiais · 26/08',relatedHref:'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027'
   }
 ];
