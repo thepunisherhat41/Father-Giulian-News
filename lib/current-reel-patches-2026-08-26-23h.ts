@@ -61,4 +61,33 @@ export function applyCurrentReelPatches20260826_23h(dailyContent: Record<string,
       { label: 'CGE São Paulo · boletim de 26/08/2026 às 21h11', url: 'https://www.cgesp.org/v3/noticias.jsp?id=55757' }
     ]
   });
+
+  Object.assign(dailyContent.tecnologia, {
+    title: 'Nvidia supera expectativas: receita chega a US$ 96,2 bi e Data Center dobra em um ano',
+    summary: 'A Nvidia divulgou nesta quarta-feira (26) receita de US$ 96,2 bilhões no segundo trimestre fiscal de 2027, alta de 106% em um ano. Data Center chegou a US$ 89 bilhões, alta de 117%. Para o próximo trimestre, a companhia projeta receita de US$ 108 bilhões, mais ou menos 2%, sem assumir receita de compute de Data Center na China. Vera Rubin já está em produção com parceiros.',
+    shareSummary: 'Tecnologia · 26/08: Nvidia reportou US$ 96,2 bi de receita (+106% a/a), Data Center de US$ 89 bi (+117%) e guidance de US$ 108 bi para o próximo trimestre. Vera Rubin já está em produção.',
+    badge: 'TECNOLOGIA · NVIDIA · RESULTADO 26/08',
+    readTime: '5 MIN',
+    sections: [
+      { title: 'Números oficiais', bullets: [
+        'Receita trimestral: US$ 96,2 bilhões, +18% sobre o trimestre anterior e +106% em um ano.',
+        'Data Center: US$ 89,0 bilhões, +117% em um ano.',
+        'Lucro ajustado por ação: US$ 2,22.',
+        'Margem bruta ajustada: 75,0%.'
+      ]},
+      { title: 'Próximo trimestre', bullets: [
+        'Guidance de receita: US$ 108 bilhões, mais ou menos 2%.',
+        'Margem bruta esperada: aproximadamente 74%.',
+        'A projeção não inclui receita de compute de Data Center na China.'
+      ]},
+      { title: 'Vera Rubin e infraestrutura de IA', bullets: [
+        'A Nvidia informou que a plataforma Vera Rubin está entrando em produção plena com racks operando em parceiros como Google Cloud, Microsoft Azure, Oracle, CoreWeave e Nebius.',
+        'O resultado reforça a continuidade do ciclo de investimento em infraestrutura de IA, mas custo de memória e componentes segue como pressão potencial sobre margens.'
+      ]}
+    ],
+    sources: [
+      { label: 'NVIDIA Newsroom · resultados do 2º trimestre fiscal de 2027 · 26/08/2026', url: 'https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027' },
+      { label: 'Reuters · Nvidia forecasts and AI spending · 26/08/2026', url: 'https://www.reuters.com/business/media-telecom/nvidia-forecasts-quarterly-revenue-above-estimates-2026-08-26/' }
+    ]
+  });
 }
