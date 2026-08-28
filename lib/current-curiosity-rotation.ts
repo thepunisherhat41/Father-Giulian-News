@@ -11,72 +11,72 @@ type CuriosityCollectionLike = {
 
 const TODAY_STORIES: CuriosityCollectionLike[] = [
   {
-    id: 'ciencia-hoje-20260827',
+    id: 'ciencia-hoje-20260828',
     title: 'Ciência',
-    subtitle: 'Uma propriedade incomum da água que muda lagos e oceanos',
-    emoji: '🧊',
+    subtitle: 'A geometria que faz cada observador receber um arco-íris diferente',
+    emoji: '🌈',
     accent: 'blue',
-    coverWords: ['GELO', 'DENSIDADE', 'ÁGUA'],
-    description: 'Conceito novo em relação à janela editorial dos sete dias anteriores.',
+    coverWords: ['LUZ', 'GOTAS', 'ÂNGULO'],
+    description: 'Conceito novo na janela editorial dos sete dias anteriores.',
     stories: [{
-      id: 'gelo-flutua-20260827',
-      title: 'Por que o gelo flutua se ele também é água?',
-      hook: 'Ao congelar, a água organiza suas moléculas numa estrutura mais aberta; o gelo fica menos denso do que a água líquida.',
+      id: 'arco-iris-observador-20260828',
+      title: 'Duas pessoas lado a lado não veem exatamente o mesmo arco-íris',
+      hook: 'O arco depende da posição do Sol, das gotas e dos olhos de quem observa; cada pessoa recebe luz de um conjunto diferente de gotas.',
       explanation: [
-        'As ligações de hidrogênio organizam as moléculas de água no gelo em uma rede cristalina que ocupa mais volume para a mesma massa.',
-        'Como densidade é massa dividida por volume, esse aumento de volume reduz a densidade do gelo e permite que ele flutue.'
+        'A luz solar entra nas gotas, sofre refração, reflexão interna e nova refração ao sair. As cores chegam ao observador em ângulos específicos.',
+        'Como cada observador ocupa uma posição diferente, as gotas que enviam a luz no ângulo correto também são diferentes.'
       ],
-      connection: 'Se o gelo afundasse, lagos poderiam congelar de baixo para cima com muito mais facilidade; o gelo superficial ajuda a isolar a água abaixo.',
-      remember: 'A maioria dos sólidos é mais densa que seu líquido correspondente; a água é uma exceção importante.',
-      shareText: 'O gelo flutua porque a estrutura cristalina da água congelada ocupa mais espaço e fica menos densa que a água líquida.',
-      sourceLabel: 'USGS · Water Density',
-      sourceUrl: 'https://www.usgs.gov/special-topics/water-science-school/science/water-density'
+      connection: 'É por isso que não existe um “fim do arco-íris” fixo no chão: ao se mover, muda a geometria e outras gotas passam a formar o arco para você.',
+      remember: 'O arco-íris é uma geometria entre Sol, gotas e observador, não um objeto parado no céu.',
+      shareText: 'Cada pessoa vê um arco-íris formado por um conjunto diferente de gotas, porque a luz precisa chegar aos olhos em ângulos específicos.',
+      sourceLabel: 'NOAA SciJinks · How Rainbows Form',
+      sourceUrl: 'https://scijinks.gov/rainbow/'
     }]
   },
   {
-    id: 'psicologia-hoje-20260827',
-    title: 'Psicologia',
-    subtitle: 'Quando dois tons idênticos parecem diferentes por causa do contexto',
-    emoji: '◻️',
+    id: 'corpo-humano-hoje-20260828',
+    title: 'Corpo Humano',
+    subtitle: 'Um ponto sem fotorreceptores que o cérebro quase sempre esconde de você',
+    emoji: '👁️',
     accent: 'violet',
-    coverWords: ['SOMBRA', 'CONTEXTO', 'PERCEPÇÃO'],
-    description: 'Conceito visual novo, diferente de Stroop e Müller-Lyer usados nas edições anteriores.',
+    coverWords: ['RETINA', 'NERVO', 'VISÃO'],
+    description: 'Conceito novo na janela editorial dos sete dias anteriores.',
     stories: [{
-      id: 'checker-shadow-20260827',
-      title: 'Dois quadrados podem ter exatamente o mesmo tom e ainda parecer diferentes',
-      hook: 'Na ilusão checker-shadow, o cérebro compensa sombra e iluminação ao estimar a cor de uma superfície.',
+      id: 'ponto-cego-20260828',
+      title: 'Existe um ponto cego real em cada olho — e você quase nunca percebe',
+      hook: 'No local em que o nervo óptico sai da retina não existem cones nem bastonetes, mas o cérebro compensa a informação que falta.',
       explanation: [
-        'O sistema visual interpreta brilho de forma relativa: ele usa o contexto ao redor, as bordas e a iluminação provável da cena.',
-        'Por isso dois pixels ou áreas fisicamente iguais podem ser percebidos como tons diferentes quando estão em contextos diferentes.'
+        'O disco óptico é a região por onde fibras nervosas deixam o olho. Como ali não há fotorreceptores, existe uma pequena área do campo visual sem detecção direta.',
+        'Com os dois olhos abertos, os campos visuais se sobrepõem. Mesmo com um olho, o cérebro usa padrões vizinhos e contexto para preencher perceptualmente a região ausente.'
       ],
-      connection: 'A mesma lógica ajuda a manter objetos reconhecíveis sob iluminação muito diferente ao longo do dia.',
-      remember: 'Percepção de brilho não é leitura direta do valor de cada pixel; o cérebro tenta inferir a superfície por trás da luz.',
-      shareText: 'Na ilusão checker-shadow, duas áreas com o mesmo tom parecem diferentes porque o cérebro corrige mentalmente sombra e contexto.',
-      sourceLabel: 'Wikimedia Commons · Checker shadow illusion',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Grey_square_optical_illusion_proof2.svg'
+      connection: 'Isso mostra que visão não é uma câmera: o cérebro interpreta, compara e completa informação o tempo inteiro.',
+      remember: 'Você não percebe o ponto cego porque o sistema visual compensa uma lacuna física real da retina.',
+      shareText: 'Cada olho tem um ponto cego onde o nervo óptico atravessa a retina e não há fotorreceptores; o cérebro normalmente completa a informação ausente.',
+      sourceLabel: 'Wikimedia Commons · Eye blind spot',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:Eye_blind_spot.svg'
     }]
   },
   {
-    id: 'tecnologia-hoje-20260827',
+    id: 'tecnologia-hoje-20260828',
     title: 'Tecnologia',
-    subtitle: 'Como um QR Code ainda funciona mesmo depois de perder pedaços',
-    emoji: '▦',
+    subtitle: 'Por que o USB-C entra dos dois lados sem depender de sorte',
+    emoji: '🔌',
     accent: 'cyan',
-    coverWords: ['QR', 'REDUNDÂNCIA', 'REED-SOLOMON'],
-    description: 'Tema novo em relação a GPS/relatividade e fibra óptica das edições anteriores.',
+    coverWords: ['USB-C', 'PINOS', 'SIMETRIA'],
+    description: 'Conceito novo na janela editorial dos sete dias anteriores.',
     stories: [{
-      id: 'qr-error-correction-20260827',
-      title: 'Um QR Code pode continuar funcionando mesmo danificado',
-      hook: 'QR Codes usam redundância e códigos de correção de erros para reconstruir parte dos dados perdidos ou ilegíveis.',
+      id: 'usb-c-reversivel-20260828',
+      title: 'O USB-C é reversível porque o conector foi projetado com contatos espelhados',
+      hook: 'Diferente do USB-A antigo, o Type-C distribui contatos de forma simétrica para que a orientação do plugue não determine o lado correto.',
       explanation: [
-        'O padrão usa correção Reed-Solomon. Parte dos símbolos armazenados funciona como informação redundante capaz de recuperar erros dentro de certos limites.',
-        'Existem diferentes níveis de correção: aumentar a tolerância a danos reduz a capacidade disponível para dados.'
+        'O conector Type-C possui contatos correspondentes em posições espelhadas. A controladora detecta a orientação e negocia funções como energia e dados.',
+        'Nem todo cabo USB-C oferece as mesmas velocidades ou potência: o formato físico é comum, mas os recursos suportados variam conforme cabo, porta e protocolo.'
       ],
-      connection: 'A mesma família de técnicas de correção de erros aparece em armazenamento, transmissão digital e outros sistemas onde bits podem se perder ou corromper.',
-      remember: 'O QR Code não “adivinha” o pedaço faltante: ele carrega redundância matemática planejada desde a geração.',
-      shareText: 'QR Codes sobrevivem a certos danos porque carregam códigos Reed-Solomon de correção de erros e dados redundantes.',
-      sourceLabel: 'Wikimedia Commons · QR Code Damaged',
-      sourceUrl: 'https://commons.wikimedia.org/wiki/File:QR_Code_Damaged.jpg'
+      connection: 'Isso explica por que dois cabos visualmente iguais podem ter comportamentos bem diferentes em carga, vídeo ou transferência de dados.',
+      remember: 'USB-C descreve principalmente o conector; capacidade de energia e velocidade dependem das especificações implementadas.',
+      shareText: 'USB-C entra dos dois lados graças ao arranjo simétrico de contatos, mas cabos com o mesmo formato podem suportar velocidades e potências diferentes.',
+      sourceLabel: 'USB-IF · USB Type-C',
+      sourceUrl: 'https://www.usb.org/usb-charger-pd'
     }]
   }
 ];
