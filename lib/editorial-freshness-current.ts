@@ -7,33 +7,33 @@ export type EditorialFreshnessEntry = {
   note: string;
 };
 
-// HARD GATE: edição de 27/08 em America/Sao_Paulo.
+// HARD GATE: edição de 28/08 em America/Sao_Paulo.
 // Náutica permanece removida. Reels jornalísticos só entram como ATUALIZADO.
-export const editorialFreshnessDate = '2026-08-27';
-export const editorialFreshnessValidatedAt = '27/08/2026 · revisão 11h30';
+export const editorialFreshnessDate = '2026-08-28';
+export const editorialFreshnessValidatedAt = '28/08/2026 · revisão 08h35';
 
 export const editorialFreshness: EditorialFreshnessEntry[] = [
-  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem nova etapa oficial material da PEC 221/2019 confirmada em 27/08 nesta revisão; não reciclar articulação de 26/08 como notícia de hoje.' },
-  { slug:'seguranca-zl', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Serviço do próprio dia: vacinação contra sarampo no Shopping Metrô Itaquera em 27/08, das 10h às 20h, confirmada pela Prefeitura/SMS e com mídia do local.' },
-  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'PoderData/Aya divulgado em 27/08: Lula 38% x Flávio 35% no 1º turno e 45% x 44% no 2º; registro BR-04974/2026. Sabatina de Lula às 21h05 segue como agenda confirmada, ainda não realizada nesta revisão.' },
-  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 27/08 nova leitura de tráfego em Hormuz e negociações regionais; melhora pontual não é normalização.' },
+  { slug:'brasil', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem fato novo nacional de 28/08 suficientemente material e confirmado para esta janela; o Reel Brasil fica omitido em vez de reciclar pauta anterior.' },
+  { slug:'seguranca-zl', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Serviço do próprio dia: vacinação contra sarampo no Shopping Metrô Itaquera em 28/08, das 10h às 20h, confirmada pela Prefeitura/SMS e tratada como agenda/serviço.' },
+  { slug:'politica', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Fato oficial de 28/08: começa o horário eleitoral gratuito, com regras do TSE para propaganda e IA. Nenhuma nova pesquisa presidencial nacional de 28/08 foi incorporada nesta revisão; levantamentos anteriores permanecem datados.' },
+  { slug:'mundo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 28/08 avanço da mediação para possível corredor seguro em Hormuz; negociação não é tratada como reabertura concluída.' },
   { slug:'planeta', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen revalidado; não inventar novidade diária.' },
   { slug:'animais', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo científico evergreen revalidado; não inventar novidade diária.' },
-  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'CGE de 27/08 mantém mínima de 16°C, máxima de 28°C e baixo potencial de tempestade; boletins do próprio dia foram revalidados.' },
-  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Rotação diária revalidada com gelo/densidade, checker-shadow e correção de erros em QR Code; conceitos diferentes dos sete dias anteriores pela rotação atual.' },
+  { slug:'tempo', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Previsão de 28/08 indica início de onda de calor em São Paulo, máxima podendo chegar a 34°C e umidade baixa; conteúdo rotulado como previsão.' },
+  { slug:'curiosidades', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Rotação de 28/08: geometria do arco-íris, ponto cego fisiológico e USB-C reversível. Conceitos distintos de relâmpagos/Stroop/GPS, tensão superficial/Müller-Lyer/fibra óptica e gelo/checker-shadow/QR Code usados nos três dias anteriores e inéditos na janela de sete dias.' },
   { slug:'musica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo cultural revalidado; não é breaking news.' },
-  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'gamescom Awesome Indies ocorre hoje, 27/08, às 20h CEST / 15h em São Paulo, confirmado na programação oficial.' },
-  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Acompanhamento educativo revalidado para a fase atual, com cuidados pós-vômito preservados.' },
-  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de paternidade e apoio prático revalidado para a fase atual.' },
-  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Comparativo evergreen permanece limitado a usados reais de até R$70 mil, com manutenção, inspeção e custo-benefício.' },
+  { slug:'games', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'gamescom segue em 28/08 com agenda oficial de palco e encerramento da votação online Fan Favorite do cosplay.' },
+  { slug:'gravidez', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Acompanhamento educativo revalidado para 7 semanas + 5 dias, preservando orientações de hidratação e cuidados após vômitos.' },
+  { slug:'pai', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de paternidade revalidado para a fase atual, com missão prática de apoio.' },
+  { slug:'carros', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Comparativo evergreen permanece limitado a usados reais de até R$70 mil, com manutenção, confiabilidade, inspeção e custo-benefício.' },
   { slug:'motos', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen revalidado.' },
   { slug:'mecanica', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo técnico evergreen revalidado.' },
   { slug:'viagens', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Conteúdo de destino/planejamento revalidado; não tratado como notícia sem fato novo.' },
-  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Mercados de 27/08 seguem reagindo ao guidance da Nvidia e à queda do petróleo; Reel permanece intradiário e não é chamado de fechamento.' },
-  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 27/08 que a Nvidia concordou em adquirir a Hugging Face por US$12,9 bi segundo The Information; o Reel mantém atribuição e não trata como comunicado corporativo oficial.' },
-  { slug:'security-briefing', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem novo sinal primário de 27/08 suficientemente confirmado para o Reel; permanece fora do feed jornalístico.' },
-  { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'BleepingComputer publicou em 27/08 ordem urgente da CISA para corrigir CVE-2026-8452 em NetScaler sob exploração ativa; prazo federal indicado é 29/08.' },
-  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'A matéria-base da cadeia Avada/Fusion Builder é de 26/08. Sem fato novo primário suficiente de 27/08 nesta revisão, o Reel AppSec é omitido em vez de reciclar a pauta.' },
+  { slug:'financas', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Mercados de 28/08 aguardam sinalização do Fed em Jackson Hole; Reel é fotografia intradiária e não é chamado de fechamento.' },
+  { slug:'tecnologia', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'Reuters publicou em 28/08 reação das ações da Marvell ao timing esperado da receita do acordo de chips de IA com Google; fato e expectativa de mercado aparecem separados.' },
+  { slug:'security-briefing', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'SecurityWeek publicou em 28/08 que PaperCut confirmou exploração de zero-day em NG/MF e liberou patches emergenciais; patch e investigação de comprometimento são tratados separadamente.' },
+  { slug:'seguranca', state:'ATUALIZADO', validatedAt:editorialFreshnessValidatedAt, note:'BleepingComputer publicou em 28/08 três falhas críticas pré-auth corrigidas no ServiceNow AI Platform; a empresa diz não ter evidência de exploração maliciosa dessas três CVEs.' },
+  { slug:'appsec-ssdlc', state:'VALIDADO', validatedAt:editorialFreshnessValidatedAt, note:'Sem pauta AppSec distinta, material e suficientemente confirmada de 28/08 nesta janela; Reel omitido para evitar duplicar Cyber ou reciclar a cadeia Avada de 26/08.' },
 ];
 
 export function freshnessForSlug(slug: string) {
