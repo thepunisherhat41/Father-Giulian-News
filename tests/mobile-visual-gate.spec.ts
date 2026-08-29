@@ -45,6 +45,12 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
     .filter(src => /sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i.test(src));
   expect(forbidden).toEqual([]);
 
+  const expectedCuriosityMedia = [
+    /moir%C3%A9|moiré|moire/i,
+    /olfactory/i,
+    /dns/i,
+  ];
+
   // Exact visual QA scope: first Reel, Desafio and the three Curiosidades.
   // Each card is brought into the 390x844 viewport before validating lazy media.
   for (let i = 0; i < 5; i += 1) {
@@ -52,6 +58,9 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
     await article.scrollIntoViewIfNeeded();
     const visual = article.locator('img, iframe').first();
     await expect(visual).toBeVisible({ timeout: 10000 });
+
+    const src = await visual.getAttribute('src') ?? '';
+    if (i >= 2) expect(src).toMatch(expectedCuriosityMedia[i - 2]);
 
     if (await visual.evaluate(node => node.tagName === 'IMG')) {
       await expect.poll(async () => visual.evaluate(node => {
