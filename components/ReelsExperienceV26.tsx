@@ -86,7 +86,7 @@ export default function ReelsExperienceV26(){
   const[detailSlug,setDetailSlug]=useState<string|null>(null);const feedRef=useRef<HTMLDivElement>(null);
   const reels=useMemo<Reel[]>(()=>{
     const family=['gravidez','pai'].map(categoryReel).filter(Boolean) as Reel[];
-    const news=['brasil','mundo','politica','tempo','seguranca-zl'].map(journalisticReel).filter(Boolean) as Reel[];
+    const news=['brasil','mundo','politica','tempo','seguranca-zl','corinthians'].map(journalisticReel).filter(Boolean) as Reel[];
     const corinthians=buildCorinthians();
     const lifestyle=['viagens','musica'].map(categoryReel).filter(Boolean) as Reel[];
     const tech=['games','tecnologia','financas','security-briefing','seguranca','appsec-ssdlc'].map(journalisticReel).filter(Boolean) as Reel[];
