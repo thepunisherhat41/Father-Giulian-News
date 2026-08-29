@@ -1,7 +1,4 @@
 // Ponteiro do catálogo visual da edição ativa.
-// HARD GATE: o catálogo canônico da data corrente tem prioridade absoluta.
-import { dailyRichMedia20260828 } from './daily-rich-media-2026-08-28';
-
-export const dailyRichMediaCurrent = [
-  ...dailyRichMedia20260828,
-];
+// HARD GATE: somente mídia validada para a data corrente entra como catálogo ativo.
+import {dailyRichMedia20260829} from './daily-rich-media-2026-08-29';
+export const dailyRichMediaCurrent=[...dailyRichMedia20260829];
