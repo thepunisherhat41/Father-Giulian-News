@@ -5,7 +5,7 @@
   "engines": {"node": "24.x"},
   "scripts": {
     "dev": "next dev",
-    "quality": "node scripts/release-quality-wrapper.mjs",
+    "quality": "node scripts/editorial-quality-check.mjs",
     "build": "node scripts/prepare-current-feed.mjs && npm run quality && next build",
     "start": "next start",
     "lint": "next lint"
