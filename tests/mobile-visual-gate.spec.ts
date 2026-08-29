@@ -8,11 +8,11 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
   const articles = page.locator('article');
   expect(await articles.count()).toBeGreaterThanOrEqual(5);
 
-  await expect(articles.nth(0).getByText('Papo de hoje', { exact: true })).toBeVisible();
-  await expect(articles.nth(1).getByText('Desafio do casal', { exact: true })).toBeVisible();
-  await expect(articles.nth(2).getByText(/Curiosidade/i)).toBeVisible();
-  await expect(articles.nth(3).getByText(/Curiosidade/i)).toBeVisible();
-  await expect(articles.nth(4).getByText(/Curiosidade/i)).toBeVisible();
+  await expect(articles.nth(0).getByText('Papo de hoje', { exact: true }).first()).toBeVisible();
+  await expect(articles.nth(1).getByText('Desafio do casal', { exact: true }).first()).toBeVisible();
+  await expect(articles.nth(2).getByText(/Curiosidade/i).first()).toBeVisible();
+  await expect(articles.nth(3).getByText(/Curiosidade/i).first()).toBeVisible();
+  await expect(articles.nth(4).getByText(/Curiosidade/i).first()).toBeVisible();
 
   const dimensions = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,
@@ -25,8 +25,8 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
     .filter(src => /sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i.test(src)));
   expect(forbidden).toEqual([]);
 
-  // Validate the exact visual QA scope: first Reel, Desafio and the three Curiosidades.
-  // Scroll each card into the mobile viewport so lazy-loaded images are actually requested.
+  // Exact visual QA scope: first Reel, Desafio and the three Curiosidades.
+  // Each card is brought into the 390x844 viewport before validating lazy media.
   for (let i = 0; i < 5; i += 1) {
     const article = articles.nth(i);
     await article.scrollIntoViewIfNeeded();
