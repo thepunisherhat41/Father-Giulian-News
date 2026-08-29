@@ -7,7 +7,6 @@ permissions:
   contents: write
 jobs:
   patch:
-    if: ${{ github.event.head_commit.message != 'fix: include current Corinthians in news feed' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,10 +20,10 @@ jobs:
           s=p.read_text()
           old="const news=['brasil','mundo','politica','tempo','seguranca-zl'].map(journalisticReel)"
           new="const news=['brasil','mundo','politica','tempo','seguranca-zl','corinthians'].map(journalisticReel)"
-          if old not in s:
-              raise SystemExit('target news array not found')
-          p.write_text(s.replace(old,new,1))
+          if old in s:
+              p.write_text(s.replace(old,new,1))
           PY
+          if git diff --quiet; then exit 0; fi
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add components/ReelsExperienceV26.tsx
