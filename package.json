@@ -2,25 +2,14 @@
   "name": "father-giulian-news",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "24.x"
-  },
+  "engines": {"node": "24.x"},
   "scripts": {
     "dev": "next dev",
     "quality": "node scripts/editorial-quality-check.mjs",
-    "build": "npm run quality && next build",
+    "build": "node scripts/prepare-current-feed.mjs && npm run quality && next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
-    "next": "14.2.35",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
-  },
-  "devDependencies": {
-    "@types/node": "20.14.12",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "typescript": "5.5.4"
-  }
+  "dependencies": {"next": "14.2.35","react": "18.3.1","react-dom": "18.3.1"},
+  "devDependencies": {"@types/node": "20.14.12","@types/react": "18.3.3","@types/react-dom": "18.3.0","typescript": "5.5.4"}
 }

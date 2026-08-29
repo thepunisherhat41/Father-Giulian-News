@@ -25,6 +25,11 @@ const olderCatalogs = [
   dailyRichMedia20260819,
 ];
 
+function canonicalizeLabel(label: string) {
+  if (label.startsWith('Curiosidade')) return 'Curiosidades';
+  return labelAliases[label] ?? label;
+}
+
 function matchesTitle(entry: RichMediaEntry, title: string) {
   return entry.matches.some((match) => title.includes(match.toLocaleLowerCase('pt-BR')));
 }
@@ -35,7 +40,7 @@ function findIn(catalog: RichMediaEntry[], label: string, canonicalLabel: string
 }
 
 export function findCurrentRichMedia(label: string, storyTitle: string): RichMediaEntry | undefined {
-  const canonicalLabel = labelAliases[label] ?? label;
+  const canonicalLabel = canonicalizeLabel(label);
   const normalizedTitle = storyTitle.toLocaleLowerCase('pt-BR');
 
   // HARD GATE: o catálogo visual da data corrente sempre tem precedência.

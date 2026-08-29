@@ -17,7 +17,7 @@ concurrency:
 jobs:
   editorial-quality-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,3 +35,31 @@ jobs:
 
       - name: Production build validation
         run: npm run build
+
+      - name: Install mobile browser QA
+        run: |
+          npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start production server
+        run: |
+          npm start > /tmp/father-news-next.log 2>&1 &
+          echo $! > /tmp/father-news-next.pid
+          npx --yes wait-on@8.0.1 http://127.0.0.1:3000
+
+      - name: Mobile visual gate 390x844
+        run: |
+          mkdir -p artifacts
+          npx playwright test tests/mobile-visual-gate.spec.ts --reporter=line
+
+      - name: Upload mobile QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: father-news-mobile-qa
+          path: |
+            artifacts/
+            playwright-report/
+            test-results/
+          if-no-files-found: warn
+          retention-days: 7
