@@ -58,7 +58,7 @@ jobs:
         with:
           name: father-news-mobile-qa
           path: |
-            artifacts/mobile-390x844.png
+            artifacts/
             playwright-report/
             test-results/
           if-no-files-found: warn
