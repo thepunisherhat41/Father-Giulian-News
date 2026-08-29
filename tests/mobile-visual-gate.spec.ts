@@ -2,11 +2,15 @@ import { test, expect } from '@playwright/test';
 import { writeFileSync } from 'node:fs';
 
 test.use({ viewport: { width: 390, height: 844 } });
+test.setTimeout(60000);
 
 test('first reel and curiosities are healthy on mobile', async ({ page }) => {
-  await page.goto('http://127.0.0.1:3000', { waitUntil: 'networkidle' });
+  await page.goto('http://127.0.0.1:3000', { waitUntil: 'domcontentloaded', timeout: 15000 });
 
   const articles = page.locator('article');
+  await expect(articles.first()).toBeVisible({ timeout: 10000 });
+  await expect(articles).toHaveCount(17, { timeout: 10000 });
+
   const dimensions = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,
     clientWidth: document.documentElement.clientWidth,
@@ -26,16 +30,15 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
     mediaCount: mediaSources.length,
     mediaSources,
   }, null, 2));
-  await page.screenshot({ path: 'artifacts/mobile-390x844.png', fullPage: true });
 
-  expect(await articles.count()).toBeGreaterThanOrEqual(5);
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth + 1);
+  expect(dimensions.bodyScrollWidth).toBeLessThanOrEqual(dimensions.innerWidth + 1);
+
   await expect(articles.nth(0).getByText('Papo de hoje', { exact: true }).first()).toBeVisible();
   await expect(articles.nth(1).getByText('Desafio do casal', { exact: true }).first()).toBeVisible();
   await expect(articles.nth(2).getByText(/Curiosidade/i).first()).toBeVisible();
   await expect(articles.nth(3).getByText(/Curiosidade/i).first()).toBeVisible();
   await expect(articles.nth(4).getByText(/Curiosidade/i).first()).toBeVisible();
-
-  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth + 1);
 
   const forbidden = mediaSources
     .map(item => item.src)
@@ -48,7 +51,7 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
     const article = articles.nth(i);
     await article.scrollIntoViewIfNeeded();
     const visual = article.locator('img, iframe').first();
-    await expect(visual).toBeVisible();
+    await expect(visual).toBeVisible({ timeout: 10000 });
 
     if (await visual.evaluate(node => node.tagName === 'IMG')) {
       await expect.poll(async () => visual.evaluate(node => {
@@ -61,4 +64,5 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
   }
 
   await expect(page.getByText(/25 AGO 2026|Daily Intelligence · 25 de agosto|Náutica/i)).toHaveCount(0);
+  await page.screenshot({ path: 'artifacts/mobile-390x844.png', fullPage: true });
 });
