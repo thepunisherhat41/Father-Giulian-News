@@ -34,11 +34,11 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth + 1);
   expect(dimensions.bodyScrollWidth).toBeLessThanOrEqual(dimensions.innerWidth + 1);
 
-  await expect(articles.nth(0).getByText('Papo de hoje', { exact: true }).first()).toBeVisible();
-  await expect(articles.nth(1).getByText('Desafio do casal', { exact: true }).first()).toBeVisible();
-  await expect(articles.nth(2).getByText(/Curiosidade/i).first()).toBeVisible();
-  await expect(articles.nth(3).getByText(/Curiosidade/i).first()).toBeVisible();
-  await expect(articles.nth(4).getByText(/Curiosidade/i).first()).toBeVisible();
+  await expect(articles.nth(0)).toContainText('Papo de hoje');
+  await expect(articles.nth(1)).toContainText('Desafio do casal');
+  await expect(articles.nth(2)).toContainText('Curiosidade · Ciência');
+  await expect(articles.nth(3)).toContainText('Curiosidade · Corpo Humano');
+  await expect(articles.nth(4)).toContainText('Curiosidade · Tecnologia');
 
   const forbidden = mediaSources
     .map(item => item.src)
