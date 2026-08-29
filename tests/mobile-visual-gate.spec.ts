@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { writeFileSync } from 'node:fs';
 
 test.use({ viewport: { width: 390, height: 844 } });
 
@@ -6,23 +7,39 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
   await page.goto('http://127.0.0.1:3000', { waitUntil: 'networkidle' });
 
   const articles = page.locator('article');
-  expect(await articles.count()).toBeGreaterThanOrEqual(5);
+  const dimensions = await page.evaluate(() => ({
+    scrollWidth: document.documentElement.scrollWidth,
+    clientWidth: document.documentElement.clientWidth,
+    bodyScrollWidth: document.body.scrollWidth,
+    innerWidth: window.innerWidth,
+  }));
+  const mediaSources = await page.locator('img, iframe').evaluateAll(nodes => nodes.map(node => ({
+    tag: node.tagName,
+    src: (node as HTMLImageElement | HTMLIFrameElement).src || '',
+  })));
+  const labels = await articles.evaluateAll(nodes => nodes.slice(0, 5).map(node => node.textContent?.slice(0, 220) || ''));
 
+  writeFileSync('artifacts/mobile-diagnostics.json', JSON.stringify({
+    articleCount: await articles.count(),
+    dimensions,
+    labels,
+    mediaCount: mediaSources.length,
+    mediaSources,
+  }, null, 2));
+  await page.screenshot({ path: 'artifacts/mobile-390x844.png', fullPage: true });
+
+  expect(await articles.count()).toBeGreaterThanOrEqual(5);
   await expect(articles.nth(0).getByText('Papo de hoje', { exact: true }).first()).toBeVisible();
   await expect(articles.nth(1).getByText('Desafio do casal', { exact: true }).first()).toBeVisible();
   await expect(articles.nth(2).getByText(/Curiosidade/i).first()).toBeVisible();
   await expect(articles.nth(3).getByText(/Curiosidade/i).first()).toBeVisible();
   await expect(articles.nth(4).getByText(/Curiosidade/i).first()).toBeVisible();
 
-  const dimensions = await page.evaluate(() => ({
-    scrollWidth: document.documentElement.scrollWidth,
-    clientWidth: document.documentElement.clientWidth,
-  }));
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth + 1);
 
-  const forbidden = await page.locator('img, iframe').evaluateAll(nodes => nodes
-    .map(node => (node as HTMLImageElement | HTMLIFrameElement).src || '')
-    .filter(src => /sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i.test(src)));
+  const forbidden = mediaSources
+    .map(item => item.src)
+    .filter(src => /sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i.test(src));
   expect(forbidden).toEqual([]);
 
   // Exact visual QA scope: first Reel, Desafio and the three Curiosidades.
@@ -44,5 +61,4 @@ test('first reel and curiosities are healthy on mobile', async ({ page }) => {
   }
 
   await expect(page.getByText(/25 AGO 2026|Daily Intelligence · 25 de agosto|Náutica/i)).toHaveCount(0);
-  await page.screenshot({ path: 'artifacts/mobile-390x844.png', fullPage: true });
 });
