@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: fix/hard-publish-gate-20260829
-      - name: Patch current feed
+      - name: Patch current feed in editorial order
         run: |
           python - <<'PY'
           from pathlib import Path
