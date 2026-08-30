@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-08-29';
-export const editorialFreshnessValidatedAt='29/08/2026 · 14h58 · revisão da tarde';
+export const editorialFreshnessDate='2026-08-30';
+export const editorialFreshnessValidatedAt='30/08/2026 · 11h33 · revisão completa da manhã';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Agência Brasil 11h49: Ministério da Saúde reforça vacinação contra sarampo; campanha nacional segue até 01/09. Este fato substitui o card das 09h26.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Zona Leste reavaliada até 14h58. Sem pauta material nova de 29/08 confirmada; ações de 27–28/08 permanecem expiradas e não são recicladas.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Agência Brasil 10h22: agenda dos presidenciáveis. Na revisão das 14h58, horários já transcorridos continuam classificados como agenda quando não há confirmação independente de realização; e-Título permanece em manutenção programada até 18h.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 29/08: inflação iraniana em torno de 66%, retração comercial e sanções; Hormuz segue sem normalização plena. O acordo Venezuela–EUA foi rechecado, mas o anúncio ocorreu em 28/08 e não substitui o fato novo do dia.'},
-{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não entra como notícia porque não houve fato material novo do dia.'},
-{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não tratado como notícia.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'CGE 12h01: 30°C de temperatura média, umidade em torno de 47%, máxima de até 32°C e possibilidade de chuva curta e isolada no fim da tarde.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação mantida após nova checagem: ebulição em baixa pressão, enrugamento dos dedos pelo sistema nervoso e correções relativísticas do GPS. Moiré, olfato e DNS seguem removidos.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Maçambique de Osório revalidado para a programação cultural de hoje às 20h em Brasília; permanece como agenda cultural, não notícia concluída.'},
-{slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'gamescom revalidada às 14h58 BRT. A final do cosplay estava marcada para 17h em Colônia; o horário já passou, mas a página oficial consultada ainda não exibia vencedores, portanto nenhum resultado foi inventado.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Card educativo mantido para 7 semanas + 6 dias, com foco prático em hidratação, descanso e sinais de alerta.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão do dia mantida: assumir uma tarefa completa e reduzir carga mental sem esperar instruções.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'UOL 05h30: Hugo Souza e Matheus Bidu disponíveis e Yuri Alberto com recuperação atrasada. UOL 12h: Corinthians cobra respostas financeiras, jurídicas e metodológicas da SAFiel antes de avançar.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Card de compra de usado revalidado com checklist e teto explícito de R$70 mil.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Card técnico revalidado: inspeção de corrente, coroa e pinhão em moto usada.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Card técnico revalidado: segurança ao abrir sistema de arrefecimento pressurizado.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Agenda de 29/08 mantida: Museu do Pontal celebra 50 anos com festival gratuito e abertura de exposição neste sábado.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Agência Brasil: Novo Desenrola Brasil termina em 31/08; regras e condições do serviço seguem válidas nesta revisão.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 29/08: OpenAI anuncia encerramento futuro do fornecimento de modelos ao Cursor; conversas ainda continuam.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Fontes rechecadas até 14h58. Nenhum briefing novo e primário de 29/08 foi promovido a Reel; fatos de 28/08 continuam bloqueados.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'SecurityWeek 29/08 07h55 ET: Hasbro notifica atuais e ex-funcionários sobre possível exposição de dados pessoais; escopo global não foi divulgado.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado até 14h58. Não foi localizado fato material novo de 29/08 com confirmação suficiente; PaperCut de 28/08 e itens anteriores seguem bloqueados.'}
+{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Agência Brasil 09h07: participação brasileira em estudo internacional sobre novos tratamentos e possível cura da hepatite B.'},
+{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'SP Mais Cultura: Sarau do Binho, edição de 20 anos, hoje das 14h às 15h no Tatuapé.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'TSE: migração de serviços em nuvem ocorre hoje das 8h às 18h; Resolução 23.771 marca 30/08 como prazo de homologação de programas de verificação para auditoria.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 30/08: facções rivais da Líbia assinam roteiro conduzido pela ONU para eleições nacionais em até 24 meses.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem Reel jornalístico próprio nesta edição; conteúdo científico aparece nas Curiosidades.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo do dia promovido a Reel.'},
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'CGE 06h30: máxima de 32°C, umidade perto de 30% nas horas quentes e sem chuva prevista na Grande SP.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova de 30/08: rotação de Vênus maior que seu ano; otocônias e gravidade; wear leveling em SSD. Conceitos de 29/08 e dias anteriores bloqueados.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Agenda nova: Galo Fest Show hoje às 19h na Vila Silva Teles, segundo SP Mais Cultura.'},
+{slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'gamescom: último dia oficial do evento em 30/08, com programação dominical ativa.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Atualizado para 8 semanas exatas pela DUM 05/07/2026; desenvolvimento baseado em NHS/ACOG.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão nova de 30/08: antecipar duas tarefas da segunda-feira para reduzir carga mental.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ge 30/08 04h01: Corinthians x Santos hoje 16h; 10º com 32 pontos; Bidon suspenso, Yuri fora e Memphis esperado como titular.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação técnica nova: teste de câmbio frio e quente em carro usado até R$70 mil.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação técnica nova: inspeção dos rolamentos/caixa de direção em moto usada.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação técnica nova: bateria e sistema de carga antes de condenar módulos eletrônicos.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Roteiro novo de bate-volta em Paranapiacaba com referências oficiais de Turismo de Santo André.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 30/08: G20 financeiro sob pressão de tarifas, guerra no Irã, energia e mercado de títulos.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'OpenAI: 30/08 é a data anunciada para retirada do GPT oficial do DALL·E; anúncio original foi 31/07 e isso é explicitamente distinguido.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Revisado até 11h33. Nenhum briefing primário distinto e material de 30/08 foi promovido para evitar reciclagem.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cyber revisado até 11h33. Sem incidente novo de 30/08 com confirmação suficiente para Reel próprio; não reciclado.'},
+{slug:'appsec-ssdlc',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Metasploit issue #21847 aberta hoje propõe módulo para CVE-2026-18729/Langflow; sinal novo de tooling, issue ainda aberta e não tratada como módulo aprovado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
