@@ -28,7 +28,7 @@ test('current edition is healthy on mobile card by card', async ({ page }) => {
     'ponto cego',
     'qr code',
     '8 semanas hoje',
-    'corinthians recebe o santos hoje às 16h',
+    'memphis depay será titular',
     'são paulo tem domingo quente e seco',
     'bancos centrais europeus',
     'europa coloca previsibilidade dos eua'

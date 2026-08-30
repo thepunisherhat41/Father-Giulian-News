@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" role="img" aria-labelledby="t d">
+<title id="t">Relações financeiras transatlânticas</title><desc id="d">Arte editorial vertical com Europa, Estados Unidos, moedas e linhas financeiras, sem representar evento específico como fotografia.</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10233f"/><stop offset="1" stop-color="#355f7f"/></linearGradient></defs>
+<rect width="1080" height="1920" fill="url(#g)"/>
+<circle cx="540" cy="760" r="310" fill="#d9e9ef" opacity=".95"/>
+<path d="M430 565c-54 31-86 92-85 153 1 43 18 82 45 111l-53 72 92 25 45-43c42 13 89 12 130-5l47 48 91-28-53-72c28-31 44-72 43-115-2-70-43-135-105-165-61-30-135-25-197 15z" fill="#6b8895"/>
+<path d="M178 1160C340 1040 431 1025 541 1090c110-65 203-50 361 70" fill="none" stroke="#f3c969" stroke-width="22" stroke-linecap="round"/>
+<path d="M220 1235C368 1135 453 1125 541 1177c91-52 176-42 319 58" fill="none" stroke="#dbe9ee" stroke-width="10" stroke-linecap="round" opacity=".85"/>
+<text x="540" y="320" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="72" font-weight="700">FINANÇAS GLOBAIS</text>
+<text x="540" y="405" text-anchor="middle" fill="#dbe9ee" font-family="Arial,sans-serif" font-size="42">Europa ↔ Estados Unidos</text>
+<text x="330" y="1480" text-anchor="middle" fill="#f3c969" font-family="Arial,sans-serif" font-size="130" font-weight="700">€</text>
+<text x="750" y="1480" text-anchor="middle" fill="#f3c969" font-family="Arial,sans-serif" font-size="130" font-weight="700">$</text>
+<text x="540" y="1650" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="45">confiança · liquidez · previsibilidade</text>
+<text x="540" y="1760" text-anchor="middle" fill="#c9dce5" font-family="Arial,sans-serif" font-size="30">ARTE EDITORIAL · 30 AGO 2026</text>
+</svg>
