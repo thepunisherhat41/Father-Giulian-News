@@ -27,7 +27,8 @@ const fn=`applyCurrentReelPatches${ymd}`;
 if(!live.includes(`from '@/lib/current-reel-patches-${today}'`))failures.push(`Live: import do patch ${today} ausente.`);
 if(!live.includes(`${fn}(dailyContent)`))failures.push(`Live: patch ${today} não aplicado.`);
 const allApply=[...live.matchAll(/applyCurrentReelPatches\w*\(dailyContent\)/g)].map(m=>m[0]);
-if(allApply.at(-1)!==`${fn}(dailyContent)`)failures.push(`Live: patch ${today} deve ser aplicado por último.`);
+const finalApply=allApply.at(-1)??'';
+if(!finalApply.startsWith(fn))failures.push(`Live: o último patch deve pertencer à data ${today}.`);
 
 const reels=text('components/ReelsExperienceV26.tsx');
 if(/['"]nautica['"]/.test(reels)||/Náutica/i.test(reels))failures.push('Náutica foi reintroduzida.');
@@ -50,15 +51,18 @@ for(const s of ['seguranca-zl','security-briefing','appsec-ssdlc'])if(!new RegEx
 const active=[...freshness.matchAll(/slug:'([^']+)',state:'ATUALIZADO'/g)].map(m=>m[1]);
 if(!active.length)failures.push('Freshness: nenhuma área jornalística marcada ATUALIZADO.');
 
-const patch=text(patchFile);
+const patchFiles=[patchFile,...[...live.matchAll(new RegExp(`@/lib/(current-reel-patches-${today}[^']*)`,'g'))].map(m=>`lib/${m[1]}.ts`)].filter((v,i,a)=>a.indexOf(v)===i);
+const patch=patchFiles.map(text).join('\n');
 if(!patch.includes(ymd)&&!patch.includes(today.slice(8,10)+'/'))failures.push(`Patch ${today}: data corrente não evidenciada.`);
 for(const staleDate of ['29/08 ·','REVISÃO DA TARDE · 29/08','REVISÃO DE MEIO-DIA · 29/08'])if(patch.includes(staleDate))failures.push(`Patch atual contém marcação vencida: ${staleDate}`);
 if(!/R\$70 mil|R\$\s*70\s*mil|70 mil/i.test(freshness+reels+patch))failures.push('Carros: limite de R$70 mil não evidenciado.');
 
 const pointer=text('lib/daily-rich-media-current.ts');
 if(!pointer.includes(`./daily-rich-media-${today}`))failures.push('Mídia: ponteiro não aponta para o catálogo de hoje.');
-if(/daily-rich-media-2026-08-2[0-9]/.test(pointer))failures.push('Mídia: catálogo de data anterior ainda ativo no ponteiro corrente.');
-const media=text(mediaFile);
+const pointerImports=[...pointer.matchAll(/from ['"]\.\/(daily-rich-media-[^'"]+)['"]/g)].map(m=>m[1]);
+for(const imp of pointerImports){if(!imp.startsWith(`daily-rich-media-${today}`))failures.push(`Mídia: catálogo de outra data ativo no ponteiro corrente (${imp}).`);}
+const mediaFiles=[mediaFile,...pointerImports.map(i=>`lib/${i}.ts`)].filter((v,i,a)=>a.indexOf(v)===i);
+const media=mediaFiles.map(text).join('\n');
 for(const f of ['/reel-ai/sprite','sprite.jpg','sprite-news.jpg','clean-covers.jpg','data:image/gif','transparent.gif','Father Giulian News screenshot'])if(media.includes(f))failures.push(`Mídia proibida: ${f}`);
 const imageCount=(media.match(/images:\[/g)??[]).length;
 if(!imageCount)failures.push('Mídia: nenhuma imagem validada no catálogo corrente.');
