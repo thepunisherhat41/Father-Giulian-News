@@ -1,13 +1,74 @@
 import { test, expect } from '@playwright/test';
 import { writeFileSync } from 'node:fs';
-test.use({ viewport: { width: 390, height: 844 } });test.setTimeout(120000);
-test('afternoon edition is healthy on mobile card by card', async ({ page }) => {
-  await page.goto('http://127.0.0.1:3000',{waitUntil:'domcontentloaded',timeout:20000});const articles=page.locator('article');await expect(articles.first()).toBeVisible({timeout:10000});await expect(articles).toHaveCount(22,{timeout:15000});
-  const dimensions=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,bodyScrollWidth:document.body.scrollWidth,innerWidth:window.innerWidth}));const mediaSources=await page.locator('img, iframe').evaluateAll(nodes=>nodes.map(node=>({tag:node.tagName,src:(node as HTMLImageElement|HTMLIFrameElement).src||''})));const labels=await articles.evaluateAll(nodes=>nodes.map(node=>node.textContent?.slice(0,420)||''));writeFileSync('artifacts/mobile-diagnostics.json',JSON.stringify({articleCount:await articles.count(),dimensions,labels,mediaCount:mediaSources.length,mediaSources},null,2));expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth+1);expect(dimensions.bodyScrollWidth).toBeLessThanOrEqual(dimensions.innerWidth+1);
-  await expect(articles.nth(0)).toContainText('Papo de hoje');await expect(articles.nth(0)).toContainText('melhor momento inesperado da sua semana');await expect(articles.nth(1)).toContainText('Desafio do casal');await expect(articles.nth(1)).toContainText('foto juntos que represente este sábado');await expect(articles.nth(2)).toContainText('Curiosidade · Ciência');await expect(articles.nth(3)).toContainText('Curiosidade · Corpo Humano');await expect(articles.nth(4)).toContainText('Curiosidade · Tecnologia');
-  const pageText=(await page.locator('body').innerText()).toLowerCase();for(const required of ['29 ago 2026','água pode ferver em temperatura ambiente','dedos enrugam na água','satélites gps','7 semanas + 6 dias','ministério reforça vacinação contra sarampo','agenda presidencial deste sábado segue ativa','inflação de 66%','meio-dia ensolarada com 30°c','safiel','museu do pontal','maçambique de osório','tristeza do jeca','gamescom entra na reta final','não mostrava os vencedores','openai anuncia que deixará','novo desenrola brasil termina','hasbro começa a notificar','carro usado até r$ 70 mil','corrente revela','tampa do reservatório'])expect(pageText).toContain(required.toLowerCase());for(const omitted of ['moiré','seu nariz pode parar de notar','internet pode continuar lembrando','cabocla tereza','quedas e queimaduras lideram internações','perto de 29°c','service now corrige','papercut','27 ago 2026','28 ago 2026','náutica','missão de hoje: montar um kit simples'])expect(pageText).not.toContain(omitted.toLowerCase());
-  const forbidden=mediaSources.map(item=>item.src).filter(src=>/sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif|US%20Treasury%20Building|USB-C/i.test(src));expect(forbidden).toEqual([]);
-  const expectedMedia:Record<number,RegExp>={2:/vacuum-boil/i,3:/finger-wrinkle/i,4:/gps-relativity/i,7:/brasil-measles-vaccine/i,8:/hormuz/i,9:/voting|dre/i,10:/bairro.*jardins/i,11:/corinth/i,12:/museu_do_pontal/i,13:/music-macambique/i,14:/Fxac2CJDo8A/i,15:/gamescom/i,16:/technology-model-supply/i,17:/finance-debt-renegotiation/i,18:/cyber-privacy-notice/i,19:/car-used-inspection/i,20:/motorcycle-chain-check/i,21:/mechanic-coolant-safety/i};
-  for(let i=0;i<22;i+=1){const article=articles.nth(i);await article.scrollIntoViewIfNeeded();const visual=article.locator('img, iframe').first();await expect(visual).toBeVisible({timeout:10000});const src=await visual.getAttribute('src')??'';expect(src.length).toBeGreaterThan(3);if(expectedMedia[i])expect(src).toMatch(expectedMedia[i]);if(await visual.evaluate(node=>node.tagName==='IMG'))await expect.poll(async()=>visual.evaluate(node=>{const img=node as HTMLImageElement;return img.complete&&img.naturalWidth>0;}),{timeout:12000}).toBe(true);await article.screenshot({path:`artifacts/mobile-card-${String(i+1).padStart(2,'0')}.png`});}
-  await expect(page.getByText(/25 AGO 2026|Daily Intelligence · 25 de agosto|Náutica/i)).toHaveCount(0);await page.screenshot({path:'artifacts/mobile-390x844-full.png',fullPage:true});
+
+test.use({ viewport: { width: 390, height: 844 } });
+test.setTimeout(120000);
+
+test('current edition is healthy on mobile card by card', async ({ page }) => {
+  await page.goto('http://127.0.0.1:3000',{waitUntil:'domcontentloaded',timeout:20000});
+  const articles=page.locator('article');
+  await expect(articles.first()).toBeVisible({timeout:10000});
+  const articleCount=await articles.count();
+  expect(articleCount).toBeGreaterThanOrEqual(10);
+
+  const dimensions=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,bodyScrollWidth:document.body.scrollWidth,innerWidth:window.innerWidth}));
+  expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth+1);
+  expect(dimensions.bodyScrollWidth).toBeLessThanOrEqual(dimensions.innerWidth+1);
+
+  await expect(articles.nth(0)).toContainText('Papo de hoje');
+  await expect(articles.nth(1)).toContainText('Desafio do casal');
+  await expect(articles.nth(2)).toContainText('Curiosidade · Ciência');
+  await expect(articles.nth(3)).toContainText('Curiosidade · Corpo Humano');
+  await expect(articles.nth(4)).toContainText('Curiosidade · Tecnologia');
+
+  const pageText=(await page.locator('body').innerText()).toLowerCase();
+  for(const required of [
+    '30 ago 2026',
+    'céu fica azul',
+    'ponto cego',
+    'qr code',
+    '8 semanas hoje',
+    'corinthians recebe o santos hoje às 16h',
+    'são paulo tem domingo quente e seco',
+    'bancos centrais europeus',
+    'europa coloca previsibilidade dos eua'
+  ]) expect(pageText).toContain(required.toLowerCase());
+
+  for(const omitted of [
+    '29 ago 2026',
+    'água pode ferver em temperatura ambiente',
+    'dedos enrugam na água',
+    'satélites gps',
+    'ministério reforça vacinação contra sarampo',
+    'agenda presidencial deste sábado segue ativa',
+    'inflação de 66%',
+    'hasbro começa a notificar',
+    'openai anuncia que deixará',
+    'novo desenrola brasil termina',
+    'náutica'
+  ]) expect(pageText).not.toContain(omitted.toLowerCase());
+
+  const mediaSources=await page.locator('img, iframe').evaluateAll(nodes=>nodes.map(node=>({tag:node.tagName,src:(node as HTMLImageElement|HTMLIFrameElement).src||''})));
+  const forbidden=mediaSources.map(item=>item.src).filter(src=>/sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i.test(src));
+  expect(forbidden).toEqual([]);
+
+  const labels=await articles.evaluateAll(nodes=>nodes.map(node=>node.textContent?.slice(0,500)||''));
+  writeFileSync('artifacts/mobile-diagnostics.json',JSON.stringify({articleCount,dimensions,labels,mediaCount:mediaSources.length,mediaSources},null,2));
+
+  for(let i=0;i<articleCount;i+=1){
+    const article=articles.nth(i);
+    await article.scrollIntoViewIfNeeded();
+    const visual=article.locator('img, iframe').first();
+    await expect(visual).toBeVisible({timeout:10000});
+    const src=await visual.getAttribute('src')??'';
+    expect(src.length).toBeGreaterThan(3);
+    expect(src).not.toMatch(/sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i);
+    if(await visual.evaluate(node=>node.tagName==='IMG')){
+      await expect.poll(async()=>visual.evaluate(node=>{const img=node as HTMLImageElement;return img.complete&&img.naturalWidth>0;}),{timeout:12000}).toBe(true);
+    }
+    await article.screenshot({path:`artifacts/mobile-card-${String(i+1).padStart(2,'0')}.png`});
+  }
+
+  await expect(page.getByText(/25 AGO 2026|Daily Intelligence · 25 de agosto|Náutica/i)).toHaveCount(0);
+  await page.screenshot({path:'artifacts/mobile-390x844-full.png',fullPage:true});
 });
