@@ -1,0 +1,4 @@
+import type {RichMediaEntry} from './rich-media';
+export const dailyRichMedia20260831_1741:RichMediaEntry[]=[
+{label:'Política',matches:['BTG/Nexus põe Lula','Augusto Cury em 11%','PESQUISA + FATO'],tag:'ARTE ESPECÍFICA · POLÍTICA',title:'Pesquisa presidencial BTG/Nexus',caption:'Visual editorial específico para os números divulgados em 31 de agosto: Lula 39%, Flávio Bolsonaro 33% e Augusto Cury 11%.',images:[{url:'/generated/politics-btg-nexus-20260831.svg',alt:'Gráfico editorial vertical de pesquisa presidencial com barras para Lula em 39 por cento, Flávio Bolsonaro em 33 por cento e Augusto Cury em 11 por cento',caption:'BTG/Nexus: Lula 39%, Flávio 33% e Cury 11% no cenário principal.',credit:'Father Giulian News · arte editorial',sourceUrl:'https://www.reuters.com/business/media-telecom/author-psychiatrist-augusto-cury-gains-ground-brazil-presidential-race-polls-2026-08-31/',kind:'REFERENCE'}]}
+];
