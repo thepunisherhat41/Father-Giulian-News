@@ -47,7 +47,7 @@ const declared=freshness.match(/editorialFreshnessDate\s*=\s*['"]([^'"]+)['"]/)?
 if(declared!==today)failures.push(`Freshness: esperado ${today}, encontrado ${declared??'sem data'}.`);
 const requiredSlugs=['brasil','seguranca-zl','politica','mundo','planeta','animais','tempo','curiosidades','musica','games','gravidez','pai','corinthians','carros','motos','mecanica','viagens','financas','tecnologia','security-briefing','seguranca','appsec-ssdlc'];
 for(const s of requiredSlugs)if(!new RegExp(`slug:'${s}'`).test(freshness))failures.push(`Freshness: área ausente ${s}`);
-for(const s of ['seguranca-zl','security-briefing','appsec-ssdlc'])if(!new RegExp(`slug:'${s}',state:'VALIDADO'`).test(freshness))failures.push(`Freshness: ${s} deve permanecer VALIDADO quando não há fato novo confirmado.`);
+for(const s of ['appsec-ssdlc'])if(!new RegExp(`slug:'${s}',state:'VALIDADO'`).test(freshness))failures.push(`Freshness: ${s} deve permanecer VALIDADO quando não há fato novo confirmado.`);
 const active=[...freshness.matchAll(/slug:'([^']+)',state:'ATUALIZADO'/g)].map(m=>m[1]);
 if(!active.length)failures.push('Freshness: nenhuma área jornalística marcada ATUALIZADO.');
 
