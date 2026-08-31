@@ -9,7 +9,7 @@ test('current edition is healthy on mobile card by card', async ({ page }) => {
   const articles=page.locator('article');
   await expect(articles.first()).toBeVisible({timeout:10000});
   const articleCount=await articles.count();
-  expect(articleCount).toBe(17);
+  expect(articleCount).toBe(20);
   const dimensions=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,bodyScrollWidth:document.body.scrollWidth,innerWidth:window.innerWidth}));
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth+1);
   expect(dimensions.bodyScrollWidth).toBeLessThanOrEqual(dimensions.innerWidth+1);
@@ -19,8 +19,8 @@ test('current edition is healthy on mobile card by card', async ({ page }) => {
   await expect(articles.nth(3)).toContainText('Curiosidade · Corpo Humano');
   await expect(articles.nth(4)).toContainText('Curiosidade · Tecnologia');
   const pageText=(await page.locator('body').innerText()).toLowerCase();
-  for(const required of ['31 ago 2026','lua se afasta da terra','córnea é transparente','ssds usam wear leveling','8 semanas + 1 dia','tse inicia hoje julgamento virtual','eua e irã retomam ataques','kharg segue sem confirmação','cruzeiro x corinthians abre hoje','19h15','último dia do novo desenrola','carro usado até r$70 mil','bateria fraca pode parecer']) expect(pageText).toContain(required.toLowerCase());
-  for(const omitted of ['30 ago 2026','céu fica azul','ponto cego','qr code','bombeiros resgatam 20 pessoas','presidenciáveis cumprem agendas de domingo','santos vence o corinthians por 1 a 0','eua atacam lançadores iranianos','europa coloca previsibilidade dos eua','gamescom 2026 chega ao último dia','náutica']) expect(pageText).not.toContain(omitted.toLowerCase());
+  for(const required of ['31 ago 2026','lua se afasta da terra','córnea é transparente','ssds usam wear leveling','8 semanas + 1 dia','tse inicia hoje julgamento virtual','irã rejeita alegação de ataque a kharg','terminal segue operacional','cate móvel atende hoje','casa da mulher em itaquera','cruzeiro x corinthians abre hoje','19h15','europa amplia rede de ia','lumi-ai','fsb coloca risco cibernético','último dia do novo desenrola','carro usado até r$70 mil','bateria fraca pode parecer']) expect(pageText).toContain(required.toLowerCase());
+  for(const omitted of ['30 ago 2026','kharg segue sem confirmação','eua e irã retomam ataques; alegação','céu fica azul','ponto cego','qr code','bombeiros resgatam 20 pessoas','presidenciáveis cumprem agendas de domingo','santos vence o corinthians por 1 a 0','gamescom 2026 chega ao último dia','náutica']) expect(pageText).not.toContain(omitted.toLowerCase());
   const mediaSources=await page.locator('img, iframe').evaluateAll(nodes=>nodes.map(node=>({tag:node.tagName,src:(node as HTMLImageElement|HTMLIFrameElement).src||''})));
   const forbidden=mediaSources.map(item=>item.src).filter(src=>/sprite(?:-news)?\.jpg|clean-covers\.jpg|transparent\.gif|data:image\/gif/i.test(src));
   expect(forbidden).toEqual([]);
