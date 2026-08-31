@@ -5,23 +5,20 @@ const oldNews="const news=['brasil','mundo','politica','tempo','seguranca-zl'].m
 const currentNews="const news=['brasil','mundo','politica','tempo','seguranca-zl','corinthians'].map(journalisticReel)";
 if(s.includes(oldNews))s=s.replace(oldNews,currentNews);else if(!s.includes(currentNews))throw new Error('CURRENT FEED PREP: expected news array not found');
 
+// A rotação de Papo/Desafio é determinada pela data em America/Sao_Paulo no próprio componente.
+// Para 31/08, os índices são diferentes dos sete dias anteriores. Sertanejo usa uma peça nova para a data corrente.
 const replacements=[
-['Qual coisa boba sempre consegue fazer você rir?','Qual foi o melhor momento inesperado da sua semana?'],
-['Vale meme, frase, situação, pessoa, vídeo antigo ou algum costume estranho de vocês.','Não vale escolher algo planejado: pense numa surpresa pequena, conversa, notícia boa ou situação que saiu melhor do que você esperava.'],
-['A regra é contar a história completa, não só responder o nome.','Depois contem o que fez aquele momento ficar na memória.'],
-['Desafio: cada um indica um vídeo de até 10 minutos para o outro','Desafio: tirem uma foto juntos que represente este sábado'],
-['Pode ser curioso, engraçado, música, ciência, viagem ou qualquer coisa que você acha que o outro vai gostar.','Sem pose perfeita: escolham um momento comum do dia e façam uma única foto para guardar como registro de hoje.'],
-['Clássico da roça do dia: Cabocla Tereza','Clássico da roça do dia: Tristeza do Jeca'],
-['Tonico e Tinoco interpretam “Cabocla Tereza” em registro de 1993 na TV Cultura. Hoje o foco é a tradição narrativa do sertanejo raiz e a força das modas que contam histórias completas — sem reproduzir a letra.','Tonico e Tinoco interpretam “Tristeza do Jeca” em registro preservado pela TV Cultura. O foco de hoje é a toada caipira, a saudade e a forma como voz e viola transformam narrativa em memória — sem reproduzir a letra.'],
-['Qual moda de viola antiga você conhece que parece contar um filme inteiro em poucos minutos?','Qual música caipira antiga te lembra uma pessoa, um lugar ou uma fase da vida?'],
-['https://www.youtube.com/embed/kv2jknSIBGc?playsinline=1&rel=0','https://www.youtube.com/embed/Fxac2CJDo8A?playsinline=1&rel=0'],
-["title:'Cabocla Tereza'","title:'Tristeza do Jeca'"],
-["summary:'Clássico caipira diferente da edição anterior, com vídeo legítimo e contexto histórico.'","summary:'Toada clássica de Angelino de Oliveira em interpretação de Tonico e Tinoco, com vídeo legítimo da TV Cultura.'"],
-['YouTube · Tonico e Tinoco · Cabocla Tereza na TV Cultura (1993)','YouTube · TV Cultura · Tristeza do Jeca · Tonico e Tinoco'],
-['https://www.youtube.com/watch?v=kv2jknSIBGc','https://www.youtube.com/watch?v=Fxac2CJDo8A']
+['Clássico da roça do dia: Cabocla Tereza','Clássico da roça do dia: Pagode em Brasília'],
+['Tonico e Tinoco interpretam “Cabocla Tereza” em registro de 1993 na TV Cultura. Hoje o foco é a tradição narrativa do sertanejo raiz e a força das modas que contam histórias completas — sem reproduzir a letra.','Tião Carreiro e Pardinho interpretam “Pagode em Brasília”. Hoje o foco é o pagode de viola, a batida sincopada e a resposta entre viola e voz — sem reproduzir a letra.'],
+['Qual moda de viola antiga você conhece que parece contar um filme inteiro em poucos minutos?','Qual música de viola você reconhece só pelos primeiros segundos do instrumento?'],
+['https://www.youtube.com/embed/kv2jknSIBGc?playsinline=1&rel=0','https://www.youtube.com/embed/lpGGNA6_920?playsinline=1&rel=0'],
+["title:'Cabocla Tereza'","title:'Pagode em Brasília'"],
+["summary:'Clássico caipira diferente da edição anterior, com vídeo legítimo e contexto histórico.'","summary:'Clássico de Tião Carreiro e Pardinho com vídeo legítimo e foco na linguagem do pagode de viola.'"],
+['YouTube · Tonico e Tinoco · Cabocla Tereza na TV Cultura (1993)','YouTube · Tião Carreiro e Pardinho · Pagode em Brasília'],
+['https://www.youtube.com/watch?v=kv2jknSIBGc','https://www.youtube.com/watch?v=lpGGNA6_920']
 ];
 for(const [from,to] of replacements){if(s.includes(from))s=s.replace(from,to);else if(!s.includes(to))throw new Error(`CURRENT FEED PREP: expected rotation text not found: ${from}`);}
-writeFileSync(reelPath,s);console.log('CURRENT FEED PREP: 29/08 noon rotation applied');
+writeFileSync(reelPath,s);console.log('CURRENT FEED PREP: 31/08 rotation applied');
 
 const categoryPath='lib/categories.ts';
 let c=readFileSync(categoryPath,'utf8');
