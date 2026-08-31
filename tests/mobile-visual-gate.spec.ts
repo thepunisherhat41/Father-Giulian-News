@@ -9,7 +9,7 @@ test('current edition is healthy on mobile card by card', async ({ page }) => {
   const articles=page.locator('article');
   await expect(articles.first()).toBeVisible({timeout:10000});
   const articleCount=await articles.count();
-  expect(articleCount).toBeGreaterThanOrEqual(10);
+  expect(articleCount).toBe(19);
 
   const dimensions=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,bodyScrollWidth:document.body.scrollWidth,innerWidth:window.innerWidth}));
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth+1);
@@ -34,7 +34,8 @@ test('current edition is healthy on mobile card by card', async ({ page }) => {
     'resultado final',
     'christian oliva',
     'são paulo tem domingo quente e seco',
-    'bancos centrais europeus',
+    'eua atacam lançadores iranianos',
+    'ilha de larak',
     'europa coloca previsibilidade dos eua'
   ]) expect(pageText).toContain(required.toLowerCase());
 
@@ -52,6 +53,7 @@ test('current edition is healthy on mobile card by card', async ({ page }) => {
     'hasbro começa a notificar',
     'openai anuncia que deixará',
     'novo desenrola brasil termina',
+    'bancos centrais europeus temem mais turbulência',
     'náutica'
   ]) expect(pageText).not.toContain(omitted.toLowerCase());
 
