@@ -1,15 +1,15 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-08-31';
-export const editorialFreshnessValidatedAt='31/08/2026 · 08h33 · revisão da manhã';
+export const editorialFreshnessValidatedAt='31/08/2026 · 11h37 · revisão de fim da manhã';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Agência Brasil 31/08 07h02: Caixa conclui o calendário regular do Bolsa Família de agosto para beneficiários com NIS final 0; 19,3 milhões de famílias são atendidas no mês.'},
 {slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Prefeitura de São Paulo confirma ações de empregabilidade do Cate Móvel em 31/08 na Casa da Mulher – Itaquera e no Parque Jardim Sapopemba.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'TSE iniciou à meia-noite de 31/08 o julgamento virtual dos registros das candidaturas à Presidência; sessão segue até 02/09.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'TSE 31/08 09h00: começou a compilação dos sistemas eleitorais; assinatura digital e lacração serão concluídas em 04/09. O julgamento virtual dos registros presidenciais segue em paralelo até 02/09.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 31/08: autoridades iranianas negam ataque a Kharg e afirmam que o terminal segue operacional; alegação de Trump permanece sem confirmação independente e vídeo associado era gerado por IA.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não entra como notícia.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não tratado como notícia.'},
-{slug:'tempo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'CGE ainda sem boletim novo de 31/08 confirmado nesta revisão; card de 30/08 não é reciclado.'},
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Agência Brasil 31/08 10h08: São Paulo pode chegar a 32°C, umidade perto de 35% e possibilidade de pancadas isoladas; Inmet mantém alerta amarelo para baixa umidade em áreas do estado.'},
 {slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova de 31/08 mantida: afastamento lunar medido por laser, córnea sem vasos sanguíneos e wear leveling de SSD.'},
 {slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Proposta musical renovada para 31/08.'},
 {slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo de 31/08 confirmado nesta revisão; gamescom de 30/08 expirou.'},
@@ -23,7 +23,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'31/08 é o prazo final para formalização de acordos do Novo Desenrola Brasil; Agência Brasil informa que não há nova extensão prevista.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 31/08: EuroHPC contratou a Bull por €387,8 milhões para o supercomputador LUMI-AI na Finlândia, com operação prevista para o segundo semestre de 2027.'},
 {slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FSB 31/08: carta ao G20 classifica o impacto de IA de fronteira sobre risco cibernético como preocupação imediata para o sistema financeiro e pede reforço de resiliência.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cyber rechecado até 08h33; sem incidente novo de 31/08 confirmado o suficiente para Reel separado.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado até 08h33; nenhum CVE/advisory novo de 31/08 foi promovido sem evidência de data e fonte suficiente.'}
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cyber rechecado até 11h37; sem incidente novo de 31/08 confirmado o suficiente para Reel separado.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado até 11h37; sem CVE/advisory publicado em 31/08 com confirmação suficiente. Itens recentes de 28–29/08 não foram reciclados como notícia de hoje.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}

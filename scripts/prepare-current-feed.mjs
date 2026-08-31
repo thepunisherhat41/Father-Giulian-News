@@ -15,10 +15,12 @@ const replacements=[
 ["title:'Cabocla Tereza'","title:'Pagode em Brasília'"],
 ["summary:'Clássico caipira diferente da edição anterior, com vídeo legítimo e contexto histórico.'","summary:'Clássico de Tião Carreiro e Pardinho com vídeo legítimo e foco na linguagem do pagode de viola.'"],
 ['YouTube · Tonico e Tinoco · Cabocla Tereza na TV Cultura (1993)','YouTube · Tião Carreiro e Pardinho · Pagode em Brasília'],
-['https://www.youtube.com/watch?v=kv2jknSIBGc','https://www.youtube.com/watch?v=lpGGNA6_920']
+['https://www.youtube.com/watch?v=kv2jknSIBGc','https://www.youtube.com/watch?v=lpGGNA6_920'],
+['https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple%20enjoys%20coffee%20together%20at%20home.jpg','/generated/papo-couple-20260831.svg'],
+['https://commons.wikimedia.org/wiki/Special:Redirect/file/DSCF0763%20A%20couple%20seated%20at%20a%20seaside%20table%20enjoying%20an%20evening%20meal%20and%20drinks%20while%20watching%20the%20sunset%20over%20the%20water.jpg','/generated/challenge-couple-20260831.svg']
 ];
 for(const [from,to] of replacements){if(s.includes(from))s=s.replace(from,to);else if(!s.includes(to))throw new Error(`CURRENT FEED PREP: expected rotation text not found: ${from}`);}
-writeFileSync(reelPath,s);console.log('CURRENT FEED PREP: 31/08 rotation applied');
+writeFileSync(reelPath,s);console.log('CURRENT FEED PREP: 31/08 rotation and local media applied');
 
 const categoryPath='lib/categories.ts';
 let c=readFileSync(categoryPath,'utf8');
