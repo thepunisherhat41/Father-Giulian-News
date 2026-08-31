@@ -30,14 +30,16 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Editorial Quality Gate
-        if: ${{ github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'release: open production deployment window') }}
-        run: npm run quality
+      - name: Prepare controlled release context
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            MSG="$(git log -1 --pretty=%B)"
+            case "$MSG" in
+              "release: open production deployment window"*) echo "VERCEL=1" >> "$GITHUB_ENV" ;;
+            esac
+          fi
 
-      - name: Editorial Quality Gate - controlled release
-        if: ${{ github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release: open production deployment window') }}
-        env:
-          VERCEL: '1'
+      - name: Editorial Quality Gate
         run: npm run quality
 
       - name: Production build validation
