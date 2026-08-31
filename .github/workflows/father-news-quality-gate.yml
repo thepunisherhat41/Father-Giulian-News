@@ -31,8 +31,13 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Editorial Quality Gate
+        if: ${{ github.event_name != 'push' || !startsWith(github.event.head_commit.message, 'release: open production deployment window') }}
+        run: npm run quality
+
+      - name: Editorial Quality Gate - controlled release
+        if: ${{ github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release: open production deployment window') }}
         env:
-          VERCEL: ${{ github.event_name == 'push' && startsWith(github.event.head_commit.message, 'release: open production deployment window') && '1' || '0' }}
+          VERCEL: '1'
         run: npm run quality
 
       - name: Production build validation
