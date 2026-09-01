@@ -1,11 +1,11 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-01';
-export const editorialFreshnessValidatedAt='01/09/2026 · 12h30 · revisão do meio-dia';
+export const editorialFreshnessValidatedAt='01/09/2026 · 14h28 · revisão da tarde';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato nacional material novo de 01/09 confirmado nesta revisão; itens de 31/08 não foram reciclados.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 01/09 suficientemente material para Zona Leste; card omitido corretamente.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: consulta ao local/seção de votação disponível desde 01/09. ATUALIZAÇÃO: TV Senado confirmou retomada da comissão mista da MP 1.357/2026 para analisar/votar o relatório, sem presumir resultado final. AGENDA: Senado tem sessão deliberativa oficial às 14h.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: consulta ao local/seção de votação disponível. ATUALIZAÇÃO: TV Senado informou novo adiamento da leitura do relatório da MP 1.357/2026 e a Câmara registra a reunião das 10h como suspensa. AGENDA: TSE tem sessão às 19h com caso sobre IA/deepfake; agenda das 14h não é presumida como realizada.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: declaração do presidente iraniano sobre reciprocidade caso EUA retomem compromissos do acordo de junho; texto não trata isso como novo acordo.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não tratado como notícia.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não tratado como notícia.'},
@@ -23,7 +23,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Mercados rechecados; sem fato brasileiro material que justifique Reel separado nesta revisão.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: no SEMICON Taiwan, Lai Ching-te vinculou confiança institucional à posição da ilha na cadeia global de semicondutores; fato e declaração estão separados.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'CISA e fontes primárias rechecadas; sem advisory/incidente novo de 01/09 confirmado nesta revisão; nenhum item antigo foi reciclado.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cyber rechecado; sem fato novo de 01/09 confirmado o suficiente para Reel separado.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'GTIG/Mandiant publicou em 01/09 investigação sobre BREEZE COMET mirando organizações brasileiras e buscando inclusive credenciais hard-coded de CI/CD, API keys e tokens privilegiados de cloud.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado; sem CVE/advisory novo de 01/09 com confirmação oficial suficiente. Card omitido em vez de reciclar advisory antigo.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
