@@ -1,11 +1,11 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-01';
-export const editorialFreshnessValidatedAt='01/09/2026 · 08h34 · revisão da manhã';
+export const editorialFreshnessValidatedAt='01/09/2026 · 12h05 · revisão do meio-dia';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato nacional material novo de 01/09 confirmado nesta revisão; itens de 31/08 não foram reciclados.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 01/09 suficientemente material para Zona Leste; card omitido corretamente.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: TSE torna disponível a partir de 01/09 a consulta ao local/seção de votação atualizada. AGENDA: comissão da MP 1357/26 permanece marcada para 10h; resultado não foi presumido.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: consulta ao local/seção de votação disponível desde 01/09. ATUALIZAÇÃO: agenda das 10h já passou sem desfecho oficial presumido. AGENDA: Senado tem sessão deliberativa oficial às 14h.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: declaração do presidente iraniano sobre reciprocidade caso EUA retomem compromissos do acordo de junho; texto não trata isso como novo acordo.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não tratado como notícia.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não tratado como notícia.'},
@@ -15,7 +15,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material de 01/09 confirmado nesta revisão; conteúdo anterior não foi reciclado.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'DUM 05/07/2026 resulta em 8 semanas + 2 dias em 01/09/2026.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática de 01/09 permanece atual.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: Corinthians completa 116 anos em 01/09. AGENDA: programação noturna do Parque São Jorge foi mantida como prevista, sem presumir execução antes do horário.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: Corinthians completa 116 anos em 01/09 e a venda escalonada para Corinthians x Chapecoense começou hoje. AGENDA: jogo em 06/09 às 19h30 e programação noturna permanecem como previstas.'},
 {slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist de 01/09 mantém teto explícito de R$70 mil.'},
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist de pneus renovado para 01/09.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Diagnóstico de sistema de carga renovado para 01/09.'},
