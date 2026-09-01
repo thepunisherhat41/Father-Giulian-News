@@ -1,7 +1,7 @@
 export function applyCurrentReelPatches20260901_1732(dailyContent:Record<string,any>){
   Object.assign(dailyContent.tempo,{
     title:'INMET aponta mais de 90% de chance de El Niño muito forte no trimestre; São Paulo tende a ter chuva acima da média',
-    summary:'FATO + PREVISÃO CLIMÁTICA · Em boletim conjunto publicado nesta terça-feira (1º) às 15h03, INMET, INPE, ANA, CEMADEN, SGB, SEDEC e CENSIPAM informaram que a previsão do CPC/NOAA indica mais de 90% de probabilidade de o trimestre setembro-outubro-novembro registrar um El Niño muito forte. Para partes de São Paulo, a tendência climática é de chuva acima da média. Isso é projeção para o trimestre e não substitui o alerta meteorológico de curto prazo válido hoje.',
+    summary:'FATO + PREVISÃO CLIMÁTICA · Em boletim conjunto publicado nesta terça-feira (1º) às 15h03, INMET, INPE, ANA, CEMADEN, SGB, SEDEC e CENSIPAM informaram que a previsão do CPC/NOAA indica mais de 90% de probabilidade de o trimestre setembro-outubro-novembro registrar um El Niño muito forte. Para partes de São Paulo, a tendência climática é de chuva acima da média. Isso é projeção para o trimestre e não substitui o alerta amarelo de tempestade do INMET válido hoje, que segue tratado separadamente como previsão de curto prazo.',
     shareSummary:'Tempo · 01/09: boletim oficial aponta mais de 90% de chance de El Niño muito forte em setembro-outubro-novembro; partes de São Paulo tendem a ter chuva acima da média.',
     readTime:'4 MIN READ',
     badge:'TEMPO · FATO + PREVISÃO CLIMÁTICA · 01/09',
