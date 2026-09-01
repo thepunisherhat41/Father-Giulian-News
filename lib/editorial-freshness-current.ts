@@ -1,11 +1,11 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-01';
-export const editorialFreshnessValidatedAt='01/09/2026 · 12h05 · revisão do meio-dia';
+export const editorialFreshnessValidatedAt='01/09/2026 · 12h30 · revisão do meio-dia';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato nacional material novo de 01/09 confirmado nesta revisão; itens de 31/08 não foram reciclados.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 01/09 suficientemente material para Zona Leste; card omitido corretamente.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: consulta ao local/seção de votação disponível desde 01/09. ATUALIZAÇÃO: agenda das 10h já passou sem desfecho oficial presumido. AGENDA: Senado tem sessão deliberativa oficial às 14h.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: consulta ao local/seção de votação disponível desde 01/09. ATUALIZAÇÃO: TV Senado confirmou retomada da comissão mista da MP 1.357/2026 para analisar/votar o relatório, sem presumir resultado final. AGENDA: Senado tem sessão deliberativa oficial às 14h.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: declaração do presidente iraniano sobre reciprocidade caso EUA retomem compromissos do acordo de junho; texto não trata isso como novo acordo.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não tratado como notícia.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não tratado como notícia.'},
