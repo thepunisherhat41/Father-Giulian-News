@@ -1,6 +1,6 @@
 export function applyCurrentReelPatches20260901_1205(dailyContent:Record<string,any>){
   Object.assign(dailyContent.politica,{
-    title:'Consulta ao local de votação está disponível; Senado tem sessão às 14h',
+    title:'Consulta ao local de votação abre hoje; Senado tem sessão às 14h',
     summary:'FATO + ATUALIZAÇÃO + AGENDA · O TSE confirmou às 9h que a consulta ao local e à seção de votação já está disponível no e-Título e no Portal. A reunião da MP 1.357/2026 que constava às 10h já passou do horário nesta revisão; sem confirmação oficial independente do desfecho, o card não presume que ela ocorreu. No Senado, a Sessão Deliberativa Ordinária está oficialmente agendada para 14h, com a MP entre as matérias que poderão ser deliberadas se a apreciação na Câmara estiver concluída.',
     readTime:'4 MIN READ',badge:'POLÍTICA · FATO + ATUALIZAÇÃO + AGENDA · 01/09',
     stats:[
