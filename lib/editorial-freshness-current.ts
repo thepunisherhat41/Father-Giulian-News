@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-01';
-export const editorialFreshnessValidatedAt='01/09/2026 · 23h28 · revisão da noite';
+export const editorialFreshnessDate='2026-09-02';
+export const editorialFreshnessValidatedAt='02/09/2026 · 02h45 · edição de madrugada';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'PIB divulgado hoje foi classificado em Finanças para evitar duplicidade; demais itens nacionais sem fato material adicional confirmado nesta revisão.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 01/09 suficientemente material para Zona Leste; card omitido corretamente.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: consulta ao local/seção de votação disponível. ATUALIZAÇÃO: reunião da MP 1.357/2026 suspensa/adiada. AGENDA do TSE das 19h não foi convertida em resultado sem confirmação independente.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: declaração do presidente iraniano sobre reciprocidade caso EUA retomem compromissos do acordo de junho; texto não trata isso como novo acordo.'},
-{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não tratado como notícia.'},
-{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não tratado como notícia.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'INMET 01/09: boletim de El Niño e alerta de curto prazo tratados separadamente.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita de 01/09 preservada: aquecimento do ar por relâmpago, barreira muco-bicarbonato e negociação USB Power Delivery.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência de escuta ativa renovada para 01/09 e ainda válida.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material de 01/09 confirmado nesta revisão; conteúdo anterior não foi reciclado.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'DUM 05/07/2026 resulta em 8 semanas + 2 dias em 01/09/2026.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática de 01/09 permanece atual.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: Corinthians completa 116 anos em 01/09 e venda escalonada para Corinthians x Chapecoense começou hoje; agenda futura não é tratada como realizada.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist de 01/09 mantém teto explícito de R$70 mil.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist de pneus renovado para 01/09.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Diagnóstico de sistema de carga renovado para 01/09.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Plano B de chuva de 01/09 permanece coerente com a condição meteorológica.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: dados do IBGE divulgados em 01/09 mostram PIB +0,5% no 2º trimestre, +2,0% a/a, +1,9% em quatro trimestres e consumo das famílias -0,4%.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: no SEMICON Taiwan, Lai Ching-te vinculou confiança institucional à posição da ilha na cadeia global de semicondutores; fato e declaração estão separados.'},
-{slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ADVISORY: CISA publicou em 01/09 os advisories ICSA-26-244-01, ICSA-26-244-03 e ICSA-26-244-06 para produtos Rockwell em OT. O card não presume exploração ativa nem inclusão no KEV sem confirmação oficial.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'GTIG/Mandiant 01/09: BREEZE COMET mira organizações brasileiras e procura credenciais CI/CD, chaves de API e tokens cloud.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado; sem CVE/advisory novo de 01/09 com confirmação oficial suficiente para um card separado. Nenhum item antigo foi reciclado.'}
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 02/09 suficientemente material nesta revisão de madrugada; card jornalístico omitido, sem reciclar 01/09.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 02/09 com fonte adequada para Zona Leste; card omitido corretamente.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA: comissão mista da MP 1.357/2026 está marcada para 10h. FATO DE CALENDÁRIO: TSE inicia em 02/09 etapa de cadernos de votação e relação definitiva de transferências temporárias. Nenhum resultado futuro foi presumido.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: nova onda de ataques dos EUA contra alvos do IRGC e retaliação iraniana contra instalações americanas na região.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não é tratado como notícia de hoje.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não é tratado como notícia de hoje.'},
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO: INMET indica deslocamento da chuva para leste/nordeste do Sudeste e avanço de alta pressão nesta quarta (02); previsão não é ocorrência garantida em cada bairro.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita de 02/09: velocidade do som na água, piloereção e correção de erros em QR Code; sem repetir 01/09.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência renovada de 02/09: comparar versão de estúdio com apresentação ao vivo.'},
+{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material de 02/09 confirmado nesta revisão; card jornalístico omitido.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'DUM 05/07/2026 resulta em 8 semanas + 3 dias em 02/09/2026.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática renovada para 02/09: registrar mudanças, melhoras e dúvidas para o pré-natal.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA oficial: venda geral para Corinthians x Chapecoense prevista para 02/09 às 15h, sem tratar abertura futura como fato já ocorrido.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado e teto de R$70 mil preservado explicitamente.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado para sinais de queda em moto usada.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre diagnóstico contextual de ruídos antes da troca de peças.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia de bate-volta em raio de aproximadamente 90 minutos renovada para 02/09.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: Brent perto de US$95, Treasury de 10 anos em 4,812% e dólar perto de máxima de duas semanas; dados intradiários tratados como tal.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: ministro da Economia de Taiwan aponta mais US$20 bilhões em investimentos empresariais nos EUA, separados do plano da TSMC.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rechecado em 02/09; sem advisory/CVE novo desta data com confirmação oficial suficiente para card separado. Conteúdo de 01/09 não foi reciclado.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cyber rechecado em 02/09; sem fato novo material desta data confirmado para publicação. BREEZE COMET de 01/09 foi omitido.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado em 02/09; sem CVE/advisory novo desta data com confirmação oficial suficiente para um card separado. Nenhum item antigo foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
