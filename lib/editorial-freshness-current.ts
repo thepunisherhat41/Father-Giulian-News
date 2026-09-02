@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-01';
-export const editorialFreshnessValidatedAt='01/09/2026 · 20h26 · revisão da noite';
+export const editorialFreshnessValidatedAt='01/09/2026 · 23h28 · revisão da noite';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'PIB divulgado hoje foi classificado em Finanças para evitar duplicidade; demais itens nacionais sem fato material adicional confirmado nesta revisão.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 01/09 suficientemente material para Zona Leste; card omitido corretamente.'},
@@ -22,8 +22,8 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Plano B de chuva de 01/09 permanece coerente com a condição meteorológica.'},
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: dados do IBGE divulgados em 01/09 mostram PIB +0,5% no 2º trimestre, +2,0% a/a, +1,9% em quatro trimestres e consumo das famílias -0,4%.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 01/09: no SEMICON Taiwan, Lai Ching-te vinculou confiança institucional à posição da ilha na cadeia global de semicondutores; fato e declaração estão separados.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'CISA e fontes primárias rechecadas; sem advisory/incidente novo de 01/09 confirmado nesta revisão; nenhum item antigo foi reciclado.'},
+{slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ADVISORY: CISA publicou em 01/09 os advisories ICSA-26-244-01, ICSA-26-244-03 e ICSA-26-244-06 para produtos Rockwell em OT. O card não presume exploração ativa nem inclusão no KEV sem confirmação oficial.'},
 {slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'GTIG/Mandiant 01/09: BREEZE COMET mira organizações brasileiras e procura credenciais CI/CD, chaves de API e tokens cloud.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado; sem CVE/advisory novo de 01/09 com confirmação oficial suficiente. Card omitido em vez de reciclar advisory antigo.'}
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado; sem CVE/advisory novo de 01/09 com confirmação oficial suficiente para um card separado. Nenhum item antigo foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
