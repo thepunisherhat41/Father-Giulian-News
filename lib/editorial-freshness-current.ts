@@ -1,11 +1,11 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-02';
-export const editorialFreshnessValidatedAt='02/09/2026 · 08h33 · revisão da manhã';
+export const editorialFreshnessValidatedAt='02/09/2026 · 11h34 · revisão intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: PF publicou às 07h35 a segunda fase da Operação Forlands, com três buscas em Itapema/SC e Curitiba/PR e bloqueio judicial de até R$ 5 milhões; responsabilidade dos investigados não é presumida.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 02/09 com fonte adequada para Zona Leste nesta revisão; card omitido corretamente.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA: comissão mista da MP 1.357/2026 está marcada para 10h. FATO DE CALENDÁRIO: TSE inicia em 02/09 etapa de cadernos de votação e relação definitiva de transferências temporárias. Nenhum resultado futuro foi presumido.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO: reunião da MP 1.357/2026 estava marcada para 10h, mas às 11h34 o painel oficial do Senado ainda indicava “Aguardando reinício”; sem presumir retomada, votação, resultado ou novo adiamento. FATO DE CALENDÁRIO do TSE mantido separadamente.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: nova onda de ataques dos EUA contra alvos do IRGC e retaliação iraniana contra instalações americanas na região.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen científico revisado; não é tratado como notícia de hoje.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen revisado; não é tratado como notícia de hoje.'},
@@ -20,7 +20,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado para sinais de queda em moto usada.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre diagnóstico contextual de ruídos antes da troca de peças.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia de bate-volta em raio de aproximadamente 90 minutos renovada para 02/09.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: Brent perto de US$95, Treasury de 10 anos em 4,812% e dólar perto de máxima de duas semanas; dados intradiários tratados como tal.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO Reuters 02/09: Brent recuou para US$94,22 e WTI para US$89,51 após máximas intradiárias de US$97,04 e US$92,29; o card substitui o retrato da madrugada e mantém os preços como dados intradiários.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: ministro da Economia de Taiwan aponta mais US$20 bilhões em investimentos empresariais nos EUA, separados do plano da TSMC.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rechecado em 02/09; sem advisory/CVE novo desta data com confirmação oficial suficiente para card separado. Conteúdo de 01/09 não foi reciclado.'},
 {slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'SonicWall confirmou em advisory de 01/09 exploração ativa de CVE-2026-83548/83549; reportagens de 02/09 sobre esse mesmo fato não foram convertidas em notícia nova de hoje. Card Cyber permanece omitido.'},
