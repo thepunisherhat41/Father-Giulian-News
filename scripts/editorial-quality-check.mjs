@@ -69,8 +69,9 @@ if(!imageCount)failures.push('Mídia: nenhuma imagem validada no catálogo corre
 if((media.match(/alt:/g)??[]).length<imageCount)failures.push('Mídia: alt text ausente.');
 if((media.match(/sourceUrl:/g)??[]).length<imageCount)failures.push('Mídia: sourceUrl ausente.');
 const labelBySlug={brasil:'Brasil','seguranca-zl':'Zona Leste em Foco',politica:'Política',mundo:'Mundo',tempo:'Tempo e Clima',games:'Games',corinthians:'Corinthians',financas:'Finanças',tecnologia:'Tecnologia','security-briefing':'Security Briefing',seguranca:'Cyber Security','appsec-ssdlc':'AppSec / SSDLC'};
-for(const s of active){const label=labelBySlug[s];if(label&&!media.includes(`label:'${label}'`))failures.push(`Mídia corrente ausente para Reel ATUALIZADO: ${label}`);}
-if(!media.includes("label:'Curiosidades'"))failures.push('Mídia corrente: Curiosidades sem mídia própria.');
+const hasMediaLabel=label=>media.includes(`label:'${label}'`)||media.includes(`img('${label}'`);
+for(const s of active){const label=labelBySlug[s];if(label&&!hasMediaLabel(label))failures.push(`Mídia corrente ausente para Reel ATUALIZADO: ${label}`);}
+if(!hasMediaLabel('Curiosidades'))failures.push('Mídia corrente: Curiosidades sem mídia própria.');
 
 const rich=text('lib/current-rich-media.ts');
 if(!rich.includes('dailyRichMediaCurrent'))failures.push('Mídia: catálogo corrente não é consultado.');
