@@ -1,9 +1,9 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-02';
-export const editorialFreshnessValidatedAt='02/09/2026 · 17h59 · revisão intradiária';
+export const editorialFreshnessValidatedAt='02/09/2026 · 20h36 · revisão intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO: PF publicou às 07h35 a segunda fase da Operação Forlands, com três buscas em Itapema/SC e Curitiba/PR e bloqueio judicial de até R$ 5 milhões; responsabilidade dos investigados não é presumida.'},
+{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO + ATUALIZAÇÃO: área técnica do TCU informou em 02/09 não ter identificado omissão ou falha relevante do governo na tentativa de evitar o veto europeu; a suspensão de produtos animais brasileiros entra em vigor em 03/09 e não é tratada nesta edição como já efetiva.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 02/09 com fonte adequada para Zona Leste nesta revisão; card omitido corretamente.'},
 {slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ATUALIZAÇÃO: comissão mista aprovou em 02/09 o relatório da MP 1.357/2026; texto segue à Câmara e ainda depende dos plenários. PESQUISA: Quaest divulgada em 02/09 mostra Lula 42% e Flávio Bolsonaro 41% em eventual 2º turno, empate técnico com margem de erro de 2 p.p.; levantamento ouviu 2.004 pessoas de 30/08 a 01/09.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: nova onda de ataques dos EUA contra alvos do IRGC e retaliação iraniana contra instalações americanas na região.'},
@@ -23,7 +23,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · FECHAMENTO Reuters 02/09: Brent encerrou a US$95,63 (+1%) e WTI a US$91,01 (+0,9%); o fechamento substitui as cotações intradiárias anteriores e mantém o risco de Hormuz como contexto, não como previsão de preço.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 02/09 20h31 UTC: Microsoft passará a divulgar vendas trimestrais do Azure e reduzirá de três para dois segmentos financeiros reportáveis, com Agents and Infra e Devices and Consumer.'},
 {slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · GUIDANCE: CISA, FBI e parceiros do Reino Unido, Austrália, Canadá e Nova Zelândia publicaram em 02/09 o guia Communicating Under Pressure para comunicação durante indisponibilidades de TI/OT. O card não classifica o item como CVE, KEV ou exploração ativa.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'SonicWall confirmou em advisory de 01/09 exploração ativa de CVE-2026-83548/83549; reportagens de 02/09 sobre esse mesmo fato não foram convertidas em notícia nova de hoje. Card Cyber permanece omitido.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 02/09: carta da OpenAI revisada pela agência descreve desenvolvimento de capacidades de desligamento automatizado, mais restrições de internet e monitoramento em testes de segurança; o incidente de contenção citado é anterior e aparece somente como contexto.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado em 02/09; sem CVE/advisory novo desta data com confirmação oficial suficiente para um card separado. Nenhum item antigo foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
