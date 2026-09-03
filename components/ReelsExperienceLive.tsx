@@ -2,49 +2,11 @@
 import {dailyContent} from '@/lib/daily-content';
 import {curiosityCollections} from '@/lib/curiosity-collections';
 import {applyCurrentCuriosityRotation} from '@/lib/current-curiosity-rotation';
-import {applyCurrentReelPatches} from '@/lib/current-reel-patches';
-import {applyCurrentReelPatches1432} from '@/lib/current-reel-patches-1432';
-import {applyCurrentReelPatches17h} from '@/lib/current-reel-patches-17h';
-import {applyCurrentReelPatches1730} from '@/lib/current-reel-patches-1730';
-import {applyCurrentReelPatches1835} from '@/lib/current-reel-patches-1835';
-import {applyCurrentReelPatches20h} from '@/lib/current-reel-patches-20h';
-import {applyCurrentReelPatches23h} from '@/lib/current-reel-patches-23h';
-import {applyCurrentReelPatches20260826} from '@/lib/current-reel-patches-2026-08-26';
-import {applyCurrentReelPatches20260826_1128} from '@/lib/current-reel-patches-2026-08-26-1128';
-import {applyCurrentReelPatches20260826_17h} from '@/lib/current-reel-patches-2026-08-26-17h';
-import {applyCurrentReelPatches20260826_1735} from '@/lib/current-reel-patches-2026-08-26-1735';
-import {applyCurrentReelPatches20260826_23h} from '@/lib/current-reel-patches-2026-08-26-23h';
-import {applyCurrentReelPatches20260827} from '@/lib/current-reel-patches-2026-08-27';
-import {applyCurrentReelPatches20260827Family} from '@/lib/current-reel-patches-2026-08-27-family';
-import {applyCurrentReelPatches20260827_0835} from '@/lib/current-reel-patches-2026-08-27-0835';
-import {applyCurrentReelPatches20260827_0944} from '@/lib/current-reel-patches-2026-08-27-0944';
-import {applyCurrentReelPatches20260827_1130} from '@/lib/current-reel-patches-2026-08-27-1130';
-import {applyCurrentReelPatches20260828} from '@/lib/current-reel-patches-2026-08-28';
-import {applyCurrentReelPatches20260828Family} from '@/lib/current-reel-patches-2026-08-28-family';
-import {applyCurrentReelPatches20260829} from '@/lib/current-reel-patches-2026-08-29';
-import {applyCurrentReelPatches20260829Afternoon} from '@/lib/current-reel-patches-2026-08-29-afternoon';
-import {applyCurrentReelPatches20260830} from '@/lib/current-reel-patches-2026-08-30';
-import {applyCurrentReelPatches20260830_17h28} from '@/lib/current-reel-patches-2026-08-30-17h28';
-import {applyCurrentReelPatches20260830_20h29} from '@/lib/current-reel-patches-2026-08-30-20h29';
-import {applyCurrentReelPatches20260830_23h36} from '@/lib/current-reel-patches-2026-08-30-23h36';
-import {applyCurrentReelPatches20260831} from '@/lib/current-reel-patches-2026-08-31';
-import {applyCurrentReelPatches20260831_0532} from '@/lib/current-reel-patches-2026-08-31-0532';
-import {applyCurrentReelPatches20260831_0833} from '@/lib/current-reel-patches-2026-08-31-0833';
-import {applyCurrentReelPatches20260831_1137} from '@/lib/current-reel-patches-2026-08-31-1137';
-import {applyCurrentReelPatches20260831_1427} from '@/lib/current-reel-patches-2026-08-31-1427';
-import {applyCurrentReelPatches20260831_1741} from '@/lib/current-reel-patches-2026-08-31-1741';
-import {applyCurrentReelPatches20260831_2327} from '@/lib/current-reel-patches-2026-08-31-2327';
-import {applyCurrentReelPatches20260901} from '@/lib/current-reel-patches-2026-09-01';
-import {applyCurrentReelPatches20260901_0834} from '@/lib/current-reel-patches-2026-09-01-0834';
-import {applyCurrentReelPatches20260901_1205} from '@/lib/current-reel-patches-2026-09-01-1205';
-import {applyCurrentReelPatches20260901_1230} from '@/lib/current-reel-patches-2026-09-01-1230';
-import {applyCurrentReelPatches20260901_1428} from '@/lib/current-reel-patches-2026-09-01-1428';
-import {applyCurrentReelPatches20260901_1732} from '@/lib/current-reel-patches-2026-09-01-1732';
-import {applyCurrentReelPatches20260901_2026} from '@/lib/current-reel-patches-2026-09-01-2026';
-import {applyCurrentReelPatches20260901_2328} from '@/lib/current-reel-patches-2026-09-01-2328';
-import {applyCurrentReelPatches20260902} from '@/lib/current-reel-patches-2026-09-02';
-import {applyCurrentReelPatches20260902_0539} from '@/lib/current-reel-patches-2026-09-02-0539';
-import {applyCurrentReelPatches20260902_0833} from '@/lib/current-reel-patches-2026-09-02-0833';
+import {applyCurrentReelPatches20260903} from '@/lib/current-reel-patches-2026-09-03';
 import ReelsExperienceV27 from './ReelsExperienceV27';
+
 export default function ReelsExperienceLive(){
-applyCurrentCuriosityRotation(curiosityCollections);applyCurrentReelPatches(dailyContent);applyCurrentReelPatches1432(dailyContent);applyCurrentReelPatches17h(dailyContent);applyCurrentReelPatches1730(dailyContent);applyCurrentReelPatches1835(dailyContent);applyCurrentReelPatches20h(dailyContent);applyCurrentReelPatches23h(dailyContent);applyCurrentReelPatches20260826(dailyContent);applyCurrentReelPatches20260826_1128(dailyContent);applyCurrentReelPatches20260826_17h(dailyContent);applyCurrentReelPatches20260826_1735(dailyContent);applyCurrentReelPatches20260826_23h(dailyContent);applyCurrentReelPatches20260827(dailyContent);applyCurrentReelPatches20260827Family(dailyContent);applyCurrentReelPatches20260827_0835(dailyContent);applyCurrentReelPatches20260827_0944(dailyContent);applyCurrentReelPatches20260827_1130(dailyContent);applyCurrentReelPatches20260828(dailyContent);applyCurrentReelPatches20260828Family(dailyContent);applyCurrentReelPatches20260829(dailyContent);applyCurrentReelPatches20260829Afternoon(dailyContent);applyCurrentReelPatches20260830(dailyContent);applyCurrentReelPatches20260830_17h28(dailyContent);applyCurrentReelPatches20260830_20h29(dailyContent);applyCurrentReelPatches20260830_23h36(dailyContent);applyCurrentReelPatches20260831(dailyContent);applyCurrentReelPatches20260831_0532(dailyContent);applyCurrentReelPatches20260831_0833(dailyContent);applyCurrentReelPatches20260831_1137(dailyContent);applyCurrentReelPatches20260831_1427(dailyContent);applyCurrentReelPatches20260831_1741(dailyContent);applyCurrentReelPatches20260831_2327(dailyContent);applyCurrentReelPatches20260901(dailyContent);applyCurrentReelPatches20260901_0834(dailyContent);applyCurrentReelPatches20260901_1205(dailyContent);applyCurrentReelPatches20260901_1230(dailyContent);applyCurrentReelPatches20260901_1428(dailyContent);applyCurrentReelPatches20260901_1732(dailyContent);applyCurrentReelPatches20260901_2026(dailyContent);applyCurrentReelPatches20260901_2328(dailyContent);applyCurrentReelPatches20260902(dailyContent);applyCurrentReelPatches20260902_0539(dailyContent);applyCurrentReelPatches20260902_0833(dailyContent);return <ReelsExperienceV27/>;}
+  applyCurrentCuriosityRotation(curiosityCollections);
+  applyCurrentReelPatches20260903(dailyContent);
+  return <ReelsExperienceV27/>;
+}
