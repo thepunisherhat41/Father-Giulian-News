@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-03';
-export const editorialFreshnessValidatedAt='03/09/2026 · 05h30 · revisão intradiária';
+export const editorialFreshnessValidatedAt='03/09/2026 · 08h25 · revisão intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 03/09: Nestlé anuncia plano de R$2 bilhões de investimentos no Brasil até 2028, incluindo cerca de R$600 milhões para nova fábrica de fórmulas infantis em Minas Gerais.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 03/09 com fonte adequada e recorte específico de Zona Leste nesta revisão; Reel omitido.'},
@@ -15,13 +15,13 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA PlayStation: State of Play e State of Play Japan previstos para 03/09 a partir das 10h no horário de Brasília; nenhum anúncio é antecipado.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia da edição avança para 8 semanas + 4 dias em 03/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática renovada: antecipar uma pequena responsabilidade da manhã anterior.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo de 03/09 suficientemente confirmado nesta revisão da madrugada; conteúdo de janela e ingressos de 02/09 não foi reciclado.'},
+{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo de 03/09 suficientemente confirmado nesta revisão; conteúdo de janela e ingressos de 02/09 não foi reciclado.'},
 {slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado; teto de R$70 mil mantido explicitamente.'},
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado sobre primeira partida com motor frio.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre especificação do fluido de arrefecimento versus cor.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia renovada de plano A/plano B para o mesmo passeio.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · MERCADOS INTRADIÁRIOS Reuters 03/09: Brent a US$95,04 e WTI a US$90,63 na madrugada; números não são apresentados como fechamento.'},
-{slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo datado de 03/09 confirmado nesta revisão; Microsoft/Azure de 02/09 não foi reciclado.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · MERCADOS INTRADIÁRIOS Reuters 03/09: Brent a US$97,39 e WTI a US$92,92 às 10h25 GMT; ambos tocaram máximas de seis semanas. Valores intradiários, não fechamento.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: Moonshot AI protocolou confidencialmente pedido de IPO em Hong Kong; fontes indicam alvo de cerca de US$3 bilhões, sujeito a mudanças e aprovações.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem guidance/advisory oficial novo datado de 03/09 confirmado nesta revisão; conteúdo CISA de 02/09 não foi reciclado.'},
 {slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: Thomson Reuters divulgou incidente no C-Track; a detecção ocorreu em 30/06 e a investigação encontrou acesso a arquivos remontando a março. A novidade de 03/09 é a divulgação/reportagem, não um ataque novo ocorrido hoje.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado em 03/09; sem CVE/advisory novo desta data com confirmação oficial suficiente para card separado.'}
