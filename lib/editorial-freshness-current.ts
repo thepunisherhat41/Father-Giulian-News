@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-03';
-export const editorialFreshnessValidatedAt='03/09/2026 · 02h45 · edição da madrugada';
+export const editorialFreshnessValidatedAt='03/09/2026 · 05h30 · revisão intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 03/09: Nestlé anuncia plano de R$2 bilhões de investimentos no Brasil até 2028, incluindo cerca de R$600 milhões para nova fábrica de fórmulas infantis em Minas Gerais.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 03/09 com fonte adequada e recorte específico de Zona Leste nesta revisão; Reel omitido.'},
@@ -23,7 +23,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · MERCADOS INTRADIÁRIOS Reuters 03/09: Brent a US$95,04 e WTI a US$90,63 na madrugada; números não são apresentados como fechamento.'},
 {slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo datado de 03/09 confirmado nesta revisão; Microsoft/Azure de 02/09 não foi reciclado.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem guidance/advisory oficial novo datado de 03/09 confirmado nesta revisão; conteúdo CISA de 02/09 não foi reciclado.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber novo de 03/09 suficientemente confirmado nesta revisão; reportagem OpenAI de 02/09 não foi reciclada.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: Thomson Reuters divulgou incidente no C-Track; a detecção ocorreu em 30/06 e a investigação encontrou acesso a arquivos remontando a março. A novidade de 03/09 é a divulgação/reportagem, não um ataque novo ocorrido hoje.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado em 03/09; sem CVE/advisory novo desta data com confirmação oficial suficiente para card separado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
