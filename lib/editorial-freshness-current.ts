@@ -1,9 +1,9 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-02';
-export const editorialFreshnessValidatedAt='02/09/2026 · 20h36 · revisão intradiária';
+export const editorialFreshnessValidatedAt='02/09/2026 · 23h43 · revisão intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO + ATUALIZAÇÃO: área técnica do TCU informou em 02/09 não ter identificado omissão ou falha relevante do governo na tentativa de evitar o veto europeu; a suspensão de produtos animais brasileiros entra em vigor em 03/09 e não é tratada nesta edição como já efetiva.'},
+{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 02/09 22h10 UTC: CSN anunciou que Benjamin Steinbruch deixa o cargo de CEO após 24 anos; Fabio Schvartsman assume em 03/09 e Steinbruch passa à presidência do conselho. ATUALIZAÇÃO: suspensão europeia de produtos animais segue prevista para 03/09; análise técnica do TCU de 02/09 não identificou falha relevante do governo no esforço para evitar a medida.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 02/09 com fonte adequada para Zona Leste nesta revisão; card omitido corretamente.'},
 {slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ATUALIZAÇÃO: comissão mista aprovou em 02/09 o relatório da MP 1.357/2026; texto segue à Câmara e ainda depende dos plenários. PESQUISA: Quaest divulgada em 02/09 mostra Lula 42% e Flávio Bolsonaro 41% em eventual 2º turno, empate técnico com margem de erro de 2 p.p.; levantamento ouviu 2.004 pessoas de 30/08 a 01/09.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'Reuters 02/09: nova onda de ataques dos EUA contra alvos do IRGC e retaliação iraniana contra instalações americanas na região.'},
