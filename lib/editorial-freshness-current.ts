@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-03';
-export const editorialFreshnessValidatedAt='03/09/2026 · 08h25 · revisão intradiária';
+export const editorialFreshnessValidatedAt='03/09/2026 · 17h32 · revisão intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 03/09: Nestlé anuncia plano de R$2 bilhões de investimentos no Brasil até 2028, incluindo cerca de R$600 milhões para nova fábrica de fórmulas infantis em Minas Gerais.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 03/09 com fonte adequada e recorte específico de Zona Leste nesta revisão; Reel omitido.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA oficial TSE: sessão plenária prevista para 03/09 às 10h, com oito processos. Como a edição é anterior ao horário, nenhum julgamento ou resultado é presumido.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM Reuters 03/09: nova apuração destaca preocupação com vítimas civis da escalada EUA-Irã; números de mortos e feridos são atribuídos às autoridades iranianas e tratados como sujeitos a atualização.'},
-{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen não é tratado como notícia e permanece fora do feed jornalístico.'},
-{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen não é tratado como notícia e permanece fora do feed jornalístico.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO INMET válida para 03/09: névoa úmida no leste paulista, incluindo a capital; mínima prevista de 9°C e máxima de 25°C em São Paulo.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova de 03/09: condução térmica metal×madeira, variação diária de altura e correções relativísticas do GPS; conceitos não repetem a rotação de 02/09.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência renovada de 03/09: escuta em camadas para identificar instrumentos antes dos créditos.'},
-{slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA PlayStation: State of Play e State of Play Japan previstos para 03/09 a partir das 10h no horário de Brasília; nenhum anúncio é antecipado.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia da edição avança para 8 semanas + 4 dias em 03/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática renovada: antecipar uma pequena responsabilidade da manhã anterior.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo de 03/09 suficientemente confirmado nesta revisão; conteúdo de janela e ingressos de 02/09 não foi reciclado.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado; teto de R$70 mil mantido explicitamente.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado sobre primeira partida com motor frio.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre especificação do fluido de arrefecimento versus cor.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia renovada de plano A/plano B para o mesmo passeio.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · MERCADOS INTRADIÁRIOS Reuters 03/09: Brent a US$97,39 e WTI a US$92,92 às 10h25 GMT; ambos tocaram máximas de seis semanas. Valores intradiários, não fechamento.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: Moonshot AI protocolou confidencialmente pedido de IPO em Hong Kong; fontes indicam alvo de cerca de US$3 bilhões, sujeito a mudanças e aprovações.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem guidance/advisory oficial novo datado de 03/09 confirmado nesta revisão; conteúdo CISA de 02/09 não foi reciclado.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: Thomson Reuters divulgou incidente no C-Track; a detecção ocorreu em 30/06 e a investigação encontrou acesso a arquivos remontando a março. A novidade de 03/09 é a divulgação/reportagem, não um ataque novo ocorrido hoje.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'AppSec rechecado em 03/09; sem CVE/advisory novo desta data com confirmação oficial suficiente para card separado.'}
+{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 03/09: Nestlé anuncia plano de R$2 bilhões de investimentos no Brasil até 2028.'},
+{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 03/09: Polícia Civil encontrou em Itaquera depósito usado para armazenar, processar e comercializar cabos e fios de cobre furtados, principalmente de redes de telefonia e internet.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA/ATUALIZAÇÃO: sessão do TSE prevista para 10h; nenhum resultado é presumido apenas porque o horário passou.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM Reuters 03/09 sobre vítimas civis da escalada EUA-Irã.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO INMET válida para 03/09 em São Paulo.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova de 03/09 validada.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência de 03/09 validada.'},
+{slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO PlayStation 03/09: State of Play confirmou Final Fantasy VII Revelation para 08/04/2027 no PS5.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia em 8 semanas + 4 dias em 03/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática de 03/09 validada.'},
+{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo de 03/09 suficientemente confirmado; Reel omitido.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist validado; teto de R$70 mil mantido.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist de 03/09 validado.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo de 03/09 validado.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo de 03/09 validado.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · MERCADOS INTRADIÁRIOS Reuters 03/09: Brent US$97,39 e WTI US$92,92 às 10h25 GMT; não é fechamento.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: Moonshot AI protocolou confidencialmente pedido de IPO em Hong Kong.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem guidance/advisory oficial novo datado de 03/09 confirmado; Reel omitido.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 03/09: divulgação do incidente no C-Track; não é ataque novo ocorrido hoje.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory novo de 03/09 com confirmação oficial suficiente; Reel omitido.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
