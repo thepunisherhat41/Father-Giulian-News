@@ -3,10 +3,12 @@ import {dailyContent} from '@/lib/daily-content';
 import {curiosityCollections} from '@/lib/curiosity-collections';
 import {applyCurrentCuriosityRotation} from '@/lib/current-curiosity-rotation';
 import {applyCurrentReelPatches20260903} from '@/lib/current-reel-patches-2026-09-03';
+import {applyCurrentReelPatches20260903_0530} from '@/lib/current-reel-patches-2026-09-03-0530';
 import ReelsExperienceV27 from './ReelsExperienceV27';
 
 export default function ReelsExperienceLive(){
   applyCurrentCuriosityRotation(curiosityCollections);
   applyCurrentReelPatches20260903(dailyContent);
+  applyCurrentReelPatches20260903_0530(dailyContent);
   return <ReelsExperienceV27/>;
 }
