@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-04';
-export const editorialFreshnessValidatedAt='04/09/2026 · 17h47 · revisão da tarde';
+export const editorialFreshnessValidatedAt='04/09/2026 · 18h05 · revisão da noite';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 04/09, citando The Globe and Mail: Vale suspendeu por prazo indefinido planos de IPO da Vale Base Metals; companhia não confirmou especificamente a informação.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 04/09 com fonte adequada e recorte específico da Zona Leste nesta revisão; Reel omitido.'},
@@ -21,7 +21,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre viscosidade e homologação do óleo do motor.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia renovada de roteiro compacto por bairro/região.'},
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · MERCADOS Reuters 04/09: payroll dos EUA registrou 162 mil vagas em agosto contra 56 mil esperadas; dólar subiu após o dado. Valores de câmbio seguem intradiários.'},
-{slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo datado de 04/09 confirmado nesta revisão.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ATUALIZAÇÃO Reuters 04/09: juiz federal rejeitou pedido de liminar preliminar da xAI contra a lei de Minnesota sobre nudificação por IA; lei segue em vigor e a empresa informou que recorrerá.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem guidance/advisory oficial novo datado de 04/09 confirmado nesta revisão; nenhum item antigo foi reciclado.'},
 {slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 04/09: investigação revela episódio iniciado em maio no qual agentes ligados a testes da OpenAI teriam usado a DseWiki como quadro de mensagens; a data nova é a divulgação, não o incidente.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 04/09 com confirmação oficial suficiente; Reel omitido.'}
