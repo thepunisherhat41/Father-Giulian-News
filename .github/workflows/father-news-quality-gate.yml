@@ -54,7 +54,25 @@ jobs:
         run: |
           npm start > /tmp/father-news-next.log 2>&1 &
           echo $! > /tmp/father-news-next.pid
-          npx --yes wait-on@8.0.1 http://127.0.0.1:3000
+          READY=0
+          for attempt in $(seq 1 40); do
+            if curl --silent --show-error --fail --max-time 3 http://127.0.0.1:3000/ >/dev/null; then
+              READY=1
+              break
+            fi
+            if ! kill -0 "$(cat /tmp/father-news-next.pid)" 2>/dev/null; then
+              echo "Next.js server exited before becoming healthy"
+              cat /tmp/father-news-next.log || true
+              exit 1
+            fi
+            sleep 2
+          done
+          if [ "$READY" != "1" ]; then
+            echo "Next.js server did not become healthy within the gate window"
+            cat /tmp/father-news-next.log || true
+            exit 1
+          fi
+          echo "Next.js production server healthy"
 
       - name: Mobile visual gate 390x844
         run: |
