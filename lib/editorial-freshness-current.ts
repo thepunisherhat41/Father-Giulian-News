@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-04';
-export const editorialFreshnessValidatedAt='04/09/2026 · 11h24 · atualização da manhã';
+export const editorialFreshnessValidatedAt='04/09/2026 · 14h08 · atualização da tarde';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 04/09, citando The Globe and Mail: Vale suspendeu por prazo indefinido planos de IPO da Vale Base Metals; companhia não confirmou especificamente a informação.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 04/09 com fonte adequada e recorte específico da Zona Leste nesta revisão; Reel omitido.'},
@@ -15,7 +15,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem anúncio material novo datado de 04/09 confirmado nesta revisão; fatos do State of Play de 03/09 não foram reciclados.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia avança para 8 semanas + 5 dias em 04/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática renovada: assumir uma microdecisão logística do começo ao fim.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo de 04/09 suficientemente confirmado nesta revisão; Reel omitido.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM ge 04/09 às 09h40: Yuri Alberto regrediu na recuperação da lesão na coxa direita por fibrose e não viajará para a ida das quartas da Libertadores contra o Estudiantes.'},
 {slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado para test-drive; teto de R$70 mil mantido explicitamente.'},
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado sobre corrente, coroa e pinhão.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre viscosidade e homologação do óleo do motor.'},
