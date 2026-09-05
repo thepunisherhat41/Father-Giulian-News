@@ -1,16 +1,16 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-05';
-export const editorialFreshnessValidatedAt='05/09/2026 · 08h50 · atualização intradiária';
+export const editorialFreshnessValidatedAt='05/09/2026 · 14h49 · atualização intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até 08h50 de 05/09, nenhuma informação material nova da data foi confirmada em fonte adequada; Reel omitido em vez de reciclar 04/09.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 05/09 com fonte adequada e recorte específico da Zona Leste; Reel omitido.'},
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até 14h49 de 05/09, nenhuma informação material nova da data foi confirmada em fonte adequada; Reel omitido em vez de reciclar 04/09.'},
+{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA oficial: festejos dos 466 anos de São Miguel Paulista começam em 05/09 com a XIV Mostra de Teatro, das 10h às 19h, no Morumbizinho; fonte Prefeitura publicada em 01/09.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato político brasileiro novo de 05/09 confirmado em fonte primária ou jornalismo reconhecido até esta atualização; Reel omitido.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 05/09: dados do Korea Customs Service mostram exportações sul-coreanas em US$ 709,4 bilhões no acumulado de 2026, superando o recorde anual de 2025.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 05/09: Comando Central dos EUA informa ataques contra três petroleiros iranianos após ataques com mísseis contra dois navios da Marinha americana.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'tempo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Há previsão do INMET para sábado (05) publicada em 03/09, mas nenhum boletim novo datado de 05/09 foi confirmado nesta atualização; Reel omitido para respeitar freshness jornalística.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova: wombats e cubos, migração vertical oceânica, densidade de Saturno, temperatura do ar em raios, dorsal meso-oceânica e conexão a dois baseada em gratidão.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação de 05/09 preservada: wombats e cubos, migração vertical oceânica, densidade de Saturno, temperatura do ar em raios e dorsal meso-oceânica.'},
 {slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência renovada de 05/09: trocar uma música marcante da adolescência e contar a memória ligada a ela.'},
 {slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem anúncio material novo datado de 05/09 confirmado até esta atualização; Reel omitido.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia avança para 8 semanas + 6 dias em 05/09.'},
