@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-04';
-export const editorialFreshnessValidatedAt='04/09/2026 · 20h34 · revisão da noite';
+export const editorialFreshnessDate='2026-09-05';
+export const editorialFreshnessValidatedAt='05/09/2026 · 00h02 · abertura da edição';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 04/09, citando The Globe and Mail: Vale suspendeu por prazo indefinido planos de IPO da Vale Base Metals; companhia não confirmou especificamente a informação.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 04/09 com fonte adequada e recorte específico da Zona Leste nesta revisão; Reel omitido.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ATUALIZAÇÃO TSE 04/09: cerimônia de assinatura digital e lacração dos sistemas eleitorais foi concluída; versões assinadas passam a ser referência para as próximas etapas de fiscalização.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ATUALIZAÇÃO Reuters 04/09: drone russo atingiu a sede do SBU no centro de Kyiv; autoridades locais relataram feridos.'},
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Na abertura de 05/09, nenhuma informação material nova da data foi confirmada em fonte adequada; Reel omitido em vez de reciclar 04/09.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 05/09 com fonte adequada e recorte específico da Zona Leste; Reel omitido.'},
+{slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato político brasileiro novo de 05/09 confirmado em fonte primária ou jornalismo reconhecido nesta abertura; Reel omitido.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 05/09: Casa Branca avalia nomes para possível substituição do vice-secretário de Defesa Steve Feinberg; nenhuma troca foi anunciada.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO INMET para 04/09: possibilidade de chuva isolada em áreas de São Paulo, incluindo a capital, e alerta amarelo de perigo potencial para tempestades em parte do estado.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova de 04/09: ebulição em altitude, ponto cego natural e limite de confiança do HTTPS; conceitos diferentes dos sete dias anteriores.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência renovada de 04/09: acompanhar uma faixa pela linha do baixo.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem anúncio material novo datado de 04/09 confirmado nesta revisão; fatos do State of Play de 03/09 não foram reciclados.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia avança para 8 semanas + 5 dias em 04/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática renovada: assumir uma microdecisão logística do começo ao fim.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM ge 04/09 às 09h40: Yuri Alberto regrediu na recuperação da lesão na coxa direita por fibrose e não viajará para a ida das quartas da Libertadores contra o Estudiantes.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado para test-drive; teto de R$70 mil mantido explicitamente.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado sobre corrente, coroa e pinhão.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre viscosidade e homologação do óleo do motor.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia renovada de roteiro compacto por bairro/região.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · FECHAMENTO Reuters 04/09: Brent fechou a US$ 92,68 por barril (+7,6% na semana) e WTI a US$ 91,48 (quase +10%); diesel nos EUA atingiu média recorde de US$ 5,85 por galão. Substitui a leitura intradiária anterior.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO · ATUALIZAÇÃO Reuters 04/09: juiz federal rejeitou pedido de liminar preliminar da xAI contra a lei de Minnesota sobre nudificação por IA; lei segue em vigor e a empresa informou que recorrerá.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem guidance/advisory oficial novo datado de 04/09 confirmado nesta revisão; nenhum item antigo foi reciclado.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 04/09: investigação revela episódio iniciado em maio no qual agentes ligados a testes da OpenAI teriam usado a DseWiki como quadro de mensagens; a data nova é a divulgação, não o incidente.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 04/09 com confirmação oficial suficiente; Reel omitido.'}
+{slug:'tempo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Há previsão do INMET para sábado (05) publicada em 03/09, mas nenhum boletim novo datado de 05/09 foi confirmado nesta abertura; Reel omitido para respeitar freshness jornalística.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova: wombats e cubos, migração vertical oceânica, densidade de Saturno, temperatura do ar em raios, dorsal meso-oceânica e conexão a dois baseada em gratidão.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência renovada de 05/09: trocar uma música marcante da adolescência e contar a memória ligada a ela.'},
+{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem anúncio material novo datado de 05/09 confirmado nesta abertura; Reel omitido.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia avança para 8 semanas + 6 dias em 05/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática renovada: identificar tarefa que pesa e assumir uma parte concreta.'},
+{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato novo datado de 05/09 confirmado em fonte adequada nesta abertura; Reel omitido, sem reciclar a atualização de Yuri Alberto de 04/09.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado de compra de usado; teto de R$70 mil mantido explicitamente.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist renovado sobre condição e idade dos pneus.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo renovado sobre especificação do fluido de arrefecimento.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia renovada: shortlist de três destinos para futuro bate-volta.'},
+{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fechamento ou fato financeiro material novo de 05/09 confirmado nesta abertura; Reel omitido, sem reapresentar fechamento de 04/09.'},
+{slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato tecnológico material novo de 05/09 confirmado nesta abertura; Reel omitido.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory/KEV oficial novo datado de 05/09 confirmado nesta abertura; Reel omitido.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber novo de 05/09 confirmado nesta abertura; Reel omitido, sem reciclar reportagem de 04/09.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 05/09 com confirmação oficial suficiente nesta abertura; Reel omitido.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
