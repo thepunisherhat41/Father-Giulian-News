@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-05';
-export const editorialFreshnessValidatedAt='05/09/2026 · 20h13 · atualização intradiária';
+export const editorialFreshnessDate='2026-09-06';
+export const editorialFreshnessValidatedAt='06/09/2026 · 02h34 · edição da madrugada';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até 20h13 de 05/09, nenhuma informação material brasileira nova posterior ao corte anterior foi confirmada em fonte adequada; Reel omitido em vez de reciclar fatos anteriores.'},
-{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA oficial preservada: festejos dos 466 anos de São Miguel Paulista começaram em 05/09 com a XIV Mostra de Teatro, das 10h às 19h, no Morumbizinho; não se presume execução de atividades já passadas sem confirmação independente.'},
-{slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato político brasileiro material novo posterior ao corte anterior foi confirmado com segurança em fonte primária ou jornalismo reconhecido; Reel segue omitido.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO AP 05/09: a reunião de Putin com Steve Witkoff e Jared Kushner no Kremlin durou mais de três horas; nenhum avanço concreto ou acordo foi anunciado até o corte. Reuters permanece como fonte do início das conversas.'},
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato brasileiro material iniciado em 06/09 foi confirmado até o corte; incêndio da Ceagesp começou na noite de 05/09 e não foi artificialmente tratado como fato novo de hoje.'},
+{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA: Subprefeitura informou abertura dos festejos de 466 anos de São Miguel Paulista em 06/09; evento ainda futuro no horário do corte.'},
+{slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato político brasileiro material novo de 06/09 confirmado até o corte; conteúdos de 05/09 não foram reciclados.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 06/09 04h15 UTC: Israel diz atacar sul do Líbano após Hezbollah lançar dois drones contra soldados; sem comentário imediato do Hezbollah.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
-{slug:'tempo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum boletim novo datado de 05/09 e posterior ao corte anterior foi confirmado em fonte oficial adequada; Reel omitido para respeitar freshness jornalística.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação de 05/09 preservada: wombats e cubos, migração vertical oceânica, densidade de Saturno, temperatura do ar em raios e dorsal meso-oceânica.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência renovada de 05/09 preservada: trocar uma música marcante da adolescência e contar a memória ligada a ela.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem anúncio material novo datado de 05/09 e posterior ao corte anterior confirmado em fonte oficial adequada; Reel omitido.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia preservada em 8 semanas + 6 dias em 05/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática de 05/09 preservada: identificar tarefa que pesa e assumir uma parte concreta.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo posterior ao corte anterior foi confirmado em fonte adequada; Reel segue omitido, sem reciclar preparação já publicada antes do corte.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo de compra de usado preservado; teto de R$70 mil mantido explicitamente.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist de 05/09 sobre condição e idade dos pneus preservado.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo de 05/09 sobre especificação do fluido de arrefecimento preservado.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia de 05/09 preservada: shortlist de três destinos para futuro bate-volta.'},
-{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sábado sem fechamento de mercado; nenhum fato financeiro material novo posterior ao corte anterior foi confirmado, e fechamentos de dias anteriores não foram reciclados.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 05/09 05h13 BRT preservado: Foxconn espera terceiro trimestre acima das expectativas com força da demanda de IA; receita de agosto atingiu T$ 921,8 bilhões, recorde para o mês.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory/KEV oficial novo datado de 05/09 e posterior ao corte anterior confirmado; Reel omitido.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber novo datado de 05/09 e posterior ao corte anterior confirmado em fonte adequada; Reel omitido.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 05/09 e posterior ao corte anterior com confirmação oficial suficiente; Reel omitido.'}
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO/ALERTA: INMET mantém em 06/09 alertas amarelos de tempestade e declínio de temperatura para São Paulo.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação nova 06/09: rã-da-madeira e congelamento, velocidade do som na água, dia solar de Mercúrio, íons e condutividade da água, poeira do Saara e Amazônia.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 06/09: identificar o primeiro instrumento e uma camada pouco percebida em música conhecida.'},
+{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem anúncio material novo datado de 06/09 confirmado em fonte oficial adequada até o corte; Reel omitido.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas completas em 06/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova de 06/09: preparar ponto de apoio para momentos de enjoo.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA CBF: Corinthians x Chapecoense hoje 06/09 às 19h30, Neo Química Arena, rodada 26; nenhum resultado foi presumido.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 06/09 mantém explicitamente teto de R$70 mil e inclui custo de seguro na decisão.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist novo 06/09 sobre sinais de queda em manetes, pedais, guidão e tampas.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 06/09 sobre diagnóstico de bateria e sistema de carga antes da troca.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 06/09: comparar destinos pelo tempo real de porta a porta.'},
+{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Domingo sem fechamento de mercado; nenhum fato financeiro material novo de 06/09 confirmado até o corte.'},
+{slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato de tecnologia material iniciado em 06/09 e confirmado até o corte; notícias publicadas hoje sobre fatos de 05/09 não foram recicladas.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum advisory ou entrada CISA KEV nova datada de 06/09 confirmada até o corte; Reel omitido.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber novo de 06/09 confirmado em fonte primária adequada até o corte; Reel omitido.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 06/09 com confirmação oficial suficiente; Reel omitido.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
