@@ -1,9 +1,9 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-06';
-export const editorialFreshnessValidatedAt='06/09/2026 · 11h47 · atualização intradiária';
+export const editorialFreshnessValidatedAt='06/09/2026 · 14h15 · atualização intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato brasileiro material iniciado em 06/09 foi confirmado até o corte; incêndio da Ceagesp começou na noite de 05/09 e não foi artificialmente tratado como fato novo de hoje.'},
+{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 06/09 às 15h08 UTC: decisão judicial suspendeu licenças ambientais e atividades da mina Grota do Cirilo, da Sigma Lithium, em Minas Gerais; fato publicado após o corte anterior.'},
 {slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA: Subprefeitura informou abertura dos festejos de 466 anos de São Miguel Paulista em 06/09; compromisso não é tratado como ocorrido sem confirmação independente.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato político brasileiro material novo de 06/09 confirmado até o corte; conteúdos de 05/09 não foram reciclados.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 06/09: Witkoff e Kushner chegaram a Kyiv e se reuniram com Zelenskiy após conversas em Moscou; sem acordo presumido.'},
