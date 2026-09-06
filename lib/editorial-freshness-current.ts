@@ -1,12 +1,12 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-06';
-export const editorialFreshnessValidatedAt='06/09/2026 · 05h10 · atualização intradiária';
+export const editorialFreshnessValidatedAt='06/09/2026 · 11h47 · atualização intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato brasileiro material iniciado em 06/09 foi confirmado até o corte; incêndio da Ceagesp começou na noite de 05/09 e não foi artificialmente tratado como fato novo de hoje.'},
-{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA: Subprefeitura informou abertura dos festejos de 466 anos de São Miguel Paulista em 06/09; evento ainda futuro no horário do corte.'},
+{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA: Subprefeitura informou abertura dos festejos de 466 anos de São Miguel Paulista em 06/09; compromisso não é tratado como ocorrido sem confirmação independente.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato político brasileiro material novo de 06/09 confirmado até o corte; conteúdos de 05/09 não foram reciclados.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 06/09 04h15 UTC: Israel diz atacar sul do Líbano após Hezbollah lançar dois drones contra soldados; sem comentário imediato do Hezbollah.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 06/09: Witkoff e Kushner chegaram a Kyiv e se reuniram com Zelenskiy após conversas em Moscou; sem acordo presumido.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO/ALERTA: INMET mantém em 06/09 alertas amarelos de tempestade e declínio de temperatura para São Paulo.'},
@@ -20,7 +20,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Checklist novo 06/09 sobre sinais de queda em manetes, pedais, guidão e tampas.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 06/09 sobre diagnóstico de bateria e sistema de carga antes da troca.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 06/09: comparar destinos pelo tempo real de porta a porta.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM Reuters 06/09 07h37 UTC: fontes dizem que ministros da OPEP+ tendem a manter a política de oferta para outubro; decisão formal da reunião ainda não foi presumida.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO Reuters 06/09: OPEP+ confirmou após a reunião que manterá inalterada a política de produção para outubro; substitui a apuração anterior baseada em fontes.'},
 {slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato de tecnologia material iniciado em 06/09 e confirmado até o corte; notícias publicadas hoje sobre fatos de 05/09 não foram recicladas.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum advisory ou entrada CISA KEV nova datada de 06/09 confirmada até o corte; Reel omitido.'},
 {slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber novo de 06/09 confirmado em fonte primária adequada até o corte; Reel omitido.'},
