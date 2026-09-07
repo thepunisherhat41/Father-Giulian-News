@@ -1,0 +1,10 @@
+import type {RichMediaEntry} from './rich-media';
+
+export const dailyRichMedia202609062232:RichMediaEntry[]=[
+{
+ label:'Corinthians',matches:['perde de virada por 2 a 1','quarta derrota seguida','chapecoense'],tag:'ARTE 9:16 · RESULTADO',title:'Corinthians 1 × 2 Chapecoense',caption:'Arte local específica do resultado final na Neo Química Arena.',images:[{url:'/media/2026-09-06-corinthians-chape-1x2.svg',alt:'Arte vertical com placar Corinthians 1 a 2 Chapecoense, derrota de virada e quarta derrota seguida',caption:'Corinthians 1 x 2 Chapecoense · 06/09.',credit:'Father Giulian News · arte temática',sourceUrl:'https://www1.folha.uol.com.br/esporte/2026/09/corinthians-perde-de-virada-da-chapecoense-e-chega-ao-4o-jogo-sem-vencer-no-brasileiro.shtml',kind:'REFERENCE'}],relatedLabel:'Folha · Corinthians 1 x 2 Chapecoense',relatedHref:'https://www1.folha.uol.com.br/esporte/2026/09/corinthians-perde-de-virada-da-chapecoense-e-chega-ao-4o-jogo-sem-vencer-no-brasileiro.shtml'
+},
+{
+ label:'Mundo',matches:['enviados dos eua esperam nova rodada','nova rodada rússia–ucrânia','nova rodada rússia-ucrânia','conversas trilaterais'],tag:'FOTO REAL · REUTERS',title:'Zelenskiy recebe enviados dos EUA em Kyiv',caption:'Foto real do encontro em Kyiv em 6 de setembro, mantida porque segue diretamente ligada à atualização diplomática.',images:[{url:'https://www.reuters.com/resizer/v2/CVYH7FAYWBMEZL2TFT7JJQPXZ4.jpg?auth=e3188229888dde6ad3738ebc4927687960d63dad9bc09fb5128818b1e49d6f61&quality=80&width=1080',alt:'Volodymyr Zelenskiy recebe Jared Kushner e Steve Witkoff em Kyiv em 6 de setembro de 2026',caption:'Zelenskiy recebe os enviados americanos em Kyiv.',credit:'Reuters · Valentyn Ogirenko',sourceUrl:'https://www.reuters.com/business/aerospace-defense/us-envoys-make-first-kyiv-visit-amid-ukraine-war-peace-push-2026-09-06/',kind:'PHOTO'}],relatedLabel:'Reuters · negociações em Kyiv',relatedHref:'https://www.reuters.com/business/aerospace-defense/us-envoys-make-first-kyiv-visit-amid-ukraine-war-peace-push-2026-09-06/'
+}
+];

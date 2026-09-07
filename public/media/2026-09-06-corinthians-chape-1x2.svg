@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920">
+  <rect width="1080" height="1920" fill="#111"/>
+  <rect x="70" y="110" width="940" height="1700" rx="80" fill="#202020"/>
+  <text x="540" y="420" text-anchor="middle" font-size="56" font-weight="700" font-family="Arial,sans-serif" fill="#fff">BRASILEIRÃO · 06/09</text>
+  <text x="540" y="720" text-anchor="middle" font-size="170" font-weight="900" font-family="Arial,sans-serif" fill="#fff">1 × 2</text>
+  <text x="540" y="880" text-anchor="middle" font-size="68" font-weight="800" font-family="Arial,sans-serif" fill="#fff">CORINTHIANS · CHAPE</text>
+  <path d="M180 1030h720" stroke="#fff" stroke-width="10" opacity=".32"/>
+  <text x="540" y="1210" text-anchor="middle" font-size="62" font-weight="800" font-family="Arial,sans-serif" fill="#fff">DERROTA DE VIRADA</text>
+  <text x="540" y="1340" text-anchor="middle" font-size="46" font-family="Arial,sans-serif" fill="#d0d0d0">BIDU ABRIU · MARCINHO 2×</text>
+  <text x="540" y="1490" text-anchor="middle" font-size="40" font-family="Arial,sans-serif" fill="#b8b8b8">4ª DERROTA SEGUIDA NO BRASILEIRO</text>
+  <text x="540" y="1640" text-anchor="middle" font-size="31" font-family="Arial,sans-serif" fill="#888">FATO · ATUALIZAÇÃO · 22H32</text>
+</svg>
