@@ -3,7 +3,7 @@ import {writeFileSync} from 'node:fs';
 test.use({viewport:{width:390,height:844}});test.setTimeout(120000);
 test('current edition is healthy on mobile card by card',async({page})=>{
  await page.goto('http://127.0.0.1:3000',{waitUntil:'domcontentloaded',timeout:20000});
- const articles=page.locator('article');await expect(articles.first()).toBeVisible({timeout:10000});const articleCount=await articles.count();expect(articleCount).toBe(18);
+ const articles=page.locator('article');await expect(articles.first()).toBeVisible({timeout:10000});const articleCount=await articles.count();const diagnosticLabels=await articles.evaluateAll(nodes=>nodes.map(node=>node.textContent?.slice(0,900)||''));writeFileSync('artifacts/mobile-composition.json',JSON.stringify({articleCount,labels:diagnosticLabels},null,2));expect(articleCount).toBe(18);
  const dimensions=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,clientWidth:document.documentElement.clientWidth,bodyScrollWidth:document.body.scrollWidth,innerWidth:window.innerWidth}));expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth+1);expect(dimensions.bodyScrollWidth).toBeLessThanOrEqual(dimensions.innerWidth+1);
  const expectedOrder=['Papo de hoje','Desafio do casal','Curiosidade · Animais','Curiosidade · Oceano','Curiosidade · Espaço','Curiosidade · Ciência','Curiosidade · Mundo natural','Gravidez','Ser Pai','Brasil','Tempo e Clima','Viagens','Música','Sertanejo da Roça','Finanças','Carros até R$ 70 mil','Motos','Mecânica'];
  for(const [i,label] of expectedOrder.entries())await expect(articles.nth(i)).toContainText(label);
