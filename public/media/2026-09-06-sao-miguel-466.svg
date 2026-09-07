@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+  <title id="title">São Miguel Paulista 466 anos</title>
+  <desc id="desc">Arte vertical temática dos festejos de aniversário de São Miguel Paulista, com ilustração arquitetônica e referências a cultura, fé, esporte e tradição.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8e9"/>
+      <stop offset="1" stop-color="#f3d28f"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d65b35" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#d65b35" stop-opacity=".04"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)"/>
+  <circle cx="540" cy="500" r="330" fill="url(#sun)"/>
+  <path d="M225 835h630" stroke="#9a432b" stroke-width="14" stroke-linecap="round" opacity=".45"/>
+  <path d="M315 760V515L540 325l225 190v245H315Z" fill="#fffdf8" stroke="#873a27" stroke-width="16"/>
+  <path d="M462 760V555h156v205" fill="#f1c979" stroke="#873a27" stroke-width="14"/>
+  <circle cx="540" cy="480" r="45" fill="#fff8e9" stroke="#873a27" stroke-width="14"/>
+  <path d="M540 385v-58M510 356h60" stroke="#873a27" stroke-width="14" stroke-linecap="round"/>
+  <path d="M330 840c80 32 140 48 210 48s130-16 210-48" fill="none" stroke="#b05232" stroke-width="10" opacity=".45"/>
+  <text x="540" y="1080" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="96" font-weight="800" fill="#6e2f20">466 ANOS</text>
+  <text x="540" y="1215" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="60" font-weight="700" fill="#7e3825">SÃO MIGUEL PAULISTA</text>
+  <text x="540" y="1340" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="38" fill="#755747">CULTURA · FÉ · ESPORTE · TRADIÇÃO</text>
+  <rect x="220" y="1440" width="640" height="126" rx="63" fill="#8b3d29"/>
+  <text x="540" y="1522" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="39" font-weight="700" fill="#fffaf1">FESTEJOS DE SETEMBRO</text>
+  <text x="540" y="1685" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="30" fill="#896b59">ZONA LESTE · SÃO PAULO</text>
+</svg>
