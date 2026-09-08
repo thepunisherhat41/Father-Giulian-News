@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-08';
-export const editorialFreshnessValidatedAt='08/09/2026 · 14h15 · atualização intradiária';
+export const editorialFreshnessValidatedAt='08/09/2026 · 17h45 · atualização intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo da data local 08/09 confirmado neste corte; Reel omitido.'},
 {slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM 08/09: Prefeitura publicou hoje detalhes de ocorrência da GCM no Belém em 05/09, com apreensão de R$ 71.977; o card deixa explícito que a apreensão não ocorreu hoje.'},
@@ -22,8 +22,8 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 08/09: comparar rotas também pela estrutura e segurança das paradas.'},
 {slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato financeiro material adicional confirmado neste corte; Reel omitido.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 08/09: Qualcomm anunciou colaboração multigeracional com a Amazon para silício personalizado de IA e conectividade óptica em data centers AWS.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory/fato novo da data local 08/09 confirmado neste corte; não reciclados incidentes anteriores.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente/advisory Cyber novo da data local 08/09 confirmado neste corte; Reel omitido.'},
+{slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: Patch Tuesday de setembro corrige 966 falhas segundo levantamento publicado hoje; Microsoft classifica CVE-2026-81963 e CVE-2026-85880 como exploradas ativamente. Sem afirmação de CISA KEV sem confirmação.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente/advisory Cyber adicional distinto da atualização Microsoft confirmado neste corte; Reel omitido para evitar duplicidade com Security Briefing.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 08/09 com confirmação oficial suficiente neste corte; Reel omitido.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
