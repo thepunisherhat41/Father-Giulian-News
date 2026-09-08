@@ -1,11 +1,11 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-08';
-export const editorialFreshnessValidatedAt='08/09/2026 · 12h01 · atualização intradiária';
+export const editorialFreshnessValidatedAt='08/09/2026 · 14h15 · atualização intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo da data local 08/09 confirmado neste corte; Reel omitido.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo datado de 08/09 localizado na Zona Leste com fonte oficial/robusta suficiente neste corte; Reel omitido.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PESQUISA 08/09: BTG/Nexus aponta empate técnico em eventual segundo turno entre Flávio Bolsonaro (46%) e Lula (45%); margem de erro de 2 p.p., registro TSE BR-06790/2026.'},
+{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM 08/09: Prefeitura publicou hoje detalhes de ocorrência da GCM no Belém em 05/09, com apreensão de R$ 71.977; o card deixa explícito que a apreensão não ocorreu hoje.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: André Mendonça afastou Andrei Rodrigues e Leandro Almada; Segunda Turma formou maioria para manter a medida, mas julgamento foi interrompido por pedido de vista.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: ataques Houthi atingiram cidades e instalações de energia no sul da Arábia Saudita; autoridades reportaram 73 feridos.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
