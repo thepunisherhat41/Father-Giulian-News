@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-09';
-export const editorialFreshnessValidatedAt='09/09/2026 · 14h37 · atualização de Cyber';
+export const editorialFreshnessValidatedAt='09/09/2026 · 17h38 · atualização de Corinthians';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 09/09: governo anunciou R$ 6,6 bilhões adicionais em subsídios a combustíveis, com cerca de R$ 5,6 bilhões para diesel rodoviário e R$ 998 milhões para produção/importação de derivados.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 09/09 confirmado neste corte; Reel omitido.'},
@@ -15,7 +15,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou anúncio material da data local 09/09 confirmado em fonte oficial neste corte; Reel omitido.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 3 dias em 09/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 09/09: resolver hoje uma pequena decisão de amanhã para reduzir carga mental.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 09/09: Estudiantes x Corinthians às 21h30 em La Plata, ida das quartas da Libertadores; escalação ainda tratada como provável enquanto não oficial.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO + AGENDA 09/09: CBF confirmou às 15h40 Hugo Souza, Matheuzinho e Breno Bidon na primeira convocação pós-Copa; Estudiantes x Corinthians segue marcado para 21h30 em La Plata, sem resultado presumido neste corte.'},
 {slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 mantém teto de R$70 mil e orienta testar o ar-condicionado também com o carro parado.'},
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 sobre alinhamento visual de guidão, bengalas e roda dianteira.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 sobre estalo ao esterçar e necessidade de avaliar o contexto antes do diagnóstico.'},
