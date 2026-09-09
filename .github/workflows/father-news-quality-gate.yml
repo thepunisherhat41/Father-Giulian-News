@@ -37,6 +37,10 @@ jobs:
             case "$MSG" in
               "release: open production deployment window"*) echo "VERCEL=1" >> "$GITHUB_ENV" ;;
             esac
+          elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
+            case "$GITHUB_HEAD_REF" in
+              release/*) echo "VERCEL=1" >> "$GITHUB_ENV" ;;
+            esac
           fi
 
       - name: Editorial Quality Gate
