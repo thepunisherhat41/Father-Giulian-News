@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-08';
-export const editorialFreshnessValidatedAt='08/09/2026 · 20h52 · atualização intradiária';
+export const editorialFreshnessValidatedAt='08/09/2026 · 23h19 · atualização intradiária';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo da data local 08/09 confirmado neste corte; Reel omitido.'},
 {slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM 08/09: Prefeitura publicou hoje detalhes de ocorrência da GCM no Belém em 05/09, com apreensão de R$ 71.977; o card deixa explícito que a apreensão não ocorreu hoje.'},
@@ -20,10 +20,10 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 08/09 sobre corrente, folga, elos e relação final.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 08/09 sobre chiado de correia como sintoma que exige inspeção da causa.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 08/09: comparar rotas também pela estrutura e segurança das paradas.'},
-{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato financeiro novo posterior ao corte anterior que justifique reentrada do Reel; fechamento de Wall Street já havia ocorrido antes das 17h45 BRT.'},
+{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Fechamento do mercado doméstico de 08/09 foi revalidado neste corte, mas já estava disponível antes da edição anterior; Reel segue omitido para não gerar atualização retroativa sem mudança material após 20h52.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 08/09: Qualcomm anunciou colaboração multigeracional com a Amazon para silício personalizado de IA e conectividade óptica em data centers AWS.'},
 {slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: Patch Tuesday de setembro corrige 966 falhas segundo levantamento publicado hoje; Microsoft classifica CVE-2026-81963 e CVE-2026-85880 como exploradas ativamente. Sem afirmação de CISA KEV sem confirmação.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente/advisory Cyber adicional distinto da atualização Microsoft confirmado neste corte; Reel omitido para evitar duplicidade com Security Briefing.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem CVE/advisory AppSec novo de 08/09 com confirmação oficial suficiente neste corte; Reel omitido.'}
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente/advisory Cyber adicional distinto das atualizações já publicadas confirmado neste corte; Reel omitido para evitar duplicidade.'},
+{slug:'appsec-ssdlc',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: SAP Security Patch Day confirma CVE-2026-76969 no @sap/cds-mtxs, CVSS 9.4, em aplicações CAP multitenant; advisory descreve obtenção não autenticada de credenciais e risco de alteração/exclusão de dados de tenants. Sem afirmação de exploração ativa ou CISA KEV.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
