@@ -52,9 +52,16 @@ jobs:
       - name: Install mobile browser QA
         run: |
           npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
-          # The hosted runner can temporarily expose an inconsistent Google Chrome APT index.
-          # Playwright ships its own Chromium, so remove that unrelated source before installing OS deps.
-          sudo rm -f /etc/apt/sources.list.d/google-chrome.list
+          # Playwright ships its own Chromium. Disable only unrelated Google Chrome APT
+          # source files when the hosted runner image contains them, avoiding stale-index
+          # failures without weakening browser dependency installation.
+          while IFS= read -r source_file; do
+            echo "Disabling unrelated Chrome APT source: $source_file"
+            sudo rm -f "$source_file"
+          done < <(sudo grep -RIl 'dl\.google\.com/linux/chrome' /etc/apt/sources.list.d 2>/dev/null || true)
+          if [ -f /etc/apt/sources.list ]; then
+            sudo sed -i '\|dl\.google\.com/linux/chrome|d' /etc/apt/sources.list
+          fi
           npx playwright install --with-deps chromium
 
       - name: Start production server
