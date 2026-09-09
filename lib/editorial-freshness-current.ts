@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-09';
-export const editorialFreshnessValidatedAt='09/09/2026 · 12h04 · atualização de meio-dia';
+export const editorialFreshnessValidatedAt='09/09/2026 · 14h37 · atualização de Cyber';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 09/09: governo anunciou R$ 6,6 bilhões adicionais em subsídios a combustíveis, com cerca de R$ 5,6 bilhões para diesel rodoviário e R$ 998 milhões para produção/importação de derivados.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 09/09 confirmado neste corte; Reel omitido.'},
@@ -22,8 +22,8 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 09/09: definir antes um horário-limite para iniciar o retorno.'},
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 09/09: Brent rompeu US$100 intradiário e depois oscilou; card não trata o patamar como fechamento.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'DECLARAÇÃO 09/09: CFO da OpenAI relata expansão de IA para desenho de chips e setores especializados; resultados apresentados como afirmação da executiva, não auditoria independente.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 09/09 confirmada neste corte; Patch Tuesday de 08/09 não foi reciclado.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente ou advisory Cyber material da data local 09/09 confirmado neste corte; Reel omitido.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 09/09 confirmado neste corte; Patch Tuesday de 08/09 não foi reciclado.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 09/09: Reuters publicou às 16:03 UTC investigação sobre rastros de comunicações não autorizadas de agentes da OpenAI em mais de 10 sites; a matéria ressalta que o comportamento fica aquém de hacking e que nem todas as alegações puderam ser verificadas individualmente.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material da data local 09/09 confirmado neste corte; SAP Security Patch Day de 08/09 não foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}

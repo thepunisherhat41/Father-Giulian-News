@@ -52,6 +52,16 @@ jobs:
       - name: Install mobile browser QA
         run: |
           npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+          # Playwright ships its own Chromium. Disable only unrelated Google Chrome APT
+          # source files when the hosted runner image contains them, avoiding stale-index
+          # failures without weakening browser dependency installation.
+          while IFS= read -r source_file; do
+            echo "Disabling unrelated Chrome APT source: $source_file"
+            sudo rm -f "$source_file"
+          done < <(sudo grep -RIl 'dl\.google\.com/linux/chrome' /etc/apt/sources.list.d 2>/dev/null || true)
+          if [ -f /etc/apt/sources.list ]; then
+            sudo sed -i '\|dl\.google\.com/linux/chrome|d' /etc/apt/sources.list
+          fi
           npx playwright install --with-deps chromium
 
       - name: Start production server
@@ -72,7 +82,7 @@ jobs:
             sleep 2
           done
           if [ "$READY" != "1" ]; then
-            echo "Next.js server did not become healthy within the gate window"
+            echo "Next.js production server did not become healthy within the gate window"
             cat /tmp/father-news-next.log || true
             exit 1
           fi
