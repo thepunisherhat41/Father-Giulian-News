@@ -52,6 +52,9 @@ jobs:
       - name: Install mobile browser QA
         run: |
           npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+          # The hosted runner can temporarily expose an inconsistent Google Chrome APT index.
+          # Playwright ships its own Chromium, so remove that unrelated source before installing OS deps.
+          sudo rm -f /etc/apt/sources.list.d/google-chrome.list
           npx playwright install --with-deps chromium
 
       - name: Start production server
@@ -72,7 +75,7 @@ jobs:
             sleep 2
           done
           if [ "$READY" != "1" ]; then
-            echo "Next.js server did not become healthy within the gate window"
+            echo "Next.js production server did not become healthy within the gate window"
             cat /tmp/father-news-next.log || true
             exit 1
           fi
