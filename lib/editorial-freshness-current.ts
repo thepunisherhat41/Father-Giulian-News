@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-08';
-export const editorialFreshnessValidatedAt='08/09/2026 · 23h19 · atualização intradiária';
+export const editorialFreshnessDate='2026-09-09';
+export const editorialFreshnessValidatedAt='09/09/2026 · 02h47 · nova edição';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo da data local 08/09 confirmado neste corte; Reel omitido.'},
-{slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM 08/09: Prefeitura publicou hoje detalhes de ocorrência da GCM no Belém em 05/09, com apreensão de R$ 71.977; o card deixa explícito que a apreensão não ocorreu hoje.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: André Mendonça afastou Andrei Rodrigues e Leandro Almada; Segunda Turma formou maioria para manter a medida, mas julgamento foi interrompido por pedido de vista.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: ataques Houthi atingiram cidades e instalações de energia no sul da Arábia Saudita; autoridades reportaram 73 feridos.'},
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo da data local 09/09 confirmado neste corte; Reel omitido.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 09/09 confirmado neste corte; Reel omitido.'},
+{slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhuma agenda, pesquisa, decisão ou declaração política material de 09/09 confirmada neste corte; fatos de 08/09 não foram reciclados.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 09/09: Irã lançou mísseis contra base dos EUA na Jordânia e atacou embarcações perto de Hormuz; autoridades não reportaram vítimas na base neste corte.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/OBSERVAÇÃO/PREVISÃO 08/09: CGE mantém noite nublada, faixa diária de 11°C a 18°C e baixo potencial de tempestade; sem novo boletim material posterior que justifique reescrita do Reel.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 08/09: pelagem da lontra-marinha, pressão oceânica, afastamento da Lua, diamante/grafite e fungos bioluminescentes; conceitos distintos da janela recente.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 08/09: escuta focada em bateria e percussão.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem lançamento/anúncio material da data local 08/09 confirmado em fonte oficial neste corte; Reel omitido.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 2 dias em 08/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 08/09: deixar água e uma opção neutra acessíveis para momentos de enjoo.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: treino antes tratado como AGENDA foi confirmado como realizado no CT do Defensa y Justicia; Diniz tem sete desfalques para o Estudiantes.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 08/09 mantém teto de R$70 mil e orienta avaliar a primeira partida com motor frio.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 08/09 sobre corrente, folga, elos e relação final.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 08/09 sobre chiado de correia como sintoma que exige inspeção da causa.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 08/09: comparar rotas também pela estrutura e segurança das paradas.'},
-{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Fechamento do mercado doméstico de 08/09 foi revalidado neste corte, mas já estava disponível antes da edição anterior; Reel segue omitido para não gerar atualização retroativa sem mudança material após 20h52.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 08/09: Qualcomm anunciou colaboração multigeracional com a Amazon para silício personalizado de IA e conectividade óptica em data centers AWS.'},
-{slug:'security-briefing',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: Patch Tuesday de setembro corrige 966 falhas segundo levantamento publicado hoje; Microsoft classifica CVE-2026-81963 e CVE-2026-85880 como exploradas ativamente. Sem afirmação de CISA KEV sem confirmação.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente/advisory Cyber adicional distinto das atualizações já publicadas confirmado neste corte; Reel omitido para evitar duplicidade.'},
-{slug:'appsec-ssdlc',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 08/09: SAP Security Patch Day confirma CVE-2026-76969 no @sap/cds-mtxs, CVSS 9.4, em aplicações CAP multitenant; advisory descreve obtenção não autenticada de credenciais e risco de alteração/exclusão de dados de tenants. Sem afirmação de exploração ativa ou CISA KEV.'}
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO 09/09: CGE prevê sol entre nuvens, 13°C a 22°C e pancadas isoladas entre tarde e início da noite.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 09/09: gelo e densidade, pulsares, cores da aurora, céu azul e sistema elétrico do coração; conceitos distintos dos 7 dias anteriores.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 09/09: escuta focada nos silêncios, pausas e espaços do arranjo.'},
+{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou anúncio material da data local 09/09 confirmado em fonte oficial neste corte; Reel omitido.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 3 dias em 09/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 09/09: resolver hoje uma pequena decisão de amanhã para reduzir carga mental.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 09/09: Estudiantes x Corinthians às 21h30 em La Plata, ida das quartas da Libertadores; nenhuma ocorrência futura foi presumida.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 mantém teto de R$70 mil e orienta testar o ar-condicionado também com o carro parado.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 sobre alinhamento visual de guidão, bengalas e roda dianteira.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 sobre estalo ao esterçar e necessidade de avaliar o contexto antes do diagnóstico.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 09/09: definir antes um horário-limite para iniciar o retorno.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 09/09: Brent se aproxima de US$100 em cotação intradiária com nova escalada regional; card não trata a cotação como fechamento.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'DECLARAÇÃO 09/09: CFO da OpenAI relata expansão de IA para desenho de chips e setores especializados; resultados apresentados como afirmação da executiva, não auditoria independente.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 09/09 confirmada neste corte; Patch Tuesday de 08/09 não foi reciclado.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente ou advisory Cyber material da data local 09/09 confirmado neste corte; Reel omitido.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material da data local 09/09 confirmado neste corte; SAP Security Patch Day de 08/09 não foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
