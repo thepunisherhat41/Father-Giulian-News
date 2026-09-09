@@ -49,6 +49,7 @@ export default function ReelsExperienceLive(){
   applyCurrentReelPatches202609042034(dailyContent);
   applyCurrentReelPatches20260905(dailyContent);
   applyCurrentReelPatches202609051449(dailyContent);
+  applyCurrentReelPatches202609051749(dailyContent);
   applyCurrentReelPatches202609052013(dailyContent);
   applyCurrentReelPatches202609052306(dailyContent);
   applyCurrentReelPatches20260906(dailyContent);
