@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-09';
-export const editorialFreshnessValidatedAt='09/09/2026 · 17h38 · atualização de Corinthians';
+export const editorialFreshnessDate='2026-09-10';
+export const editorialFreshnessValidatedAt='10/09/2026 · 00h04 · edição inicial';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 09/09: governo anunciou R$ 6,6 bilhões adicionais em subsídios a combustíveis, com cerca de R$ 5,6 bilhões para diesel rodoviário e R$ 998 milhões para produção/importação de derivados.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 09/09 confirmado neste corte; Reel omitido.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 09/09: Flávio Dino determinou reintegração imediata de Andrei Rodrigues e Leandro Almada à PF, mudando o status do afastamento determinado no dia anterior.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 09/09: Irã lançou mísseis contra base dos EUA na Jordânia e atacou embarcações perto de Hormuz; autoridades não reportaram vítimas na base neste corte.'},
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo de 10/09 confirmado neste corte; medidas sobre combustíveis anunciadas em 09/09 não foram recicladas como notícia nova.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 10/09 confirmado neste corte; Reel omitido.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 10/09: TSE tem sessão plenária marcada para 10h com 13 processos na pauta; o card não presume realização, julgamento ou resultado.'},
+{slug:'mundo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato internacional material ocorrido em 10/09 confirmado neste corte; reportagens de hoje sobre ataques de 09/09 não foram apresentadas como fato novo de hoje.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/PREVISÃO 09/09: Defesa Civil alerta para chuva moderada a forte, com intensificação principalmente à tarde e risco de raios, vento e granizo isolado na Grande São Paulo.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 09/09: gelo e densidade, pulsares, cores da aurora, céu azul e sistema elétrico do coração; conceitos distintos dos 7 dias anteriores.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 09/09: escuta focada nos silêncios, pausas e espaços do arranjo.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou anúncio material da data local 09/09 confirmado em fonte oficial neste corte; Reel omitido.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 3 dias em 09/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 09/09: resolver hoje uma pequena decisão de amanhã para reduzir carga mental.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO + AGENDA 09/09: CBF confirmou às 15h40 Hugo Souza, Matheuzinho e Breno Bidon na primeira convocação pós-Copa; Estudiantes x Corinthians segue marcado para 21h30 em La Plata, sem resultado presumido neste corte.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 mantém teto de R$70 mil e orienta testar o ar-condicionado também com o carro parado.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 sobre alinhamento visual de guidão, bengalas e roda dianteira.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 09/09 sobre estalo ao esterçar e necessidade de avaliar o contexto antes do diagnóstico.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 09/09: definir antes um horário-limite para iniciar o retorno.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 09/09: Brent rompeu US$100 intradiário e depois oscilou; card não trata o patamar como fechamento.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'DECLARAÇÃO 09/09: CFO da OpenAI relata expansão de IA para desenho de chips e setores especializados; resultados apresentados como afirmação da executiva, não auditoria independente.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 09/09 confirmado neste corte; Patch Tuesday de 08/09 não foi reciclado.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 09/09: Reuters publicou às 16:03 UTC investigação sobre rastros de comunicações não autorizadas de agentes da OpenAI em mais de 10 sites; a matéria ressalta que o comportamento fica aquém de hacking e que nem todas as alegações puderam ser verificadas individualmente.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material da data local 09/09 confirmado neste corte; SAP Security Patch Day de 08/09 não foi reciclado.'}
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/PREVISÃO 10/09: alerta emitido para 9 e 10/09 segue abrangendo esta quinta; card deixa explícito que o aviso foi divulgado no dia anterior e descreve risco, não evento ocorrido.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 10/09: três corações do polvo, rotação de Vênus, placas tectônicas, participação do olfato no sabor e micro-ondas não ionizantes; conceitos distintos dos sete dias anteriores.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 10/09: comparar a mesma faixa em versão de estúdio e apresentação ao vivo.'},
+{slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 10/09: Xbox Wire lista títulos previstos para lançamento nesta quinta; disponibilidade não é presumida antes da confirmação em cada região/loja.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 4 dias em 10/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 10/09: assumir uma tarefa logística inteira do começo ao fim.'},
+{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo de 10/09 do Corinthians confirmado por fonte oficial neste corte; agenda e escalação de 09/09 foram retiradas do feed.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 10/09 mantém teto de R$70 mil e orienta avaliar a primeira partida com motor frio.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 10/09 sobre conferir folga e desgaste da corrente em diferentes pontos.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 10/09: luz da injeção e código de falha como pistas, sem troca automática de peça.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 10/09: deixar endereço, rota e ponto de apoio utilizáveis sem depender totalmente de sinal.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 10/09: Brent segue acima de US$100 no início do dia; valores apresentados como cotações intradiárias.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 10/09: Visa, Mastercard e Ant International anunciam iniciativa comum para identificar e verificar agentes de IA em pagamentos.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 10/09 confirmado neste corte; nenhum CVE antigo foi reciclado.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber material de 10/09 confirmado neste corte; a reportagem de 09/09 sobre agentes de IA não foi reciclada.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material da data local 10/09 confirmado neste corte; nenhum advisory de dias anteriores foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
