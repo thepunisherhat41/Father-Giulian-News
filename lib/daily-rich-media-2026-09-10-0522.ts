@@ -23,9 +23,16 @@ export const dailyRichMedia202609100522:RichMediaEntry[]=[{
   images:[{url:art('Política','🏛️','PRONUNCIAMENTO CANCELADO','ATUALIZAÇÃO DE AGENDA · STF'),alt:'Arte 9:16 específica com edifício institucional e indicação de pronunciamento cancelado, sem retratar realização do compromisso',caption:'Pronunciamento anunciado para 10/09 foi cancelado e deverá ser remarcado',credit:'Father Giulian News · arte editorial específica 10/09',sourceUrl:'https://www1.folha.uol.com.br/poder/2026/09/alexandre-de-moraes-fara-pronunciamento-apos-perder-a-relatoria-do-inquerito-das-fake-news.shtml',kind:'REFERENCE'}]
 },{
   label:'Finanças',
-  matches:['brent avança cerca de 5%','us$ 106,60 no intradiário'],
-  tag:'ARTE ESPECÍFICA · 10/09 · 14H17',
-  title:'BRENT US$106,60',
-  caption:'ALTA INTRADIÁRIA · ~5%',
-  images:[{url:art('Finanças','🛢️','BRENT US$106,60','ALTA INTRADIÁRIA · ~5%'),alt:'Arte 9:16 específica com barril de petróleo e cotação intradiária do Brent em 106,60 dólares',caption:'Brent chega a US$106,60 durante o pregão de 10/09; valor intradiário',credit:'Father Giulian News · arte editorial específica 10/09',sourceUrl:'https://www.reuters.com/business/energy/brent-holds-above-100-tanker-attacks-deepen-supply-fear-2026-09-10/',kind:'REFERENCE'}]
+  matches:['brent fecha a us$ 107,63','salto de 6,34%'],
+  tag:'ARTE ESPECÍFICA · 10/09 · 17H34',
+  title:'BRENT US$107,63',
+  caption:'FECHAMENTO · +6,34%',
+  images:[{url:art('Finanças','🛢️','BRENT US$107,63','FECHAMENTO · +6,34%'),alt:'Arte 9:16 específica com barril de petróleo e fechamento confirmado do Brent em 107,63 dólares',caption:'Brent fecha a US$107,63 em 10/09, alta de 6,34%',credit:'Father Giulian News · arte editorial específica 10/09',sourceUrl:'https://www.reuters.com/business/energy/brent-holds-above-100-tanker-attacks-deepen-supply-fear-2026-09-10/',kind:'REFERENCE'}]
+},{
+  label:'Cyber Security',
+  matches:['anthropic relata campanhas russas e chinesas','abusando do claude'],
+  tag:'ARTE ESPECÍFICA · 10/09 · 17H34',
+  title:'ABUSO DE IA EM CAMPANHAS',
+  caption:'RÚSSIA + CHINA · CLAUDE',
+  images:[{url:art('Cyber Security','🛡️','ABUSO DE IA EM CAMPANHAS','RÚSSIA + CHINA · CLAUDE'),alt:'Arte 9:16 específica com escudo de cibersegurança e referência a campanhas maliciosas envolvendo Claude atribuídas a atores russos e chineses',caption:'Anthropic relata novas descobertas de inteligência de ameaças envolvendo abuso do Claude',credit:'Father Giulian News · arte editorial específica 10/09',sourceUrl:'https://www.reuters.com/legal/litigation/anthropic-disrupts-russian-chinese-ai-campaigns-targeting-its-claude-models-2026-09-10/',kind:'REFERENCE'}]
 }];
