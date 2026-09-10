@@ -37,15 +37,27 @@ Object.assign(dailyContent.politica,{
   sources:[{label:'Folha de S.Paulo · Alexandre de Moraes anuncia e depois cancela pronunciamento em meio a crise no STF · 10/09/2026',url:'https://www1.folha.uol.com.br/poder/2026/09/alexandre-de-moraes-fara-pronunciamento-apos-perder-a-relatoria-do-inquerito-das-fake-news.shtml'}]
 });
 Object.assign(dailyContent.financas,{
-  title:'Brent avança cerca de 5% e chega a US$ 106,60 no intradiário',
-  summary:'FATO/MERCADOS · O petróleo voltou a acelerar nesta quinta-feira (10): a Reuters registrou o Brent a US$ 106,60 por barril durante o pregão, alta de cerca de 5%, com novos ataques a petroleiros e maior tensão sobre rotas de energia no Oriente Médio. É cotação intradiária, não fechamento do dia.',
-  shareSummary:'Finanças · 10/09: Brent chegou a US$106,60 por barril durante o pregão, alta de cerca de 5%; valor intradiário, não fechamento.',
+  title:'Brent fecha a US$ 107,63 após salto de 6,34%',
+  summary:'FATO/MERCADOS · O Brent encerrou esta quinta-feira (10) a US$ 107,63 por barril, alta de US$ 6,42 (+6,34%), segundo a Reuters. O fechamento substitui a cotação intradiária anterior de US$ 106,60 e confirma a forte alta do dia em meio à escalada de ataques a embarcações e riscos às rotas de energia.',
+  shareSummary:'Finanças · fechamento 10/09: Brent encerrou a US$107,63 por barril, alta de US$6,42 (+6,34%), segundo a Reuters.',
   readTime:'3 MIN',
-  badge:'FINANÇAS · FATO/MERCADOS · 10/09',
+  badge:'FINANÇAS · FATO/MERCADOS · FECHAMENTO · 10/09',
   sections:[
-    {title:'Novo movimento confirmado no pregão',bullets:['Reuters registrou o Brent em US$106,60 por barril nesta quinta-feira.','A alta intradiária ficou em cerca de 5% no novo corte.','O avanço acompanhou novos ataques a petroleiros e aumento do risco percebido sobre o fluxo regional de energia.']},
-    {title:'Como ler o número',paragraphs:['US$106,60 é uma cotação intradiária e pode mudar ao longo da sessão. O card não apresenta esse nível como preço de fechamento.']}
+    {title:'Fechamento confirmado',bullets:['Brent fechou a US$107,63 por barril nesta quinta-feira.','A alta foi de US$6,42, equivalente a 6,34% no dia.','O WTI encerrou a US$102,48 por barril, alta de 6,69%, segundo a Reuters.']},
+    {title:'O que mudou no card',paragraphs:['O preço de US$106,60 publicado no corte anterior era intradiário. Com o encerramento do pregão, este card passa a registrar o fechamento confirmado de US$107,63.']}
   ],
-  sources:[{label:'Reuters · Oil surges 5%, Brent and US crude both over $100 on more tanker attacks · 10/09/2026',url:'https://www.reuters.com/business/energy/brent-holds-above-100-tanker-attacks-deepen-supply-fear-2026-09-10/'}]
+  sources:[{label:'Reuters · Oil surges 6%, Brent and US crude both surpass $100 on more tanker attacks · 10/09/2026',url:'https://www.reuters.com/business/energy/brent-holds-above-100-tanker-attacks-deepen-supply-fear-2026-09-10/'}]
+});
+Object.assign(dailyContent.seguranca,{
+  title:'Anthropic relata campanhas russas e chinesas abusando do Claude',
+  summary:'APURAÇÃO/REPORTAGEM · Nesta quinta-feira (10), a Reuters noticiou novas descobertas de inteligência de ameaças da Anthropic sobre atividades maliciosas envolvendo o Claude entre janeiro e setembro de 2026. A empresa atribuiu diferentes campanhas a atores ligados à Rússia e à China, incluindo espionagem assistida por IA e tentativas de extração de capacidades dos modelos. A novidade de hoje é a divulgação das descobertas, não o início de todas as campanhas.',
+  shareSummary:'Cyber · 10/09: Reuters relata novas descobertas da Anthropic sobre campanhas russas e chinesas que abusaram do Claude; os casos cobrem janeiro a setembro, e a novidade de hoje é a divulgação.',
+  readTime:'4 MIN',
+  badge:'CYBER · APURAÇÃO/REPORTAGEM · 10/09',
+  sections:[
+    {title:'O que foi divulgado hoje',bullets:['Segundo a Reuters, a Anthropic disse ter interrompido atividades maliciosas envolvendo atores russos e chineses entre janeiro e setembro de 2026.','Os casos descritos incluem espionagem assistida por IA e tentativas de usar interações com Claude para extrair ou reproduzir capacidades de modelos.','A reportagem cita uma campanha ligada ao grupo russo Midnight Blizzard e atividades atribuídas a organizações sediadas na China.']},
+    {title:'Classificação editorial',paragraphs:['Este Reel é APURAÇÃO/REPORTAGEM de 10/09 sobre uma divulgação de inteligência de ameaças. Ele não apresenta todas as campanhas como ataques iniciados nesta quinta-feira e não recicla a reportagem de 09/09 sobre incidentes de avaliação de agentes de IA.']}
+  ],
+  sources:[{label:'Reuters · Anthropic disrupts Russian, Chinese AI campaigns targeting its Claude models · 10/09/2026',url:'https://www.reuters.com/legal/litigation/anthropic-disrupts-russian-chinese-ai-campaigns-targeting-its-claude-models-2026-09-10/'}]
 });
 }

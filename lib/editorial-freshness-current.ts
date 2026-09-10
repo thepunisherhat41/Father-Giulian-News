@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-10';
-export const editorialFreshnessValidatedAt='10/09/2026 · 14h17 · corte intradiário';
+export const editorialFreshnessValidatedAt='10/09/2026 · 17h34 · corte de fechamento';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo de 10/09 confirmado neste corte; medidas sobre combustíveis anunciadas em 09/09 não foram recicladas como notícia nova.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 10/09 confirmado neste corte; Reel omitido.'},
@@ -20,10 +20,10 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 10/09 sobre conferir folga e desgaste da corrente em diferentes pontos.'},
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 10/09: luz da injeção e código de falha como pistas, sem troca automática de peça.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 10/09: deixar endereço, rota e ponto de apoio utilizáveis sem depender totalmente de sinal.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 10/09: Reuters registrou Brent em US$106,60 por barril durante o pregão, alta de cerca de 5%; o card trata o valor como intradiário, não fechamento.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 10/09: Reuters confirmou o fechamento do Brent em US$107,63 por barril, alta de US$6,42 (+6,34%); o fechamento substitui a cotação intradiária anterior.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 10/09: Visa, Mastercard e Ant International anunciam iniciativa comum para identificar e verificar agentes de IA em pagamentos.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 10/09 confirmado neste corte; nenhum CVE antigo foi reciclado.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber material de 10/09 confirmado neste corte; a reportagem de 09/09 sobre agentes de IA não foi reciclada.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 10/09: Reuters relata novas descobertas da Anthropic sobre campanhas maliciosas russas e chinesas envolvendo Claude entre janeiro e setembro de 2026; a novidade do dia é a divulgação das descobertas, sem reciclar os incidentes de avaliação de 09/09.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material da data local 10/09 confirmado neste corte; nenhum advisory de dias anteriores foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
