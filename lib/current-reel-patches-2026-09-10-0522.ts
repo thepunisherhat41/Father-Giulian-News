@@ -12,4 +12,28 @@ Object.assign(dailyContent.corinthians,{
   ],
   sources:[{label:'CONMEBOL Libertadores · Estudiantes and Corinthians play out draw · 10/09/2026',url:'https://gol.conmebol.com/libertadores/en/news/estudiantes-and-corinthians-play-out-draw-leave-tie-finely-poised'}]
 });
+Object.assign(dailyContent.politica,{
+  title:'Moraes anuncia e cancela pronunciamento previsto para esta quinta',
+  summary:'ATUALIZAÇÃO/REPORTAGEM · Alexandre de Moraes anunciou e depois cancelou um pronunciamento previsto para esta quinta-feira (10). Segundo a Folha, a assessoria do STF informou que a fala será remarcada. O card registra somente a mudança confirmada de agenda e não presume conteúdo, nova data ou realização futura.',
+  shareSummary:'Política · atualização 10/09: pronunciamento de Alexandre de Moraes anunciado para esta quinta foi cancelado; segundo a Folha, o STF informou que será remarcado.',
+  readTime:'3 MIN',
+  badge:'POLÍTICA · ATUALIZAÇÃO/REPORTAGEM · 10/09',
+  sections:[
+    {title:'O que mudou hoje',bullets:['Alexandre de Moraes anunciou um pronunciamento para esta quinta-feira (10).','Pouco depois, a assessoria do STF comunicou o cancelamento.','Segundo a reportagem, a fala será remarcada; não havia nova data confirmada neste corte.']},
+    {title:'Classificação editorial',paragraphs:['É uma ATUALIZAÇÃO/REPORTAGEM sobre mudança de agenda confirmada no dia 10/09. O card não trata como realizado um compromisso que foi cancelado nem antecipa o conteúdo da fala.']}
+  ],
+  sources:[{label:'Folha de S.Paulo · Alexandre de Moraes anuncia e depois cancela pronunciamento em meio a crise no STF · 10/09/2026',url:'https://www1.folha.uol.com.br/poder/2026/09/alexandre-de-moraes-fara-pronunciamento-apos-perder-a-relatoria-do-inquerito-das-fake-news.shtml'}]
+});
+Object.assign(dailyContent.financas,{
+  title:'Brent salta cerca de 4% e supera US$ 105 no intradiário',
+  summary:'FATO/MERCADOS · O petróleo acelerou nesta quinta-feira (10): a Reuters registrou o Brent em cerca de US$ 105 por barril durante o pregão, avanço de aproximadamente 4%, em meio à escalada de ataques a embarcações no Oriente Médio. É cotação intradiária, não fechamento do dia.',
+  shareSummary:'Finanças · 10/09: Brent avançou cerca de 4% e superou US$105 por barril durante o pregão; valor intradiário, não fechamento.',
+  readTime:'3 MIN',
+  badge:'FINANÇAS · FATO/MERCADOS · 10/09',
+  sections:[
+    {title:'Movimento confirmado no pregão',bullets:['Brent chegou à região de US$105 por barril nesta quinta-feira.','A alta intradiária ficou em torno de 4% no corte da Reuters.','O movimento ocorreu enquanto aumentavam as preocupações com ataques a embarcações e fluxos de energia no Oriente Médio.']},
+    {title:'Como ler o número',paragraphs:['O valor é intradiário e pode mudar ao longo da sessão. O card não apresenta US$105 como preço de fechamento.']}
+  ],
+  sources:[{label:'Reuters · Oil jumps to $105 a barrel after Middle East tanker attacks escalate · 10/09/2026',url:'https://www.reuters.com/business/energy/brent-holds-above-100-tanker-attacks-deepen-supply-fear-2026-09-10/'}]
+});
 }
