@@ -1,7 +1,4 @@
 // Ponteiro do catálogo visual da edição ativa.
 // HARD GATE: somente catálogos da data corrente podem ficar ativos.
-import {dailyRichMedia20260910} from './daily-rich-media-2026-09-10';
-import {dailyRichMedia202609100522} from './daily-rich-media-2026-09-10-0522';
-import {dailyRichMedia202609102101} from './daily-rich-media-2026-09-10-2101';
-import {dailyRichMedia202609102354} from './daily-rich-media-2026-09-10-2354';
-export const dailyRichMediaCurrent=[...dailyRichMedia202609102354,...dailyRichMedia202609102101,...dailyRichMedia202609100522,...dailyRichMedia20260910];
+import {dailyRichMedia20260911} from './daily-rich-media-2026-09-11';
+export const dailyRichMediaCurrent=[...dailyRichMedia20260911];
