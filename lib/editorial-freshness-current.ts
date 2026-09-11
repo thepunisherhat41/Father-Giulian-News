@@ -1,11 +1,11 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-10';
-export const editorialFreshnessValidatedAt='10/09/2026 · 21h01 · corte noturno';
+export const editorialFreshnessValidatedAt='10/09/2026 · 23h54 · corte final';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo de 10/09 confirmado neste corte; medidas sobre combustíveis anunciadas em 09/09 não foram recicladas como notícia nova.'},
+{slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 10/09: Petrobras corrigiu comunicação anterior e informou redução de R$0,19/litro no preço percebido com impostos para distribuidores; o Reel não presume repasse idêntico em todos os postos.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 10/09 confirmado neste corte; Reel omitido.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/REPORTAGEM 10/09: pronunciamento de Alexandre de Moraes anunciado para esta quinta foi cancelado; segundo a Folha, a assessoria do STF informou que será remarcado. Nenhuma nova data ou realização foi presumida.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PESQUISA 10/09: AtlasIntel/Bloomberg aponta Flávio Bolsonaro 46,4% e Lula 46,2% em cenário de segundo turno; diferença dentro da margem de erro de 1 p.p., com 5.000 entrevistados entre 4 e 9/09.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 10/09: Reuters revelou hoje detalhes de operação russa frustrada na primavera de 2026 contra infraestrutura submarina perto de Svalbard. O card explicita que o evento é anterior e que a novidade de hoje é a apuração publicada.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Evergreen fora do feed jornalístico.'},
