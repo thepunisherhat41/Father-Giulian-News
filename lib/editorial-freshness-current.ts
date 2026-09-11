@@ -1,10 +1,10 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-11';
-export const editorialFreshnessValidatedAt='11/09/2026 · 11h23 · atualização';
+export const editorialFreshnessValidatedAt='11/09/2026 · 14h50 · atualização';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 11/09: STF determinou a retirada do sigilo de milhares de páginas da investigação sobre o Banco Master; suspeitas e citações não são tratadas como culpa comprovada.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 11/09: ataques entre Rússia e Ucrânia deixaram vítimas e atingiram infraestrutura em Kyiv e Tula; mantido por continuar correto e atual.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 11/09: Houthis chegaram à ilha de Perim e a Dhubab no Bab el-Mandeb, ampliando o risco sobre uma rota marítima estratégica; o Reel não presume bloqueio total nem incidente não confirmado em oleoduto saudita.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato político eleitoral adicional de 11/09 foi incluído neste corte; reportagem sobre investigação envolvendo Flávio Bolsonaro não foi duplicada em Política para evitar redundância com Brasil/Banco Master.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 11/09.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 11/09.'},
@@ -18,7 +18,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 11/09: escuta em camadas focando bateria e depois baixo.'},
 {slug:'games',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 11/09: janela oficial da Xbox Wire para 7–11/09 encerra nesta sexta; disponibilidade regional não é presumida.'},
 {slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 11/09: Reuters relata revisão do projeto de data centers de IA de 5 GW dos Emirados após ataques no Golfo; medidas ainda em estudo são identificadas como tal.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/MERCADOS 11/09: Brent perto de US$104,35, alta semanal acima de 8% e diesel dos EUA em recorde; números intradiários, não fechamento.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/MERCADOS 11/09: Brent em US$105,17 às 16h33 GMT, alta semanal projetada acima de 9%, WTI em US$100,04 e diesel dos EUA acima de US$6 por galão; números intradiários, não fechamento.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material datada de 11/09 confirmada neste corte; nenhum CVE antigo foi reciclado.'},
 {slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Cyber material datado de 11/09 confirmado neste corte; reportagem de 10/09 não foi reciclada.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material datado de 11/09 confirmado neste corte; nenhum advisory anterior foi reciclado.'},
