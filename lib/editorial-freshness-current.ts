@@ -6,6 +6,8 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo material datado de 11/09 confirmado neste corte inicial; conteúdo de 10/09 não foi reciclado.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 11/09: Reuters registra petróleo perto de US$110 e pressão em títulos globais e expectativas de inflação/juros; valores tratados como intradiários.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato, pesquisa ou compromisso político de 11/09 confirmado neste corte; pesquisa de 10/09 foi omitida.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 11/09.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 11/09.'},
 {slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/PREVISÃO 11/09: CGE prevê 18–27°C, rajadas fortes e pancadas isoladas; avisos de tempestade vigentes são tratados como risco, não evento garantido.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 11/09 confirmado neste corte; Reel omitido.'},
 {slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo material de 11/09 confirmado neste corte inicial; resultado de 09/09 não foi reciclado.'},
