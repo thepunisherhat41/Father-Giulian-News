@@ -1,16 +1,16 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-11';
-export const editorialFreshnessValidatedAt='11/09/2026 · 17h37 · atualização';
+export const editorialFreshnessValidatedAt='11/09/2026 · 20h11 · atualização';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 11/09: STF determinou a retirada do sigilo de milhares de páginas da investigação sobre o Banco Master; suspeitas e citações não são tratadas como culpa comprovada.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 11/09: Houthis chegaram à ilha de Perim e a Dhubab no Bab el-Mandeb, ampliando o risco sobre uma rota marítima estratégica; o Reel não presume bloqueio total nem incidente não confirmado em oleoduto saudita.'},
-{slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato político eleitoral adicional de 11/09 foi incluído neste corte; reportagem sobre investigação envolvendo Flávio Bolsonaro não foi duplicada em Política para evitar redundância com Brasil/Banco Master.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PESQUISA 11/09: Datafolha divulgado às 18h33 mostra Lula com 39% e Flávio Bolsonaro com 35% no primeiro turno; no segundo turno entre ambos, 46% a 44%, empate técnico. Campo de 8 a 10/09, antes das revelações do caso Dark Horse.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 11/09.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 11/09.'},
 {slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO/PREVISÃO 11/09: CGE prevê 18–27°C, rajadas fortes e pancadas isoladas; avisos são tratados como risco, não evento garantido.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato da Zona Leste surgido após o corte anterior foi confirmado neste corte; notícias publicadas antes de 14h50 não foram promovidas artificialmente como atualização nova.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo material do Corinthians surgido após o corte anterior foi confirmado; atualização sobre Yuri Alberto publicada pela manhã não foi reciclada como novidade das 17h37.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato da Zona Leste surgido após o corte anterior foi confirmado neste corte; fatos publicados antes de 17h37 não foram promovidos artificialmente como atualização nova.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 11/09 18h52: UOL relata que Memphis pediu para não enfrentar o Flamengo por incômodo muscular; não há lesão diagnosticada nem ausência oficialmente confirmada.'},
 {slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 11/09: rã-da-floresta e congelamento, dia solar de Mercúrio, fulguritos, córnea avascular e correção de erros em QR Codes.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 5 dias em 11/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 11/09: preparar um kit simples de saída antes de precisar.'},
