@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-10';
-export const editorialFreshnessValidatedAt='10/09/2026 · 17h34 · corte de fechamento';
+export const editorialFreshnessValidatedAt='10/09/2026 · 21h01 · corte noturno';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo de 10/09 confirmado neste corte; medidas sobre combustíveis anunciadas em 09/09 não foram recicladas como notícia nova.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste publicado e datado em 10/09 confirmado neste corte; Reel omitido.'},
@@ -21,9 +21,9 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 10/09: luz da injeção e código de falha como pistas, sem troca automática de peça.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Ideia nova 10/09: deixar endereço, rota e ponto de apoio utilizáveis sem depender totalmente de sinal.'},
 {slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/MERCADOS 10/09: Reuters confirmou o fechamento do Brent em US$107,63 por barril, alta de US$6,42 (+6,34%); o fechamento substitui a cotação intradiária anterior.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO/ATUALIZAÇÃO 10/09: Visa, Mastercard e Ant International anunciam iniciativa comum para identificar e verificar agentes de IA em pagamentos.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 10/09: Reuters repercutiu às 18h54 de Brasília relato do WSJ de que o Pentágono negocia empréstimo de cerca de US$5 bilhões à Fluidstack; o card não apresenta a negociação como acordo concluído.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material distinta datada de 10/09 confirmado neste corte; nenhum CVE antigo foi reciclado.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 10/09: Reuters relata novas descobertas da Anthropic sobre campanhas maliciosas russas e chinesas envolvendo Claude entre janeiro e setembro de 2026; a novidade do dia é a divulgação das descobertas, sem reciclar os incidentes de avaliação de 09/09.'},
+{slug:'seguranca',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 10/09: Reuters publicou à noite detalhes de carta emitida em 09/09 por três congressistas pedindo Entity List para BellTroX, CyberRoot e Sunkissed Organic Farms; o card distingue o pedido de uma eventual sanção efetiva.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material da data local 10/09 confirmado neste corte; nenhum advisory de dias anteriores foi reciclado.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
