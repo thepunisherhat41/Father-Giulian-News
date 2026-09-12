@@ -1,10 +1,10 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-12';
-export const editorialFreshnessValidatedAt='12/09/2026 · 05h50 · atualização da manhã';
+export const editorialFreshnessValidatedAt='12/09/2026 · 08h42 · atualização da manhã';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Brasil material surgido em 12/09 foi confirmado neste corte da manhã; conteúdo de 11/09 não foi reciclado.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'APURAÇÃO/REPORTAGEM 12/09: Reuters informou às 05h01 BRT, citando quatro fontes, que o BRICS chegou a acordo sobre o texto de declaração conjunta; aprovação dos líderes ainda era esperada. FATO: Xi chegou a Nova Délhi às 03h15 BRT. O fechamento do oleoduto saudita segue preservado no card como fato anterior do mesmo dia.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'DECLARAÇÃO 12/09: Reuters publicou às 08h00 BRT que Xi Jinping pediu ao BRICS papel de pacificação no conflito do Oriente Médio e afirmou que a China trabalhará com os demais membros nessa direção. O card preserva como contexto a apuração das 05h01 sobre o texto da declaração conjunta, sem converter automaticamente expectativa de aprovação em fato concluído.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhuma pesquisa, sabatina, entrevista, debate, mudança ou cancelamento material novo de 12/09 foi confirmado neste corte; pesquisa Datafolha divulgada em 11/09 não foi reciclada como fato de hoje.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 12/09.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como Reel jornalístico; a rotação atual usa curiosidades específicas de 12/09.'},
