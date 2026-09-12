@@ -11,7 +11,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO 12/09: INMET prevê chuva em partes de São Paulo e queda de temperatura associada ao ciclone extratropical no Atlântico.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste datado de 12/09 foi confirmado neste corte; conteúdo anterior foi omitido.'},
 {slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo do Corinthians datado de 12/09 foi confirmado neste corte da madrugada; atualizações de 11/09 não foram recicladas.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 12/09: três corações dos cefalópodes, afastamento da Lua, deriva do norte magnético, remodelação óssea e relatividade no GPS.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 12/09: pelagem densa da lontra-marinha, afastamento da Lua, deriva do norte magnético, remodelação óssea e relatividade no GPS.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 9 semanas + 6 dias em 12/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 12/09: assumir uma refeição inteira sem devolver decisões.'},
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 12/09: definir um plano B simples para chuva, trânsito ou lotação.'},
