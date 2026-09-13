@@ -1,7 +1,7 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-13';
-export const editorialFreshnessValidatedAt='13/09/2026 · 15h03 · corte da tarde';
+export const editorialFreshnessValidatedAt='13/09/2026 · 17h16 · corte pré-jogo';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Brasil material datado de 13/09 foi confirmado neste corte; conteúdo anterior foi omitido.'},
 {slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09 · 08h19 BRT: o alerta que fechou temporariamente o aeroporto de Vilnius por suposto drone foi corrigido pelas autoridades lituanas; um caça da OTAN identificou visualmente um bando de aves. O alerta durou 38 minutos e o aeroporto reabriu.'},
@@ -10,7 +10,7 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade nova de 13/09: eletrorrecepção em tubarões.'},
 {slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09: Grande São Paulo está em área de alerta de perigo para tempestades, com possibilidade de chuva intensa, rajadas e raios; capital segue fria e chuvosa.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste datado de 13/09 foi confirmado neste corte; seção omitida.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Agenda e notícias pré-jogo de Flamengo x Corinthians foram avaliadas neste corte; nenhum resultado é presumido antes da partida e a seção segue omitida para não duplicar material de menor peso editorial.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 13/09 · 17h16 BRT: Corinthians confirmou escalação predominantemente reserva para Flamengo x Corinthians às 17h30 no Maracanã. Hugo Souza e Raniele são exceções entre os titulares preservados; nenhum resultado foi presumido antes do início.'},
 {slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 13/09: eletrorrecepção de tubarões, fontes hidrotermais, pôr do sol azul em Marte, auroras e fibra óptica.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 10 semanas completas em 13/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 13/09: proteger meia hora de descanso sem interrupções.'},
