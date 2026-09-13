@@ -1,16 +1,16 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-13';
-export const editorialFreshnessValidatedAt='13/09/2026 · 01h · corte da madrugada';
+export const editorialFreshnessValidatedAt='13/09/2026 · 06h · corte da manhã';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Brasil material datado de 13/09 foi confirmado neste corte; conteúdo anterior foi omitido.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 13/09: UKMTO recebeu relato de projétil contra embarcação em trânsito pelo Estreito de Hormuz; danos e condição da tripulação ainda estavam incertos no primeiro corte Reuters.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09: UKMTO confirmou incêndio e evacuação após projétil atingir embarcação em Hormuz; mídia estatal iraniana relatou 1 morto e 4 feridos. Autoria não confirmada independentemente.'},
 {slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 13/09: TSE fixa hoje como prazo final para envio da prestação de contas parcial da campanha; não se presume cumprimento por candidatura específica.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como jornalismo; rotação de curiosidades foi renovada para 13/09.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade nova de 13/09: eletrorrecepção em tubarões.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO 13/09: INMET prevê persistência de chuva em partes de São Paulo e temperaturas mais baixas.'},
+{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09: Grande São Paulo está em área de alerta de perigo para tempestades, com possibilidade de chuva intensa, rajadas e raios; capital segue fria e chuvosa.'},
 {slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste datado de 13/09 foi confirmado neste corte; seção omitida.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo de 13/09 confirmado até este corte da madrugada; seção omitida em vez de reciclar notícia anterior.'},
+{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato material novo de 13/09 confirmado até este corte da manhã; seção omitida em vez de reciclar notícia anterior.'},
 {slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 13/09: eletrorrecepção de tubarões, fontes hidrotermais, pôr do sol azul em Marte, auroras e fibra óptica.'},
 {slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 10 semanas completas em 13/09.'},
 {slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 13/09: proteger meia hora de descanso sem interrupções.'},
