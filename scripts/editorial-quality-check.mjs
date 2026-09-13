@@ -63,9 +63,15 @@ const pointerImports=[...pointer.matchAll(/from ['"]\.\/(daily-rich-media-[^'"]+
 for(const imp of pointerImports){if(!imp.startsWith(`daily-rich-media-${today}`))failures.push(`Mídia: catálogo de outra data ativo no ponteiro corrente (${imp}).`);}
 const mediaFiles=[mediaFile,...pointerImports.map(i=>`lib/${i}.ts`)].filter((v,i,a)=>a.indexOf(v)===i);
 const media=mediaFiles.map(text).join('\n');
-for(const f of ['/reel-ai/sprite','sprite.jpg','sprite-news.jpg','clean-covers.jpg','data:image/gif','transparent.gif','Father Giulian News screenshot'])if(media.includes(f))failures.push(`Mídia proibida: ${f}`);
+for(const f of ['/reel-ai/sprite','sprite.jpg','sprite-news.jpg','clean-covers.jpg','data:image','transparent.gif','Father Giulian News screenshot'])if(media.includes(f))failures.push(`Mídia proibida: ${f}`);
+if(/arte\s*9:16|arte editorial|arte abstrata|gerad[ao]\s+por\s+(?:ia|ai)|ai-generated|ilustra(?:ç|c)[aã]o/i.test(media))failures.push('Mídia: arte sintética/ilustração detectada no catálogo corrente.');
+const realEntryCount=(media.match(/img\('/g)??[]).length;
+const imageUrls=[...media.matchAll(/img\('[^']+',\[[^\]]*\],'([^']+)'/g)].map(m=>m[1]);
+if(!realEntryCount)failures.push('Mídia: nenhum Reel com foto real cadastrado.');
+if(imageUrls.length!==realEntryCount)failures.push(`Mídia: nem todas as entradas possuem URL remota verificável (${imageUrls.length}/${realEntryCount}).`);
+for(const url of imageUrls){if(!/^https:\/\//i.test(url))failures.push(`Mídia: URL não remota/HTTPS: ${url}`);if(/\.svg(?:$|\?)/i.test(url))failures.push(`Mídia: SVG não é aceito como mídia final: ${url}`);if(/^data:/i.test(url))failures.push(`Mídia: data URI não é aceita: ${url}`);}
 const imageCount=(media.match(/images:\[/g)??[]).length;
-if(!imageCount)failures.push('Mídia: nenhuma imagem validada no catálogo corrente.');
+if(!imageCount)failures.push('Mídia: helper de imagem ausente no catálogo corrente.');
 if((media.match(/alt:/g)??[]).length<imageCount)failures.push('Mídia: alt text ausente.');
 if((media.match(/sourceUrl:/g)??[]).length<imageCount)failures.push('Mídia: sourceUrl ausente.');
 const labelBySlug={brasil:'Brasil','seguranca-zl':'Zona Leste em Foco',politica:'Política',mundo:'Mundo',tempo:'Tempo e Clima',games:'Games',corinthians:'Corinthians',financas:'Finanças',tecnologia:'Tecnologia','security-briefing':'Security Briefing',seguranca:'Cyber Security','appsec-ssdlc':'AppSec / SSDLC'};
