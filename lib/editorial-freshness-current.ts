@@ -1,10 +1,10 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-13';
-export const editorialFreshnessValidatedAt='13/09/2026 · 06h · corte da manhã';
+export const editorialFreshnessValidatedAt='13/09/2026 · 08h34 · corte da manhã';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Brasil material datado de 13/09 foi confirmado neste corte; conteúdo anterior foi omitido.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09: UKMTO confirmou incêndio e evacuação após projétil atingir embarcação em Hormuz; mídia estatal iraniana relatou 1 morto e 4 feridos. Autoria não confirmada independentemente.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 13/09 · 08h19 BRT: Vilnius fechou temporariamente o aeroporto após possível drone; a OTAN acionou ao menos um caça de Šiauliai; alerta encerrado e aeroporto reaberto cerca de uma hora depois. Origem do possível drone não confirmada.'},
 {slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 13/09: TSE fixa hoje como prazo final para envio da prestação de contas parcial da campanha; não se presume cumprimento por candidatura específica.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como jornalismo; rotação de curiosidades foi renovada para 13/09.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade nova de 13/09: eletrorrecepção em tubarões.'},
