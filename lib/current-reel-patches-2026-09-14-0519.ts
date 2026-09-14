@@ -13,17 +13,17 @@ export function applyCurrentReelPatches202609140519(dailyContent:Record<string,a
     ]
   });
   Object.assign(dailyContent.financas,{
-    title:'Wall Street cai com venda de ações de IA; Nasdaq recua mais de 1%',
-    summary:'ATUALIZAÇÃO · 14/09 · A pressão sobre ações ligadas à inteligência artificial chegou com força a Wall Street após a abertura. Por volta de 9h45 em Nova York, o Nasdaq caía 1,02%, o S&P 500 recuava 0,64% e o Dow 0,24%. Nvidia perdia 3,2%, enquanto o índice de semicondutores da Filadélfia caía cerca de 6%. O mercado também elevou para quase 89% a probabilidade implícita de alta de juros pelo Federal Reserve nesta semana.',
-    shareSummary:'Finanças · 14/09: venda de ações de IA derruba Nasdaq e semicondutores em Wall Street.',
+    title:'Wall Street fecha em queda com tombo de chips de IA e Treasury acima de 5%',
+    summary:'ATUALIZAÇÃO · 14/09 · Wall Street encerrou esta segunda-feira em queda, consolidando a pressão que pela manhã ainda era intradiária. O S&P 500 caiu 0,48%, o Nasdaq recuou 0,56% e o Dow perdeu 0,29%. O índice de semicondutores da Filadélfia tombou 5,9%, com Nvidia em queda de 3,4%, enquanto o rendimento do Treasury de 10 anos superou 5% durante a sessão pela primeira vez desde 2023.',
+    shareSummary:'Finanças · 14/09: Wall Street fecha em queda; chips de IA tombam e Treasury de 10 anos passa de 5%.',
     badge:'FINANÇAS · ATUALIZAÇÃO · 14/09',
     sections:[
-      {title:'Mercado nos EUA',bullets:['Nasdaq: -1,02%.','S&P 500: -0,64%.','Dow Jones: -0,24%.','Índice de semicondutores da Filadélfia: cerca de -6%.']},
-      {title:'Pressões',bullets:['Nvidia caiu 3,2% e Intel, AMD e Marvell recuavam entre 5% e 6,3%.','O mercado precificava quase 89% de chance de alta de juros pelo Fed.','Brent avançava cerca de 4%, para US$ 108,83, reforçando preocupações com inflação.']},
-      {title:'Leitura correta',paragraphs:['ATUALIZAÇÃO: este card registra a reação de Wall Street após a abertura desta segunda-feira. Os números são uma fotografia intradiária e podem mudar até o fechamento.']}
+      {title:'Fechamento nos EUA',bullets:['S&P 500: -0,48%.','Nasdaq: -0,56%.','Dow Jones: -0,29%.','Índice de semicondutores da Filadélfia: -5,9%.']},
+      {title:'Pressões',bullets:['Nvidia caiu 3,4%; Micron perdeu mais de 5%; Broadcom e AMD recuaram mais de 4%.','O Treasury de 10 anos superou 5% durante a sessão, maior nível desde 2023.','O movimento ocorreu antes da decisão do Federal Reserve, com o mercado amplamente esperando alta de juros.']},
+      {title:'Leitura correta',paragraphs:['ATUALIZAÇÃO: este card substitui a fotografia intradiária da manhã pelo fechamento confirmado de Wall Street em 14/09. O fato novo é a consolidação das perdas no encerramento e a passagem do rendimento de 10 anos acima de 5% durante a sessão.']}
     ],
     sources:[
-      {label:'Reuters · Nasdaq drags on Wall St as AI slowdown fears hammer Nvidia, chipmakers · 14/09/2026',url:'https://www.reuters.com/business/ai-warnings-knock-nasdaq-futures-pressure-tech-stocks-2026-09-14/'}
+      {label:'Reuters · Wall Street ends down, calls for AI slowdown pummel chipmakers · 14/09/2026',url:'https://www.reuters.com/business/ai-warnings-knock-nasdaq-futures-pressure-tech-stocks-2026-09-14/'}
     ]
   });
   Object.assign(dailyContent.politica,{

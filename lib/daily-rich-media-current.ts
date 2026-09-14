@@ -21,13 +21,13 @@ const intradayRichMedia20260914:RichMediaEntry[]=[
   },
   {
     label:'Finanças',
-    matches:['wall street cai com venda de ações de ia','nasdaq recua mais de 1%','venda de ações de ia derruba nasdaq'],
+    matches:['wall street fecha em queda com tombo de chips de ia','s&p 500 caiu 0,48','treasury acima de 5'],
     tag:'MÍDIA REAL · 14/09',
-    title:'Wall Street cai com pressão sobre ações de IA e semicondutores',
+    title:'Wall Street fecha em queda com pressão sobre ações de IA e semicondutores',
     caption:'Foto real relacionada · Reuters/Brendan McDermid · 14/09/2026',
     images:[{
       url:'https://www.reuters.com/resizer/v2/MIYBONYN75O57EM3DZALU2HUWQ.jpg?auth=e302a81615809dfc36e598070360aa1d8c9eeda82573fd22fd9b965c686a8403&quality=80&width=1920',
-      alt:'Operadores no pregão da NYSE em Nova York em imagem usada pela Reuters na cobertura da queda de Wall Street',
+      alt:'Operadores no pregão da NYSE em Nova York em imagem usada pela Reuters na cobertura da queda de Wall Street em 14 de setembro',
       caption:'Reuters/Brendan McDermid',
       credit:'Reuters/Brendan McDermid',
       sourceUrl:'https://www.reuters.com/business/ai-warnings-knock-nasdaq-futures-pressure-tech-stocks-2026-09-14/',
