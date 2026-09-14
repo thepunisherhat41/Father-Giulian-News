@@ -48,6 +48,21 @@ const intradayRichMedia20260914:RichMediaEntry[]=[
       sourceUrl:'https://www.reuters.com/world/americas/brazils-lula-regains-narrow-edge-over-bolsonaro-btgnexus-poll-2026-09-14/',
       kind:'REFERENCE'
     }]
+  },
+  {
+    label:'Cyber Security',
+    matches:['cve-2026-85706: exploração do gitlab escala','exploração do gitlab escala para coleta','coleta de segredos e configs ssh'],
+    tag:'MÍDIA RELACIONADA · 14/09',
+    title:'GitLab sob exploração ativa da CVE-2026-85706',
+    caption:'Identidade visual do GitLab · Wikimedia Commons',
+    images:[{
+      url:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Gitlab_logo.png',
+      alt:'Logo do GitLab, plataforma afetada pela CVE-2026-85706 em exploração ativa',
+      caption:'GitLab',
+      credit:'GitLab / Wikimedia Commons',
+      sourceUrl:'https://commons.wikimedia.org/wiki/File:Gitlab_logo.png',
+      kind:'REFERENCE'
+    }]
   }
 ];
 
