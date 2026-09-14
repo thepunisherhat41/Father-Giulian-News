@@ -1,10 +1,10 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
 export const editorialFreshnessDate='2026-09-14';
-export const editorialFreshnessValidatedAt='14/09/2026 · 00h26 · auditoria de freshness';
+export const editorialFreshnessValidatedAt='14/09/2026 · 02h09 · corte da madrugada';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Na abertura de 14/09 não há fato Brasil material ocorrido e confirmado hoje; notícias de 13/09 não foram recicladas como fato novo.'},
-{slug:'mundo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Na abertura de 14/09 não há fato Mundo material ocorrido e confirmado hoje; o corte noturno de 13/09 não foi carregado para o novo dia.'},
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até o corte de 02h09 de 14/09 não há fato Brasil material ocorrido e confirmado hoje; notícias anteriores não foram recicladas.'},
+{slug:'mundo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até o corte de 02h09 de 14/09 não há fato Mundo material ocorrido e confirmado hoje em America/Sao_Paulo que justifique novo Reel; reportagens sobre fatos de 13/09 foram avaliadas sem serem reclassificadas como fato novo.'},
 {slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 14/09: calendário oficial do TSE concentra hoje prazos de candidaturas e a data-limite para conclusão da assinatura digital e lacração dos sistemas eleitorais; nenhum ato é presumido concluído.'},
 {slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como jornalismo; rotação de curiosidades foi auditada novamente contra os 7 dias anteriores.'},
 {slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade 14/09 corrigida após auditoria de 7 dias: voo de beija-flor, sem repetir o conceito de polvos usado em 10/09.'},
@@ -17,8 +17,8 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09: manter mapa, reservas e contatos essenciais acessíveis offline.'},
 {slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 14/09: perceber como o arranjo constrói sensação de crescendo.'},
 {slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou fato material de Games ocorrido em 14/09 confirmado neste corte; seção omitida.'},
-{slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato de Tecnologia ocorrido em 14/09 foi confirmado na abertura do dia; declarações de 13/09 não foram recicladas.'},
-{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato financeiro material ocorrido em 14/09 foi confirmado na abertura do dia; seção omitida.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 14/09 · Reuters 01h00 BRT: ações asiáticas ligadas à IA abriram em forte queda após novas preocupações de segurança e pedidos de desaceleração; o fato novo publicado é a reação do mercado desta segunda, não as declarações do fim de semana.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 14/09 · Reuters 00h48 BRT: ouro à vista caiu 0,3% e futuros nos EUA 0,8%, enquanto a probabilidade implícita de alta de juros pelo Fed subiu para cerca de 86,5%.'},
 {slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material datada de 14/09 confirmada neste corte; nenhum CVE antigo foi reciclado.'},
 {slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente Cyber material datado de 14/09 confirmado neste corte; seção omitida.'},
 {slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material datado de 14/09 confirmado; nenhum advisory anterior foi reciclado.'},
