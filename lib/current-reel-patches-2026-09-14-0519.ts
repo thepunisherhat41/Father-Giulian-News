@@ -13,4 +13,18 @@ export function applyCurrentReelPatches202609140519(dailyContent:Record<string,a
       {label:'Reuters · AI-linked Asian stocks slump · 14/09/2026',url:'https://www.reuters.com/world/china/ai-linked-asian-stocks-slump-after-top-lab-ceos-call-slowing-down-technologys-2026-09-14/'}
     ]
   });
+  Object.assign(dailyContent.politica,{
+    title:'BTG/Nexus: Lula volta à frente de Flávio por 47% a 46%, em empate técnico',
+    summary:'PESQUISA · 14/09 · Levantamento BTG Pactual/Nexus divulgado nesta segunda-feira mostra Lula com 47% e Flávio Bolsonaro com 46% em uma simulação de segundo turno. A diferença de 1 ponto está dentro da margem de erro de 2 pontos percentuais. No levantamento de 8/09, Flávio aparecia numericamente à frente por 46% a 45%.',
+    shareSummary:'Política · 14/09: BTG/Nexus mostra Lula 47% e Flávio 46% em empate técnico no segundo turno.',
+    badge:'POLÍTICA · PESQUISA · 14/09',
+    sections:[
+      {title:'Segundo turno',bullets:['Lula: 47%.','Flávio Bolsonaro: 46%.','Margem de erro: 2 pontos percentuais.']},
+      {title:'O que mudou',bullets:['Em 8/09, Flávio tinha 46% e Lula 45%.','No primeiro turno, o novo levantamento aponta Lula com 42% e Flávio com 37%.']},
+      {title:'Leitura correta',paragraphs:['PESQUISA: o resultado indica empate técnico, não uma liderança estatisticamente consolidada. A Nexus ouviu 2.003 pessoas entre 11 e 13 de setembro.']}
+    ],
+    sources:[
+      {label:'Reuters · BTG/Nexus poll · 14/09/2026',url:'https://www.reuters.com/world/americas/brazils-lula-regains-narrow-edge-over-bolsonaro-btgnexus-poll-2026-09-14/'}
+    ]
+  });
 }
