@@ -55,4 +55,20 @@ export function applyCurrentReelPatches202609140519(dailyContent:Record<string,a
       {label:'Reuters · Palantir, Nvidia curb AI model use over data fears, The Information reports · 14/09/2026',url:'https://www.reuters.com/business/palantir-nvidia-curb-ai-model-use-over-data-fears-information-reports-2026-09-14/'}
     ]
   };
+  dailyContent.seguranca={
+    title:'CVE-2026-85706: exploração do GitLab escala para coleta de segredos e configs SSH',
+    summary:'APURAÇÃO/REPORTAGEM · 14/09 · A novidade deste corte não é a divulgação da falha: o GitLab corrigiu a CVE-2026-85706 em 10/09 e a CISA a incluiu no KEV em 11/09. O fato novo é a escalada observada pela watchTowr e publicada hoje pela Dark Reading: além das sondagens iniciais, atores maliciosos passaram a explorar a falha e, durante o fim de semana, foram vistos extraindo arquivos de configuração com segredos e configurações SSH de sistemas vulneráveis.',
+    shareSummary:'Cyber · 14/09: exploração da CVE-2026-85706 em GitLab escala para exfiltração de configs, segredos e dados SSH.',
+    badge:'CYBER · APURAÇÃO/REPORTAGEM · 14/09',
+    sections:[
+      {title:'O que mudou hoje',bullets:['A watchTowr relatou à Dark Reading que a atividade evoluiu de probes para exploração completa.','Durante o fim de semana, atacantes foram observados extraindo arquivos de configuração com segredos e configurações SSH.','O acesso de leitura pode expor credenciais e segredos de CI/CD, ampliando o risco para a cadeia de desenvolvimento.']},
+      {title:'Contexto confirmado',bullets:['CVE-2026-85706 é uma path traversal no repository commits API, com CVSS 10.0 e leitura arbitrária de arquivos sem autenticação.','O patch do GitLab saiu em 10/09; a CISA adicionou a falha ao KEV em 11/09.','Versões corrigidas: 19.3.2, 19.2.6 e 19.1.8; GitLab.com já foi corrigido e GitLab Dedicated não é afetado.']},
+      {title:'Resposta prática',bullets:['Atualize imediatamente instâncias self-managed para uma versão corrigida.','Revise logs de acesso ao repository commits API por requisições anômalas ou não autenticadas.','Se houver indício de exploração, trate credenciais, deploy keys e segredos de CI/CD acessíveis pelo servidor como potencialmente expostos e faça rotação conforme o escopo da investigação.']},
+      {title:'Leitura correta',paragraphs:['APURAÇÃO/REPORTAGEM: o Father Giulian News registra como fato novo de 14/09 a evolução da atividade maliciosa reportada hoje. A existência da CVE, o patch e a inclusão no KEV ocorreram em datas anteriores e aparecem apenas como contexto.']}
+    ],
+    sources:[
+      {label:'Dark Reading · Maximum Severity GitLab Flaw Puts Supply Chains at Risk · 14/09/2026',url:'https://www.darkreading.com/cyberattacks-data-breaches/maximum-severity-gitlab-flaw-supply-chains-risk'},
+      {label:'Rapid7 · CVE-2026-85706: Critical GitLab Path Traversal Exploited in the Wild · 14/09/2026',url:'https://www.rapid7.com/blog/post/etr-cve-2026-85706-critical-gitlab-path-traversal-exploited-in-the-wild/'}
+    ]
+  };
 }
