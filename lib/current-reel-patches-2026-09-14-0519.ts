@@ -40,4 +40,19 @@ export function applyCurrentReelPatches202609140519(dailyContent:Record<string,a
       {label:'Reuters · BTG/Nexus poll · 14/09/2026',url:'https://www.reuters.com/world/americas/brazils-lula-regains-narrow-edge-over-bolsonaro-btgnexus-poll-2026-09-14/'}
     ]
   });
+  dailyContent['security-briefing']={
+    title:'Palantir, Nvidia e Booz Allen restringem uso de IA por receio com dados e propriedade intelectual',
+    summary:'APURAÇÃO/REPORTAGEM · 14/09 · Segundo reportagem do The Information repercutida pela Reuters nesta segunda-feira, Palantir, Nvidia e Booz Allen adotaram ou avaliam restrições ao uso de modelos avançados de IA por preocupações com retenção de dados e propriedade intelectual. A Palantir teria exigido garantia irrevogável de zero retenção da Anthropic; a Nvidia limitaria Claude a tarefas menos sensíveis; e a Booz Allen teria barrado o modelo comercial da Anthropic em trabalho proprietário de cibersegurança. As empresas citadas não haviam confirmado a reportagem à Reuters no corte.',
+    shareSummary:'Security Briefing · 14/09: reportagem aponta restrições corporativas a modelos de IA por risco de dados e IP.',
+    readTime:'4 MIN READ',
+    badge:'SECURITY BRIEFING · APURAÇÃO/REPORTAGEM · 14/09',
+    sections:[
+      {title:'O que a reportagem aponta',bullets:['Palantir teria pedido à Anthropic garantia irrevogável de zero retenção de dados.','Nvidia limitaria o uso de modelos da Anthropic a tarefas menos sensíveis e usaria Nemotron internamente.','Booz Allen teria proibido o modelo comercial da Anthropic em trabalhos proprietários de cibersegurança.']},
+      {title:'Leitura correta',paragraphs:['APURAÇÃO/REPORTAGEM: as informações foram atribuídas pelo The Information a pessoas familiarizadas com o tema e repercutidas pela Reuters. Palantir, Nvidia, Booz Allen, Anthropic e OpenAI não responderam imediatamente aos pedidos de comentário da Reuters; por isso o Father Giulian News não apresenta as medidas como confirmação oficial das empresas.']},
+      {title:'Por que importa para Security',paragraphs:['O caso reforça controles de governança para IA corporativa: classificação de dados, retenção zero quando necessária, segregação de ambientes, aprovação de modelos por sensibilidade e políticas explícitas para uso de propriedade intelectual.']}
+    ],
+    sources:[
+      {label:'Reuters · Palantir, Nvidia curb AI model use over data fears, The Information reports · 14/09/2026',url:'https://www.reuters.com/business/palantir-nvidia-curb-ai-model-use-over-data-fears-information-reports-2026-09-14/'}
+    ]
+  };
 }
