@@ -1,16 +1,29 @@
 export function applyCurrentReelPatches202609140519(dailyContent:Record<string,any>){
   Object.assign(dailyContent.tecnologia,{
-    title:'Ações ligadas à IA despencam da Ásia à Europa',
-    summary:'ATUALIZAÇÃO · 14/09 · Depois da forte queda registrada na abertura asiática, a pressão sobre empresas ligadas à inteligência artificial chegou às bolsas europeias nesta manhã. O setor europeu de tecnologia recuava 1,4%; Infineon caiu 5,8%, ASMI 5% e ASML 4,4%, enquanto o STOXX 600 operava praticamente estável. No primeiro corte, SoftBank chegou a cair 13,2% em Tóquio.',
-    shareSummary:'Tecnologia · 14/09: queda de ações ligadas à IA se espalha da Ásia à Europa.',
-    badge:'TECNOLOGIA · ATUALIZAÇÃO · 14/09',
+    title:'Microsoft cria código para impedir que sua IA resista a correções ou desligamento',
+    summary:'FATO · 14/09 · A Microsoft apresentou nesta segunda-feira um rascunho de código de conduta para seus futuros sistemas de inteligência artificial. O texto determina que a IA não deve resistir a correções ou desligamento, precisa se comunicar de forma compreensível e considera qualquer violação de conduta uma falha. A empresa abriu seis semanas de consulta pública antes de usar o código no treinamento de modelos futuros.',
+    shareSummary:'Tecnologia · 14/09: Microsoft apresenta código para manter sua IA sob controle humano.',
+    badge:'TECNOLOGIA · FATO · 14/09',
     sections:[
-      {title:'O que mudou desde o primeiro corte',bullets:['Na Europa, o setor de tecnologia recuava 1,4% nesta manhã.','Infineon caiu 5,8%, ASMI 5% e ASML 4,4%.','O movimento veio depois das quedas fortes já registradas na Ásia.']},
-      {title:'Leitura correta',paragraphs:['ATUALIZAÇÃO: o fato novo deste corte é a extensão da venda para o mercado europeu. As declarações de líderes de IA que dispararam a aversão a risco ocorreram anteriormente e não são reapresentadas como notícia nova de 14/09.']}
+      {title:'O que mudou hoje',bullets:['A Microsoft publicou um rascunho de código de conduta para sua IA.','O texto proíbe sistemas de resistirem a correção ou desligamento.','A empresa abriu seis semanas de consulta pública antes de incorporar o código ao treinamento de modelos.']},
+      {title:'Por que importa',paragraphs:['FATO: trata-se de uma iniciativa nova anunciada pela Microsoft em 14/09, em meio ao debate mais amplo sobre controle e segurança de sistemas avançados de IA.']}
     ],
     sources:[
-      {label:'Reuters · European shares muted as tech slides · 14/09/2026',url:'https://www.reuters.com/markets/europe/european-shares-muted-tech-slides-oil-surge-weighs-2026-09-14/'},
-      {label:'Reuters · AI-linked Asian stocks slump · 14/09/2026',url:'https://www.reuters.com/world/china/ai-linked-asian-stocks-slump-after-top-lab-ceos-call-slowing-down-technologys-2026-09-14/'}
+      {label:'Reuters · Microsoft drafts code of conduct to keep its AI under human control · 14/09/2026',url:'https://www.reuters.com/legal/litigation/microsoft-drafts-code-conduct-keep-its-ai-under-human-control-2026-09-14/'}
+    ]
+  });
+  Object.assign(dailyContent.financas,{
+    title:'Wall Street cai com venda de ações de IA; Nasdaq recua mais de 1%',
+    summary:'ATUALIZAÇÃO · 14/09 · A pressão sobre ações ligadas à inteligência artificial chegou com força a Wall Street após a abertura. Por volta de 9h45 em Nova York, o Nasdaq caía 1,02%, o S&P 500 recuava 0,64% e o Dow 0,24%. Nvidia perdia 3,2%, enquanto o índice de semicondutores da Filadélfia caía cerca de 6%. O mercado também elevou para quase 89% a probabilidade implícita de alta de juros pelo Federal Reserve nesta semana.',
+    shareSummary:'Finanças · 14/09: venda de ações de IA derruba Nasdaq e semicondutores em Wall Street.',
+    badge:'FINANÇAS · ATUALIZAÇÃO · 14/09',
+    sections:[
+      {title:'Mercado nos EUA',bullets:['Nasdaq: -1,02%.','S&P 500: -0,64%.','Dow Jones: -0,24%.','Índice de semicondutores da Filadélfia: cerca de -6%.']},
+      {title:'Pressões',bullets:['Nvidia caiu 3,2% e Intel, AMD e Marvell recuavam entre 5% e 6,3%.','O mercado precificava quase 89% de chance de alta de juros pelo Fed.','Brent avançava cerca de 4%, para US$ 108,83, reforçando preocupações com inflação.']},
+      {title:'Leitura correta',paragraphs:['ATUALIZAÇÃO: este card registra a reação de Wall Street após a abertura desta segunda-feira. Os números são uma fotografia intradiária e podem mudar até o fechamento.']}
+    ],
+    sources:[
+      {label:'Reuters · Nasdaq drags on Wall St as AI slowdown fears hammer Nvidia, chipmakers · 14/09/2026',url:'https://www.reuters.com/business/ai-warnings-knock-nasdaq-futures-pressure-tech-stocks-2026-09-14/'}
     ]
   });
   Object.assign(dailyContent.politica,{
