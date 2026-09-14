@@ -1,7 +1,7 @@
 export function applyCurrentReelPatches202609140519(dailyContent:Record<string,any>){
   Object.assign(dailyContent.tecnologia,{
     title:'Venda em ações de IA se espalha da Ásia à Europa',
-    summary:'ATUALIZAÇÃO · 14/09 · Depois da forte queda registrada na abertura asiática, a pressão sobre empresas ligadas à inteligência artificial chegou às bolsas europeias nesta manhã. O setor europeu de tecnologia recuava 1,4%; Infineon caiu 5,8%, ASMI 5% e ASML 4,4%, enquanto o STOXX 600 operava praticamente estável.',
+    summary:'ATUALIZAÇÃO · 14/09 · Depois da forte queda registrada na abertura asiática, a pressão sobre empresas ligadas à inteligência artificial chegou às bolsas europeias nesta manhã. O setor europeu de tecnologia recuava 1,4%; Infineon caiu 5,8%, ASMI 5% e ASML 4,4%, enquanto o STOXX 600 operava praticamente estável. No primeiro corte, SoftBank chegou a cair 13,2% em Tóquio.',
     shareSummary:'Tecnologia · 14/09: queda de ações ligadas à IA se espalha da Ásia à Europa.',
     badge:'TECNOLOGIA · ATUALIZAÇÃO · 14/09',
     sections:[
