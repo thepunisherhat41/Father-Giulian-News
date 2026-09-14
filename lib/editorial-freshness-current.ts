@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-13';
-export const editorialFreshnessValidatedAt='13/09/2026 · 21h01 · corte pós-jogo';
+export const editorialFreshnessDate='2026-09-14';
+export const editorialFreshnessValidatedAt='14/09/2026 · 00h13 · corte inicial';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Brasil material datado de 13/09 foi confirmado neste corte; conteúdo anterior foi omitido.'},
-{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09 · 08h19 BRT: o alerta que fechou temporariamente o aeroporto de Vilnius por suposto drone foi corrigido pelas autoridades lituanas; um caça da OTAN identificou visualmente um bando de aves. O alerta durou 38 minutos e o aeroporto reabriu.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 13/09: TSE fixa hoje como prazo final para envio da prestação de contas parcial da campanha; não se presume cumprimento por candidatura específica.'},
-{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como jornalismo; rotação de curiosidades foi renovada para 13/09.'},
-{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade nova de 13/09: eletrorrecepção em tubarões.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'ATUALIZAÇÃO 13/09: Grande São Paulo está em área de alerta de perigo para tempestades, com possibilidade de chuva intensa, rajadas e raios; capital segue fria e chuvosa.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste datado de 13/09 foi confirmado neste corte; seção omitida.'},
-{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 13/09 · pós-jogo: Flamengo venceu o Corinthians por 2 a 1 no Maracanã pela 27ª rodada. Gui Negão empatou para o Corinthians aos 32 do segundo tempo, e Bruno Henrique marcou o gol decisivo no fim. O Corinthians segue com 32 pontos, em 13º.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 13/09: eletrorrecepção de tubarões, fontes hidrotermais, pôr do sol azul em Marte, auroras e fibra óptica.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 10 semanas completas em 13/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 13/09: proteger meia hora de descanso sem interrupções.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 13/09: verificar condição da rodovia e ocorrências antes de sair.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 13/09: escutar como duas vozes se alternam numa mesma faixa.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou fato material de Games datado de 13/09 confirmado neste corte; seção omitida.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'DECLARAÇÃO 13/09 · 11h28 BRT: Trump minimizou parte dos alertas sobre riscos de IA, priorizou a liderança dos EUA sobre a China e admitiu possíveis salvaguardas sem anunciar nova regra, moratória ou acordo. Reportagem posterior sobre possível IPO da Anthropic foi avaliada, mas permanece informação atribuída a fonte e não substitui este card.'},
-{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato financeiro separado e material de 13/09 confirmado neste corte; impactos de energia permanecem contextualizados no noticiário.'},
-{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory ou exploração material datada de 13/09 confirmada; nenhum CVE antigo foi reciclado.'},
-{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem incidente Cyber material datado de 13/09 confirmado neste corte; seção omitida.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material datado de 13/09 confirmado; nenhum advisory anterior foi reciclado.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo 13/09 respeita teto de R$70 mil e orienta conferir DOT, desgaste e ressecamento dos pneus.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 13/09 sobre corrente, folga e coroa da transmissão final.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 13/09 sobre nível e especificação do fluido de freio.'}
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Brasil material datado de 14/09 foi confirmado até o corte inicial; seção omitida para não reciclar 13/09.'},
+{slug:'mundo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato Mundo material datado de 14/09 foi confirmado até o corte inicial; seção omitida para não reciclar 13/09.'},
+{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 14/09: calendário oficial do TSE fixa hoje como prazo final ordinário para pedidos de substituição de candidaturas, além de etapas técnicas eleitorais. O prazo não é tratado como pedido já realizado ou deferido.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como jornalismo; rotação de curiosidades foi renovada para 14/09.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade nova 14/09: controle de voo dos beija-flores, incluindo pairar e recuar.'},
+{slug:'tempo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Não foi confirmado fato meteorológico novo datado de 14/09 no corte inicial; matérias de 13/09 sobre chuva e previsão para segunda não foram recicladas como fato de hoje.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste datado de 14/09 foi confirmado até o corte inicial; matéria de 13/09 não foi reapresentada como fato novo.'},
+{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo do Corinthians datado de 14/09 foi confirmado até o corte inicial; resultado de 13/09 foi omitido.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação inédita 14/09: voo de beija-flor, canal SOFAR, sombras permanentes lunares, poeira do Saara na Amazônia e infravermelho de controles remotos.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 10 semanas + 1 dia em 14/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 14/09: assumir uma refeição inteira e reduzir carga mental.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09: manter informações essenciais disponíveis offline.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 14/09: escuta focada na linha de baixo.'},
+{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou fato material de Games datado de 14/09 foi confirmado até o corte inicial; seção omitida.'},
+{slug:'tecnologia',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato jornalístico material de Tecnologia datado de 14/09 foi confirmado até o corte inicial; declaração de 13/09 foi omitida.'},
+{slug:'financas',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato financeiro separado e material datado de 14/09 foi confirmado até o corte inicial; seção omitida.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum advisory ou exploração material datado de 14/09 foi confirmado até o corte inicial; nenhum CVE anterior foi reciclado.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum incidente Cyber material datado de 14/09 foi confirmado até o corte inicial; seção omitida.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum advisory AppSec material datado de 14/09 foi confirmado até o corte inicial; nenhum advisory anterior foi reciclado.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo 14/09 respeita o teto de R$70 mil e orienta avaliar a partida com o motor frio.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09 sobre discos, pastilhas e resposta do sistema de freios.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09 sobre vibração, coxins e diagnóstico diferencial.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
