@@ -1,29 +1,29 @@
 export type EditorialFreshnessState='ATUALIZADO'|'VALIDADO';
 export type EditorialFreshnessEntry={slug:string;state:EditorialFreshnessState;validatedAt:string;note:string};
-export const editorialFreshnessDate='2026-09-14';
-export const editorialFreshnessValidatedAt='14/09/2026 · 02h09 · corte da madrugada';
+export const editorialFreshnessDate='2026-09-15';
+export const editorialFreshnessValidatedAt='15/09/2026 · 06h00 · corte da manhã';
 export const editorialFreshness:EditorialFreshnessEntry[]=[
-{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até o corte de 02h09 de 14/09 não há fato Brasil material ocorrido e confirmado hoje; notícias anteriores não foram recicladas.'},
-{slug:'mundo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Até o corte de 02h09 de 14/09 não há fato Mundo material ocorrido e confirmado hoje em America/Sao_Paulo que justifique novo Reel; reportagens sobre fatos de 13/09 foram avaliadas sem serem reclassificadas como fato novo.'},
-{slug:'politica',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PESQUISA 14/09: BTG/Nexus mostra Lula 47% e Flávio Bolsonaro 46% em empate técnico, com margem de erro de 2 pontos.'},
-{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção-base evergreen não entra como jornalismo; rotação de curiosidades foi auditada novamente contra os 7 dias anteriores.'},
-{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade 14/09 corrigida após auditoria de 7 dias: voo de beija-flor, sem repetir o conceito de polvos usado em 10/09.'},
-{slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO 14/09: previsão atualizada para São Paulo mantém segunda chuvosa e fria, com pouca variação de temperatura e máxima perto de 19°C.'},
-{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste ocorrido em 14/09 foi confirmado neste corte; atualizações de 13/09 foram corretamente omitidas.'},
-{slug:'corinthians',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo do Corinthians ocorrido em 14/09 foi confirmado neste corte; resultado de 13/09 não foi reciclado.'},
-{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação 14/09 revalidada contra 08–13/09: voo de beija-flor, velocidade do som no oceano, sombra permanente lunar, poeira do Saara na Amazônia e infravermelho de controles remotos. Foram removidos conceitos repetidos de polvos, Vênus, raios e QR Codes.'},
-{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 10 semanas + 1 dia em 14/09.'},
-{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 14/09: preparar hoje itens que simplificam a manhã seguinte.'},
-{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09: manter mapa, reservas e contatos essenciais acessíveis offline.'},
-{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 14/09: perceber como o arranjo constrói sensação de crescendo.'},
-{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou fato material de Games ocorrido em 14/09 confirmado neste corte; seção omitida.'},
-{slug:'tecnologia',state:'ATUALIZADO',validatedAt:'14/09/2026 · 11h45 · corte da manhã',note:'FATO 14/09: Microsoft publicou código de conduta para manter futuras IAs sob controle humano, com consulta pública por seis semanas.'},
-{slug:'financas',state:'ATUALIZADO',validatedAt:'14/09/2026 · 17h52 · fechamento',note:'ATUALIZAÇÃO 14/09: Wall Street fechou em queda; chips de IA recuaram e o Treasury de 10 anos superou 5% durante a sessão.'},
-{slug:'security-briefing',state:'ATUALIZADO',validatedAt:'14/09/2026 · 14h30 · corte da tarde',note:'APURAÇÃO/REPORTAGEM 14/09 · Reuters/The Information: Palantir, Nvidia e Booz Allen teriam adotado ou avaliam restrições a modelos de IA por preocupações com dados e propriedade intelectual; empresas não haviam confirmado à Reuters no corte.'},
-{slug:'seguranca',state:'ATUALIZADO',validatedAt:'14/09/2026 · 20h11 · corte da noite',note:'APURAÇÃO/REPORTAGEM 14/09 · Dark Reading/watchTowr: atividade contra CVE-2026-85706 em GitLab escalou de probes para exploração com extração de configs contendo segredos e configurações SSH; patch de 10/09 e KEV de 11/09 são apenas contexto.'},
-{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material datado de 14/09 confirmado; nenhum advisory anterior foi reciclado.'},
-{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo 14/09 respeita teto de R$70 mil e orienta testar o ar-condicionado durante a avaliação do usado.'},
-{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09 sobre comportamento do motor em partida realmente a frio.'},
-{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 14/09 sobre leitura correta do nível de óleo pela vareta.'}
+{slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato Brasil material ocorrido e confirmado em 15/09 no corte; reportagem publicada hoje sobre diagnóstico de Raoni ocorrido em 14/09 não foi reclassificada como fato novo.'},
+{slug:'mundo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 15/09: novas regras chinesas de entrada e saída ligadas à segurança tecnológica entraram em vigor hoje.'},
+{slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem pesquisa, decisão, agenda confirmada ou declaração material nova de 15/09 no corte; pesquisa BTG/Nexus de 14/09 não foi reciclada.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção evergreen; rotação de curiosidades 15/09 auditada contra os sete dias anteriores.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Curiosidade 15/09: memória facial de corvos.'},
+{slug:'tempo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem previsão pontual de 15/09 suficientemente confirmada no corte para publicar novo Reel; conteúdo de 14/09 foi omitido.'},
+{slug:'seguranca-zl',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato novo da Zona Leste ocorrido e datado de 15/09 foi confirmado no corte; matérias de 14/09 ou anteriores foram omitidas.'},
+{slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 15/09: clube inicia hoje venda escalonada de ingressos para Corinthians x Fluminense; decisão contra Estudiantes é amanhã.'},
+{slug:'curiosidades',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Rotação 15/09: corvos e rostos, bioluminescência pelágica, hexágono de Saturno, Antártida como deserto e sensores de movimento do celular; conceitos de 08–14/09 não foram repetidos.'},
+{slug:'gravidez',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Cronologia atualizada para 10 semanas + 2 dias em 15/09.'},
+{slug:'pai',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Missão prática nova 15/09: assumir uma tarefa invisível inteira sem esperar pedido.'},
+{slug:'viagens',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 15/09: registrar o estado de carro alugado antes de sair.'},
+{slug:'musica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Experiência nova 15/09: escuta focada em bateria e percussão.'},
+{slug:'games',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum lançamento ou fato material de Games ocorrido em 15/09 confirmado no corte; seção omitida.'},
+{slug:'tecnologia',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 15/09: MediaTek lançou Dimensity 9600 Pro, primeiro chip móvel da empresa em processo de 2 nm da TSMC.'},
+{slug:'financas',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'FATO 15/09: bolsas globais recuam, Brent permanece acima de US$107 e Treasury de 10 anos toca maior rendimento desde 2007; números são intradiários.'},
+{slug:'security-briefing',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato material novo de 15/09 confirmado no corte; reportagem corporativa de 14/09 não foi reciclada.'},
+{slug:'seguranca',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem novo advisory/KEV/exploração datado de 15/09 confirmado no corte; CVE-2026-85706 permanece contexto de 14/09 e foi omitida.'},
+{slug:'appsec-ssdlc',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem advisory AppSec material datado de 15/09 confirmado; nenhum advisory anterior foi reciclado.'},
+{slug:'carros',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo 15/09 mantém teto de R$70 mil e orienta comparar idade e desgaste dos pneus.'},
+{slug:'motos',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 15/09 sobre inspeção de corrente e transmissão.'},
+{slug:'mecanica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Conteúdo novo 15/09 sobre ruídos ao esterçar e necessidade de diagnóstico.'}
 ];
 export function freshnessForSlug(slug:string){return editorialFreshness.find(item=>item.slug===slug);}
