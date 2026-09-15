@@ -13,6 +13,7 @@ import {applyCurrentReelPatches20260913} from '@/lib/current-reel-patches-2026-0
 import {applyCurrentReelPatches202609132346} from '@/lib/current-reel-patches-2026-09-13-2346';
 import {applyCurrentReelPatches20260914} from '@/lib/current-reel-patches-2026-09-14';
 import {applyCurrentReelPatches202609140519} from '@/lib/current-reel-patches-2026-09-14-0519';
+import {applyCurrentReelPatches20260915} from '@/lib/current-reel-patches-2026-09-15';
 import ReelsExperienceV27 from './ReelsExperienceV27';
 
 export default function ReelsExperienceLive(){
@@ -28,5 +29,6 @@ export default function ReelsExperienceLive(){
   applyCurrentReelPatches202609132346(dailyContent);
   applyCurrentReelPatches20260914(dailyContent);
   applyCurrentReelPatches202609140519(dailyContent);
+  applyCurrentReelPatches20260915(dailyContent);
   return <ReelsExperienceV27/>;
 }
