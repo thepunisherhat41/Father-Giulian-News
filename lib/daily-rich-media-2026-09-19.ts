@@ -1,23 +1,23 @@
-import type { DailyRichMediaMap } from './rich-media';
-
-export const dailyRichMedia20260919: DailyRichMediaMap = {
-  papo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple_talking.jpg',alt:'Casal conversando, relacionado ao papo do dia sobre simplificar a rotina'},
-  desafio:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Hammock.jpg',alt:'Rede de descanso, relacionada ao desafio de retirar uma obrigação do sábado'},
-  curiosidades:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Axolotl_ganz.jpg',alt:'Axolote, relacionado à curiosidade animal do dia'},
-  gravidez:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ultrasound_of_human_fetus.jpg',alt:'Imagem de ultrassom relacionada ao acompanhamento da gestação'},
-  pai:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Father_and_child.jpg',alt:'Pai e criança em momento de cuidado'},
-  brasil:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Flag_of_Brazil.svg',alt:'Bandeira do Brasil para a editoria nacional'},
-  mundo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Earth_seen_from_Apollo_17.jpg',alt:'Planeta Terra visto do espaço para notícias internacionais'},
-  politica:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Tribunal_Superior_Eleitoral.jpg',alt:'Tribunal Superior Eleitoral, relacionado às regras das Eleições 2026'},
-  tempo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cumulus_clouds_in_fair_weather.jpeg',alt:'Nuvens para a previsão do tempo'},
-  zonaLeste:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vila_Prudente_metro_station.jpg',alt:'Estação Vila Prudente, ponto de saída da agenda esportiva da Zona Leste'},
-  corinthians:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Neo_Quimica_Arena_2022.jpg',alt:'Neo Química Arena, estádio do Corinthians'},
-  viagens:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Travel_itinerary.jpg',alt:'Planejamento de roteiro de viagem'},
-  musica:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Music_notes.jpg',alt:'Notas musicais para a editoria de música'},
-  sertanejo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Viola_caipira.jpg',alt:'Viola caipira relacionada ao sertanejo da roça'},
-  games:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Video_game_controller_icon_designed_by_Maico_Amorim.svg',alt:'Controle de videogame para a editoria de games'},
-  tecnologia:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Smartphone.jpg',alt:'Smartphone relacionado às notícias de tecnologia'},
-  carros:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Used_car_lot.jpg',alt:'Carros usados em pátio de venda'},
-  motos:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Motorcycle_tire.jpg',alt:'Pneu de motocicleta relacionado à calibragem e inspeção'},
-  mecanica:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Car_engine.jpg',alt:'Motor automotivo relacionado ao diagnóstico de ruído a frio'}
-};
+import type {RichMediaEntry} from './rich-media';
+const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl:string):RichMediaEntry=>({label,matches,tag:'MÍDIA REAL · 19/09',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl,kind:'REFERENCE'}]});
+export const dailyRichMedia20260919:RichMediaEntry[]=[
+img('Papo de hoje',['o que vocês querem que fique mais simples'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple_talking.jpg','Casal conversando sobre a rotina','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Desafio do casal',['escolham uma coisa para não fazer'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Hammock.jpg','Rede de descanso relacionada ao desafio de retirar uma obrigação','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Curiosidades',['axolotes conseguem regenerar'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Axolotl_ganz.jpg','Axolote relacionado à curiosidade animal do dia','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Curiosidades',['córnea saudável é avascular'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Human_eye_close_up.jpg','Olho humano em detalhe','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Curiosidades',['mercúrio pode guardar gelo'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Mercury_in_true_color.jpg','Mercúrio observado por missão espacial','Imagem científica · NASA/Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Curiosidades',['norte magnético não fica parado'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Compass_rose_pale.svg.png','Rosa dos ventos relacionada ao norte magnético','Imagem · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Curiosidades',['captcha é um acrônimo'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/RecaptchaLogo.svg.png','Referência visual ao CAPTCHA','Imagem · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Gravidez',['10 semanas + 6 dias','10s6d'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Embryo_at_10_weeks.JPG','Ultrassom real de embrião humano em torno de 10 semanas','Imagem médica real · Wikimedia Commons · domínio público','https://commons.wikimedia.org/wiki/File:Embryo_at_10_weeks.JPG'),
+img('Ser Pai',['proteja um bloco real de descanso'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Father_and_child.jpg','Pai e criança em momento de cuidado','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Política',['proteção contra prisão de candidatos'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Tribunal_Superior_Eleitoral.jpg','Sede do Tribunal Superior Eleitoral','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Tempo e Clima',['manhã nublada','26 °c','26°c'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cumulus_clouds_in_fair_weather.jpeg','Nuvens sobre céu parcialmente aberto','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Zona Leste em Foco',['vila prudente','vila esperança','penha'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Vila_Prudente_metro_station.jpg','Estação Vila Prudente na Zona Leste','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Corinthians',['diniz sob pressão','assembleia prevista','fluminense'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Neo_Quimica_Arena_2022.jpg','Neo Química Arena, estádio do Corinthians','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Viagens',['teste o roteiro pelo tempo'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Travel_itinerary.jpg','Planejamento de roteiro de viagem','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Música',['música'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Electric_bass_guitar.jpg','Instrumento musical','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Games',['games'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Xbox_Series_X_2.jpg','Console de videogame','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Carros',['compare o custo do primeiro ano'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Used_car_lot.jpg','Carros usados em pátio de venda','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Motos',['pressão dos pneus'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Motorcycle_tire.jpg','Pneu de motocicleta','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
+img('Mecânica',['barulho que aparece só a frio'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Car_engine.jpg','Motor automotivo','Foto real · Wikimedia Commons','https://commons.wikimedia.org/')
+];
