@@ -1,19 +1,23 @@
-import type {RichMediaEntry} from './rich-media';
-const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl:string):RichMediaEntry=>({label,matches,tag:'MÍDIA REAL · 18/09',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl,kind:'REFERENCE'}]});
-export const dailyRichMedia20260918:RichMediaEntry[]=[
-img('Papo de hoje',['papo de hoje'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple_talking.jpg','Casal conversando','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Desafio do casal',['desafio do casal'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple_walking.jpg','Casal caminhando junto','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Curiosidades',['polvos têm três corações','polvo'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Octopus_vulgaris_2.jpg','Polvo-comum no ambiente marinho','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Curiosidades',['menor osso','estribo'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Gray919.png','Anatomia do ouvido humano','Imagem anatômica · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Curiosidades',['vênus','venus'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Venus-real_color.jpg','Planeta Vênus','Imagem real · NASA/Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Curiosidades',['água doce','agua doce','geleiras'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Antarctica_6400px_from_Blue_Marble.jpg','Calota de gelo da Antártida vista do espaço','Imagem real · NASA/Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Curiosidades',['qr code','qr code nasceu'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Qr-1.svg.png','Código QR em uso','Imagem de referência · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Gravidez',['10 semanas + 5 dias','10s5d'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Embryo_at_10_weeks.JPG','Ultrassom real de embrião humano em torno de 10 semanas','Imagem médica real · Wikimedia Commons · domínio público','https://commons.wikimedia.org/'),
-img('Ser Pai',['janela sem tarefa'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Coffee_and_book.jpg','Momento de pausa com café e leitura','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Zona Leste em Foco',['linha 12-safira','são miguel paulista','comendador ermelino'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/CPTM_Serie_8500.jpg','Trem da CPTM em São Paulo','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Corinthians',['fluminense','treino','gabriel paulista','carrillo','breno bidon'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Arena_Corinthians_fev_2014.jpg','Neo Química Arena','Foto real · Wikimedia Commons · CC BY-SA 3.0','https://commons.wikimedia.org/'),
-img('Tecnologia',['iphone 18 pro','iphone 18 pro max'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/IPhone_15_Pro_Blue_Titanium.svg.png','iPhone em referência visual de produto','Imagem de produto · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Carros até R$ 70 mil',['r$ 70 mil','70 mil'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Car_air_conditioning_controls.jpg','Controles de ar-condicionado automotivo','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Motos',['manetes','pedais','queda'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Motorcycle_handlebar.jpg','Guidão e manete de motocicleta','Foto real · Wikimedia Commons','https://commons.wikimedia.org/'),
-img('Mecânica',['carro puxando','alinhamento'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Wheel_alignment.jpg','Alinhamento de roda automotivo','Foto real · Wikimedia Commons','https://commons.wikimedia.org/')
-];
+import type { DailyRichMediaMap } from './rich-media';
+
+export const dailyRichMedia20260918: DailyRichMediaMap = {
+  papo:{kind:'image',src:'/media/2026-09-18-papo-tradicao.svg',alt:'Arte específica da conversa de 18 de setembro sobre criar uma tradição do casal'},
+  desafio:{kind:'image',src:'/media/2026-09-18-desafio-12min.svg',alt:'Arte específica do desafio de 12 minutos sem tela do casal'},
+  curiosidades:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Octopus2.jpg',alt:'Polvo em ambiente marinho, relacionado à curiosidade animal do dia'},
+  gravidez:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ultrasound_of_human_fetus.jpg',alt:'Imagem de ultrassom relacionada ao acompanhamento da gestação'},
+  pai:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Father_and_child.jpg',alt:'Pai e criança em momento de cuidado'},
+  brasil:{kind:'image',src:'/generated/brasil-bolsa-familia-20260831.svg',alt:'Arte editorial sobre acompanhamento de políticas públicas no Brasil'},
+  mundo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/The_Earth_seen_from_Apollo_17.jpg',alt:'Planeta Terra visto do espaço para notícias internacionais'},
+  politica:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Palacio_do_Planalto_Brasilia.jpg',alt:'Palácio do Planalto em Brasília'},
+  tempo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Cumulus_clouds_in_fair_weather.jpeg',alt:'Nuvens para a previsão do tempo'},
+  zonaLeste:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/CPTM_Serie_8500.jpg',alt:'Trem metropolitano relacionado à mobilidade na Zona Leste'},
+  corinthians:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Neo_Quimica_Arena_2022.jpg',alt:'Neo Química Arena, estádio do Corinthians'},
+  viagens:{kind:'image',src:'/generated/travel-short-plan-20260831.svg',alt:'Arte de planejamento prático de viagem'},
+  musica:{kind:'image',src:'/generated/music-live-version-20260831.svg',alt:'Arte relacionada à comparação de versões musicais'},
+  sertanejo:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Viola_caipira.jpg',alt:'Viola caipira relacionada ao sertanejo da roça'},
+  games:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Xbox_Series_X_2.jpg',alt:'Console Xbox relacionado às novidades de games'},
+  tecnologia:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Smartphone.jpg',alt:'Smartphone relacionado às notícias de tecnologia'},
+  carros:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Used_car_lot.jpg',alt:'Carros usados em pátio de venda'},
+  motos:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Motorcycle_chain.jpg',alt:'Corrente de transmissão de motocicleta'},
+  mecanica:{kind:'image',src:'https://commons.wikimedia.org/wiki/Special:Redirect/file/Car_wheel.jpg',alt:'Roda automotiva relacionada ao diagnóstico de vibração'}
+};
