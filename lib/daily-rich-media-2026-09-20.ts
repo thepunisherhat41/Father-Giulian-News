@@ -1,8 +1,8 @@
 import type {RichMediaEntry} from './rich-media';
 const img=(label:string,matches:string[],url:string,alt:string,credit:string):RichMediaEntry=>({label,matches,tag:'MÍDIA · 20/09',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl:url,kind:'REFERENCE'}]});
 export const dailyRichMedia20260920:RichMediaEntry[]=[
-img('Papo de hoje',['qual história da sua infância'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Family_album.jpg','Álbum de família relacionado a memórias de infância','Wikimedia Commons'),
-img('Desafio do casal',['gravem um áudio de 1 minuto'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Voice_Recorder.jpg','Gravador de áudio','Wikimedia Commons'),
+img('Papo de hoje',['qual história da sua infância'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pregnancy.jpg','Casal durante a gestação conversando e construindo memórias','Wikimedia Commons'),
+img('Desafio do casal',['gravem um áudio de 1 minuto'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pregnancy.jpg','Casal durante a gestação registrando esta fase juntos','Wikimedia Commons'),
 img('Papo com o Bebê',['domingo da nossa casa'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pregnancy.jpg','Gestação em contexto familiar','Wikimedia Commons'),
 img('Curiosidades',['lontras-marinhas'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea_otter_cropped.jpg','Lontra-marinha','Wikimedia Commons'),
 img('Curiosidades',['fígado humano'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Human_liver.jpg','Fígado humano em referência anatômica','Wikimedia Commons'),
