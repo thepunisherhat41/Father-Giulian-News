@@ -22,7 +22,7 @@ import {applyCurrentReelPatches20260920} from '@/lib/current-reel-patches-2026-0
 import ReelsExperienceV27 from './ReelsExperienceV27';
 
 export default function ReelsExperienceLive(){
-  for (const slug of ['papo','desafio','seguranca-zl','corinthians','musica','games','security-briefing','appsec-ssdlc']) {
+  for (const slug of ['papo','desafio','seguranca-zl','zonaLeste','corinthians','musica','games','security-briefing','appsec-ssdlc']) {
     if (!dailyContent[slug]) dailyContent[slug]={title:'',summary:'',readTime:'',sections:[],sources:[]};
   }
   applyCurrentCuriosityRotation(curiosityCollections);
