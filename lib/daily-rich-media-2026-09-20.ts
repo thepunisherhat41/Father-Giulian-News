@@ -7,7 +7,7 @@ img('Papo com o Bebê',['domingo da nossa casa'],'https://commons.wikimedia.org/
 img('Curiosidades',['lontras-marinhas'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Sea_otter_cropped.jpg','Lontra-marinha','Wikimedia Commons'),
 img('Curiosidades',['fígado humano'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Human_liver.jpg','Fígado humano em referência anatômica','Wikimedia Commons'),
 img('Curiosidades',['saturno tem densidade'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Saturn_during_Equinox.jpg','Saturno observado pela Cassini','NASA/Wikimedia Commons'),
-img('Curiosidades',['antártida é um deserto'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Antarctica_6400px_from_Blue_Marble.jpg','Antártida vista do espaço','NASA/Wikimedia Commons'),
+img('Curiosidades',['antártida é o maior deserto'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Antarctica_6400px_from_Blue_Marble.jpg','Antártida vista do espaço','NASA/Wikimedia Commons'),
 img('Curiosidades',['gps precisa considerar'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/GPS24goldenSML.jpg','Constelação de satélites GPS','Wikimedia Commons'),
 img('Gravidez',['11 semanas','11s0d'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Ultrasound_of_human_fetus.jpg','Ultrassom de referência relacionado à gestação','Wikimedia Commons'),
 img('Ser Pai',['ritual de voz'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pregnancy.jpg','Casal durante a gestação','Wikimedia Commons'),
