@@ -6,6 +6,8 @@ export const editorialFreshness:EditorialFreshnessEntry[]=[
 {slug:'brasil',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato nacional material ocorrido e confirmado em 20/09 neste corte da madrugada; não reciclar publicação de ontem como fato de hoje.'},
 {slug:'mundo',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Sem fato internacional material ocorrido e confirmado em 20/09 neste corte; não reciclar notícia anterior.'},
 {slug:'politica',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Nenhum fato político novo de 20/09 confirmado por fonte primária neste corte; regra eleitoral de 19/09 não é reapresentada como novidade.'},
+{slug:'planeta',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção evergreen; a rotação nova do dia está no bloco de Curiosidades e não recicla o conceito principal anterior.'},
+{slug:'animais',state:'VALIDADO',validatedAt:editorialFreshnessValidatedAt,note:'Coleção evergreen; a rotação animal de 20/09 usa lontra-marinha e não repete o conceito principal de 19/09.'},
 {slug:'tempo',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'PREVISÃO 20/09: São Paulo 15–27 °C, possibilidade de chuva; contexto de instabilidade também conferido no INMET.'},
 {slug:'seguranca-zl',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 20/09: programação oficial de 50 anos do Parque do Carmo; realização não presumida antes do evento.'},
 {slug:'corinthians',state:'ATUALIZADO',validatedAt:editorialFreshnessValidatedAt,note:'AGENDA 20/09: Corinthians x Fluminense às 16h na Neo Química Arena; sem presumir escalação, placar ou realização antes da hora.'},
