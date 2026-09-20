@@ -1,4 +1,5 @@
-import type { DailyRichMediaMap } from './rich-media';
+type LegacyDailyRichMediaItem={kind:'image';src:string;alt:string};
+type DailyRichMediaMap=Record<string,LegacyDailyRichMediaItem>;
 
 export const dailyRichMedia20260918: DailyRichMediaMap = {
   papo:{kind:'image',src:'/media/2026-09-18-papo-tradicao.svg',alt:'Arte específica da conversa de 18 de setembro sobre criar uma tradição do casal'},
