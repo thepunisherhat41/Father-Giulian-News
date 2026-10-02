@@ -1,5 +1,5 @@
 import type {RichMediaEntry} from './rich-media';
-const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl=url):RichMediaEntry=>({label,matches,tag:'MÍDIA · 02/10',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl,kind:'REFERENCE'}]});
+const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl=url):RichMediaEntry=>({label,matches,tag:'MÍDIA · 02/10',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl:sourceUrl,kind:'REFERENCE'}]});
 export const dailyRichMedia20261002:RichMediaEntry[]=[
 img('Papo de hoje',['ensinar ao bebê pelo exemplo'],'https://static.wixstatic.com/media/fd3013_955c0112d102477eba4f0fce7aa2cbe1~mv2.jpeg/v1/fill/w_980%2Ch_642%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/AdobeStock_313849799%20partner%20support.jpeg','Casal durante a gestação em momento de apoio e conversa','Sankofa Birth Experience','https://www.sankofabirth.co.uk/birth-coaching'),
 img('Desafio do casal',['troquem uma pequena tarefa'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple_enjoys_coffee_together_at_home.jpg','Casal compartilhando um momento da rotina em casa','Wikimedia Commons'),
