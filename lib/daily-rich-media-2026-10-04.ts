@@ -1,5 +1,5 @@
 import type {RichMediaEntry} from './rich-media';
-const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl=url):RichMediaEntry=>({label,matches,tag:'MÍDIA · 04/10',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl,kind:'REFERENCE'}]});
+const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl=url):RichMediaEntry=>({label,matches,tag:'MÍDIA · 04/10',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl:sourceUrl,kind:'REFERENCE'}]});
 export const dailyRichMedia20261004:RichMediaEntry[]=[
 img('Papo de hoje',['que valor','aprenda vendo vocês'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pregnancy.jpg','Casal durante a gestação','Soul Flora / Wikimedia Commons','https://commons.wikimedia.org/wiki/File:Pregnancy.jpg'),
 img('Desafio do casal',['três músicas','microplaylist'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Headphones_1.jpg','Fones de ouvido para escuta musical','Wikimedia Commons','https://commons.wikimedia.org/wiki/File:Headphones_1.jpg'),
