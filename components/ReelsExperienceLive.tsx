@@ -22,32 +22,10 @@ import {applyCurrentReelPatches20260920} from '@/lib/current-reel-patches-2026-0
 import {applyCurrentReelPatches20261002} from '@/lib/current-reel-patches-2026-10-02';
 import {applyCurrentReelPatches202610021724} from '@/lib/current-reel-patches-2026-10-02-1724';
 import {applyCurrentReelPatches20261003} from '@/lib/current-reel-patches-2026-10-03';
+import {applyCurrentReelPatches20261004} from '@/lib/current-reel-patches-2026-10-04';
 import ReelsExperienceV27 from './ReelsExperienceV27';
-
 export default function ReelsExperienceLive(){
-  for (const slug of ['papo','desafio','seguranca-zl','zonaLeste','corinthians','musica','games','security-briefing','appsec-ssdlc']) {
-    if (!dailyContent[slug]) dailyContent[slug]={title:'',summary:'',readTime:'',sections:[],sources:[]};
-  }
-  applyCurrentCuriosityRotation(curiosityCollections);
-  applyCurrentReelPatches20260912(dailyContent);
-  applyCurrentReelPatches202609120550(dailyContent);
-  applyCurrentReelPatches202609120842(dailyContent);
-  applyCurrentReelPatches202609121114(dailyContent);
-  applyCurrentReelPatches202609121717(dailyContent);
-  applyCurrentReelPatches202609122032(dailyContent);
-  applyCurrentReelPatches202609122338(dailyContent);
-  applyCurrentReelPatches20260913(dailyContent);
-  applyCurrentReelPatches202609132346(dailyContent);
-  applyCurrentReelPatches20260914(dailyContent);
-  applyCurrentReelPatches202609140519(dailyContent);
-  applyCurrentReelPatches20260915(dailyContent);
-  applyCurrentReelPatches20260916(dailyContent);
-  applyCurrentReelPatches20260917(dailyContent);
-  applyCurrentReelPatches20260918(dailyContent);
-  applyCurrentReelPatches20260919(dailyContent);
-  applyCurrentReelPatches20260920(dailyContent);
-  applyCurrentReelPatches20261002(dailyContent);
-  applyCurrentReelPatches202610021724(dailyContent);
-  applyCurrentReelPatches20261003(dailyContent);
-  return <ReelsExperienceV27/>;
+for(const slug of ['papo','desafio','seguranca-zl','zonaLeste','corinthians','musica','games','security-briefing','appsec-ssdlc']){if(!dailyContent[slug])dailyContent[slug]={title:'',summary:'',readTime:'',sections:[],sources:[]};}
+applyCurrentCuriosityRotation(curiosityCollections);
+applyCurrentReelPatches20260912(dailyContent);applyCurrentReelPatches202609120550(dailyContent);applyCurrentReelPatches202609120842(dailyContent);applyCurrentReelPatches202609121114(dailyContent);applyCurrentReelPatches202609121717(dailyContent);applyCurrentReelPatches202609122032(dailyContent);applyCurrentReelPatches202609122338(dailyContent);applyCurrentReelPatches20260913(dailyContent);applyCurrentReelPatches202609132346(dailyContent);applyCurrentReelPatches20260914(dailyContent);applyCurrentReelPatches202609140519(dailyContent);applyCurrentReelPatches20260915(dailyContent);applyCurrentReelPatches20260916(dailyContent);applyCurrentReelPatches20260917(dailyContent);applyCurrentReelPatches20260918(dailyContent);applyCurrentReelPatches20260919(dailyContent);applyCurrentReelPatches20260920(dailyContent);applyCurrentReelPatches20261002(dailyContent);applyCurrentReelPatches202610021724(dailyContent);applyCurrentReelPatches20261003(dailyContent);applyCurrentReelPatches20261004(dailyContent);return <ReelsExperienceV27/>;
 }
