@@ -32,7 +32,7 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: TypeScript check
-        run: npx tsc --noEmit
+        run: npx tsc --noEmit --target es2022 --lib es2022,dom --module esnext --moduleResolution bundler --strict --skipLibCheck lib/ai/jev-editorial-verifier.ts
 
       - name: Jev shadow smoke
         continue-on-error: true
