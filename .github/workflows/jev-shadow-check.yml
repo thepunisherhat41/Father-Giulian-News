@@ -1,0 +1,41 @@
+name: Jev Shadow Integration Check
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'lib/ai/**'
+      - 'scripts/jev-editorial-shadow.mjs'
+      - 'docs/jev-editorial-shadow.md'
+      - '.github/workflows/jev-shadow-check.yml'
+      - '.github/workflows/father-news-quality-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  jev-shadow-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: TypeScript check
+        run: npx tsc --noEmit --target es2022 --lib es2022,dom --module esnext --moduleResolution bundler --strict --skipLibCheck lib/ai/jev-editorial-verifier.ts
+
+      - name: Jev shadow smoke
+        continue-on-error: true
+        env:
+          AI_GATEWAY_API_KEY: ${{ secrets.AI_GATEWAY_API_KEY }}
+        run: npm run jev:shadow
