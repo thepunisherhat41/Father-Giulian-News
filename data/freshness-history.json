@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "policy": {
+    "semanticWindowDays": 30,
+    "visualWindowDays": 7,
+    "curiosityWindowDays": 30,
+    "requiredDailyKinds": [
+      "papo",
+      "desafio",
+      "curiosity"
+    ]
+  },
+  "entries": [
+    {
+      "date": "2026-09-20",
+      "kind": "papo",
+      "conceptId": "childhood-story-for-baby",
+      "visualConceptId": "childhood-memory-conversation",
+      "title": "Papo de hoje: qual história da sua infância você quer contar para o bebê um dia?",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-20",
+      "kind": "desafio",
+      "conceptId": "future-audio-one-minute",
+      "visualConceptId": "voice-message-time-capsule",
+      "title": "Desafio do casal: gravem um áudio de 1 minuto para ouvir no futuro",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "curiosity",
+      "conceptId": "octopus-three-hearts",
+      "visualConceptId": "octopus-anatomy-three-hearts",
+      "title": "Polvos têm três corações trabalhando em funções diferentes",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "curiosity",
+      "conceptId": "heart-electric-rhythm",
+      "visualConceptId": "heart-electrical-system",
+      "title": "Seu coração possui um sistema elétrico próprio que coordena cada batimento",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-02",
+      "kind": "curiosity",
+      "conceptId": "venus-day-longer-than-year",
+      "visualConceptId": "venus-rotation-orbit",
+      "title": "Um dia em Vênus dura mais do que um ano venusiano",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "curiosity",
+      "conceptId": "octopus-three-hearts",
+      "visualConceptId": "octopus-anatomy-three-hearts",
+      "title": "Polvos têm três corações trabalhando em funções diferentes",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "curiosity",
+      "conceptId": "heart-electric-rhythm",
+      "visualConceptId": "heart-electrical-system",
+      "title": "Seu coração possui um sistema elétrico próprio que coordena cada batimento",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "curiosity",
+      "conceptId": "venus-day-longer-than-year",
+      "visualConceptId": "venus-rotation-orbit",
+      "title": "Um dia em Vênus dura mais do que um ano venusiano",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-04",
+      "kind": "papo",
+      "conceptId": "family-values-for-baby",
+      "visualConceptId": "family-values-conversation",
+      "title": "Papo de hoje: que valor vocês querem que o bebê aprenda vendo vocês dois?",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-04",
+      "kind": "desafio",
+      "conceptId": "three-songs-week-13",
+      "visualConceptId": "music-three-song-ritual",
+      "title": "Desafio do casal: escolham três músicas para o primeiro domingo das 13 semanas",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-06",
+      "kind": "papo",
+      "conceptId": "simplify-routine-before-baby",
+      "visualConceptId": "home-routine-lighten",
+      "title": "Papo de hoje: que parte da rotina vocês querem deixar mais leve antes do bebê chegar?",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-06",
+      "kind": "desafio",
+      "conceptId": "fifteen-minute-home-pending",
+      "visualConceptId": "shared-home-sprint",
+      "title": "Desafio do casal: 15 minutos para resolver juntos uma pequena pendência da casa",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-06",
+      "kind": "curiosity",
+      "conceptId": "wombat-cubic-feces",
+      "visualConceptId": "wombat-cube-biology",
+      "title": "Wombats conseguem produzir fezes em formato de cubo",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-06",
+      "kind": "curiosity",
+      "conceptId": "intestinal-epithelium-renewal",
+      "visualConceptId": "intestinal-cell-renewal",
+      "title": "O revestimento do intestino pode se renovar completamente em cerca de cinco dias",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-06",
+      "kind": "curiosity",
+      "conceptId": "moon-recession-earth",
+      "visualConceptId": "earth-moon-laser-distance",
+      "title": "A Lua se afasta da Terra cerca de 3,8 centímetros por ano",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "papo",
+      "conceptId": "childhood-tradition-for-felipe",
+      "visualConceptId": "childhood-photo-memory",
+      "title": "Papo de hoje: qual tradição da sua infância você quer apresentar ao Felipe?",
+      "status": "superseded"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "desafio",
+      "conceptId": "three-song-mini-playlist-felipe",
+      "visualConceptId": "music-mini-playlist",
+      "title": "Desafio do casal: montem uma mini-playlist de três músicas para o Felipe",
+      "status": "superseded"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "curiosity",
+      "conceptId": "octopus-three-hearts",
+      "visualConceptId": "octopus-anatomy-three-hearts",
+      "title": "Polvos têm três corações — e o sangue deles é azul",
+      "status": "superseded"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "curiosity",
+      "conceptId": "liver-compensatory-regeneration",
+      "visualConceptId": "liver-regeneration-anatomy",
+      "title": "O fígado tem uma capacidade incomum de recuperar massa após perda parcial",
+      "status": "superseded"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "curiosity",
+      "conceptId": "venus-day-longer-than-year",
+      "visualConceptId": "venus-rotation-orbit",
+      "title": "Em Vênus, um dia é mais longo do que um ano",
+      "status": "superseded"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "papo",
+      "conceptId": "home-object-future-story",
+      "visualConceptId": "quest-relic-home-object",
+      "title": "Papo de hoje: qual objeto comum da casa de hoje vai virar uma história engraçada para o Felipe no futuro?",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "desafio",
+      "conceptId": "pregnancy-checkpoint-name",
+      "visualConceptId": "coop-checkpoint-photo",
+      "title": "Desafio do casal: deem um nome de fase de jogo para o momento atual da gestação",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "curiosity",
+      "conceptId": "reindeer-seasonal-eye-color",
+      "visualConceptId": "reindeer-winter-blue-eyes",
+      "title": "Os olhos das renas mudam de reflexo entre o verão e o inverno",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "curiosity",
+      "conceptId": "stapes-smallest-bone",
+      "visualConceptId": "stapes-scale-comparison",
+      "title": "O menor osso do corpo humano fica dentro do ouvido",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-14",
+      "kind": "curiosity",
+      "conceptId": "neutron-star-rapid-spin",
+      "visualConceptId": "neutron-star-pulsar-spin",
+      "title": "Algumas estrelas de nêutrons giram mais de 700 vezes por segundo",
+      "status": "current"
+    }
+  ]
+}
