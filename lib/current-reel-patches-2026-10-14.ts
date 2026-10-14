@@ -1,26 +1,30 @@
 export function applyCurrentReelPatches20261014(dailyContent:Record<string,any>){
-const patch=(slug:string,value:any)=>Object.assign(dailyContent[slug],value);
+const patch=(slug:string,value:any)=>Object.assign(dailyContent[slug]??(dailyContent[slug]={}),value);
 
 patch('papo',{
-  title:'Papo de hoje: qual tradição da sua infância você quer apresentar ao Felipe?',
-  summary:'PAPO DE HOJE · 14/10 · Cada um escolhe uma lembrança, costume ou ritual simples da infância que gostaria de viver de novo quando o Felipe estiver maior.',
-  shareSummary:'Papo de hoje · 14/10: uma tradição da infância para levar adiante com o Felipe.',
+  conceptId:'home-object-future-story',
+  visualConceptId:'quest-relic-home-object',
+  title:'Papo de hoje: qual objeto comum da casa de hoje vai virar uma história engraçada para o Felipe no futuro?',
+  summary:'PAPO DE HOJE · 14/10 · Escolham um objeto banal da casa — controle, caneca, cobertor, brinquedo dos gatos, ferramenta — e contem por que ele representa esta fase da vida de vocês.',
+  shareSummary:'Papo de hoje · 14/10: o objeto comum de hoje que pode virar história para o Felipe no futuro.',
   badge:'PAPO DE HOJE · 14/10',
   sections:[
-    {title:'Pergunta de hoje',paragraphs:['Pode ser almoço de domingo, música no carro, desenho, feira, brincadeira, viagem curta, aniversário, história antes de dormir ou qualquer hábito simples que marcou sua infância. Qual você gostaria de apresentar ao Felipe?']},
-    {title:'A melhor parte',paragraphs:['Depois contem por que essa memória ficou com vocês. A ideia não é criar obrigação para o futuro, mas descobrir quais pequenas coisas carregam mais significado.']}
+    {title:'Pergunta de hoje',paragraphs:['Se o Felipe encontrasse daqui a dez anos um objeto da casa de vocês de hoje, qual renderia a história mais engraçada ou mais característica desta fase?']},
+    {title:'Modo história',paragraphs:['Não escolham o objeto mais bonito. Escolham o que tem contexto: algo que vive sumindo, quebrando, aparecendo na hora errada ou que virou parte da rotina sem vocês perceberem.']}
   ],
   sources:[]
 });
 
 patch('desafio',{
-  title:'Desafio do casal: montem uma mini-playlist de três músicas para o Felipe',
-  summary:'DESAFIO DO CASAL · 14/10 · Cada um escolhe uma música que marcou sua infância ou adolescência; a terceira vocês escolhem juntos. Ouçam as três hoje.',
-  shareSummary:'Desafio do casal · 14/10: três músicas para a primeira mini-playlist do Felipe.',
-  badge:'DESAFIO DO CASAL · 14/10',
+  conceptId:'pregnancy-checkpoint-name',
+  visualConceptId:'coop-checkpoint-photo',
+  title:'Desafio do casal: deem um nome de fase de jogo para o momento atual da gestação',
+  summary:'DESAFIO DO CASAL · 14/10 · Batizem esta fase como se fosse um level: escolham um nome curto, tirem uma foto simples que represente o checkpoint e guardem só para vocês.',
+  shareSummary:'Desafio do casal · 14/10: criar o nome do checkpoint atual da gestação.',
+  badge:'DESAFIO DO CASAL · CO-OP QUEST · 14/10',
   sections:[
-    {title:'Como fazer',bullets:['Giulian escolhe uma música que traz uma memória antiga.','Bruna escolhe outra pelo mesmo motivo.','A terceira precisa ser consenso.','Ouçam as três sem pular e contem a história por trás de cada escolha.']},
-    {title:'Sem transformar em tarefa',paragraphs:['Não precisa virar “playlist oficial do bebê”. Hoje é só um jeito de compartilhar memórias e começar um repertório afetivo.']}
+    {title:'Co-op quest',bullets:['Cada um sugere um nome de fase.','Escolham um juntos.','Tirem uma foto comum que combine com o nome.','Guardem a foto com a data — sem obrigação de postar.']},
+    {title:'Exemplo de formato',paragraphs:['“Level 14: barriga começando a aparecer”, “Checkpoint do segundo trimestre” ou qualquer nome que tenha graça para vocês.']}
   ],
   sources:[]
 });
@@ -147,6 +151,18 @@ patch('musica',{
     {title:'Leitura correta',paragraphs:['O lançamento foi noticiado em 13/10; a data 14/10 identifica a curadoria desta edição, não a data de lançamento.']}
   ],
   sources:[{label:'Billboard Brasil · Fontaines D.C. e Rosalía · 13/10',url:'https://billboard.com.br/lancamentos/'}]
+});
+
+patch('sertanejo-da-roca',{
+  conceptId:'sertanejo-tristeza-do-jeca',
+  visualConceptId:'classic-caipira-tv-cultura',
+  title:'Sertanejo da Roça de hoje: Tristeza do Jeca',
+  summary:'Tonico e Tinoco interpretam “Tristeza do Jeca”, clássico de Angelino de Oliveira, em registro da TV Cultura. É sertanejo raiz e memória caipira — sem reproduzir a letra.',
+  shareSummary:'Sertanejo da Roça · 14/10: Tristeza do Jeca, com Tonico e Tinoco.',
+  badge:'SERTANEJO DA ROÇA · 14/10',
+  videoEmbed:'https://www.youtube.com/embed/Fxac2CJDo8A?playsinline=1&rel=0',
+  sections:[],
+  sources:[{label:'YouTube · TV Cultura · Tristeza do Jeca, por Tonico e Tinoco',url:'https://www.youtube.com/watch?v=Fxac2CJDo8A'}]
 });
 
 patch('games',{
