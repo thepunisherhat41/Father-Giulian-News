@@ -1,5 +1,5 @@
 import type {RichMediaEntry} from './rich-media';
-const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl=url):RichMediaEntry=>({label,matches,tag:'MÍDIA · 17/10',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl,kind:'REFERENCE'}]});
+const img=(label:string,matches:string[],url:string,alt:string,credit:string,sourceUrl=url):RichMediaEntry=>({label,matches,tag:'MÍDIA · 17/10',title:alt,caption:credit,images:[{url,alt,caption:credit,credit,sourceUrl:sourceUrl,kind:'REFERENCE'}]});
 export const dailyRichMedia20261017:RichMediaEntry[]=[
 img('Papo de hoje',['habilidade divertida','ensinar ao Felipe'],'https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt03146f823779c838/6719197b2b7edcd4984bdd30/maya-and-patrick-laurent-notebooks.jpg?auto=webp&q=70&width=1920','Casal escrevendo ideias juntos em um caderno','Petal Talk / Maya and Patrick Laurent','https://www.1800flowers.com/articles/make-an-impact/memories-and-stories/maya-and-patrick-laurent-profile'),
 img('Desafio do casal',['três nomes de fases','primeiro ano do Felipe'],'https://commons.wikimedia.org/wiki/Special:Redirect/file/Family_playing_board_game.jpg','Família reunida em torno de um jogo de tabuleiro','National Cancer Institute / Wikimedia Commons','https://commons.wikimedia.org/wiki/File:Family_playing_board_game.jpg'),
