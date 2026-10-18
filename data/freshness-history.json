@@ -177,7 +177,7 @@
       "conceptId": "home-object-future-story",
       "visualConceptId": "quest-relic-home-object",
       "title": "Papo de hoje: qual objeto comum da casa de hoje vai virar uma história engraçada para o Felipe no futuro?",
-      "status": "current"
+      "status": "published"
     },
     {
       "date": "2026-10-14",
@@ -185,7 +185,7 @@
       "conceptId": "pregnancy-checkpoint-name",
       "visualConceptId": "coop-checkpoint-photo",
       "title": "Desafio do casal: deem um nome de fase de jogo para o momento atual da gestação",
-      "status": "current"
+      "status": "published"
     },
     {
       "date": "2026-10-14",
@@ -193,7 +193,7 @@
       "conceptId": "reindeer-seasonal-eye-color",
       "visualConceptId": "reindeer-winter-blue-eyes",
       "title": "Os olhos das renas mudam de reflexo entre o verão e o inverno",
-      "status": "current"
+      "status": "published"
     },
     {
       "date": "2026-10-14",
@@ -201,7 +201,7 @@
       "conceptId": "stapes-smallest-bone",
       "visualConceptId": "stapes-scale-comparison",
       "title": "O menor osso do corpo humano fica dentro do ouvido",
-      "status": "current"
+      "status": "published"
     },
     {
       "date": "2026-10-14",
@@ -209,6 +209,46 @@
       "conceptId": "neutron-star-rapid-spin",
       "visualConceptId": "neutron-star-pulsar-spin",
       "title": "Algumas estrelas de nêutrons giram mais de 700 vezes por segundo",
+      "status": "published"
+    },
+    {
+      "date": "2026-10-17",
+      "kind": "papo",
+      "conceptId": "felipe-future-skill-funny",
+      "visualConceptId": "dad-teaching-playful-skill",
+      "title": "Papo de hoje: qual habilidade divertida você quer muito ensinar ao Felipe?",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-17",
+      "kind": "desafio",
+      "conceptId": "three-levels-first-year",
+      "visualConceptId": "coop-quest-paper-level-map",
+      "title": "Desafio do casal: criem três nomes de fases para o primeiro ano do Felipe",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-17",
+      "kind": "curiosity",
+      "conceptId": "woodpecker-hyoid-wraps-skull",
+      "visualConceptId": "woodpecker-tongue-skull-path",
+      "title": "A estrutura que sustenta a língua do pica-pau contorna parte do crânio",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-17",
+      "kind": "curiosity",
+      "conceptId": "cornea-avascular-oxygen-air",
+      "visualConceptId": "transparent-cornea-no-vessels",
+      "title": "A córnea saudável normalmente não tem vasos sanguíneos",
+      "status": "current"
+    },
+    {
+      "date": "2026-10-17",
+      "kind": "curiosity",
+      "conceptId": "mars-blue-sunset",
+      "visualConceptId": "mars-blue-twilight-rover",
+      "title": "Em Marte, o pôr do sol pode ficar azulado perto do Sol",
       "status": "current"
     }
   ]
