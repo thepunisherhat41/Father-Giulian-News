@@ -60,7 +60,7 @@
         {
           "label": "Smithsonian Ocean — cephalopods",
           "url": "https://ocean.si.edu/ocean-life/invertebrates/octopuses-squids-and-other-cephalopods",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -83,7 +83,7 @@
         {
           "label": "NASA Solar System — Saturn Facts",
           "url": "https://science.nasa.gov/saturn/facts/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -106,7 +106,7 @@
         {
           "label": "NOAA Fisheries — Shark anatomy",
           "url": "https://www.fisheries.noaa.gov/feature-story/12-shark-facts-may-surprise-you",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -129,7 +129,7 @@
         {
           "label": "Encyclopaedia Britannica — SOS",
           "url": "https://www.britannica.com/topic/SOS",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -153,7 +153,7 @@
         {
           "label": "NHS — Week 15",
           "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-15/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -177,7 +177,7 @@
         {
           "label": "NHS — Partners in pregnancy",
           "url": "https://www.nhs.uk/pregnancy/support/partners/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -321,7 +321,7 @@
         {
           "label": "Prefeitura de Santo André — turismo",
           "url": "https://www.santoandre.sp.gov.br/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -381,7 +381,7 @@
         {
           "label": "PlayStation — lançamentos de outubro",
           "url": "https://www.playstation.com/pt-br/editorial/this-month-on-playstation/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -405,7 +405,7 @@
         {
           "label": "FIDO Alliance — Passkeys",
           "url": "https://fidoalliance.org/passkeys/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -452,7 +452,7 @@
         {
           "label": "CISA — Known Exploited Vulnerabilities",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -476,7 +476,7 @@
         {
           "label": "CISA — Secure Our World",
           "url": "https://www.cisa.gov/secure-our-world",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },
@@ -500,7 +500,7 @@
         {
           "label": "OWASP — DevSecOps Guideline",
           "url": "https://owasp.org/www-project-devsecops-guideline/",
-          "publishedAt": "2026-10-19"
+          "checkedAt": "2026-10-19"
         }
       ]
     },

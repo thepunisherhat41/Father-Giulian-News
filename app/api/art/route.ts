@@ -1,6 +1,6 @@
 import edition from '../../../data/current-edition.json';
 import {NextRequest} from 'next/server';
-export const dynamic='force-static';
+export const dynamic='force-dynamic';
 const paths:Record<string,string>={
 chat:'<path d="M145 390Q90 390 90 330V215Q90 160 150 160H410Q470 160 470 215V330Q470 390 410 390H278L190 455V390Z"/><path d="M175 263H382M175 316H325"/>',
 microphone:'<rect x="215" y="140" width="130" height="245" rx="65"/><path d="M155 290Q155 460 280 460Q405 460 405 290M280 462V555M210 555H350"/>',

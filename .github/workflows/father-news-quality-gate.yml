@@ -1,106 +1,43 @@
-name: Father Giulian News Quality Gate
-
+name: Father News V2 Quality Gate
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
+  push:
+    branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
-
-concurrency:
-  group: father-news-quality-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
-  editorial-quality-gate:
+  editorial-build-browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 24
-
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
-
-      - name: Prepare controlled release context
-        run: |
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            MSG="$(git log -1 --pretty=%B)"
-            case "$MSG" in
-              "release: open production deployment window"*) echo "VERCEL=1" >> "$GITHUB_ENV" ;;
-            esac
-          elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]; then
-            case "$GITHUB_HEAD_REF" in
-              release/*) echo "VERCEL=1" >> "$GITHUB_ENV" ;;
-            esac
-          fi
-
-      - name: Editorial Quality Gate
+          node-version: '24'
+      - run: npm install --no-audit --no-fund
+      - name: Editorial quality
         run: npm run quality
-
-      - name: Production build validation
+      - name: Production build
         run: npm run build
-
-      - name: Install mobile browser QA
+      - name: Install browser
         run: |
           npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
-          # Playwright ships its own Chromium. Disable only unrelated Google Chrome APT
-          # source files when the hosted runner image contains them, avoiding stale-index
-          # failures without weakening browser dependency installation.
-          while IFS= read -r source_file; do
-            echo "Disabling unrelated Chrome APT source: $source_file"
-            sudo rm -f "$source_file"
-          done < <(sudo grep -RIl 'dl\.google\.com/linux/chrome' /etc/apt/sources.list.d 2>/dev/null || true)
-          if [ -f /etc/apt/sources.list ]; then
-            sudo sed -i '\|dl\.google\.com/linux/chrome|d' /etc/apt/sources.list
-          fi
           npx playwright install --with-deps chromium
-
-      - name: Start production server
-        run: |
-          npm start > /tmp/father-news-next.log 2>&1 &
-          echo $! > /tmp/father-news-next.pid
-          READY=0
-          for attempt in $(seq 1 40); do
-            if curl --silent --show-error --fail --max-time 3 http://127.0.0.1:3000/ >/dev/null; then
-              READY=1
-              break
-            fi
-            if ! kill -0 "$(cat /tmp/father-news-next.pid)" 2>/dev/null; then
-              echo "Next.js server exited before becoming healthy"
-              cat /tmp/father-news-next.log || true
-              exit 1
-            fi
-            sleep 2
-          done
-          if [ "$READY" != "1" ]; then
-            echo "Next.js production server did not become healthy within the gate window"
-            cat /tmp/father-news-next.log || true
-            exit 1
-          fi
-          echo "Next.js production server healthy"
-
-      - name: Mobile visual gate 390x844
+      - name: Local production server
         run: |
           mkdir -p artifacts
-          npx playwright test tests/mobile-visual-gate.spec.ts --reporter=line
-
-      - name: Upload mobile QA evidence
+          npm run start >/tmp/father-news.log 2>&1 &
+          for i in $(seq 1 60); do curl -fsS http://127.0.0.1:3000 >/dev/null && break || sleep 1; done
+          curl -fsS http://127.0.0.1:3000 >/dev/null
+      - name: Chromium 390x844 ALL reels
+        run: npx playwright test tests/mobile-v2.spec.ts --reporter=line
+      - name: Screenshots and evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: father-news-mobile-qa
+          name: father-news-v2-mobile-evidence
           path: |
             artifacts/
-            playwright-report/
             test-results/
-          if-no-files-found: warn
-          retention-days: 7
