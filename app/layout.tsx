@@ -1,18 +1,3 @@
-import './globals.css';
-import './reels-v13.css';
-import './reel-cover-direct-v16.css';
-import './mobile-v10.css';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Father Giulian News',
-  description: 'Seu hub diário em formato Reels, com família, atualidades, cultura, tecnologia e segurança.',
-};
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="pt-BR">
-      <body>{children}</body>
-    </html>
-  );
-}
+import type {Metadata} from 'next';
+export const metadata:Metadata={title:'Father Giulian News · Edição diária',description:'Notícias verificadas, família e curiosidades em Reels'};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="pt-BR"><body>{children}</body></html>}
