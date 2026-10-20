@@ -86,7 +86,7 @@ def main():
   b=fetch(url,bool(photo));mime,ext,w,h=inspect(b)
   if photo and mime not in ('image/jpeg','image/png','image/webp'):raise ValueError(f'{cid}: photo MIME invalid')
   if not photo and (mime!='image/svg+xml' or (w,h)!=(720,1280)):raise ValueError(f'{cid}: SVG 9:16 invalid')
-  if not (w>=500 and h>=300 and w<=12000 and h<=12000):raise ValueError(f'{cid}: dimensions invalid')
+  if not (w>=400 and h>=300 and w<=12000 and h<=12000):raise ValueError(f'{cid}: dimensions invalid')
   hash_=sha(b);dest=obj/(hash_+'.'+ext)
   if dest.exists():
    if sha(dest.read_bytes())!=hash_:raise ValueError('immutable object changed')
