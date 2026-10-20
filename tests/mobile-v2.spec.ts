@@ -8,7 +8,7 @@ test('full Chromium QA of all current Reels',async({page})=>{
  const errors:string[]=[];
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded',timeout:30000});
- const shell=page.locator('[data-ui-theme="gamer-reader-v4"]');
+ const shell=page.locator('[data-ui-theme="father-native-v5"]');
  await expect(shell).toBeVisible();
  expect(await shell.getAttribute('data-edition-date')).toBe('2026-10-20');
  const reels=page.locator('article[data-reel]'),n=await reels.count();
@@ -91,4 +91,67 @@ test('responsive desktop editorial layout and discoverability',async({page})=>{
  await expect(page.locator('.fg-device')).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(1440);
  await page.screenshot({path:'artifacts/reader-desktop.png',fullPage:true,animations:'disabled'});
+});
+
+test('mobile app shell: compact header, finger navigation, no blocked CTA', async ({page})=>{
+ await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded'});
+ await expect(page.locator('.mn-tabbar')).toBeVisible();
+ await expect(page.locator('.fg-actions')).toBeHidden();
+ await expect(page.locator('.fg-bottom')).toBeHidden();
+ await expect(page.locator('.mn-brand-words')).toContainText('Father News');
+ await expect(page.locator('.fg-symbol')).toHaveText('FN');
+ const header=await page.locator('.fg-header').boundingBox();
+ const bar=await page.locator('.mn-tabbar').boundingBox();
+ const cta=await page.locator('article[data-reel]').first().locator('.fg-read button').boundingBox();
+ const title=await page.locator('article[data-reel]').first().locator('h1').boundingBox();
+ expect(header).toBeTruthy();expect(bar).toBeTruthy();expect(cta).toBeTruthy();expect(title).toBeTruthy();
+ expect(header!.height,'header must be genuinely compact').toBeLessThan(78);
+ expect(cta!.y+cta!.height,'CTA blocked by bottom app nav').toBeLessThan(bar!.y);
+ expect(title!.x,'text should not touch viewport edges').toBeGreaterThanOrEqual(12);
+ expect(title!.x+title!.width).toBeLessThanOrEqual(380);
+ await page.screenshot({path:'artifacts/mobile-native-first.png',animations:'disabled'});
+ await page.getByRole('button',{name:'Explorar assuntos'}).click();
+ await expect(page.getByRole('dialog',{name:'Índice editorial'})).toBeVisible();
+ await page.getByRole('button',{name:'Fechar índice'}).click();
+ await page.getByRole('button',{name:'Próximo reel'}).last().click();
+ await expect(page.locator('article[data-reel]').nth(1)).toBeInViewport({ratio:.5});
+ await page.getByRole('button',{name:'Ver matérias salvas'}).click();
+ const dialog=page.getByRole('dialog',{name:'Índice editorial'});
+ await expect(dialog.getByRole('button',{name:/Salvos/})).toHaveAttribute('aria-pressed','true');
+ await dialog.getByRole('button',{name:'Fechar índice'}).click();
+ await page.locator('article[data-reel]').nth(1).getByRole('button',{name:/Ler detalhes de/}).click();
+ const reader=page.getByRole('dialog',{name:'Detalhes e fontes'});
+ await expect(reader.getByRole('button',{name:'Salvar matéria'})).toBeVisible();
+ await expect(reader.getByRole('button',{name:'Compartilhar matéria'})).toBeVisible();
+ await reader.getByRole('button',{name:'Salvar matéria'}).click();
+ await reader.getByRole('button',{name:'Fechar detalhes'}).click();
+ await page.getByRole('button',{name:'Ver matérias salvas'}).click();
+ await expect(dialog.locator('.rx-story')).toHaveCount(1);
+});
+test('app manifest and no-stale-content service worker',async({page})=>{
+ await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded'});
+ const manifest=await page.request.get('http://127.0.0.1:3000/manifest.webmanifest');
+ expect(manifest.status()).toBe(200);
+ const data=await manifest.json();
+ expect(data.display).toBe('standalone');
+ expect(data.theme_color).toBe('#061421');
+ expect(data.icons.length).toBeGreaterThan(0);
+ const worker=await page.request.get('http://127.0.0.1:3000/sw.js');
+ expect(worker.status()).toBe(200);
+ expect(await worker.text()).not.toMatch(/caches\.open|cache\.put/);
+});
+test('small Android screen and tall handset remain usable',async({page})=>{
+ for(const viewport of [{width:320,height:640},{width:360,height:780},{width:412,height:915}]){
+  await page.setViewportSize(viewport);
+  await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded'});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(viewport.width);
+  const header=await page.locator('.fg-header').boundingBox();
+  const nav=await page.locator('.mn-tabbar').boundingBox();
+  expect(header).toBeTruthy();expect(nav).toBeTruthy();
+  expect(header!.height).toBeLessThan(79);
+  expect(nav!.y+nav!.height).toBeLessThanOrEqual(viewport.height+1);
+  await expect(page.getByRole('button',{name:'Abrir índice de assuntos'})).toBeVisible();
+  await expect(page.getByRole('button',{name:'Explorar assuntos'})).toBeVisible();
+  await page.screenshot({path:'artifacts/native-'+viewport.width+'x'+viewport.height+'.png',animations:'disabled'});
+ }
 });

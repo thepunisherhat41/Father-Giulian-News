@@ -1,11 +1,11 @@
 'use client';
 import {useMemo,useState} from 'react';
 type Card={id:string,group:string,type:string,title:string,summary:string,news:boolean,layout?:string};
-type Props={cards:Card[],active:number,finished:string[],saved:string[],seen:string[],resume:number,onGo:(n:number)=>void,onClose:()=>void,formatDate:string};
+type Props={cards:Card[],active:number,finished:string[],saved:string[],seen:string[],resume:number,onGo:(n:number)=>void,onClose:()=>void,formatDate:string,initialFilter?:Filter};
 type Filter='Todos'|'Notícias'|'Descobertas'|'Família'|'Guias'|'Salvos';
 const filters:Filter[]=['Todos','Notícias','Descobertas','Família','Guias','Salvos'];
-export default function ReaderExplore({cards,active,finished,saved,seen,resume,onGo,onClose,formatDate}:Props){
- const [tab,setTab]=useState<Filter>('Todos');
+export default function ReaderExplore({cards,active,finished,saved,seen,resume,onGo,onClose,formatDate,initialFilter="Todos"}:Props){
+ const [tab,setTab]=useState<Filter>(initialFilter);
  const [search,setSearch]=useState('');
  const filtered=useMemo(()=>cards.map((c,i)=>({c,i})).filter(({c})=>{
  const family=['Papo de hoje','Desafio do casal','Gravidez','Ser Pai'].includes(c.group);
