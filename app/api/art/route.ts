@@ -2,6 +2,12 @@ import edition from '../../../data/current-edition.json';
 import {NextRequest} from 'next/server';
 export const dynamic='force-dynamic';
 const paths:Record<string,string>={
+'memory-jar':'<path d="M165 220H395V450Q395 490 350 490H210Q165 490 165 450Z"/><rect x="152" y="175" width="256" height="50" rx="12"/><path d="M235 385Q205 325 245 295Q275 275 285 315Q325 268 350 310Q366 347 280 405Z"/>',
+'photos':'<rect x="97" y="194" width="210" height="255" rx="8" transform="rotate(-12 202 320)"/><rect x="245" y="190" width="215" height="260" rx="8" transform="rotate(12 352 320)"/><circle cx="350" cy="285" r="32"/><path d="M275 393L340 330L385 364L425 315"/>',
+'coral':'<path d="M275 470V300M275 355L220 278L185 235M220 278L235 215M275 330L350 270L382 212M350 270L360 315M275 400L185 365L140 300M185 365L190 425M275 435L375 365L430 385M375 365L395 305M270 285L270 205"/>',
+'fox':'<path d="M140 275L160 160L250 220L315 220L405 160L420 275Q420 390 280 450Q140 390 140 275Z"/><path d="M195 305L250 335L280 320L310 335L365 305M250 380L280 395L310 380"/><circle cx="217" cy="303" r="9"/><circle cx="343" cy="303" r="9"/>',
+'telegraph':'<rect x="110" y="380" width="345" height="75" rx="16"/><path d="M185 365L280 260L350 360M280 260L310 225M245 245H315M230 200H330M190 315H250"/><circle cx="190" cy="420" r="15"/><circle cx="380" cy="420" r="15"/>',
+'wafer':'<rect x="145" y="180" width="270" height="270" rx="30"/><rect x="205" y="240" width="150" height="150" rx="12"/><path d="M185 140V180M250 140V180M315 140V180M380 140V180M185 450V490M250 450V490M315 450V490M380 450V490M105 220H145M105 290H145M105 365H145M415 220H455M415 290H455M415 365H455"/>',
 chat:'<path d="M145 390Q90 390 90 330V215Q90 160 150 160H410Q470 160 470 215V330Q470 390 410 390H278L190 455V390Z"/><path d="M175 263H382M175 316H325"/>',
 microphone:'<rect x="215" y="140" width="130" height="245" rx="65"/><path d="M155 290Q155 460 280 460Q405 460 405 290M280 462V555M210 555H350"/>',
 octopus:'<path d="M177 295Q177 180 280 180Q383 180 383 295Q420 365 460 335M177 295Q145 390 85 345M225 340Q205 475 125 455M260 340Q245 470 235 495M305 340Q335 485 355 495M345 340Q415 470 455 445"/><circle cx="242" cy="275" r="8"/><circle cx="318" cy="275" r="8"/>',
