@@ -60,14 +60,16 @@ test('reader discovery, filters, search, read, save and contextual next',async({
  await dialog.locator('.rx-story').click();
  await expect(dialog).not.toBeVisible();
  await expect(page.locator('article[data-reel]').filter({hasText:'Corinthians 1'})).toBeInViewport({ratio:.5});
- await page.getByRole('button',{name:'Abrir fontes'}).click();
+ await page.locator('article[data-reel]').filter({hasText:'Corinthians 1'}).getByRole('button',{name:/Ler detalhes de/}).click();
  const article=page.getByRole('dialog',{name:'Detalhes e fontes'});
  await expect(article.getByText('POR QUE ISSO IMPORTA')).toBeVisible();
  await expect(article.getByText('O jogo foi ontem. A novidade é a repercussão de hoje.')).toBeVisible();
  await article.screenshot({path:'artifacts/reader-story.png'});
  await article.getByRole('button',{name:'Próxima história'}).click();
  await expect(article).not.toBeVisible();
- await page.getByRole('button',{name:'Salvar matéria'}).click();
+ await page.locator('article[data-reel]').nth(13).getByRole('button',{name:/Ler detalhes de/}).click();
+ await article.getByRole('button',{name:'Salvar matéria'}).click();
+ await article.getByRole('button',{name:'Fechar detalhes'}).click();
  await page.getByRole('button',{name:'Abrir índice de assuntos'}).click();
  await dialog.getByRole('button',{name:/Salvos/}).click();
  await expect(dialog.locator('.rx-story')).toHaveCount(1);
@@ -75,7 +77,7 @@ test('reader discovery, filters, search, read, save and contextual next',async({
  await page.getByRole('button',{name:'Abrir índice de assuntos'}).click();
  await dialog.getByRole('button',{name:'Descobertas'}).click();
  await dialog.locator('.rx-story').first().click();
- await page.getByRole('button',{name:'Abrir fontes'}).click();
+ await page.locator('article[data-reel]').filter({hasText:'Corais são animais'}).getByRole('button',{name:/Ler detalhes de/}).click();
  const quiz=page.locator('.fg-quiz');
  await expect(quiz).toBeVisible();
  await quiz.locator('button').nth(1).click();
