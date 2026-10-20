@@ -26,4 +26,21 @@ test('full Chromium QA of all current Reels',async({page})=>{
   if(kind==='photo'){expect(src).toMatch(/^https:\/\//);photoCount++;}
   else expect(src).toContain('/api/art?id=');
   expect((await img.getAttribute('alt'))?.length).toBeGreaterThan(10);
-  const overflow=await page.evaluate(()=>document.documentEl∂ªßq´^
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth);
+  expect(overflow,'overflow on reel '+(i+1)).toBe(false);
+  const screenshot='artifacts/reel-'+String(i+1).padStart(2,'0')+'.png';
+  await reel.screenshot({path:screenshot,animations:'disabled'});
+  audit.push({reel:i+1,title:await reel.locator('h1').innerText(),screenshot});
+ }
+ expect(photoCount,'Fotos externas devem carregar antes de publica√ß√£o').toBe(Object.keys(photoCatalog).length);
+ expect(errors).toEqual([]);
+ writeFileSync('artifacts/mobile-qa.json',JSON.stringify({edition:'2026-10-20',count:n,audit},null,2));
+ await page.getByRole('button',{name:'Abrir √≠ndice de assuntos'}).click();
+ await expect(page.getByRole('dialog',{name:'√çndice editorial'})).toBeVisible();
+ await page.getByRole('button',{name:'Fechar √≠ndice'}).click();
+ await reels.last().getByRole('button',{name:/Ler detalhes de/}).click();
+ await expect(page.getByRole('dialog',{name:'Detalhes e fontes'})).toBeVisible();
+ await page.getByRole('button',{name:'Fechar detalhes'}).click();
+ await page.getByRole('button',{name:'Abrir √≠ndice de assuntos'}).click();
+ await page.getByRole('button',{name:'Fechar √≠ndice'}).click();
+});

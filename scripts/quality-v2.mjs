@@ -13,4 +13,30 @@ for(const c of e.cards||[]){
  const idx=order.findIndex(x=>x===c.group||(x==='Curiosidades'&&c.group.startsWith('Curiosidades ·')));
  if(idx<prev||idx===-1)fails.push('ordem editorial '+c.id);prev=idx;
  if(/náutica|nautica|mensagem romântica artificial/i.test(JSON.stringify(c)))fails.push('tema proibido '+c.id);
- if(c.news&���q�^
+ if(c.news&&(!c.sources?.length||(c.eventDate!==now&&!(c.type==='ATUALIZAÇÃO'&&c.reportedAt===now))))fails.push('jornalismo sem fonte/data '+c.id);
+ for(const s of c.sources||[])if(!s.url.startsWith('https://'))fails.push('fonte inválida '+c.id);
+}
+if(e.cards?.filter(c=>c.group.startsWith('Curiosidades ·')).length<3)fails.push('faltam curiosidades por tipos');
+if(!e.cards?.some(c=>c.group==='Carros até R$70 mil'))fails.push('faltam carros');
+if(e.cards?.some(c=>c.id==='carros'&&/R\$\s*(?:8\d|9\d|1\d\d)\s*mil/i.test(JSON.stringify(c))))fails.push('preço carro maior que teto');
+for(let n=1;n<=7;n++){
+ const d=new Date(now+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-n);
+ const file='lib/current-reel-patches-'+d.toISOString().slice(0,10)+'.ts';
+ if(!existsSync(file))continue;
+ const old=readFileSync(file,'utf8').toLowerCase();
+ for(const id of ['papo','desafio']){
+ const c=e.cards.find(x=>x.id===id);
+ if(old.includes(c?.conceptId?.toLowerCase())||old.includes(c?.visualConceptId?.toLowerCase())||old.includes(c?.title?.toLowerCase()))fails.push('conceito repetido '+id);
+ }
+}
+if(!existsSync('tests/mobile-v2.spec.ts'))fails.push('sem Chromium QA de todos Reels');
+const media=JSON.parse(readFileSync('data/media-2026-10-20.json','utf8'));
+if(Object.keys(media).length<12)fails.push('menos de 12 fotografias do catálogo diário');
+for(const [id,photo] of Object.entries(media)){
+ if(!e.cards?.some(c=>c.id===id))fails.push('mídia sem reel '+id);
+ if(!photo.url?.startsWith('https://')||!photo.source?.startsWith('https://')||!photo.license||!photo.credit)fails.push('mídia sem URL/crédito/licença '+id);
+ if(/sprite|clean-covers|placeholder|\.gif/i.test(photo.url))fails.push('mídia proibida '+id);
+}
+for(const c of e.cards||[])if(c.layout==='discover'&&!c.quiz)fails.push('curiosidade sem quiz '+c.id);
+if(fails.length){console.error('EDITORIAL QUALITY GATE FAILED:\n'+fails.join('\n'));process.exit(1)}
+console.log('EDITORIAL QUALITY GATE PASSED · '+now+' · '+e.cards.length+' Reels');
