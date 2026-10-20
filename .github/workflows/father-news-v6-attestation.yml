@@ -1,0 +1,20 @@
+name: Father News 6 GitHub Attestation Tests
+on:
+  pull_request:
+    paths:
+      - 'lib/father-v6/github-attestation.mjs'
+      - 'tests/v6-github-attestation.test.mjs'
+      - '.github/workflows/father-news-v6-attestation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  attestation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --test tests/v6-github-attestation.test.mjs
