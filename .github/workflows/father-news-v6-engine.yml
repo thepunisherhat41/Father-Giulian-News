@@ -1,0 +1,28 @@
+name: Father News 6 Atomic Engine - Isolated Tests
+on:
+  pull_request:
+    paths:
+      - 'lib/father-v6/**'
+      - 'tests/v6-engine.test.mjs'
+      - 'scripts/v6-readiness.mjs'
+      - '.github/workflows/father-news-v6-engine.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test atomic engine and fail-closed paths
+        run: node --test tests/v6-engine.test.mjs
+      - name: Legacy media readiness report
+        run: node scripts/v6-readiness.mjs
+      - name: Assert not ready for release
+        run: |
+          node scripts/v6-readiness.mjs | node -e "let s='';process.stdin.on('data',x=>s+=x).on('end',()=>{const x=JSON.parse(s);if(x.status!=='MIGRATION_NOT_READY'||x.releaseActivated!==false)process.exit(1)})"
+
