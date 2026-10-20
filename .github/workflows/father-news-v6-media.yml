@@ -1,0 +1,44 @@
+name: Father News 6 Immutable Media QA
+on:
+  pull_request:
+    paths:
+      - 'scripts/v6-freeze-media.py'
+      - 'data/current-edition.json'
+      - 'data/media-2026-10-20.json'
+      - 'data/v6-media-lock-2026-10-20-r01.json'
+      - '.github/workflows/father-news-v6-media.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --no-audit --no-fund
+      - name: Start isolated renderer
+        run: |
+          npm run dev -- -p 3001 >/tmp/v6-art.log 2>&1 &
+          for i in $(seq 1 90); do
+            curl -fsS 'http://127.0.0.1:3001/api/art?id=papo' >/dev/null && break
+            sleep 1
+          done
+          curl -fsS 'http://127.0.0.1:3001/api/art?id=papo' >/dev/null
+      - name: Freeze all 25 immutable assets
+        run: |
+          MODE=--write-lock
+          test -f data/v6-media-lock-2026-10-20-r01.json && MODE=--verify-lock
+          python3 scripts/v6-freeze-media.py "$MODE" --out /tmp/father-v6-media --app-sha "$GITHUB_SHA"
+          echo MEDIA_LOCK_BEGIN
+          cat data/v6-media-lock-2026-10-20-r01.json
+          echo MEDIA_LOCK_END
+          tar -czf /tmp/father-v6-media.tar.gz -C /tmp/father-v6-media .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-media-staging-only
+          path: /tmp/father-v6-media.tar.gz
+          retention-days: 7
