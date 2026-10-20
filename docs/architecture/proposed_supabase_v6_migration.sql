@@ -118,7 +118,7 @@ RETURNS TABLE (
 )
 LANGUAGE sql STABLE SECURITY DEFINER
 SET search_path = pg_catalog, public
-AS $
+AS $father_current$
   SELECT r.release_id, p.generation, r.manifest_url,
          r.manifest_sha256, r.app_commit_sha, r.card_count
     FROM public.father_news_publication p
@@ -126,7 +126,7 @@ AS $
    WHERE p.channel = 'production' AND r.status = 'VALIDATED'
      AND r.qa_manifest_sha256 = r.manifest_sha256
    LIMIT 1;
-$;
+$father_current$;
 REVOKE ALL ON FUNCTION public.father_news_current() FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION public.father_news_current() TO anon, authenticated, service_role;
 
