@@ -109,6 +109,27 @@ $$;
 REVOKE ALL ON FUNCTION public.father_news_promote(bigint,text,text,text,text) FROM PUBLIC, anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.father_news_promote(bigint,text,text,text,text) TO service_role;
 
+
+-- Public read-only projection. Never grant direct table SELECT to anonymous callers.
+CREATE OR REPLACE FUNCTION public.father_news_current()
+RETURNS TABLE (
+  release_id text, generation bigint, manifest_url text,
+  manifest_sha256 text, app_commit_sha text, card_count integer
+)
+LANGUAGE sql STABLE SECURITY DEFINER
+SET search_path = pg_catalog, public
+AS $
+  SELECT r.release_id, p.generation, r.manifest_url,
+         r.manifest_sha256, r.app_commit_sha, r.card_count
+    FROM public.father_news_publication p
+    JOIN public.father_news_releases r ON r.release_id = p.release_id
+   WHERE p.channel = 'production' AND r.status = 'VALIDATED'
+     AND r.qa_manifest_sha256 = r.manifest_sha256
+   LIMIT 1;
+$;
+REVOKE ALL ON FUNCTION public.father_news_current() FROM PUBLIC;
+GRANT EXECUTE ON FUNCTION public.father_news_current() TO anon, authenticated, service_role;
+
 COMMIT;
 
 -- Follow-up hardening before activation:
