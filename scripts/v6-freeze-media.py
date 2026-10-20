@@ -38,7 +38,7 @@ def inspect(b):
    seg=int.from_bytes(b[pos:pos+2],'big')
    if seg<2 or pos+seg>len(b):break
    if marker in (0xC0,0xC1,0xC2,0xC3,0xC5,0xC6,0xC7,0xC9,0xCA,0xCB,0xCD,0xCE,0xCF):
-    return 'image/jpeg','jpg',int.from_bytes(b[pos+3:pos+5],'big'),int.from_bytes(b[pos+5:pos+7],'big')
+    return 'image/jpeg','jpg',int.from_bytes(b[pos+5:pos+7],'big'),int.from_bytes(b[pos+3:pos+5],'big')
    pos+=seg
   raise ValueError('bad JPEG dimensions')
  if b.startswith(b'\x89PNG\r\n\x1a\n'):
