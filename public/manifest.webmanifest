@@ -1,0 +1,29 @@
+{
+  "name": "Father Giulian News",
+  "short_name": "Father News",
+  "description": "Uma edição por dia, notícias, descobertas e família, em Reels.",
+  "start_url": "/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "background_color": "#061421",
+  "theme_color": "#061421",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "news",
+    "lifestyle",
+    "entertainment"
+  ]
+}
