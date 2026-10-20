@@ -80,7 +80,7 @@ test('reader discovery, filters, search, read, save and contextual next',async({
  await expect(quiz).toBeVisible();
  await quiz.locator('button').nth(1).click();
  await expect(quiz.locator('.is-correct')).toBeVisible();
- await quiz.screenshot({path:'artifacts/reader-quiz.png'});
+ await page.screenshot({path:'artifacts/reader-quiz.png',animations:'disabled'});
  await page.keyboard.press('Escape');
  await expect(article).not.toBeVisible();
 });
