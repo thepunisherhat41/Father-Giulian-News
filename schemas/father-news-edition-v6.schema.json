@@ -86,8 +86,7 @@
       "additionalProperties": false,
       "required": [
         "title",
-        "url",
-        "publishedAt"
+        "url"
       ],
       "properties": {
         "title": {
@@ -105,8 +104,35 @@
         },
         "publisher": {
           "type": "string"
+        },
+        "publishedOn": {
+          "type": "string",
+          "format": "date",
+          "description": "Publisher-confirmed date only, with no invented clock time"
+        },
+        "undatedReason": {
+          "type": "string",
+          "minLength": 12,
+          "description": "Only for background material, never proof of dated news"
         }
-      }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "publishedAt"
+          ]
+        },
+        {
+          "required": [
+            "publishedOn"
+          ]
+        },
+        {
+          "required": [
+            "undatedReason"
+          ]
+        }
+      ]
     },
     "card": {
       "type": "object",
@@ -243,6 +269,17 @@
               "type": "string"
             }
           }
+        },
+        "reportedOn": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },

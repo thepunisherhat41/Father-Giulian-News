@@ -56,3 +56,20 @@ test('malformed omission data fails validation without throwing',()=>{
  const m=fixture();m.omissions='not-array';
  assert.equal(validateEdition(m).ok,false);
 });
+
+test('news provenance accepts publisher date without fabricated time',()=>{
+ const m=fixture(),source=m.cards[7].sources[0];delete source.publishedAt;source.publishedOn=day;
+ assert.equal(validateEdition(m).ok,true,JSON.stringify(validateEdition(m).errors));
+});
+test('news provenance blocks undated source, guide can explain undated background',()=>{
+ const m=fixture(),s={title:'Official undated reference',url:'https://example.org/reference',undatedReason:'The source does not display a publication date'};
+ m.cards[0].sources=[s];
+ assert.equal(validateEdition(m).ok,true,JSON.stringify(validateEdition(m).errors));
+ m.cards[7].sources=[s];assert.equal(validateEdition(m).ok,false);
+});
+test('historic news permits reportedOn date and blocks fake reportedAt precision',()=>{
+ const m=fixture(),c=m.cards[7];c.eventDate='2026-10-20';c.kind='ATUALIZAÇÃO';c.reportedOn=day;
+ assert.equal(validateEdition(m).ok,true,JSON.stringify(validateEdition(m).errors));
+ c.reportedOn=null;c.reportedAt=day;
+ assert.equal(validateEdition(m).ok,false);
+});
