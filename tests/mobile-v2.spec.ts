@@ -8,7 +8,7 @@ test('full Chromium QA of all current Reels',async({page})=>{
  const errors:string[]=[];
  page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded',timeout:30000});
- const shell=page.locator('[data-ui-theme="gamer-boy-v2"]');
+ const shell=page.locator('[data-ui-theme="gamer-boy-v3"]');
  await expect(shell).toBeVisible();
  expect(await shell.getAttribute('data-edition-date')).toBe('2026-10-20');
  const reels=page.locator('article[data-reel]'),n=await reels.count();
