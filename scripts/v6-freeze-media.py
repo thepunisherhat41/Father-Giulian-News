@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Stage 25 content-addressed edition images; no DB/storage/production writes."""
-import argparse, hashlib, json, re, struct, sys, time, urllib.parse, urllib.request, xml.etree.ElementTree as ET
+import argparse, hashlib, json, re, struct, subprocess, sys, time, urllib.parse, urllib.request, xml.etree.ElementTree as ET
 from pathlib import Path
 
 HOSTS = {'thumb.wikimedia.org','upload.wikimedia.org'}
@@ -94,7 +94,7 @@ def main():
    with dest.open('xb') as f:f.write(b)
   entries.append(dict(card_id=cid,origin=origin,sha256=hash_,object_path='objects/'+dest.name,bytes=len(b),mime=mime,width=w,height=h,source_url=photo.get('source') if photo else None,credit=photo.get('credit') if photo else 'Father News editorial vector',license=photo.get('license') if photo else 'Original editorial artwork'))
   print(f'{i+1:02d}/25 {cid}: {mime} {w}x{h} sha256:{hash_[:12]}',flush=True)
- lock=dict(edition_date=ed['editionDate'],edition_sha256=sha(edbytes),cards=entries)
+ lock=dict(edition_date=ed['editionDate'],edition_sha256=sha(edbytes),renderer_git_blob_sha=subprocess.check_output(['git','hash-object','app/api/art/route.ts'],text=True).strip(),photo_catalog_git_blob_sha=subprocess.check_output(['git','hash-object','data/media-2026-10-20.json'],text=True).strip(),cards=entries)
  lockpath=Path(a.lock)
  if a.verify_lock:
   if not lockpath.exists():raise ValueError('missing lockfile')

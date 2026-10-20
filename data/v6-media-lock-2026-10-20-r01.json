@@ -327,5 +327,7 @@
     }
   ],
   "edition_date": "2026-10-20",
-  "edition_sha256": "d3ff564cdd4e1300e3228154e0e91f9f8ce6f5e45e8f64eaed090fb73ee33162"
+  "edition_sha256": "d3ff564cdd4e1300e3228154e0e91f9f8ce6f5e45e8f64eaed090fb73ee33162",
+  "photo_catalog_git_blob_sha": "852fbb0a90a2d8bc9be1aac707f6a2229eabe45c",
+  "renderer_git_blob_sha": "3a3fdb5a2117d0e96163b6cf17a052f3f4a49046"
 }
