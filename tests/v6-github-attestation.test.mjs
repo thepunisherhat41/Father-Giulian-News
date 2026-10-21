@@ -10,11 +10,12 @@ const NAMES={
 };
 function fixtures(){
  const routes={};
+ routes['/pulls/'+PR]={number:PR,state:'open',draft:true,merged:false,head:{sha:SHA,repo:{full_name:'thepunisherhat41/Father-Giulian-News'}},base:{ref:'main',repo:{full_name:'thepunisherhat41/Father-Giulian-News'}}};
  for(const [id,info] of Object.entries(NAMES)){
   const [name,path,jobNames,artifact]=info;
-  routes['/actions/runs/'+id]={id:Number(id),name,path,head_sha:SHA,head_repository:{full_name:'thepunisherhat41/Father-Giulian-News'},event:'pull_request',status:'completed',conclusion:'success',run_attempt:1,pull_requests:[{number:PR,head:{sha:SHA},base:{ref:'main'}}]};
-  routes['/actions/runs/'+id+'/jobs?per_page=100']={total_count:jobNames.length,jobs:jobNames.map((n,i)=>({id:i,name:n,status:'completed',conclusion:'success',head_sha:SHA}))};
-  if(artifact)routes['/actions/runs/'+id+'/artifacts?per_page=100']={total_count:1,artifacts:[{name:artifact,expired:false,size_in_bytes:5000}]};
+  routes['/actions/runs/'+id]={id:Number(id),name,path,head_sha:SHA,head_repository:{full_name:'thepunisherhat41/Father-Giulian-News',id:1331205621},event:'pull_request',status:'completed',conclusion:'success',run_attempt:1,pull_requests:[{number:PR,head:{sha:SHA},base:{ref:'main'}}]};
+  routes['/actions/runs/'+id+'/jobs?per_page=100']={total_count:jobNames.length,jobs:jobNames.map((n,i)=>({id:i,name:n,status:'completed',conclusion:'success',head_sha:SHA,run_attempt:1}))};
+  if(artifact)routes['/actions/runs/'+id+'/artifacts?per_page=100']={total_count:1,artifacts:[{name:artifact,expired:false,size_in_bytes:5000,digest:'sha256:'+'c'.repeat(64),workflow_run:{id:Number(id),head_sha:SHA,repository_id:1331205621}}]};
  }
  return routes;
 }
@@ -61,4 +62,31 @@ test('incomplete job pagination and unavailable API fail closed',async()=>{
 test('invalid caller inputs cannot attest',async()=>{
  await assert.rejects(verifyGitHubQaRuns({appSha:'bad',prNumber:PR,runIds:IDS,fetchImpl:mock(fixtures())}),/invalid app SHA/);
  await assert.rejects(verifyGitHubQaRuns({appSha:SHA,prNumber:PR,runIds:{},fetchImpl:mock(fixtures())}),/missing workflow runs/);
+});
+
+test('a green run cannot attest a stale, merged or non-draft PR head',async()=>{
+ for(const change of [
+  pr=>{pr.head.sha='b'.repeat(40)},
+  pr=>{pr.draft=false},
+  pr=>{pr.merged=true},
+  pr=>{pr.base.ref='other'},
+ ]){
+  const r=fixtures();change(r['/pulls/'+PR]);
+  await assert.rejects(verify(r),/PR no longer open draft/);
+ }
+});
+test('artifacts must be cryptographically identified and tied to exact run and repository',async()=>{
+ for(const change of [
+  a=>{a.workflow_run.id=999},
+  a=>{a.workflow_run.head_sha='b'.repeat(40)},
+  a=>{a.workflow_run.repository_id=99},
+  a=>{a.digest='sha256:wrong'},
+ ]){
+  const r=fixtures();change(r['/actions/runs/103/artifacts?per_page=100'].artifacts[0]);
+  await assert.rejects(verify(r),/required evidence artifact absent or unbound/);
+ }
+});
+test('rerun cannot reuse successful jobs from a previous attempt',async()=>{
+ const r=fixtures();r['/actions/runs/102'].run_attempt=2;
+ await assert.rejects(verify(r),/different run attempt/);
 });
