@@ -33,3 +33,20 @@ test('reportedOn must not conflict with reportedAt, postdate edition or be inval
  assert.ok(validateReportProvenance({reportedOn:'2026-10-21'},{editionDate}).length);
  assert.equal(realDate('2026-02-30'),false);
 });
+
+test('impossible timestamp dates and normalized midnight are rejected, not silently repaired',()=>{
+ for(const value of [
+  '2026-02-30T12:00:00Z',
+  '2026-04-31T12:00:00-03:00',
+  '2026-10-20T24:00:00Z',
+  '2026-10-20T09:61:00Z',
+  '2026-10-20T09:00:60Z',
+  '2026-10-20T09:00:00+25:00'
+ ]){
+  assert.equal(realInstant(value),false,value);
+  assert.ok(validateSourceProvenance({publishedAt:value},opts).length,value);
+  assert.ok(validateReportProvenance({reportedAt:value},{editionDate}).length,value);
+ }
+ assert.equal(realInstant('2024-02-29T09:00:00.123-03:00'),true);
+ assert.equal(realInstant('2026-10-20T09:00:00Z'),true);
+});
