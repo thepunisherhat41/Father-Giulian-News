@@ -6,7 +6,7 @@ const IDS={editorial:101,engine:102,media:103};
 const NAMES={
  101:['Father News V2 Quality Gate','.github/workflows/father-news-quality-gate.yml',['editorial-build-browser'],'father-news-v2-mobile-evidence'],
  102:['Father News 6 Atomic Engine - Isolated Tests','.github/workflows/father-news-v6-engine.yml',['integrity','postgres-isolation'],null],
- 103:['Father News 6 Immutable Media QA','.github/workflows/father-news-v6-media.yml',['media'],'father-v6-media-staging-only']
+ 103:['Father News 6 Immutable Media QA','.github/workflows/father-news-v6-media.yml',['media'],'father-v6-raster-ready-staging-only']
 };
 function fixtures(){
  const routes={};
@@ -39,6 +39,10 @@ test('green run with failed required job is denied',async()=>{
 test('wrong PR or base branch cannot attest',async()=>{
  const r=fixtures();r['/actions/runs/101'].pull_requests[0].number=254;
  await assert.rejects(verify(r),/PR binding mismatch/);
+});
+test('legacy source-only media artifact cannot substitute raster-ready evidence',async()=>{
+ const r=fixtures();r['/actions/runs/103/artifacts?per_page=100'].artifacts[0].name='father-v6-media-staging-only';
+ await assert.rejects(verify(r),/required evidence artifact absent/);
 });
 test('missing or expired media artifact cannot attest',async()=>{
  const r=fixtures();r['/actions/runs/103/artifacts?per_page=100'].artifacts[0].expired=true;
