@@ -10,7 +10,7 @@ const NAMES={
  103:['Father News 6 Immutable Media QA','.github/workflows/father-news-v6-media.yml',['media'],'father-v6-raster-ready-staging-only']
 };
 function fixtures(){
- const routes={'/pulls/'+PR:{number:PR,state:'open',head:{sha:SHA,repo:{full_name:REPO}},base:{ref:'main',repo:{full_name:REPO}}}};
+ const routes={['/pulls/'+PR]:{number:PR,state:'open',head:{sha:SHA,repo:{full_name:REPO}},base:{ref:'main',repo:{full_name:REPO}}}};
  for(const [id,info] of Object.entries(NAMES)){
   const [name,path,jobNames,artifact]=info;
   routes['/actions/runs/'+id]={id:Number(id),name,path,head_sha:SHA,head_repository:{full_name:'thepunisherhat41/Father-Giulian-News'},event:'pull_request',status:'completed',conclusion:'success',run_attempt:1,repository:{id:123},pull_requests:[{number:PR,head:{sha:SHA},base:{ref:'main'}}]};
