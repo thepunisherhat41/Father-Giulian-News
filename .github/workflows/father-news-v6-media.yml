@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'scripts/v6-freeze-media.py'
+      - 'scripts/v6-rasterize-locked-media.py'
+      - 'scripts/v6-verify-raster-media.py'
+      - 'tests/v6-raster-negative.test.py'
       - 'data/current-edition.json'
       - 'data/media-2026-10-20.json'
       - 'data/v6-media-lock-2026-10-20-r01.json'
@@ -22,6 +25,11 @@ jobs:
         with:
           node-version: '24'
       - run: npm install --no-audit --no-fund
+      - name: Install isolated SVG rasterizer
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq librsvg2-bin
+          rsvg-convert --version
       - name: Start isolated renderer
         run: |
           npm run dev -- -p 3001 >/tmp/v6-art.log 2>&1 &
@@ -38,9 +46,22 @@ jobs:
           echo MEDIA_LOCK_BEGIN
           cat data/v6-media-lock-2026-10-20-r01.json
           echo MEDIA_LOCK_END
+          python3 scripts/v6-verify-staged-media.py /tmp/father-v6-media "${{ github.event.pull_request.head.sha || github.sha }}"
           tar -czf /tmp/father-v6-media.tar.gz -C /tmp/father-v6-media .
       - uses: actions/upload-artifact@v4
         with:
           name: father-v6-media-staging-only
           path: /tmp/father-v6-media.tar.gz
+          retention-days: 7
+
+      - name: Materialize 25 content-addressed PNG/JPEG candidates
+        run: |
+          python3 scripts/v6-rasterize-locked-media.py --source /tmp/father-v6-media --output /tmp/father-v6-ready --app-sha "${{ github.event.pull_request.head.sha || github.sha }}"
+          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-ready --app-sha "${{ github.event.pull_request.head.sha || github.sha }}"
+          python3 tests/v6-raster-negative.test.py /tmp/father-v6-ready
+          tar -czf /tmp/father-v6-ready.tar.gz -C /tmp/father-v6-ready .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-raster-ready-staging-only
+          path: /tmp/father-v6-ready.tar.gz
           retention-days: 7
