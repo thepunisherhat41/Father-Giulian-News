@@ -13,3 +13,8 @@ The offline script v6-rasterize-locked-media.py converts 13 pinned 720x1280 SVG 
 The independent offline verifier checks all 25 exact image bytes, source lock fingerprint, card order, app SHA, MIME signatures and header dimensions, artwork 9:16, attribution, distinct media and immutable release-scoped paths. Eight tests exercise invalid/missing media, byte tampering, wrong app SHA, wrong release and duplicate card. GitHub Actions publishes a temporary 7-day staging archive for inspection, not a release.
 
 **Unresolved:** Commit a durable media lock only after matching the exact renderer output bytes actually uploaded to a dedicated production bucket. Different librsvg versions can produce different PNG hashes; do not silently reuse earlier digests. The complete app 390x844 candidate-preview Chromium QA, remote storage access and final release attestation remain mandatory.
+
+
+## GitHub Actions rate-limit mitigation (temporary)
+
+Frozen source files are obtained from known-successful GitHub Actions run 39527443320 (artifact father-v6-media-staging-only), not fetched repeatedly from Wikimedia. SHA-256 verification against the original checked-in media lock is mandatory **before** the offline rasterization. The archived sources are trusted only as exact bytes, not as executable input. The workflow rebinds the manifest app SHA to the actual checked-out PR commit without modifying media bytes. This is an **expiring** GitHub Actions archive, NOT durable public object storage and NOT a 6.0 production solution. Missing/expired archive must fail closed.

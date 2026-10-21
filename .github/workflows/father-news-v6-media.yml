@@ -5,6 +5,7 @@ on:
       - 'scripts/v6-freeze-media.py'
       - 'scripts/v6-rasterize-locked-media.py'
       - 'scripts/v6-verify-raster-media.py'
+      - 'scripts/v6-verify-staged-media.py'
       - 'tests/v6-raster-negative.test.py'
       - 'data/current-edition.json'
       - 'data/media-2026-10-20.json'
@@ -13,51 +14,49 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 jobs:
   media:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - run: npm install --no-audit --no-fund
       - name: Install isolated SVG rasterizer
         run: |
           sudo apt-get update -qq
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq librsvg2-bin
           rsvg-convert --version
-      - name: Start isolated renderer
-        run: |
-          npm run dev -- -p 3001 >/tmp/v6-art.log 2>&1 &
-          for i in $(seq 1 90); do
-            curl -fsS 'http://127.0.0.1:3001/api/art?id=papo' >/dev/null && break
-            sleep 1
-          done
-          curl -fsS 'http://127.0.0.1:3001/api/art?id=papo' >/dev/null
-      - name: Freeze all 25 immutable assets
-        run: |
-          MODE=--write-lock
-          test -f data/v6-media-lock-2026-10-20-r01.json && MODE=--verify-lock
-          python3 scripts/v6-freeze-media.py "$MODE" --out /tmp/father-v6-media --app-sha "${{ github.event.pull_request.head.sha || github.sha }}"
-          echo MEDIA_LOCK_BEGIN
-          cat data/v6-media-lock-2026-10-20-r01.json
-          echo MEDIA_LOCK_END
-          python3 scripts/v6-verify-staged-media.py /tmp/father-v6-media "${{ github.event.pull_request.head.sha || github.sha }}"
-          tar -czf /tmp/father-v6-media.tar.gz -C /tmp/father-v6-media .
-      - uses: actions/upload-artifact@v4
+      - name: Download prior exact-byte verified media source archive (temporary)
+        uses: actions/download-artifact@v4
         with:
           name: father-v6-media-staging-only
-          path: /tmp/father-v6-media.tar.gz
-          retention-days: 7
-
-      - name: Materialize 25 content-addressed PNG/JPEG candidates
+          run-id: 39527443320
+          github-token: ${{ github.token }}
+          path: /tmp/v6-pinned-source
+      - name: Hydrate candidate source without third-party network
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
-          python3 scripts/v6-rasterize-locked-media.py --source /tmp/father-v6-media --output /tmp/father-v6-ready --app-sha "${{ github.event.pull_request.head.sha || github.sha }}"
-          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-ready --app-sha "${{ github.event.pull_request.head.sha || github.sha }}"
+          set -euo pipefail
+          mkdir -p /tmp/father-v6-media
+          tar -xzf /tmp/v6-pinned-source/father-v6-media.tar.gz -C /tmp/father-v6-media --no-same-owner
+          python3 - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path('/tmp/father-v6-media/media-manifest.json')
+          d=json.loads(p.read_bytes())
+          d['app_sha']=os.environ['APP_SHA']
+          p.write_text(json.dumps(d,sort_keys=True,ensure_ascii=False,indent=2)+'\n')
+          PY
+          python3 scripts/v6-verify-staged-media.py /tmp/father-v6-media "$APP_SHA"
+      - name: Rasterize all 13 arts and independently verify 25 objects
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          python3 scripts/v6-rasterize-locked-media.py --source /tmp/father-v6-media --output /tmp/father-v6-ready --app-sha "$APP_SHA"
+          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-ready --app-sha "$APP_SHA"
           python3 tests/v6-raster-negative.test.py /tmp/father-v6-ready
           tar -czf /tmp/father-v6-ready.tar.gz -C /tmp/father-v6-ready .
       - uses: actions/upload-artifact@v4
@@ -65,3 +64,4 @@ jobs:
           name: father-v6-raster-ready-staging-only
           path: /tmp/father-v6-ready.tar.gz
           retention-days: 7
+
