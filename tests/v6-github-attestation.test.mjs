@@ -90,3 +90,43 @@ test('rerun cannot reuse successful jobs from a previous attempt',async()=>{
  const r=fixtures();r['/actions/runs/102'].run_attempt=2;
  await assert.rejects(verify(r),/different run attempt/);
 });
+
+function changingMock(routes,changedOnSecondRead){
+ const calls={};
+ return async url=>{
+  const parsed=new URL(url);
+  const key=parsed.pathname.replace('/repos/thepunisherhat41/Father-Giulian-News','')+parsed.search;
+  calls[key]=(calls[key]||0)+1;
+  const response=calls[key]>1&&Object.hasOwn(changedOnSecondRead,key)?changedOnSecondRead[key]:routes[key];
+  return {ok:response!==undefined,json:async()=>response};
+ };
+}
+test('attestation rejects a PR head that changes after all jobs appeared green',async()=>{
+ const routes=fixtures();
+ const moved=structuredClone(routes['/pulls/'+PR]);
+ moved.head.sha='b'.repeat(40);
+ await assert.rejects(verifyGitHubQaRuns({
+  appSha:SHA,prNumber:PR,runIds:IDS,
+  fetchImpl:changingMock(routes,{['/pulls/'+PR]:moved})
+ }),/PR head changed during attestation/);
+});
+test('attestation rejects a rerun started after the initial successful workflow read',async()=>{
+ const routes=fixtures();
+ const restarted=structuredClone(routes['/actions/runs/102']);
+ restarted.run_attempt=2;
+ restarted.status='in_progress';
+ restarted.conclusion=null;
+ await assert.rejects(verifyGitHubQaRuns({
+  appSha:SHA,prNumber:PR,runIds:IDS,
+  fetchImpl:changingMock(routes,{'/actions/runs/102':restarted})
+ }),/engine workflow changed during attestation/);
+});
+test('attestation rejects a completed rerun with a different attempt number',async()=>{
+ const routes=fixtures();
+ const rerun=structuredClone(routes['/actions/runs/103']);
+ rerun.run_attempt=2;
+ await assert.rejects(verifyGitHubQaRuns({
+  appSha:SHA,prNumber:PR,runIds:IDS,
+  fetchImpl:changingMock(routes,{'/actions/runs/103':rerun})
+ }),/media workflow changed during attestation/);
+});
