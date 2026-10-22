@@ -1,0 +1,52 @@
+name: Father News 6 Reader Bridge - Isolated Browser QA
+on:
+  pull_request:
+    paths:
+      - 'components/EditionShell.tsx'
+      - 'components/NewsReels.tsx'
+      - 'components/father-v6-shell.css'
+      - 'lib/father-v6/reader-adapter.ts'
+      - 'app/page.tsx'
+      - 'tests/v6-reader-adapter.test.mjs'
+      - 'tests/v6-reader-shell.spec.ts'
+      - 'tsconfig.json'
+      - '.github/workflows/father-news-v6-reader-bridge.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  isolated-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm install --no-audit --no-fund
+      - run: node --test tests/v6-reader-adapter.test.mjs
+      - name: Build v6 app shell only (not an editorial release gate)
+        run: npx next build
+      - name: Install Chromium
+        run: |
+          npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start server with v6 on, without real publication pointer
+        run: |
+          mkdir -p artifacts
+          FATHER_V6_ENABLED=true npm run start > /tmp/father-v6-bridge.log 2>&1 &
+          for i in $(seq 1 40); do curl -sf http://127.0.0.1:3000/ > /dev/null && break || sleep 1; done
+          curl -fsS http://127.0.0.1:3000/ > /dev/null
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/api/edition/current)" = "503"
+      - name: Chromium synthetic 25/25 reels and fail-safe fallback
+        run: npx playwright test tests/v6-reader-shell.spec.ts --reporter=line
+      - name: Preserve synthetic-only screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-reader-bridge-synthetic-qa
+          path: |
+            artifacts/
+            test-results/
+          retention-days: 7
+

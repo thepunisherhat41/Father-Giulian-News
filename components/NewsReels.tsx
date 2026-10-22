@@ -11,6 +11,7 @@ type Source={label:string,url:string,publishedAt?:string};
 type Quiz={question:string,options:string[],answer:number,explanation:string};
 type Card={id:string,group:string,type:string,title:string,summary:string,details:string[],visual:string,eventDate:string,news:boolean,sources:Source[],quiz?:Quiz,layout?:string,questXp?:number,reportedAt?:string};
 type Edition={editionDate:string,timezone:string,updatedAt:string,cards:Card[]};
+type Media={url:string;source?:string;credit?:string;title?:string;alt?:string;kind?:'image'|'art'|'video'};
 function br(d:string){return d.split('-').reverse().join('/')}
 function today(){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));return [p.year,p.month,p.day].join('-')}
 type NativeIcon='home'|'compass'|'bookmark'|'next'|'share';
@@ -24,13 +25,13 @@ function MobileIcon({name}:{name:NativeIcon}){
  };
  return <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>;
 }
-export default function NewsReels({edition}:{edition:Edition}){
+export default function NewsReels({edition,mediaOverride,contextOverride,editionEngine='legacy'}:{edition:Edition;mediaOverride?:Record<string,Media>;contextOverride?:Record<string,string>;editionEngine?:'legacy'|'v6'}){
  const [current,setCurrent]=useState(0),[indexOpen,setIndexOpen]=useState(false),[more,setMore]=useState(false),[favorites,setFavorites]=useState<string[]>([]),[localToday,setLocalToday]=useState(edition.editionDate);
  const [seen,setSeen]=useState<string[]>([]),[resume,setResume]=useState(0);
  const [exploreTab,setExploreTab]=useState<'Todos'|'Salvos'>('Todos');
  const [failedPhotos,setFailedPhotos]=useState<string[]>([]),[answers,setAnswers]=useState<Record<string,number>>({}),[completed,setCompleted]=useState<string[]>([]);
- const photos=mediaCatalog as Record<string,{url:string;source?:string;credit?:string;title?:string}>;
- const insight=insights as Record<string,string>;
+ const photos=mediaOverride||(mediaCatalog as Record<string,Media>);
+ const insight=contextOverride||(insights as Record<string,string>);
  const rail=useRef<HTMLDivElement>(null);
  const cards=edition.cards,card=cards[current];
  useEffect(()=>{if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}setLocalToday(today());try{const saved=JSON.parse(localStorage.getItem('father-saved-v2')||'[]');if(Array.isArray(saved))setFavorites(saved);const done=JSON.parse(localStorage.getItem('father-quests-v3')||'[]');if(Array.isArray(done))setCompleted(done);const already=JSON.parse(localStorage.getItem('father-seen-'+edition.editionDate)||'[]');if(Array.isArray(already))setSeen(already);const last=Number(localStorage.getItem('father-resume-'+edition.editionDate)||0);if(Number.isFinite(last))setResume(Math.min(Math.max(0,last),edition.cards.length-1))}catch{}},[]);
@@ -44,7 +45,7 @@ export default function NewsReels({edition}:{edition:Edition}){
  useEffect(()=>{const close=(e:KeyboardEvent)=>{if(e.key==='Escape'){setIndexOpen(false);setMore(false)}};window.addEventListener('keydown',close);return()=>window.removeEventListener('keydown',close)},[]);
  const stale=localToday!==edition.editionDate;
  function showExplore(tab:'Todos'|'Salvos'='Todos'){setExploreTab(tab);setIndexOpen(true)}
- return <div className="fg-stage" data-ui-theme="father-native-v5" data-edition-date={edition.editionDate} data-edition-cards={cards.length}>
+ return <div className="fg-stage" data-ui-theme="father-native-v5" data-edition-engine={editionEngine} data-edition-date={edition.editionDate} data-edition-cards={cards.length}>
   <div className="fg-device">
     <header className="fg-header">
       <button className="mn-brand-control" aria-label="Voltar ao início da edição" onClick={()=>jump(0)}>
@@ -57,10 +58,10 @@ export default function NewsReels({edition}:{edition:Edition}){
    <div className="fg-progress" aria-hidden="true">{cards.map((c,i)=><i className={i===current?'is-active':''} key={c.id}/>)}</div>
    {stale&&<div className="fg-stale" role="status">EDIÇÃO ANTERIOR: {br(edition.editionDate)}. Notícias ainda não renovadas hoje.</div>}
    <main className="fg-reels" ref={rail} data-testid="reel-container">
-    {cards.map((c,i)=><article className={"fg-reel fg-layout-"+(c.layout||"guide")} key={c.id} id={c.id} data-reel="true" data-index={i} data-category={c.group} data-mission={c.id} data-template={c.layout||'guide'} data-media-kind={photos[c.id]&&!failedPhotos.includes(c.id)?'photo':'illustration'}>
-      <div className="fg-visual"><img src={photos[c.id]&&!failedPhotos.includes(c.id)?photos[c.id].url:'/api/art?id='+encodeURIComponent(c.id)} alt={photos[c.id]&&!failedPhotos.includes(c.id)?'Foto contextual: '+photos[c.id].title:'Arte editorial '+c.group+': '+c.title} loading={i<2?'eager':'lazy'} decoding="async" referrerPolicy="no-referrer" onError={()=>setFailedPhotos(prev=>prev.includes(c.id)?prev:[...prev,c.id])}/></div><div className="fg-fade"/>
+    {cards.map((c,i)=><article className={"fg-reel fg-layout-"+(c.layout||"guide")} key={c.id} id={c.id} data-reel="true" data-index={i} data-category={c.group} data-mission={c.id} data-template={c.layout||'guide'} data-media-kind={editionEngine==='v6'&&failedPhotos.includes(c.id)?'broken':photos[c.id]&&!failedPhotos.includes(c.id)?(photos[c.id].kind==='art'?'illustration':'photo'):'illustration'}>
+      <div className="fg-visual"><img src={editionEngine==='v6'?photos[c.id].url:photos[c.id]&&!failedPhotos.includes(c.id)?photos[c.id].url:'/api/art?id='+encodeURIComponent(c.id)} alt={photos[c.id]&&!failedPhotos.includes(c.id)?(photos[c.id].alt||'Foto contextual: '+photos[c.id].title):'Arte editorial '+c.group+': '+c.title} loading={i<2?'eager':'lazy'} decoding="async" referrerPolicy="no-referrer" onError={()=>setFailedPhotos(prev=>prev.includes(c.id)?prev:[...prev,c.id])}/></div><div className="fg-fade"/>
       <span className="fg-coordinate">{c.layout==='quest'?'MISSÃO DO DIA':c.layout==='discover'?'VOCÊ SABIA?':c.layout==='spotlight'?'RADAR DE HOJE':'GUIA PRÁTICO'} · F//N {String(i+1).padStart(2,'0')}</span>
-      {photos[c.id]&&!failedPhotos.includes(c.id)&&<span className="fg-phototag">◉ FOTO DE ARQUIVO</span>}
+      {photos[c.id]&&!failedPhotos.includes(c.id)&&photos[c.id].kind!=='art'&&<span className="fg-phototag">◉ FOTO DE ARQUIVO</span>}
       {c.layout==='quest'&&<div className="fg-floating-tag">{completed.includes(c.id)?'✓ MISSÃO FEITA':'+'+(c.questXp||20)+' XP'}</div>}
       {c.layout==='discover'&&<div className="fg-floating-tag fg-tag-discover">? · QUIZ DISPONÍVEL</div>}
       {c.layout==='spotlight'&&<div className="fg-floating-tag fg-tag-news">{c.type} · {c.eventDate===edition.editionDate?'FATO / AGENDA DE HOJE':'FATO DE '+br(c.eventDate)}</div>}
