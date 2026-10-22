@@ -78,7 +78,7 @@ export async function GET(){
   const edition=JSON.parse(bytes.toString('utf8'));
   const checked=validateEdition(edition);
   if(!checked.ok||edition.editionId!==row.release_id||checked.cardCount!==row.card_count)return unavailable();
-  verifyEditionMediaBinding(edition,{releaseId:row.release_id,mediaOrigin:allowed.origin,cardCount:25});
+  verifyEditionMediaBinding(edition,{releaseId:row.release_id,mediaOrigin:origin,cardCount:25});
   return Response.json({releaseId:row.release_id,generation:row.generation,manifestSha256:row.manifest_sha256,edition},{status:200,headers});
  }catch{return unavailable();}
 }
