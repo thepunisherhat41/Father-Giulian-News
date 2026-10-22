@@ -131,3 +131,23 @@ test('manifest URL with only a digest prefix cannot impersonate an immutable obj
  assert.equal(result.status,503);
  assert.equal(requests,1);
 });
+
+test('Supabase dedicated public bucket supports exact release and object hash paths',async()=>{
+ const scoped='https://'+ref+'.supabase.co/storage/v1/object/public/father-news-v6-media';
+ const edition=completeEdition();
+ for(const entry of Object.values(edition.mediaCatalog))
+  entry.url=scoped+new URL(entry.url).pathname;
+ const bytes=Buffer.from(JSON.stringify(edition)),sha=digest(bytes);
+ const row={...release,manifest_sha256:sha,manifest_url:scoped+'/editions/2026-10-20-r01/'+sha+'/edition.json'};
+ const vars={...env,FATHER_V6_MEDIA_ORIGIN:scoped};
+ let count=0;
+ const result=await run(vars,async()=>++count===1?Response.json([row]):new Response(bytes));
+ assert.equal(result.status,200);assert.equal(count,2);
+});
+test('Supabase bucket manifest outside its isolated storage prefix is refused',async()=>{
+ const scoped='https://'+ref+'.supabase.co/storage/v1/object/public/father-news-v6-media';
+ const vars={...env,FATHER_V6_MEDIA_ORIGIN:scoped};
+ let count=0;
+ const result=await run(vars,async()=>{count++;return Response.json([{...release,manifest_url:'https://'+ref+'.supabase.co/editions/2026-10-20-r01/'+hash+'/edition.json'}]);});
+ assert.equal(result.status,503);assert.equal(count,1);
+});

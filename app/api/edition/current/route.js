@@ -49,7 +49,8 @@ export async function GET(){
  let allowed;
  try{
   allowed=new URL(origin);
-  if(allowed.protocol!=='https:'||allowed.username||allowed.password||allowed.port||allowed.pathname!=='/'||allowed.search||allowed.hash)return unavailable();
+  const validBucketPath=allowed.pathname==='/' || (allowed.hostname===ref+'.supabase.co'&&allowed.pathname==='/storage/v1/object/public/father-news-v6-media');
+  if(allowed.protocol!=='https:'||allowed.username||allowed.password||allowed.port||!validBucketPath||allowed.search||allowed.hash)return unavailable();
  }catch{return unavailable();}
  try{
   const rpc=await fetch(base+'/rest/v1/rpc/father_news_current',{
@@ -64,7 +65,8 @@ export async function GET(){
      !SHA.test(row.manifest_sha256)||row.app_commit_sha!==appSha||
      !Number.isInteger(row.card_count)||row.card_count!==25)return unavailable();
   const mediaUrl=new URL(row.manifest_url);
-  const prefix='/editions/'+row.release_id+'/';
+  const scopedRoot=allowed.pathname==='/'?'':allowed.pathname;
+  const prefix=scopedRoot+'/editions/'+row.release_id+'/';
   const canonical=mediaUrl.pathname===prefix+'manifests/'+row.manifest_sha256+'.json'||
    mediaUrl.pathname===prefix+row.manifest_sha256+'/edition.json';
   if(mediaUrl.origin!==allowed.origin||!canonical||mediaUrl.username||mediaUrl.password||
