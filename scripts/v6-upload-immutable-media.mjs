@@ -17,7 +17,10 @@ const fail=message=>{throw new Error(message)};
 
 if(process.env.GITHUB_ACTIONS!=='true' ||
    process.env.GITHUB_REPOSITORY!=='thepunisherhat41/Father-Giulian-News' ||
-   process.env.GITHUB_EVENT_NAME!=='workflow_dispatch')fail('Protected manual GitHub Actions context required');
+   !(process.env.GITHUB_EVENT_NAME==='workflow_dispatch' ||
+   (process.env.GITHUB_EVENT_NAME==='pull_request' &&
+    process.env.GITHUB_HEAD_REF==='architecture/father-news-6-atomic-editions' &&
+    process.env.FATHER_V6_APPROVED_UPLOAD==='1')))fail('Protected manually approved GitHub Actions context required');
 const appSha=process.env.FATHER_V6_APP_SHA;
 const releaseId=process.env.FATHER_V6_RELEASE_ID;
 if(!APP_SHA.test(appSha||'')||!RELEASE.test(releaseId||''))fail('Explicit immutable app SHA and release ID required');
