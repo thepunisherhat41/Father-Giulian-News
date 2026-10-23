@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'scripts/v6-freeze-media.py'
+      - 'scripts/v6-upload-immutable-media.mjs'
       - 'scripts/v6-rasterize-locked-media.py'
       - 'scripts/v6-verify-raster-media.py'
       - 'scripts/v6-verify-staged-media.py'
@@ -23,6 +24,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Syntax-check protected uploader (no upload in PR CI)
+        run: |
+          node --check scripts/v6-upload-immutable-media.mjs
+          if node scripts/v6-upload-immutable-media.mjs /tmp/unused; then
+            echo "FAIL: uploader ran outside authorized manual context"
+            exit 1
+          fi
       - name: Install isolated SVG rasterizer
         run: |
           sudo apt-get update -qq
