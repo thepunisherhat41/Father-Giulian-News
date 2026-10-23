@@ -5,6 +5,7 @@
 import {readFile, realpath} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {resolve, sep} from 'node:path';
+import {validateEdition} from '../lib/father-v6/engine.mjs';
 
 const PROJECT='sqlywvoqktdebubjmskn';
 const ORIGIN='https://'+PROJECT+'.supabase.co';
@@ -56,6 +57,22 @@ for(const item of manifest.cards){
  if(ext==='jpg'&&!(bytes[0]===255&&bytes[1]===216))fail('Invalid JPEG signature');
  objects.push({keyPath, bytes, digest:item.sha256, mime:item.mime});
 }
+if(!SHA.test(manifest.manifest_sha256||'') ||
+   manifest.manifest_path!=='manifest-'+manifest.manifest_sha256+'.json' ||
+   !SHA.test(manifest.photo_catalog_sha256||''))fail('Missing trusted edition manifest and source photograph digest');
+const bytes=await readFile(resolve(root,manifest.manifest_path));
+if(sha256(bytes)!==manifest.manifest_sha256 || bytes.length>2_000_000)fail('V6 manifest hash or size mismatch');
+const edition=JSON.parse(bytes.toString('utf8'));
+const validation=validateEdition(edition);
+if(!validation.ok || validation.cardCount!==25 || validation.mediaCount!==25 ||
+   edition.editionId!==releaseId || edition.editionDate!==releaseId.slice(0,10))fail('Invalid editorial v6 manifest shape');
+for(const item of manifest.cards){
+ const media=edition.mediaCatalog['media-'+item.card_id];
+ if(!media || media.sha256!==item.sha256 ||
+    media.url!==ORIGIN+'/storage/v1/object/public/'+BUCKET+'/'+item.storage_path)fail('Manifest/media identity mismatch');
+}
+objects.push({keyPath:'editions/'+releaseId+'/'+manifest.manifest_path,
+ bytes,digest:manifest.manifest_sha256,mime:'application/json'});
 const login=await fetch(ORIGIN+'/auth/v1/token?grant_type=password',{
  method:'POST',redirect:'error',
  headers:{apikey:key,'content-type':'application/json'},
@@ -86,4 +103,4 @@ for(const object of objects){
  if(upload.ok)created++;
  await verifyPublic(object,false);
 }
-console.log(JSON.stringify({status:'IMMUTABLE_MEDIA_REMOTE_VERIFIED',releaseId,appSha,verified:objects.length,created,alreadyThere}));
+console.log(JSON.stringify({status:'IMMUTABLE_MEDIA_AND_MANIFEST_REMOTE_VERIFIED',releaseId,appSha,media:25,manifestSha256:manifest.manifest_sha256,verifiedObjects:objects.length,created,alreadyThere}));
