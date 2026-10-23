@@ -82,6 +82,9 @@ def original_svg(card):
  id=card["id"]
  if id not in PALETTES or id not in MOTIFS:fail("no bespoke art motif for "+id)
  start,end=PALETTES[id]
+ date=card["eventDate"]
+ if not re.fullmatch(r"\d{4}-\d{2}-\d{2}",date):fail("invalid original art date")
+ date_display=date[8:10]+"."+date[5:7]+"."+date[:4]
  title=card["title"]
  lines=textwrap.wrap(title,width=25,break_long_words=False)
  if len(lines)>4:fail("illustrated title too long: "+id)
@@ -95,7 +98,7 @@ def original_svg(card):
  <circle cx="664" cy="690" r="246" fill="#fff" fill-opacity=".08"/>
  <path d="M-10 734Q230 612 730 748V1280H-10Z" fill="#071527" fill-opacity=".54"/>
  <g stroke-linecap="round" stroke-linejoin="round">{MOTIFS[id]}</g>
- <text x="64" y="115" font-family="DejaVu Sans" font-size="23" fill="#fff" opacity=".92" letter-spacing="2">FATHER NEWS / 22.10.2026</text>
+ <text x="64" y="115" font-family="DejaVu Sans" font-size="23" fill="#fff" opacity=".92" letter-spacing="2">FATHER NEWS / {date_display}</text>
  <text x="64" y="850" font-family="DejaVu Sans" font-size="26" fill="#f7ead3">{label}</text>
  <g font-family="DejaVu Sans">{texts}</g>
  <text x="64" y="1204" font-family="DejaVu Sans" font-size="22" fill="#e8edef">Original editorial artwork · Father News</text>
