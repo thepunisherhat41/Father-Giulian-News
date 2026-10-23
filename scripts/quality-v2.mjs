@@ -30,7 +30,9 @@ for(let n=1;n<=7;n++){
  }
 }
 if(!existsSync('tests/mobile-v2.spec.ts'))fails.push('sem Chromium QA de todos Reels');
-const media=JSON.parse(readFileSync('data/media-2026-10-20.json','utf8'));
+const mediaFile='data/media-'+e.editionDate+'.json';
+if(!existsSync(mediaFile))fails.push('catálogo de mídia da edição ausente: '+mediaFile);
+const media=existsSync(mediaFile)?JSON.parse(readFileSync(mediaFile,'utf8')):{};
 if(Object.keys(media).length<12)fails.push('menos de 12 fotografias do catálogo diário');
 for(const [id,photo] of Object.entries(media)){
  if(!e.cards?.some(c=>c.id===id))fails.push('mídia sem reel '+id);
