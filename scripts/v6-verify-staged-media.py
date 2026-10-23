@@ -5,7 +5,8 @@ from pathlib import Path
 root=Path(sys.argv[1]).resolve()
 lock=json.loads(Path('data/v6-media-lock-2026-10-20-r01.json').read_bytes())
 manifest=json.loads((root/'media-manifest.json').read_bytes())
-assert hashlib.sha256(Path('data/current-edition.json').read_bytes()).hexdigest()==lock['edition_sha256']
+edition_file=Path(sys.argv[3]) if len(sys.argv)>3 else Path('data/current-edition.json')
+assert hashlib.sha256(edition_file.read_bytes()).hexdigest()==lock['edition_sha256'], 'pinned edition digest mismatch'
 for file,key in [('app/api/art/route.ts','renderer_git_blob_sha'),('data/media-2026-10-20.json','photo_catalog_git_blob_sha')]:
  assert subprocess.check_output(['git','hash-object',file],text=True).strip()==lock[key],file+' changed since media snapshot'
 if len(sys.argv)>2:assert manifest['app_sha']==sys.argv[2], 'app SHA mismatch'
