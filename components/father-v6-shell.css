@@ -1,0 +1,9 @@
+/* Father News 6 — explicit startup and fallback */
+.fn-v6-initial{background:#061421;color:#ebfff4;position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;text-align:center;padding:24px;font:700 17px system-ui}
+.fn-v6-initial .fn-v6-logo{display:grid;place-items:center;width:75px;height:75px;border-radius:22px;background:#b4ffe2;color:#062d30;font-size:30px;letter-spacing:-.075em;font-weight:1000}
+.fn-v6-initial span{font-size:13px;font-weight:500;color:#a5c2bf}
+.fn-v6-fallback{position:fixed;top:calc(111px + env(safe-area-inset-top,0px));left:14px;right:14px;z-index:30;pointer-events:none;border:1px solid #d1a665;background:#3f2d1ef5;color:#fff4d7;padding:8px 12px;border-radius:9px;font:700 12px system-ui;text-align:center}
+@media(min-width:950px){.fn-v6-fallback{width:400px;left:50%;right:auto;transform:translateX(-50%)}
+
+
+}

@@ -1,0 +1,616 @@
+{
+  "editionDate": "2026-10-20",
+  "timezone": "America/Sao_Paulo",
+  "updatedAt": "2026-10-20T06:57:00-03:00",
+  "version": 3,
+  "editorialNote": "Edição de 20/10/2026. Notícias têm a data do evento, data da reportagem e classificação separadas. Agenda não é fato consumado. Zona Leste omitida sem notícia local inédita e confirmada de 20/10. Fotografias: Commons, com crédito e licença por obra.",
+  "cards": [
+    {
+      "id": "papo",
+      "group": "Papo de hoje",
+      "type": "ATIVIDADE",
+      "title": "Papo de hoje: qual cheiro merece virar lembrança do Felipe?",
+      "summary": "Escolham um cheiro da infância e contem a história inesperada que ele desperta. Vale café coado, terra molhada ou almoço de domingo.",
+      "details": [
+        "Cada um escolhe um cheiro sem revelar qual é.",
+        "O outro tenta adivinhar que memória está por trás dele.",
+        "No fim, guardem a história em uma frase para o diário do Felipe."
+      ],
+      "visual": "memory-jar",
+      "conceptId": "quest-smell-memory-20",
+      "visualConceptId": "visual-jar-memory-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 20
+    },
+    {
+      "id": "desafio",
+      "group": "Desafio do casal",
+      "type": "ATIVIDADE",
+      "title": "Quest cooperativa: cinco objetos, cinco histórias",
+      "summary": "Vocês têm 12 minutos para encontrar cinco objetos da casa que contam como a vida mudou desde que souberam do Felipe.",
+      "details": [
+        "Valem coisas pequenas: uma foto, um bilhete, uma roupa ou um enfeite.",
+        "Cada um escolhe dois objetos; o quinto é decisão conjunta.",
+        "Fotografem os cinco em uma composição — sem obrigação de publicar."
+      ],
+      "visual": "photos",
+      "conceptId": "quest-objects-timeline-20",
+      "visualConceptId": "visual-five-polaroids-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 35
+    },
+    {
+      "id": "cur-ciencia",
+      "group": "Curiosidades · Ciência",
+      "type": "CURIOSIDADE",
+      "title": "Corais são animais — e constroem cidades submarinas",
+      "summary": "O recife não é uma rocha viva única: ele surge da atividade de inúmeros pequenos animais chamados pólipos.",
+      "details": [
+        "Cada pólipo pode abrigar algas simbióticas que fornecem energia.",
+        "Temperatura elevada e outros estresses podem causar branqueamento.",
+        "A estrutura da colônia serve de habitat para diversos outros organismos."
+      ],
+      "visual": "coral",
+      "conceptId": "coral-polyps-city-20",
+      "visualConceptId": "visual-coral-reefs-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "NOAA — corais são animais",
+          "url": "https://oceanservice.noaa.gov/facts/coral.html"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Corais são plantas ou animais?",
+        "options": [
+          "Plantas",
+          "Animais",
+          "Rochas"
+        ],
+        "answer": 1,
+        "explanation": "Corais são animais — organismos coloniais compostos de pólipos."
+      }
+    },
+    {
+      "id": "cur-espaco",
+      "group": "Curiosidades · Espaço",
+      "type": "CURIOSIDADE",
+      "title": "Os anéis de Saturno não são discos sólidos",
+      "summary": "Aquilo que parece um prato uniforme é um conjunto de incontáveis fragmentos de gelo e rocha em órbita.",
+      "details": [
+        "As partículas variam muito de tamanho e refletem a luz solar.",
+        "As lacunas e ondas nos anéis refletem, entre outros fatores, a ação gravitacional das luas.",
+        "Uma fotografia real da Cassini ajuda a perceber as faixas."
+      ],
+      "visual": "planet",
+      "conceptId": "saturn-rings-particles-20",
+      "visualConceptId": "visual-cassini-ring-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "NASA — Saturn Rings",
+          "url": "https://science.nasa.gov/saturn/facts/"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "De que são feitos principalmente os anéis?",
+        "options": [
+          "Gelo e rocha",
+          "Gás puro",
+          "Um disco sólido"
+        ],
+        "answer": 0,
+        "explanation": "Bilhões de fragmentos gelados e rochosos orbitam o planeta."
+      }
+    },
+    {
+      "id": "cur-natureza",
+      "group": "Curiosidades · Natureza",
+      "type": "CURIOSIDADE",
+      "title": "Raposas conseguem ouvir presas escondidas",
+      "summary": "A audição apurada ajuda raposas a localizar pequenos animais mesmo quando eles não estão visíveis.",
+      "details": [
+        "Orelhas móveis captam sons vindos de diferentes direções.",
+        "O comportamento de caça combina escuta, observação e saltos precisos.",
+        "Nem toda raposa vive em regiões geladas."
+      ],
+      "visual": "fox",
+      "conceptId": "fox-hearing-hunt-20",
+      "visualConceptId": "visual-red-fox-wild-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "Britannica — red fox",
+          "url": "https://www.britannica.com/animal/red-fox"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual sentido ajuda a raposa a localizar presas ocultas?",
+        "options": [
+          "Visão ultravioleta",
+          "Audição",
+          "Campo magnético"
+        ],
+        "answer": 1,
+        "explanation": "A audição sensível contribui para localizar pequenos animais."
+      }
+    },
+    {
+      "id": "cur-historia",
+      "group": "Curiosidades · História",
+      "type": "CURIOSIDADE",
+      "title": "O telégrafo mudou a velocidade de uma notícia",
+      "summary": "Antes da transmissão elétrica, notícias entre cidades viajavam com pessoas, barcos ou animais. O telégrafo reduziu muito essa espera.",
+      "details": [
+        "Operadores traduziam pulsos em mensagens codificadas.",
+        "A infraestrutura de fios e estações tornou a circulação de informações mais rápida.",
+        "O avanço trouxe novos desafios de custo, acesso e confiabilidade."
+      ],
+      "visual": "telegraph",
+      "conceptId": "history-telegraph-press-20",
+      "visualConceptId": "visual-telegraph-device-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "Britannica — telegraph",
+          "url": "https://www.britannica.com/technology/telegraph"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "O telégrafo acelerou principalmente o quê?",
+        "options": [
+          "Mensagens a longa distância",
+          "Transporte de cargas",
+          "Deslocamento de trens"
+        ],
+        "answer": 0,
+        "explanation": "Mensagens podiam percorrer fios elétricos muito mais rápido que meios físicos."
+      }
+    },
+    {
+      "id": "gravidez",
+      "group": "Gravidez",
+      "type": "GUIA",
+      "title": "Felipe chega a 15 semanas e 2 dias de gestação",
+      "summary": "A contagem obstétrica pela DPP de 11/04/2027 indica 15s2d. Um bom dia para entender mudanças no corpo e acompanhar o pré-natal.",
+      "details": [
+        "Movimentos e proporções do feto mudam ao longo do segundo trimestre.",
+        "Se a Bruna estiver cansada, ajustes de rotina e hidratação podem ajudar.",
+        "Dúvidas sobre sintomas e exames devem ser discutidas no pré-natal."
+      ],
+      "visual": "baby",
+      "conceptId": "pregnancy-week-15-d2-20",
+      "visualConceptId": "visual-week15-soft-maternity-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Week 15",
+          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-15/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "pai",
+      "group": "Ser Pai",
+      "type": "GUIA",
+      "title": "Checklist de pai: como facilitar o próximo pré-natal",
+      "summary": "Ao invés de procurar a pergunta perfeita, preparem juntos três dúvidas práticas antes da consulta.",
+      "details": [
+        "Anote sintomas, horários, mudanças de apetite e dúvidas recentes.",
+        "Confirme endereço, exames solicitados e documentos.",
+        "Na consulta, ofereça apoio sem tirar a voz da Bruna."
+      ],
+      "visual": "family",
+      "conceptId": "father-prenatal-support-20",
+      "visualConceptId": "visual-prenatal-notes-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Supporting your partner",
+          "url": "https://www.nhs.uk/pregnancy/support/partners/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "brasil",
+      "group": "Brasil",
+      "type": "AGENDA",
+      "title": "Brasil a cinco dias do segundo turno: serviço ao eleitor",
+      "summary": "O segundo turno das eleições está marcado para domingo, 25/10. Hoje é uma boa data para revisar local de votação e documentos.",
+      "details": [
+        "O horário nacional de votação no dia 25 é das 8h às 17h, segundo o TSE.",
+        "Não há resultado eleitoral referente a hoje: este é um serviço de agenda.",
+        "Use os canais oficiais para consultar seção e situação eleitoral."
+      ],
+      "visual": "brazil",
+      "conceptId": "brasil-election-countdown-20",
+      "visualConceptId": "visual-election-schedule-20",
+      "eventDate": "2026-10-20",
+      "news": true,
+      "sources": [
+        {
+          "label": "TSE — calendário oficial",
+          "url": "https://www.tse.jus.br/eleicoes/calendario-eleitoral/calendario-eleitoral"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "mundo",
+      "group": "Mundo",
+      "type": "FATO",
+      "title": "Petróleo supera US$ 110 e pressiona mercados na manhã",
+      "summary": "Em reportagem de 20/10, a Reuters registra alta do Brent e cautela nas bolsas, em meio a tensões no Oriente Médio.",
+      "details": [
+        "A Reuters informou o Brent acima de US$ 110 por barril em sua atualização matinal.",
+        "Os mercados acompanham tanto o custo da energia quanto balanços de empresas de IA.",
+        "Valores de mercado são intradiários e podem mudar ao longo desta terça."
+      ],
+      "visual": "globe",
+      "conceptId": "brent-markets-20",
+      "visualConceptId": "visual-oil-derrick-20",
+      "eventDate": "2026-10-20",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — mercados em 20/10",
+          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/",
+          "publishedAt": "2026-10-20"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "politica",
+      "group": "Política",
+      "type": "AGENDA",
+      "title": "TSE: regra especial de proteção ao eleitor começa hoje",
+      "summary": "De 20 a 27/10 vale a restrição legal à prisão de eleitores, com exceções previstas no Código Eleitoral.",
+      "details": [
+        "Exceções incluem flagrante delito e outras hipóteses expressamente definidas na lei.",
+        "A regra integra o calendário oficial do segundo turno, não é notícia de uma prisão.",
+        "A votação está marcada para 25 de outubro."
+      ],
+      "visual": "ballot",
+      "conceptId": "tse-electors-protection-20",
+      "visualConceptId": "visual-voting-machine-20",
+      "eventDate": "2026-10-20",
+      "news": true,
+      "sources": [
+        {
+          "label": "TSE — Resolução 23.760/2026",
+          "url": "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-760-de-2-de-marco-de-2026"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "tempo",
+      "group": "Tempo",
+      "type": "PREVISÃO",
+      "title": "São Paulo amanhece nublada; CGE prevê máxima de 20 °C",
+      "summary": "Boletim do CGE de 00h18 registra 15 °C médios na cidade e prevê variação entre 13 °C e 20 °C nesta terça.",
+      "details": [
+        "O CGE prevê céu nublado e temperaturas amenas para outubro.",
+        "Não havia registro de chuva no radar da capital no boletim da madrugada.",
+        "A tendência é de retorno de chuva mais significativa a partir de quinta (22)."
+      ],
+      "visual": "weather",
+      "conceptId": "sao-paulo-clouds-20",
+      "visualConceptId": "visual-sp-city-overcast-20",
+      "eventDate": "2026-10-20",
+      "news": true,
+      "sources": [
+        {
+          "label": "CGE São Paulo — boletim 20/10 00:18",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?anoMes=2026-10",
+          "publishedAt": "2026-10-20"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "corinthians",
+      "group": "Corinthians",
+      "type": "ATUALIZAÇÃO",
+      "title": "Corinthians 1 × 1 Vitória: o que o empate de ontem significa",
+      "summary": "A partida foi em 19/10. Reportagens publicadas em 20/10 analisam o pênalti de Yuri Alberto e a situação na tabela.",
+      "details": [
+        "FATO DE 19/10: Corinthians e Vitória empataram por 1 a 1.",
+        "REPORTAGEM DE 20/10: ex-árbitros ouvidos pelo UOL avaliaram o lance do pênalti.",
+        "A classificação deve ser consultada em tabela oficial atualizada; não trate o resultado de ontem como jogo de hoje."
+      ],
+      "visual": "football",
+      "conceptId": "corinthians-postgame-20",
+      "visualConceptId": "visual-arena-analysis-20",
+      "eventDate": "2026-10-19",
+      "news": true,
+      "sources": [
+        {
+          "label": "UOL — análise do pênalti em 20/10",
+          "url": "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/20/ex-arbitros-penalti-corinthians-vitoria-brasileirao-2026.ghtm",
+          "publishedAt": "2026-10-20"
+        },
+        {
+          "label": "CBF — jogo de 19/10",
+          "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/corinthians-x-vitoria/832194",
+          "publishedAt": "2026-10-20"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-20"
+    },
+    {
+      "id": "viagens",
+      "group": "Viagens",
+      "type": "GUIA",
+      "title": "Trilha e vista: como montar um passeio curto na Pedra Grande",
+      "summary": "Um roteiro de planejamento para Atibaia, priorizando segurança, clima e acesso autorizado. Não é anúncio de evento novo.",
+      "details": [
+        "Confira as condições do parque e o acesso por vias permitidas.",
+        "Leve água, calçado adequado e proteção contra o sol.",
+        "Defina horário de retorno e evite caminhos desconhecidos."
+      ],
+      "visual": "mountain",
+      "conceptId": "atibaia-view-plan-20",
+      "visualConceptId": "visual-mountain-trail-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "musica",
+      "group": "Música",
+      "type": "GUIA",
+      "title": "Ouça um trio de jazz: onde está o ritmo de verdade?",
+      "summary": "Experimente ouvir baixo, bateria e piano separadamente. Uma mesma gravação revela camadas diferentes.",
+      "details": [
+        "Na primeira escuta, siga só o contrabaixo.",
+        "Na segunda, preste atenção aos pratos e às pausas.",
+        "Na terceira, perceba como o piano conversa com os outros instrumentos."
+      ],
+      "visual": "piano",
+      "conceptId": "jazz-trio-ear-20",
+      "visualConceptId": "visual-jazz-stage-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "sertanejo",
+      "group": "Sertanejo da Roça",
+      "type": "GUIA",
+      "title": "Viola caipira: moda de viola não é igual a pagode",
+      "summary": "A cadência e a função do instrumento mudam conforme a tradição musical. Um guia de escuta, não um lançamento do dia.",
+      "details": [
+        "Escolha duas gravações tradicionais com andamento diferente.",
+        "Tente reconhecer introdução, ponteios e ritmo antes de ouvir a letra.",
+        "Use apenas gravações de canais oficiais ou licenciados ao compartilhar."
+      ],
+      "visual": "guitar",
+      "conceptId": "viola-styles-20",
+      "visualConceptId": "visual-caipira-viola-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "games",
+      "group": "Games",
+      "type": "GUIA",
+      "title": "Controle na mão: teste três ajustes de acessibilidade",
+      "summary": "Pequenos ajustes de sensibilidade, legendas e remapeamento podem mudar a experiência sem comprar nada.",
+      "details": [
+        "Procure as opções de acessibilidade do seu console.",
+        "Teste um ajuste por vez, sempre no mesmo trecho do jogo.",
+        "Guarde um perfil com as configurações que funcionarem melhor."
+      ],
+      "visual": "gamepad",
+      "conceptId": "controller-accessibility-20",
+      "visualConceptId": "visual-dualsense-controller-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "tecnologia",
+      "group": "Tecnologia",
+      "type": "GUIA",
+      "title": "IA e chips: o gargalo não é só poder de processamento",
+      "summary": "Infraestrutura de IA também depende de energia, rede, armazenamento e financiamento. Entenda o sistema completo.",
+      "details": [
+        "Processadores aceleram cálculos, mas dependem do restante da infraestrutura.",
+        "Custo de eletricidade e refrigeração afeta a operação de data centers.",
+        "Não confunda debate de mercado com anúncio de tecnologia desta terça."
+      ],
+      "visual": "wafer",
+      "conceptId": "ai-infrastructure-20",
+      "visualConceptId": "visual-ai-datacenter-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "Reuters — mercado de IA e chips, 20/10",
+          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "financas",
+      "group": "Finanças",
+      "type": "APURAÇÃO/REPORTAGEM",
+      "title": "Brent acima de US$ 110 muda o radar de inflação",
+      "summary": "Na manhã de 20/10, a Reuters descreve alta no petróleo e atenção a balanços do setor de IA.",
+      "details": [
+        "Energia cara pressiona transporte e outros custos, mas efeitos variam por país.",
+        "Os valores mencionados são intradiários e não representam fechamento.",
+        "Informação econômica, não recomendação de investimento."
+      ],
+      "visual": "chart",
+      "conceptId": "oil-inflation-watch-20",
+      "visualConceptId": "visual-oil-finance-20",
+      "eventDate": "2026-10-20",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — petróleo e bolsas, 20/10",
+          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/",
+          "publishedAt": "2026-10-20"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "security-briefing",
+      "group": "Security Briefing",
+      "type": "GUIA",
+      "title": "Security Briefing: priorize evidência antes do alerta",
+      "summary": "Transforme ruído de feed em uma fila simples por exploração, exposição do ativo e possibilidade de mitigação.",
+      "details": [
+        "Comece pelas ameaças com exploração confirmada e ativos presentes no inventário.",
+        "CISA KEV é evidência de exploração conhecida, não prova de incidente no seu ambiente.",
+        "Registre data da fonte e versão afetada antes de abrir o item."
+      ],
+      "visual": "radar",
+      "conceptId": "security-triage-20",
+      "visualConceptId": "visual-security-dashboard-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Known Exploited Vulnerabilities",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "cyber",
+      "group": "Cyber",
+      "type": "GUIA",
+      "title": "Cyber: cinco sinais que justificam olhar mais de perto",
+      "summary": "Uma hipótese de hunting eficaz precisa de logs correlacionáveis e janela temporal clara, não de manchetes genéricas.",
+      "details": [
+        "Observe mudanças súbitas de login e origem de acesso.",
+        "Correlacione DNS, endpoint e autenticação por horário.",
+        "Não anuncie novo CVE sem advisory oficial e data verificável."
+      ],
+      "visual": "shield",
+      "conceptId": "hunting-signals-20",
+      "visualConceptId": "visual-server-observability-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Cybersecurity Best Practices",
+          "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "appsec",
+      "group": "AppSec",
+      "type": "GUIA",
+      "title": "AppSec: um segredo novo não é igual a segredo histórico",
+      "summary": "Para release gates, use contexto Git imutável e linhas adicionadas antes de classificar um achado como regressão.",
+      "details": [
+        "Diferencie Current Exposure de NEW_SECRET no diff.",
+        "Preserve inventário histórico e auditoria; bloqueio deve seguir política aprovada.",
+        "Verificador e evidências são necessários antes de automatizar correções."
+      ],
+      "visual": "code",
+      "conceptId": "appsec-delta-secrets-20",
+      "visualConceptId": "visual-diff-and-secrets-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [
+        {
+          "label": "OWASP — DevSecOps",
+          "url": "https://owasp.org/www-project-devsecops-guideline/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "carros",
+      "group": "Carros até R$70 mil",
+      "type": "GUIA",
+      "title": "Duster automática até R$ 70 mil: teste o câmbio primeiro",
+      "summary": "Para usados nessa faixa, avalie histórico de manutenção e funcionamento a frio e a quente antes de negociar.",
+      "details": [
+        "Peça notas de serviços, inspeção pré-compra e laudo cautelar.",
+        "Avalie fluido, trocas de marcha, arrefecimento e sinais de superaquecimento.",
+        "Preço de anúncio só entra após confirmação; este guia não afirma valor de oferta."
+      ],
+      "visual": "car",
+      "conceptId": "duster-inspection-20",
+      "visualConceptId": "visual-duster-checklist-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "motos",
+      "group": "Motos",
+      "type": "GUIA",
+      "title": "Motos: o pneu conta uma história antes da viagem",
+      "summary": "Desgaste irregular, bolhas e pressão incorreta merecem atenção antes de sair.",
+      "details": [
+        "Confira calibragem com pneus frios conforme o manual.",
+        "Procure desgaste fora do padrão e objetos presos na banda de rodagem.",
+        "Se encontrar dano estrutural, procure oficina antes de rodar."
+      ],
+      "visual": "motorcycle",
+      "conceptId": "tire-inspection-20",
+      "visualConceptId": "visual-motorcycle-tire-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "mecanica",
+      "group": "Mecânica",
+      "type": "GUIA",
+      "title": "Correia dentada ou corrente: descubra o que seu motor usa",
+      "summary": "Os dois sistemas sincronizam componentes do motor, mas intervalos de inspeção e manutenção diferem.",
+      "details": [
+        "Consulte o manual do modelo e do ano exatos.",
+        "Ruídos anormais e histórico desconhecido justificam avaliação profissional.",
+        "Não substitua componentes preventivamente com base em prazo genérico."
+      ],
+      "visual": "wrench",
+      "conceptId": "belt-versus-chain-20",
+      "visualConceptId": "visual-engine-timing-20",
+      "eventDate": "2026-10-20",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: Father News 6 - REAL Remote 25 Media Chromium QA
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/v6-remote-23-oct.spec.ts'
+      - 'data/current-edition.json'
+      - 'components/EditionShell.tsx'
+      - 'components/NewsReels.tsx'
+      - '.github/workflows/father-news-v6-real-remote-23-oct.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-remote-25-media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Install app and isolated exact Chromium QA dependency
+        run: |
+          npm install --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+      - name: Build app under v6; do not publish or change DB pointer
+        run: npm run build
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Start local app with v6 enabled and no production release
+        run: |
+          mkdir -p artifacts
+          FATHER_V6_ENABLED=true npm run start > /tmp/father-v6-real-media-qa.log 2>&1 &
+          for i in $(seq 1 50); do curl -sf http://127.0.0.1:3000/ >/dev/null && break || sleep 1; done
+          curl -fsS http://127.0.0.1:3000/ >/dev/null
+      - name: Real Supabase SHA readback plus 25 mobile Chromium reels
+        run: npx playwright test tests/v6-remote-23-oct.spec.ts --reporter=line --workers=1
+      - name: Preserve all 25 real-media screenshots and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-real-supabase-25-media-chromium-qa
+          path: |
+            artifacts/v6-remote-23-oct/
+            test-results/
+          retention-days: 14

@@ -1,5 +1,6 @@
 import{readFileSync,existsSync}from'node:fs';
-const e=JSON.parse(readFileSync('data/current-edition.json','utf8')),fails=[];
+const editionFile=process.argv[2]||'data/current-edition.json';
+const e=JSON.parse(readFileSync(editionFile,'utf8')),fails=[];
 const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
 const now=[p.year,p.month,p.day].join('-');
 if(now!==e.editionDate)fails.push('edição antiga: '+e.editionDate+' versus '+now);
@@ -30,7 +31,9 @@ for(let n=1;n<=7;n++){
  }
 }
 if(!existsSync('tests/mobile-v2.spec.ts'))fails.push('sem Chromium QA de todos Reels');
-const media=JSON.parse(readFileSync('data/media-2026-10-20.json','utf8'));
+const mediaFile=process.argv[3]||('data/media-'+e.editionDate+'.json');
+if(!existsSync(mediaFile))fails.push('catálogo de mídia da edição ausente: '+mediaFile);
+const media=existsSync(mediaFile)?JSON.parse(readFileSync(mediaFile,'utf8')):{};
 if(Object.keys(media).length<12)fails.push('menos de 12 fotografias do catálogo diário');
 for(const [id,photo] of Object.entries(media)){
  if(!e.cards?.some(c=>c.id===id))fails.push('mídia sem reel '+id);
