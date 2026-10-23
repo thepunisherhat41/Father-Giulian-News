@@ -67,8 +67,7 @@ export async function GET(){
   const mediaUrl=new URL(row.manifest_url);
   const scopedRoot=allowed.pathname==='/'?'':allowed.pathname;
   const prefix=scopedRoot+'/editions/'+row.release_id+'/';
-  const canonical=mediaUrl.pathname===prefix+'manifests/'+row.manifest_sha256+'.json'||
-   mediaUrl.pathname===prefix+row.manifest_sha256+'/edition.json';
+  const canonical=mediaUrl.pathname===prefix+'manifest-'+row.manifest_sha256+'.json';
   if(mediaUrl.origin!==allowed.origin||!canonical||mediaUrl.username||mediaUrl.password||
      mediaUrl.search||mediaUrl.hash)return unavailable();
   const res=await fetch(mediaUrl,{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(8000)});
