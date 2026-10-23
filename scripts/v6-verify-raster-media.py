@@ -2,7 +2,7 @@
 """Verify the full 25-card raster candidate BEFORE any immutable storage upload.
 Offline. Any deviation from source lock or disk bytes must fail closed.
 """
-import argparse, hashlib, json, pathlib, struct, sys
+import argparse, hashlib, json, pathlib, struct, sys, re
 
 def digest(b):return hashlib.sha256(b).hexdigest()
 def media_dimensions(data,mime):
@@ -34,7 +34,7 @@ def verify(root,lock,edition,app_sha):
  if data['app_sha']!=app_sha:raise ValueError('app SHA mismatch')
  if data['edition_sha256']!=original['edition_sha256'] or digest(pathlib.Path(edition).read_bytes())!=data['edition_sha256']:raise ValueError('edition mismatch')
  if data['original_source_lock_sha256']!=digest(pathlib.Path(lock).read_bytes()):raise ValueError('source lock fingerprint mismatch')
- if data['edition_id']!='2026-10-20-r01':raise ValueError('unexpected release ID')
+ if not isinstance(data.get('edition_id'),str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}-r\d{2,}',data['edition_id']) or not data['edition_id'].startswith(original.get('edition_date','')+'-r') or ed.get('editionDate')!=original.get('edition_date'):raise ValueError('release ID/lock/edition date mismatch')
  cards=data['cards'];sources=original['cards']
  if len(cards)!=len(sources)!=len(ed['cards']) or len(cards)!=25:raise ValueError('not all 25 media present')
  if [c['card_id'] for c in cards]!=[c['card_id'] for c in sources] or [c['card_id'] for c in cards]!=[c['id'] for c in ed['cards']]:raise ValueError('editorial order/card mapping mismatch')
