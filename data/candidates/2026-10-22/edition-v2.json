@@ -247,8 +247,9 @@
       "news": true,
       "sources": [
         {
-          "label": "TSE — Eleições 2026 (serviço ao eleitor)",
-          "url": "https://www.tse.jus.br/eleicoes/cde-2026"
+          "label": "TSE — orientação de local de votação de 19/10",
+          "url": "https://www.tse.jus.br/comunicacao/radio/2026/Outubro/tse-orienta-eleitorado-a-consultar-o-local-de-votacao-para-o-2oturno-das-eleicoes",
+          "publishedAt": "2026-10-19"
         }
       ],
       "layout": "spotlight"
@@ -296,12 +297,12 @@
       "news": true,
       "sources": [
         {
-          "label": "TSE — último dia para comícios (19/10)",
+          "label": "TSE — comícios 22/10",
           "url": "https://www.tse.jus.br/comunicacao/radio/2026/Outubro/ultimo-dia-para-a-realizacao-de-comicios",
           "publishedAt": "2026-10-19"
         },
         {
-          "label": "TSE — Resolução 23.760/2026",
+          "label": "TSE — calendário eleitoral 2026",
           "url": "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-760-de-2-de-marco-de-2026",
           "publishedAt": "2026-03-02"
         }
