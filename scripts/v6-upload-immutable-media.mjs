@@ -85,8 +85,19 @@ const apiHeaders={apikey:key,Authorization:'Bearer '+session.access_token};
 const publicUrl=p=>ORIGIN+'/storage/v1/object/public/'+BUCKET+'/'+p;
 async function verifyPublic(object,missingAllowed){
  const res=await fetch(publicUrl(object.keyPath),{redirect:'error',cache:'no-store'});
- if(missingAllowed&&res.status===404)return false;
- if(!res.ok)fail('Remote object read failed HTTP '+res.status);
+ if(!res.ok){
+  let body={};
+  if(res.status===400||res.status===404){
+   try{body=await res.json()}catch{body={}}
+  }
+  // Supabase Storage may return HTTP 400 with a legacy statusCode:404
+  // for a truly absent object. Never treat arbitrary 400/403/401 as missing.
+  const explicitMissing=(body?.code==='NoSuchKey' ||
+    (body?.error==='not_found' && String(body?.statusCode)==='404'));
+  if(missingAllowed && (res.status===400 || res.status===404) && explicitMissing)return false;
+  fail('Remote object read failed HTTP '+res.status+
+    ' code '+String(body?.code||body?.error||'unknown'));
+ }
  const bytes=Buffer.from(await res.arrayBuffer());
  if(sha256(bytes)!==object.digest||bytes.length!==object.bytes.length)fail('Remote object SHA mismatch');
  return true;
