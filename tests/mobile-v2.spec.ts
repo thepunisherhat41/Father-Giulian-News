@@ -1,6 +1,8 @@
 import{test,expect}from'@playwright/test';
-import{mkdirSync,writeFileSync}from'node:fs';
-import photoCatalog from '../data/media-2026-10-20.json';
+import{mkdirSync,writeFileSync,readFileSync}from'node:fs';
+const edition=JSON.parse(readFileSync('data/current-edition.json','utf8'));
+const photoCatalog=JSON.parse(readFileSync('data/media-'+edition.editionDate+'.json','utf8'));
+const card=id=>{const c=edition.cards.find((x:{id:string})=>x.id===id);if(!c)throw Error('missing expected editorial card '+id);return c;};
 test.use({viewport:{width:390,height:844},deviceScaleFactor:1});
 test.setTimeout(240000);
 test('full Chromium QA of all current Reels',async({page})=>{
@@ -10,7 +12,7 @@ test('full Chromium QA of all current Reels',async({page})=>{
  await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded',timeout:30000});
  const shell=page.locator('[data-ui-theme="father-native-v5"]');
  await expect(shell).toBeVisible();
- expect(await shell.getAttribute('data-edition-date')).toBe('2026-10-20');
+ expect(await shell.getAttribute('data-edition-date')).toBe(edition.editionDate);
  const reels=page.locator('article[data-reel]'),n=await reels.count();
  expect(n).toBe(25);
  const audit=[];let photoCount=0;
@@ -34,7 +36,7 @@ test('full Chromium QA of all current Reels',async({page})=>{
  }
  expect(photoCount,'Fotos externas devem carregar antes de publicação').toBe(Object.keys(photoCatalog).length);
  expect(errors).toEqual([]);
- writeFileSync('artifacts/mobile-qa.json',JSON.stringify({edition:'2026-10-20',count:n,audit},null,2));
+ writeFileSync('artifacts/mobile-qa.json',JSON.stringify({edition:edition.editionDate,count:n,audit},null,2));
  await page.getByRole('button',{name:'Abrir índice de assuntos'}).click();
  await expect(page.getByRole('dialog',{name:'Índice editorial'})).toBeVisible();
  await page.getByRole('button',{name:'Fechar índice'}).click();
@@ -59,11 +61,11 @@ test('reader discovery, filters, search, read, save and contextual next',async({
  await expect(dialog.locator('.rx-story')).toHaveCount(1);
  await dialog.locator('.rx-story').click();
  await expect(dialog).not.toBeVisible();
- await expect(page.locator('article[data-reel]').filter({hasText:'Corinthians 1'})).toBeInViewport({ratio:.5});
- await page.locator('article[data-reel]').filter({hasText:'Corinthians 1'}).getByRole('button',{name:/Ler detalhes de/}).click();
+ await expect(page.locator('article[data-reel]').filter({hasText:card('corinthians').title})).toBeInViewport({ratio:.5});
+ await page.locator('article[data-reel]').filter({hasText:card('corinthians').title}).getByRole('button',{name:/Ler detalhes de/}).click();
  const article=page.getByRole('dialog',{name:'Detalhes e fontes'});
  await expect(article.getByText('POR QUE ISSO IMPORTA')).toBeVisible();
- await expect(article.getByText('O jogo foi ontem. A novidade é a repercussão de hoje.')).toBeVisible();
+ await expect(article.getByText(card('corinthians').details[0])).toBeVisible();
  await article.screenshot({path:'artifacts/reader-story.png'});
  await article.getByRole('button',{name:'Próxima história'}).click();
  await expect(article).not.toBeVisible();
@@ -77,10 +79,10 @@ test('reader discovery, filters, search, read, save and contextual next',async({
  await page.getByRole('button',{name:'Abrir índice de assuntos'}).click();
  await dialog.getByRole('button',{name:'Descobertas'}).click();
  await dialog.locator('.rx-story').first().click();
- await page.locator('article[data-reel]').filter({hasText:'Corais são animais'}).getByRole('button',{name:/Ler detalhes de/}).click();
+ await page.locator('article[data-reel]').filter({hasText:card('cur-ciencia').title}).getByRole('button',{name:/Ler detalhes de/}).click();
  const quiz=page.locator('.fg-quiz');
  await expect(quiz).toBeVisible();
- await quiz.locator('button').nth(1).click();
+ await quiz.locator('button').nth(card('cur-ciencia').quiz.answer).click();
  await expect(quiz.locator('.is-correct')).toBeVisible();
  await page.screenshot({path:'artifacts/reader-quiz.png',animations:'disabled'});
  await page.keyboard.press('Escape');
