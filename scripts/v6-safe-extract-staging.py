@@ -19,7 +19,9 @@ def extract(archive,output):
     raise ValueError("unsafe archive member")
    parts=[p for p in rel.parts if p!="."]
    if item.isfile():
-    if not ((len(parts)==2 and parts[0]=="objects" and re.fullmatch(r"[a-f0-9]{64}\.(png|jpg)",parts[1])) or (len(parts)==1 and (parts[0]=="candidate-media-manifest.json" or re.fullmatch(r"manifest-[a-f0-9]{64}\.json",parts[0]))):
+    is_object = len(parts)==2 and parts[0]=="objects" and bool(re.fullmatch(r"[a-f0-9]{64}\.(png|jpg)",parts[1]))
+    is_manifest = len(parts)==1 and (parts[0]=="candidate-media-manifest.json" or bool(re.fullmatch(r"manifest-[a-f0-9]{64}\.json",parts[0])))
+    if not (is_object or is_manifest):
      raise ValueError("unrecognized archive file path")
     sizes+=item.size
     if not 0<item.size<13*1024*1024 or sizes>85*1024*1024:raise ValueError("unsafe artifact size")
