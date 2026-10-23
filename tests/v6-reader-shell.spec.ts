@@ -1,5 +1,7 @@
 import {test,expect} from '@playwright/test';
-import {mkdirSync} from 'node:fs';
+import {mkdirSync,readFileSync} from 'node:fs';
+const currentEditionDate=JSON.parse(readFileSync('data/current-edition.json','utf8')).editionDate;
+const currentDayLabel=currentEditionDate.slice(8,10)+'/'+currentEditionDate.slice(5,7)+'/'+currentEditionDate.slice(0,4);
 test.use({viewport:{width:390,height:844},deviceScaleFactor:1});
 test.setTimeout(120000);
 const release='2026-10-22-r01';
@@ -49,7 +51,7 @@ test('503 or no publication retains dated v5 edition instead of blank screen',as
  await page.route('**/api/edition/current',r=>r.fulfill({status:503,contentType:'application/json',body:'{"status":"NOT_READY"}'}));
  await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded'});
  await expect(page.locator('[data-edition-engine="legacy"]')).toBeVisible({timeout:12000});
- await expect(page.getByText(/Edição anterior: 20\/10\/2026/)).toBeVisible();
+ await expect(page.getByText('Edição anterior: '+currentDayLabel)).toBeVisible();
  await expect(page.locator('article[data-reel]')).toHaveCount(25);
 });
 
