@@ -5,7 +5,7 @@ const release='2026-10-23-r01';
 const expectedManifest='7e59baa086fc98d3a2c7b62615a493995b463dac6d79fe6879d9004a088be7a0';
 const origin='https://sqlywvoqktdebubjmskn.supabase.co';
 const mediaRoot=origin+'/storage/v1/object/public/father-news-v6-media/editions/'+release+'/';
-const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const sha=(bytes:Uint8Array)=>createHash('sha256').update(bytes).digest('hex');
 test.use({viewport:{width:390,height:844},deviceScaleFactor:1});
 test.setTimeout(240000);
 test('REAL Supabase immutable bytes and mobile Chromium: 25/25 actual images',async({page,request})=>{
@@ -20,7 +20,7 @@ test('REAL Supabase immutable bytes and mobile Chromium: 25/25 actual images',as
  expect(edition.editionDate).toBe('2026-10-23');
  expect(edition.cards).toHaveLength(25);
  expect(Object.keys(edition.mediaCatalog)).toHaveLength(25);
- const errors=[];
+ const errors:string[]=[];
  page.on('pageerror',e=>errors.push(e.message));
  // Stub ONLY the not-yet-promoted DB publication pointer, never the media URLs.
  await page.route('**/api/edition/current',r=>r.fulfill({status:200,contentType:'application/json',body:JSON.stringify({
@@ -31,7 +31,7 @@ test('REAL Supabase immutable bytes and mobile Chromium: 25/25 actual images',as
  await expect(page.locator('[data-edition-date="2026-10-23"]')).toBeVisible();
  const reels=page.locator('article[data-reel]');
  await expect(reels).toHaveCount(25);
- const proof=[], seen=new Set();
+ const proof:Record<string,unknown>[]=[], seen=new Set<string>();
  for(let i=0;i<25;i++){
   const c=edition.cards[i],media=edition.mediaCatalog[c.mediaId];
   expect(media).toBeTruthy();
@@ -49,7 +49,7 @@ test('REAL Supabase immutable bytes and mobile Chromium: 25/25 actual images',as
   await expect(el).toBeInViewport({ratio:.5});
   const img=el.locator('img');
   await expect(img).toHaveCount(1);
-  await expect.poll(()=>img.evaluate(el=>el.complete&&el.naturalWidth>0&&el.naturalHeight>0),{timeout:16000}).toBe(true);
+  await expect.poll(()=>img.evaluate((el:HTMLImageElement)=>el.complete&&el.naturalWidth>0&&el.naturalHeight>0),{timeout:16000}).toBe(true);
   expect(await img.getAttribute('src'),'browser used EXACT remote URL').toBe(media.url);
   expect(await el.getAttribute('data-category')).toBe(c.section);
   expect(await el.getAttribute('data-media-kind')).toBe(media.kind==='art'?'illustration':'photo');
