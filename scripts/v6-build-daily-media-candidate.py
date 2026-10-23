@@ -75,7 +75,7 @@ def photo_jpg(url):
    im.thumbnail((1440,1440),Image.Resampling.LANCZOS)
    if min(im.size)<300:fail("photo below minimum resolution")
    out=io.BytesIO();im.save(out,format="JPEG",quality=88,optimize=True,progressive=True)
-   return out.getvalue(),im.width,im.height
+   return out.getvalue(),im.width,im.height,hash_bytes(b)
  except Exception as exc:
   fail("image decode or conversion invalid: "+str(exc))
 def original_svg(card):
@@ -106,7 +106,7 @@ def art_png(card):
  if rendered.returncode!=0:fail("SVG rasterize error: "+rendered.stderr.decode(errors="replace")[:100])
  with Image.open(io.BytesIO(rendered.stdout)) as im:
   im.verify()
- return rendered.stdout,720,1280
+ return rendered.stdout,720,1280,hash_bytes(svg)
 def run(args):
  if not SHA.fullmatch(args.app_sha):fail("exact app SHA required")
  if not REL.fullmatch(args.release_id):fail("invalid release id")
@@ -126,10 +126,10 @@ def run(args):
   if cid in photos:
    p=photos[cid]
    if any(not p.get(k) for k in ("url","source","credit","license")):fail("missing source attribution "+cid)
-   raw,w,h=photo_jpg(p["url"]);ext,mime,kind="jpg","image/jpeg","image"
+   raw,w,h,source_sha=photo_jpg(p["url"]);ext,mime,kind="jpg","image/jpeg","image"
    source_url=p["source"];credit=p["credit"];license=p["license"];origin="wikimedia"
   else:
-   raw,w,h=art_png(card);ext,mime,kind="png","image/png","art"
+   raw,w,h,source_sha=art_png(card);ext,mime,kind="png","image/png","art"
    source_url=None;credit="Father News · original editorial artwork";license="Original editorial artwork";origin="generated"
   if len(raw)<1000 or len(raw)>12*1024*1024:fail("bad object size "+cid)
   digest=hash_bytes(raw); name=f"objects/{digest}.{ext}"
@@ -138,10 +138,11 @@ def run(args):
   (root/name).write_bytes(raw)
   path=f"editions/{args.release_id}/{name}"
   staged.append(dict(card_id=cid,sha256=digest,bytes=len(raw),width=w,height=h,object_path=name,storage_path=path,
-                     media_kind=kind,mime=mime,origin=origin,source_sha256=digest,source_url=source_url,
+                     media_kind=kind,mime=mime,origin=origin,source_sha256=source_sha,source_url=source_url,
                      credit=credit,license=license,alt="Arte editorial sobre "+card["group"]+": "+card["title"] if kind=="art" else "Fotografia editorial relacionada a "+card["group"]+": "+card["title"]))
   media["media-"+cid]=dict(kind=kind,url=ORIGIN+"/"+path,sha256=digest,mimeType=mime,
-                           alt=staged[-1]["alt"],credit=credit,sourceUrl=source_url,license=license,width=w,height=h)
+                           alt=staged[-1]["alt"],credit=credit,license=license,width=w,height=h)
+  if source_url:media["media-"+cid]["sourceUrl"]=source_url
  v6cards=[]
  for idx,c in enumerate(ed["cards"]):
   src=[]
