@@ -52,7 +52,7 @@ jobs:
         run: |
           set -euo pipefail
           editorial="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$APP_SHA&per_page=100" \
-            --jq '[.workflow_runs[] | select(.head_sha == env.APP_SHA and .name == "Father News 6 - Fresh 25 Media Snapshot QA" and .event == "pull_request" and .conclusion == "success")] | first | .id')"
+            --jq '[.workflow_runs[] | select(.head_sha == env.APP_SHA and .name == "Father News V2 Quality Gate" and .event == "pull_request" and .conclusion == "success")] | first | .id')"
           test -n "$editorial" && test "$editorial" != "null"
       - uses: actions/download-artifact@v4
         with:
