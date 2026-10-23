@@ -8,7 +8,7 @@ on:
       - 'scripts/v6-verify-raster-media.py'
       - 'scripts/v6-verify-staged-media.py'
       - 'tests/v6-raster-negative.test.py'
-      - 'data/current-edition.json'
+      - 'data/candidates/2026-10-20/edition-v2.json'
       - 'data/media-2026-10-20.json'
       - 'data/v6-media-lock-2026-10-20-r01.json'
       - '.github/workflows/father-news-v6-media.yml'
@@ -57,14 +57,14 @@ jobs:
           d['app_sha']=os.environ['APP_SHA']
           p.write_text(json.dumps(d,sort_keys=True,ensure_ascii=False,indent=2)+'\n')
           PY
-          python3 scripts/v6-verify-staged-media.py /tmp/father-v6-media "$APP_SHA"
+          python3 scripts/v6-verify-staged-media.py /tmp/father-v6-media "$APP_SHA" data/candidates/2026-10-20/edition-v2.json
       - name: Rasterize all 13 arts and independently verify 25 objects
         env:
           APP_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
         run: |
           set -euo pipefail
-          python3 scripts/v6-rasterize-locked-media.py --source /tmp/father-v6-media --output /tmp/father-v6-ready --app-sha "$APP_SHA"
-          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-ready --app-sha "$APP_SHA"
+          python3 scripts/v6-rasterize-locked-media.py --source /tmp/father-v6-media --output /tmp/father-v6-ready --edition data/candidates/2026-10-20/edition-v2.json --app-sha "$APP_SHA"
+          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-ready --edition data/candidates/2026-10-20/edition-v2.json --app-sha "$APP_SHA"
           python3 tests/v6-raster-negative.test.py /tmp/father-v6-ready
           tar -czf /tmp/father-v6-ready.tar.gz -C /tmp/father-v6-ready .
       - uses: actions/upload-artifact@v4
