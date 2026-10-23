@@ -1,0 +1,79 @@
+name: Father News 6 Protected Media Upload
+on:
+  pull_request:
+    types: [labeled]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  publish-media:
+    if: >-
+      github.event.label.name == 'father-v6-approved-media-upload' &&
+      github.event.pull_request.number == 255 &&
+      github.event.pull_request.draft == true &&
+      github.event.pull_request.head.ref == 'architecture/father-news-6-atomic-editions' &&
+      github.event.pull_request.head.repo.full_name == 'thepunisherhat41/Father-Giulian-News'
+    runs-on: ubuntu-latest
+    environment: father-v6-media-publisher
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Bind draft PR to checked-out immutable SHA
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.draft')" = "true"
+          node --check scripts/v6-upload-immutable-media.mjs
+      - name: Locate successful locked media QA on the same SHA
+        id: media
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$APP_SHA&per_page=100" \
+            --jq '[.workflow_runs[] | select(.head_sha == env.APP_SHA and .name == "Father News 6 Immutable Media QA" and .event == "pull_request" and .conclusion == "success")] | first | .id')"
+          test "$run_id" != "null" && test -n "$run_id"
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        with:
+          name: father-v6-raster-ready-staging-only
+          run-id: ${{ steps.media.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: /tmp/father-v6-candidate
+      - name: Verify all 25 immutable raster objects without credentials
+        id: verify
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/father-v6-raster
+          tar -xzf /tmp/father-v6-candidate/father-v6-ready.tar.gz -C /tmp/father-v6-raster --no-same-owner
+          release_id="$(node -p "JSON.parse(require('fs').readFileSync('/tmp/father-v6-raster/candidate-media-manifest.json','utf8')).edition_id")"
+          [[ "$release_id" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-r[0-9]{2,}$ ]]
+          lock="data/v6-media-lock-$release_id.json"
+          test -f "$lock"
+          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-raster \
+            --lock "$lock" --edition data/current-edition.json --app-sha "$APP_SHA"
+          echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
+      - name: Upload with dedicated RLS identity, then verify remote bytes
+        env:
+          FATHER_V6_APPROVED_UPLOAD: '1'
+          FATHER_V6_APP_SHA: ${{ github.event.pull_request.head.sha }}
+          FATHER_V6_RELEASE_ID: ${{ steps.verify.outputs.release_id }}
+          FATHER_V6_SUPABASE_URL: https://sqlywvoqktdebubjmskn.supabase.co
+          FATHER_V6_PUBLISHABLE_KEY: ${{ vars.FATHER_V6_PUBLISHABLE_KEY }}
+          FATHER_V6_PUBLISHER_EMAIL: ${{ secrets.FATHER_V6_PUBLISHER_EMAIL }}
+          FATHER_V6_PUBLISHER_PASSWORD: ${{ secrets.FATHER_V6_PUBLISHER_PASSWORD }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$FATHER_V6_APP_SHA"
+          node scripts/v6-upload-immutable-media.mjs /tmp/father-v6-raster
