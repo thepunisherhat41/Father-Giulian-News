@@ -18,7 +18,7 @@ class CandidateSecurity(unittest.TestCase):
  def setUpClass(cls):
   cls.base=STAGED_ROOT
   cls.lock=ROOT/'data/v6-media-lock-2026-10-20-r01.json'
-  cls.edition=ROOT/'data/current-edition.json'
+  cls.edition=ROOT/'data/candidates/2026-10-20/edition-v2.json'
   cls.app_sha=__import__('json').loads((cls.base/'candidate-media-manifest.json').read_text())['app_sha']
  def check(self,root):return checker.verify(root,self.lock,self.edition,self.app_sha)
  def mutate_manifest(self,mutator):
