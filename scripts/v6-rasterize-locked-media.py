@@ -38,7 +38,7 @@ def main():
  p.add_argument('--app-sha',required=True)
  a=p.parse_args()
  if not __import__('re').fullmatch(r'[0-9a-f]{40}',a.app_sha):raise ValueError('exact commit SHA required')
- if a.release_id!='2026-10-20-r01':raise ValueError('this pipeline only supports locked historical edition')
+ if not __import__('re').fullmatch(r'\d{4}-\d{2}-\d{2}-r\d{2,}',a.release_id):raise ValueError('invalid release ID')
  source=pathlib.Path(a.source).resolve()
  output=pathlib.Path(a.output).resolve()
  if output.exists() and any(output.iterdir()):raise ValueError('output must be empty: fail closed')
@@ -46,6 +46,7 @@ def main():
  lock=read_json(a.source_lock)
  edition_path=pathlib.Path(a.edition)
  edition=read_json(edition_path)
+ if lock.get('edition_date')!=edition.get('editionDate') or not a.release_id.startswith(lock['edition_date']+'-r'):raise ValueError('release ID/lock/edition date mismatch')
  if sha256(edition_path.read_bytes())!=lock['edition_sha256']:raise ValueError('edition digest drift')
  current=read_json(source/'media-manifest.json')
  if current.get('cards')!=lock['cards'] or current.get('edition_sha256')!=lock['edition_sha256']:
