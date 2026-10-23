@@ -5,7 +5,7 @@ import {GET} from '../app/api/edition/current/route.js';
 const keys=['FATHER_V6_ENABLED','FATHER_V6_PROJECT_REF','FATHER_V6_SUPABASE_URL','FATHER_V6_SUPABASE_ANON_KEY','FATHER_V6_APP_SHA','FATHER_V6_MEDIA_ORIGIN'];
 const ref='a'.repeat(20),app='b'.repeat(40),hash='c'.repeat(64);
 const env={FATHER_V6_ENABLED:'true',FATHER_V6_PROJECT_REF:ref,FATHER_V6_SUPABASE_URL:'https://'+ref+'.supabase.co',FATHER_V6_SUPABASE_ANON_KEY:'public-anon-test-key-long-enough',FATHER_V6_APP_SHA:app,FATHER_V6_MEDIA_ORIGIN:'https://media.example.org'};
-const release={release_id:'2026-10-20-r01',generation:1,manifest_sha256:hash,app_commit_sha:app,card_count:25,manifest_url:'https://media.example.org/editions/2026-10-20-r01/manifests/'+hash+'.json'};
+const release={release_id:'2026-10-20-r01',generation:1,manifest_sha256:hash,app_commit_sha:app,card_count:25,manifest_url:'https://media.example.org/editions/2026-10-20-r01/manifest-'+hash+'.json'};
 async function run(vars,fetcher){
  const previous=Object.fromEntries(keys.map(k=>[k,process.env[k]]));
  const original=globalThis.fetch;
@@ -80,7 +80,7 @@ function completeEdition(){
 async function readSignedEdition(edition,options={}){
  const bytes=Buffer.from(JSON.stringify(edition));
  const sha=digest(bytes);
- const row={...release,manifest_sha256:sha,manifest_url:'https://media.example.org/editions/2026-10-20-r01/manifests/'+sha+'.json'};
+ const row={...release,manifest_sha256:sha,manifest_url:'https://media.example.org/editions/2026-10-20-r01/manifest-'+sha+'.json'};
  let requests=0;
  const result=await run(env,async()=>{
   requests++;
@@ -138,7 +138,7 @@ test('Supabase dedicated public bucket supports exact release and object hash pa
  for(const entry of Object.values(edition.mediaCatalog))
   entry.url=scoped+new URL(entry.url).pathname;
  const bytes=Buffer.from(JSON.stringify(edition)),sha=digest(bytes);
- const row={...release,manifest_sha256:sha,manifest_url:scoped+'/editions/2026-10-20-r01/'+sha+'/edition.json'};
+ const row={...release,manifest_sha256:sha,manifest_url:scoped+'/editions/2026-10-20-r01/manifest-'+sha+'.json'};
  const vars={...env,FATHER_V6_MEDIA_ORIGIN:scoped};
  let count=0;
  const result=await run(vars,async()=>++count===1?Response.json([row]):new Response(bytes));
