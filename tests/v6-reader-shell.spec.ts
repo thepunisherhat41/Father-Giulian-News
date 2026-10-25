@@ -51,7 +51,8 @@ test('503 or no publication retains dated v5 edition instead of blank screen',as
  await page.route('**/api/edition/current',r=>r.fulfill({status:503,contentType:'application/json',body:'{"status":"NOT_READY"}'}));
  await page.goto('http://127.0.0.1:3000/',{waitUntil:'domcontentloaded'});
  await expect(page.locator('[data-edition-engine="legacy"]')).toBeVisible({timeout:12000});
- await expect(page.getByText('Edição anterior: '+currentDayLabel)).toBeVisible();
+ await expect(page.locator('.fn-v6-fallback')).toBeVisible();
+ await expect(page.locator('.fn-v6-fallback')).toContainText('Edição anterior: '+currentDayLabel);
  await expect(page.locator('article[data-reel]')).toHaveCount(25);
 });
 
