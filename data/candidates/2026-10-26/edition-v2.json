@@ -3,7 +3,7 @@
   "timezone": "America/Sao_Paulo",
   "updatedAt": "2026-10-26T02:54:26-03:00",
   "version": 4,
-  "editorialNote": "CANDIDATA EDITORIAL NÃO PUBLICÁVEL de 26/10/2026: 25 cards com fontes jornalísticas verificadas e datas de acontecimentos preservadas. Mídias novas de 26/10, manifesto, Storage remoto e QA Chromium no SHA exato ainda pendentes. Não alterar data/current-edition.json nem o ponteiro produtivo até todos os gates verdes.",
+  "editorialNote": "CANDIDATA NÃO PUBLICADA de 26/10/2026. Fontes de notícias datadas, 25 cards e reporte histórico preservado. Mídias de 26/10, manifesto imutável, verificação dos bytes no Storage e QA Chromium remoto no SHA exato são requisitos antes de qualquer promoção.",
   "cards": [
     {
       "id": "papo",
@@ -245,10 +245,6 @@
           "label": "Reuters — Brazil presidential election, 25/10",
           "url": "https://www.reuters.com/world/americas/brazil-heads-polls-runoff-between-leftist-lula-bolsonaro-jr-2026-10-25/",
           "publishedAt": "2026-10-25"
-        },
-        {
-          "label": "TSE — Eleições 2026",
-          "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026"
         }
       ],
       "layout": "spotlight",
@@ -300,10 +296,6 @@
           "label": "Reuters — Brazil presidential election, 25/10",
           "url": "https://www.reuters.com/world/americas/brazil-heads-polls-runoff-between-leftist-lula-bolsonaro-jr-2026-10-25/",
           "publishedAt": "2026-10-25"
-        },
-        {
-          "label": "TSE — Eleições 2026",
-          "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026"
         }
       ],
       "layout": "spotlight",
