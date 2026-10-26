@@ -159,7 +159,9 @@ def run(args):
    src.append(entry)
   v6cards.append(dict(id=c["id"],section=c["group"],order=idx+1,kind=c["type"],title=c["title"],
                       summary=c["summary"],details=c["details"],eventDate=c["eventDate"],
-                      reportedAt=None,sources=src,mediaId="media-"+c["id"],layout=c.get("layout","guide"),
+                      reportedOn=(c.get("reportedOn") or (c.get("reportedAt") if re.fullmatch(r"\d{4}-\d{2}-\d{2}",str(c.get("reportedAt",""))) else None)),
+                      **({"reportedAt":c["reportedAt"]} if re.fullmatch(r"\d{4}-\d{2}-\d{2}T.+",str(c.get("reportedAt",""))) else {}),
+                      sources=src,mediaId="media-"+c["id"],layout=c.get("layout","guide"),
                       **({"conceptId":c["conceptId"]} if c.get("conceptId") else {}),
                       **({"visualConceptId":c["visualConceptId"]} if c.get("visualConceptId") else {}),
                       **({"questXp":c["questXp"]} if c.get("questXp") is not None else {}),
