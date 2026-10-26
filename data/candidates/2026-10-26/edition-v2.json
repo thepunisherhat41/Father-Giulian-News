@@ -1,0 +1,618 @@
+{
+  "editionDate": "2026-10-26",
+  "timezone": "America/Sao_Paulo",
+  "updatedAt": "2026-10-26T02:54:26-03:00",
+  "version": 4,
+  "editorialNote": "CANDIDATA EDITORIAL NÃO PUBLICÁVEL de 26/10/2026: 25 cards com fontes jornalísticas verificadas e datas de acontecimentos preservadas. Mídias novas de 26/10, manifesto, Storage remoto e QA Chromium no SHA exato ainda pendentes. Não alterar data/current-edition.json nem o ponteiro produtivo até todos os gates verdes.",
+  "cards": [
+    {
+      "id": "papo",
+      "group": "Papo de hoje",
+      "type": "ATIVIDADE",
+      "title": "Se Felipe pudesse guardar um som da nossa casa, qual seria?",
+      "summary": "Cada um escolhe um som cotidiano que gostaria de preservar para o Felipe: uma risada, uma música ou a voz de alguém querido.",
+      "details": [
+        "Descrevam por que esse som importa.",
+        "Gravem, se quiserem, um áudio curto sem expor dados pessoais.",
+        "Guardem a ideia para ouvir juntos no futuro."
+      ],
+      "visual": "memory-jar",
+      "conceptId": "father-v6-2026-10-26-papo-story",
+      "visualConceptId": "father-v6-2026-10-26-papo-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 20
+    },
+    {
+      "id": "desafio",
+      "group": "Desafio do casal",
+      "type": "ATIVIDADE",
+      "title": "Missão do casal: criem uma cápsula do tempo de três linhas",
+      "summary": "Em poucos minutos, escrevam uma lembrança de hoje, uma esperança para o próximo ano e uma pergunta para o futuro.",
+      "details": [
+        "Cada um escreve uma linha sem consultar o outro.",
+        "Leiam em voz alta e escolham onde guardar.",
+        "Não é necessário comprar nada nem transformar a atividade em obrigação."
+      ],
+      "visual": "photos",
+      "conceptId": "father-v6-2026-10-26-desafio-story",
+      "visualConceptId": "father-v6-2026-10-26-desafio-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 35
+    },
+    {
+      "id": "cur-ciencia",
+      "group": "Curiosidades · Ciência",
+      "type": "CURIOSIDADE",
+      "title": "Por que as borboletas-monarcas precisam de plantas específicas?",
+      "summary": "Lagartas de monarca dependem de plantas hospedeiras, enquanto os adultos procuram néctar em flores variadas.",
+      "details": [
+        "As fases de lagarta e adulta têm necessidades alimentares diferentes.",
+        "Conservar plantas hospedeiras e flores ajuda o ciclo de vida.",
+        "O equilíbrio de habitats importa tanto quanto a migração."
+      ],
+      "visual": "butterfly",
+      "conceptId": "father-v6-2026-10-26-cur-ciencia-story",
+      "visualConceptId": "father-v6-2026-10-26-cur-ciencia-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "U.S. Forest Service — Monarch Butterfly",
+          "url": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/migration/index.shtml"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "As lagartas de monarca dependem de plantas hospedeiras",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "cur-espaco",
+      "group": "Curiosidades · Espaço",
+      "type": "CURIOSIDADE",
+      "title": "A luz do Sol leva cerca de oito minutos até a Terra",
+      "summary": "A luz viaja a aproximadamente 300 mil km/s; mesmo assim, a distância entre Sol e Terra exige alguns minutos.",
+      "details": [
+        "A distância média Sol–Terra é de aproximadamente 150 milhões de quilômetros.",
+        "O tempo de viagem da luz é próximo de oito minutos e vinte segundos.",
+        "Olhar o Sol diretamente é perigoso, inclusive com instrumentos sem filtro apropriado."
+      ],
+      "visual": "planet",
+      "conceptId": "father-v6-2026-10-26-cur-espaco-story",
+      "visualConceptId": "father-v6-2026-10-26-cur-espaco-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "NASA — Sun Facts",
+          "url": "https://science.nasa.gov/sun/facts/"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "A luz solar leva cerca de oito minutos até a Terra",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "cur-natureza",
+      "group": "Curiosidades · Natureza",
+      "type": "CURIOSIDADE",
+      "title": "Beija-flores conseguem voar para trás",
+      "summary": "A mecânica de voo do beija-flor permite movimentos estacionários e recuos que são raros entre aves.",
+      "details": [
+        "As asas descrevem movimentos rápidos que geram sustentação em diferentes fases.",
+        "Essa habilidade ajuda a alcançar flores em espaços apertados.",
+        "A observação deve respeitar o animal e evitar alimentadores mal higienizados."
+      ],
+      "visual": "bird",
+      "conceptId": "father-v6-2026-10-26-cur-natureza-story",
+      "visualConceptId": "father-v6-2026-10-26-cur-natureza-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "Audubon — Hummingbirds",
+          "url": "https://www.audubon.org/news/how-hummingbirds-use-their-tongues-drink-nectar"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "Beija-flores conseguem voar para trás",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "cur-historia",
+      "group": "Curiosidades · História",
+      "type": "CURIOSIDADE",
+      "title": "O cabo transatlântico de 1858 mudou a escala da comunicação",
+      "summary": "As primeiras tentativas de telégrafo transatlântico mostraram o potencial de mensagens entre continentes e as dificuldades técnicas da época.",
+      "details": [
+        "A transmissão por cabo era mais rápida que o transporte de cartas por navio.",
+        "Falhas de isolamento e operação afetavam a confiabilidade.",
+        "As redes modernas de fibra óptica são herdeiras desse desafio de infraestrutura."
+      ],
+      "visual": "telegraph",
+      "conceptId": "father-v6-2026-10-26-cur-historia-story",
+      "visualConceptId": "father-v6-2026-10-26-cur-historia-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian — Transatlantic cable",
+          "url": "https://www.si.edu/object/sectioned-sample-transatlantic-telegraph-cable%3Anmah_871655"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "O telégrafo transatlântico encurtou a comunicação entre continentes",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "gravidez",
+      "group": "Gravidez",
+      "type": "GUIA",
+      "title": "Felipe: aproximadamente 16 semanas e 1 dia",
+      "summary": "Pela data provável do parto de 11/04/2027, a gestação chega aproximadamente a 16 semanas e 1 dia nesta segunda-feira.",
+      "details": [
+        "A datação clínica e o acompanhamento do obstetra têm prioridade.",
+        "Bruna pode registrar dúvidas sobre sintomas, exames e conforto.",
+        "Pequenos gestos de apoio e divisão de tarefas ajudam a rotina."
+      ],
+      "visual": "baby",
+      "conceptId": "father-v6-2026-10-26-gravidez-story",
+      "visualConceptId": "father-v6-2026-10-26-gravidez-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Week 16",
+          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-16/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "pai",
+      "group": "Ser Pai",
+      "type": "GUIA",
+      "title": "Ser pai também é cuidar da logística sem sobrecarregar",
+      "summary": "Uma boa ajuda nesta fase é antecipar pequenas tarefas e deixar Bruna escolher o que realmente lhe traz conforto.",
+      "details": [
+        "Confiram os próximos compromissos do pré-natal.",
+        "Escolha uma tarefa doméstica concreta para resolver hoje.",
+        "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
+      ],
+      "visual": "family",
+      "conceptId": "father-v6-2026-10-26-pai-story",
+      "visualConceptId": "father-v6-2026-10-26-pai-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "brasil",
+      "group": "Brasil",
+      "type": "ATUALIZAÇÃO",
+      "title": "Brasil acorda após a definição do segundo turno presidencial",
+      "summary": "O TSE confirmou no domingo (25) a reeleição de Luiz Inácio Lula da Silva para um quarto mandato, segundo cobertura da Reuters.",
+      "details": [
+        "O resultado eleitoral pertence à votação de domingo, não a uma nova votação nesta segunda.",
+        "Evite compartilhar percentuais parciais como se fossem a totalização definitiva.",
+        "Para dados detalhados e oficiais, consulte o sistema de resultados do TSE."
+      ],
+      "visual": "brazil",
+      "conceptId": "father-v6-2026-10-26-brasil-story",
+      "visualConceptId": "father-v6-2026-10-26-brasil-visual",
+      "eventDate": "2026-10-25",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — Brazil presidential election, 25/10",
+          "url": "https://www.reuters.com/world/americas/brazil-heads-polls-runoff-between-leftist-lula-bolsonaro-jr-2026-10-25/",
+          "publishedAt": "2026-10-25"
+        },
+        {
+          "label": "TSE — Eleições 2026",
+          "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-26"
+    },
+    {
+      "id": "mundo",
+      "group": "Mundo",
+      "type": "FATO",
+      "title": "Israel se prepara para eleição em meio a debate econômico",
+      "summary": "Reportagem da Reuters de 26/10 analisa como investidores avaliam possíveis cenários políticos antes da votação israelense de terça-feira.",
+      "details": [
+        "Os movimentos de mercado descritos são expectativas, não resultados eleitorais.",
+        "O noticiário associa riscos geopolíticos às avaliações financeiras.",
+        "A eleição ainda não aconteceu no momento da reportagem."
+      ],
+      "visual": "globe",
+      "conceptId": "father-v6-2026-10-26-mundo-story",
+      "visualConceptId": "father-v6-2026-10-26-mundo-visual",
+      "eventDate": "2026-10-26",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — Israel markets and election, 26/10",
+          "url": "https://www.reuters.com/world/middle-east/israel-markets-see-upside-netanyahu-defeat-after-three-year-rally-2026-10-26/",
+          "publishedAt": "2026-10-26"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "politica",
+      "group": "Política",
+      "type": "ATUALIZAÇÃO",
+      "title": "Resultado presidencial de domingo abre novo ciclo de negociações",
+      "summary": "Após a reeleição de Lula no segundo turno de 25/10, o debate político se volta para a composição de apoios e as prioridades do próximo mandato.",
+      "details": [
+        "A apuração foi realizada no domingo; esta é uma atualização do cenário político.",
+        "O resultado oficial deve ser consultado nas plataformas do TSE.",
+        "Não atribua acordos ou nomeações sem confirmação pública."
+      ],
+      "visual": "ballot",
+      "conceptId": "father-v6-2026-10-26-politica-story",
+      "visualConceptId": "father-v6-2026-10-26-politica-visual",
+      "eventDate": "2026-10-25",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — Brazil presidential election, 25/10",
+          "url": "https://www.reuters.com/world/americas/brazil-heads-polls-runoff-between-leftist-lula-bolsonaro-jr-2026-10-25/",
+          "publishedAt": "2026-10-25"
+        },
+        {
+          "label": "TSE — Eleições 2026",
+          "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-26"
+    },
+    {
+      "id": "tempo",
+      "group": "Tempo",
+      "type": "PREVISÃO",
+      "title": "Segunda-feira mais fria e úmida em São Paulo",
+      "summary": "A previsão para 26/10 indica chuva e queda de temperatura na capital paulista, com máxima próxima de 18°C.",
+      "details": [
+        "Previsão meteorológica não equivale a observação em tempo real.",
+        "Frente fria e instabilidade podem alterar deslocamentos.",
+        "Consulte alertas atualizados do Inmet e da Defesa Civil antes de sair."
+      ],
+      "visual": "weather",
+      "conceptId": "father-v6-2026-10-26-tempo-story",
+      "visualConceptId": "father-v6-2026-10-26-tempo-visual",
+      "eventDate": "2026-10-26",
+      "news": true,
+      "sources": [
+        {
+          "label": "INMET — Previsão para 24, 25 e 26/10",
+          "url": "https://portal.inmet.gov.br/noticias/previs%C3%A3o-para-s%C3%A1bado-24-domingo-25-e-segunda-feira-26",
+          "publishedAt": "2026-10-23"
+        },
+        {
+          "label": "Veja — Previsão São Paulo 26/10",
+          "url": "https://veja.abril.com.br/agenda-verde/previsao-do-tempo-em-sao-paulo-nesta-segunda-26-chuva-derruba-temperaturas-e-maxima-fica-em-18c/",
+          "publishedAt": "2026-10-26"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "corinthians",
+      "group": "Corinthians",
+      "type": "ATUALIZAÇÃO",
+      "title": "Corinthians tenta reagir após derrota por 3 a 2 para o Vasco",
+      "summary": "O Vasco venceu o Corinthians no sábado (24), em São Januário, pela 32ª rodada; a equipe paulista busca reorganização após o revés.",
+      "details": [
+        "O placar de 3 a 2 é um resultado já ocorrido, não um jogo de hoje.",
+        "A reportagem do ge registra os principais lances.",
+        "Próximos compromissos devem ser confirmados na tabela oficial."
+      ],
+      "visual": "football",
+      "conceptId": "father-v6-2026-10-26-corinthians-story",
+      "visualConceptId": "father-v6-2026-10-26-corinthians-visual",
+      "eventDate": "2026-10-24",
+      "news": true,
+      "sources": [
+        {
+          "label": "ge — Vasco 3 x 2 Corinthians, 24/10",
+          "url": "https://ge.globo.com/rj/futebol/brasileirao-serie-a/jogo/24-10-2026/vasco-corinthians.ghtml",
+          "publishedAt": "2026-10-24"
+        },
+        {
+          "label": "Meu Timão — Atualização 26/10",
+          "url": "https://www.meutimao.com.br/noticias-do-corinthians/542763/zagueiro-do-corinthians-amplia-marcas-ofensivas-apos-derrota-para-o-vasco-da-gama-no-brasileirao",
+          "publishedAt": "2026-10-26"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-26"
+    },
+    {
+      "id": "viagens",
+      "group": "Viagens",
+      "type": "GUIA",
+      "title": "Passeio curto: escolha uma trilha com plano B para chuva",
+      "summary": "Para um passeio próximo de São Paulo, a decisão mais importante é checar tempo, acesso e nível de dificuldade antes de sair.",
+      "details": [
+        "Verifique funcionamento do parque e previsão atualizada.",
+        "Prefira rotas sinalizadas e adequadas ao condicionamento de todos.",
+        "Se chover, troque a trilha por um programa coberto."
+      ],
+      "visual": "mountain",
+      "conceptId": "father-v6-2026-10-26-viagens-story",
+      "visualConceptId": "father-v6-2026-10-26-viagens-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "musica",
+      "group": "Música",
+      "type": "GUIA",
+      "title": "Ouça o mesmo refrão em três camadas",
+      "summary": "Experimente reconhecer voz, bateria e guitarra separadamente para perceber como uma canção constrói energia.",
+      "details": [
+        "Primeiro ouça a música inteira sem interrupções.",
+        "Depois concentre-se em um instrumento por vez.",
+        "Na última audição, perceba como as camadas se combinam."
+      ],
+      "visual": "piano",
+      "conceptId": "father-v6-2026-10-26-musica-story",
+      "visualConceptId": "father-v6-2026-10-26-musica-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "sertanejo",
+      "group": "Sertanejo da Roça",
+      "type": "GUIA",
+      "title": "Viola caipira: a diferença entre ritmo e melodia",
+      "summary": "Um exercício simples é alternar acompanhamento rítmico e pequenas frases melódicas sem acelerar.",
+      "details": [
+        "Marque um pulso confortável com o pé.",
+        "Toque uma sequência rítmica curta.",
+        "Intercale notas isoladas e observe o contraste."
+      ],
+      "visual": "guitar",
+      "conceptId": "father-v6-2026-10-26-sertanejo-story",
+      "visualConceptId": "father-v6-2026-10-26-sertanejo-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "games",
+      "group": "Games",
+      "type": "GUIA",
+      "title": "Configurações que deixam o jogo mais confortável",
+      "summary": "Antes de começar um jogo novo, confira legenda, tamanho da interface e sensibilidade dos controles.",
+      "details": [
+        "Ajuste o texto para leitura sem esforço.",
+        "Teste sensibilidade e zona morta do controle.",
+        "Faça uma pausa curta para comparar o conforto antes e depois."
+      ],
+      "visual": "gamepad",
+      "conceptId": "father-v6-2026-10-26-games-story",
+      "visualConceptId": "father-v6-2026-10-26-games-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "tecnologia",
+      "group": "Tecnologia",
+      "type": "GUIA",
+      "title": "Centros de dados: eficiência importa tanto quanto velocidade",
+      "summary": "O desempenho de serviços de IA depende também de energia, resfriamento e conectividade, não apenas de chips.",
+      "details": [
+        "Capacidade computacional e consumo energético precisam ser considerados juntos.",
+        "Resfriamento e redes podem limitar a operação.",
+        "Compare anúncios de desempenho usando métricas equivalentes."
+      ],
+      "visual": "wafer",
+      "conceptId": "father-v6-2026-10-26-tecnologia-story",
+      "visualConceptId": "father-v6-2026-10-26-tecnologia-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "financas",
+      "group": "Finanças",
+      "type": "FATO",
+      "title": "Semana começa com atenção a moedas e bancos centrais",
+      "summary": "A Reuters informou em 26/10 que moedas globais iniciaram a semana em faixas estreitas antes de decisões de bancos centrais.",
+      "details": [
+        "Movimentos de abertura não representam o fechamento do dia.",
+        "Política monetária pode afetar câmbio e renda fixa.",
+        "Não tome decisões financeiras apenas com base em uma manchete."
+      ],
+      "visual": "chart",
+      "conceptId": "father-v6-2026-10-26-financas-story",
+      "visualConceptId": "father-v6-2026-10-26-financas-visual",
+      "eventDate": "2026-10-26",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — Currency markets 26/10",
+          "url": "https://www.reuters.com/world/africa/currency-markets-subdued-ahead-pivotal-central-bank-week-2026-10-26/",
+          "publishedAt": "2026-10-26"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "security-briefing",
+      "group": "Security Briefing",
+      "type": "GUIA",
+      "title": "Security Briefing: evidência de exploração muda prioridade",
+      "summary": "Uma vulnerabilidade com exploração conhecida merece análise de exposição e impacto, além da pontuação técnica.",
+      "details": [
+        "Cruze o inventário de ativos com o catálogo KEV da CISA.",
+        "Considere internet-facing, criticidade e controles compensatórios.",
+        "Registre o motivo da priorização para facilitar auditoria."
+      ],
+      "visual": "radar",
+      "conceptId": "father-v6-2026-10-26-security-briefing-story",
+      "visualConceptId": "father-v6-2026-10-26-security-briefing-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Known Exploited Vulnerabilities",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "cyber",
+      "group": "Cyber",
+      "type": "GUIA",
+      "title": "Cyber: horário consistente é essencial para investigar incidentes",
+      "summary": "Mesmo logs completos perdem valor quando os sistemas registram horários incompatíveis.",
+      "details": [
+        "Sincronize relógios com fontes de tempo confiáveis.",
+        "Armazene timestamps com fuso ou em UTC.",
+        "Correlacione eventos por identificadores e sequência, não só por horário."
+      ],
+      "visual": "shield",
+      "conceptId": "father-v6-2026-10-26-cyber-story",
+      "visualConceptId": "father-v6-2026-10-26-cyber-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "appsec",
+      "group": "AppSec",
+      "type": "GUIA",
+      "title": "AppSec: um SBOM é inventário, não veredito de segurança",
+      "summary": "A lista de componentes ajuda a entender dependências, mas precisa ser associada a evidências de vulnerabilidade e contexto de uso.",
+      "details": [
+        "Separe componentes detectados de vulnerabilidades confirmadas.",
+        "Use delta entre versões para identificar novas exposições.",
+        "Mantenha rastreabilidade entre build, artefato e inventário."
+      ],
+      "visual": "code",
+      "conceptId": "father-v6-2026-10-26-appsec-story",
+      "visualConceptId": "father-v6-2026-10-26-appsec-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [
+        {
+          "label": "OWASP — DevSecOps Guideline",
+          "url": "https://owasp.org/www-project-devsecops-guideline/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "carros",
+      "group": "Carros até R$70 mil",
+      "type": "GUIA",
+      "title": "Duster automática usada: verifique histórico antes do test-drive",
+      "summary": "Para uma Duster dentro do orçamento, histórico de manutenção e funcionamento do câmbio valem mais que acessórios.",
+      "details": [
+        "Confirme ano, versão e tipo de transmissão pelo documento e manual.",
+        "Teste engates a frio e a quente com profissional qualificado.",
+        "Reserve orçamento para inspeção independente antes da compra."
+      ],
+      "visual": "car",
+      "conceptId": "father-v6-2026-10-26-carros-story",
+      "visualConceptId": "father-v6-2026-10-26-carros-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "motos",
+      "group": "Motos",
+      "type": "GUIA",
+      "title": "Motos: corrente e lubrificação pedem inspeção periódica",
+      "summary": "Uma transmissão por corrente mal regulada pode gerar ruído, desgaste e perda de eficiência.",
+      "details": [
+        "Consulte a folga indicada no manual do modelo.",
+        "Inspecione sinais de desgaste e pontos rígidos.",
+        "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
+      ],
+      "visual": "motorcycle",
+      "conceptId": "father-v6-2026-10-26-motos-story",
+      "visualConceptId": "father-v6-2026-10-26-motos-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "mecanica",
+      "group": "Mecânica",
+      "type": "GUIA",
+      "title": "Fluido de freio: por que o prazo de troca importa?",
+      "summary": "O fluido de freio pode absorver umidade ao longo do tempo, prejudicando seu desempenho em condições exigentes.",
+      "details": [
+        "Consulte especificação e intervalo no manual do veículo.",
+        "Não misture fluidos incompatíveis.",
+        "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
+      ],
+      "visual": "wrench",
+      "conceptId": "father-v6-2026-10-26-mecanica-story",
+      "visualConceptId": "father-v6-2026-10-26-mecanica-visual",
+      "eventDate": "2026-10-26",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    }
+  ]
+}
