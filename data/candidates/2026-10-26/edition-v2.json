@@ -97,8 +97,8 @@
       "news": false,
       "sources": [
         {
-          "label": "NASA — Sun Facts",
-          "url": "https://science.nasa.gov/sun/facts/"
+          "label": "NASA Space Place — All About the Sun",
+          "url": "https://spaceplace.nasa.gov/all-about-the-sun/en/index.html"
         }
       ],
       "layout": "discover",
@@ -131,8 +131,8 @@
       "news": false,
       "sources": [
         {
-          "label": "Audubon — Hummingbirds",
-          "url": "https://www.audubon.org/news/how-hummingbirds-use-their-tongues-drink-nectar"
+          "label": "Smithsonian Gardens — Hovering",
+          "url": "https://gardens.si.edu/exhibitions/traveling/habitat/hovering/"
         }
       ],
       "layout": "discover",
