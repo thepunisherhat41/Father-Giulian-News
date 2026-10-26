@@ -89,6 +89,9 @@ jobs:
           const report=validateEdition(body);
           if(!report.ok||report.cardCount!==25||report.mediaCount!==25)process.exit(1);
           '
+          manifest_sha="$(node -p "JSON.parse(require('fs').readFileSync('/tmp/father-v6-raster/candidate-media-manifest.json','utf8')).manifest_sha256")"
+          [[ "$manifest_sha" =~ ^[a-f0-9]{64}$ ]]
+          echo "manifest_sha=$manifest_sha" >> "$GITHUB_OUTPUT"
           echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
       - name: Upload with dedicated RLS identity, then verify remote bytes
         env:
@@ -104,3 +107,37 @@ jobs:
           set -euo pipefail
           test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$FATHER_V6_APP_SHA"
           node scripts/v6-upload-immutable-media.mjs /tmp/father-v6-raster
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Install exact Chromium QA dependency after protected upload
+        run: |
+          npm install --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Build exact app SHA and start isolated v6 QA server
+        env:
+          FATHER_V6_APP_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$FATHER_V6_APP_SHA"
+          npm run build
+          mkdir -p artifacts/v6-remote-26-oct
+          FATHER_V6_ENABLED=true npm run start > /tmp/father-v6-remote-26.log 2>&1 &
+          for i in $(seq 1 50); do curl -sf http://127.0.0.1:3000/ >/dev/null && break || sleep 1; done
+          curl -fsS http://127.0.0.1:3000/ >/dev/null
+      - name: REAL 25/25 public Supabase bytes and Chromium screenshots on exact SHA
+        env:
+          FATHER_V6_APP_SHA: ${{ github.event.pull_request.head.sha }}
+          FATHER_V6_MANIFEST_SHA: ${{ steps.verify.outputs.manifest_sha }}
+        run: npx playwright test tests/v6-remote-26-oct.spec.ts --reporter=line --workers=1
+      - name: Preserve independent 26 October remote media proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-26-oct-real-remote-25-media-chromium-qa
+          path: |
+            artifacts/v6-remote-26-oct/
+            test-results/
+          retention-days: 14
