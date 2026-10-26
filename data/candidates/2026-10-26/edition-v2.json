@@ -3,7 +3,7 @@
   "timezone": "America/Sao_Paulo",
   "updatedAt": "2026-10-26T02:54:26-03:00",
   "version": 4,
-  "editorialNote": "CANDIDATA NÃO PUBLICADA de 26/10/2026. Fontes de notícias datadas, 25 cards e reporte histórico preservado. Mídias de 26/10, manifesto imutável, verificação dos bytes no Storage e QA Chromium remoto no SHA exato são requisitos antes de qualquer promoção.",
+  "editorialNote": "Edição editorial de 26/10/2026: notícias com fontes e datas identificadas, reportagens de dias anteriores rotuladas como atualizações, fotografias com atribuição e artes originais. Publicação depende da validação integral da release imutável.",
   "cards": [
     {
       "id": "papo",
