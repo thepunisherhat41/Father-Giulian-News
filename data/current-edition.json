@@ -1,25 +1,25 @@
 {
-  "editionDate": "2026-10-20",
+  "editionDate": "2026-10-29",
   "timezone": "America/Sao_Paulo",
-  "updatedAt": "2026-10-20T06:57:00-03:00",
-  "version": 3,
-  "editorialNote": "Edição de 20/10/2026. Notícias têm a data do evento, data da reportagem e classificação separadas. Agenda não é fato consumado. Zona Leste omitida sem notícia local inédita e confirmada de 20/10. Fotografias: Commons, com crédito e licença por obra.",
+  "updatedAt": "2026-10-29T21:00:03-03:00",
+  "version": 4,
+  "editorialNote": "Edição de 29/10/2026, com jornalismo atualizado e publicado nesta data, 12 fotografias de Wikimedia com atribuição verificável e 13 artes originais datadas. A aprovação depende de validação editorial, hashes exatos, upload protegido, Chromium remoto e CAS; nada é considerado publicado sem validação.",
   "cards": [
     {
       "id": "papo",
       "group": "Papo de hoje",
       "type": "ATIVIDADE",
-      "title": "Papo de hoje: qual cheiro merece virar lembrança do Felipe?",
-      "summary": "Escolham um cheiro da infância e contem a história inesperada que ele desperta. Vale café coado, terra molhada ou almoço de domingo.",
+      "title": "Qual história de hoje contaremos ao Felipe?",
+      "summary": "Separem um detalhe do dia que vocês gostariam de contar ao Felipe quando ele crescer.",
       "details": [
-        "Cada um escolhe um cheiro sem revelar qual é.",
-        "O outro tenta adivinhar que memória está por trás dele.",
-        "No fim, guardem a história em uma frase para o diário do Felipe."
+        "Cada um escolhe uma lembrança simples e concreta de hoje.",
+        "Descrevam o cheiro, o som ou a cena que ficou na memória.",
+        "Guardem juntos duas frases para reler daqui a um ano."
       ],
       "visual": "memory-jar",
-      "conceptId": "quest-smell-memory-20",
-      "visualConceptId": "visual-jar-memory-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-papo-story",
+      "visualConceptId": "father-v6-2026-10-29-papo-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -29,17 +29,17 @@
       "id": "desafio",
       "group": "Desafio do casal",
       "type": "ATIVIDADE",
-      "title": "Quest cooperativa: cinco objetos, cinco histórias",
-      "summary": "Vocês têm 12 minutos para encontrar cinco objetos da casa que contam como a vida mudou desde que souberam do Felipe.",
+      "title": "Desafio: carta com três agradecimentos",
+      "summary": "Reservem cinco minutos para escrever três agradecimentos reais deste dia.",
       "details": [
-        "Valem coisas pequenas: uma foto, um bilhete, uma roupa ou um enfeite.",
-        "Cada um escolhe dois objetos; o quinto é decisão conjunta.",
-        "Fotografem os cinco em uma composição — sem obrigação de publicar."
+        "Cada um escreve três linhas, sem comparar respostas.",
+        "Escolham uma conquista do casal para celebrar.",
+        "Se quiserem, guardem as cartas em um envelope para o futuro."
       ],
       "visual": "photos",
-      "conceptId": "quest-objects-timeline-20",
-      "visualConceptId": "visual-five-polaroids-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-desafio-story",
+      "visualConceptId": "father-v6-2026-10-29-desafio-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -49,158 +49,158 @@
       "id": "cur-ciencia",
       "group": "Curiosidades · Ciência",
       "type": "CURIOSIDADE",
-      "title": "Corais são animais — e constroem cidades submarinas",
-      "summary": "O recife não é uma rocha viva única: ele surge da atividade de inúmeros pequenos animais chamados pólipos.",
+      "title": "Por que as borboletas-monarcas precisam de plantas específicas?",
+      "summary": "Lagartas de monarca dependem de plantas hospedeiras, enquanto os adultos procuram néctar em flores variadas.",
       "details": [
-        "Cada pólipo pode abrigar algas simbióticas que fornecem energia.",
-        "Temperatura elevada e outros estresses podem causar branqueamento.",
-        "A estrutura da colônia serve de habitat para diversos outros organismos."
+        "As fases de lagarta e adulta têm necessidades alimentares diferentes.",
+        "Conservar plantas hospedeiras e flores ajuda o ciclo de vida.",
+        "O equilíbrio de habitats importa tanto quanto a migração."
       ],
-      "visual": "coral",
-      "conceptId": "coral-polyps-city-20",
-      "visualConceptId": "visual-coral-reefs-20",
-      "eventDate": "2026-10-20",
+      "visual": "butterfly",
+      "conceptId": "father-v6-2026-10-29-cur-ciencia-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-ciencia-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
-          "label": "NOAA — corais são animais",
-          "url": "https://oceanservice.noaa.gov/facts/coral.html"
+          "label": "U.S. Forest Service — Monarch Butterfly",
+          "url": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/migration/index.shtml"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Corais são plantas ou animais?",
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
         "options": [
-          "Plantas",
-          "Animais",
-          "Rochas"
+          "As lagartas de monarca dependem de plantas hospedeiras",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
         ],
-        "answer": 1,
-        "explanation": "Corais são animais — organismos coloniais compostos de pólipos."
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
       }
     },
     {
       "id": "cur-espaco",
       "group": "Curiosidades · Espaço",
       "type": "CURIOSIDADE",
-      "title": "Os anéis de Saturno não são discos sólidos",
-      "summary": "Aquilo que parece um prato uniforme é um conjunto de incontáveis fragmentos de gelo e rocha em órbita.",
+      "title": "A luz do Sol leva cerca de oito minutos até a Terra",
+      "summary": "A luz viaja a aproximadamente 300 mil km/s; mesmo assim, a distância entre Sol e Terra exige alguns minutos.",
       "details": [
-        "As partículas variam muito de tamanho e refletem a luz solar.",
-        "As lacunas e ondas nos anéis refletem, entre outros fatores, a ação gravitacional das luas.",
-        "Uma fotografia real da Cassini ajuda a perceber as faixas."
+        "A distância média Sol–Terra é de aproximadamente 150 milhões de quilômetros.",
+        "O tempo de viagem da luz é próximo de oito minutos e vinte segundos.",
+        "Olhar o Sol diretamente é perigoso, inclusive com instrumentos sem filtro apropriado."
       ],
       "visual": "planet",
-      "conceptId": "saturn-rings-particles-20",
-      "visualConceptId": "visual-cassini-ring-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-cur-espaco-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-espaco-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
-          "label": "NASA — Saturn Rings",
-          "url": "https://science.nasa.gov/saturn/facts/"
+          "label": "NASA Space Place — All About the Sun",
+          "url": "https://spaceplace.nasa.gov/all-about-the-sun/en/index.html"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "De que são feitos principalmente os anéis?",
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
         "options": [
-          "Gelo e rocha",
-          "Gás puro",
-          "Um disco sólido"
+          "A luz solar leva cerca de oito minutos até a Terra",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
         ],
         "answer": 0,
-        "explanation": "Bilhões de fragmentos gelados e rochosos orbitam o planeta."
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
       }
     },
     {
       "id": "cur-natureza",
       "group": "Curiosidades · Natureza",
       "type": "CURIOSIDADE",
-      "title": "Raposas conseguem ouvir presas escondidas",
-      "summary": "A audição apurada ajuda raposas a localizar pequenos animais mesmo quando eles não estão visíveis.",
+      "title": "Beija-flores conseguem voar para trás",
+      "summary": "A mecânica de voo do beija-flor permite movimentos estacionários e recuos que são raros entre aves.",
       "details": [
-        "Orelhas móveis captam sons vindos de diferentes direções.",
-        "O comportamento de caça combina escuta, observação e saltos precisos.",
-        "Nem toda raposa vive em regiões geladas."
+        "As asas descrevem movimentos rápidos que geram sustentação em diferentes fases.",
+        "Essa habilidade ajuda a alcançar flores em espaços apertados.",
+        "A observação deve respeitar o animal e evitar alimentadores mal higienizados."
       ],
-      "visual": "fox",
-      "conceptId": "fox-hearing-hunt-20",
-      "visualConceptId": "visual-red-fox-wild-20",
-      "eventDate": "2026-10-20",
+      "visual": "bird",
+      "conceptId": "father-v6-2026-10-29-cur-natureza-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-natureza-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
-          "label": "Britannica — red fox",
-          "url": "https://www.britannica.com/animal/red-fox"
+          "label": "Smithsonian Gardens — Hovering",
+          "url": "https://gardens.si.edu/exhibitions/traveling/habitat/hovering/"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Qual sentido ajuda a raposa a localizar presas ocultas?",
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
         "options": [
-          "Visão ultravioleta",
-          "Audição",
-          "Campo magnético"
+          "Beija-flores conseguem voar para trás",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
         ],
-        "answer": 1,
-        "explanation": "A audição sensível contribui para localizar pequenos animais."
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
       }
     },
     {
       "id": "cur-historia",
       "group": "Curiosidades · História",
       "type": "CURIOSIDADE",
-      "title": "O telégrafo mudou a velocidade de uma notícia",
-      "summary": "Antes da transmissão elétrica, notícias entre cidades viajavam com pessoas, barcos ou animais. O telégrafo reduziu muito essa espera.",
+      "title": "O cabo transatlântico de 1858 mudou a escala da comunicação",
+      "summary": "As primeiras tentativas de telégrafo transatlântico mostraram o potencial de mensagens entre continentes e as dificuldades técnicas da época.",
       "details": [
-        "Operadores traduziam pulsos em mensagens codificadas.",
-        "A infraestrutura de fios e estações tornou a circulação de informações mais rápida.",
-        "O avanço trouxe novos desafios de custo, acesso e confiabilidade."
+        "A transmissão por cabo era mais rápida que o transporte de cartas por navio.",
+        "Falhas de isolamento e operação afetavam a confiabilidade.",
+        "As redes modernas de fibra óptica são herdeiras desse desafio de infraestrutura."
       ],
       "visual": "telegraph",
-      "conceptId": "history-telegraph-press-20",
-      "visualConceptId": "visual-telegraph-device-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-cur-historia-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-historia-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
-          "label": "Britannica — telegraph",
-          "url": "https://www.britannica.com/technology/telegraph"
+          "label": "Smithsonian — Transatlantic cable",
+          "url": "https://www.si.edu/object/sectioned-sample-transatlantic-telegraph-cable%3Anmah_871655"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "O telégrafo acelerou principalmente o quê?",
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
         "options": [
-          "Mensagens a longa distância",
-          "Transporte de cargas",
-          "Deslocamento de trens"
+          "O telégrafo transatlântico encurtou a comunicação entre continentes",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
         ],
         "answer": 0,
-        "explanation": "Mensagens podiam percorrer fios elétricos muito mais rápido que meios físicos."
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
       }
     },
     {
       "id": "gravidez",
       "group": "Gravidez",
       "type": "GUIA",
-      "title": "Felipe chega a 15 semanas e 2 dias de gestação",
-      "summary": "A contagem obstétrica pela DPP de 11/04/2027 indica 15s2d. Um bom dia para entender mudanças no corpo e acompanhar o pré-natal.",
+      "title": "Felipe: aproximadamente 16 semanas e 4 dias",
+      "summary": "Pela datação da DUM de 05/07/2026, a gestação está por volta de 16 semanas e 4 dias.",
       "details": [
-        "Movimentos e proporções do feto mudam ao longo do segundo trimestre.",
-        "Se a Bruna estiver cansada, ajustes de rotina e hidratação podem ajudar.",
-        "Dúvidas sobre sintomas e exames devem ser discutidas no pré-natal."
+        "O desenvolvimento segue no segundo trimestre, com crescimento e mudanças progressivas.",
+        "A datação do obstetra e os exames são a referência caso haja divergência.",
+        "Apoio prático e alimentação tolerada podem ser mais úteis que cobranças."
       ],
       "visual": "baby",
-      "conceptId": "pregnancy-week-15-d2-20",
-      "visualConceptId": "visual-week15-soft-maternity-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-gravidez-story",
+      "visualConceptId": "father-v6-2026-10-29-gravidez-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
-          "label": "NHS — Week 15",
-          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-15/"
+          "label": "NHS — Week 16",
+          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-16/"
         }
       ],
       "layout": "guide"
@@ -209,170 +209,171 @@
       "id": "pai",
       "group": "Ser Pai",
       "type": "GUIA",
-      "title": "Checklist de pai: como facilitar o próximo pré-natal",
-      "summary": "Ao invés de procurar a pergunta perfeita, preparem juntos três dúvidas práticas antes da consulta.",
+      "title": "Ser pai também é cuidar da logística sem sobrecarregar",
+      "summary": "Uma boa ajuda nesta fase é antecipar pequenas tarefas e deixar Bruna escolher o que realmente lhe traz conforto.",
       "details": [
-        "Anote sintomas, horários, mudanças de apetite e dúvidas recentes.",
-        "Confirme endereço, exames solicitados e documentos.",
-        "Na consulta, ofereça apoio sem tirar a voz da Bruna."
+        "Confiram os próximos compromissos do pré-natal.",
+        "Escolha uma tarefa doméstica concreta para resolver hoje.",
+        "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
       ],
       "visual": "family",
-      "conceptId": "father-prenatal-support-20",
-      "visualConceptId": "visual-prenatal-notes-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-pai-story",
+      "visualConceptId": "father-v6-2026-10-29-pai-visual",
+      "eventDate": "2026-10-29",
       "news": false,
-      "sources": [
-        {
-          "label": "NHS — Supporting your partner",
-          "url": "https://www.nhs.uk/pregnancy/support/partners/"
-        }
-      ],
+      "sources": [],
       "layout": "guide"
     },
     {
       "id": "brasil",
       "group": "Brasil",
-      "type": "AGENDA",
-      "title": "Brasil a cinco dias do segundo turno: serviço ao eleitor",
-      "summary": "O segundo turno das eleições está marcado para domingo, 25/10. Hoje é uma boa data para revisar local de votação e documentos.",
+      "type": "ATUALIZAÇÃO",
+      "title": "Brasil prepara leilão de R$ 8,9 bilhões em transmissão de energia",
+      "summary": "O Ministério de Minas e Energia anunciou que o leilão de sexta-feira (30) prevê investimentos em linhas de transmissão em sete estados.",
       "details": [
-        "O horário nacional de votação no dia 25 é das 8h às 17h, segundo o TSE.",
-        "Não há resultado eleitoral referente a hoje: este é um serviço de agenda.",
-        "Use os canais oficiais para consultar seção e situação eleitoral."
+        "O certame está previsto para 30/10, às 10h, na B3, segundo o MME.",
+        "São estimados 1.866 km de novas linhas e reforços na infraestrutura.",
+        "O valor de R$ 8,9 bilhões é investimento previsto, não valor já executado."
       ],
       "visual": "brazil",
-      "conceptId": "brasil-election-countdown-20",
-      "visualConceptId": "visual-election-schedule-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-brasil-story",
+      "visualConceptId": "father-v6-2026-10-29-brasil-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "TSE — calendário oficial",
-          "url": "https://www.tse.jus.br/eleicoes/calendario-eleitoral/calendario-eleitoral"
+          "label": "Ministério de Minas e Energia — leilão de transmissão, 29/10",
+          "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/governo-federal-amplia-ciclo-historico-de-investimentos-em-transmissao-com-leilao-de-r-8-9-bilhoes-na-b3",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "mundo",
       "group": "Mundo",
-      "type": "FATO",
-      "title": "Petróleo supera US$ 110 e pressiona mercados na manhã",
-      "summary": "Em reportagem de 20/10, a Reuters registra alta do Brent e cautela nas bolsas, em meio a tensões no Oriente Médio.",
+      "type": "ATUALIZAÇÃO",
+      "title": "Grécia pede proteção à navegação no Mar Negro",
+      "summary": "Em entrevista publicada pela Reuters nesta quinta, o primeiro-ministro grego defendeu uma trégua internacional para proteger o transporte marítimo.",
       "details": [
-        "A Reuters informou o Brent acima de US$ 110 por barril em sua atualização matinal.",
-        "Os mercados acompanham tanto o custo da energia quanto balanços de empresas de IA.",
-        "Valores de mercado são intradiários e podem mudar ao longo desta terça."
+        "Kyriakos Mitsotakis afirmou que a segurança de navios é decisiva para o comércio regional.",
+        "A fala ocorreu após um ataque contra uma embarcação de propriedade grega no Mar Negro.",
+        "A proposta é uma defesa de negociações e não significa que uma trégua já tenha sido firmada."
       ],
       "visual": "globe",
-      "conceptId": "brent-markets-20",
-      "visualConceptId": "visual-oil-derrick-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-mundo-story",
+      "visualConceptId": "father-v6-2026-10-29-mundo-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — mercados em 20/10",
-          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/",
-          "publishedAt": "2026-10-20"
+          "label": "Reuters — Grécia e segurança no Mar Negro, 29/10",
+          "url": "https://www.reuters.com/world/europe/greek-pm-calls-turkey-libya-maritime-deal-void-calls-global-truce-after-black-2026-10-29/",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "politica",
       "group": "Política",
-      "type": "AGENDA",
-      "title": "TSE: regra especial de proteção ao eleitor começa hoje",
-      "summary": "De 20 a 27/10 vale a restrição legal à prisão de eleitores, com exceções previstas no Código Eleitoral.",
+      "type": "ATUALIZAÇÃO",
+      "title": "Campanha orienta trabalhadores a denunciar assédio eleitoral",
+      "summary": "Ministério do Trabalho divulgará orientações na Carteira de Trabalho Digital sobre coerção relacionada à escolha política.",
       "details": [
-        "Exceções incluem flagrante delito e outras hipóteses expressamente definidas na lei.",
-        "A regra integra o calendário oficial do segundo turno, não é notícia de uma prisão.",
-        "A votação está marcada para 25 de outubro."
+        "A orientação reforça o sigilo do voto e a liberdade de opinião.",
+        "Ameaças, retaliações e pressão no ambiente profissional podem ser denunciadas.",
+        "A matéria identifica o canal assedioeleitoral.trabalho.gov.br como via de denúncia."
       ],
       "visual": "ballot",
-      "conceptId": "tse-electors-protection-20",
-      "visualConceptId": "visual-voting-machine-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-politica-story",
+      "visualConceptId": "father-v6-2026-10-29-politica-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "TSE — Resolução 23.760/2026",
-          "url": "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-760-de-2-de-marco-de-2026"
+          "label": "Agência Brasil — combate ao assédio eleitoral, 29/10",
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/campanha-orienta-trabalhadores-sobre-denuncias-de-assedio-eleitoral",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "tempo",
       "group": "Tempo",
-      "type": "PREVISÃO",
-      "title": "São Paulo amanhece nublada; CGE prevê máxima de 20 °C",
-      "summary": "Boletim do CGE de 00h18 registra 15 °C médios na cidade e prevê variação entre 13 °C e 20 °C nesta terça.",
+      "type": "ATUALIZAÇÃO",
+      "title": "São Paulo termina quinta-feira com chuva e risco de alagamentos",
+      "summary": "O Centro de Gerenciamento de Emergências da Prefeitura informou chuva e sensação de frio na capital na noite de 29/10.",
       "details": [
-        "O CGE prevê céu nublado e temperaturas amenas para outubro.",
-        "Não havia registro de chuva no radar da capital no boletim da madrugada.",
-        "A tendência é de retorno de chuva mais significativa a partir de quinta (22)."
+        "Às 18h01 o CGE apontava cerca de 17,6°C de temperatura média.",
+        "Havia chuva de intensidade até moderada entre as zonas Norte e Leste.",
+        "O solo encharcado aumenta os riscos em encostas e vias sujeitas a alagamento."
       ],
       "visual": "weather",
-      "conceptId": "sao-paulo-clouds-20",
-      "visualConceptId": "visual-sp-city-overcast-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-tempo-story",
+      "visualConceptId": "father-v6-2026-10-29-tempo-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "CGE São Paulo — boletim 20/10 00:18",
-          "url": "https://www.cgesp.net/v3/noticias.jsp?anoMes=2026-10",
-          "publishedAt": "2026-10-20"
+          "label": "CGE Prefeitura de São Paulo — boletim de 29/10 às 18h01",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?data=2026-10-29",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "corinthians",
       "group": "Corinthians",
       "type": "ATUALIZAÇÃO",
-      "title": "Corinthians 1 × 1 Vitória: o que o empate de ontem significa",
-      "summary": "A partida foi em 19/10. Reportagens publicadas em 20/10 analisam o pênalti de Yuri Alberto e a situação na tabela.",
+      "title": "Corinthians encerra preparação para receber o Mirassol",
+      "summary": "O ge publicou nesta quinta que a equipe treinou na Neo Química Arena para o jogo de sexta (30), às 20h.",
       "details": [
-        "FATO DE 19/10: Corinthians e Vitória empataram por 1 a 1.",
-        "REPORTAGEM DE 20/10: ex-árbitros ouvidos pelo UOL avaliaram o lance do pênalti.",
-        "A classificação deve ser consultada em tabela oficial atualizada; não trate o resultado de ontem como jogo de hoje."
+        "A preparação terminou na arena na tarde de 29/10, segundo a reportagem.",
+        "Memphis Depay segue indisponível por problema muscular.",
+        "A partida será em 30/10, às 20h, conforme tabela da CBF."
       ],
       "visual": "football",
-      "conceptId": "corinthians-postgame-20",
-      "visualConceptId": "visual-arena-analysis-20",
-      "eventDate": "2026-10-19",
+      "conceptId": "father-v6-2026-10-29-corinthians-story",
+      "visualConceptId": "father-v6-2026-10-29-corinthians-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "UOL — análise do pênalti em 20/10",
-          "url": "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/20/ex-arbitros-penalti-corinthians-vitoria-brasileirao-2026.ghtm",
-          "publishedAt": "2026-10-20"
+          "label": "ge — Corinthians fecha preparação em 29/10",
+          "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/escalacao-do-corinthians-seedorf-fecha-preparacao-na-arena-e-deve-repetir-time-contra-o-mirassol.ghtml",
+          "publishedAt": "2026-10-29"
         },
         {
-          "label": "CBF — jogo de 19/10",
-          "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/corinthians-x-vitoria/832194",
-          "publishedAt": "2026-10-20"
+          "label": "CBF — Corinthians x Mirassol 30/10",
+          "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/corinthians-x-mirassol/832214",
+          "publishedAt": "2026-10-29"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-20"
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "viagens",
       "group": "Viagens",
       "type": "GUIA",
-      "title": "Trilha e vista: como montar um passeio curto na Pedra Grande",
-      "summary": "Um roteiro de planejamento para Atibaia, priorizando segurança, clima e acesso autorizado. Não é anúncio de evento novo.",
+      "title": "Passeio curto: escolha uma trilha com plano B para chuva",
+      "summary": "Para um passeio próximo de São Paulo, a decisão mais importante é checar tempo, acesso e nível de dificuldade antes de sair.",
       "details": [
-        "Confira as condições do parque e o acesso por vias permitidas.",
-        "Leve água, calçado adequado e proteção contra o sol.",
-        "Defina horário de retorno e evite caminhos desconhecidos."
+        "Verifique funcionamento do parque e previsão atualizada.",
+        "Prefira rotas sinalizadas e adequadas ao condicionamento de todos.",
+        "Se chover, troque a trilha por um programa coberto."
       ],
       "visual": "mountain",
-      "conceptId": "atibaia-view-plan-20",
-      "visualConceptId": "visual-mountain-trail-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-viagens-story",
+      "visualConceptId": "father-v6-2026-10-29-viagens-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -381,17 +382,17 @@
       "id": "musica",
       "group": "Música",
       "type": "GUIA",
-      "title": "Ouça um trio de jazz: onde está o ritmo de verdade?",
-      "summary": "Experimente ouvir baixo, bateria e piano separadamente. Uma mesma gravação revela camadas diferentes.",
+      "title": "Ouça o mesmo refrão em três camadas",
+      "summary": "Experimente reconhecer voz, bateria e guitarra separadamente para perceber como uma canção constrói energia.",
       "details": [
-        "Na primeira escuta, siga só o contrabaixo.",
-        "Na segunda, preste atenção aos pratos e às pausas.",
-        "Na terceira, perceba como o piano conversa com os outros instrumentos."
+        "Primeiro ouça a música inteira sem interrupções.",
+        "Depois concentre-se em um instrumento por vez.",
+        "Na última audição, perceba como as camadas se combinam."
       ],
       "visual": "piano",
-      "conceptId": "jazz-trio-ear-20",
-      "visualConceptId": "visual-jazz-stage-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-musica-story",
+      "visualConceptId": "father-v6-2026-10-29-musica-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -400,17 +401,17 @@
       "id": "sertanejo",
       "group": "Sertanejo da Roça",
       "type": "GUIA",
-      "title": "Viola caipira: moda de viola não é igual a pagode",
-      "summary": "A cadência e a função do instrumento mudam conforme a tradição musical. Um guia de escuta, não um lançamento do dia.",
+      "title": "Viola caipira: a diferença entre ritmo e melodia",
+      "summary": "Um exercício simples é alternar acompanhamento rítmico e pequenas frases melódicas sem acelerar.",
       "details": [
-        "Escolha duas gravações tradicionais com andamento diferente.",
-        "Tente reconhecer introdução, ponteios e ritmo antes de ouvir a letra.",
-        "Use apenas gravações de canais oficiais ou licenciados ao compartilhar."
+        "Marque um pulso confortável com o pé.",
+        "Toque uma sequência rítmica curta.",
+        "Intercale notas isoladas e observe o contraste."
       ],
       "visual": "guitar",
-      "conceptId": "viola-styles-20",
-      "visualConceptId": "visual-caipira-viola-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-sertanejo-story",
+      "visualConceptId": "father-v6-2026-10-29-sertanejo-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -419,17 +420,17 @@
       "id": "games",
       "group": "Games",
       "type": "GUIA",
-      "title": "Controle na mão: teste três ajustes de acessibilidade",
-      "summary": "Pequenos ajustes de sensibilidade, legendas e remapeamento podem mudar a experiência sem comprar nada.",
+      "title": "Configurações que deixam o jogo mais confortável",
+      "summary": "Antes de começar um jogo novo, confira legenda, tamanho da interface e sensibilidade dos controles.",
       "details": [
-        "Procure as opções de acessibilidade do seu console.",
-        "Teste um ajuste por vez, sempre no mesmo trecho do jogo.",
-        "Guarde um perfil com as configurações que funcionarem melhor."
+        "Ajuste o texto para leitura sem esforço.",
+        "Teste sensibilidade e zona morta do controle.",
+        "Faça uma pausa curta para comparar o conforto antes e depois."
       ],
       "visual": "gamepad",
-      "conceptId": "controller-accessibility-20",
-      "visualConceptId": "visual-dualsense-controller-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-games-story",
+      "visualConceptId": "father-v6-2026-10-29-games-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -438,66 +439,62 @@
       "id": "tecnologia",
       "group": "Tecnologia",
       "type": "GUIA",
-      "title": "IA e chips: o gargalo não é só poder de processamento",
-      "summary": "Infraestrutura de IA também depende de energia, rede, armazenamento e financiamento. Entenda o sistema completo.",
+      "title": "Centros de dados: eficiência importa tanto quanto velocidade",
+      "summary": "O desempenho de serviços de IA depende também de energia, resfriamento e conectividade, não apenas de chips.",
       "details": [
-        "Processadores aceleram cálculos, mas dependem do restante da infraestrutura.",
-        "Custo de eletricidade e refrigeração afeta a operação de data centers.",
-        "Não confunda debate de mercado com anúncio de tecnologia desta terça."
+        "Capacidade computacional e consumo energético precisam ser considerados juntos.",
+        "Resfriamento e redes podem limitar a operação.",
+        "Compare anúncios de desempenho usando métricas equivalentes."
       ],
       "visual": "wafer",
-      "conceptId": "ai-infrastructure-20",
-      "visualConceptId": "visual-ai-datacenter-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-tecnologia-story",
+      "visualConceptId": "father-v6-2026-10-29-tecnologia-visual",
+      "eventDate": "2026-10-29",
       "news": false,
-      "sources": [
-        {
-          "label": "Reuters — mercado de IA e chips, 20/10",
-          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/"
-        }
-      ],
+      "sources": [],
       "layout": "guide"
     },
     {
       "id": "financas",
       "group": "Finanças",
-      "type": "APURAÇÃO/REPORTAGEM",
-      "title": "Brent acima de US$ 110 muda o radar de inflação",
-      "summary": "Na manhã de 20/10, a Reuters descreve alta no petróleo e atenção a balanços do setor de IA.",
+      "type": "ATUALIZAÇÃO",
+      "title": "Ibovespa cai 1,06% e dólar fecha perto de R$ 5,39",
+      "summary": "No fechamento de quinta-feira, o índice perdeu o patamar de 170 mil pontos em sessão marcada por cautela fiscal.",
       "details": [
-        "Energia cara pressiona transporte e outros custos, mas efeitos variam por país.",
-        "Os valores mencionados são intradiários e não representam fechamento.",
-        "Informação econômica, não recomendação de investimento."
+        "O Ibovespa encerrou aos 169.186,42 pontos, segundo dados de fechamento reportados.",
+        "O dólar comercial à vista terminou a R$ 5,3878 para venda, com alta no dia.",
+        "Os valores são retrato do encerramento de 29/10, não cotação em tempo real."
       ],
       "visual": "chart",
-      "conceptId": "oil-inflation-watch-20",
-      "visualConceptId": "visual-oil-finance-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-financas-story",
+      "visualConceptId": "father-v6-2026-10-29-financas-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — petróleo e bolsas, 20/10",
-          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/",
-          "publishedAt": "2026-10-20"
+          "label": "UOL / Estadão Conteúdo — fechamento 29/10",
+          "url": "https://economia.uol.com.br/noticias/estadao-conteudo/2026/10/29/fechamento-do-mercado-financeiro.amp.htm",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "security-briefing",
       "group": "Security Briefing",
       "type": "GUIA",
-      "title": "Security Briefing: priorize evidência antes do alerta",
-      "summary": "Transforme ruído de feed em uma fila simples por exploração, exposição do ativo e possibilidade de mitigação.",
+      "title": "Security Briefing: evidência de exploração muda prioridade",
+      "summary": "Uma vulnerabilidade com exploração conhecida merece análise de exposição e impacto, além da pontuação técnica.",
       "details": [
-        "Comece pelas ameaças com exploração confirmada e ativos presentes no inventário.",
-        "CISA KEV é evidência de exploração conhecida, não prova de incidente no seu ambiente.",
-        "Registre data da fonte e versão afetada antes de abrir o item."
+        "Cruze o inventário de ativos com o catálogo KEV da CISA.",
+        "Considere internet-facing, criticidade e controles compensatórios.",
+        "Registre o motivo da priorização para facilitar auditoria."
       ],
       "visual": "radar",
-      "conceptId": "security-triage-20",
-      "visualConceptId": "visual-security-dashboard-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-security-briefing-story",
+      "visualConceptId": "father-v6-2026-10-29-security-briefing-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -511,45 +508,40 @@
       "id": "cyber",
       "group": "Cyber",
       "type": "GUIA",
-      "title": "Cyber: cinco sinais que justificam olhar mais de perto",
-      "summary": "Uma hipótese de hunting eficaz precisa de logs correlacionáveis e janela temporal clara, não de manchetes genéricas.",
+      "title": "Cyber: horário consistente é essencial para investigar incidentes",
+      "summary": "Mesmo logs completos perdem valor quando os sistemas registram horários incompatíveis.",
       "details": [
-        "Observe mudanças súbitas de login e origem de acesso.",
-        "Correlacione DNS, endpoint e autenticação por horário.",
-        "Não anuncie novo CVE sem advisory oficial e data verificável."
+        "Sincronize relógios com fontes de tempo confiáveis.",
+        "Armazene timestamps com fuso ou em UTC.",
+        "Correlacione eventos por identificadores e sequência, não só por horário."
       ],
       "visual": "shield",
-      "conceptId": "hunting-signals-20",
-      "visualConceptId": "visual-server-observability-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-cyber-story",
+      "visualConceptId": "father-v6-2026-10-29-cyber-visual",
+      "eventDate": "2026-10-29",
       "news": false,
-      "sources": [
-        {
-          "label": "CISA — Cybersecurity Best Practices",
-          "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
-        }
-      ],
+      "sources": [],
       "layout": "guide"
     },
     {
       "id": "appsec",
       "group": "AppSec",
       "type": "GUIA",
-      "title": "AppSec: um segredo novo não é igual a segredo histórico",
-      "summary": "Para release gates, use contexto Git imutável e linhas adicionadas antes de classificar um achado como regressão.",
+      "title": "AppSec: um SBOM é inventário, não veredito de segurança",
+      "summary": "A lista de componentes ajuda a entender dependências, mas precisa ser associada a evidências de vulnerabilidade e contexto de uso.",
       "details": [
-        "Diferencie Current Exposure de NEW_SECRET no diff.",
-        "Preserve inventário histórico e auditoria; bloqueio deve seguir política aprovada.",
-        "Verificador e evidências são necessários antes de automatizar correções."
+        "Separe componentes detectados de vulnerabilidades confirmadas.",
+        "Use delta entre versões para identificar novas exposições.",
+        "Mantenha rastreabilidade entre build, artefato e inventário."
       ],
       "visual": "code",
-      "conceptId": "appsec-delta-secrets-20",
-      "visualConceptId": "visual-diff-and-secrets-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-appsec-story",
+      "visualConceptId": "father-v6-2026-10-29-appsec-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
-          "label": "OWASP — DevSecOps",
+          "label": "OWASP — DevSecOps Guideline",
           "url": "https://owasp.org/www-project-devsecops-guideline/"
         }
       ],
@@ -559,17 +551,17 @@
       "id": "carros",
       "group": "Carros até R$70 mil",
       "type": "GUIA",
-      "title": "Duster automática até R$ 70 mil: teste o câmbio primeiro",
-      "summary": "Para usados nessa faixa, avalie histórico de manutenção e funcionamento a frio e a quente antes de negociar.",
+      "title": "Duster automática usada: verifique histórico antes do test-drive",
+      "summary": "Para uma Duster dentro do orçamento, histórico de manutenção e funcionamento do câmbio valem mais que acessórios.",
       "details": [
-        "Peça notas de serviços, inspeção pré-compra e laudo cautelar.",
-        "Avalie fluido, trocas de marcha, arrefecimento e sinais de superaquecimento.",
-        "Preço de anúncio só entra após confirmação; este guia não afirma valor de oferta."
+        "Confirme ano, versão e tipo de transmissão pelo documento e manual.",
+        "Teste engates a frio e a quente com profissional qualificado.",
+        "Reserve orçamento para inspeção independente antes da compra."
       ],
       "visual": "car",
-      "conceptId": "duster-inspection-20",
-      "visualConceptId": "visual-duster-checklist-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-carros-story",
+      "visualConceptId": "father-v6-2026-10-29-carros-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -578,17 +570,17 @@
       "id": "motos",
       "group": "Motos",
       "type": "GUIA",
-      "title": "Motos: o pneu conta uma história antes da viagem",
-      "summary": "Desgaste irregular, bolhas e pressão incorreta merecem atenção antes de sair.",
+      "title": "Motos: corrente e lubrificação pedem inspeção periódica",
+      "summary": "Uma transmissão por corrente mal regulada pode gerar ruído, desgaste e perda de eficiência.",
       "details": [
-        "Confira calibragem com pneus frios conforme o manual.",
-        "Procure desgaste fora do padrão e objetos presos na banda de rodagem.",
-        "Se encontrar dano estrutural, procure oficina antes de rodar."
+        "Consulte a folga indicada no manual do modelo.",
+        "Inspecione sinais de desgaste e pontos rígidos.",
+        "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
       ],
       "visual": "motorcycle",
-      "conceptId": "tire-inspection-20",
-      "visualConceptId": "visual-motorcycle-tire-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-motos-story",
+      "visualConceptId": "father-v6-2026-10-29-motos-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -597,17 +589,17 @@
       "id": "mecanica",
       "group": "Mecânica",
       "type": "GUIA",
-      "title": "Correia dentada ou corrente: descubra o que seu motor usa",
-      "summary": "Os dois sistemas sincronizam componentes do motor, mas intervalos de inspeção e manutenção diferem.",
+      "title": "Fluido de freio: por que o prazo de troca importa?",
+      "summary": "O fluido de freio pode absorver umidade ao longo do tempo, prejudicando seu desempenho em condições exigentes.",
       "details": [
-        "Consulte o manual do modelo e do ano exatos.",
-        "Ruídos anormais e histórico desconhecido justificam avaliação profissional.",
-        "Não substitua componentes preventivamente com base em prazo genérico."
+        "Consulte especificação e intervalo no manual do veículo.",
+        "Não misture fluidos incompatíveis.",
+        "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
       ],
       "visual": "wrench",
-      "conceptId": "belt-versus-chain-20",
-      "visualConceptId": "visual-engine-timing-20",
-      "eventDate": "2026-10-20",
+      "conceptId": "father-v6-2026-10-29-mecanica-story",
+      "visualConceptId": "father-v6-2026-10-29-mecanica-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"

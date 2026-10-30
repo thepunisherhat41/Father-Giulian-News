@@ -1,0 +1,174 @@
+name: Father News 6 Protected Media Upload
+on:
+  pull_request:
+    types: [labeled]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  preflight-freshness:
+    if: >-
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'father-v6-approved-media-upload' &&
+      github.event.pull_request.number == 255 &&
+      github.event.pull_request.draft == true &&
+      github.event.pull_request.head.ref == 'architecture/father-news-6-atomic-editions' &&
+      github.event.pull_request.head.repo.full_name == 'thepunisherhat41/Father-Giulian-News'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Fail before reviewer gate on stale or changed daily edition
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$APP_SHA"
+          node scripts/quality-v2.mjs data/candidates/2026-10-29/edition-v2.json data/candidates/2026-10-29/media-2026-10-29.json
+          node scripts/quality-v2.mjs data/current-edition.json data/media-2026-10-29.json
+  publish-media:
+    needs: preflight-freshness
+    if: >-
+      github.event.label.name == 'father-v6-approved-media-upload' &&
+      github.event.pull_request.number == 255 &&
+      github.event.pull_request.draft == true &&
+      github.event.pull_request.head.ref == 'architecture/father-news-6-atomic-editions' &&
+      github.event.pull_request.head.repo.full_name == 'thepunisherhat41/Father-Giulian-News'
+    runs-on: ubuntu-24.04
+    environment: father-v6-media-publisher
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Bind draft PR to checked-out immutable SHA
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.draft')" = "true"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/issues/255/labels" --jq '[.[] | select(.name == "father-v6-approved-media-upload")] | length')" = "1"
+          node scripts/quality-v2.mjs data/candidates/2026-10-29/edition-v2.json data/candidates/2026-10-29/media-2026-10-29.json
+          node scripts/quality-v2.mjs data/current-edition.json data/media-2026-10-29.json
+          node --check scripts/v6-upload-immutable-media.mjs
+      - name: Locate successful freshly generated 25-media QA on exact SHA
+        id: media
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          run_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$APP_SHA&per_page=100" \
+            --jq '[.workflow_runs[] | select(.head_sha == env.APP_SHA and .name == "Father News 6 - 29 October Immutable Media Candidate QA" and .event == "pull_request" and .conclusion == "success")] | first | .id')"
+          test "$run_id" != "null" && test -n "$run_id"
+          digest="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id/artifacts?per_page=100" \
+            --jq '[.artifacts[] | select(.name == "father-v6-fresh-29-oct-exact-bytes-staging-only" and .expired == false and .size_in_bytes > 0 and .workflow_run.head_sha == env.APP_SHA)] | first | .digest')"
+          [[ "$digest" =~ ^sha256:[a-f0-9]{64}$ ]]
+          echo "run_id=$run_id" >> "$GITHUB_OUTPUT"
+      - name: Require successful editorial candidate on exact SHA
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          editorial="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$APP_SHA&per_page=100" \
+            --jq '[.workflow_runs[] | select(.head_sha == env.APP_SHA and .name == "Father News V2 Quality Gate" and .event == "pull_request" and .conclusion == "success")] | first | .id')"
+          test -n "$editorial" && test "$editorial" != "null"
+      - uses: actions/download-artifact@v4
+        with:
+          name: father-v6-fresh-29-oct-exact-bytes-staging-only
+          run-id: ${{ steps.media.outputs.run_id }}
+          github-token: ${{ github.token }}
+          path: /tmp/father-v6-candidate
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Install exact read-only validation dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify all 25 immutable raster objects without credentials
+        id: verify
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/father-v6-raster
+          python scripts/v6-safe-extract-staging.py /tmp/father-v6-candidate/father-v6-daily-29.tar.gz /tmp/father-v6-raster
+          release_id="$(node -p "JSON.parse(require('fs').readFileSync('/tmp/father-v6-raster/candidate-media-manifest.json','utf8')).edition_id")"
+          [[ "$release_id" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-r[0-9]{2,}$ ]]
+          test "$release_id" = "2026-10-29-r01"
+          python3 scripts/v6-verify-daily-media-candidate.py --root /tmp/father-v6-raster \
+            --edition data/candidates/2026-10-29/edition-v2.json \
+            --photos data/candidates/2026-10-29/media-2026-10-29.json --app-sha "$APP_SHA"
+          node scripts/quality-v2.mjs data/candidates/2026-10-29/edition-v2.json data/candidates/2026-10-29/media-2026-10-29.json
+          node --input-type=module -e '
+          import {readFileSync} from "node:fs";
+          import {validateEdition} from "./lib/father-v6/engine.mjs";
+          const root="/tmp/father-v6-raster/";
+          const index=JSON.parse(readFileSync(root+"candidate-media-manifest.json"));
+          const body=JSON.parse(readFileSync(root+index.manifest_path));
+          const report=validateEdition(body);
+          if(!report.ok||report.cardCount!==25||report.mediaCount!==25)process.exit(1);
+          '
+          manifest_sha="$(node -p "JSON.parse(require('fs').readFileSync('/tmp/father-v6-raster/candidate-media-manifest.json','utf8')).manifest_sha256")"
+          [[ "$manifest_sha" =~ ^[a-f0-9]{64}$ ]]
+          echo "manifest_sha=$manifest_sha" >> "$GITHUB_OUTPUT"
+          echo "release_id=$release_id" >> "$GITHUB_OUTPUT"
+      - name: Upload with dedicated RLS identity, then verify remote bytes
+        env:
+          FATHER_V6_APPROVED_UPLOAD: '1'
+          FATHER_V6_APP_SHA: ${{ github.event.pull_request.head.sha }}
+          FATHER_V6_RELEASE_ID: ${{ steps.verify.outputs.release_id }}
+          FATHER_V6_SUPABASE_URL: https://sqlywvoqktdebubjmskn.supabase.co
+          FATHER_V6_PUBLISHABLE_KEY: ${{ vars.FATHER_V6_PUBLISHABLE_KEY }}
+          FATHER_V6_PUBLISHER_EMAIL: ${{ secrets.FATHER_V6_PUBLISHER_EMAIL }}
+          FATHER_V6_PUBLISHER_PASSWORD: ${{ secrets.FATHER_V6_PUBLISHER_PASSWORD }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$FATHER_V6_APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/issues/255/labels" --jq '[.[] | select(.name == "father-v6-approved-media-upload")] | length')" = "1"
+          node scripts/quality-v2.mjs data/current-edition.json data/media-2026-10-29.json
+          node scripts/v6-upload-immutable-media.mjs /tmp/father-v6-raster
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '24'
+      - name: Install exact Chromium QA dependency after protected upload
+        run: |
+          npm install --no-audit --no-fund
+          npm install --no-save --no-audit --no-fund @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Build exact app SHA and start isolated v6 QA server
+        env:
+          FATHER_V6_APP_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$FATHER_V6_APP_SHA"
+          npm run build
+          mkdir -p artifacts/v6-remote-29-oct
+          FATHER_V6_ENABLED=true npm run start > /tmp/father-v6-remote-26.log 2>&1 &
+          for i in $(seq 1 50); do curl -sf http://127.0.0.1:3000/ >/dev/null && break || sleep 1; done
+          curl -fsS http://127.0.0.1:3000/ >/dev/null
+      - name: REAL 25/25 public Supabase bytes and Chromium screenshots on exact SHA
+        env:
+          FATHER_V6_APP_SHA: ${{ github.event.pull_request.head.sha }}
+          FATHER_V6_MANIFEST_SHA: ${{ steps.verify.outputs.manifest_sha }}
+        run: npx playwright test tests/v6-remote-29-oct.spec.ts --reporter=line --workers=1
+      - name: Preserve independent 29 October remote media proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-29-oct-real-remote-25-media-chromium-qa
+          path: |
+            artifacts/v6-remote-29-oct/
+            test-results/
+          retention-days: 14

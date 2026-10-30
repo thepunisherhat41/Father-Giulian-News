@@ -1,0 +1,59 @@
+name: Father News 6 Rollback - Zero Cost PostgreSQL
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  isolated-rollback:
+    if: github.event.pull_request.number == 255 && github.event.pull_request.draft == true
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: disposable-only-local-ci
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd=pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Bind tests to PR head and disposable local DB
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$APP_SHA"
+          test "$GITHUB_EVENT_NAME" = "pull_request"
+          test -f tests/father-v6-free/fixture.sql
+          test -f tests/father-v6-free/rollback-migration.sql
+          test -f tests/father-v6-free/rollback-tests.sql
+      - name: Run PostgreSQL 17 CAS, NULL rollback, audit and ACL tests
+        env:
+          PGHOST: 127.0.0.1
+          PGPORT: "5432"
+          PGUSER: postgres
+          PGDATABASE: postgres
+          PGPASSWORD: disposable-only-local-ci
+          FATHER_V6_EPHEMERAL_POSTGRES: "true"
+        run: |
+          set -euo pipefail
+          test "$FATHER_V6_EPHEMERAL_POSTGRES" = true
+          test "$PGHOST" = 127.0.0.1
+          test "$PGDATABASE" = postgres
+          docker run --rm --network host -v "$GITHUB_WORKSPACE:/src:ro" \
+            -e PGHOST -e PGPORT -e PGUSER -e PGDATABASE -e PGPASSWORD \
+            postgres:17 psql -X -v ON_ERROR_STOP=1 \
+            -f /src/tests/father-v6-free/fixture.sql \
+            -f /src/tests/father-v6-free/rollback-migration.sql \
+            -f /src/tests/father-v6-free/rollback-tests.sql
