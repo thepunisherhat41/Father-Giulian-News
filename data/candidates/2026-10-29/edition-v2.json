@@ -1,0 +1,608 @@
+{
+  "editionDate": "2026-10-29",
+  "timezone": "America/Sao_Paulo",
+  "updatedAt": "2026-10-29T21:00:03-03:00",
+  "version": 4,
+  "editorialNote": "Edição de 29/10/2026, com jornalismo atualizado e publicado nesta data, 12 fotografias de Wikimedia com atribuição verificável e 13 artes originais datadas. A aprovação depende de validação editorial, hashes exatos, upload protegido, Chromium remoto e CAS; nada é considerado publicado sem validação.",
+  "cards": [
+    {
+      "id": "papo",
+      "group": "Papo de hoje",
+      "type": "ATIVIDADE",
+      "title": "Qual história de hoje contaremos ao Felipe?",
+      "summary": "Separem um detalhe do dia que vocês gostariam de contar ao Felipe quando ele crescer.",
+      "details": [
+        "Cada um escolhe uma lembrança simples e concreta de hoje.",
+        "Descrevam o cheiro, o som ou a cena que ficou na memória.",
+        "Guardem juntos duas frases para reler daqui a um ano."
+      ],
+      "visual": "memory-jar",
+      "conceptId": "father-v6-2026-10-29-papo-story",
+      "visualConceptId": "father-v6-2026-10-29-papo-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 20
+    },
+    {
+      "id": "desafio",
+      "group": "Desafio do casal",
+      "type": "ATIVIDADE",
+      "title": "Desafio: carta com três agradecimentos",
+      "summary": "Reservem cinco minutos para escrever três agradecimentos reais deste dia.",
+      "details": [
+        "Cada um escreve três linhas, sem comparar respostas.",
+        "Escolham uma conquista do casal para celebrar.",
+        "Se quiserem, guardem as cartas em um envelope para o futuro."
+      ],
+      "visual": "photos",
+      "conceptId": "father-v6-2026-10-29-desafio-story",
+      "visualConceptId": "father-v6-2026-10-29-desafio-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 35
+    },
+    {
+      "id": "cur-ciencia",
+      "group": "Curiosidades · Ciência",
+      "type": "CURIOSIDADE",
+      "title": "Por que as borboletas-monarcas precisam de plantas específicas?",
+      "summary": "Lagartas de monarca dependem de plantas hospedeiras, enquanto os adultos procuram néctar em flores variadas.",
+      "details": [
+        "As fases de lagarta e adulta têm necessidades alimentares diferentes.",
+        "Conservar plantas hospedeiras e flores ajuda o ciclo de vida.",
+        "O equilíbrio de habitats importa tanto quanto a migração."
+      ],
+      "visual": "butterfly",
+      "conceptId": "father-v6-2026-10-29-cur-ciencia-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-ciencia-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "U.S. Forest Service — Monarch Butterfly",
+          "url": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/migration/index.shtml"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "As lagartas de monarca dependem de plantas hospedeiras",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "cur-espaco",
+      "group": "Curiosidades · Espaço",
+      "type": "CURIOSIDADE",
+      "title": "A luz do Sol leva cerca de oito minutos até a Terra",
+      "summary": "A luz viaja a aproximadamente 300 mil km/s; mesmo assim, a distância entre Sol e Terra exige alguns minutos.",
+      "details": [
+        "A distância média Sol–Terra é de aproximadamente 150 milhões de quilômetros.",
+        "O tempo de viagem da luz é próximo de oito minutos e vinte segundos.",
+        "Olhar o Sol diretamente é perigoso, inclusive com instrumentos sem filtro apropriado."
+      ],
+      "visual": "planet",
+      "conceptId": "father-v6-2026-10-29-cur-espaco-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-espaco-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "NASA Space Place — All About the Sun",
+          "url": "https://spaceplace.nasa.gov/all-about-the-sun/en/index.html"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "A luz solar leva cerca de oito minutos até a Terra",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "cur-natureza",
+      "group": "Curiosidades · Natureza",
+      "type": "CURIOSIDADE",
+      "title": "Beija-flores conseguem voar para trás",
+      "summary": "A mecânica de voo do beija-flor permite movimentos estacionários e recuos que são raros entre aves.",
+      "details": [
+        "As asas descrevem movimentos rápidos que geram sustentação em diferentes fases.",
+        "Essa habilidade ajuda a alcançar flores em espaços apertados.",
+        "A observação deve respeitar o animal e evitar alimentadores mal higienizados."
+      ],
+      "visual": "bird",
+      "conceptId": "father-v6-2026-10-29-cur-natureza-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-natureza-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian Gardens — Hovering",
+          "url": "https://gardens.si.edu/exhibitions/traveling/habitat/hovering/"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "Beija-flores conseguem voar para trás",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "cur-historia",
+      "group": "Curiosidades · História",
+      "type": "CURIOSIDADE",
+      "title": "O cabo transatlântico de 1858 mudou a escala da comunicação",
+      "summary": "As primeiras tentativas de telégrafo transatlântico mostraram o potencial de mensagens entre continentes e as dificuldades técnicas da época.",
+      "details": [
+        "A transmissão por cabo era mais rápida que o transporte de cartas por navio.",
+        "Falhas de isolamento e operação afetavam a confiabilidade.",
+        "As redes modernas de fibra óptica são herdeiras desse desafio de infraestrutura."
+      ],
+      "visual": "telegraph",
+      "conceptId": "father-v6-2026-10-29-cur-historia-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-historia-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian — Transatlantic cable",
+          "url": "https://www.si.edu/object/sectioned-sample-transatlantic-telegraph-cable%3Anmah_871655"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "options": [
+          "O telégrafo transatlântico encurtou a comunicação entre continentes",
+          "O fenômeno é impossível na natureza",
+          "Não há evidência histórica ou científica"
+        ],
+        "answer": 0,
+        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+      }
+    },
+    {
+      "id": "gravidez",
+      "group": "Gravidez",
+      "type": "GUIA",
+      "title": "Felipe: aproximadamente 16 semanas e 4 dias",
+      "summary": "Pela datação da DUM de 05/07/2026, a gestação está por volta de 16 semanas e 4 dias.",
+      "details": [
+        "O desenvolvimento segue no segundo trimestre, com crescimento e mudanças progressivas.",
+        "A datação do obstetra e os exames são a referência caso haja divergência.",
+        "Apoio prático e alimentação tolerada podem ser mais úteis que cobranças."
+      ],
+      "visual": "baby",
+      "conceptId": "father-v6-2026-10-29-gravidez-story",
+      "visualConceptId": "father-v6-2026-10-29-gravidez-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Week 16",
+          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-16/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "pai",
+      "group": "Ser Pai",
+      "type": "GUIA",
+      "title": "Ser pai também é cuidar da logística sem sobrecarregar",
+      "summary": "Uma boa ajuda nesta fase é antecipar pequenas tarefas e deixar Bruna escolher o que realmente lhe traz conforto.",
+      "details": [
+        "Confiram os próximos compromissos do pré-natal.",
+        "Escolha uma tarefa doméstica concreta para resolver hoje.",
+        "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
+      ],
+      "visual": "family",
+      "conceptId": "father-v6-2026-10-29-pai-story",
+      "visualConceptId": "father-v6-2026-10-29-pai-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "brasil",
+      "group": "Brasil",
+      "type": "ATUALIZAÇÃO",
+      "title": "Brasil prepara leilão de R$ 8,9 bilhões em transmissão de energia",
+      "summary": "O Ministério de Minas e Energia anunciou que o leilão de sexta-feira (30) prevê investimentos em linhas de transmissão em sete estados.",
+      "details": [
+        "O certame está previsto para 30/10, às 10h, na B3, segundo o MME.",
+        "São estimados 1.866 km de novas linhas e reforços na infraestrutura.",
+        "O valor de R$ 8,9 bilhões é investimento previsto, não valor já executado."
+      ],
+      "visual": "brazil",
+      "conceptId": "father-v6-2026-10-29-brasil-story",
+      "visualConceptId": "father-v6-2026-10-29-brasil-visual",
+      "eventDate": "2026-10-29",
+      "news": true,
+      "sources": [
+        {
+          "label": "Ministério de Minas e Energia — leilão de transmissão, 29/10",
+          "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/governo-federal-amplia-ciclo-historico-de-investimentos-em-transmissao-com-leilao-de-r-8-9-bilhoes-na-b3",
+          "publishedAt": "2026-10-29"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
+    },
+    {
+      "id": "mundo",
+      "group": "Mundo",
+      "type": "ATUALIZAÇÃO",
+      "title": "Grécia pede proteção à navegação no Mar Negro",
+      "summary": "Em entrevista publicada pela Reuters nesta quinta, o primeiro-ministro grego defendeu uma trégua internacional para proteger o transporte marítimo.",
+      "details": [
+        "Kyriakos Mitsotakis afirmou que a segurança de navios é decisiva para o comércio regional.",
+        "A fala ocorreu após um ataque contra uma embarcação de propriedade grega no Mar Negro.",
+        "A proposta é uma defesa de negociações e não significa que uma trégua já tenha sido firmada."
+      ],
+      "visual": "globe",
+      "conceptId": "father-v6-2026-10-29-mundo-story",
+      "visualConceptId": "father-v6-2026-10-29-mundo-visual",
+      "eventDate": "2026-10-29",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — Grécia e segurança no Mar Negro, 29/10",
+          "url": "https://www.reuters.com/world/europe/greek-pm-calls-turkey-libya-maritime-deal-void-calls-global-truce-after-black-2026-10-29/",
+          "publishedAt": "2026-10-29"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
+    },
+    {
+      "id": "politica",
+      "group": "Política",
+      "type": "ATUALIZAÇÃO",
+      "title": "Campanha orienta trabalhadores a denunciar assédio eleitoral",
+      "summary": "Ministério do Trabalho divulgará orientações na Carteira de Trabalho Digital sobre coerção relacionada à escolha política.",
+      "details": [
+        "A orientação reforça o sigilo do voto e a liberdade de opinião.",
+        "Ameaças, retaliações e pressão no ambiente profissional podem ser denunciadas.",
+        "A matéria identifica o canal assedioeleitoral.trabalho.gov.br como via de denúncia."
+      ],
+      "visual": "ballot",
+      "conceptId": "father-v6-2026-10-29-politica-story",
+      "visualConceptId": "father-v6-2026-10-29-politica-visual",
+      "eventDate": "2026-10-29",
+      "news": true,
+      "sources": [
+        {
+          "label": "Agência Brasil — combate ao assédio eleitoral, 29/10",
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/campanha-orienta-trabalhadores-sobre-denuncias-de-assedio-eleitoral",
+          "publishedAt": "2026-10-29"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
+    },
+    {
+      "id": "tempo",
+      "group": "Tempo",
+      "type": "ATUALIZAÇÃO",
+      "title": "São Paulo termina quinta-feira com chuva e risco de alagamentos",
+      "summary": "O Centro de Gerenciamento de Emergências da Prefeitura informou chuva e sensação de frio na capital na noite de 29/10.",
+      "details": [
+        "Às 18h01 o CGE apontava cerca de 17,6°C de temperatura média.",
+        "Havia chuva de intensidade até moderada entre as zonas Norte e Leste.",
+        "O solo encharcado aumenta os riscos em encostas e vias sujeitas a alagamento."
+      ],
+      "visual": "weather",
+      "conceptId": "father-v6-2026-10-29-tempo-story",
+      "visualConceptId": "father-v6-2026-10-29-tempo-visual",
+      "eventDate": "2026-10-29",
+      "news": true,
+      "sources": [
+        {
+          "label": "CGE Prefeitura de São Paulo — boletim de 29/10 às 18h01",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?data=2026-10-29",
+          "publishedAt": "2026-10-29"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
+    },
+    {
+      "id": "corinthians",
+      "group": "Corinthians",
+      "type": "ATUALIZAÇÃO",
+      "title": "Corinthians encerra preparação para receber o Mirassol",
+      "summary": "O ge publicou nesta quinta que a equipe treinou na Neo Química Arena para o jogo de sexta (30), às 20h.",
+      "details": [
+        "A preparação terminou na arena na tarde de 29/10, segundo a reportagem.",
+        "Memphis Depay segue indisponível por problema muscular.",
+        "A partida será em 30/10, às 20h, conforme tabela da CBF."
+      ],
+      "visual": "football",
+      "conceptId": "father-v6-2026-10-29-corinthians-story",
+      "visualConceptId": "father-v6-2026-10-29-corinthians-visual",
+      "eventDate": "2026-10-29",
+      "news": true,
+      "sources": [
+        {
+          "label": "ge — Corinthians fecha preparação em 29/10",
+          "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/escalacao-do-corinthians-seedorf-fecha-preparacao-na-arena-e-deve-repetir-time-contra-o-mirassol.ghtml",
+          "publishedAt": "2026-10-29"
+        },
+        {
+          "label": "CBF — Corinthians x Mirassol 30/10",
+          "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/corinthians-x-mirassol/832214",
+          "publishedAt": "2026-10-29"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
+    },
+    {
+      "id": "viagens",
+      "group": "Viagens",
+      "type": "GUIA",
+      "title": "Passeio curto: escolha uma trilha com plano B para chuva",
+      "summary": "Para um passeio próximo de São Paulo, a decisão mais importante é checar tempo, acesso e nível de dificuldade antes de sair.",
+      "details": [
+        "Verifique funcionamento do parque e previsão atualizada.",
+        "Prefira rotas sinalizadas e adequadas ao condicionamento de todos.",
+        "Se chover, troque a trilha por um programa coberto."
+      ],
+      "visual": "mountain",
+      "conceptId": "father-v6-2026-10-29-viagens-story",
+      "visualConceptId": "father-v6-2026-10-29-viagens-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "musica",
+      "group": "Música",
+      "type": "GUIA",
+      "title": "Ouça o mesmo refrão em três camadas",
+      "summary": "Experimente reconhecer voz, bateria e guitarra separadamente para perceber como uma canção constrói energia.",
+      "details": [
+        "Primeiro ouça a música inteira sem interrupções.",
+        "Depois concentre-se em um instrumento por vez.",
+        "Na última audição, perceba como as camadas se combinam."
+      ],
+      "visual": "piano",
+      "conceptId": "father-v6-2026-10-29-musica-story",
+      "visualConceptId": "father-v6-2026-10-29-musica-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "sertanejo",
+      "group": "Sertanejo da Roça",
+      "type": "GUIA",
+      "title": "Viola caipira: a diferença entre ritmo e melodia",
+      "summary": "Um exercício simples é alternar acompanhamento rítmico e pequenas frases melódicas sem acelerar.",
+      "details": [
+        "Marque um pulso confortável com o pé.",
+        "Toque uma sequência rítmica curta.",
+        "Intercale notas isoladas e observe o contraste."
+      ],
+      "visual": "guitar",
+      "conceptId": "father-v6-2026-10-29-sertanejo-story",
+      "visualConceptId": "father-v6-2026-10-29-sertanejo-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "games",
+      "group": "Games",
+      "type": "GUIA",
+      "title": "Configurações que deixam o jogo mais confortável",
+      "summary": "Antes de começar um jogo novo, confira legenda, tamanho da interface e sensibilidade dos controles.",
+      "details": [
+        "Ajuste o texto para leitura sem esforço.",
+        "Teste sensibilidade e zona morta do controle.",
+        "Faça uma pausa curta para comparar o conforto antes e depois."
+      ],
+      "visual": "gamepad",
+      "conceptId": "father-v6-2026-10-29-games-story",
+      "visualConceptId": "father-v6-2026-10-29-games-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "tecnologia",
+      "group": "Tecnologia",
+      "type": "GUIA",
+      "title": "Centros de dados: eficiência importa tanto quanto velocidade",
+      "summary": "O desempenho de serviços de IA depende também de energia, resfriamento e conectividade, não apenas de chips.",
+      "details": [
+        "Capacidade computacional e consumo energético precisam ser considerados juntos.",
+        "Resfriamento e redes podem limitar a operação.",
+        "Compare anúncios de desempenho usando métricas equivalentes."
+      ],
+      "visual": "wafer",
+      "conceptId": "father-v6-2026-10-29-tecnologia-story",
+      "visualConceptId": "father-v6-2026-10-29-tecnologia-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "financas",
+      "group": "Finanças",
+      "type": "ATUALIZAÇÃO",
+      "title": "Ibovespa cai 1,06% e dólar fecha perto de R$ 5,39",
+      "summary": "No fechamento de quinta-feira, o índice perdeu o patamar de 170 mil pontos em sessão marcada por cautela fiscal.",
+      "details": [
+        "O Ibovespa encerrou aos 169.186,42 pontos, segundo dados de fechamento reportados.",
+        "O dólar comercial à vista terminou a R$ 5,3878 para venda, com alta no dia.",
+        "Os valores são retrato do encerramento de 29/10, não cotação em tempo real."
+      ],
+      "visual": "chart",
+      "conceptId": "father-v6-2026-10-29-financas-story",
+      "visualConceptId": "father-v6-2026-10-29-financas-visual",
+      "eventDate": "2026-10-29",
+      "news": true,
+      "sources": [
+        {
+          "label": "UOL / Estadão Conteúdo — fechamento 29/10",
+          "url": "https://economia.uol.com.br/noticias/estadao-conteudo/2026/10/29/fechamento-do-mercado-financeiro.amp.htm",
+          "publishedAt": "2026-10-29"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
+    },
+    {
+      "id": "security-briefing",
+      "group": "Security Briefing",
+      "type": "GUIA",
+      "title": "Security Briefing: evidência de exploração muda prioridade",
+      "summary": "Uma vulnerabilidade com exploração conhecida merece análise de exposição e impacto, além da pontuação técnica.",
+      "details": [
+        "Cruze o inventário de ativos com o catálogo KEV da CISA.",
+        "Considere internet-facing, criticidade e controles compensatórios.",
+        "Registre o motivo da priorização para facilitar auditoria."
+      ],
+      "visual": "radar",
+      "conceptId": "father-v6-2026-10-29-security-briefing-story",
+      "visualConceptId": "father-v6-2026-10-29-security-briefing-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Known Exploited Vulnerabilities",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "cyber",
+      "group": "Cyber",
+      "type": "GUIA",
+      "title": "Cyber: horário consistente é essencial para investigar incidentes",
+      "summary": "Mesmo logs completos perdem valor quando os sistemas registram horários incompatíveis.",
+      "details": [
+        "Sincronize relógios com fontes de tempo confiáveis.",
+        "Armazene timestamps com fuso ou em UTC.",
+        "Correlacione eventos por identificadores e sequência, não só por horário."
+      ],
+      "visual": "shield",
+      "conceptId": "father-v6-2026-10-29-cyber-story",
+      "visualConceptId": "father-v6-2026-10-29-cyber-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "appsec",
+      "group": "AppSec",
+      "type": "GUIA",
+      "title": "AppSec: um SBOM é inventário, não veredito de segurança",
+      "summary": "A lista de componentes ajuda a entender dependências, mas precisa ser associada a evidências de vulnerabilidade e contexto de uso.",
+      "details": [
+        "Separe componentes detectados de vulnerabilidades confirmadas.",
+        "Use delta entre versões para identificar novas exposições.",
+        "Mantenha rastreabilidade entre build, artefato e inventário."
+      ],
+      "visual": "code",
+      "conceptId": "father-v6-2026-10-29-appsec-story",
+      "visualConceptId": "father-v6-2026-10-29-appsec-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [
+        {
+          "label": "OWASP — DevSecOps Guideline",
+          "url": "https://owasp.org/www-project-devsecops-guideline/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "carros",
+      "group": "Carros até R$70 mil",
+      "type": "GUIA",
+      "title": "Duster automática usada: verifique histórico antes do test-drive",
+      "summary": "Para uma Duster dentro do orçamento, histórico de manutenção e funcionamento do câmbio valem mais que acessórios.",
+      "details": [
+        "Confirme ano, versão e tipo de transmissão pelo documento e manual.",
+        "Teste engates a frio e a quente com profissional qualificado.",
+        "Reserve orçamento para inspeção independente antes da compra."
+      ],
+      "visual": "car",
+      "conceptId": "father-v6-2026-10-29-carros-story",
+      "visualConceptId": "father-v6-2026-10-29-carros-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "motos",
+      "group": "Motos",
+      "type": "GUIA",
+      "title": "Motos: corrente e lubrificação pedem inspeção periódica",
+      "summary": "Uma transmissão por corrente mal regulada pode gerar ruído, desgaste e perda de eficiência.",
+      "details": [
+        "Consulte a folga indicada no manual do modelo.",
+        "Inspecione sinais de desgaste e pontos rígidos.",
+        "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
+      ],
+      "visual": "motorcycle",
+      "conceptId": "father-v6-2026-10-29-motos-story",
+      "visualConceptId": "father-v6-2026-10-29-motos-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "mecanica",
+      "group": "Mecânica",
+      "type": "GUIA",
+      "title": "Fluido de freio: por que o prazo de troca importa?",
+      "summary": "O fluido de freio pode absorver umidade ao longo do tempo, prejudicando seu desempenho em condições exigentes.",
+      "details": [
+        "Consulte especificação e intervalo no manual do veículo.",
+        "Não misture fluidos incompatíveis.",
+        "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
+      ],
+      "visual": "wrench",
+      "conceptId": "father-v6-2026-10-29-mecanica-story",
+      "visualConceptId": "father-v6-2026-10-29-mecanica-visual",
+      "eventDate": "2026-10-29",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    }
+  ]
+}
