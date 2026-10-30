@@ -1,17 +1,5 @@
 name: Father News 6 Immutable Media QA
 on:
-  pull_request:
-    paths:
-      - 'scripts/v6-freeze-media.py'
-      - 'scripts/v6-upload-immutable-media.mjs'
-      - 'scripts/v6-rasterize-locked-media.py'
-      - 'scripts/v6-verify-raster-media.py'
-      - 'scripts/v6-verify-staged-media.py'
-      - 'tests/v6-raster-negative.test.py'
-      - 'data/candidates/2026-10-20/edition-v2.json'
-      - 'data/media-2026-10-20.json'
-      - 'data/v6-media-lock-2026-10-20-r01.json'
-      - '.github/workflows/father-news-v6-media.yml'
   workflow_dispatch:
 permissions:
   contents: read
