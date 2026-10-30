@@ -56,6 +56,9 @@ jobs:
           test "$(git rev-parse HEAD)" = "$APP_SHA"
           test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$APP_SHA"
           test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.draft')" = "true"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/issues/255/labels" --jq '[.[] | select(.name == "father-v6-approved-media-upload")] | length')" = "1"
+          node scripts/quality-v2.mjs data/candidates/2026-10-29/edition-v2.json data/candidates/2026-10-29/media-2026-10-29.json
+          node scripts/quality-v2.mjs data/current-edition.json data/media-2026-10-29.json
           node --check scripts/v6-upload-immutable-media.mjs
       - name: Locate successful freshly generated 25-media QA on exact SHA
         id: media
@@ -132,6 +135,8 @@ jobs:
         run: |
           set -euo pipefail
           test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$FATHER_V6_APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/issues/255/labels" --jq '[.[] | select(.name == "father-v6-approved-media-upload")] | length')" = "1"
+          node scripts/quality-v2.mjs data/current-edition.json data/media-2026-10-29.json
           node scripts/v6-upload-immutable-media.mjs /tmp/father-v6-raster
 
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0

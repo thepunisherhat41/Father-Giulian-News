@@ -15,6 +15,17 @@ const APP_SHA=/^[a-f0-9]{40}$/;
 const RELEASE=/^\d{4}-\d{2}-\d{2}-r\d{2,}$/;
 const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
 const fail=message=>{throw new Error(message)};
+// Recheck the São Paulo calendar at upload time, not only before human review.
+const saoPauloDate=()=>{
+ const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{
+  timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit'
+ }).formatToParts(new Date()).map(part=>[part.type,part.value]));
+ return [parts.year,parts.month,parts.day].join('-');
+};
+const requireFresh=release=>{
+ const today=saoPauloDate();
+ if(release.slice(0,10)!==today)fail('Stale edition blocked: '+release+' vs São Paulo '+today);
+};
 
 if(process.env.GITHUB_ACTIONS!=='true' ||
    process.env.GITHUB_REPOSITORY!=='thepunisherhat41/Father-Giulian-News' ||
@@ -38,6 +49,7 @@ if(manifest.schema_version!==6||manifest.immutable!==true ||
    !SHA.test(manifest.edition_sha256||'') ||
    !Array.isArray(manifest.cards)||manifest.cards.length!==25)fail('Invalid bound candidate manifest');
 if(!releaseId.startsWith(manifest.edition_id.slice(0,10)+'-r'))fail('Release date mismatch');
+requireFresh(releaseId);
 const objects=[], seen=new Set(), cards=new Set();
 for(const item of manifest.cards){
  const ext=item.mime==='image/png'?'png':item.mime==='image/jpeg'?'jpg':null;
@@ -104,7 +116,9 @@ async function verifyPublic(object,missingAllowed){
 }
 let created=0,alreadyThere=0;
 for(const object of objects){
+ requireFresh(releaseId);
  if(await verifyPublic(object,true)){alreadyThere++;continue;}
+ requireFresh(releaseId);
  const upload=await fetch(ORIGIN+'/storage/v1/object/'+BUCKET+'/'+object.keyPath,{
   method:'POST',redirect:'error',
   headers:{...apiHeaders,'content-type':object.mime,'cache-control':'31536000','x-upsert':'false'},
