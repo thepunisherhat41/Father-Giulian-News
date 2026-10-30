@@ -2,12 +2,37 @@ name: Father News 6 Protected Media Upload
 on:
   pull_request:
     types: [labeled]
-  workflow_dispatch:
 permissions:
   contents: read
   actions: read
 jobs:
+  preflight-freshness:
+    if: >-
+      github.event.action == 'labeled' &&
+      github.event.label.name == 'father-v6-approved-media-upload' &&
+      github.event.pull_request.number == 255 &&
+      github.event.pull_request.draft == true &&
+      github.event.pull_request.head.ref == 'architecture/father-news-6-atomic-editions' &&
+      github.event.pull_request.head.repo.full_name == 'thepunisherhat41/Father-Giulian-News'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: Fail before reviewer gate on stale or changed daily edition
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$APP_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/pulls/255" --jq '.head.sha')" = "$APP_SHA"
+          node scripts/quality-v2.mjs data/candidates/2026-10-29/edition-v2.json data/candidates/2026-10-29/media-2026-10-29.json
+          node scripts/quality-v2.mjs data/current-edition.json data/media-2026-10-29.json
   publish-media:
+    needs: preflight-freshness
     if: >-
       github.event.label.name == 'father-v6-approved-media-upload' &&
       github.event.pull_request.number == 255 &&

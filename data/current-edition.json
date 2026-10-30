@@ -1,25 +1,25 @@
 {
-  "editionDate": "2026-10-26",
+  "editionDate": "2026-10-29",
   "timezone": "America/Sao_Paulo",
-  "updatedAt": "2026-10-26T02:54:26-03:00",
+  "updatedAt": "2026-10-29T21:00:03-03:00",
   "version": 4,
-  "editorialNote": "Edição editorial de 26/10/2026: notícias com fontes e datas identificadas, reportagens de dias anteriores rotuladas como atualizações, fotografias com atribuição e artes originais. Publicação depende da validação integral da release imutável.",
+  "editorialNote": "Edição de 29/10/2026, com jornalismo atualizado e publicado nesta data, 12 fotografias de Wikimedia com atribuição verificável e 13 artes originais datadas. A aprovação depende de validação editorial, hashes exatos, upload protegido, Chromium remoto e CAS; nada é considerado publicado sem validação.",
   "cards": [
     {
       "id": "papo",
       "group": "Papo de hoje",
       "type": "ATIVIDADE",
-      "title": "Se Felipe pudesse guardar um som da nossa casa, qual seria?",
-      "summary": "Cada um escolhe um som cotidiano que gostaria de preservar para o Felipe: uma risada, uma música ou a voz de alguém querido.",
+      "title": "Qual história de hoje contaremos ao Felipe?",
+      "summary": "Separem um detalhe do dia que vocês gostariam de contar ao Felipe quando ele crescer.",
       "details": [
-        "Descrevam por que esse som importa.",
-        "Gravem, se quiserem, um áudio curto sem expor dados pessoais.",
-        "Guardem a ideia para ouvir juntos no futuro."
+        "Cada um escolhe uma lembrança simples e concreta de hoje.",
+        "Descrevam o cheiro, o som ou a cena que ficou na memória.",
+        "Guardem juntos duas frases para reler daqui a um ano."
       ],
       "visual": "memory-jar",
-      "conceptId": "father-v6-2026-10-26-papo-story",
-      "visualConceptId": "father-v6-2026-10-26-papo-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-papo-story",
+      "visualConceptId": "father-v6-2026-10-29-papo-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -29,17 +29,17 @@
       "id": "desafio",
       "group": "Desafio do casal",
       "type": "ATIVIDADE",
-      "title": "Missão do casal: criem uma cápsula do tempo de três linhas",
-      "summary": "Em poucos minutos, escrevam uma lembrança de hoje, uma esperança para o próximo ano e uma pergunta para o futuro.",
+      "title": "Desafio: carta com três agradecimentos",
+      "summary": "Reservem cinco minutos para escrever três agradecimentos reais deste dia.",
       "details": [
-        "Cada um escreve uma linha sem consultar o outro.",
-        "Leiam em voz alta e escolham onde guardar.",
-        "Não é necessário comprar nada nem transformar a atividade em obrigação."
+        "Cada um escreve três linhas, sem comparar respostas.",
+        "Escolham uma conquista do casal para celebrar.",
+        "Se quiserem, guardem as cartas em um envelope para o futuro."
       ],
       "visual": "photos",
-      "conceptId": "father-v6-2026-10-26-desafio-story",
-      "visualConceptId": "father-v6-2026-10-26-desafio-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-desafio-story",
+      "visualConceptId": "father-v6-2026-10-29-desafio-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -57,9 +57,9 @@
         "O equilíbrio de habitats importa tanto quanto a migração."
       ],
       "visual": "butterfly",
-      "conceptId": "father-v6-2026-10-26-cur-ciencia-story",
-      "visualConceptId": "father-v6-2026-10-26-cur-ciencia-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-cur-ciencia-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-ciencia-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -91,9 +91,9 @@
         "Olhar o Sol diretamente é perigoso, inclusive com instrumentos sem filtro apropriado."
       ],
       "visual": "planet",
-      "conceptId": "father-v6-2026-10-26-cur-espaco-story",
-      "visualConceptId": "father-v6-2026-10-26-cur-espaco-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-cur-espaco-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-espaco-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -125,9 +125,9 @@
         "A observação deve respeitar o animal e evitar alimentadores mal higienizados."
       ],
       "visual": "bird",
-      "conceptId": "father-v6-2026-10-26-cur-natureza-story",
-      "visualConceptId": "father-v6-2026-10-26-cur-natureza-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-cur-natureza-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-natureza-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -159,9 +159,9 @@
         "As redes modernas de fibra óptica são herdeiras desse desafio de infraestrutura."
       ],
       "visual": "telegraph",
-      "conceptId": "father-v6-2026-10-26-cur-historia-story",
-      "visualConceptId": "father-v6-2026-10-26-cur-historia-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-cur-historia-story",
+      "visualConceptId": "father-v6-2026-10-29-cur-historia-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -185,17 +185,17 @@
       "id": "gravidez",
       "group": "Gravidez",
       "type": "GUIA",
-      "title": "Felipe: aproximadamente 16 semanas e 1 dia",
-      "summary": "Pela data provável do parto de 11/04/2027, a gestação chega aproximadamente a 16 semanas e 1 dia nesta segunda-feira.",
+      "title": "Felipe: aproximadamente 16 semanas e 4 dias",
+      "summary": "Pela datação da DUM de 05/07/2026, a gestação está por volta de 16 semanas e 4 dias.",
       "details": [
-        "A datação clínica e o acompanhamento do obstetra têm prioridade.",
-        "Bruna pode registrar dúvidas sobre sintomas, exames e conforto.",
-        "Pequenos gestos de apoio e divisão de tarefas ajudam a rotina."
+        "O desenvolvimento segue no segundo trimestre, com crescimento e mudanças progressivas.",
+        "A datação do obstetra e os exames são a referência caso haja divergência.",
+        "Apoio prático e alimentação tolerada podem ser mais úteis que cobranças."
       ],
       "visual": "baby",
-      "conceptId": "father-v6-2026-10-26-gravidez-story",
-      "visualConceptId": "father-v6-2026-10-26-gravidez-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-gravidez-story",
+      "visualConceptId": "father-v6-2026-10-29-gravidez-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -217,9 +217,9 @@
         "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
       ],
       "visual": "family",
-      "conceptId": "father-v6-2026-10-26-pai-story",
-      "visualConceptId": "father-v6-2026-10-26-pai-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-pai-story",
+      "visualConceptId": "father-v6-2026-10-29-pai-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -228,139 +228,136 @@
       "id": "brasil",
       "group": "Brasil",
       "type": "ATUALIZAÇÃO",
-      "title": "Brasil acorda após a definição do segundo turno presidencial",
-      "summary": "O TSE confirmou no domingo (25) a reeleição de Luiz Inácio Lula da Silva para um quarto mandato, segundo cobertura da Reuters.",
+      "title": "Brasil prepara leilão de R$ 8,9 bilhões em transmissão de energia",
+      "summary": "O Ministério de Minas e Energia anunciou que o leilão de sexta-feira (30) prevê investimentos em linhas de transmissão em sete estados.",
       "details": [
-        "O resultado eleitoral pertence à votação de domingo, não a uma nova votação nesta segunda.",
-        "Evite compartilhar percentuais parciais como se fossem a totalização definitiva.",
-        "Para dados detalhados e oficiais, consulte o sistema de resultados do TSE."
+        "O certame está previsto para 30/10, às 10h, na B3, segundo o MME.",
+        "São estimados 1.866 km de novas linhas e reforços na infraestrutura.",
+        "O valor de R$ 8,9 bilhões é investimento previsto, não valor já executado."
       ],
       "visual": "brazil",
-      "conceptId": "father-v6-2026-10-26-brasil-story",
-      "visualConceptId": "father-v6-2026-10-26-brasil-visual",
-      "eventDate": "2026-10-25",
+      "conceptId": "father-v6-2026-10-29-brasil-story",
+      "visualConceptId": "father-v6-2026-10-29-brasil-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — Brazil presidential election, 25/10",
-          "url": "https://www.reuters.com/world/americas/brazil-heads-polls-runoff-between-leftist-lula-bolsonaro-jr-2026-10-25/",
-          "publishedAt": "2026-10-25"
+          "label": "Ministério de Minas e Energia — leilão de transmissão, 29/10",
+          "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/governo-federal-amplia-ciclo-historico-de-investimentos-em-transmissao-com-leilao-de-r-8-9-bilhoes-na-b3",
+          "publishedAt": "2026-10-29"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-26"
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "mundo",
       "group": "Mundo",
-      "type": "FATO",
-      "title": "Israel se prepara para eleição em meio a debate econômico",
-      "summary": "Reportagem da Reuters de 26/10 analisa como investidores avaliam possíveis cenários políticos antes da votação israelense de terça-feira.",
+      "type": "ATUALIZAÇÃO",
+      "title": "Grécia pede proteção à navegação no Mar Negro",
+      "summary": "Em entrevista publicada pela Reuters nesta quinta, o primeiro-ministro grego defendeu uma trégua internacional para proteger o transporte marítimo.",
       "details": [
-        "Os movimentos de mercado descritos são expectativas, não resultados eleitorais.",
-        "O noticiário associa riscos geopolíticos às avaliações financeiras.",
-        "A eleição ainda não aconteceu no momento da reportagem."
+        "Kyriakos Mitsotakis afirmou que a segurança de navios é decisiva para o comércio regional.",
+        "A fala ocorreu após um ataque contra uma embarcação de propriedade grega no Mar Negro.",
+        "A proposta é uma defesa de negociações e não significa que uma trégua já tenha sido firmada."
       ],
       "visual": "globe",
-      "conceptId": "father-v6-2026-10-26-mundo-story",
-      "visualConceptId": "father-v6-2026-10-26-mundo-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-mundo-story",
+      "visualConceptId": "father-v6-2026-10-29-mundo-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — Israel markets and election, 26/10",
-          "url": "https://www.reuters.com/world/middle-east/israel-markets-see-upside-netanyahu-defeat-after-three-year-rally-2026-10-26/",
-          "publishedAt": "2026-10-26"
+          "label": "Reuters — Grécia e segurança no Mar Negro, 29/10",
+          "url": "https://www.reuters.com/world/europe/greek-pm-calls-turkey-libya-maritime-deal-void-calls-global-truce-after-black-2026-10-29/",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "politica",
       "group": "Política",
       "type": "ATUALIZAÇÃO",
-      "title": "Resultado presidencial de domingo abre novo ciclo de negociações",
-      "summary": "Após a reeleição de Lula no segundo turno de 25/10, o debate político se volta para a composição de apoios e as prioridades do próximo mandato.",
+      "title": "Campanha orienta trabalhadores a denunciar assédio eleitoral",
+      "summary": "Ministério do Trabalho divulgará orientações na Carteira de Trabalho Digital sobre coerção relacionada à escolha política.",
       "details": [
-        "A apuração foi realizada no domingo; esta é uma atualização do cenário político.",
-        "O resultado oficial deve ser consultado nas plataformas do TSE.",
-        "Não atribua acordos ou nomeações sem confirmação pública."
+        "A orientação reforça o sigilo do voto e a liberdade de opinião.",
+        "Ameaças, retaliações e pressão no ambiente profissional podem ser denunciadas.",
+        "A matéria identifica o canal assedioeleitoral.trabalho.gov.br como via de denúncia."
       ],
       "visual": "ballot",
-      "conceptId": "father-v6-2026-10-26-politica-story",
-      "visualConceptId": "father-v6-2026-10-26-politica-visual",
-      "eventDate": "2026-10-25",
+      "conceptId": "father-v6-2026-10-29-politica-story",
+      "visualConceptId": "father-v6-2026-10-29-politica-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — Brazil presidential election, 25/10",
-          "url": "https://www.reuters.com/world/americas/brazil-heads-polls-runoff-between-leftist-lula-bolsonaro-jr-2026-10-25/",
-          "publishedAt": "2026-10-25"
+          "label": "Agência Brasil — combate ao assédio eleitoral, 29/10",
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/campanha-orienta-trabalhadores-sobre-denuncias-de-assedio-eleitoral",
+          "publishedAt": "2026-10-29"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-26"
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "tempo",
       "group": "Tempo",
-      "type": "PREVISÃO",
-      "title": "Segunda-feira mais fria e úmida em São Paulo",
-      "summary": "A previsão para 26/10 indica chuva e queda de temperatura na capital paulista, com máxima próxima de 18°C.",
+      "type": "ATUALIZAÇÃO",
+      "title": "São Paulo termina quinta-feira com chuva e risco de alagamentos",
+      "summary": "O Centro de Gerenciamento de Emergências da Prefeitura informou chuva e sensação de frio na capital na noite de 29/10.",
       "details": [
-        "Previsão meteorológica não equivale a observação em tempo real.",
-        "Frente fria e instabilidade podem alterar deslocamentos.",
-        "Consulte alertas atualizados do Inmet e da Defesa Civil antes de sair."
+        "Às 18h01 o CGE apontava cerca de 17,6°C de temperatura média.",
+        "Havia chuva de intensidade até moderada entre as zonas Norte e Leste.",
+        "O solo encharcado aumenta os riscos em encostas e vias sujeitas a alagamento."
       ],
       "visual": "weather",
-      "conceptId": "father-v6-2026-10-26-tempo-story",
-      "visualConceptId": "father-v6-2026-10-26-tempo-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-tempo-story",
+      "visualConceptId": "father-v6-2026-10-29-tempo-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "INMET — Previsão para 24, 25 e 26/10",
-          "url": "https://portal.inmet.gov.br/noticias/previs%C3%A3o-para-s%C3%A1bado-24-domingo-25-e-segunda-feira-26",
-          "publishedAt": "2026-10-23"
-        },
-        {
-          "label": "Veja — Previsão São Paulo 26/10",
-          "url": "https://veja.abril.com.br/agenda-verde/previsao-do-tempo-em-sao-paulo-nesta-segunda-26-chuva-derruba-temperaturas-e-maxima-fica-em-18c/",
-          "publishedAt": "2026-10-26"
+          "label": "CGE Prefeitura de São Paulo — boletim de 29/10 às 18h01",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?data=2026-10-29",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "corinthians",
       "group": "Corinthians",
       "type": "ATUALIZAÇÃO",
-      "title": "Corinthians tenta reagir após derrota por 3 a 2 para o Vasco",
-      "summary": "O Vasco venceu o Corinthians no sábado (24), em São Januário, pela 32ª rodada; a equipe paulista busca reorganização após o revés.",
+      "title": "Corinthians encerra preparação para receber o Mirassol",
+      "summary": "O ge publicou nesta quinta que a equipe treinou na Neo Química Arena para o jogo de sexta (30), às 20h.",
       "details": [
-        "O placar de 3 a 2 é um resultado já ocorrido, não um jogo de hoje.",
-        "A reportagem do ge registra os principais lances.",
-        "Próximos compromissos devem ser confirmados na tabela oficial."
+        "A preparação terminou na arena na tarde de 29/10, segundo a reportagem.",
+        "Memphis Depay segue indisponível por problema muscular.",
+        "A partida será em 30/10, às 20h, conforme tabela da CBF."
       ],
       "visual": "football",
-      "conceptId": "father-v6-2026-10-26-corinthians-story",
-      "visualConceptId": "father-v6-2026-10-26-corinthians-visual",
-      "eventDate": "2026-10-24",
+      "conceptId": "father-v6-2026-10-29-corinthians-story",
+      "visualConceptId": "father-v6-2026-10-29-corinthians-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "ge — Vasco 3 x 2 Corinthians, 24/10",
-          "url": "https://ge.globo.com/rj/futebol/brasileirao-serie-a/jogo/24-10-2026/vasco-corinthians.ghtml",
-          "publishedAt": "2026-10-24"
+          "label": "ge — Corinthians fecha preparação em 29/10",
+          "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/escalacao-do-corinthians-seedorf-fecha-preparacao-na-arena-e-deve-repetir-time-contra-o-mirassol.ghtml",
+          "publishedAt": "2026-10-29"
         },
         {
-          "label": "Meu Timão — Atualização 26/10",
-          "url": "https://www.meutimao.com.br/noticias-do-corinthians/542763/zagueiro-do-corinthians-amplia-marcas-ofensivas-apos-derrota-para-o-vasco-da-gama-no-brasileirao",
-          "publishedAt": "2026-10-26"
+          "label": "CBF — Corinthians x Mirassol 30/10",
+          "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/corinthians-x-mirassol/832214",
+          "publishedAt": "2026-10-29"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-26"
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "viagens",
@@ -374,9 +371,9 @@
         "Se chover, troque a trilha por um programa coberto."
       ],
       "visual": "mountain",
-      "conceptId": "father-v6-2026-10-26-viagens-story",
-      "visualConceptId": "father-v6-2026-10-26-viagens-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-viagens-story",
+      "visualConceptId": "father-v6-2026-10-29-viagens-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -393,9 +390,9 @@
         "Na última audição, perceba como as camadas se combinam."
       ],
       "visual": "piano",
-      "conceptId": "father-v6-2026-10-26-musica-story",
-      "visualConceptId": "father-v6-2026-10-26-musica-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-musica-story",
+      "visualConceptId": "father-v6-2026-10-29-musica-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -412,9 +409,9 @@
         "Intercale notas isoladas e observe o contraste."
       ],
       "visual": "guitar",
-      "conceptId": "father-v6-2026-10-26-sertanejo-story",
-      "visualConceptId": "father-v6-2026-10-26-sertanejo-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-sertanejo-story",
+      "visualConceptId": "father-v6-2026-10-29-sertanejo-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -431,9 +428,9 @@
         "Faça uma pausa curta para comparar o conforto antes e depois."
       ],
       "visual": "gamepad",
-      "conceptId": "father-v6-2026-10-26-games-story",
-      "visualConceptId": "father-v6-2026-10-26-games-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-games-story",
+      "visualConceptId": "father-v6-2026-10-29-games-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -450,9 +447,9 @@
         "Compare anúncios de desempenho usando métricas equivalentes."
       ],
       "visual": "wafer",
-      "conceptId": "father-v6-2026-10-26-tecnologia-story",
-      "visualConceptId": "father-v6-2026-10-26-tecnologia-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-tecnologia-story",
+      "visualConceptId": "father-v6-2026-10-29-tecnologia-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -460,27 +457,28 @@
     {
       "id": "financas",
       "group": "Finanças",
-      "type": "FATO",
-      "title": "Semana começa com atenção a moedas e bancos centrais",
-      "summary": "A Reuters informou em 26/10 que moedas globais iniciaram a semana em faixas estreitas antes de decisões de bancos centrais.",
+      "type": "ATUALIZAÇÃO",
+      "title": "Ibovespa cai 1,06% e dólar fecha perto de R$ 5,39",
+      "summary": "No fechamento de quinta-feira, o índice perdeu o patamar de 170 mil pontos em sessão marcada por cautela fiscal.",
       "details": [
-        "Movimentos de abertura não representam o fechamento do dia.",
-        "Política monetária pode afetar câmbio e renda fixa.",
-        "Não tome decisões financeiras apenas com base em uma manchete."
+        "O Ibovespa encerrou aos 169.186,42 pontos, segundo dados de fechamento reportados.",
+        "O dólar comercial à vista terminou a R$ 5,3878 para venda, com alta no dia.",
+        "Os valores são retrato do encerramento de 29/10, não cotação em tempo real."
       ],
       "visual": "chart",
-      "conceptId": "father-v6-2026-10-26-financas-story",
-      "visualConceptId": "father-v6-2026-10-26-financas-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-financas-story",
+      "visualConceptId": "father-v6-2026-10-29-financas-visual",
+      "eventDate": "2026-10-29",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — Currency markets 26/10",
-          "url": "https://www.reuters.com/world/africa/currency-markets-subdued-ahead-pivotal-central-bank-week-2026-10-26/",
-          "publishedAt": "2026-10-26"
+          "label": "UOL / Estadão Conteúdo — fechamento 29/10",
+          "url": "https://economia.uol.com.br/noticias/estadao-conteudo/2026/10/29/fechamento-do-mercado-financeiro.amp.htm",
+          "publishedAt": "2026-10-29"
         }
       ],
-      "layout": "spotlight"
+      "layout": "spotlight",
+      "reportedAt": "2026-10-29"
     },
     {
       "id": "security-briefing",
@@ -494,9 +492,9 @@
         "Registre o motivo da priorização para facilitar auditoria."
       ],
       "visual": "radar",
-      "conceptId": "father-v6-2026-10-26-security-briefing-story",
-      "visualConceptId": "father-v6-2026-10-26-security-briefing-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-security-briefing-story",
+      "visualConceptId": "father-v6-2026-10-29-security-briefing-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -518,9 +516,9 @@
         "Correlacione eventos por identificadores e sequência, não só por horário."
       ],
       "visual": "shield",
-      "conceptId": "father-v6-2026-10-26-cyber-story",
-      "visualConceptId": "father-v6-2026-10-26-cyber-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-cyber-story",
+      "visualConceptId": "father-v6-2026-10-29-cyber-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -537,9 +535,9 @@
         "Mantenha rastreabilidade entre build, artefato e inventário."
       ],
       "visual": "code",
-      "conceptId": "father-v6-2026-10-26-appsec-story",
-      "visualConceptId": "father-v6-2026-10-26-appsec-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-appsec-story",
+      "visualConceptId": "father-v6-2026-10-29-appsec-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [
         {
@@ -561,9 +559,9 @@
         "Reserve orçamento para inspeção independente antes da compra."
       ],
       "visual": "car",
-      "conceptId": "father-v6-2026-10-26-carros-story",
-      "visualConceptId": "father-v6-2026-10-26-carros-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-carros-story",
+      "visualConceptId": "father-v6-2026-10-29-carros-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -580,9 +578,9 @@
         "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
       ],
       "visual": "motorcycle",
-      "conceptId": "father-v6-2026-10-26-motos-story",
-      "visualConceptId": "father-v6-2026-10-26-motos-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-motos-story",
+      "visualConceptId": "father-v6-2026-10-29-motos-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -599,9 +597,9 @@
         "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
       ],
       "visual": "wrench",
-      "conceptId": "father-v6-2026-10-26-mecanica-story",
-      "visualConceptId": "father-v6-2026-10-26-mecanica-visual",
-      "eventDate": "2026-10-26",
+      "conceptId": "father-v6-2026-10-29-mecanica-story",
+      "visualConceptId": "father-v6-2026-10-29-mecanica-visual",
+      "eventDate": "2026-10-29",
       "news": false,
       "sources": [],
       "layout": "guide"
