@@ -1,13 +1,5 @@
 name: Father News 6 - Fresh 25 Media Snapshot QA
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - 'data/candidates/2026-10-22/**'
-      - 'scripts/v6-build-daily-media-candidate.py'
-      - 'scripts/v6-verify-daily-media-candidate.py'
-      - 'scripts/v6-safe-extract-staging.py'
-      - '.github/workflows/father-news-v6-daily-media-22-oct.yml'
   workflow_dispatch:
 permissions:
   contents: read
