@@ -1,7 +1,8 @@
 import {test,expect} from '@playwright/test';
 import {createHash} from 'node:crypto';
 import {mkdirSync,writeFileSync} from 'node:fs';
-const release=process.env.FATHER_V6_RELEASE_ID||'';\nif(!/^20\\d{2}-\\d{2}-\\d{2}-r\\d{2,}$/.test(release))throw new Error('Missing bound, dated v6 release ID');
+const release=process.env.FATHER_V6_RELEASE_ID||'';
+if(!/^20\d{2}-\d{2}-\d{2}-r\d{2,}$/.test(release))throw new Error('Missing bound, dated v6 release ID');
 const expectedManifest=process.env.FATHER_V6_MANIFEST_SHA || '';
 if(!/^[a-f0-9]{64}$/.test(expectedManifest))throw new Error('Missing exact verified manifest SHA for current-day QA');
 const origin='https://sqlywvoqktdebubjmskn.supabase.co';
