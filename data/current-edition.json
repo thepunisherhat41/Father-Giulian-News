@@ -1,25 +1,25 @@
 {
-  "editionDate": "2026-10-29",
+  "editionDate": "2026-10-31",
   "timezone": "America/Sao_Paulo",
-  "updatedAt": "2026-10-29T21:00:03-03:00",
+  "updatedAt": "2026-10-31T21:19:37.219Z",
   "version": 4,
-  "editorialNote": "Edição de 29/10/2026, com jornalismo atualizado e publicado nesta data, 12 fotografias de Wikimedia com atribuição verificável e 13 artes originais datadas. A aprovação depende de validação editorial, hashes exatos, upload protegido, Chromium remoto e CAS; nada é considerado publicado sem validação.",
+  "editorialNote": "Edição editorial genuína de 31/10/2026: seis reportagens/atualizações com fontes e datas verificadas; quatro curiosidades temáticas com fontes oficiais; atividades inéditas do casal; 12 fotografias licenciadas com créditos e 13 artes originais da edição. Reportagens sobre eventos anteriores indicam a data do evento e a data da atualização. Apenas candidata: exige QA SHA exato, aprovação protegida, hash remoto 25/25, Chromium, preview e CAS.",
   "cards": [
     {
       "id": "papo",
       "group": "Papo de hoje",
       "type": "ATIVIDADE",
-      "title": "Qual história de hoje contaremos ao Felipe?",
-      "summary": "Separem um detalhe do dia que vocês gostariam de contar ao Felipe quando ele crescer.",
+      "title": "O que fizemos neste sábado que o Felipe vai adorar conhecer?",
+      "summary": "Escolham um momento real deste sábado e transformem em uma lembrança para contar ao Felipe no futuro.",
       "details": [
-        "Cada um escolhe uma lembrança simples e concreta de hoje.",
-        "Descrevam o cheiro, o som ou a cena que ficou na memória.",
-        "Guardem juntos duas frases para reler daqui a um ano."
+        "Cada um descreve um momento concreto de hoje sem precisar ser extraordinário.",
+        "Anotem uma palavra, uma sensação e o lugar em que aconteceu.",
+        "Guardem a história em duas frases no diário da família."
       ],
       "visual": "memory-jar",
-      "conceptId": "father-v6-2026-10-29-papo-story",
-      "visualConceptId": "father-v6-2026-10-29-papo-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-papo-story",
+      "visualConceptId": "father-v6-2026-10-31-papo-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -29,17 +29,17 @@
       "id": "desafio",
       "group": "Desafio do casal",
       "type": "ATIVIDADE",
-      "title": "Desafio: carta com três agradecimentos",
-      "summary": "Reservem cinco minutos para escrever três agradecimentos reais deste dia.",
+      "title": "Desafio do casal: cápsula do tempo de outubro",
+      "summary": "Escolham três pequenas conquistas de outubro e registrem o que desejam repetir juntos em novembro.",
       "details": [
-        "Cada um escreve três linhas, sem comparar respostas.",
-        "Escolham uma conquista do casal para celebrar.",
-        "Se quiserem, guardem as cartas em um envelope para o futuro."
+        "Cada pessoa anota uma conquista de outubro que queira celebrar.",
+        "Escolham um hábito simples para manter no próximo mês.",
+        "Coloquem as anotações em um envelope para abrir em novembro."
       ],
       "visual": "photos",
-      "conceptId": "father-v6-2026-10-29-desafio-story",
-      "visualConceptId": "father-v6-2026-10-29-desafio-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-desafio-story",
+      "visualConceptId": "father-v6-2026-10-31-desafio-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -49,85 +49,85 @@
       "id": "cur-ciencia",
       "group": "Curiosidades · Ciência",
       "type": "CURIOSIDADE",
-      "title": "Por que as borboletas-monarcas precisam de plantas específicas?",
-      "summary": "Lagartas de monarca dependem de plantas hospedeiras, enquanto os adultos procuram néctar em flores variadas.",
+      "title": "Como as monarcas se orientam durante a migração?",
+      "summary": "A migração sazonal de borboletas-monarcas depende de pistas ambientais e de uma jornada por diferentes regiões.",
       "details": [
-        "As fases de lagarta e adulta têm necessidades alimentares diferentes.",
-        "Conservar plantas hospedeiras e flores ajuda o ciclo de vida.",
-        "O equilíbrio de habitats importa tanto quanto a migração."
+        "A migração envolve gerações e deslocamentos extensos.",
+        "O clima e a disponibilidade de habitat influenciam a jornada.",
+        "Plantas de néctar oferecem energia durante o percurso."
       ],
       "visual": "butterfly",
-      "conceptId": "father-v6-2026-10-29-cur-ciencia-story",
-      "visualConceptId": "father-v6-2026-10-29-cur-ciencia-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-cur-ciencia-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-ciencia-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
-          "label": "U.S. Forest Service — Monarch Butterfly",
+          "label": "U.S. Forest Service — Monarch Migration",
           "url": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/migration/index.shtml"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "question": "O que ajuda as monarcas durante a migração?",
         "options": [
-          "As lagartas de monarca dependem de plantas hospedeiras",
-          "O fenômeno é impossível na natureza",
-          "Não há evidência histórica ou científica"
+          "Habitat e flores com néctar",
+          "Somente luz artificial",
+          "Ausência total de vegetação"
         ],
         "answer": 0,
-        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+        "explanation": "A migração depende de condições ambientais e recursos alimentares."
       }
     },
     {
       "id": "cur-espaco",
       "group": "Curiosidades · Espaço",
       "type": "CURIOSIDADE",
-      "title": "A luz do Sol leva cerca de oito minutos até a Terra",
-      "summary": "A luz viaja a aproximadamente 300 mil km/s; mesmo assim, a distância entre Sol e Terra exige alguns minutos.",
+      "title": "Por que a Terra tem estações do ano?",
+      "summary": "A inclinação do eixo terrestre altera a incidência de luz solar nos hemisférios durante a órbita em torno do Sol.",
       "details": [
-        "A distância média Sol–Terra é de aproximadamente 150 milhões de quilômetros.",
-        "O tempo de viagem da luz é próximo de oito minutos e vinte segundos.",
-        "Olhar o Sol diretamente é perigoso, inclusive com instrumentos sem filtro apropriado."
+        "As estações não são causadas principalmente pela distância da Terra ao Sol.",
+        "Os hemisférios recebem luz mais diretamente em épocas diferentes.",
+        "A inclinação do eixo explica verão e inverno em períodos opostos."
       ],
       "visual": "planet",
-      "conceptId": "father-v6-2026-10-29-cur-espaco-story",
-      "visualConceptId": "father-v6-2026-10-29-cur-espaco-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-cur-espaco-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-espaco-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
-          "label": "NASA Space Place — All About the Sun",
-          "url": "https://spaceplace.nasa.gov/all-about-the-sun/en/index.html"
+          "label": "NASA Space Place — What Causes the Seasons?",
+          "url": "https://spaceplace.nasa.gov/seasons/en/"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "question": "Qual é a principal causa das estações?",
         "options": [
-          "A luz solar leva cerca de oito minutos até a Terra",
-          "O fenômeno é impossível na natureza",
-          "Não há evidência histórica ou científica"
+          "Inclinação do eixo terrestre",
+          "Mudança diária da distância ao Sol",
+          "Rotação da Lua"
         ],
         "answer": 0,
-        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+        "explanation": "A inclinação terrestre determina como a luz solar atinge os hemisférios."
       }
     },
     {
       "id": "cur-natureza",
       "group": "Curiosidades · Natureza",
       "type": "CURIOSIDADE",
-      "title": "Beija-flores conseguem voar para trás",
-      "summary": "A mecânica de voo do beija-flor permite movimentos estacionários e recuos que são raros entre aves.",
+      "title": "Como beija-flores conseguem pairar diante das flores?",
+      "summary": "O movimento rápido e controlado das asas permite ao beija-flor ficar quase imóvel no ar para alcançar néctar.",
       "details": [
-        "As asas descrevem movimentos rápidos que geram sustentação em diferentes fases.",
-        "Essa habilidade ajuda a alcançar flores em espaços apertados.",
-        "A observação deve respeitar o animal e evitar alimentadores mal higienizados."
+        "O voo estacionário exige ajustes contínuos nas asas.",
+        "Essa habilidade ajuda a visitar flores sem pousar.",
+        "Flores e habitats conservados são importantes para a alimentação."
       ],
       "visual": "bird",
-      "conceptId": "father-v6-2026-10-29-cur-natureza-story",
-      "visualConceptId": "father-v6-2026-10-29-cur-natureza-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-cur-natureza-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-natureza-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
@@ -137,65 +137,65 @@
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "question": "Que habilidade ajuda beija-flores a alcançar flores?",
         "options": [
-          "Beija-flores conseguem voar para trás",
-          "O fenômeno é impossível na natureza",
-          "Não há evidência histórica ou científica"
+          "Voo estacionário",
+          "Hibernação subaquática",
+          "Corrida no solo"
         ],
         "answer": 0,
-        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+        "explanation": "O controle de voo permite pairar perto da flor."
       }
     },
     {
       "id": "cur-historia",
       "group": "Curiosidades · História",
       "type": "CURIOSIDADE",
-      "title": "O cabo transatlântico de 1858 mudou a escala da comunicação",
-      "summary": "As primeiras tentativas de telégrafo transatlântico mostraram o potencial de mensagens entre continentes e as dificuldades técnicas da época.",
+      "title": "A máquina de escrever de Sholes e Glidden ganhou patente em 1868",
+      "summary": "O modelo de patente registrado em 1868 documenta tentativas de tornar a escrita mecânica mais prática.",
       "details": [
-        "A transmissão por cabo era mais rápida que o transporte de cartas por navio.",
-        "Falhas de isolamento e operação afetavam a confiabilidade.",
-        "As redes modernas de fibra óptica são herdeiras desse desafio de infraestrutura."
+        "O modelo de patente foi registrado em 23 de junho de 1868.",
+        "Os inventores aprimoraram mecanismos de teclas, fita e transporte do papel.",
+        "A evolução das máquinas de escrever marcou a história da comunicação."
       ],
       "visual": "telegraph",
-      "conceptId": "father-v6-2026-10-29-cur-historia-story",
-      "visualConceptId": "father-v6-2026-10-29-cur-historia-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-cur-historia-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-historia-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
-          "label": "Smithsonian — Transatlantic cable",
-          "url": "https://www.si.edu/object/sectioned-sample-transatlantic-telegraph-cable%3Anmah_871655"
+          "label": "Smithsonian — Sholes, Glidden & Soule Typewriter Patent Model",
+          "url": "https://www.si.edu/object/nmah_850123"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Qual afirmação corresponde à curiosidade deste card?",
+        "question": "Em que ano foi concedida a patente do modelo?",
         "options": [
-          "O telégrafo transatlântico encurtou a comunicação entre continentes",
-          "O fenômeno é impossível na natureza",
-          "Não há evidência histórica ou científica"
+          "1868",
+          "1968",
+          "2008"
         ],
         "answer": 0,
-        "explanation": "A primeira opção resume o fato explicado no card e pode ser conferida na fonte indicada."
+        "explanation": "O Smithsonian registra a patente 79.265 em 23 de junho de 1868."
       }
     },
     {
       "id": "gravidez",
       "group": "Gravidez",
       "type": "GUIA",
-      "title": "Felipe: aproximadamente 16 semanas e 4 dias",
-      "summary": "Pela datação da DUM de 05/07/2026, a gestação está por volta de 16 semanas e 4 dias.",
+      "title": "Felipe: aproximadamente 16 semanas e 6 dias",
+      "summary": "Pela DUM de 05/07/2026, a gestação chega a aproximadamente 16 semanas e 6 dias neste sábado; a datação obstétrica deve prevalecer se houver ajuste médico.",
       "details": [
-        "O desenvolvimento segue no segundo trimestre, com crescimento e mudanças progressivas.",
-        "A datação do obstetra e os exames são a referência caso haja divergência.",
-        "Apoio prático e alimentação tolerada podem ser mais úteis que cobranças."
+        "O acompanhamento pré-natal é a referência para crescimento e sintomas.",
+        "Hidratação e tolerância alimentar precisam de atenção, especialmente após vômitos.",
+        "Se houver dificuldade de manter líquidos, urina escura ou perda de peso, procure avaliação médica."
       ],
       "visual": "baby",
-      "conceptId": "father-v6-2026-10-29-gravidez-story",
-      "visualConceptId": "father-v6-2026-10-29-gravidez-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-gravidez-story",
+      "visualConceptId": "father-v6-2026-10-31-gravidez-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
@@ -217,9 +217,9 @@
         "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
       ],
       "visual": "family",
-      "conceptId": "father-v6-2026-10-29-pai-story",
-      "visualConceptId": "father-v6-2026-10-29-pai-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-pai-story",
+      "visualConceptId": "father-v6-2026-10-31-pai-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -228,136 +228,131 @@
       "id": "brasil",
       "group": "Brasil",
       "type": "ATUALIZAÇÃO",
-      "title": "Brasil prepara leilão de R$ 8,9 bilhões em transmissão de energia",
-      "summary": "O Ministério de Minas e Energia anunciou que o leilão de sexta-feira (30) prevê investimentos em linhas de transmissão em sete estados.",
+      "title": "Acordo Mercosul–UE impulsiona exportações brasileiras em setores beneficiados",
+      "summary": "Reportagem de 31/10 informa que exportações brasileiras favorecidas por reduções tarifárias cresceram 21% entre maio e setembro, frente ao mesmo período de 2025.",
       "details": [
-        "O certame está previsto para 30/10, às 10h, na B3, segundo o MME.",
-        "São estimados 1.866 km de novas linhas e reforços na infraestrutura.",
-        "O valor de R$ 8,9 bilhões é investimento previsto, não valor já executado."
+        "A Agência Brasil reportou os resultados comerciais neste sábado.",
+        "Segundo o MDIC, dados divulgados no dia 29 apontam avanços em produtos como abacates, mel e óleo de milho.",
+        "A comparação utiliza o período de maio a setembro, não um resultado exclusivo de 31/10."
       ],
       "visual": "brazil",
-      "conceptId": "father-v6-2026-10-29-brasil-story",
-      "visualConceptId": "father-v6-2026-10-29-brasil-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-brasil-story",
+      "visualConceptId": "father-v6-2026-10-31-brasil-visual",
+      "eventDate": "2026-10-31",
       "news": true,
       "sources": [
         {
-          "label": "Ministério de Minas e Energia — leilão de transmissão, 29/10",
-          "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/governo-federal-amplia-ciclo-historico-de-investimentos-em-transmissao-com-leilao-de-r-8-9-bilhoes-na-b3",
-          "publishedAt": "2026-10-29"
+          "label": "Agência Brasil — exportações Mercosul–UE, 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/acordo-mercosul-ue-eleva-exportacoes-brasileiras-em-21",
+          "publishedAt": "2026-10-31"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-29"
+      "reportedAt": "2026-10-31"
     },
     {
       "id": "mundo",
       "group": "Mundo",
-      "type": "ATUALIZAÇÃO",
-      "title": "Grécia pede proteção à navegação no Mar Negro",
-      "summary": "Em entrevista publicada pela Reuters nesta quinta, o primeiro-ministro grego defendeu uma trégua internacional para proteger o transporte marítimo.",
+      "type": "FATO",
+      "title": "Reino Unido considera pedido oficial de desculpas pelo tráfico transatlântico",
+      "summary": "O governo britânico declarou neste sábado que pretende avaliar um diálogo sobre o legado histórico do tráfico transatlântico de pessoas escravizadas.",
       "details": [
-        "Kyriakos Mitsotakis afirmou que a segurança de navios é decisiva para o comércio regional.",
-        "A fala ocorreu após um ataque contra uma embarcação de propriedade grega no Mar Negro.",
-        "A proposta é uma defesa de negociações e não significa que uma trégua já tenha sido firmada."
+        "O primeiro-ministro publicou artigo sobre relações com países da África e do Caribe.",
+        "O tema será discutido no contexto da Commonwealth.",
+        "A manifestação é uma intenção de avaliar o pedido, não um pedido formal já apresentado."
       ],
       "visual": "globe",
-      "conceptId": "father-v6-2026-10-29-mundo-story",
-      "visualConceptId": "father-v6-2026-10-29-mundo-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-mundo-story",
+      "visualConceptId": "father-v6-2026-10-31-mundo-visual",
+      "eventDate": "2026-10-31",
       "news": true,
       "sources": [
         {
-          "label": "Reuters — Grécia e segurança no Mar Negro, 29/10",
-          "url": "https://www.reuters.com/world/europe/greek-pm-calls-turkey-libya-maritime-deal-void-calls-global-truce-after-black-2026-10-29/",
-          "publishedAt": "2026-10-29"
+          "label": "Agência Brasil / RTP — Reino Unido, 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-10/reino-unido-considera-pedir-desculpa-por-seu-papel-no-trafico-negreiro",
+          "publishedAt": "2026-10-31"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-29"
+      "reportedAt": "2026-10-31"
     },
     {
       "id": "politica",
       "group": "Política",
-      "type": "ATUALIZAÇÃO",
-      "title": "Campanha orienta trabalhadores a denunciar assédio eleitoral",
-      "summary": "Ministério do Trabalho divulgará orientações na Carteira de Trabalho Digital sobre coerção relacionada à escolha política.",
+      "type": "AGENDA",
+      "title": "Senado agenda votação da PEC da Segurança Pública para 3 de novembro",
+      "summary": "O presidente do Senado marcou para terça-feira, 3 de novembro, a votação da proposta de emenda constitucional sobre segurança pública.",
       "details": [
-        "A orientação reforça o sigilo do voto e a liberdade de opinião.",
-        "Ameaças, retaliações e pressão no ambiente profissional podem ser denunciadas.",
-        "A matéria identifica o canal assedioeleitoral.trabalho.gov.br como via de denúncia."
+        "A informação foi publicada pela Agência Brasil às 10h22 deste sábado.",
+        "A PEC propõe mudanças na coordenação entre União, estados e municípios.",
+        "A votação está agendada; o resultado ainda não ocorreu."
       ],
       "visual": "ballot",
-      "conceptId": "father-v6-2026-10-29-politica-story",
-      "visualConceptId": "father-v6-2026-10-29-politica-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-politica-story",
+      "visualConceptId": "father-v6-2026-10-31-politica-visual",
+      "eventDate": "2026-10-31",
       "news": true,
       "sources": [
         {
-          "label": "Agência Brasil — combate ao assédio eleitoral, 29/10",
-          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/campanha-orienta-trabalhadores-sobre-denuncias-de-assedio-eleitoral",
-          "publishedAt": "2026-10-29"
+          "label": "Agência Brasil — agenda da PEC, 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/alcolumbre-marca-votacao-da-pec-da-seguranca-publica-para-terca-feira",
+          "publishedAt": "2026-10-31"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-29"
+      "reportedAt": "2026-10-31"
     },
     {
       "id": "tempo",
       "group": "Tempo",
-      "type": "ATUALIZAÇÃO",
-      "title": "São Paulo termina quinta-feira com chuva e risco de alagamentos",
-      "summary": "O Centro de Gerenciamento de Emergências da Prefeitura informou chuva e sensação de frio na capital na noite de 29/10.",
+      "type": "PREVISÃO",
+      "title": "São Paulo teve tarde quente e previsão de pancadas isoladas neste sábado",
+      "summary": "Boletim municipal das 12h03 registrou temperatura média de 25,2 °C em São Paulo e possibilidade de chuva isolada ao longo da tarde.",
       "details": [
-        "Às 18h01 o CGE apontava cerca de 17,6°C de temperatura média.",
-        "Havia chuva de intensidade até moderada entre as zonas Norte e Leste.",
-        "O solo encharcado aumenta os riscos em encostas e vias sujeitas a alagamento."
+        "O CGE informou sol entre nuvens e umidade relativa próxima de 68% no boletim do meio-dia.",
+        "Áreas de instabilidade poderiam provocar pancadas localizadas até o fim da tarde.",
+        "Para domingo, a tendência indicada era de sol entre nuvens e chuva rápida isolada."
       ],
       "visual": "weather",
-      "conceptId": "father-v6-2026-10-29-tempo-story",
-      "visualConceptId": "father-v6-2026-10-29-tempo-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-tempo-story",
+      "visualConceptId": "father-v6-2026-10-31-tempo-visual",
+      "eventDate": "2026-10-31",
       "news": true,
       "sources": [
         {
-          "label": "CGE Prefeitura de São Paulo — boletim de 29/10 às 18h01",
-          "url": "https://www.cgesp.net/v3/noticias.jsp?data=2026-10-29",
-          "publishedAt": "2026-10-29"
+          "label": "CGE Prefeitura de São Paulo — boletim de 31/10 às 12h03",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?id=56306",
+          "publishedAt": "2026-10-31"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-29"
+      "reportedAt": "2026-10-31"
     },
     {
       "id": "corinthians",
       "group": "Corinthians",
       "type": "ATUALIZAÇÃO",
-      "title": "Corinthians encerra preparação para receber o Mirassol",
-      "summary": "O ge publicou nesta quinta que a equipe treinou na Neo Química Arena para o jogo de sexta (30), às 20h.",
+      "title": "Corinthians vence Mirassol por 2 a 0 e encerra sequência sem vitórias",
+      "summary": "Em reportagem publicada no sábado, a Agência Brasil detalhou a vitória do Corinthians por 2 a 0 sobre o Mirassol na noite de sexta-feira (30).",
       "details": [
-        "A preparação terminou na arena na tarde de 29/10, segundo a reportagem.",
-        "Memphis Depay segue indisponível por problema muscular.",
-        "A partida será em 30/10, às 20h, conforme tabela da CBF."
+        "Matheus Bidu e Kaio César marcaram os gols na Neo Química Arena.",
+        "A equipe interrompeu sequência de dez jogos sem vencer, segundo a reportagem.",
+        "O relato é uma atualização de 31/10 sobre o confronto realizado em 30/10."
       ],
       "visual": "football",
-      "conceptId": "father-v6-2026-10-29-corinthians-story",
-      "visualConceptId": "father-v6-2026-10-29-corinthians-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-corinthians-story",
+      "visualConceptId": "father-v6-2026-10-31-corinthians-visual",
+      "eventDate": "2026-10-30",
       "news": true,
       "sources": [
         {
-          "label": "ge — Corinthians fecha preparação em 29/10",
-          "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/10/29/escalacao-do-corinthians-seedorf-fecha-preparacao-na-arena-e-deve-repetir-time-contra-o-mirassol.ghtml",
-          "publishedAt": "2026-10-29"
-        },
-        {
-          "label": "CBF — Corinthians x Mirassol 30/10",
-          "url": "https://www.cbf.com.br/futebol-brasileiro/jogos/campeonato-brasileiro/serie-a/2026/corinthians-x-mirassol/832214",
-          "publishedAt": "2026-10-29"
+          "label": "Agência Brasil — Corinthians 2 x 0 Mirassol, publicação 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-10/corinthians-encerra-jejum-com-vitoria-sobre-o-mirassol-2-0",
+          "publishedAt": "2026-10-31"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-29"
+      "reportedOn": "2026-10-31"
     },
     {
       "id": "viagens",
@@ -371,9 +366,9 @@
         "Se chover, troque a trilha por um programa coberto."
       ],
       "visual": "mountain",
-      "conceptId": "father-v6-2026-10-29-viagens-story",
-      "visualConceptId": "father-v6-2026-10-29-viagens-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-viagens-story",
+      "visualConceptId": "father-v6-2026-10-31-viagens-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -390,9 +385,9 @@
         "Na última audição, perceba como as camadas se combinam."
       ],
       "visual": "piano",
-      "conceptId": "father-v6-2026-10-29-musica-story",
-      "visualConceptId": "father-v6-2026-10-29-musica-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-musica-story",
+      "visualConceptId": "father-v6-2026-10-31-musica-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -409,9 +404,9 @@
         "Intercale notas isoladas e observe o contraste."
       ],
       "visual": "guitar",
-      "conceptId": "father-v6-2026-10-29-sertanejo-story",
-      "visualConceptId": "father-v6-2026-10-29-sertanejo-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-sertanejo-story",
+      "visualConceptId": "father-v6-2026-10-31-sertanejo-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -428,9 +423,9 @@
         "Faça uma pausa curta para comparar o conforto antes e depois."
       ],
       "visual": "gamepad",
-      "conceptId": "father-v6-2026-10-29-games-story",
-      "visualConceptId": "father-v6-2026-10-29-games-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-games-story",
+      "visualConceptId": "father-v6-2026-10-31-games-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -447,9 +442,9 @@
         "Compare anúncios de desempenho usando métricas equivalentes."
       ],
       "visual": "wafer",
-      "conceptId": "father-v6-2026-10-29-tecnologia-story",
-      "visualConceptId": "father-v6-2026-10-29-tecnologia-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-tecnologia-story",
+      "visualConceptId": "father-v6-2026-10-31-tecnologia-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -458,27 +453,27 @@
       "id": "financas",
       "group": "Finanças",
       "type": "ATUALIZAÇÃO",
-      "title": "Ibovespa cai 1,06% e dólar fecha perto de R$ 5,39",
-      "summary": "No fechamento de quinta-feira, o índice perdeu o patamar de 170 mil pontos em sessão marcada por cautela fiscal.",
+      "title": "Mercado encerra outubro com dólar a R$ 5,446 e Ibovespa a 167,9 mil pontos",
+      "summary": "No último pregão do mês, na sexta-feira (30), o dólar comercial fechou a R$ 5,446 e o Ibovespa recuou 0,75%, segundo dados divulgados pela Agência Brasil.",
       "details": [
-        "O Ibovespa encerrou aos 169.186,42 pontos, segundo dados de fechamento reportados.",
-        "O dólar comercial à vista terminou a R$ 5,3878 para venda, com alta no dia.",
-        "Os valores são retrato do encerramento de 29/10, não cotação em tempo real."
+        "A referência é o fechamento de 30/10, não há pregão regular neste sábado.",
+        "A reportagem registrou valorização semanal de 9,15% do dólar.",
+        "O Ibovespa encerrou o pregão em 167.921,80 pontos."
       ],
       "visual": "chart",
-      "conceptId": "father-v6-2026-10-29-financas-story",
-      "visualConceptId": "father-v6-2026-10-29-financas-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-financas-story",
+      "visualConceptId": "father-v6-2026-10-31-financas-visual",
+      "eventDate": "2026-10-30",
       "news": true,
       "sources": [
         {
-          "label": "UOL / Estadão Conteúdo — fechamento 29/10",
-          "url": "https://economia.uol.com.br/noticias/estadao-conteudo/2026/10/29/fechamento-do-mercado-financeiro.amp.htm",
-          "publishedAt": "2026-10-29"
+          "label": "Agência Brasil — fechamento financeiro 30/10",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-fecha-r-544-e-registra-maior-alta-semanal-desde-2008",
+          "publishedAt": "2026-10-30"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-29"
+      "reportedOn": "2026-10-31"
     },
     {
       "id": "security-briefing",
@@ -492,9 +487,9 @@
         "Registre o motivo da priorização para facilitar auditoria."
       ],
       "visual": "radar",
-      "conceptId": "father-v6-2026-10-29-security-briefing-story",
-      "visualConceptId": "father-v6-2026-10-29-security-briefing-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-security-briefing-story",
+      "visualConceptId": "father-v6-2026-10-31-security-briefing-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
@@ -516,9 +511,9 @@
         "Correlacione eventos por identificadores e sequência, não só por horário."
       ],
       "visual": "shield",
-      "conceptId": "father-v6-2026-10-29-cyber-story",
-      "visualConceptId": "father-v6-2026-10-29-cyber-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-cyber-story",
+      "visualConceptId": "father-v6-2026-10-31-cyber-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -535,9 +530,9 @@
         "Mantenha rastreabilidade entre build, artefato e inventário."
       ],
       "visual": "code",
-      "conceptId": "father-v6-2026-10-29-appsec-story",
-      "visualConceptId": "father-v6-2026-10-29-appsec-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-appsec-story",
+      "visualConceptId": "father-v6-2026-10-31-appsec-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [
         {
@@ -559,9 +554,9 @@
         "Reserve orçamento para inspeção independente antes da compra."
       ],
       "visual": "car",
-      "conceptId": "father-v6-2026-10-29-carros-story",
-      "visualConceptId": "father-v6-2026-10-29-carros-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-carros-story",
+      "visualConceptId": "father-v6-2026-10-31-carros-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -578,9 +573,9 @@
         "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
       ],
       "visual": "motorcycle",
-      "conceptId": "father-v6-2026-10-29-motos-story",
-      "visualConceptId": "father-v6-2026-10-29-motos-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-motos-story",
+      "visualConceptId": "father-v6-2026-10-31-motos-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -597,12 +592,13 @@
         "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
       ],
       "visual": "wrench",
-      "conceptId": "father-v6-2026-10-29-mecanica-story",
-      "visualConceptId": "father-v6-2026-10-29-mecanica-visual",
-      "eventDate": "2026-10-29",
+      "conceptId": "father-v6-2026-10-31-mecanica-story",
+      "visualConceptId": "father-v6-2026-10-31-mecanica-visual",
+      "eventDate": "2026-10-31",
       "news": false,
       "sources": [],
       "layout": "guide"
     }
-  ]
+  ],
+  "releaseId": "2026-10-31-r01"
 }

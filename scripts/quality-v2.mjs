@@ -14,7 +14,7 @@ for(const c of e.cards||[]){
  const idx=order.findIndex(x=>x===c.group||(x==='Curiosidades'&&c.group.startsWith('Curiosidades ·')));
  if(idx<prev||idx===-1)fails.push('ordem editorial '+c.id);prev=idx;
  if(/náutica|nautica|mensagem romântica artificial/i.test(JSON.stringify(c)))fails.push('tema proibido '+c.id);
- if(c.news&&(!c.sources?.length||(c.eventDate!==now&&!(c.type==='ATUALIZAÇÃO'&&c.reportedAt===now))))fails.push('jornalismo sem fonte/data '+c.id);
+ if(c.news&&(!c.sources?.length||(c.eventDate!==now&&!(c.type==='ATUALIZAÇÃO'&&(c.reportedOn===now||c.reportedAt===now||c.reportedAt?.startsWith(now+'T'))))))fails.push('jornalismo sem fonte/data '+c.id);
  for(const s of c.sources||[])if(!s.url.startsWith('https://'))fails.push('fonte inválida '+c.id);
 }
 if(e.cards?.filter(c=>c.group.startsWith('Curiosidades ·')).length<3)fails.push('faltam curiosidades por tipos');
