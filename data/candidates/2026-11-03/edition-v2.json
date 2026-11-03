@@ -3,7 +3,7 @@
   "timezone": "America/Sao_Paulo",
   "updatedAt": "2026-11-03T16:10:34.114Z",
   "version": 4,
-  "editorialNote": "Candidata editorial de 03/11/2026 em America/Sao_Paulo, com seis notícias de veículos e órgãos identificados publicadas nesta data; informações do mercado tratadas como projeções e agendas não apresentadas como fatos já concluídos. Catálogo de 12 imagens licenciadas (incluindo fotografias de arquivo identificadas) e 13 artes originais da edição. Publicação condicionada a SHA exato, QA completo, aprovação do ambiente, bytes remotos 25/25, Chromium, preview integrado e CAS.",
+  "editorialNote": "Candidata editorial de 03/11/2026 em America/Sao_Paulo, com seis notícias de veículos e órgãos identificados publicadas nesta data; informações do mercado tratadas como projeções e agendas não apresentadas como fatos já concluídos. Catálogo de 12 imagens licenciadas (incluindo fotografias de arquivo identificadas) e 13 artes originais da edição. Publicação condicionada a SHA exato, QA completo, aprovação do ambiente, bytes remotos 25/25, Chromium, preview integrado e CAS. Revisão r02: integra o leitor de staging isolado e o build Vercel, sem alterar a data factual nem reproduzir notícias como se fossem novas.",
   "cards": [
     {
       "id": "papo",
@@ -600,5 +600,5 @@
       "layout": "guide"
     }
   ],
-  "releaseId": "2026-11-03-r01"
+  "releaseId": "2026-11-03-r02"
 }
