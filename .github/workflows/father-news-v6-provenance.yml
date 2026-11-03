@@ -1,0 +1,24 @@
+name: Father News 6 Source Provenance - Isolated Tests
+on:
+  pull_request:
+    paths:
+      - 'lib/father-v6/source-provenance.mjs'
+      - 'lib/father-v6/engine.mjs'
+      - 'schemas/father-news-edition-v6.schema.json'
+      - 'tests/v6-source-provenance.test.mjs'
+      - 'tests/v6-engine.test.mjs'
+      - '.github/workflows/father-news-v6-provenance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify source date precision and fail-closed news rules
+        run: node --test tests/v6-source-provenance.test.mjs tests/v6-engine.test.mjs

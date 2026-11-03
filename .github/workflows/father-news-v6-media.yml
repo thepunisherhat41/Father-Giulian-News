@@ -1,0 +1,63 @@
+name: Father News 6 Immutable Media QA
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Syntax-check protected uploader (no upload in PR CI)
+        run: |
+          node --check scripts/v6-upload-immutable-media.mjs
+          if node scripts/v6-upload-immutable-media.mjs /tmp/unused; then
+            echo "FAIL: uploader ran outside authorized manual context"
+            exit 1
+          fi
+      - name: Install isolated SVG rasterizer
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq librsvg2-bin
+          rsvg-convert --version
+      - name: Download prior exact-byte verified media source archive (temporary)
+        uses: actions/download-artifact@v4
+        with:
+          name: father-v6-media-staging-only
+          run-id: 39527443320
+          github-token: ${{ github.token }}
+          path: /tmp/v6-pinned-source
+      - name: Hydrate candidate source without third-party network
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/father-v6-media
+          tar -xzf /tmp/v6-pinned-source/father-v6-media.tar.gz -C /tmp/father-v6-media --no-same-owner
+          python3 - <<'PY'
+          import json,os,pathlib
+          p=pathlib.Path('/tmp/father-v6-media/media-manifest.json')
+          d=json.loads(p.read_bytes())
+          d['app_sha']=os.environ['APP_SHA']
+          p.write_text(json.dumps(d,sort_keys=True,ensure_ascii=False,indent=2)+'\n')
+          PY
+          python3 scripts/v6-verify-staged-media.py /tmp/father-v6-media "$APP_SHA" data/candidates/2026-10-20/edition-v2.json
+      - name: Rasterize all 13 arts and independently verify 25 objects
+        env:
+          APP_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          python3 scripts/v6-rasterize-locked-media.py --source /tmp/father-v6-media --output /tmp/father-v6-ready --edition data/candidates/2026-10-20/edition-v2.json --app-sha "$APP_SHA"
+          python3 scripts/v6-verify-raster-media.py --root /tmp/father-v6-ready --edition data/candidates/2026-10-20/edition-v2.json --app-sha "$APP_SHA"
+          python3 tests/v6-raster-negative.test.py /tmp/father-v6-ready
+          tar -czf /tmp/father-v6-ready.tar.gz -C /tmp/father-v6-ready .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: father-v6-raster-ready-staging-only
+          path: /tmp/father-v6-ready.tar.gz
+          retention-days: 7
+

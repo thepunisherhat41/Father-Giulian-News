@@ -1,0 +1,617 @@
+{
+  "editionDate": "2026-10-22",
+  "timezone": "America/Sao_Paulo",
+  "updatedAt": "2026-10-22T23:20:00-03:00",
+  "version": 4,
+  "editorialNote": "Edição candidata de 22/10/2026. Notícias com fonte verificável e datas de evento/reportagem distintas. Agenda não implica fato consumado. Fotografias sob licenças atribuídas. Publicação v6 depende de media snapshot imutável e QA de 25 cards.",
+  "cards": [
+    {
+      "id": "papo",
+      "group": "Papo de hoje",
+      "type": "ATIVIDADE",
+      "title": "Papo de hoje: qual tradição vocês querem criar com o Felipe?",
+      "summary": "Escolham um ritual simples que possa voltar todo ano, sem custos altos: música de domingo, passeio curto ou foto no mesmo lugar.",
+      "details": [
+        "Cada um sugere uma tradição que teria gostado de viver na infância.",
+        "Escolham uma versão que caiba na rotina real da família.",
+        "Escrevam o primeiro registro da tradição para lembrar depois."
+      ],
+      "visual": "memory-jar",
+      "conceptId": "quest-ritual-anual-felipe-22",
+      "visualConceptId": "visual-calendar-family-first-ritual-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 20
+    },
+    {
+      "id": "desafio",
+      "group": "Desafio do casal",
+      "type": "ATIVIDADE",
+      "title": "Desafio a dois: cápsula do tempo em dez minutos",
+      "summary": "Cada pessoa escolhe três frases sobre o presente: uma surpresa, uma esperança e uma coisa engraçada desta fase antes da chegada do Felipe.",
+      "details": [
+        "Gravem um áudio curto, sem precisar divulgar em redes sociais.",
+        "Cada um escolhe uma música que combine com outubro de 2026.",
+        "Guardem o material com data para ouvir no primeiro aniversário do Felipe."
+      ],
+      "visual": "photos",
+      "conceptId": "quest-felipe-capsula-2026-22",
+      "visualConceptId": "visual-envelope-dated-audio-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 35
+    },
+    {
+      "id": "cur-ciencia",
+      "group": "Curiosidades · Ciência",
+      "type": "CURIOSIDADE",
+      "title": "Borboletas conseguem sentir sabores pelos pés",
+      "summary": "Receptores nas patas ajudam borboletas a reconhecer substâncias em plantas e flores, algo útil para se alimentar e selecionar locais de postura.",
+      "details": [
+        "A tromba funciona como um canudo para beber néctar.",
+        "Sensores nas patas identificam substâncias ao pousar.",
+        "A informação ajuda algumas espécies a escolher plantas adequadas para as larvas."
+      ],
+      "visual": "butterfly",
+      "conceptId": "butterfly-tasting-feet-22",
+      "visualConceptId": "visual-butterfly-red-flower-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian — Butterflies taste with their feet",
+          "url": "https://nationalzoo.si.edu/animals/news/8-reasons-bee-awe-pollinators"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual parte da borboleta ajuda a sentir sabores?",
+        "options": [
+          "As patas",
+          "A ponta das asas",
+          "As antenas apenas"
+        ],
+        "answer": 0,
+        "explanation": "Sensores nas patas ajudam a borboleta a identificar substâncias."
+      }
+    },
+    {
+      "id": "cur-espaco",
+      "group": "Curiosidades · Espaço",
+      "type": "CURIOSIDADE",
+      "title": "Europa pode esconder um oceano sob o gelo de Júpiter",
+      "summary": "A lua Europa tem fortes indícios de um oceano de água salgada sob uma crosta gelada; entender sua habitabilidade é uma missão científica.",
+      "details": [
+        "A superfície apresenta fraturas e regiões de gelo.",
+        "Oceano subterrâneo é hipótese sustentada por múltiplas observações.",
+        "A missão Europa Clipper investiga se existem ambientes propícios à vida, sem afirmar que ela exista."
+      ],
+      "visual": "planet",
+      "conceptId": "europa-ocean-ice-evidence-22",
+      "visualConceptId": "visual-europa-nasa-galileo-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "NASA — Europa Facts",
+          "url": "https://science.nasa.gov/jupiter/jupiter-moons/europa/europa-facts/"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Onde os cientistas suspeitam que esteja a água líquida de Europa?",
+        "options": [
+          "Dentro do núcleo de ferro",
+          "Sob a crosta de gelo",
+          "Na atmosfera"
+        ],
+        "answer": 1,
+        "explanation": "Há fortes evidências de um oceano sob o gelo."
+      }
+    },
+    {
+      "id": "cur-natureza",
+      "group": "Curiosidades · Natureza",
+      "type": "CURIOSIDADE",
+      "title": "Beija-flores conseguem voar para trás e parar no ar",
+      "summary": "A mecânica extraordinária das asas permite pairar diante de uma flor, mudar de direção rapidamente e até deslocar-se para trás.",
+      "details": [
+        "A habilidade ajuda a explorar flores estreitas.",
+        "Pairar exige muita energia, obtida com visitas frequentes às flores.",
+        "Esses pássaros também podem capturar pequenos insetos."
+      ],
+      "visual": "bird",
+      "conceptId": "hummingbird-backward-flight-22",
+      "visualConceptId": "visual-hummingbird-cardinal-flower-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "Audubon — Hummingbird Flight",
+          "url": "https://www.audubon.org/news/hummingbird-flight-nothing-else-bird-world"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual manobra distingue os beija-flores?",
+        "options": [
+          "Nadar de costas",
+          "Voar para trás",
+          "Dormir enquanto batem asas"
+        ],
+        "answer": 1,
+        "explanation": "O beija-flor consegue pairar e voar para trás."
+      }
+    },
+    {
+      "id": "cur-historia",
+      "group": "Curiosidades · História",
+      "type": "CURIOSIDADE",
+      "title": "O primeiro cabo atlântico funcionou por apenas semanas",
+      "summary": "O cabo telegráfico lançado em 1858 reduziu a distância das mensagens entre continentes, mas a ligação pioneira não durou muito.",
+      "details": [
+        "A travessia dos cabos exigiu planejamento naval e engenharia inéditos.",
+        "O primeiro serviço permaneceu ativo por cerca de vinte dias.",
+        "Conexões mais duráveis viriam na década seguinte."
+      ],
+      "visual": "telegraph",
+      "conceptId": "first-atlantic-cable-1858-22",
+      "visualConceptId": "visual-1858-cable-museum-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian — transatlantic cable sample",
+          "url": "https://www.si.edu/object/sectioned-sample-transatlantic-telegraph-cable%3Anmah_871655"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Por quanto tempo o cabo pioneiro de 1858 operou?",
+        "options": [
+          "Por cerca de vinte dias",
+          "Por cem anos",
+          "Apenas uma hora"
+        ],
+        "answer": 0,
+        "explanation": "O museu Smithsonian registra aproximadamente vinte dias de serviço."
+      }
+    },
+    {
+      "id": "gravidez",
+      "group": "Gravidez",
+      "type": "GUIA",
+      "title": "Felipe: 15 semanas e 4 dias de gestação",
+      "summary": "Considerando a data prevista de parto de 11/04/2027, a contagem obstétrica hoje indica aproximadamente 15 semanas e 4 dias.",
+      "details": [
+        "O segundo trimestre traz mudanças graduais no desenvolvimento fetal.",
+        "Cansaço e desconfortos merecem ser anotados para o pré-natal.",
+        "Ultrassom e acompanhamento médico são a referência para a idade gestacional individual."
+      ],
+      "visual": "baby",
+      "conceptId": "pregnancy-week15-day4-22",
+      "visualConceptId": "visual-week15-day4-maternity-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Week 15",
+          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-15/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "pai",
+      "group": "Ser Pai",
+      "type": "GUIA",
+      "title": "Ser pai hoje: prepare um descanso sem cobranças",
+      "summary": "Escolham uma tarefa doméstica para simplificar neste fim de semana e reservem alguns minutos para conversar sobre como Bruna está se sentindo.",
+      "details": [
+        "Pergunte o que realmente seria ajuda hoje, sem supor a resposta.",
+        "Deixe água e um lanche acessíveis, conforme a preferência dela.",
+        "Se surgirem sintomas novos ou intensos, orientem-se com a equipe do pré-natal."
+      ],
+      "visual": "family",
+      "conceptId": "father-practical-support-22",
+      "visualConceptId": "visual-water-list-support-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Supporting your partner",
+          "url": "https://www.nhs.uk/pregnancy/support/partners/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "brasil",
+      "group": "Brasil",
+      "type": "AGENDA",
+      "title": "Brasil a três dias do 2º turno: votação domingo, 25/10",
+      "summary": "O Tribunal Superior Eleitoral confirmou o segundo turno em 25 de outubro, das 8h às 17h, nos locais onde houver votação.",
+      "details": [
+        "Consulte seção e local nos canais oficiais, como e-Título ou Autoatendimento Eleitoral.",
+        "Separe documento de identificação e planeje o deslocamento.",
+        "A agenda eleitoral não é resultado de eleição nem antecipa vencedores."
+      ],
+      "visual": "brazil",
+      "conceptId": "second-round-three-days-22",
+      "visualConceptId": "visual-vote-25-oct-22",
+      "eventDate": "2026-10-22",
+      "news": true,
+      "sources": [
+        {
+          "label": "TSE — orientação de local de votação de 19/10",
+          "url": "https://www.tse.jus.br/comunicacao/radio/2026/Outubro/tse-orienta-eleitorado-a-consultar-o-local-de-votacao-para-o-2oturno-das-eleicoes",
+          "publishedAt": "2026-10-19"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "mundo",
+      "group": "Mundo",
+      "type": "FATO",
+      "title": "FMI projeta retração econômica em região afetada pela guerra",
+      "summary": "Em atualização publicada em 22/10, a Reuters relata projeção do FMI de queda de 1,3% para Oriente Médio, Norte da África e Paquistão em 2026.",
+      "details": [
+        "Conflitos interrompem transporte, comércio, turismo e oferta de energia em parte da região.",
+        "A estimativa do FMI é uma projeção econômica, não um número fechado.",
+        "A agência destaca incerteza elevada para os próximos meses."
+      ],
+      "visual": "globe",
+      "conceptId": "imf-mena-pakistan-2026-22",
+      "visualConceptId": "visual-imf-region-chart-22",
+      "eventDate": "2026-10-22",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — FMI e perspectivas regionais de 22/10",
+          "url": "https://www.reuters.com/world/middle-east/imf-sees-13-contraction-middle-east-north-africa-pakistan-2026-2026-10-22/",
+          "publishedAt": "2026-10-22"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "politica",
+      "group": "Política",
+      "type": "AGENDA",
+      "title": "TSE: esta quinta é o último dia de comícios do 2º turno",
+      "summary": "O calendário oficial indica 22 de outubro como último dia para realização de comícios antes da votação do domingo, 25/10.",
+      "details": [
+        "A regra consta de resolução do TSE sobre o calendário eleitoral de 2026.",
+        "Não confunda fim dos comícios com fim de toda forma de propaganda.",
+        "O eleitor deve consultar canais oficiais para regras e horários."
+      ],
+      "visual": "ballot",
+      "conceptId": "tse-last-rallies-22",
+      "visualConceptId": "visual-vote-calendar-22",
+      "eventDate": "2026-10-22",
+      "news": true,
+      "sources": [
+        {
+          "label": "TSE — comícios 22/10",
+          "url": "https://www.tse.jus.br/comunicacao/radio/2026/Outubro/ultimo-dia-para-a-realizacao-de-comicios",
+          "publishedAt": "2026-10-19"
+        },
+        {
+          "label": "TSE — calendário eleitoral 2026",
+          "url": "https://www.tse.jus.br/legislacao/compilada/res/2026/resolucao-no-23-760-de-2-de-marco-de-2026",
+          "publishedAt": "2026-03-02"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "tempo",
+      "group": "Tempo",
+      "type": "PREVISÃO",
+      "title": "São Paulo termina quinta nublada e com chance de chuvisco",
+      "summary": "Boletim do CGE às 21h de 22/10 registra cerca de 18 °C na capital e prevê chuvisco isolado, sem chuva significativa nesta noite.",
+      "details": [
+        "O acumulado de outubro informado pelo CGE chegou a 129,6 mm.",
+        "Sexta-feira (23) terá risco de chuva moderada e rajadas de vento, segundo o órgão.",
+        "Previsões são mutáveis: confira novo boletim para sair de casa."
+      ],
+      "visual": "weather",
+      "conceptId": "cge-night-22oct-21h",
+      "visualConceptId": "visual-sp-clouds-evening-22",
+      "eventDate": "2026-10-22",
+      "news": true,
+      "sources": [
+        {
+          "label": "CGE — boletim oficial de 22/10 às 21h",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?id=56234",
+          "publishedAt": "2026-10-22"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "corinthians",
+      "group": "Corinthians",
+      "type": "FATO",
+      "title": "Torcedores cobram Corinthians no CT em meio à pressão no Brasileiro",
+      "summary": "Reportagem de 22/10 registra visita de torcedores organizados ao CT Joaquim Grava e cobranças a dirigentes e comissão técnica.",
+      "details": [
+        "A CNN relata encontro com o presidente Osmar Stabile e o técnico Clarence Seedorf.",
+        "A equipe soma 33 pontos e aparece na 16ª posição segundo a reportagem.",
+        "O próximo compromisso indicado é contra o Vasco, no sábado 24/10; o jogo ainda não ocorreu."
+      ],
+      "visual": "football",
+      "conceptId": "corinthians-fans-ct-22",
+      "visualConceptId": "visual-corinthians-ct-crowd-22",
+      "eventDate": "2026-10-22",
+      "news": true,
+      "sources": [
+        {
+          "label": "CNN Brasil / Itatiaia — Corinthians, 22/10 às 15h44",
+          "url": "https://www.cnnbrasil.com.br/esportes/futebol/corinthians/torcida-do-corinthians-vai-ao-ct-cobra-seedorf-e-pede-saida-de-memphis/",
+          "publishedAt": "2026-10-22"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "viagens",
+      "group": "Viagens",
+      "type": "GUIA",
+      "title": "Trilha e vista: como montar um passeio curto na Pedra Grande",
+      "summary": "Um roteiro de planejamento para Atibaia, priorizando segurança, clima e acesso autorizado. Não é anúncio de evento novo.",
+      "details": [
+        "Confira as condições do parque e o acesso por vias permitidas.",
+        "Leve água, calçado adequado e proteção contra o sol.",
+        "Defina horário de retorno e evite caminhos desconhecidos."
+      ],
+      "visual": "mountain",
+      "conceptId": "atibaia-view-plan-22",
+      "visualConceptId": "visual-mountain-trail-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "musica",
+      "group": "Música",
+      "type": "GUIA",
+      "title": "Ouça um trio de jazz: onde está o ritmo de verdade?",
+      "summary": "Experimente ouvir baixo, bateria e piano separadamente. Uma mesma gravação revela camadas diferentes.",
+      "details": [
+        "Na primeira escuta, siga só o contrabaixo.",
+        "Na segunda, preste atenção aos pratos e às pausas.",
+        "Na terceira, perceba como o piano conversa com os outros instrumentos."
+      ],
+      "visual": "piano",
+      "conceptId": "jazz-trio-ear-22",
+      "visualConceptId": "visual-jazz-stage-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "sertanejo",
+      "group": "Sertanejo da Roça",
+      "type": "GUIA",
+      "title": "Viola caipira: moda de viola não é igual a pagode",
+      "summary": "A cadência e a função do instrumento mudam conforme a tradição musical. Um guia de escuta, não um lançamento do dia.",
+      "details": [
+        "Escolha duas gravações tradicionais com andamento diferente.",
+        "Tente reconhecer introdução, ponteios e ritmo antes de ouvir a letra.",
+        "Use apenas gravações de canais oficiais ou licenciados ao compartilhar."
+      ],
+      "visual": "guitar",
+      "conceptId": "viola-styles-22",
+      "visualConceptId": "visual-caipira-viola-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "games",
+      "group": "Games",
+      "type": "GUIA",
+      "title": "Controle na mão: teste três ajustes de acessibilidade",
+      "summary": "Pequenos ajustes de sensibilidade, legendas e remapeamento podem mudar a experiência sem comprar nada.",
+      "details": [
+        "Procure as opções de acessibilidade do seu console.",
+        "Teste um ajuste por vez, sempre no mesmo trecho do jogo.",
+        "Guarde um perfil com as configurações que funcionarem melhor."
+      ],
+      "visual": "gamepad",
+      "conceptId": "controller-accessibility-22",
+      "visualConceptId": "visual-dualsense-controller-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "tecnologia",
+      "group": "Tecnologia",
+      "type": "GUIA",
+      "title": "IA e chips: o gargalo não é só poder de processamento",
+      "summary": "Infraestrutura de IA também depende de energia, rede, armazenamento e financiamento. Entenda o sistema completo.",
+      "details": [
+        "Processadores aceleram cálculos, mas dependem do restante da infraestrutura.",
+        "Custo de eletricidade e refrigeração afeta a operação de data centers.",
+        "Não confunda debate de mercado com anúncio de tecnologia desta terça."
+      ],
+      "visual": "wafer",
+      "conceptId": "ai-infrastructure-22",
+      "visualConceptId": "visual-ai-datacenter-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "Reuters — mercado de IA e chips, 20/10",
+          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-20/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "financas",
+      "group": "Finanças",
+      "type": "FATO",
+      "title": "Wall Street cai com receio sobre gastos elevados em IA",
+      "summary": "Reuters reporta em 22/10 queda de 2,6% no Nasdaq e 1,21% no S&P 500, com pressão sobre empresas de tecnologia e chips.",
+      "details": [
+        "Investidores reavaliaram retornos de grandes investimentos em infraestrutura de IA.",
+        "O índice de semicondutores também recuou fortemente na sessão.",
+        "São movimentos de mercado em um dia, não previsão de longo prazo."
+      ],
+      "visual": "chart",
+      "conceptId": "wall-street-ai-selloff-22",
+      "visualConceptId": "visual-market-chart-22",
+      "eventDate": "2026-10-22",
+      "news": true,
+      "sources": [
+        {
+          "label": "Reuters — fechamento das bolsas dos EUA em 22/10",
+          "url": "https://www.reuters.com/business/nasdaq-futures-drop-over-1-ai-worries-resurface-oil-climbs-2026-10-22/",
+          "publishedAt": "2026-10-22"
+        }
+      ],
+      "layout": "spotlight"
+    },
+    {
+      "id": "security-briefing",
+      "group": "Security Briefing",
+      "type": "GUIA",
+      "title": "Security Briefing: priorize evidência antes do alerta",
+      "summary": "Transforme ruído de feed em uma fila simples por exploração, exposição do ativo e possibilidade de mitigação.",
+      "details": [
+        "Comece pelas ameaças com exploração confirmada e ativos presentes no inventário.",
+        "CISA KEV é evidência de exploração conhecida, não prova de incidente no seu ambiente.",
+        "Registre data da fonte e versão afetada antes de abrir o item."
+      ],
+      "visual": "radar",
+      "conceptId": "security-triage-22",
+      "visualConceptId": "visual-security-dashboard-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Known Exploited Vulnerabilities",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "cyber",
+      "group": "Cyber",
+      "type": "GUIA",
+      "title": "Cyber: cinco sinais que justificam olhar mais de perto",
+      "summary": "Uma hipótese de hunting eficaz precisa de logs correlacionáveis e janela temporal clara, não de manchetes genéricas.",
+      "details": [
+        "Observe mudanças súbitas de login e origem de acesso.",
+        "Correlacione DNS, endpoint e autenticação por horário.",
+        "Não anuncie novo CVE sem advisory oficial e data verificável."
+      ],
+      "visual": "shield",
+      "conceptId": "hunting-signals-22",
+      "visualConceptId": "visual-server-observability-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Cybersecurity Best Practices",
+          "url": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "appsec",
+      "group": "AppSec",
+      "type": "GUIA",
+      "title": "AppSec: um segredo novo não é igual a segredo histórico",
+      "summary": "Para release gates, use contexto Git imutável e linhas adicionadas antes de classificar um achado como regressão.",
+      "details": [
+        "Diferencie Current Exposure de NEW_SECRET no diff.",
+        "Preserve inventário histórico e auditoria; bloqueio deve seguir política aprovada.",
+        "Verificador e evidências são necessários antes de automatizar correções."
+      ],
+      "visual": "code",
+      "conceptId": "appsec-delta-secrets-22",
+      "visualConceptId": "visual-diff-and-secrets-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [
+        {
+          "label": "OWASP — DevSecOps",
+          "url": "https://owasp.org/www-project-devsecops-guideline/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "carros",
+      "group": "Carros até R$70 mil",
+      "type": "GUIA",
+      "title": "Duster automática até R$ 70 mil: teste o câmbio primeiro",
+      "summary": "Para usados nessa faixa, avalie histórico de manutenção e funcionamento a frio e a quente antes de negociar.",
+      "details": [
+        "Peça notas de serviços, inspeção pré-compra e laudo cautelar.",
+        "Avalie fluido, trocas de marcha, arrefecimento e sinais de superaquecimento.",
+        "Preço de anúncio só entra após confirmação; este guia não afirma valor de oferta."
+      ],
+      "visual": "car",
+      "conceptId": "duster-inspection-22",
+      "visualConceptId": "visual-duster-checklist-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "motos",
+      "group": "Motos",
+      "type": "GUIA",
+      "title": "Motos: o pneu conta uma história antes da viagem",
+      "summary": "Desgaste irregular, bolhas e pressão incorreta merecem atenção antes de sair.",
+      "details": [
+        "Confira calibragem com pneus frios conforme o manual.",
+        "Procure desgaste fora do padrão e objetos presos na banda de rodagem.",
+        "Se encontrar dano estrutural, procure oficina antes de rodar."
+      ],
+      "visual": "motorcycle",
+      "conceptId": "tire-inspection-22",
+      "visualConceptId": "visual-motorcycle-tire-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "mecanica",
+      "group": "Mecânica",
+      "type": "GUIA",
+      "title": "Correia dentada ou corrente: descubra o que seu motor usa",
+      "summary": "Os dois sistemas sincronizam componentes do motor, mas intervalos de inspeção e manutenção diferem.",
+      "details": [
+        "Consulte o manual do modelo e do ano exatos.",
+        "Ruídos anormais e histórico desconhecido justificam avaliação profissional.",
+        "Não substitua componentes preventivamente com base em prazo genérico."
+      ],
+      "visual": "wrench",
+      "conceptId": "belt-versus-chain-22",
+      "visualConceptId": "visual-engine-timing-22",
+      "eventDate": "2026-10-22",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    }
+  ]
+}

@@ -1,0 +1,604 @@
+{
+  "editionDate": "2026-10-31",
+  "timezone": "America/Sao_Paulo",
+  "updatedAt": "2026-10-31T21:19:37.219Z",
+  "version": 4,
+  "editorialNote": "Edição editorial genuína de 31/10/2026: seis reportagens/atualizações com fontes e datas verificadas; quatro curiosidades temáticas com fontes oficiais; atividades inéditas do casal; 12 fotografias licenciadas com créditos e 13 artes originais da edição. Reportagens sobre eventos anteriores indicam a data do evento e a data da atualização. Apenas candidata: exige QA SHA exato, aprovação protegida, hash remoto 25/25, Chromium, preview e CAS.",
+  "cards": [
+    {
+      "id": "papo",
+      "group": "Papo de hoje",
+      "type": "ATIVIDADE",
+      "title": "O que fizemos neste sábado que o Felipe vai adorar conhecer?",
+      "summary": "Escolham um momento real deste sábado e transformem em uma lembrança para contar ao Felipe no futuro.",
+      "details": [
+        "Cada um descreve um momento concreto de hoje sem precisar ser extraordinário.",
+        "Anotem uma palavra, uma sensação e o lugar em que aconteceu.",
+        "Guardem a história em duas frases no diário da família."
+      ],
+      "visual": "memory-jar",
+      "conceptId": "father-v6-2026-10-31-papo-story",
+      "visualConceptId": "father-v6-2026-10-31-papo-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 20
+    },
+    {
+      "id": "desafio",
+      "group": "Desafio do casal",
+      "type": "ATIVIDADE",
+      "title": "Desafio do casal: cápsula do tempo de outubro",
+      "summary": "Escolham três pequenas conquistas de outubro e registrem o que desejam repetir juntos em novembro.",
+      "details": [
+        "Cada pessoa anota uma conquista de outubro que queira celebrar.",
+        "Escolham um hábito simples para manter no próximo mês.",
+        "Coloquem as anotações em um envelope para abrir em novembro."
+      ],
+      "visual": "photos",
+      "conceptId": "father-v6-2026-10-31-desafio-story",
+      "visualConceptId": "father-v6-2026-10-31-desafio-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "quest",
+      "questXp": 35
+    },
+    {
+      "id": "cur-ciencia",
+      "group": "Curiosidades · Ciência",
+      "type": "CURIOSIDADE",
+      "title": "Como as monarcas se orientam durante a migração?",
+      "summary": "A migração sazonal de borboletas-monarcas depende de pistas ambientais e de uma jornada por diferentes regiões.",
+      "details": [
+        "A migração envolve gerações e deslocamentos extensos.",
+        "O clima e a disponibilidade de habitat influenciam a jornada.",
+        "Plantas de néctar oferecem energia durante o percurso."
+      ],
+      "visual": "butterfly",
+      "conceptId": "father-v6-2026-10-31-cur-ciencia-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-ciencia-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "U.S. Forest Service — Monarch Migration",
+          "url": "https://www.fs.usda.gov/wildflowers/pollinators/Monarch_Butterfly/migration/index.shtml"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "O que ajuda as monarcas durante a migração?",
+        "options": [
+          "Habitat e flores com néctar",
+          "Somente luz artificial",
+          "Ausência total de vegetação"
+        ],
+        "answer": 0,
+        "explanation": "A migração depende de condições ambientais e recursos alimentares."
+      }
+    },
+    {
+      "id": "cur-espaco",
+      "group": "Curiosidades · Espaço",
+      "type": "CURIOSIDADE",
+      "title": "Por que a Terra tem estações do ano?",
+      "summary": "A inclinação do eixo terrestre altera a incidência de luz solar nos hemisférios durante a órbita em torno do Sol.",
+      "details": [
+        "As estações não são causadas principalmente pela distância da Terra ao Sol.",
+        "Os hemisférios recebem luz mais diretamente em épocas diferentes.",
+        "A inclinação do eixo explica verão e inverno em períodos opostos."
+      ],
+      "visual": "planet",
+      "conceptId": "father-v6-2026-10-31-cur-espaco-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-espaco-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "NASA Space Place — What Causes the Seasons?",
+          "url": "https://spaceplace.nasa.gov/seasons/en/"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Qual é a principal causa das estações?",
+        "options": [
+          "Inclinação do eixo terrestre",
+          "Mudança diária da distância ao Sol",
+          "Rotação da Lua"
+        ],
+        "answer": 0,
+        "explanation": "A inclinação terrestre determina como a luz solar atinge os hemisférios."
+      }
+    },
+    {
+      "id": "cur-natureza",
+      "group": "Curiosidades · Natureza",
+      "type": "CURIOSIDADE",
+      "title": "Como beija-flores conseguem pairar diante das flores?",
+      "summary": "O movimento rápido e controlado das asas permite ao beija-flor ficar quase imóvel no ar para alcançar néctar.",
+      "details": [
+        "O voo estacionário exige ajustes contínuos nas asas.",
+        "Essa habilidade ajuda a visitar flores sem pousar.",
+        "Flores e habitats conservados são importantes para a alimentação."
+      ],
+      "visual": "bird",
+      "conceptId": "father-v6-2026-10-31-cur-natureza-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-natureza-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian Gardens — Hovering",
+          "url": "https://gardens.si.edu/exhibitions/traveling/habitat/hovering/"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Que habilidade ajuda beija-flores a alcançar flores?",
+        "options": [
+          "Voo estacionário",
+          "Hibernação subaquática",
+          "Corrida no solo"
+        ],
+        "answer": 0,
+        "explanation": "O controle de voo permite pairar perto da flor."
+      }
+    },
+    {
+      "id": "cur-historia",
+      "group": "Curiosidades · História",
+      "type": "CURIOSIDADE",
+      "title": "A máquina de escrever de Sholes e Glidden ganhou patente em 1868",
+      "summary": "O modelo de patente registrado em 1868 documenta tentativas de tornar a escrita mecânica mais prática.",
+      "details": [
+        "O modelo de patente foi registrado em 23 de junho de 1868.",
+        "Os inventores aprimoraram mecanismos de teclas, fita e transporte do papel.",
+        "A evolução das máquinas de escrever marcou a história da comunicação."
+      ],
+      "visual": "telegraph",
+      "conceptId": "father-v6-2026-10-31-cur-historia-story",
+      "visualConceptId": "father-v6-2026-10-31-cur-historia-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "Smithsonian — Sholes, Glidden & Soule Typewriter Patent Model",
+          "url": "https://www.si.edu/object/nmah_850123"
+        }
+      ],
+      "layout": "discover",
+      "quiz": {
+        "question": "Em que ano foi concedida a patente do modelo?",
+        "options": [
+          "1868",
+          "1968",
+          "2008"
+        ],
+        "answer": 0,
+        "explanation": "O Smithsonian registra a patente 79.265 em 23 de junho de 1868."
+      }
+    },
+    {
+      "id": "gravidez",
+      "group": "Gravidez",
+      "type": "GUIA",
+      "title": "Felipe: aproximadamente 16 semanas e 6 dias",
+      "summary": "Pela DUM de 05/07/2026, a gestação chega a aproximadamente 16 semanas e 6 dias neste sábado; a datação obstétrica deve prevalecer se houver ajuste médico.",
+      "details": [
+        "O acompanhamento pré-natal é a referência para crescimento e sintomas.",
+        "Hidratação e tolerância alimentar precisam de atenção, especialmente após vômitos.",
+        "Se houver dificuldade de manter líquidos, urina escura ou perda de peso, procure avaliação médica."
+      ],
+      "visual": "baby",
+      "conceptId": "father-v6-2026-10-31-gravidez-story",
+      "visualConceptId": "father-v6-2026-10-31-gravidez-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "NHS — Week 16",
+          "url": "https://www.nhs.uk/start-for-life/pregnancy/week-by-week-guide-to-pregnancy/2nd-trimester/week-16/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "pai",
+      "group": "Ser Pai",
+      "type": "GUIA",
+      "title": "Ser pai também é cuidar da logística sem sobrecarregar",
+      "summary": "Uma boa ajuda nesta fase é antecipar pequenas tarefas e deixar Bruna escolher o que realmente lhe traz conforto.",
+      "details": [
+        "Confiram os próximos compromissos do pré-natal.",
+        "Escolha uma tarefa doméstica concreta para resolver hoje.",
+        "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
+      ],
+      "visual": "family",
+      "conceptId": "father-v6-2026-10-31-pai-story",
+      "visualConceptId": "father-v6-2026-10-31-pai-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "brasil",
+      "group": "Brasil",
+      "type": "ATUALIZAÇÃO",
+      "title": "Acordo Mercosul–UE impulsiona exportações brasileiras em setores beneficiados",
+      "summary": "Reportagem de 31/10 informa que exportações brasileiras favorecidas por reduções tarifárias cresceram 21% entre maio e setembro, frente ao mesmo período de 2025.",
+      "details": [
+        "A Agência Brasil reportou os resultados comerciais neste sábado.",
+        "Segundo o MDIC, dados divulgados no dia 29 apontam avanços em produtos como abacates, mel e óleo de milho.",
+        "A comparação utiliza o período de maio a setembro, não um resultado exclusivo de 31/10."
+      ],
+      "visual": "brazil",
+      "conceptId": "father-v6-2026-10-31-brasil-story",
+      "visualConceptId": "father-v6-2026-10-31-brasil-visual",
+      "eventDate": "2026-10-31",
+      "news": true,
+      "sources": [
+        {
+          "label": "Agência Brasil — exportações Mercosul–UE, 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/acordo-mercosul-ue-eleva-exportacoes-brasileiras-em-21",
+          "publishedAt": "2026-10-31"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-31"
+    },
+    {
+      "id": "mundo",
+      "group": "Mundo",
+      "type": "FATO",
+      "title": "Reino Unido considera pedido oficial de desculpas pelo tráfico transatlântico",
+      "summary": "O governo britânico declarou neste sábado que pretende avaliar um diálogo sobre o legado histórico do tráfico transatlântico de pessoas escravizadas.",
+      "details": [
+        "O primeiro-ministro publicou artigo sobre relações com países da África e do Caribe.",
+        "O tema será discutido no contexto da Commonwealth.",
+        "A manifestação é uma intenção de avaliar o pedido, não um pedido formal já apresentado."
+      ],
+      "visual": "globe",
+      "conceptId": "father-v6-2026-10-31-mundo-story",
+      "visualConceptId": "father-v6-2026-10-31-mundo-visual",
+      "eventDate": "2026-10-31",
+      "news": true,
+      "sources": [
+        {
+          "label": "Agência Brasil / RTP — Reino Unido, 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-10/reino-unido-considera-pedir-desculpa-por-seu-papel-no-trafico-negreiro",
+          "publishedAt": "2026-10-31"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-31"
+    },
+    {
+      "id": "politica",
+      "group": "Política",
+      "type": "AGENDA",
+      "title": "Senado agenda votação da PEC da Segurança Pública para 3 de novembro",
+      "summary": "O presidente do Senado marcou para terça-feira, 3 de novembro, a votação da proposta de emenda constitucional sobre segurança pública.",
+      "details": [
+        "A informação foi publicada pela Agência Brasil às 10h22 deste sábado.",
+        "A PEC propõe mudanças na coordenação entre União, estados e municípios.",
+        "A votação está agendada; o resultado ainda não ocorreu."
+      ],
+      "visual": "ballot",
+      "conceptId": "father-v6-2026-10-31-politica-story",
+      "visualConceptId": "father-v6-2026-10-31-politica-visual",
+      "eventDate": "2026-10-31",
+      "news": true,
+      "sources": [
+        {
+          "label": "Agência Brasil — agenda da PEC, 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/alcolumbre-marca-votacao-da-pec-da-seguranca-publica-para-terca-feira",
+          "publishedAt": "2026-10-31"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-31"
+    },
+    {
+      "id": "tempo",
+      "group": "Tempo",
+      "type": "PREVISÃO",
+      "title": "São Paulo teve tarde quente e previsão de pancadas isoladas neste sábado",
+      "summary": "Boletim municipal das 12h03 registrou temperatura média de 25,2 °C em São Paulo e possibilidade de chuva isolada ao longo da tarde.",
+      "details": [
+        "O CGE informou sol entre nuvens e umidade relativa próxima de 68% no boletim do meio-dia.",
+        "Áreas de instabilidade poderiam provocar pancadas localizadas até o fim da tarde.",
+        "Para domingo, a tendência indicada era de sol entre nuvens e chuva rápida isolada."
+      ],
+      "visual": "weather",
+      "conceptId": "father-v6-2026-10-31-tempo-story",
+      "visualConceptId": "father-v6-2026-10-31-tempo-visual",
+      "eventDate": "2026-10-31",
+      "news": true,
+      "sources": [
+        {
+          "label": "CGE Prefeitura de São Paulo — boletim de 31/10 às 12h03",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?id=56306",
+          "publishedAt": "2026-10-31"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedAt": "2026-10-31"
+    },
+    {
+      "id": "corinthians",
+      "group": "Corinthians",
+      "type": "ATUALIZAÇÃO",
+      "title": "Corinthians vence Mirassol por 2 a 0 e encerra sequência sem vitórias",
+      "summary": "Em reportagem publicada no sábado, a Agência Brasil detalhou a vitória do Corinthians por 2 a 0 sobre o Mirassol na noite de sexta-feira (30).",
+      "details": [
+        "Matheus Bidu e Kaio César marcaram os gols na Neo Química Arena.",
+        "A equipe interrompeu sequência de dez jogos sem vencer, segundo a reportagem.",
+        "O relato é uma atualização de 31/10 sobre o confronto realizado em 30/10."
+      ],
+      "visual": "football",
+      "conceptId": "father-v6-2026-10-31-corinthians-story",
+      "visualConceptId": "father-v6-2026-10-31-corinthians-visual",
+      "eventDate": "2026-10-30",
+      "news": true,
+      "sources": [
+        {
+          "label": "Agência Brasil — Corinthians 2 x 0 Mirassol, publicação 31/10",
+          "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-10/corinthians-encerra-jejum-com-vitoria-sobre-o-mirassol-2-0",
+          "publishedAt": "2026-10-31"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedOn": "2026-10-31"
+    },
+    {
+      "id": "viagens",
+      "group": "Viagens",
+      "type": "GUIA",
+      "title": "Passeio curto: escolha uma trilha com plano B para chuva",
+      "summary": "Para um passeio próximo de São Paulo, a decisão mais importante é checar tempo, acesso e nível de dificuldade antes de sair.",
+      "details": [
+        "Verifique funcionamento do parque e previsão atualizada.",
+        "Prefira rotas sinalizadas e adequadas ao condicionamento de todos.",
+        "Se chover, troque a trilha por um programa coberto."
+      ],
+      "visual": "mountain",
+      "conceptId": "father-v6-2026-10-31-viagens-story",
+      "visualConceptId": "father-v6-2026-10-31-viagens-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "musica",
+      "group": "Música",
+      "type": "GUIA",
+      "title": "Ouça o mesmo refrão em três camadas",
+      "summary": "Experimente reconhecer voz, bateria e guitarra separadamente para perceber como uma canção constrói energia.",
+      "details": [
+        "Primeiro ouça a música inteira sem interrupções.",
+        "Depois concentre-se em um instrumento por vez.",
+        "Na última audição, perceba como as camadas se combinam."
+      ],
+      "visual": "piano",
+      "conceptId": "father-v6-2026-10-31-musica-story",
+      "visualConceptId": "father-v6-2026-10-31-musica-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "sertanejo",
+      "group": "Sertanejo da Roça",
+      "type": "GUIA",
+      "title": "Viola caipira: a diferença entre ritmo e melodia",
+      "summary": "Um exercício simples é alternar acompanhamento rítmico e pequenas frases melódicas sem acelerar.",
+      "details": [
+        "Marque um pulso confortável com o pé.",
+        "Toque uma sequência rítmica curta.",
+        "Intercale notas isoladas e observe o contraste."
+      ],
+      "visual": "guitar",
+      "conceptId": "father-v6-2026-10-31-sertanejo-story",
+      "visualConceptId": "father-v6-2026-10-31-sertanejo-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "games",
+      "group": "Games",
+      "type": "GUIA",
+      "title": "Configurações que deixam o jogo mais confortável",
+      "summary": "Antes de começar um jogo novo, confira legenda, tamanho da interface e sensibilidade dos controles.",
+      "details": [
+        "Ajuste o texto para leitura sem esforço.",
+        "Teste sensibilidade e zona morta do controle.",
+        "Faça uma pausa curta para comparar o conforto antes e depois."
+      ],
+      "visual": "gamepad",
+      "conceptId": "father-v6-2026-10-31-games-story",
+      "visualConceptId": "father-v6-2026-10-31-games-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "tecnologia",
+      "group": "Tecnologia",
+      "type": "GUIA",
+      "title": "Centros de dados: eficiência importa tanto quanto velocidade",
+      "summary": "O desempenho de serviços de IA depende também de energia, resfriamento e conectividade, não apenas de chips.",
+      "details": [
+        "Capacidade computacional e consumo energético precisam ser considerados juntos.",
+        "Resfriamento e redes podem limitar a operação.",
+        "Compare anúncios de desempenho usando métricas equivalentes."
+      ],
+      "visual": "wafer",
+      "conceptId": "father-v6-2026-10-31-tecnologia-story",
+      "visualConceptId": "father-v6-2026-10-31-tecnologia-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "financas",
+      "group": "Finanças",
+      "type": "ATUALIZAÇÃO",
+      "title": "Mercado encerra outubro com dólar a R$ 5,446 e Ibovespa a 167,9 mil pontos",
+      "summary": "No último pregão do mês, na sexta-feira (30), o dólar comercial fechou a R$ 5,446 e o Ibovespa recuou 0,75%, segundo dados divulgados pela Agência Brasil.",
+      "details": [
+        "A referência é o fechamento de 30/10, não há pregão regular neste sábado.",
+        "A reportagem registrou valorização semanal de 9,15% do dólar.",
+        "O Ibovespa encerrou o pregão em 167.921,80 pontos."
+      ],
+      "visual": "chart",
+      "conceptId": "father-v6-2026-10-31-financas-story",
+      "visualConceptId": "father-v6-2026-10-31-financas-visual",
+      "eventDate": "2026-10-30",
+      "news": true,
+      "sources": [
+        {
+          "label": "Agência Brasil — fechamento financeiro 30/10",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-fecha-r-544-e-registra-maior-alta-semanal-desde-2008",
+          "publishedAt": "2026-10-30"
+        }
+      ],
+      "layout": "spotlight",
+      "reportedOn": "2026-10-31"
+    },
+    {
+      "id": "security-briefing",
+      "group": "Security Briefing",
+      "type": "GUIA",
+      "title": "Security Briefing: evidência de exploração muda prioridade",
+      "summary": "Uma vulnerabilidade com exploração conhecida merece análise de exposição e impacto, além da pontuação técnica.",
+      "details": [
+        "Cruze o inventário de ativos com o catálogo KEV da CISA.",
+        "Considere internet-facing, criticidade e controles compensatórios.",
+        "Registre o motivo da priorização para facilitar auditoria."
+      ],
+      "visual": "radar",
+      "conceptId": "father-v6-2026-10-31-security-briefing-story",
+      "visualConceptId": "father-v6-2026-10-31-security-briefing-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "CISA — Known Exploited Vulnerabilities",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "cyber",
+      "group": "Cyber",
+      "type": "GUIA",
+      "title": "Cyber: horário consistente é essencial para investigar incidentes",
+      "summary": "Mesmo logs completos perdem valor quando os sistemas registram horários incompatíveis.",
+      "details": [
+        "Sincronize relógios com fontes de tempo confiáveis.",
+        "Armazene timestamps com fuso ou em UTC.",
+        "Correlacione eventos por identificadores e sequência, não só por horário."
+      ],
+      "visual": "shield",
+      "conceptId": "father-v6-2026-10-31-cyber-story",
+      "visualConceptId": "father-v6-2026-10-31-cyber-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "appsec",
+      "group": "AppSec",
+      "type": "GUIA",
+      "title": "AppSec: um SBOM é inventário, não veredito de segurança",
+      "summary": "A lista de componentes ajuda a entender dependências, mas precisa ser associada a evidências de vulnerabilidade e contexto de uso.",
+      "details": [
+        "Separe componentes detectados de vulnerabilidades confirmadas.",
+        "Use delta entre versões para identificar novas exposições.",
+        "Mantenha rastreabilidade entre build, artefato e inventário."
+      ],
+      "visual": "code",
+      "conceptId": "father-v6-2026-10-31-appsec-story",
+      "visualConceptId": "father-v6-2026-10-31-appsec-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [
+        {
+          "label": "OWASP — DevSecOps Guideline",
+          "url": "https://owasp.org/www-project-devsecops-guideline/"
+        }
+      ],
+      "layout": "guide"
+    },
+    {
+      "id": "carros",
+      "group": "Carros até R$70 mil",
+      "type": "GUIA",
+      "title": "Duster automática usada: verifique histórico antes do test-drive",
+      "summary": "Para uma Duster dentro do orçamento, histórico de manutenção e funcionamento do câmbio valem mais que acessórios.",
+      "details": [
+        "Confirme ano, versão e tipo de transmissão pelo documento e manual.",
+        "Teste engates a frio e a quente com profissional qualificado.",
+        "Reserve orçamento para inspeção independente antes da compra."
+      ],
+      "visual": "car",
+      "conceptId": "father-v6-2026-10-31-carros-story",
+      "visualConceptId": "father-v6-2026-10-31-carros-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "motos",
+      "group": "Motos",
+      "type": "GUIA",
+      "title": "Motos: corrente e lubrificação pedem inspeção periódica",
+      "summary": "Uma transmissão por corrente mal regulada pode gerar ruído, desgaste e perda de eficiência.",
+      "details": [
+        "Consulte a folga indicada no manual do modelo.",
+        "Inspecione sinais de desgaste e pontos rígidos.",
+        "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
+      ],
+      "visual": "motorcycle",
+      "conceptId": "father-v6-2026-10-31-motos-story",
+      "visualConceptId": "father-v6-2026-10-31-motos-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    },
+    {
+      "id": "mecanica",
+      "group": "Mecânica",
+      "type": "GUIA",
+      "title": "Fluido de freio: por que o prazo de troca importa?",
+      "summary": "O fluido de freio pode absorver umidade ao longo do tempo, prejudicando seu desempenho em condições exigentes.",
+      "details": [
+        "Consulte especificação e intervalo no manual do veículo.",
+        "Não misture fluidos incompatíveis.",
+        "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
+      ],
+      "visual": "wrench",
+      "conceptId": "father-v6-2026-10-31-mecanica-story",
+      "visualConceptId": "father-v6-2026-10-31-mecanica-visual",
+      "eventDate": "2026-10-31",
+      "news": false,
+      "sources": [],
+      "layout": "guide"
+    }
+  ],
+  "releaseId": "2026-10-31-r01"
+}

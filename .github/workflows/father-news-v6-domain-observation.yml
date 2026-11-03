@@ -1,0 +1,21 @@
+name: Father News 6 Domain Observation Contract - Isolated Tests
+on:
+  pull_request:
+    paths:
+      - 'scripts/v6-domain-observation.mjs'
+      - 'tests/v6-domain-observation.test.mjs'
+      - '.github/workflows/father-news-v6-domain-observation.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Test fail-closed HTTP and DOM observation contract (no live traffic)
+        run: node --test tests/v6-domain-observation.test.mjs
