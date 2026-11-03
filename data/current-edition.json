@@ -1,25 +1,25 @@
 {
-  "editionDate": "2026-10-31",
+  "editionDate": "2026-11-03",
   "timezone": "America/Sao_Paulo",
-  "updatedAt": "2026-10-31T21:19:37.219Z",
+  "updatedAt": "2026-11-03T16:10:34.114Z",
   "version": 4,
-  "editorialNote": "Edição editorial genuína de 31/10/2026: seis reportagens/atualizações com fontes e datas verificadas; quatro curiosidades temáticas com fontes oficiais; atividades inéditas do casal; 12 fotografias licenciadas com créditos e 13 artes originais da edição. Reportagens sobre eventos anteriores indicam a data do evento e a data da atualização. Apenas candidata: exige QA SHA exato, aprovação protegida, hash remoto 25/25, Chromium, preview e CAS.",
+  "editorialNote": "Candidata editorial de 03/11/2026 em America/Sao_Paulo, com seis notícias de veículos e órgãos identificados publicadas nesta data; informações do mercado tratadas como projeções e agendas não apresentadas como fatos já concluídos. Catálogo de 12 imagens licenciadas (incluindo fotografias de arquivo identificadas) e 13 artes originais da edição. Publicação condicionada a SHA exato, QA completo, aprovação do ambiente, bytes remotos 25/25, Chromium, preview integrado e CAS.",
   "cards": [
     {
       "id": "papo",
       "group": "Papo de hoje",
       "type": "ATIVIDADE",
-      "title": "O que fizemos neste sábado que o Felipe vai adorar conhecer?",
-      "summary": "Escolham um momento real deste sábado e transformem em uma lembrança para contar ao Felipe no futuro.",
+      "title": "Qual foi o som mais marcante de hoje para nossa família?",
+      "summary": "Transformem um som real desta terça-feira em uma memória pequena e afetiva para contar ao Felipe no futuro.",
       "details": [
-        "Cada um descreve um momento concreto de hoje sem precisar ser extraordinário.",
-        "Anotem uma palavra, uma sensação e o lugar em que aconteceu.",
-        "Guardem a história em duas frases no diário da família."
+        "Cada um escolhe um som que tenha ouvido hoje, em casa ou no caminho.",
+        "Contem por que ele despertou uma lembrança ou sensação.",
+        "Escrevam juntos duas linhas no diário para recordar depois."
       ],
       "visual": "memory-jar",
-      "conceptId": "father-v6-2026-10-31-papo-story",
-      "visualConceptId": "father-v6-2026-10-31-papo-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-papo-sound-memory",
+      "visualConceptId": "father-v6-2026-11-03-papo-audio-story",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -29,17 +29,17 @@
       "id": "desafio",
       "group": "Desafio do casal",
       "type": "ATIVIDADE",
-      "title": "Desafio do casal: cápsula do tempo de outubro",
-      "summary": "Escolham três pequenas conquistas de outubro e registrem o que desejam repetir juntos em novembro.",
+      "title": "Desafio do casal: um gesto de cuidado que cabe na rotina",
+      "summary": "Escolham hoje um gesto concreto de apoio mútuo que seja simples de realizar até o final da semana.",
       "details": [
-        "Cada pessoa anota uma conquista de outubro que queira celebrar.",
-        "Escolham um hábito simples para manter no próximo mês.",
-        "Coloquem as anotações em um envelope para abrir em novembro."
+        "Cada um diz qual pequena ajuda faria diferença nesta semana.",
+        "Escolham uma tarefa real e definam quando ela será feita.",
+        "No fim da semana, conversem sobre o que realmente funcionou."
       ],
       "visual": "photos",
-      "conceptId": "father-v6-2026-10-31-desafio-story",
-      "visualConceptId": "father-v6-2026-10-31-desafio-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-desafio-support-gesture",
+      "visualConceptId": "father-v6-2026-11-03-desafio-two-hands-note",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "quest",
@@ -49,17 +49,17 @@
       "id": "cur-ciencia",
       "group": "Curiosidades · Ciência",
       "type": "CURIOSIDADE",
-      "title": "Como as monarcas se orientam durante a migração?",
-      "summary": "A migração sazonal de borboletas-monarcas depende de pistas ambientais e de uma jornada por diferentes regiões.",
+      "title": "Por que as monarcas procuram flores durante a migração?",
+      "summary": "Na fase adulta, borboletas-monarcas dependem de fontes de néctar para obter energia ao longo de deslocamentos sazonais.",
       "details": [
-        "A migração envolve gerações e deslocamentos extensos.",
-        "O clima e a disponibilidade de habitat influenciam a jornada.",
-        "Plantas de néctar oferecem energia durante o percurso."
+        "Flores fornecem energia aos adultos durante parte da jornada.",
+        "As necessidades da lagarta são diferentes das necessidades da borboleta adulta.",
+        "A preservação de habitats e flores ajuda a manter as rotas de migração."
       ],
       "visual": "butterfly",
-      "conceptId": "father-v6-2026-10-31-cur-ciencia-story",
-      "visualConceptId": "father-v6-2026-10-31-cur-ciencia-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-science-nectar-journey",
+      "visualConceptId": "father-v6-2026-11-03-science-monarch-nectar",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
@@ -69,65 +69,65 @@
       ],
       "layout": "discover",
       "quiz": {
-        "question": "O que ajuda as monarcas durante a migração?",
+        "question": "O que pode fornecer energia às monarcas adultas na migração?",
         "options": [
-          "Habitat e flores com néctar",
-          "Somente luz artificial",
-          "Ausência total de vegetação"
+          "Néctar de flores",
+          "Somente água salgada",
+          "Pedras aquecidas"
         ],
         "answer": 0,
-        "explanation": "A migração depende de condições ambientais e recursos alimentares."
+        "explanation": "O néctar é uma fonte de alimento para as monarcas adultas."
       }
     },
     {
       "id": "cur-espaco",
       "group": "Curiosidades · Espaço",
       "type": "CURIOSIDADE",
-      "title": "Por que a Terra tem estações do ano?",
-      "summary": "A inclinação do eixo terrestre altera a incidência de luz solar nos hemisférios durante a órbita em torno do Sol.",
+      "title": "Como o Sol produz a energia que chega à Terra?",
+      "summary": "No núcleo solar, a fusão transforma hidrogênio em hélio e libera energia que sustenta a radiação emitida pela estrela.",
       "details": [
-        "As estações não são causadas principalmente pela distância da Terra ao Sol.",
-        "Os hemisférios recebem luz mais diretamente em épocas diferentes.",
-        "A inclinação do eixo explica verão e inverno em períodos opostos."
+        "A fusão nuclear ocorre no interior do Sol sob temperaturas e pressões extremas.",
+        "A energia se propaga até a superfície antes de seguir pelo espaço.",
+        "A luz solar é essencial para muitos processos naturais terrestres."
       ],
       "visual": "planet",
-      "conceptId": "father-v6-2026-10-31-cur-espaco-story",
-      "visualConceptId": "father-v6-2026-10-31-cur-espaco-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-space-solar-fusion",
+      "visualConceptId": "father-v6-2026-11-03-space-sun-core",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
-          "label": "NASA Space Place — What Causes the Seasons?",
-          "url": "https://spaceplace.nasa.gov/seasons/en/"
+          "label": "NASA Space Place — All About the Sun",
+          "url": "https://spaceplace.nasa.gov/all-about-the-sun/en/index.html"
         }
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Qual é a principal causa das estações?",
+        "question": "Que processo produz energia no núcleo solar?",
         "options": [
-          "Inclinação do eixo terrestre",
-          "Mudança diária da distância ao Sol",
-          "Rotação da Lua"
+          "Fusão nuclear",
+          "Combustão de madeira",
+          "Vento terrestre"
         ],
         "answer": 0,
-        "explanation": "A inclinação terrestre determina como a luz solar atinge os hemisférios."
+        "explanation": "O Sol transforma hidrogênio em hélio por fusão nuclear."
       }
     },
     {
       "id": "cur-natureza",
       "group": "Curiosidades · Natureza",
       "type": "CURIOSIDADE",
-      "title": "Como beija-flores conseguem pairar diante das flores?",
-      "summary": "O movimento rápido e controlado das asas permite ao beija-flor ficar quase imóvel no ar para alcançar néctar.",
+      "title": "Por que os beija-flores visitam tantas flores?",
+      "summary": "O voo energético e a alimentação por néctar fazem parte da rotina dos beija-flores, que dependem de plantas adequadas.",
       "details": [
-        "O voo estacionário exige ajustes contínuos nas asas.",
-        "Essa habilidade ajuda a visitar flores sem pousar.",
-        "Flores e habitats conservados são importantes para a alimentação."
+        "Os beija-flores realizam ajustes rápidos das asas durante a alimentação.",
+        "O néctar fornece energia para suas atividades.",
+        "A diversidade de flores contribui para o acesso a alimento."
       ],
       "visual": "bird",
-      "conceptId": "father-v6-2026-10-31-cur-natureza-story",
-      "visualConceptId": "father-v6-2026-10-31-cur-natureza-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-nature-flower-visits",
+      "visualConceptId": "father-v6-2026-11-03-nature-hummingbird-flower",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
@@ -137,31 +137,31 @@
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Que habilidade ajuda beija-flores a alcançar flores?",
+        "question": "Qual recurso natural é importante para a alimentação dos beija-flores?",
         "options": [
-          "Voo estacionário",
-          "Hibernação subaquática",
-          "Corrida no solo"
+          "Néctar",
+          "Plástico",
+          "Areia"
         ],
         "answer": 0,
-        "explanation": "O controle de voo permite pairar perto da flor."
+        "explanation": "Flores oferecem néctar, uma fonte de energia para essas aves."
       }
     },
     {
       "id": "cur-historia",
       "group": "Curiosidades · História",
       "type": "CURIOSIDADE",
-      "title": "A máquina de escrever de Sholes e Glidden ganhou patente em 1868",
-      "summary": "O modelo de patente registrado em 1868 documenta tentativas de tornar a escrita mecânica mais prática.",
+      "title": "Como uma máquina de escrever preservou ideias do século XIX?",
+      "summary": "Peças e protótipos históricos de máquinas de escrever ajudam museus a documentar os primeiros passos da escrita mecânica.",
       "details": [
-        "O modelo de patente foi registrado em 23 de junho de 1868.",
-        "Os inventores aprimoraram mecanismos de teclas, fita e transporte do papel.",
-        "A evolução das máquinas de escrever marcou a história da comunicação."
+        "Modelos associados a Sholes e Glidden registram soluções técnicas antigas.",
+        "A fita, as teclas e o mecanismo de impressão tornavam a escrita repetível.",
+        "Acervos históricos mostram a evolução desses dispositivos para o trabalho de escritório."
       ],
       "visual": "telegraph",
-      "conceptId": "father-v6-2026-10-31-cur-historia-story",
-      "visualConceptId": "father-v6-2026-10-31-cur-historia-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-history-typewriter-archives",
+      "visualConceptId": "father-v6-2026-11-03-history-typewriter-machinery",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
@@ -171,31 +171,31 @@
       ],
       "layout": "discover",
       "quiz": {
-        "question": "Em que ano foi concedida a patente do modelo?",
+        "question": "O que as máquinas de escrever ajudaram a mecanizar?",
         "options": [
-          "1868",
-          "1968",
-          "2008"
+          "Produção de texto",
+          "Fotossíntese",
+          "Transmissão de rádio"
         ],
         "answer": 0,
-        "explanation": "O Smithsonian registra a patente 79.265 em 23 de junho de 1868."
+        "explanation": "As máquinas de escrever mecanizaram parte da produção de textos."
       }
     },
     {
       "id": "gravidez",
       "group": "Gravidez",
       "type": "GUIA",
-      "title": "Felipe: aproximadamente 16 semanas e 6 dias",
-      "summary": "Pela DUM de 05/07/2026, a gestação chega a aproximadamente 16 semanas e 6 dias neste sábado; a datação obstétrica deve prevalecer se houver ajuste médico.",
+      "title": "Felipe: aproximadamente 17 semanas e 2 dias",
+      "summary": "Pela DUM de 05/07/2026, a gestação está em cerca de 17 semanas e 2 dias nesta terça-feira. A datação do pré-natal prevalece caso seja ajustada.",
       "details": [
-        "O acompanhamento pré-natal é a referência para crescimento e sintomas.",
-        "Hidratação e tolerância alimentar precisam de atenção, especialmente após vômitos.",
-        "Se houver dificuldade de manter líquidos, urina escura ou perda de peso, procure avaliação médica."
+        "O acompanhamento obstétrico determina as avaliações e medidas relevantes.",
+        "Persistência de vômitos, urina escura ou incapacidade de manter líquidos requer avaliação médica.",
+        "Priorizar hidratação e seguir as recomendações clínicas do pré-natal."
       ],
       "visual": "baby",
-      "conceptId": "father-v6-2026-10-31-gravidez-story",
-      "visualConceptId": "father-v6-2026-10-31-gravidez-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-gravidez-story",
+      "visualConceptId": "father-v6-2026-11-03-gravidez-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
@@ -217,9 +217,9 @@
         "Pergunte como ela prefere receber ajuda, sem pressupor respostas."
       ],
       "visual": "family",
-      "conceptId": "father-v6-2026-10-31-pai-story",
-      "visualConceptId": "father-v6-2026-10-31-pai-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-pai-story",
+      "visualConceptId": "father-v6-2026-11-03-pai-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -227,132 +227,132 @@
     {
       "id": "brasil",
       "group": "Brasil",
-      "type": "ATUALIZAÇÃO",
-      "title": "Acordo Mercosul–UE impulsiona exportações brasileiras em setores beneficiados",
-      "summary": "Reportagem de 31/10 informa que exportações brasileiras favorecidas por reduções tarifárias cresceram 21% entre maio e setembro, frente ao mesmo período de 2025.",
+      "type": "FATO",
+      "title": "Anvisa restringe operações de produtos de saúde no Porto de Santos",
+      "summary": "A Anvisa determinou nesta terça-feira a interdição parcial de atividades em um terminal portuário após fiscalização identificar irregularidades no armazenamento de produtos sujeitos à vigilância sanitária.",
       "details": [
-        "A Agência Brasil reportou os resultados comerciais neste sábado.",
-        "Segundo o MDIC, dados divulgados no dia 29 apontam avanços em produtos como abacates, mel e óleo de milho.",
-        "A comparação utiliza o período de maio a setembro, não um resultado exclusivo de 31/10."
+        "A medida afeta recebimento e armazenagem de insumos e medicamentos específicos.",
+        "A fiscalização apontou falhas em áreas destinadas a itens sob controle especial.",
+        "A restrição é preventiva até a correção das inconformidades."
       ],
       "visual": "brazil",
-      "conceptId": "father-v6-2026-10-31-brasil-story",
-      "visualConceptId": "father-v6-2026-10-31-brasil-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-brasil-story",
+      "visualConceptId": "father-v6-2026-11-03-brasil-visual",
+      "eventDate": "2026-11-03",
       "news": true,
       "sources": [
         {
-          "label": "Agência Brasil — exportações Mercosul–UE, 31/10",
-          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/acordo-mercosul-ue-eleva-exportacoes-brasileiras-em-21",
-          "publishedAt": "2026-10-31"
+          "label": "Agência Brasil — Anvisa no Porto de Santos, 03/11",
+          "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-11/anvisa-interdita-parte-de-terminal-no-porto-de-santos",
+          "publishedAt": "2026-11-03"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-31"
+      "reportedAt": "2026-11-03"
     },
     {
       "id": "mundo",
       "group": "Mundo",
-      "type": "FATO",
-      "title": "Reino Unido considera pedido oficial de desculpas pelo tráfico transatlântico",
-      "summary": "O governo britânico declarou neste sábado que pretende avaliar um diálogo sobre o legado histórico do tráfico transatlântico de pessoas escravizadas.",
+      "type": "AGENDA",
+      "title": "Eleições de meio de mandato movimentam os Estados Unidos nesta terça-feira",
+      "summary": "Eleitores norte-americanos votam em 3 de novembro para renovar a Câmara dos Representantes, parte do Senado e governos estaduais.",
       "details": [
-        "O primeiro-ministro publicou artigo sobre relações com países da África e do Caribe.",
-        "O tema será discutido no contexto da Commonwealth.",
-        "A manifestação é uma intenção de avaliar o pedido, não um pedido formal já apresentado."
+        "A disputa envolve os 435 assentos da Câmara e aproximadamente um terço das cadeiras do Senado.",
+        "O controle do Congresso pode afetar a pauta legislativa do governo nos próximos dois anos.",
+        "A votação está em andamento; nenhum resultado final é antecipado aqui."
       ],
       "visual": "globe",
-      "conceptId": "father-v6-2026-10-31-mundo-story",
-      "visualConceptId": "father-v6-2026-10-31-mundo-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-mundo-story",
+      "visualConceptId": "father-v6-2026-11-03-mundo-visual",
+      "eventDate": "2026-11-03",
       "news": true,
       "sources": [
         {
-          "label": "Agência Brasil / RTP — Reino Unido, 31/10",
-          "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-10/reino-unido-considera-pedir-desculpa-por-seu-papel-no-trafico-negreiro",
-          "publishedAt": "2026-10-31"
+          "label": "Agência Brasil / Lusa — eleições legislativas nos EUA, 03/11",
+          "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/norte-americanos-decidem-hoje-controle-do-congresso-e-rumos-do-governo",
+          "publishedAt": "2026-11-03"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-31"
+      "reportedAt": "2026-11-03"
     },
     {
       "id": "politica",
       "group": "Política",
-      "type": "AGENDA",
-      "title": "Senado agenda votação da PEC da Segurança Pública para 3 de novembro",
-      "summary": "O presidente do Senado marcou para terça-feira, 3 de novembro, a votação da proposta de emenda constitucional sobre segurança pública.",
+      "type": "FATO",
+      "title": "TSE retoma cadastro eleitoral e emissão de certidões nesta terça-feira",
+      "summary": "O Tribunal Superior Eleitoral restabeleceu o cadastro eleitoral e serviços digitais após o período de consolidação de dados das eleições de 2026.",
       "details": [
-        "A informação foi publicada pela Agência Brasil às 10h22 deste sábado.",
-        "A PEC propõe mudanças na coordenação entre União, estados e municípios.",
-        "A votação está agendada; o resultado ainda não ocorreu."
+        "Voltam a funcionar serviços de alistamento, transferência e revisão de dados.",
+        "Certidões de quitação eleitoral também voltam a ser emitidas pelo portal e pelo e-Título.",
+        "O cronograma de justificativas eleitorais permanece aplicável."
       ],
       "visual": "ballot",
-      "conceptId": "father-v6-2026-10-31-politica-story",
-      "visualConceptId": "father-v6-2026-10-31-politica-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-politica-story",
+      "visualConceptId": "father-v6-2026-11-03-politica-visual",
+      "eventDate": "2026-11-03",
       "news": true,
       "sources": [
         {
-          "label": "Agência Brasil — agenda da PEC, 31/10",
-          "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/alcolumbre-marca-votacao-da-pec-da-seguranca-publica-para-terca-feira",
-          "publishedAt": "2026-10-31"
+          "label": "Rádio Nacional — retomada de serviços do TSE, 03/11",
+          "url": "https://agenciabrasil.ebc.com.br/radioagencia-nacional/geral/audio/2026-11/tse-reabre-cadastro-eleitoral-e-outros-servicos",
+          "publishedAt": "2026-11-03"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-31"
+      "reportedAt": "2026-11-03"
     },
     {
       "id": "tempo",
       "group": "Tempo",
       "type": "PREVISÃO",
-      "title": "São Paulo teve tarde quente e previsão de pancadas isoladas neste sábado",
-      "summary": "Boletim municipal das 12h03 registrou temperatura média de 25,2 °C em São Paulo e possibilidade de chuva isolada ao longo da tarde.",
+      "title": "São Paulo tem terça-feira de calor com tendência de poucas nuvens",
+      "summary": "No boletim das 7h55 desta terça-feira, o CGE registrou aquecimento rápido e previsão de tarde quente na capital paulista.",
       "details": [
-        "O CGE informou sol entre nuvens e umidade relativa próxima de 68% no boletim do meio-dia.",
-        "Áreas de instabilidade poderiam provocar pancadas localizadas até o fim da tarde.",
-        "Para domingo, a tendência indicada era de sol entre nuvens e chuva rápida isolada."
+        "O CGE destacou a elevação das temperaturas com predominância de sol.",
+        "A previsão matinal mencionava aumento de nebulosidade no fim da tarde, sem previsão de chuva naquele boletim.",
+        "Acompanhe atualizações do CGE porque as condições podem mudar durante o dia."
       ],
       "visual": "weather",
-      "conceptId": "father-v6-2026-10-31-tempo-story",
-      "visualConceptId": "father-v6-2026-10-31-tempo-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-tempo-story",
+      "visualConceptId": "father-v6-2026-11-03-tempo-visual",
+      "eventDate": "2026-11-03",
       "news": true,
       "sources": [
         {
-          "label": "CGE Prefeitura de São Paulo — boletim de 31/10 às 12h03",
-          "url": "https://www.cgesp.net/v3/noticias.jsp?id=56306",
-          "publishedAt": "2026-10-31"
+          "label": "CGE Prefeitura de São Paulo — boletim 03/11 às 07h55",
+          "url": "https://www.cgesp.net/v3/noticias.jsp?id=56330",
+          "publishedAt": "2026-11-03"
         }
       ],
       "layout": "spotlight",
-      "reportedAt": "2026-10-31"
+      "reportedAt": "2026-11-03"
     },
     {
       "id": "corinthians",
       "group": "Corinthians",
-      "type": "ATUALIZAÇÃO",
-      "title": "Corinthians vence Mirassol por 2 a 0 e encerra sequência sem vitórias",
-      "summary": "Em reportagem publicada no sábado, a Agência Brasil detalhou a vitória do Corinthians por 2 a 0 sobre o Mirassol na noite de sexta-feira (30).",
+      "type": "AGENDA",
+      "title": "Corinthians se prepara para clássico contra o São Paulo na quarta-feira",
+      "summary": "Reportagem do ge publicada em 3 de novembro acompanha a preparação do Corinthians para enfrentar o São Paulo pela 34ª rodada do Brasileirão.",
       "details": [
-        "Matheus Bidu e Kaio César marcaram os gols na Neo Química Arena.",
-        "A equipe interrompeu sequência de dez jogos sem vencer, segundo a reportagem.",
-        "O relato é uma atualização de 31/10 sobre o confronto realizado em 30/10."
+        "A partida está prevista para quarta-feira (4), às 21h30, na Vila Belmiro.",
+        "O Corinthians busca pontos na reta final do campeonato.",
+        "O jogo ainda não aconteceu nesta edição; não há resultado a informar."
       ],
       "visual": "football",
-      "conceptId": "father-v6-2026-10-31-corinthians-story",
-      "visualConceptId": "father-v6-2026-10-31-corinthians-visual",
-      "eventDate": "2026-10-30",
+      "conceptId": "father-v6-2026-11-03-corinthians-story",
+      "visualConceptId": "father-v6-2026-11-03-corinthians-visual",
+      "eventDate": "2026-11-03",
       "news": true,
       "sources": [
         {
-          "label": "Agência Brasil — Corinthians 2 x 0 Mirassol, publicação 31/10",
-          "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-10/corinthians-encerra-jejum-com-vitoria-sobre-o-mirassol-2-0",
-          "publishedAt": "2026-10-31"
+          "label": "ge — Corinthians se prepara para clássico, 03/11",
+          "url": "https://ge.globo.com/futebol/times/corinthians/noticia/2026/11/03/pressionado-e-ameacado-de-rebaixamento-corinthians-reve-dorival-junior-em-classico.ghtml",
+          "publishedAt": "2026-11-03"
         }
       ],
       "layout": "spotlight",
-      "reportedOn": "2026-10-31"
+      "reportedAt": "2026-11-03"
     },
     {
       "id": "viagens",
@@ -366,9 +366,9 @@
         "Se chover, troque a trilha por um programa coberto."
       ],
       "visual": "mountain",
-      "conceptId": "father-v6-2026-10-31-viagens-story",
-      "visualConceptId": "father-v6-2026-10-31-viagens-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-viagens-story",
+      "visualConceptId": "father-v6-2026-11-03-viagens-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -385,9 +385,9 @@
         "Na última audição, perceba como as camadas se combinam."
       ],
       "visual": "piano",
-      "conceptId": "father-v6-2026-10-31-musica-story",
-      "visualConceptId": "father-v6-2026-10-31-musica-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-musica-story",
+      "visualConceptId": "father-v6-2026-11-03-musica-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -404,9 +404,9 @@
         "Intercale notas isoladas e observe o contraste."
       ],
       "visual": "guitar",
-      "conceptId": "father-v6-2026-10-31-sertanejo-story",
-      "visualConceptId": "father-v6-2026-10-31-sertanejo-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-sertanejo-story",
+      "visualConceptId": "father-v6-2026-11-03-sertanejo-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -423,9 +423,9 @@
         "Faça uma pausa curta para comparar o conforto antes e depois."
       ],
       "visual": "gamepad",
-      "conceptId": "father-v6-2026-10-31-games-story",
-      "visualConceptId": "father-v6-2026-10-31-games-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-games-story",
+      "visualConceptId": "father-v6-2026-11-03-games-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -442,9 +442,9 @@
         "Compare anúncios de desempenho usando métricas equivalentes."
       ],
       "visual": "wafer",
-      "conceptId": "father-v6-2026-10-31-tecnologia-story",
-      "visualConceptId": "father-v6-2026-10-31-tecnologia-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-tecnologia-story",
+      "visualConceptId": "father-v6-2026-11-03-tecnologia-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -452,28 +452,28 @@
     {
       "id": "financas",
       "group": "Finanças",
-      "type": "ATUALIZAÇÃO",
-      "title": "Mercado encerra outubro com dólar a R$ 5,446 e Ibovespa a 167,9 mil pontos",
-      "summary": "No último pregão do mês, na sexta-feira (30), o dólar comercial fechou a R$ 5,446 e o Ibovespa recuou 0,75%, segundo dados divulgados pela Agência Brasil.",
+      "type": "PESQUISA",
+      "title": "Focus eleva projeções de inflação, Selic e dólar para 2026",
+      "summary": "Boletim Focus divulgado pelo Banco Central nesta terça-feira mostrou revisão de expectativas do mercado financeiro para inflação, juros e câmbio.",
       "details": [
-        "A referência é o fechamento de 30/10, não há pregão regular neste sábado.",
-        "A reportagem registrou valorização semanal de 9,15% do dólar.",
-        "O Ibovespa encerrou o pregão em 167.921,80 pontos."
+        "A expectativa para o IPCA de 2026 passou de 5,19% para 5,22%.",
+        "A projeção para Selic no fim de 2026 subiu de 13,25% para 13,50% ao ano.",
+        "São estimativas de mercado, não valores fechados ou resultados definitivos."
       ],
       "visual": "chart",
-      "conceptId": "father-v6-2026-10-31-financas-story",
-      "visualConceptId": "father-v6-2026-10-31-financas-visual",
-      "eventDate": "2026-10-30",
+      "conceptId": "father-v6-2026-11-03-financas-story",
+      "visualConceptId": "father-v6-2026-11-03-financas-visual",
+      "eventDate": "2026-11-03",
       "news": true,
       "sources": [
         {
-          "label": "Agência Brasil — fechamento financeiro 30/10",
-          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/dolar-fecha-r-544-e-registra-maior-alta-semanal-desde-2008",
-          "publishedAt": "2026-10-30"
+          "label": "Agência Brasil — Boletim Focus de 03/11",
+          "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-para-inflacao-juros-e-dolar-em-2026",
+          "publishedAt": "2026-11-03"
         }
       ],
       "layout": "spotlight",
-      "reportedOn": "2026-10-31"
+      "reportedAt": "2026-11-03"
     },
     {
       "id": "security-briefing",
@@ -487,9 +487,9 @@
         "Registre o motivo da priorização para facilitar auditoria."
       ],
       "visual": "radar",
-      "conceptId": "father-v6-2026-10-31-security-briefing-story",
-      "visualConceptId": "father-v6-2026-10-31-security-briefing-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-security-briefing-story",
+      "visualConceptId": "father-v6-2026-11-03-security-briefing-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
@@ -511,9 +511,9 @@
         "Correlacione eventos por identificadores e sequência, não só por horário."
       ],
       "visual": "shield",
-      "conceptId": "father-v6-2026-10-31-cyber-story",
-      "visualConceptId": "father-v6-2026-10-31-cyber-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-cyber-story",
+      "visualConceptId": "father-v6-2026-11-03-cyber-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -530,9 +530,9 @@
         "Mantenha rastreabilidade entre build, artefato e inventário."
       ],
       "visual": "code",
-      "conceptId": "father-v6-2026-10-31-appsec-story",
-      "visualConceptId": "father-v6-2026-10-31-appsec-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-appsec-story",
+      "visualConceptId": "father-v6-2026-11-03-appsec-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [
         {
@@ -554,9 +554,9 @@
         "Reserve orçamento para inspeção independente antes da compra."
       ],
       "visual": "car",
-      "conceptId": "father-v6-2026-10-31-carros-story",
-      "visualConceptId": "father-v6-2026-10-31-carros-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-carros-story",
+      "visualConceptId": "father-v6-2026-11-03-carros-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -573,9 +573,9 @@
         "Faça ajustes somente com procedimento seguro e ferramentas adequadas."
       ],
       "visual": "motorcycle",
-      "conceptId": "father-v6-2026-10-31-motos-story",
-      "visualConceptId": "father-v6-2026-10-31-motos-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-motos-story",
+      "visualConceptId": "father-v6-2026-11-03-motos-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
@@ -592,13 +592,13 @@
         "Em caso de pedal anormal ou perda de eficiência, procure avaliação profissional."
       ],
       "visual": "wrench",
-      "conceptId": "father-v6-2026-10-31-mecanica-story",
-      "visualConceptId": "father-v6-2026-10-31-mecanica-visual",
-      "eventDate": "2026-10-31",
+      "conceptId": "father-v6-2026-11-03-mecanica-story",
+      "visualConceptId": "father-v6-2026-11-03-mecanica-visual",
+      "eventDate": "2026-11-03",
       "news": false,
       "sources": [],
       "layout": "guide"
     }
   ],
-  "releaseId": "2026-10-31-r01"
+  "releaseId": "2026-11-03-r01"
 }
